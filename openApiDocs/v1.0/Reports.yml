@@ -5942,6 +5942,8 @@ components:
         - hidden
         - adminConfirmedUserCompromised
         - unknownFutureValue
+        - adminConfirmedServicePrincipalCompromised
+        - adminDismissedAllRiskForServicePrincipal
         - m365DAdminDismissedDetection
       type: string
     microsoft.graph.riskEventType:

@@ -1842,11 +1842,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -2458,11 +2458,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: chats.messages_CreateReplies
       parameters:
         - name: chat-id
@@ -5146,11 +5146,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: groups.team.channels_CreateMembers
       parameters:
         - name: group-id
@@ -6188,11 +6188,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: groups.team.channels.messages_CreateReplies
       parameters:
         - name: group-id
@@ -9367,11 +9367,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: groups.team.primaryChannel_CreateMembers
       parameters:
         - name: group-id
@@ -10289,11 +10289,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: groups.team.primaryChannel.messages_CreateReplies
       parameters:
         - name: group-id
@@ -15677,11 +15677,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: teams.channels_CreateMembers
       parameters:
         - name: team-id
@@ -16783,11 +16783,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teams.channels.messages_CreateReplies
       parameters:
         - name: team-id
@@ -20841,11 +20841,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: teams.primaryChannel_CreateMembers
       parameters:
         - name: team-id
@@ -21819,11 +21819,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teams.primaryChannel.messages_CreateReplies
       parameters:
         - name: team-id
@@ -28374,11 +28374,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: users.chats_CreateMessages
       parameters:
         - name: user-id
@@ -29070,11 +29070,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: users.chats.messages_CreateReplies
       parameters:
         - name: user-id
@@ -31590,11 +31590,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_CreateMembers
       parameters:
         - name: user-id
@@ -32752,11 +32752,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: users.joinedTeams.channels.messages_CreateReplies
       parameters:
         - name: user-id
@@ -36363,11 +36363,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_CreateMembers
       parameters:
         - name: user-id
@@ -37405,11 +37405,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel.messages_CreateReplies
       parameters:
         - name: user-id
@@ -43777,7 +43777,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
             assignedLicenses:
               type: array
               items:
@@ -43818,7 +43818,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -45710,7 +45710,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -54221,7 +54221,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object
@@ -54941,7 +54941,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string

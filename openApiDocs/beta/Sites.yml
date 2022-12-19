@@ -18492,14 +18492,24 @@ paths:
                 - webUrl desc
                 - contentType
                 - contentType desc
-                - pageLayoutType
-                - pageLayoutType desc
+                - pageLayout
+                - pageLayout desc
+                - promotionKind
+                - promotionKind desc
                 - publishingState
                 - publishingState desc
+                - reactions
+                - reactions desc
+                - showComments
+                - showComments desc
+                - showRecommendedPages
+                - showRecommendedPages desc
+                - thumbnailWebUrl
+                - thumbnailWebUrl desc
                 - title
                 - title desc
-                - webParts
-                - webParts desc
+                - titleArea
+                - titleArea desc
               type: string
         - name: $select
           in: query
@@ -18522,12 +18532,19 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
-                - pageLayoutType
+                - pageLayout
+                - promotionKind
                 - publishingState
+                - reactions
+                - showComments
+                - showRecommendedPages
+                - thumbnailWebUrl
                 - title
-                - webParts
+                - titleArea
                 - createdByUser
                 - lastModifiedByUser
+                - canvasLayout
+                - webParts
               type: string
         - name: $expand
           in: query
@@ -18542,6 +18559,8 @@ paths:
                 - '*'
                 - createdByUser
                 - lastModifiedByUser
+                - canvasLayout
+                - webParts
               type: string
       responses:
         2XX:
@@ -18648,12 +18667,19 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
-                - pageLayoutType
+                - pageLayout
+                - promotionKind
                 - publishingState
+                - reactions
+                - showComments
+                - showRecommendedPages
+                - thumbnailWebUrl
                 - title
-                - webParts
+                - titleArea
                 - createdByUser
                 - lastModifiedByUser
+                - canvasLayout
+                - webParts
               type: string
         - name: $expand
           in: query
@@ -18668,6 +18694,8 @@ paths:
                 - '*'
                 - createdByUser
                 - lastModifiedByUser
+                - canvasLayout
+                - webParts
               type: string
       responses:
         2XX:
@@ -18756,6 +18784,2020 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: sitePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout':
+    get:
+      tags:
+        - groups.site
+      summary: Get canvasLayout from groups
+      description: 'Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section'
+      operationId: groups.sites.pages_GetCanvasLayout
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - horizontalSections
+                - verticalSection
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - horizontalSections
+                - verticalSection
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.canvasLayout'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.site
+      summary: Update the navigation property canvasLayout in groups
+      operationId: groups.sites.pages_UpdateCanvasLayout
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.canvasLayout'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete navigation property canvasLayout for groups
+      operationId: groups.sites.pages_DeleteCanvasLayout
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections':
+    get:
+      tags:
+        - groups.site
+      summary: List horizontalSections
+      description: Get a list of the horizontalSection objects and their properties. Sort by `id` in ascending order.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/horizontalsection-list?view=graph-rest-1.0
+      operationId: groups.sites.pages.canvasLayout_ListHorizontalSections
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - emphasis
+                - emphasis desc
+                - layout
+                - layout desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - emphasis
+                - layout
+                - columns
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - columns
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.horizontalSectionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.site
+      summary: Create new navigation property to horizontalSections for groups
+      operationId: groups.sites.pages.canvasLayout_CreateHorizontalSections
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}':
+    get:
+      tags:
+        - groups.site
+      summary: Get horizontalSections from groups
+      description: Collection of horizontal sections on the SharePoint page.
+      operationId: groups.sites.pages.canvasLayout_GetHorizontalSections
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - emphasis
+                - layout
+                - columns
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - columns
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.site
+      summary: Update the navigation property horizontalSections in groups
+      operationId: groups.sites.pages.canvasLayout_UpdateHorizontalSections
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete navigation property horizontalSections for groups
+      operationId: groups.sites.pages.canvasLayout_DeleteHorizontalSections
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns':
+    get:
+      tags:
+        - groups.site
+      summary: List horizontalSectionColumns
+      description: Get a list of the horizontalSectionColumn objects and their properties. Sort by `id` in ascending order.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/horizontalsectioncolumn-list?view=graph-rest-1.0
+      operationId: groups.sites.pages.canvasLayout.horizontalSections_ListColumns
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - width
+                - width desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - width
+                - webparts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - webparts
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.horizontalSectionColumnCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.site
+      summary: Create new navigation property to columns for groups
+      operationId: groups.sites.pages.canvasLayout.horizontalSections_CreateColumns
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}':
+    get:
+      tags:
+        - groups.site
+      summary: Get columns from groups
+      description: The set of vertical columns in this section.
+      operationId: groups.sites.pages.canvasLayout.horizontalSections_GetColumns
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - width
+                - webparts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - webparts
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.site
+      summary: Update the navigation property columns in groups
+      operationId: groups.sites.pages.canvasLayout.horizontalSections_UpdateColumns
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete navigation property columns for groups
+      operationId: groups.sites.pages.canvasLayout.horizontalSections_DeleteColumns
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}/webparts':
+    get:
+      tags:
+        - groups.site
+      summary: List webparts
+      description: Get the webPart resources from a sitePage. Sort by the order in which they appear on the page.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/webpart-list?view=graph-rest-1.0
+      operationId: groups.sites.pages.canvasLayout.horizontalSections.columns_ListWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.webPartCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.site
+      summary: Create new navigation property to webparts for groups
+      operationId: groups.sites.pages.canvasLayout.horizontalSections.columns_CreateWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}/webparts/{webPart-id}':
+    get:
+      tags:
+        - groups.site
+      summary: Get webparts from groups
+      description: The collection of WebParts in this column.
+      operationId: groups.sites.pages.canvasLayout.horizontalSections.columns_GetWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.site
+      summary: Update the navigation property webparts in groups
+      operationId: groups.sites.pages.canvasLayout.horizontalSections.columns_UpdateWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete navigation property webparts for groups
+      operationId: groups.sites.pages.canvasLayout.horizontalSections.columns_DeleteWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/verticalSection':
+    get:
+      tags:
+        - groups.site
+      summary: Get verticalSection
+      description: Read the properties and relationships of a verticalSection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/verticalsection-get?view=graph-rest-1.0
+      operationId: groups.sites.pages.canvasLayout_GetVerticalSection
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - emphasis
+                - webparts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - webparts
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.verticalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.site
+      summary: Update the navigation property verticalSection in groups
+      operationId: groups.sites.pages.canvasLayout_UpdateVerticalSection
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.verticalSection'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.verticalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete navigation property verticalSection for groups
+      operationId: groups.sites.pages.canvasLayout_DeleteVerticalSection
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/verticalSection/webparts':
+    get:
+      tags:
+        - groups.site
+      summary: Get webparts from groups
+      description: The set of web parts in this section.
+      operationId: groups.sites.pages.canvasLayout.verticalSection_ListWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.webPartCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.site
+      summary: Create new navigation property to webparts for groups
+      operationId: groups.sites.pages.canvasLayout.verticalSection_CreateWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/verticalSection/webparts/{webPart-id}':
+    get:
+      tags:
+        - groups.site
+      summary: Get webparts from groups
+      description: The set of web parts in this section.
+      operationId: groups.sites.pages.canvasLayout.verticalSection_GetWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.site
+      summary: Update the navigation property webparts in groups
+      operationId: groups.sites.pages.canvasLayout.verticalSection_UpdateWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete navigation property webparts for groups
+      operationId: groups.sites.pages.canvasLayout.verticalSection_DeleteWebparts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/webParts':
+    get:
+      tags:
+        - groups.site
+      summary: Get webParts from groups
+      description: Collection of webparts on the SharePoint page
+      operationId: groups.sites.pages_ListWebParts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.webPartCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.site
+      summary: Create new navigation property to webParts for groups
+      operationId: groups.sites.pages_CreateWebParts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/webParts/{webPart-id}':
+    get:
+      tags:
+        - groups.site
+      summary: Get webParts from groups
+      description: Collection of webparts on the SharePoint page
+      operationId: groups.sites.pages_GetWebParts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.site
+      summary: Update the navigation property webParts in groups
+      operationId: groups.sites.pages_UpdateWebParts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete navigation property webParts for groups
+      operationId: groups.sites.pages_DeleteWebParts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
         - name: If-Match
           in: header
           description: ETag
@@ -37470,11 +39512,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Search for sites
-      description: 'Search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.'
+      summary: Enumerate sites
+      description: 'List all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/site-search?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/site-list?view=graph-rest-1.0
       operationId: sites.site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -49659,14 +51701,24 @@ paths:
                 - webUrl desc
                 - contentType
                 - contentType desc
-                - pageLayoutType
-                - pageLayoutType desc
+                - pageLayout
+                - pageLayout desc
+                - promotionKind
+                - promotionKind desc
                 - publishingState
                 - publishingState desc
+                - reactions
+                - reactions desc
+                - showComments
+                - showComments desc
+                - showRecommendedPages
+                - showRecommendedPages desc
+                - thumbnailWebUrl
+                - thumbnailWebUrl desc
                 - title
                 - title desc
-                - webParts
-                - webParts desc
+                - titleArea
+                - titleArea desc
               type: string
         - name: $select
           in: query
@@ -49689,12 +51741,19 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
-                - pageLayoutType
+                - pageLayout
+                - promotionKind
                 - publishingState
+                - reactions
+                - showComments
+                - showRecommendedPages
+                - thumbnailWebUrl
                 - title
-                - webParts
+                - titleArea
                 - createdByUser
                 - lastModifiedByUser
+                - canvasLayout
+                - webParts
               type: string
         - name: $expand
           in: query
@@ -49709,6 +51768,8 @@ paths:
                 - '*'
                 - createdByUser
                 - lastModifiedByUser
+                - canvasLayout
+                - webParts
               type: string
       responses:
         2XX:
@@ -49799,12 +51860,19 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
-                - pageLayoutType
+                - pageLayout
+                - promotionKind
                 - publishingState
+                - reactions
+                - showComments
+                - showRecommendedPages
+                - thumbnailWebUrl
                 - title
-                - webParts
+                - titleArea
                 - createdByUser
                 - lastModifiedByUser
+                - canvasLayout
+                - webParts
               type: string
         - name: $expand
           in: query
@@ -49819,6 +51887,8 @@ paths:
                 - '*'
                 - createdByUser
                 - lastModifiedByUser
+                - canvasLayout
+                - webParts
               type: string
       responses:
         2XX:
@@ -49903,6 +51973,1680 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout':
+    get:
+      tags:
+        - sites.sitePage
+      summary: Get canvasLayout from sites
+      description: 'Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section'
+      operationId: sites.pages_GetCanvasLayout
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - horizontalSections
+                - verticalSection
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - horizontalSections
+                - verticalSection
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.canvasLayout'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.sitePage
+      summary: Update the navigation property canvasLayout in sites
+      operationId: sites.pages_UpdateCanvasLayout
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.canvasLayout'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.sitePage
+      summary: Delete navigation property canvasLayout for sites
+      operationId: sites.pages_DeleteCanvasLayout
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections':
+    get:
+      tags:
+        - sites.sitePage
+      summary: List horizontalSections
+      description: Get a list of the horizontalSection objects and their properties. Sort by `id` in ascending order.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/horizontalsection-list?view=graph-rest-1.0
+      operationId: sites.pages.canvasLayout_ListHorizontalSections
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - emphasis
+                - emphasis desc
+                - layout
+                - layout desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - emphasis
+                - layout
+                - columns
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - columns
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.horizontalSectionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - sites.sitePage
+      summary: Create new navigation property to horizontalSections for sites
+      operationId: sites.pages.canvasLayout_CreateHorizontalSections
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}':
+    get:
+      tags:
+        - sites.sitePage
+      summary: Get horizontalSections from sites
+      description: Collection of horizontal sections on the SharePoint page.
+      operationId: sites.pages.canvasLayout_GetHorizontalSections
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - emphasis
+                - layout
+                - columns
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - columns
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.sitePage
+      summary: Update the navigation property horizontalSections in sites
+      operationId: sites.pages.canvasLayout_UpdateHorizontalSections
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.sitePage
+      summary: Delete navigation property horizontalSections for sites
+      operationId: sites.pages.canvasLayout_DeleteHorizontalSections
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns':
+    get:
+      tags:
+        - sites.sitePage
+      summary: List horizontalSectionColumns
+      description: Get a list of the horizontalSectionColumn objects and their properties. Sort by `id` in ascending order.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/horizontalsectioncolumn-list?view=graph-rest-1.0
+      operationId: sites.pages.canvasLayout.horizontalSections_ListColumns
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - width
+                - width desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - width
+                - webparts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - webparts
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.horizontalSectionColumnCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - sites.sitePage
+      summary: Create new navigation property to columns for sites
+      operationId: sites.pages.canvasLayout.horizontalSections_CreateColumns
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}':
+    get:
+      tags:
+        - sites.sitePage
+      summary: Get columns from sites
+      description: The set of vertical columns in this section.
+      operationId: sites.pages.canvasLayout.horizontalSections_GetColumns
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - width
+                - webparts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - webparts
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.sitePage
+      summary: Update the navigation property columns in sites
+      operationId: sites.pages.canvasLayout.horizontalSections_UpdateColumns
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.sitePage
+      summary: Delete navigation property columns for sites
+      operationId: sites.pages.canvasLayout.horizontalSections_DeleteColumns
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}/webparts':
+    get:
+      tags:
+        - sites.sitePage
+      summary: List webparts
+      description: Get the webPart resources from a sitePage. Sort by the order in which they appear on the page.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/webpart-list?view=graph-rest-1.0
+      operationId: sites.pages.canvasLayout.horizontalSections.columns_ListWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.webPartCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - sites.sitePage
+      summary: Create new navigation property to webparts for sites
+      operationId: sites.pages.canvasLayout.horizontalSections.columns_CreateWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}/webparts/{webPart-id}':
+    get:
+      tags:
+        - sites.sitePage
+      summary: Get webparts from sites
+      description: The collection of WebParts in this column.
+      operationId: sites.pages.canvasLayout.horizontalSections.columns_GetWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.sitePage
+      summary: Update the navigation property webparts in sites
+      operationId: sites.pages.canvasLayout.horizontalSections.columns_UpdateWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.sitePage
+      summary: Delete navigation property webparts for sites
+      operationId: sites.pages.canvasLayout.horizontalSections.columns_DeleteWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}/webparts/{webPart-id}/microsoft.graph.getPositionOfWebPart':
+    post:
+      tags:
+        - sites.Actions
+      summary: Invoke action getPositionOfWebPart
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/webpart-getposition?view=graph-rest-1.0
+      operationId: sites.pages.canvasLayout.horizontalSections.columns.webparts_getPositionGraphOPreWebPart
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: horizontalSection-id
+          in: path
+          description: 'key: id of horizontalSection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSection
+        - name: horizontalSectionColumn-id
+          in: path
+          description: 'key: id of horizontalSectionColumn'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: horizontalSectionColumn
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPartPosition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/verticalSection':
+    get:
+      tags:
+        - sites.sitePage
+      summary: Get verticalSection
+      description: Read the properties and relationships of a verticalSection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/verticalsection-get?view=graph-rest-1.0
+      operationId: sites.pages.canvasLayout_GetVerticalSection
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - emphasis
+                - webparts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - webparts
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.verticalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.sitePage
+      summary: Update the navigation property verticalSection in sites
+      operationId: sites.pages.canvasLayout_UpdateVerticalSection
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.verticalSection'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.verticalSection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.sitePage
+      summary: Delete navigation property verticalSection for sites
+      operationId: sites.pages.canvasLayout_DeleteVerticalSection
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/verticalSection/webparts':
+    get:
+      tags:
+        - sites.sitePage
+      summary: Get webparts from sites
+      description: The set of web parts in this section.
+      operationId: sites.pages.canvasLayout.verticalSection_ListWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.webPartCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - sites.sitePage
+      summary: Create new navigation property to webparts for sites
+      operationId: sites.pages.canvasLayout.verticalSection_CreateWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/verticalSection/webparts/{webPart-id}':
+    get:
+      tags:
+        - sites.sitePage
+      summary: Get webparts from sites
+      description: The set of web parts in this section.
+      operationId: sites.pages.canvasLayout.verticalSection_GetWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.sitePage
+      summary: Update the navigation property webparts in sites
+      operationId: sites.pages.canvasLayout.verticalSection_UpdateWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.sitePage
+      summary: Delete navigation property webparts for sites
+      operationId: sites.pages.canvasLayout.verticalSection_DeleteWebparts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/canvasLayout/verticalSection/webparts/{webPart-id}/microsoft.graph.getPositionOfWebPart':
+    post:
+      tags:
+        - sites.Actions
+      summary: Invoke action getPositionOfWebPart
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/webpart-getposition?view=graph-rest-1.0
+      operationId: sites.pages.canvasLayout.verticalSection.webparts_getPositionGraphOPreWebPart
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPartPosition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/pages/{sitePage-id}/microsoft.graph.getWebPartsByPosition':
+    post:
+      tags:
+        - sites.Actions
+      summary: Invoke action getWebPartsByPosition
+      operationId: sites.pages_getWebPartsGraphBPrePosition
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webPartIndex:
+                  type: number
+                  format: double
+                  nullable: true
+                horizontalSectionId:
+                  type: number
+                  format: double
+                  nullable: true
+                isInVerticalSection:
+                  type: boolean
+                  default: false
+                  nullable: true
+                columnId:
+                  type: number
+                  format: double
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of webPart
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.webPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/sites/{site-id}/pages/{sitePage-id}/microsoft.graph.publish':
     post:
       tags:
@@ -49929,6 +53673,319 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/pages/{sitePage-id}/webParts':
+    get:
+      tags:
+        - sites.sitePage
+      summary: Get webParts from sites
+      description: Collection of webparts on the SharePoint page
+      operationId: sites.pages_ListWebParts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.webPartCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - sites.sitePage
+      summary: Create new navigation property to webParts for sites
+      operationId: sites.pages_CreateWebParts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/webParts/{webPart-id}':
+    get:
+      tags:
+        - sites.sitePage
+      summary: Get webParts from sites
+      description: Collection of webparts on the SharePoint page
+      operationId: sites.pages_GetWebParts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.sitePage
+      summary: Update the navigation property webParts in sites
+      operationId: sites.pages_UpdateWebParts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webPart'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.sitePage
+      summary: Delete navigation property webParts for sites
+      operationId: sites.pages_DeleteWebParts
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{sitePage-id}/webParts/{webPart-id}/microsoft.graph.getPositionOfWebPart':
+    post:
+      tags:
+        - sites.Actions
+      summary: Invoke action getPositionOfWebPart
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/webpart-getposition?view=graph-rest-1.0
+      operationId: sites.pages.webParts_getPositionGraphOPreWebPart
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sitePage-id
+          in: path
+          description: 'key: id of sitePage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sitePage
+        - name: webPart-id
+          in: path
+          description: 'key: id of webPart'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webPart
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webPartPosition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -68104,7 +72161,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -68403,19 +72460,118 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            pageLayoutType:
-              type: string
-              nullable: true
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            promotionKind:
+              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            reactions:
+              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
+            showComments:
+              type: boolean
+              description: Determines whether or not to show comments at the bottom of the page.
+              nullable: true
+            showRecommendedPages:
+              type: boolean
+              description: Determines whether or not to show recommended pages at the bottom of the page.
+              nullable: true
+            thumbnailWebUrl:
+              type: string
+              description: Url of the sitePage's thumbnail image
+              nullable: true
             title:
               type: string
               description: Title of the sitePage.
               nullable: true
+            titleArea:
+              $ref: '#/components/schemas/microsoft.graph.titleArea'
+            canvasLayout:
+              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
             webParts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: Collection of webparts on the SharePoint page
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.canvasLayout:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: canvasLayout
+          type: object
+          properties:
+            horizontalSections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+              description: Collection of horizontal sections on the SharePoint page.
+              readOnly: true
+            verticalSection:
+              $ref: '#/components/schemas/microsoft.graph.verticalSection'
+          additionalProperties:
+            type: object
+    microsoft.graph.horizontalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            layout:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
+            columns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+              description: The set of vertical columns in this section.
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.horizontalSectionColumn:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSectionColumn
+          type: object
+          properties:
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
+              format: int32
+              nullable: true
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The collection of WebParts in this column.
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.webPart:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: webPart
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.verticalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: verticalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The set of web parts in this section.
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -68835,6 +72991,36 @@ components:
           $ref: '#/components/schemas/microsoft.graph.onenoteSourceService'
       additionalProperties:
         type: object
+    microsoft.graph.webPartPosition:
+      title: webPartPosition
+      type: object
+      properties:
+        columnId:
+          type: number
+          description: Indicates the identifier of the column where the web part is located.
+          format: double
+          nullable: true
+        horizontalSectionId:
+          type: number
+          description: Indicates the horizontal section where the web part is located.
+          format: double
+          nullable: true
+        isInVerticalSection:
+          type: boolean
+          description: Indicates whether the web part is located in the vertical section.
+          nullable: true
+        webPartIndex:
+          type: number
+          description: Index of the current web part. Represents the order of the web part in this column or section.
+          format: double
+          nullable: true
+      additionalProperties:
+        type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.deleted:
       title: deleted
       type: object
@@ -70802,19 +74988,110 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.webPart:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: webPart
-          type: object
-          properties:
-            data:
-              $ref: '#/components/schemas/microsoft.graph.sitePageData'
-            type:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
+    microsoft.graph.pagePromotionType:
+      title: pagePromotionType
+      enum:
+        - microsoftReserved
+        - page
+        - newsPost
+        - unknownFutureValue
+      type: string
+    microsoft.graph.reactionsFacet:
+      title: reactionsFacet
+      type: object
+      properties:
+        commentCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of comments.
+          format: int32
+          nullable: true
+        likeCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of likes.
+          format: int32
+          nullable: true
+        shareCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of shares.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.titleArea:
+      title: titleArea
+      type: object
+      properties:
+        alternativeText:
+          type: string
+          description: Alternative text on the title area.
+          nullable: true
+        enableGradientEffect:
+          type: boolean
+          description: Indicates whether the title area has a gradient effect enabled.
+          nullable: true
+        imageWebUrl:
+          type: string
+          description: URL of the image in the title area.
+          nullable: true
+        layout:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
+        serverProcessedContent:
+          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
+        showAuthor:
+          type: boolean
+          description: Indicates whether the author should be shown in title area.
+          nullable: true
+        showPublishedDate:
+          type: boolean
+          description: Indicates whether the published date should be shown in title area.
+          nullable: true
+        showTextBlockAboveTitle:
+          type: boolean
+          description: Indicates whether the text block above title should be shown in title area.
+          nullable: true
+        textAboveTitle:
+          type: string
+          description: The text above title line.
+          nullable: true
+        textAlignment:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
+      additionalProperties:
+        type: object
+    microsoft.graph.sectionEmphasisType:
+      title: sectionEmphasisType
+      enum:
+        - none
+        - netural
+        - soft
+        - strong
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionLayoutType:
+      title: horizontalSectionLayoutType
+      enum:
+        - none
+        - oneColumn
+        - twoColumns
+        - threeColumns
+        - oneThirdLeftColumn
+        - oneThirdRightColumn
+        - fullWidth
+        - unknownFutureValue
+      type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -71317,6 +75594,45 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.horizontalSectionCollectionResponse:
+      title: Collection of horizontalSection
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.horizontalSectionColumnCollectionResponse:
+      title: Collection of horizontalSectionColumn
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.webPartCollectionResponse:
+      title: Collection of webPart
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.webPart'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.permissionCollectionResponse:
       title: Collection of permission
       type: object
@@ -71382,11 +75698,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    ReferenceNumeric:
-      enum:
-        - '-INF'
-        - INF
-        - NaN
     microsoft.graph.displayNameLocalization:
       title: displayNameLocalization
       type: object
@@ -71857,6 +76168,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
+              description: The results of every partner agent's installation status on Cloud PC.
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -72873,7 +77185,7 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -75019,6 +79331,8 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -75802,7 +80116,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object
@@ -75814,11 +80128,58 @@ components:
         - Completed
         - Failed
       type: string
-    microsoft.graph.sitePageData:
-      title: sitePageData
+    microsoft.graph.titleAreaLayoutType:
+      title: titleAreaLayoutType
+      enum:
+        - imageAndTitle
+        - plain
+        - colorBlock
+        - overlap
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serverProcessedContent:
+      title: serverProcessedContent
       type: object
+      properties:
+        componentDependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+        customMetadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
+          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
+        htmlStrings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
+        imageSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+        searchablePlainTexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
       additionalProperties:
         type: object
+    microsoft.graph.titleAreaTextAlignmentType:
+      title: titleAreaTextAlignmentType
+      enum:
+        - left
+        - center
+        - unknownFutureValue
+      type: string
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -76112,11 +80473,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
           nullable: true
       additionalProperties:
         type: object
@@ -81071,6 +85434,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -82218,6 +86596,32 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.metaDataKeyStringPair:
+      title: metaDataKeyStringPair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the meta data.
+          nullable: true
+        value:
+          type: string
+          description: Value of the meta data.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.metaDataKeyValuePair:
+      title: metaDataKeyValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the metadata.
+          nullable: true
+        value:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -90906,6 +95310,24 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.sitePageCollectionResponse'
+    microsoft.graph.horizontalSectionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.horizontalSectionCollectionResponse'
+    microsoft.graph.horizontalSectionColumnCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumnCollectionResponse'
+    microsoft.graph.webPartCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.webPartCollectionResponse'
     microsoft.graph.permissionCollectionResponse:
       description: Retrieved collection
       content:

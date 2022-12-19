@@ -4589,11 +4589,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4688,11 +4688,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: communications.onlineMeetings_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -5472,6 +5472,8 @@ paths:
                 - availability desc
                 - outOfOfficeSettings
                 - outOfOfficeSettings desc
+                - statusMessage
+                - statusMessage desc
               type: string
         - name: $select
           in: query
@@ -5487,6 +5489,7 @@ paths:
                 - activity
                 - availability
                 - outOfOfficeSettings
+                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -5560,6 +5563,7 @@ paths:
                 - activity
                 - availability
                 - outOfOfficeSettings
+                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -5741,6 +5745,39 @@ paths:
                   type: string
                   format: duration
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.setStatusMessage':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action setStatusMessage
+      operationId: communications.presences_setStatusMessage
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                statusMessage:
+                  $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
               additionalProperties:
                 type: object
         required: true
@@ -7432,11 +7469,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id
@@ -7547,11 +7584,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: users.onlineMeetings_DeleteRegistration
       parameters:
         - name: user-id
@@ -8413,6 +8450,7 @@ paths:
                 - activity
                 - availability
                 - outOfOfficeSettings
+                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -9108,6 +9146,8 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.onlineMeeting:
@@ -9460,6 +9500,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -10150,6 +10205,19 @@ components:
         upn:
           type: string
           description: User principal name of the participant.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
           nullable: true
       additionalProperties:
         type: object
