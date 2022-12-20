@@ -3892,7 +3892,7 @@ components:
               nullable: true
             anonymousJoinWebUrl:
               type: string
-              description: Url of meeting to join anonymously.
+              description: The URL of the meeting to join anonymously.
               nullable: true
             customerEmailAddress:
               type: string
@@ -3920,7 +3920,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomerInformationBase'
-              description: It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+              description: A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             customerTimeZone:
               type: string
               description: 'The time zone of the customer. For a list of possible values, see dateTimeTimeZone.'
@@ -4201,6 +4201,7 @@ components:
               nullable: true
             isEmailNotificationEnabled:
               type: boolean
+              description: True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
             role:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffRole'
             timeZone:

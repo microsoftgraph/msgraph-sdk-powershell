@@ -5521,6 +5521,8 @@ paths:
                 - reportDate
                 - reportPeriod
                 - reportRefreshDate
+                - teamsChannelMessages
+                - teamsMeetingsOrganized
                 - yammerMessagesLiked
                 - yammerMessagesPosted
                 - yammerMessagesRead
@@ -5545,6 +5547,10 @@ paths:
                 - reportPeriod desc
                 - reportRefreshDate
                 - reportRefreshDate desc
+                - teamsChannelMessages
+                - teamsChannelMessages desc
+                - teamsMeetingsOrganized
+                - teamsMeetingsOrganized desc
                 - yammerMessagesLiked
                 - yammerMessagesLiked desc
                 - yammerMessagesPosted
@@ -5624,6 +5630,8 @@ paths:
                 - sharePointActiveFileCount
                 - sharePointSiteStorageUsedInBytes
                 - sharePointTotalFileCount
+                - teamsChannelMessagesCount
+                - teamsMeetingsOrganizedCount
                 - yammerLikedMessageCount
                 - yammerPostedMessageCount
                 - yammerReadMessageCount
@@ -5672,6 +5680,10 @@ paths:
                 - sharePointSiteStorageUsedInBytes desc
                 - sharePointTotalFileCount
                 - sharePointTotalFileCount desc
+                - teamsChannelMessagesCount
+                - teamsChannelMessagesCount desc
+                - teamsMeetingsOrganizedCount
+                - teamsMeetingsOrganizedCount desc
                 - yammerLikedMessageCount
                 - yammerLikedMessageCount desc
                 - yammerPostedMessageCount
@@ -5749,6 +5761,8 @@ paths:
                 - sharePointActiveFileCount
                 - sharePointSiteStorageUsedInBytes
                 - sharePointTotalFileCount
+                - teamsChannelMessagesCount
+                - teamsMeetingsOrganizedCount
                 - yammerLikedMessageCount
                 - yammerPostedMessageCount
                 - yammerReadMessageCount
@@ -5797,6 +5811,10 @@ paths:
                 - sharePointSiteStorageUsedInBytes desc
                 - sharePointTotalFileCount
                 - sharePointTotalFileCount desc
+                - teamsChannelMessagesCount
+                - teamsChannelMessagesCount desc
+                - teamsMeetingsOrganizedCount
+                - teamsMeetingsOrganizedCount desc
                 - yammerLikedMessageCount
                 - yammerLikedMessageCount desc
                 - yammerPostedMessageCount
@@ -7759,6 +7777,36 @@ paths:
         - reports.Functions
       summary: Invoke function getTeamsTeamActivityDistributionCounts
       operationId: reports_getTeamsTeamActivityDistributionCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamCounts
+      operationId: reports_getTeamsTeamCounts
       parameters:
         - name: period
           in: path
@@ -10252,6 +10300,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationAppPolicyDetails'
+              description: Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
             authenticationContextClassReferences:
               type: array
               items:
@@ -11328,6 +11377,14 @@ components:
               description: The latest date of the content.
               format: date
               nullable: true
+            teamsChannelMessages:
+              type: integer
+              format: int64
+              nullable: true
+            teamsMeetingsOrganized:
+              type: integer
+              format: int64
+              nullable: true
             yammerMessagesLiked:
               type: integer
               description: The number of messages liked in Yammer groups.
@@ -11425,6 +11482,14 @@ components:
             sharePointTotalFileCount:
               type: integer
               description: The total number of files in SharePoint Group site.
+              format: int64
+              nullable: true
+            teamsChannelMessagesCount:
+              type: integer
+              format: int64
+              nullable: true
+            teamsMeetingsOrganizedCount:
+              type: integer
               format: int64
               nullable: true
             yammerLikedMessageCount:
@@ -11966,15 +12031,19 @@ components:
       properties:
         appVersion:
           type: string
+          description: The version of the client authentication app used during the authentication step.
           nullable: true
         clientApp:
           type: string
+          description: The name of the client authentication app used during the authentication step.
           nullable: true
         deviceId:
           type: string
+          description: ID of the device used during the authentication step.
           nullable: true
         operatingSystem:
           type: string
+          description: The operating system running on the device used for the authentication step.
           nullable: true
       additionalProperties:
         type: object
@@ -11988,6 +12057,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationAppEvaluation'
         policyName:
           type: string
+          description: The name of the policy enforced on the user's authentication app.
           nullable: true
         status:
           $ref: '#/components/schemas/microsoft.graph.authenticationAppPolicyStatus'

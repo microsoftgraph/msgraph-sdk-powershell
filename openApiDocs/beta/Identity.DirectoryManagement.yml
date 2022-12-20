@@ -9934,6 +9934,7 @@ paths:
       tags:
         - directory.onPremisesDirectorySynchronization
       summary: Get onPremisesSynchronization from directory
+      description: A container for on-premises directory synchronization functionalities that are available for the organization.
       operationId: directory_ListOnPremisesSynchronization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10020,6 +10021,7 @@ paths:
       tags:
         - directory.onPremisesDirectorySynchronization
       summary: Get onPremisesSynchronization from directory
+      description: A container for on-premises directory synchronization functionalities that are available for the organization.
       operationId: directory_GetOnPremisesSynchronization
       parameters:
         - name: onPremisesDirectorySynchronization-id
@@ -15956,6 +15958,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get customCSS for the navigation property branding from organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
@@ -15984,6 +15987,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update customCSS for the navigation property branding in organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
       operationId: organization_SetBrandingCustomCSS
       parameters:
         - name: organization-id
@@ -16072,6 +16076,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get headerLogo for the navigation property branding from organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
@@ -16100,6 +16105,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update headerLogo for the navigation property branding in organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       operationId: organization_SetBrandingHeaderLogo
       parameters:
         - name: organization-id
@@ -16635,6 +16641,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get customCSS for the navigation property localizations from organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
@@ -16671,6 +16678,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update customCSS for the navigation property localizations in organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
       operationId: organization.branding_SetLocalizationsCustomCSS
       parameters:
         - name: organization-id
@@ -16783,6 +16791,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get headerLogo for the navigation property localizations from organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
@@ -16819,6 +16828,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Update headerLogo for the navigation property localizations in organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       operationId: organization.branding_SetLocalizationsHeaderLogo
       parameters:
         - name: organization-id
@@ -19803,6 +19813,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+              description: A container for on-premises directory synchronization functionalities that are available for the organization.
               readOnly: true
             outboundSharedUserProfiles:
               type: array
@@ -20830,11 +20841,13 @@ components:
         customerRequestedSynchronizationInterval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: Interval of time that the customer requested the sync client waits between sync cycles.
           format: duration
           nullable: true
         synchronizationInterval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: Interval of time the sync client should honor between sync cycles
           format: duration
           nullable: true
       additionalProperties:
@@ -20845,60 +20858,79 @@ components:
       properties:
         blockCloudObjectTakeoverThroughHardMatchEnabled:
           type: boolean
+          description: Used to block cloud object takeover via source anchor hard match if enabled.
           nullable: true
         blockSoftMatchEnabled:
           type: boolean
+          description: Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
           nullable: true
         bypassDirSyncOverridesEnabled:
           type: boolean
+          description: 'When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.'
           nullable: true
         cloudPasswordPolicyForPasswordSyncedUsersEnabled:
           type: boolean
+          description: Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
           nullable: true
         concurrentCredentialUpdateEnabled:
           type: boolean
+          description: Used to enable concurrent user credentials update in OrgId.
           nullable: true
         concurrentOrgIdProvisioningEnabled:
           type: boolean
+          description: Used to enable concurrent user creation in OrgId.
           nullable: true
         deviceWritebackEnabled:
           type: boolean
+          description: Used to indicate that device write-back is enabled.
           nullable: true
         directoryExtensionsEnabled:
           type: boolean
+          description: Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
           nullable: true
         fopeConflictResolutionEnabled:
           type: boolean
+          description: 'Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.'
           nullable: true
         groupWriteBackEnabled:
           type: boolean
+          description: Used to enable object-level group writeback feature for additional group types.
           nullable: true
         passwordSyncEnabled:
           type: boolean
+          description: Used to indicate on-premise password synchronization is enabled.
           nullable: true
         passwordWritebackEnabled:
           type: boolean
+          description: Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
           nullable: true
         quarantineUponProxyAddressesConflictEnabled:
           type: boolean
+          description: Used to indicate that we should quarantine objects with conflicting proxy address.
           nullable: true
         quarantineUponUpnConflictEnabled:
           type: boolean
+          description: Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
           nullable: true
         softMatchOnUpnEnabled:
           type: boolean
+          description: Used to indicate that we should soft match objects based on userPrincipalName.
           nullable: true
         synchronizeUpnForManagedUsersEnabled:
           type: boolean
+          description: Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
           nullable: true
         unifiedGroupWritebackEnabled:
           type: boolean
+          description: Used to indicate that Microsoft 365 Group write-back is enabled.
           nullable: true
         userForcePasswordChangeOnLogonEnabled:
           type: boolean
+          description: Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
           nullable: true
         userWritebackEnabled:
           type: boolean
+          description: Used to indicate that user writeback is enabled.
           nullable: true
       additionalProperties:
         type: object
@@ -21258,10 +21290,12 @@ components:
               nullable: true
             customCSS:
               type: string
+              description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
               format: base64url
               nullable: true
             customCSSRelativeUrl:
               type: string
+              description: A relative URL for the customCSS property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
               nullable: true
             customForgotMyPasswordText:
               type: string
@@ -21302,10 +21336,12 @@ components:
               nullable: true
             headerLogo:
               type: string
+              description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
               format: base64url
               nullable: true
             headerLogoRelativeUrl:
               type: string
+              description: A relative URL for the headerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
               nullable: true
             loginPageLayoutConfiguration:
               $ref: '#/components/schemas/microsoft.graph.loginPageLayoutConfiguration'
@@ -21899,6 +21935,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
           format: int32
           nullable: true
         synchronizationPreventionType:
@@ -21956,9 +21993,11 @@ components:
       properties:
         isFooterShown:
           type: boolean
+          description: Option to show the footer on the sign-in page.
           nullable: true
         isHeaderShown:
           type: boolean
+          description: Option to show the header on the sign-in page.
           nullable: true
         layoutTemplateType:
           $ref: '#/components/schemas/microsoft.graph.layoutTemplateType'

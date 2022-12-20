@@ -14308,6 +14308,8 @@ paths:
                 - type desc
                 - virtualNetworkId
                 - virtualNetworkId desc
+                - virtualNetworkLocation
+                - virtualNetworkLocation desc
               type: string
         - name: $select
           in: query
@@ -14336,6 +14338,7 @@ paths:
                 - subscriptionName
                 - type
                 - virtualNetworkId
+                - virtualNetworkLocation
               type: string
         - name: $expand
           in: query
@@ -14427,6 +14430,7 @@ paths:
                 - subscriptionName
                 - type
                 - virtualNetworkId
+                - virtualNetworkLocation
               type: string
         - name: $expand
           in: query
@@ -14530,6 +14534,7 @@ paths:
               enum:
                 - id
                 - enableMEMAutoEnroll
+                - enableSingleSignOn
                 - osVersion
                 - userAccountType
                 - windowsSettings
@@ -14638,6 +14643,8 @@ paths:
                 - displayName desc
                 - domainJoinConfiguration
                 - domainJoinConfiguration desc
+                - enableSingleSignOn
+                - enableSingleSignOn desc
                 - gracePeriodInHours
                 - gracePeriodInHours desc
                 - imageDisplayName
@@ -14675,6 +14682,7 @@ paths:
                 - description
                 - displayName
                 - domainJoinConfiguration
+                - enableSingleSignOn
                 - gracePeriodInHours
                 - imageDisplayName
                 - imageId
@@ -14767,6 +14775,7 @@ paths:
                 - description
                 - displayName
                 - domainJoinConfiguration
+                - enableSingleSignOn
                 - gracePeriodInHours
                 - imageDisplayName
                 - imageId
@@ -18520,6 +18529,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
+              description: The results of every partner agent's installation status on Cloud PC.
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -18758,6 +18768,9 @@ components:
             virtualNetworkId:
               type: string
               description: 'The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.'
+            virtualNetworkLocation:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcOrganizationSettings:
@@ -18769,6 +18782,9 @@ components:
             enableMEMAutoEnroll:
               type: boolean
               description: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+              nullable: true
+            enableSingleSignOn:
+              type: boolean
               nullable: true
             osVersion:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
@@ -18802,6 +18818,9 @@ components:
               nullable: true
             domainJoinConfiguration:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
+            enableSingleSignOn:
+              type: boolean
+              nullable: true
             gracePeriodInHours:
               maximum: 2147483647
               minimum: -2147483648
@@ -20640,11 +20659,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
           nullable: true
       additionalProperties:
         type: object
@@ -20856,6 +20877,8 @@ components:
         - remoteConnectionHistoricalReports
         - dailyAggregatedRemoteConnectionReports
         - totalAggregatedRemoteConnectionReports
+        - sharedUseLicenseUsageReport
+        - sharedUseLicenseUsageRealTimeReport
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcSnapshotStatus:

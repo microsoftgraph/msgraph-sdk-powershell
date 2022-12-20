@@ -2487,6 +2487,7 @@ components:
               readOnly: true
             languageTag:
               type: string
+              description: The language of the self-service booking page.
               nullable: true
             phone:
               type: string
@@ -2554,12 +2555,13 @@ components:
               nullable: true
             anonymousJoinWebUrl:
               type: string
+              description: The URL of the meeting to join anonymously.
               nullable: true
             customers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomerInformationBase'
-              description: It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+              description: A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             customerTimeZone:
               type: string
               description: 'The time zone of the customer. For a list of possible values, see dateTimeTimeZone.'
@@ -2745,6 +2747,7 @@ components:
               description: A service name.
             isAnonymousJoinEnabled:
               type: boolean
+              description: True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
             isHiddenFromCustomers:
               type: boolean
               description: True means this service is not available to customers for booking.
@@ -2753,6 +2756,7 @@ components:
               description: True indicates that the appointments for the service will be held online. Default value is false.
             languageTag:
               type: string
+              description: The language of the self-service booking page.
             maximumAttendeesCount:
               maximum: 2147483647
               minimum: -2147483648
