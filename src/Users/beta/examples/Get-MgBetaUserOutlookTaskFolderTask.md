@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserOutlookTaskFolderTask Cmdlet
+### Example 1: Using the Get-MgBetaUserOutlookTaskFolderTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOutlookTaskFolderTask -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId
+Get-MgBetaUserOutlookTaskFolderTask -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId
 ```
-This example shows how to use the Get-MgUserOutlookTaskFolderTask Cmdlet.
+This example shows how to use the Get-MgBetaUserOutlookTaskFolderTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

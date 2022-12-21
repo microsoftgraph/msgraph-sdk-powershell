@@ -1,24 +1,24 @@
-### Example 1: Using the Get-MgUserTodoListTaskChecklistItem Cmdlet
+### Example 1: Using the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId
+Get-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId
 ```
-This example shows how to use the Get-MgUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserTodoListTaskChecklistItem Cmdlet
+### Example 2: Using the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
+Get-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
 ```
-This example shows how to use the Get-MgUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgUserTodoListTaskChecklistItem Cmdlet
+### Example 3: Using the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -OutFile $outFileId
+Get-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -OutFile $outFileId
 ```
-This example shows how to use the Get-MgUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

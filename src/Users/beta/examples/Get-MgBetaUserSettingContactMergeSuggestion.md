@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserSettingContactMergeSuggestion Cmdlet
+### Example 1: Using the Get-MgBetaUserSettingContactMergeSuggestion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserSettingContactMergeSuggestion -UserId $userId
+Get-MgBetaUserSettingContactMergeSuggestion -UserId $userId
 ```
-This example shows how to use the Get-MgUserSettingContactMergeSuggestion Cmdlet.
+This example shows how to use the Get-MgBetaUserSettingContactMergeSuggestion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

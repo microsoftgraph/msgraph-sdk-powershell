@@ -1,7 +1,7 @@
 ### Example 1: Get a user's photo properties
 
 ```powershell
-Get-MgUserPhoto -UserId '3bb40cd7-03fe-40b7-8a1c-a14fdf0ab5fe'
+Get-MgBetaUserPhoto -UserId '3bb40cd7-03fe-40b7-8a1c-a14fdf0ab5fe'
 
 Id      Height Width
 --      ------ -----

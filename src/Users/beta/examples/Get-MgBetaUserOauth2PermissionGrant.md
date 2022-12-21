@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Users
 
-{{ Add output here }}
+Get-MgBetaUserOauth2PermissionGrant -UserId $userId
 ```
+This example shows how to use the Get-MgBetaUserOauth2PermissionGrant Cmdlet.
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
