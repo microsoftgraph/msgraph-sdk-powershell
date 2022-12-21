@@ -665,19 +665,19 @@ directive:
       {
         return $;
       } else {
-        let streamBodyParameterRegex = /(^\s*)public\s*global::System.IO.Stream\s*BodyParameter\s*/gmi
-        if($.match(streamBodyParameterRegex)) {
+        let streamDataRegex = /(^\s*)public\s*global::System.IO.Stream\s*Data\s*/gmi
+        if($.match(streamDataRegex)) {
           // Replace base class with FileUploadCmdlet.
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
           $ = $.replace(psBaseClassImplementationRegex, '$1PowerShell.Cmdlets.Custom.FileUploadCmdlet');
 
-          // Set bodyParameter to required to false.
-          let streamBodyParameterAnnotation = /(global::System\.IO\.Stream _bodyParameter;\s*\[global::System\.Management\.Automation\.Parameter\(Mandatory\s*=\s*)(true)/gmi
-          $ = $.replace(streamBodyParameterAnnotation, '$1false');
+          // Set Data to required to false.
+          let streamDataAnnotation = /(global::System\.IO\.Stream _data;\s*\[global::System\.Management\.Automation\.Parameter\(Mandatory\s*=\s*)(true)/gmi
+          $ = $.replace(streamDataAnnotation, '$1false');
 
           // Handle file upload.
           let processRecordCallRegex = /(^\s*)(asyncCommandRuntime\.Wait\(\s*ProcessRecordAsync\s*\(\))/gmi
-          $ = $.replace(processRecordCallRegex, '$1if (!MyInvocation.BoundParameters.ContainsKey(nameof(BodyParameter))){BodyParameter = GetFileAsStream() ?? BodyParameter;}\n$1$2');
+          $ = $.replace(processRecordCallRegex, '$1if (!MyInvocation.BoundParameters.ContainsKey(nameof(Data))){Data = GetFileAsStream() ?? Data;}\n$1$2');
         }
         return $;
       }
@@ -737,7 +737,7 @@ directive:
         return $;
       }
 
-# Serialize all $count parameter to lowercase true or false.
+# Modify API class.
   - from: source-file-csharp
     where: $
     transform: >
@@ -745,9 +745,14 @@ directive:
       {
         return $;
       } else {
-        // Add '.ToLower()' at the end of all 'Count.ToString()'
+        // Serialize all $count parameter to lowercase true or false.
+        // Add '.ToLower()' at the end of all 'Count.ToString()
         let countRegex = /(Count\.ToString\(\))/gmi
         $ = $.replace(countRegex, '$1.ToLower()');
+
+        // Serialize streams (not supported by AutoREST).
+        let streamContentRegex = /(request\.Content\s*=)\s*null\s*\/\*\s*serializeToNode\s*doesn't.*.\s*(request\.Content\.Headers\.ContentType.*Parse)\("application\/json"\);/gmi
+        $ = $.replace(streamContentRegex, '$1 new global::System.Net.Http.StreamContent(body);\n $2("application/octet-stream");');
         return $;
       }
 
