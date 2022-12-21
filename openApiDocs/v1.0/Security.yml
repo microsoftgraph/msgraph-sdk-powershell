@@ -399,7 +399,11 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts_v2 from security
+      summary: List alerts_v2
+      description: 'Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-alerts_v2?view=graph-rest-1.0
       operationId: security_ListAlerts_v2
       parameters:
         - $ref: '#/components/parameters/top'
@@ -564,6 +568,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts_v2 from security
+      description: A collection of alerts in Microsoft 365 Defender.
       operationId: security_GetAlerts_v2
       parameters:
         - name: alert-id
@@ -7036,7 +7041,11 @@ paths:
     get:
       tags:
         - security.incident
-      summary: Get incidents from security
+      summary: List incidents
+      description: 'Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-incidents?view=graph-rest-1.0
       operationId: security_ListIncidents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7158,6 +7167,7 @@ paths:
       tags:
         - security.incident
       summary: Get incidents from security
+      description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
       operationId: security_GetIncidents
       parameters:
         - name: incident-id
@@ -7275,6 +7285,7 @@ paths:
       tags:
         - security.incident
       summary: Get alerts from security
+      description: The list of related alerts. Supports $expand.
       operationId: security.incidents_ListAlerts
       parameters:
         - name: incident-id
@@ -7425,6 +7436,7 @@ paths:
       tags:
         - security.incident
       summary: Get alerts from security
+      description: The list of related alerts. Supports $expand.
       operationId: security.incidents_GetAlerts
       parameters:
         - name: incident-id
@@ -8036,11 +8048,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alert'
+              description: A collection of alerts in Microsoft 365 Defender.
               x-ms-navigationProperty: true
             incidents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.incident'
+              description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
               x-ms-navigationProperty: true
             attackSimulation:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
@@ -8259,15 +8273,19 @@ components:
           properties:
             actorDisplayName:
               type: string
+              description: The adversary or activity group that is associated with this alert.
               nullable: true
             alertWebUrl:
               type: string
+              description: URL for the alert page in the Microsoft 365 Defender portal.
               nullable: true
             assignedTo:
               type: string
+              description: 'Owner of the alert, or null if no owner is assigned.'
               nullable: true
             category:
               type: string
+              description: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
               nullable: true
             classification:
               $ref: '#/components/schemas/microsoft.graph.security.alertClassification'
@@ -8275,18 +8293,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alertComment'
+              description: Array of comments created by the Security Operations (SecOps) team during the alert management process.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when Microsoft 365 Defender created the alert.
               format: date-time
               nullable: true
             description:
               type: string
+              description: String value describing each alert.
               nullable: true
             detectionSource:
               $ref: '#/components/schemas/microsoft.graph.security.detectionSource'
             detectorId:
               type: string
+              description: The ID of the detector that triggered the alert.
               nullable: true
             determination:
               $ref: '#/components/schemas/microsoft.graph.security.alertDetermination'
@@ -8294,25 +8316,31 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alertEvidence'
+              description: Collection of evidence related to the alert.
             firstActivityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The earliest activity associated with the alert.
               format: date-time
               nullable: true
             incidentId:
               type: string
+              description: Unique identifier to represent the incident this alert resource is associated with.
               nullable: true
             incidentWebUrl:
               type: string
+              description: URL for the incident page in the Microsoft 365 Defender portal.
               nullable: true
             lastActivityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The oldest activity associated with the alert.
               format: date-time
               nullable: true
             lastUpdateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the alert was last updated at Microsoft 365 Defender.
               format: date-time
               nullable: true
             mitreTechniques:
@@ -8320,15 +8348,19 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'The attack techniques, as aligned with the MITRE ATT&CK framework.'
             providerAlertId:
               type: string
+              description: The ID of the alert as it appears in the security provider product that generated the alert.
               nullable: true
             recommendedActions:
               type: string
+              description: Recommended response and remediation actions to take in the event this alert was generated.
               nullable: true
             resolvedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the alert was resolved.
               format: date-time
               nullable: true
             serviceSource:
@@ -8339,15 +8371,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.alertStatus'
             tenantId:
               type: string
+              description: The Azure Active Directory tenant the alert was created in.
               nullable: true
             threatDisplayName:
               type: string
+              description: The threat associated with this alert.
               nullable: true
             threatFamilyName:
               type: string
+              description: Threat family associated with this alert.
               nullable: true
             title:
               type: string
+              description: Brief identifying string value describing the alert.
               nullable: true
           additionalProperties:
             type: object
@@ -8787,7 +8823,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -9298,6 +9334,7 @@ components:
           properties:
             assignedTo:
               type: string
+              description: 'Owner of the incident, or null if no owner is assigned. Free editable text.'
               nullable: true
             classification:
               $ref: '#/components/schemas/microsoft.graph.security.alertClassification'
@@ -9305,29 +9342,36 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alertComment'
+              description: Array of comments created by the Security Operations (SecOps) team when the incident is managed.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the incident was first created.
               format: date-time
             customTags:
               type: array
               items:
                 type: string
                 nullable: true
+              description: Array of custom tags associated with an incident.
             determination:
               $ref: '#/components/schemas/microsoft.graph.security.alertDetermination'
             displayName:
               type: string
+              description: The incident name.
               nullable: true
             incidentWebUrl:
               type: string
+              description: The URL for the incident page in the Microsoft 365 Defender portal.
               nullable: true
             lastUpdateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the incident was last updated.
               format: date-time
             redirectIncidentId:
               type: string
+              description: 'Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.'
               nullable: true
             severity:
               $ref: '#/components/schemas/microsoft.graph.security.alertSeverity'
@@ -9335,11 +9379,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.incidentStatus'
             tenantId:
               type: string
+              description: The Azure Active Directory tenant in which the alert was created.
               nullable: true
             alerts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alert'
+              description: The list of related alerts. Supports $expand.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9351,10 +9397,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.huntingRowResult'
+          description: The results of the hunting query.
         schema:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.singlePropertySchema'
+          description: The schema for the response.
       additionalProperties:
         type: object
     microsoft.graph.secureScoreControlProfile:
@@ -10090,13 +10138,16 @@ components:
       properties:
         comment:
           type: string
+          description: The comment text.
           nullable: true
         createdByDisplayName:
           type: string
+          description: The person or app name that submitted the comment.
           nullable: true
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time when the comment was submitted.
           format: date-time
       additionalProperties:
         type: object
@@ -10149,21 +10200,25 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time the evidence was created and added to the alert.
           format: date-time
         remediationStatus:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceRemediationStatus'
         remediationStatusDetails:
           type: string
+          description: Details about the remediation status.
           nullable: true
         roles:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.evidenceRole'
+          description: 'The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role ''Attacker''.'
         tags:
           type: array
           items:
             type: string
             nullable: true
+          description: 'Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.'
         verdict:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceVerdict'
       additionalProperties:
@@ -11832,9 +11887,11 @@ components:
       properties:
         name:
           type: string
+          description: The name of the property.
           nullable: true
         type:
           type: string
+          description: The type of the property.
           nullable: true
       additionalProperties:
         type: object
