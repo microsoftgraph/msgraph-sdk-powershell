@@ -12,13 +12,13 @@ Delete a single message or a message reply in a channel or a chat.
 
 ## SYNTAX
 
-### Soft (Default)
+### Soft1 (Default)
 ```
 Invoke-MgSoftTeamChannelMessageReplyDelete -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SoftViaIdentity
+### SoftViaIdentity1
 ```
 Invoke-MgSoftTeamChannelMessageReplyDelete -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -45,7 +45,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Soft
+Parameter Sets: Soft1
 Aliases:
 
 Required: True
@@ -60,7 +60,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Soft
+Parameter Sets: Soft1
 Aliases:
 
 Required: True
@@ -75,7 +75,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Soft
+Parameter Sets: Soft1
 Aliases:
 
 Required: True
@@ -91,7 +91,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: SoftViaIdentity
+Parameter Sets: SoftViaIdentity1
 Aliases:
 
 Required: True
@@ -121,7 +121,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Soft
+Parameter Sets: Soft1
 Aliases:
 
 Required: True

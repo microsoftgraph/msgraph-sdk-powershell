@@ -29,6 +29,17 @@ Get the educationRubric object attached to an educationAssignment, if one exists
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Education
+
+Get-MgEducationClassAssignmentRubric -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+```
+
+This example shows how to use the Get-MgEducationMeAssignmentRubric Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -EducationAssignmentId

@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgUserChatMessage
 
 ## SYNOPSIS
-Send a new chatMessage in the specified chat.
-This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ## SYNTAX
 
@@ -58,10 +57,42 @@ New-MgUserChatMessage -InputObject <ITeamsIdentity> [-ChatId <String>] [-Additio
 ```
 
 ## DESCRIPTION
-Send a new chatMessage in the specified chat.
-This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgChatMessage -ChatId $chatId -Top 2
+```
+
+This example shows how to use the New-MgUserChatMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgChatMessage -ChatId $chatId -Top 2 -Sort "createdDateTime desc"
+```
+
+This example shows how to use the New-MgUserChatMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgChatMessage -ChatId $chatId -Top 2 -Sort "lastModifiedDateTime desc" -Filter "lastModifiedDateTime ge 2022-09-22T00:00:00.000Z and lastModifiedDateTime le 2022-09-24T00:00:00.000Z"
+```
+
+This example shows how to use the New-MgUserChatMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

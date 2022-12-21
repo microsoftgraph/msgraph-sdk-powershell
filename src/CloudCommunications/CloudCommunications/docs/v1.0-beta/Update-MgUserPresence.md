@@ -44,6 +44,40 @@ Update the navigation property presence in users
 
 ## EXAMPLES
 
+### Example 1: Get your own presence information
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+
+# A UPN can also be used as -UserId.
+Get-MgUserPresence -UserId $userId
+```
+
+This example shows how to use the Update-MgUserPresence Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Get the presence information of another user
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+
+Get-MgUserPresence -UserId $userId
+```
+
+This example shows how to use the Update-MgUserPresence Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Get the presence information of another user
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+
+Get-MgCommunicationPresence -PresenceId $presenceId
+```
+
+This example shows how to use the Update-MgUserPresence Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -Activity
@@ -275,7 +309,7 @@ BODYPARAMETER <IMicrosoftGraphPresence1>: presence
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: The content of the item.
       - `[ContentType <String>]`: bodyType
-    - `[PublishedDateTime <DateTime?>]`: 
+    - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AttendanceRecordId <String>]`: key: id of attendanceRecord
@@ -308,7 +342,7 @@ STATUSMESSAGE <IMicrosoftGraphPresenceStatusMessage>: presenceStatusMessage
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
-  - `[PublishedDateTime <DateTime?>]`: 
+  - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
 
 ## RELATED LINKS
 

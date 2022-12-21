@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityIncident
 
 ## SYNOPSIS
-Get incidents from security
+A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityIncident -InputObject <ISecurityIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get incidents from security
+A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
 
 ## EXAMPLES
 

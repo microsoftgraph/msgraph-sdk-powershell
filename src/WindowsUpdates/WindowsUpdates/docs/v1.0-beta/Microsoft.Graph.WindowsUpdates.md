@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.WindowsUpdates
-Module Guid: 8c28e860-3bf3-43e2-81c7-0c07165fe100
+Module Guid: 84c3a3d4-310e-4b73-9a09-c3a86827cb7e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US

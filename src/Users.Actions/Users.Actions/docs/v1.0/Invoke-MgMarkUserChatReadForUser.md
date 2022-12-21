@@ -12,27 +12,27 @@ Mark a chat as read for a user.
 
 ## SYNTAX
 
-### MarkExpanded (Default)
+### MarkExpanded1 (Default)
 ```
 Invoke-MgMarkUserChatReadForUser -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-User <IMicrosoftGraphTeamworkUserIdentity1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Mark
+### Mark1
 ```
 Invoke-MgMarkUserChatReadForUser -ChatId <String> -UserId <String>
  -BodyParameter <IPathsBy90K2UsersUserIdChatsChatIdMicrosoftGraphMarkchatreadforuserPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MarkViaIdentity
+### MarkViaIdentity1
 ```
 Invoke-MgMarkUserChatReadForUser -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsBy90K2UsersUserIdChatsChatIdMicrosoftGraphMarkchatreadforuserPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MarkViaIdentityExpanded
+### MarkViaIdentityExpanded1
 ```
 Invoke-MgMarkUserChatReadForUser -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-User <IMicrosoftGraphTeamworkUserIdentity1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: MarkExpanded, MarkViaIdentityExpanded
+Parameter Sets: MarkExpanded1, MarkViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsBy90K2UsersUserIdChatsChatIdMicrosoftGraphMarkchatreadforuserPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Mark, MarkViaIdentity
+Parameter Sets: Mark1, MarkViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Mark, MarkExpanded
+Parameter Sets: Mark1, MarkExpanded1
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: MarkViaIdentity, MarkViaIdentityExpanded
+Parameter Sets: MarkViaIdentity1, MarkViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -128,7 +128,7 @@ To construct, please use Get-Help -Online and see NOTES section for USER propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity1
-Parameter Sets: MarkExpanded, MarkViaIdentityExpanded
+Parameter Sets: MarkExpanded1, MarkViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -143,7 +143,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Mark, MarkExpanded
+Parameter Sets: Mark1, MarkExpanded1
 Aliases:
 
 Required: True
