@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 8e3c6532-f1a8-4994-bf6a-8985549a357e
+Module Guid: 12223617-7f27-4776-92ac-fa6989b6b64b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -71,7 +71,7 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgCommunicationOnlineMeetingRegistration](Get-MgCommunicationOnlineMeetingRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion](Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
@@ -117,7 +117,7 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgUserOnlineMeetingRegistration](Get-MgUserOnlineMeetingRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgUserOnlineMeetingRegistrationCustomQuestion](Get-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
@@ -307,7 +307,7 @@ Delete navigation property attendanceReports for communications
 Delete navigation property attendanceRecords for communications
 
 ### [Remove-MgCommunicationOnlineMeetingRegistration](Remove-MgCommunicationOnlineMeetingRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete navigation property customQuestions for communications
@@ -331,7 +331,7 @@ Delete navigation property attendanceReports for users
 Delete navigation property attendanceRecords for users
 
 ### [Remove-MgUserOnlineMeetingRegistration](Remove-MgUserOnlineMeetingRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgUserOnlineMeetingRegistrationCustomQuestion](Remove-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete navigation property customQuestions for users
@@ -368,7 +368,8 @@ Read-only.
 Set the availability and activity status in a presence session of an application for a user.
 
 ### [Set-MgCommunicationPresenceStatusMessage](Set-MgCommunicationPresenceStatusMessage.md)
-Invoke action setStatusMessage
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
 
 ### [Set-MgCommunicationPresenceUserPreferredPresence](Set-MgCommunicationPresenceUserPreferredPresence.md)
 Set the preferred availability and activity status for a user.

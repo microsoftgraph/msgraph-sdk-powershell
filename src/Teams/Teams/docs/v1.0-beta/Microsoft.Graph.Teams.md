@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 6a8f508a-ce85-44e3-b3b2-7a63c766b6bc
+Module Guid: 0b38733c-cf59-449a-90c5-b7c0b293cad7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -836,8 +836,7 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgChatMessage](New-MgChatMessage.md)
-Send a new chatMessage in the specified chat.
-This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgChatMessageHostedContent](New-MgChatMessageHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1126,8 +1125,7 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgUserChatMessage](New-MgUserChatMessage.md)
-Send a new chatMessage in the specified chat.
-This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgUserChatMessageHostedContent](New-MgUserChatMessageHostedContent.md)
 Create new navigation property to hostedContents for users

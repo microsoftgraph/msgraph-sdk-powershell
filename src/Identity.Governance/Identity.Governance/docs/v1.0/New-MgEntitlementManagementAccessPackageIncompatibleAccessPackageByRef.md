@@ -43,6 +43,17 @@ Create new navigation property ref to incompatibleAccessPackages for identityGov
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+
+Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage -AccessPackageId $accessPackageId
+```
+
+This example shows how to use the New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AccessPackageId

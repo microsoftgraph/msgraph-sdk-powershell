@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgUserPresenceStatusMessage
 
 ## SYNOPSIS
-Invoke action setStatusMessage
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Set-MgUserPresenceStatusMessage -InputObject <IUsersActionsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Invoke action setStatusMessage
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
 
 ## EXAMPLES
 
@@ -203,7 +205,7 @@ BODYPARAMETER <IPathsDovi6RUsersUserIdPresenceMicrosoftGraphSetstatusmessagePost
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: The content of the item.
       - `[ContentType <String>]`: bodyType
-    - `[PublishedDateTime <DateTime?>]`: 
+    - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -261,7 +263,7 @@ STATUSMESSAGE <IMicrosoftGraphPresenceStatusMessage>: presenceStatusMessage
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
-  - `[PublishedDateTime <DateTime?>]`: 
+  - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
 
 ## RELATED LINKS
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ## SYNTAX
 
@@ -41,9 +40,19 @@ New-MgTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-AdditionalPropert
 
 ## DESCRIPTION
 Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the New-MgTeamPrimaryChannelMember Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -346,7 +346,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsAnonymousJoinEnabled
-.
+True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 ```
 
 ### -LanguageTag
-.
+The language of the self-service booking page.
 
 ```yaml
 Type: System.String
@@ -606,10 +606,10 @@ BODYPARAMETER <IMicrosoftGraphBookingService>: Represents a particular service o
     - `[Recipients <String>]`: 
   - `[Description <String>]`: A text description for the service.
   - `[DisplayName <String>]`: A service name.
-  - `[IsAnonymousJoinEnabled <Boolean?>]`: 
+  - `[IsAnonymousJoinEnabled <Boolean?>]`: True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
   - `[IsHiddenFromCustomers <Boolean?>]`: True means this service is not available to customers for booking.
   - `[IsLocationOnline <Boolean?>]`: True indicates that the appointments for the service will be held online. Default value is false.
-  - `[LanguageTag <String>]`: 
+  - `[LanguageTag <String>]`: The language of the self-service booking page.
   - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
   - `[Notes <String>]`: Additional information about this service.
   - `[PostBuffer <TimeSpan?>]`: The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.

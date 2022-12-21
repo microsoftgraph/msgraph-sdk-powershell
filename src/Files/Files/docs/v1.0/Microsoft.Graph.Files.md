@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: 9616729e-d656-4023-9403-386c27b202da
+Module Guid: 6651e502-c2ae-4c97-b2fb-208d60101819
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 858d0128-7086-4d5d-b326-c605e352a9a4
+Module Guid: 196053f7-313c-40c2-adfa-1345f4bbcf22
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1066,7 +1066,8 @@ Set device name of the device.
 Set the availability and activity status in a presence session of an application for a user.
 
 ### [Set-MgUserPresenceStatusMessage](Set-MgUserPresenceStatusMessage.md)
-Invoke action setStatusMessage
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
 
 ### [Set-MgUserPresenceUserPreferredPresence](Set-MgUserPresenceUserPreferredPresence.md)
 Set the preferred availability and activity status for a user.

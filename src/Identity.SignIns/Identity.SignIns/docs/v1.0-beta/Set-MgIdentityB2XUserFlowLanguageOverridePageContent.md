@@ -30,6 +30,17 @@ Update media content for the navigation property overridesPages in identity
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgIdentityB2XUserFlowLanguageOverridePage -B2xIdentityUserFlowId $b2xIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
+```
+
+This example shows how to use the Set-MgIdentityB2XUserFlowLanguageOverridePageContent Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -B2XIdentityUserFlowId

@@ -439,7 +439,7 @@ ADDRESS <IMicrosoftGraphPhysicalAddress1>: physicalAddress
 APPOINTMENTS <IMicrosoftGraphBookingAppointment1[]>: All the appointments of this business. Read-only. Nullable.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
-  - `[AnonymousJoinWebUrl <String>]`: Url of meeting to join anonymously.
+  - `[AnonymousJoinWebUrl <String>]`: The URL of the meeting to join anonymously.
   - `[CustomerEmailAddress <String>]`: The SMTP address of the bookingCustomer who is booking the appointment.
   - `[CustomerId <String>]`: The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
   - `[CustomerLocation <IMicrosoftGraphLocation1>]`: location
@@ -470,7 +470,7 @@ APPOINTMENTS <IMicrosoftGraphBookingAppointment1[]>: All the appointments of thi
   - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
   - `[CustomerPhone <String>]`: The customer's phone number.
   - `[CustomerTimeZone <String>]`: The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-  - `[Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]`: It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+  - `[Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]`: A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
   - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
@@ -518,7 +518,7 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
   - `[Appointments <IMicrosoftGraphBookingAppointment1[]>]`: All the appointments of this business. Read-only. Nullable.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
-    - `[AnonymousJoinWebUrl <String>]`: Url of meeting to join anonymously.
+    - `[AnonymousJoinWebUrl <String>]`: The URL of the meeting to join anonymously.
     - `[CustomerEmailAddress <String>]`: The SMTP address of the bookingCustomer who is booking the appointment.
     - `[CustomerId <String>]`: The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
     - `[CustomerLocation <IMicrosoftGraphLocation1>]`: location
@@ -541,7 +541,7 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
     - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
     - `[CustomerPhone <String>]`: The customer's phone number.
     - `[CustomerTimeZone <String>]`: The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-    - `[Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]`: It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+    - `[Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]`: A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
     - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
@@ -633,7 +633,7 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AvailabilityIsAffectedByPersonalCalendar <Boolean?>]`: True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
     - `[ColorIndex <Int32?>]`: Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
-    - `[IsEmailNotificationEnabled <Boolean?>]`: 
+    - `[IsEmailNotificationEnabled <Boolean?>]`: True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
     - `[Role <String>]`: bookingStaffRole
     - `[TimeZone <String>]`: The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
     - `[UseBusinessHours <Boolean?>]`: True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
@@ -649,7 +649,7 @@ BUSINESSHOURS <IMicrosoftGraphBookingWorkHours1[]>: The hours of operation for t
 CALENDARVIEW <IMicrosoftGraphBookingAppointment1[]>: The set of appointments of this business in a specified date range. Read-only. Nullable.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
-  - `[AnonymousJoinWebUrl <String>]`: Url of meeting to join anonymously.
+  - `[AnonymousJoinWebUrl <String>]`: The URL of the meeting to join anonymously.
   - `[CustomerEmailAddress <String>]`: The SMTP address of the bookingCustomer who is booking the appointment.
   - `[CustomerId <String>]`: The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
   - `[CustomerLocation <IMicrosoftGraphLocation1>]`: location
@@ -680,7 +680,7 @@ CALENDARVIEW <IMicrosoftGraphBookingAppointment1[]>: The set of appointments of 
   - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
   - `[CustomerPhone <String>]`: The customer's phone number.
   - `[CustomerTimeZone <String>]`: The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-  - `[Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]`: It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+  - `[Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]`: A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
   - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
@@ -805,7 +805,7 @@ STAFFMEMBERS <IMicrosoftGraphBookingStaffMember[]>: All the staff members that p
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AvailabilityIsAffectedByPersonalCalendar <Boolean?>]`: True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
   - `[ColorIndex <Int32?>]`: Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
-  - `[IsEmailNotificationEnabled <Boolean?>]`: 
+  - `[IsEmailNotificationEnabled <Boolean?>]`: True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
   - `[Role <String>]`: bookingStaffRole
   - `[TimeZone <String>]`: The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
   - `[UseBusinessHours <Boolean?>]`: True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSecurityIncidentAlert
 
 ## SYNOPSIS
-Get alerts from security
+The list of related alerts.
+Supports $expand.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgSecurityIncidentAlert -InputObject <ISecurityIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get alerts from security
+The list of related alerts.
+Supports $expand.
 
 ## EXAMPLES
 

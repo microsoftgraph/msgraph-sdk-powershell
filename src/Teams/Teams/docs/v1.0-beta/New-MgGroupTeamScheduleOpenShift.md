@@ -45,6 +45,17 @@ Create new navigation property to openShifts for groups
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgTeamScheduleOpenShift -TeamId $teamId
+```
+
+This example shows how to use the New-MgGroupTeamScheduleOpenShift Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
