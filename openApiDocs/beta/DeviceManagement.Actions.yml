@@ -6352,7 +6352,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPortalNotificationAsSent
-      description: Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
+      description: 'Set the status of the specified notification on the Microsoft EndPoint Manager admin center as sent, by modifying the **isPortalNotificationSent** property to `true`.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-1.0

@@ -11416,13 +11416,13 @@ components:
       properties:
         containerId:
           type: string
-          description: The identifier of the resource that contains the plan.
+          description: The identifier of the resource that contains the plan. Optional.
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
         url:
           type: string
-          description: The full canonical URL of the container.
+          description: The full canonical URL of the container. Optional.
           nullable: true
       additionalProperties:
         type: object
