@@ -60,12 +60,12 @@ function Copy-Files {
         foreach ($File in Get-ChildItem $SourcePath) {
             $FileName = [System.IO.Path]::GetFileNameWithoutExtension($File)
             $OriginalFileName = $FileName
-            if ($GraphProfile -eq "beta") {
-                $FileName = $FileName.Replace("Mg", "MgBeta")
-            }
             $FileToCheck = Join-Path $ConfirmationPath "$FileName.md"
             if (Test-Path $FileToCheck) {
                 Write-Host "Still generating " $FileToCheck
+                if ($GraphProfile -eq "beta") {
+                    $FileName = $FileName.Replace("Mg", "MgBeta")
+                }
                 if ($GraphProfile -eq "v1.0") {
                     Copy-Item $File -Destination $DestPath
                     git add $DestPath
