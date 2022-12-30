@@ -457,9 +457,9 @@ BODYPARAMETER <IMicrosoftGraphPlannerPlan1>: plannerPlan
       - `[Title <String>]`: Title of the task.
   - `[Container <IMicrosoftGraphPlannerPlanContainer1>]`: plannerPlanContainer
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ContainerId <String>]`: The identifier of the resource that contains the plan.
+    - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
     - `[Type <String>]`: 
-    - `[Url <String>]`: The full canonical URL of the container.
+    - `[Url <String>]`: The full canonical URL of the container. Optional.
   - `[Contexts <IMicrosoftGraphPlannerPlanContextCollection>]`: plannerPlanContextCollection
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -587,9 +587,9 @@ BUCKETS <IMicrosoftGraphPlannerBucket1[]>: Collection of buckets in the plan. Re
 
 CONTAINER <IMicrosoftGraphPlannerPlanContainer1>: plannerPlanContainer
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ContainerId <String>]`: The identifier of the resource that contains the plan.
+  - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
   - `[Type <String>]`: 
-  - `[Url <String>]`: The full canonical URL of the container.
+  - `[Url <String>]`: The full canonical URL of the container. Optional.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

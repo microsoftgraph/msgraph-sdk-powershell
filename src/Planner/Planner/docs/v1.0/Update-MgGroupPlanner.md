@@ -274,9 +274,9 @@ BODYPARAMETER <IMicrosoftGraphPlannerGroup1>: plannerGroup
         - `[Title <String>]`: Title of the task.
     - `[Container <IMicrosoftGraphPlannerPlanContainer>]`: plannerPlanContainer
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ContainerId <String>]`: The identifier of the resource that contains the plan.
+      - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
       - `[Type <String>]`: 
-      - `[Url <String>]`: The full canonical URL of the container.
+      - `[Url <String>]`: The full canonical URL of the container. Optional.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Details <IMicrosoftGraphPlannerPlanDetails>]`: plannerPlanDetails
@@ -389,9 +389,9 @@ PLANS <IMicrosoftGraphPlannerPlan[]>: Read-only. Nullable. Returns the plannerPl
       - `[Title <String>]`: Title of the task.
   - `[Container <IMicrosoftGraphPlannerPlanContainer>]`: plannerPlanContainer
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ContainerId <String>]`: The identifier of the resource that contains the plan.
+    - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
     - `[Type <String>]`: 
-    - `[Url <String>]`: The full canonical URL of the container.
+    - `[Url <String>]`: The full canonical URL of the container. Optional.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Details <IMicrosoftGraphPlannerPlanDetails>]`: plannerPlanDetails

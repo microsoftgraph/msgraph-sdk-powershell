@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: 0806ec8b-cc79-4666-9643-e2266ac42b8f
+Module Guid: 40003d40-983f-4e6b-89d7-7dc7f9cdfa92
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -329,7 +329,7 @@ Create new navigation property ref to categories for education
 
 ### [New-MgEducationClassAssignmentResource](New-MgEducationClassAssignmentResource.md)
 Create an assignment resource.
-You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
 
 ### [New-MgEducationClassAssignmentSubmission](New-MgEducationClassAssignmentSubmission.md)
 Create new navigation property to submissions for education
@@ -367,7 +367,7 @@ Create new navigation property ref to categories for education
 
 ### [New-MgEducationMeAssignmentResource](New-MgEducationMeAssignmentResource.md)
 Create an assignment resource.
-You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
 
 ### [New-MgEducationMeAssignmentSubmission](New-MgEducationMeAssignmentSubmission.md)
 Create new navigation property to submissions for education
@@ -420,7 +420,7 @@ Create new navigation property ref to categories for education
 
 ### [New-MgEducationUserAssignmentResource](New-MgEducationUserAssignmentResource.md)
 Create an assignment resource.
-You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
 
 ### [New-MgEducationUserAssignmentSubmission](New-MgEducationUserAssignmentSubmission.md)
 Create new navigation property to submissions for education
