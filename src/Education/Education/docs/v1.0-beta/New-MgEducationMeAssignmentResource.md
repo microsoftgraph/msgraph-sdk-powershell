@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an assignment resource.
-You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgEducationMeAssignmentResource -InputObject <IEducationIdentity> [-Addition
 
 ## DESCRIPTION
 Create an assignment resource.
-You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
 
 ## EXAMPLES
 
