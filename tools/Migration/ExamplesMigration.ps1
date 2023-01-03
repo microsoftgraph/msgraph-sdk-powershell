@@ -21,6 +21,7 @@ function Start-Copy {
         $GraphProfile = $_
         Get-FilesByProfile -GraphProfile $GraphProfile -ModulesToGenerate $ModulesToGenerate -Module $Module
     }
+    Set-Location  ../../
     git add .
     git commit -m "Migrating $Module example files"
     Write-Host -ForegroundColor Green "-------------Finished commit-------------"
