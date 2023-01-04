@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 List all the categories associated with an assignment.
+Only teachers, students, and applications with application permissions can perform this operation.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgEducationMeAssignmentCategoryByRef -EducationAssignmentId <String> [-Filte
 
 ## DESCRIPTION
 List all the categories associated with an assignment.
+Only teachers, students, and applications with application permissions can perform this operation.
 
 ## EXAMPLES
 

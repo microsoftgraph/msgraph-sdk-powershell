@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the educationRubric object attached to an educationAssignment, if one exists.
+Only teachers, students, and applications with application permissions can perform this operation.
 
 ## SYNTAX
 
@@ -25,6 +26,7 @@ Get-MgEducationClassAssignmentRubricByRef -InputObject <IEducationIdentity> [<Co
 
 ## DESCRIPTION
 Get the educationRubric object attached to an educationAssignment, if one exists.
+Only teachers, students, and applications with application permissions can perform this operation.
 
 ## EXAMPLES
 
