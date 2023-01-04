@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpirationDateTime
-The date time when the export job expires.
+The date and time when the export job expires.
 
 ```yaml
 Type: System.DateTime
@@ -95,7 +95,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExportUrl
-The storage account url of the exported report, it can be used to download the file.
+The storage account URL of the exported report.
+It can be used to download the file.
 
 ```yaml
 Type: System.String
@@ -186,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestDateTime
-The date time when the export job was requested.
+The date and time when the export job was requested.
 
 ```yaml
 Type: System.DateTime
@@ -254,13 +255,13 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphCloudPcExportJob>: cloudPcExportJob
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ExpirationDateTime <DateTime?>]`: The date time when the export job expires.
+  - `[ExpirationDateTime <DateTime?>]`: The date and time when the export job expires.
   - `[ExportJobStatus <String>]`: cloudPcExportJobStatus
-  - `[ExportUrl <String>]`: The storage account url of the exported report, it can be used to download the file.
+  - `[ExportUrl <String>]`: The storage account URL of the exported report. It can be used to download the file.
   - `[Filter <String>]`: The filter applied on the report.
   - `[Format <String>]`: The format of the exported report.
   - `[ReportName <String>]`: cloudPcReportName
-  - `[RequestDateTime <DateTime?>]`: The date time when the export job was requested.
+  - `[RequestDateTime <DateTime?>]`: The date and time when the export job was requested.
   - `[Select <String[]>]`: The selected columns of the report.
 
 ## RELATED LINKS

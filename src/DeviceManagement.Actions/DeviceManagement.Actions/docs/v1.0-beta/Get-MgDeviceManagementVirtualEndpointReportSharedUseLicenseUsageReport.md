@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport
 
 ## SYNOPSIS
-Invoke action getSharedUseLicenseUsageReport
+Get the shared use license usage reports, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport
 ```
 
 ## DESCRIPTION
-Invoke action getSharedUseLicenseUsageReport
+Get the shared use license usage reports, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
 
 ## EXAMPLES
 

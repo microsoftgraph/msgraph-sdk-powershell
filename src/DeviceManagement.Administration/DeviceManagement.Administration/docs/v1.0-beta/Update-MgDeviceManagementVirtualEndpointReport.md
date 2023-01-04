@@ -166,24 +166,24 @@ BODYPARAMETER <IMicrosoftGraphCloudPcReports>: cloudPcReports
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ExportJobs <IMicrosoftGraphCloudPcExportJob[]>]`: The export jobs created for downloading reports.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[ExpirationDateTime <DateTime?>]`: The date time when the export job expires.
+    - `[ExpirationDateTime <DateTime?>]`: The date and time when the export job expires.
     - `[ExportJobStatus <String>]`: cloudPcExportJobStatus
-    - `[ExportUrl <String>]`: The storage account url of the exported report, it can be used to download the file.
+    - `[ExportUrl <String>]`: The storage account URL of the exported report. It can be used to download the file.
     - `[Filter <String>]`: The filter applied on the report.
     - `[Format <String>]`: The format of the exported report.
     - `[ReportName <String>]`: cloudPcReportName
-    - `[RequestDateTime <DateTime?>]`: The date time when the export job was requested.
+    - `[RequestDateTime <DateTime?>]`: The date and time when the export job was requested.
     - `[Select <String[]>]`: The selected columns of the report.
 
 EXPORTJOBS <IMicrosoftGraphCloudPcExportJob[]>: The export jobs created for downloading reports.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ExpirationDateTime <DateTime?>]`: The date time when the export job expires.
+  - `[ExpirationDateTime <DateTime?>]`: The date and time when the export job expires.
   - `[ExportJobStatus <String>]`: cloudPcExportJobStatus
-  - `[ExportUrl <String>]`: The storage account url of the exported report, it can be used to download the file.
+  - `[ExportUrl <String>]`: The storage account URL of the exported report. It can be used to download the file.
   - `[Filter <String>]`: The filter applied on the report.
   - `[Format <String>]`: The format of the exported report.
   - `[ReportName <String>]`: cloudPcReportName
-  - `[RequestDateTime <DateTime?>]`: The date time when the export job was requested.
+  - `[RequestDateTime <DateTime?>]`: The date and time when the export job was requested.
   - `[Select <String[]>]`: The selected columns of the report.
 
 ## RELATED LINKS
