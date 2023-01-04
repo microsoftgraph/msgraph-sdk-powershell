@@ -11884,6 +11884,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getSharedUseLicenseUsageReport
+      description: 'Get the shared use license usage reports, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.reports_getSharedUseLicenseUsageReport
       requestBody:
         description: Action parameters
