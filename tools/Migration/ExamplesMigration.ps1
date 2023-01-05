@@ -21,7 +21,10 @@ function Start-Copy {
         $GraphProfile = $_
         Get-FilesByProfile -GraphProfile $GraphProfile -ModulesToGenerate $ModulesToGenerate -Module $Module
     }
-   
+    Set-Location  ../../
+    git add .
+    git commit -m "Migrating $Module example files"
+    Write-Host -ForegroundColor Green "-------------Finished commit-------------"
 }
 
 
@@ -68,8 +71,6 @@ function Copy-Files {
                 }
                 if ($GraphProfile -eq "v1.0") {
                     Copy-Item $File -Destination $DestPath
-                    git add $DestPath
-                    git commit -m "Migration for $File done"
                 }
                 else {
                     Remove-Item $FileToCheck
@@ -119,11 +120,8 @@ function update-ImportCommand {
     (Get-Content $FilePath) | 
     Foreach-Object { $_ -replace 'Import-Module Microsoft.Graph', 'Import-Module Microsoft.Graph.Beta' }  | 
     Out-File $FilePath
-    $FileName = [System.IO.Path]::GetFileNameWithoutExtension($FilePath)
-    git add $FilePath
-    git commit -m "Migration for $FileName.md done"
 } 
 
 Write-Host -ForegroundColor Green "-------------Fetching docs and examples from dev-------------"
-Start-Copy -Module "Users.Actions"
+Start-Copy -Module "Users.Functions"
 Write-Host -ForegroundColor Green "-------------Done-------------"

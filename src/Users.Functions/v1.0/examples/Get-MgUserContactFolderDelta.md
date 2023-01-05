@@ -1,8 +1,8 @@
-### Example 1: Using the Find-MgUserRoomList Cmdlet
+### Example 1: Using the Get-MgUserContactFolderDelta Cmdlet
 ```powershell
 Import-Module Microsoft.Graph.Users.Functions
 # A UPN can also be used as -UserId.
-Find-MgUserRoomList -UserId $userId
+Get-MgUserContactFolderDelta -UserId $userId
 ```
-This example shows how to use the Find-MgUserRoomList Cmdlet.
+This example shows how to use the Get-MgUserContactFolderDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
