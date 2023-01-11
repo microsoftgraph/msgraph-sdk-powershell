@@ -25,7 +25,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             if (GraphSession.Instance?.GraphHttpClient != null)
                 return GraphSession.Instance.GraphHttpClient;
 
-            var requestUserAgent = new RequestUserAgent(GraphSession.Instance.AuthContext.PSHostVersion, null);
+            var requestUserAgent = new RequestUserAgent(GraphSession.Instance.AuthContext?.PSHostVersion, null);
 
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthenticationProviderAsync(GraphSession.Instance.AuthContext).ConfigureAwait(false).GetAwaiter().GetResult();
             var newHttpClient = GetGraphHttpClient(authProvider, GraphSession.Instance.RequestContext);
