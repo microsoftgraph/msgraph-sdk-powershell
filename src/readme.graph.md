@@ -7,6 +7,7 @@ azure: false
 powershell: true
 version: latest
 use: "@autorest/powershell"
+export-properties-for-dict: false
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
@@ -471,7 +472,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%5C\w*MicrosoftGraph\w*\d*.json.cs/gm))
+      if (!$documentPath.match(/generated%2Fapi%2FModels%2F\w*MicrosoftGraph\w*\d*.json.cs/gm))
       {
         return $;
       } else {
@@ -506,7 +507,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%5C\w*\d*.dictionary.cs/gm))
+      if (!$documentPath.match(/generated%2Fapi%2FModels%2F\w*\d*.dictionary.cs/gm))
       {
         return $;
       } else {
@@ -534,7 +535,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%2F\w*\d*.PowerShell.cs/gm))
+      if (!$documentPath.match(/generated%2Fapi%2FModels%2F\w*\d*.PowerShell.cs/gm))
       {
         return $;
       } else {
@@ -548,7 +549,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%5C\w*MicrosoftGraph\w*\d*.cs/gm))
+      if (!$documentPath.match(/generated%2Fapi%2FModels%2F\w*MicrosoftGraph\w*\d*.cs/gm))
       {
         return $;
       } else {
@@ -686,7 +687,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Cruntime%5CTypeConverterExtensions.cs/gm))
+      if (!$documentPath.match(/generated%2Fruntime%2FTypeConverterExtensions.cs/gm))
       {
         return $;
       } else {
@@ -703,7 +704,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Cruntime%5CCustomizations%5CIJsonSerializable.cs/gm))
+      if (!$documentPath.match(/generated%2Fruntime%2FCustomizations%2FIJsonSerializable.cs/gm))
       {
         return $;
       } else {
@@ -718,7 +719,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Cruntime%5CIAssociativeArray.cs/gm))
+      if (!$documentPath.match(/generated%2Fruntime%2FIAssociativeArray.cs/gm))
       {
         return $;
       } else {
@@ -741,7 +742,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5C\w*.cs/gm))
+      if (!$documentPath.match(/generated%2Fapi%2F\w*.cs/gm))
       {
         return $;
       } else {
@@ -760,7 +761,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5CSupport%5C(WindowsMalwareCategory|RunAsAccountType|(AssignmentFilter|DeviceScope)Operator).cs/gmi))
+      if (!$documentPath.match(/generated%2Fapi%2FSupport%2F(WindowsMalwareCategory|RunAsAccountType|(AssignmentFilter|DeviceScope)Operator).cs/gmi))
       {
         return $;
       } else {
