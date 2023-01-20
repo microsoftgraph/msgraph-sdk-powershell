@@ -1084,7 +1084,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -2348,7 +2348,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -3616,7 +3616,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -5023,7 +5023,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -6127,7 +6127,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -6982,7 +6982,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -8521,7 +8521,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -9785,7 +9785,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -10773,7 +10773,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -11648,13 +11648,13 @@ components:
       properties:
         containerId:
           type: string
-          description: The identifier of the resource that contains the plan.
+          description: The identifier of the resource that contains the plan. Optional.
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
         url:
           type: string
-          description: The full canonical URL of the container.
+          description: The full canonical URL of the container. Optional.
           nullable: true
       additionalProperties:
         type: object

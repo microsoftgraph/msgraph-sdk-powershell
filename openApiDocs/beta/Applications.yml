@@ -8038,10 +8038,10 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create connectorGroup
-      description: Create a new connectorGroup.
+      description: Create a connectorGroup object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0
       operationId: onPremisesPublishingProfiles_CreateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -20399,6 +20399,7 @@ components:
         - saml
         - pingHeaderBased
         - aadHeaderBased
+        - oAuthToken
         - unknownFutureValue
       type: string
     microsoft.graph.synchronizationError:
