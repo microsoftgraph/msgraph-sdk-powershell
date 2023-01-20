@@ -8567,6 +8567,8 @@ paths:
                 - onPremisesLastSyncDateTime desc
                 - onPremisesSyncEnabled
                 - onPremisesSyncEnabled desc
+                - partnerTenantType
+                - partnerTenantType desc
                 - postalCode
                 - postalCode desc
                 - preferredLanguage
@@ -8614,6 +8616,7 @@ paths:
                 - marketingNotificationEmails
                 - onPremisesLastSyncDateTime
                 - onPremisesSyncEnabled
+                - partnerTenantType
                 - postalCode
                 - preferredLanguage
                 - privacyProfile
@@ -8717,6 +8720,7 @@ paths:
                 - marketingNotificationEmails
                 - onPremisesLastSyncDateTime
                 - onPremisesSyncEnabled
+                - partnerTenantType
                 - postalCode
                 - preferredLanguage
                 - privacyProfile
@@ -11319,6 +11323,8 @@ components:
               type: boolean
               description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
               nullable: true
+            partnerTenantType:
+              $ref: '#/components/schemas/microsoft.graph.partnerTenantType'
             postalCode:
               type: string
               description: Postal code of the address for the organization.
@@ -11663,6 +11669,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.partnerTenantType:
+      title: partnerTenantType
+      enum:
+        - microsoftSupport
+        - syndicatePartner
+        - breadthPartner
+        - breadthPartnerDelegatedAdmin
+        - resellerPartnerDelegatedAdmin
+        - valueAddedResellerPartnerDelegatedAdmin
+        - unknownFutureValue
+      type: string
     microsoft.graph.privacyProfile:
       title: privacyProfile
       type: object
