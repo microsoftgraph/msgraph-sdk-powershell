@@ -41,7 +41,6 @@ jobs:
       script: |
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
-        cd s
         git checkout dev
         cd ..
         cp -r s DevRepo
