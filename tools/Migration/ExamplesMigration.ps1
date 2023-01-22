@@ -24,7 +24,7 @@ function Start-Copy {
         }else{
             Write-Host Generating  $Module module
          
-            $Command = "../GenerateModules.ps1 -ModuleToGenerate $Module"
+            $Command = "..\GenerateModules.ps1 -ModuleToGenerate $Module"
             Invoke-Expression $Command 
     
         $GraphMapping = Get-GraphMapping 
