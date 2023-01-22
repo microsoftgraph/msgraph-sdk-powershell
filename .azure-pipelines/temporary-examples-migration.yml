@@ -20,7 +20,7 @@ resources:
   #    ref: features/2.0
    - repository: DevRepo
      type: github
-     endpoint: microsoftgraph
+     endpoint: timayabi2020
      name: timayabi2020/msgraph-sdk-powershell
      ref: dev
   
