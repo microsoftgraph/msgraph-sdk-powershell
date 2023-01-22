@@ -41,11 +41,11 @@ jobs:
       script: |
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
-        cd msgraph-sdk-powershell
+        cd s
         git checkout dev
         cd ..
-        cp -r msgraph-sdk-powershell DevRepo
-        cd msgraph-sdk-powershell
+        cp -r s DevRepo
+        cd s
         git checkout example_files_migration
 
 
