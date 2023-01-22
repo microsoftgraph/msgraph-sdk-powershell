@@ -18,11 +18,11 @@ resources:
   #    endpoint: microsoftgraph
   #    name: microsoftgraph/msgraph-sdk-powershell
   #    ref: features/2.0
-   - repository: DevRepo
-     type: github
-     endpoint: timayabi2020
-     name: timayabi2020/msgraph-sdk-powershell
-     ref: dev
+  #  - repository: DevRepo
+  #    type: github
+  #    endpoint: timayabi2020
+  #    name: timayabi2020/msgraph-sdk-powershell
+  #    ref: dev
   
 jobs:
 - job: PowerShellExamplesMigration
@@ -31,7 +31,23 @@ jobs:
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
   - checkout: self
-  - checkout: DevRepo
+  # - checkout: DevRepo
+
+  - task: PowerShell@2
+    displayName: Switch to dev
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        git config --global user.email "timwamalwa@gmail.com"
+        git config --global user.name "Timothy Wamalwa"
+        cd s\msgraph-sdk-powershell
+        git checkout dev
+        cd ..
+        cp msgraph-sdk-powershell DevRepo
+        cd msgraph-sdk-powershell
+        git checkout example_files_migration
+
 
   - task: PowerShell@2
     displayName: 'Migrate Examples From Dev Branch'
