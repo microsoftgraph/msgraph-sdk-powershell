@@ -24,8 +24,8 @@ function Start-Copy {
         }else{
             Write-Host Generating  $Module module
          
-            $Command = "..\GenerateModules.ps1 -ModuleToGenerate $Module"
-            Invoke-Expression $Command 
+            $Pathname = Join-Path $PSScriptRoot "..\GenerateModules.ps1"
+            & $Pathname -ModuleToGenerate $Module
     
         $GraphMapping = Get-GraphMapping 
         $GraphMapping.Keys | ForEach-Object {
