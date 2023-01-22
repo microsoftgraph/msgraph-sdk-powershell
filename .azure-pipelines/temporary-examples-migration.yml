@@ -13,15 +13,15 @@ parameters:
 
 resources:
  repositories:     
-   - repository: msgraph-sdk-powershell
-     type: github
-     endpoint: microsoftgraph
-     name: microsoftgraph/msgraph-sdk-powershell
-     ref: features/2.0
+  #  - repository: msgraph-sdk-powershell
+  #    type: github
+  #    endpoint: microsoftgraph
+  #    name: microsoftgraph/msgraph-sdk-powershell
+  #    ref: features/2.0
    - repository: DevRepo
      type: github
      endpoint: microsoftgraph
-     name: microsoftgraph/msgraph-sdk-powershell
+     name: timayabi2020/msgraph-sdk-powershell
      ref: dev
   
 jobs:
