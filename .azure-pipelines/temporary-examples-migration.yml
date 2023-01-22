@@ -41,7 +41,7 @@ jobs:
       script: |
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
-        cd s\msgraph-sdk-powershell
+        cd msgraph-sdk-powershell
         git checkout dev
         cd ..
         cp -r msgraph-sdk-powershell DevRepo
