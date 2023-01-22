@@ -1,7 +1,8 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 Param(
-    $ModulesToGenerate = @(),
+    [string[]] $ModulesToGenerate = @(),
+    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot ".\config\ModulesMapping.jsonc"),
     #Path where the v1 branch (dev) was checked out to
     [string] $SourceDir = ("..\..\..\powershell_copy\msgraph-sdk-powershell\src")
 )
@@ -13,21 +14,25 @@ function Get-GraphMapping {
 }
 function Start-Copy {
     Param(
-        [ValidateNotNullOrEmpty()]
-        [string] $Module = "Users"
+        $ModulesToExclude = @()
     )
+    $ModulesToGenerate | ForEach-Object {
+        $Module = $_
+
+        Write-Host $Module
+        # ../GenerateModules.ps1 -ModuleToGenerate $Module
     
-    ../GenerateModules.ps1 -ModuleToGenerate "Teams"
-    
-    $GraphMapping = Get-GraphMapping 
-    $GraphMapping.Keys | ForEach-Object {
-        $GraphProfile = $_
-        Get-FilesByProfile -GraphProfile $GraphProfile -ModulesToGenerate $ModulesToGenerate -Module $Module
+        # $GraphMapping = Get-GraphMapping 
+        # $GraphMapping.Keys | ForEach-Object {
+        #     $GraphProfile = $_
+        #     Get-FilesByProfile -GraphProfile $GraphProfile -ModulesToGenerate $ModulesToGenerate -Module $Module
+        # }
     }
-     Set-Location  ../../
-     git add .
-     git commit -m "Migrating $Module example files"
+    Set-Location  ../../
+    git add .
+    git commit -m "Migrating example files"
     Write-Host -ForegroundColor Green "-------------Finished commit-------------"
+
 }
 
 
@@ -124,7 +129,13 @@ function update-ImportCommand {
     Foreach-Object { $_ -replace 'Import-Module Microsoft.Graph', 'Import-Module Microsoft.Graph.Beta' }  | 
     Out-File $FilePath
 } 
-
+if (-not (Test-Path $ModuleMappingConfigPath)) {
+    Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
+}
+if ($ModulesToGenerate.Count -eq 0) {
+    [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+    $ModulesToGenerate = $ModuleMapping.Keys
+}
 Write-Host -ForegroundColor Green "-------------Fetching docs and examples from dev-------------"
-Start-Copy -Module "Teams"
+Start-Copy -ModulesToExclude "Users", "Users.Actions", "Users.Functions", "Teams"
 Write-Host -ForegroundColor Green "-------------Done-------------"
