@@ -34,7 +34,7 @@ function Start-Copy {
         }
         }
     }
-    # Set-Location  ../../
+    Set-Location (Join-Path $PSScriptRoot "../../")
     git config --global user.email "timwamalwa@gmail.com"
     git config --global user.name "Timothy Wamalwa"
     git add .
