@@ -11,8 +11,8 @@ parameters:
   displayName: Build Agent
   default: 1es-windows-ps-compute
 
-resources:
- repositories:     
+#resources:
+ #repositories:     
   #  - repository: msgraph-sdk-powershell
   #    type: github
   #    endpoint: microsoftgraph
