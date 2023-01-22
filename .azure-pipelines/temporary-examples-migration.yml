@@ -31,6 +31,8 @@ jobs:
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
   - checkout: self
+    clean: true
+    persistCredentials: true
   # - checkout: DevRepo
 
   - task: PowerShell@2
@@ -41,11 +43,12 @@ jobs:
       script: |
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
-        git checkout dev
+        git fetch --all
+        git switch dev
         cd ..
         cp -r s DevRepo
         cd s
-        git checkout example_files_migration
+        git switch example_files_migration
 
 
   - task: PowerShell@2
