@@ -2,10 +2,10 @@
 # Licensed under the MIT License.
 Param(
     [string[]] $ModulesToGenerate = @(),
-    [string] $ModuleMappingConfigPath = ("..\..\config\ModulesMapping.jsonc"),
+    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\..\config\ModulesMapping.jsonc"),
     #Path where the v1 branch (dev) was checked out to
     #[string] $SourceDir = ("..\..\..\powershell_copy\msgraph-sdk-powershell\src")
-    [string] $SourceDir = ("..\..\..\DevRepo\src")
+    [string] $SourceDir = (Join-Path $PSScriptRoot "..\..\..\DevRepo\src")
 )
 function Get-GraphMapping {
     $graphMapping = @{}
@@ -144,6 +144,9 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
+}
+if (-not (Test-Path $SourceDir)) {
+    Write-Error "SourceDir not be found: $SourceDir."
 }
 $Date = Get-Date -Format "dd-MM-yyyy"
 $ProposedBranch = "ExamplesMigration/$Date"
