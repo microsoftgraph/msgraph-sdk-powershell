@@ -44,7 +44,7 @@ jobs:
         cd s\msgraph-sdk-powershell
         git checkout dev
         cd ..
-        cp msgraph-sdk-powershell DevRepo
+        cp -r msgraph-sdk-powershell DevRepo
         cd msgraph-sdk-powershell
         git checkout example_files_migration
 
