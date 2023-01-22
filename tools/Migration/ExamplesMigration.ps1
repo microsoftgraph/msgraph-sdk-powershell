@@ -2,9 +2,10 @@
 # Licensed under the MIT License.
 Param(
     [string[]] $ModulesToGenerate = @(),
-    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot ".\config\ModulesMapping.jsonc"),
+    [string] $ModuleMappingConfigPath = ("..\..\config\ModulesMapping.jsonc"),
     #Path where the v1 branch (dev) was checked out to
-    [string] $SourceDir = ("..\..\..\powershell_copy\msgraph-sdk-powershell\src")
+    #[string] $SourceDir = ("..\..\..\powershell_copy\msgraph-sdk-powershell\src")
+    [string] $SourceDir = ("..\..\..\DevRepo\src")
 )
 function Get-GraphMapping {
     $graphMapping = @{}
@@ -18,22 +19,30 @@ function Start-Copy {
     )
     $ModulesToGenerate | ForEach-Object {
         $Module = $_
-
-        Write-Host $Module
-        # ../GenerateModules.ps1 -ModuleToGenerate $Module
+        if($ModulesToExclude.Contains($Module)){
+            Write-Host Skipping $Module module
+        }else{
+            Write-Host Generating  $Module module
+      
+        ../GenerateModules.ps1 -ModuleToGenerate $Module
     
-        # $GraphMapping = Get-GraphMapping 
-        # $GraphMapping.Keys | ForEach-Object {
-        #     $GraphProfile = $_
-        #     Get-FilesByProfile -GraphProfile $GraphProfile -ModulesToGenerate $ModulesToGenerate -Module $Module
-        # }
+        $GraphMapping = Get-GraphMapping 
+        $GraphMapping.Keys | ForEach-Object {
+            $GraphProfile = $_
+            Get-FilesByProfile -GraphProfile $GraphProfile -ModulesToGenerate $ModulesToGenerate -Module $Module
+        }
+        }
     }
-    Set-Location  ../../
+    # Set-Location  ../../
+    git config --global user.email "timwamalwa@gmail.com"
+    git config --global user.name "Timothy Wamalwa"
     git add .
     git commit -m "Migrating example files"
     Write-Host -ForegroundColor Green "-------------Finished commit-------------"
 
 }
+
+
 
 
 function Get-FilesByProfile {
@@ -135,6 +144,19 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
+}
+$Date = Get-Date -Format "dd-MM-yyyy"
+$ProposedBranch = "ExamplesMigration/$Date"
+$Exists = git branch -l $ProposedBranch
+if ([string]::IsNullOrEmpty($Exists)) {
+    git checkout -b $ProposedBranch
+}else{
+	Write-Host "Branch already exists"
+    $CurrentBranch = git rev-parse --abbrev-ref HEAD
+    if($CurrentBranch -ne $ProposedBranch){
+        git checkout $ProposedBranch
+     }
+     git checkout $ProposedBranch
 }
 Write-Host -ForegroundColor Green "-------------Fetching docs and examples from dev-------------"
 Start-Copy -ModulesToExclude "Users", "Users.Actions", "Users.Functions", "Teams"
