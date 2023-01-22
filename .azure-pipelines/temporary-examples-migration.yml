@@ -46,9 +46,11 @@ jobs:
         git fetch --all
         git switch dev
         cd ..
+        pwd
         cp -r s DevRepo
+        ls
         cd s
-        git switch example_files_migration
+        git switch examples_files_migration
 
 
   - task: PowerShell@2
