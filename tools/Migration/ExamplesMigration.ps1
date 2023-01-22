@@ -23,8 +23,9 @@ function Start-Copy {
             Write-Host Skipping $Module module
         }else{
             Write-Host Generating  $Module module
-      
-        ../GenerateModules.ps1 -ModuleToGenerate $Module
+         
+            $Command = "../GenerateModules.ps1 -ModuleToGenerate $Module"
+            Invoke-Expression $Command 
     
         $GraphMapping = Get-GraphMapping 
         $GraphMapping.Keys | ForEach-Object {
