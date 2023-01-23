@@ -4,10 +4,7 @@ Param(
     [string[]] $ModulesToGenerate = @(),
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\..\config\ModulesMapping.jsonc"),
     #Path where the v1 branch (dev) was checked out to
-    #[string] $SourceDir = ("..\..\..\powershell_copy\msgraph-sdk-powershell\src")
-    [string] $SourceDir = (Join-Path $PSScriptRoot "..\..\..\DevRepo\src"),
-    [ValidateNotNullOrEmpty()]
-    [string] $Token= "Token"
+    [string] $SourceDir = ("..\..\..\powershell_copy\msgraph-sdk-powershell\src")
 )
 function Get-GraphMapping {
     $graphMapping = @{}
@@ -36,14 +33,10 @@ function Start-Copy {
         }
         }
     }
-    #Set-Location (Join-Path $PSScriptRoot "../../")
-    git config --global user.email "timwamalwa@gmail.com"
-    git config --global user.name "Timothy Wamalwa"
+    Set-Location "../../"
     git add .
     git commit -m "Migrating example files"
     Write-Host -ForegroundColor Green "-------------Finished commit-------------"
-    git push --set-upstream "https://$Token@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
-    git status
 
 }
 
@@ -153,19 +146,6 @@ if ($ModulesToGenerate.Count -eq 0) {
 if (-not (Test-Path $SourceDir)) {
     Write-Error "SourceDir not be found: $SourceDir."
 }
-$Date = Get-Date -Format "dd-MM-yyyy"
-$ProposedBranch = "ExampleFilesMigration_$Date"
-$Exists = git branch -l $ProposedBranch
-if ([string]::IsNullOrEmpty($Exists)) {
-    git checkout -b $ProposedBranch
-}else{
-	Write-Host "Branch already exists"
-    $CurrentBranch = git rev-parse --abbrev-ref HEAD
-    if($CurrentBranch -ne $ProposedBranch){
-        git checkout $ProposedBranch
-     }
-     git checkout $ProposedBranch
-}
 Write-Host -ForegroundColor Green "-------------Fetching docs and examples from dev-------------"
-Start-Copy -ModulesToExclude "Users", "Users.Actions", "Users.Functions", "Teams", "Sites", "Security", "Search", "Reports", "Planner", "PersonalContacts", "Mail", "Identity.SignIns", "Identity.Governance", "Identity.DirectoryManagement", "Groups","Financials", "Files","Education", "DirectoryObjects", "DeviceManagement.Functions", "DeviceManagement.Actions", "DeviceManagement.Enrolment", "DeviceManagement.Administration", "DeviceManagement", "Devices.ServiceAnnouncement", "Devices.CorporateManagement", "Devices.CloudPrint", "CrossDeviceExperiences", "Compliance", "CloudCommunications", "ChangeNotifications", "Calendar", "Bookings"
+Start-Copy -ModulesToExclude "Users", "Users.Actions", "Users.Functions", "Teams" 
 Write-Host -ForegroundColor Green "-------------Done-------------"
