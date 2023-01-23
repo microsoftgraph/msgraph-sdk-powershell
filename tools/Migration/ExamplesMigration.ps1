@@ -150,7 +150,7 @@ if (-not (Test-Path $SourceDir)) {
     Write-Error "SourceDir not be found: $SourceDir."
 }
 $Date = Get-Date -Format "dd-MM-yyyy"
-$ProposedBranch = "ExamplesMigration/$Date"
+$ProposedBranch = "ExamplesMigration_$Date"
 $Exists = git branch -l $ProposedBranch
 if ([string]::IsNullOrEmpty($Exists)) {
     git checkout -b $ProposedBranch
@@ -163,5 +163,5 @@ if ([string]::IsNullOrEmpty($Exists)) {
      git checkout $ProposedBranch
 }
 Write-Host -ForegroundColor Green "-------------Fetching docs and examples from dev-------------"
-Start-Copy -ModulesToExclude "Users", "Users.Actions", "Users.Functions", "Teams"
+Start-Copy -ModulesToExclude "Users", "Users.Actions", "Users.Functions", "Teams", "Sites", "Security", "Search", "Reports", "Planner", "PersonalContacts", "Mail", "Identity.SignIns", "Identity.Governance", "Identity.DirectoryManagement", "Groups","Financials", "Files","Education", "DirectoryObjects", "DeviceManagement.Functions", "DeviceManagement.Actions", "DeviceManagement.Enrolment", "DeviceManagement.Administration", "DeviceManagement", "Devices.ServiceAnnouncement", "Devices.CorporateManagement", "Devices.CloudPrint", "CrossDeviceExperiences", "Compliance", "CloudCommunications", "ChangeNotifications", "Calendar", "Bookings"
 Write-Host -ForegroundColor Green "-------------Done-------------"
