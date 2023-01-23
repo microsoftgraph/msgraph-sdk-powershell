@@ -61,7 +61,9 @@ jobs:
     inputs:
       targetType: 'filePath'
       pwsh: true
-      filePath: tools\Migration\ExamplesMigration.ps1 -Token $(GITHUB_TOKEN)
+      filePath: tools\Migration\ExamplesMigration.ps1
+      arguments:
+        -Token '$(GITHUB_TOKEN)'
 
   # - task: PowerShell@2
   #   displayName: Pushing to github
