@@ -29,7 +29,7 @@ jobs:
   pool: 
     name: ${{ parameters.BuildAgent }}
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
-  # steps:
+  steps:
   # - checkout: self
   #   clean: true
   #   persistCredentials: true
