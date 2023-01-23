@@ -29,37 +29,37 @@ jobs:
   pool: 
     name: ${{ parameters.BuildAgent }}
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
-  steps:
-  - checkout: self
-    clean: true
-    persistCredentials: true
-  # - checkout: DevRepo
+  # steps:
+  # - checkout: self
+  #   clean: true
+  #   persistCredentials: true
+  # # - checkout: DevRepo
 
-  - task: PowerShell@2
-    displayName: Switch to dev
-    inputs:
-      targetType: inline
-      pwsh: true
-      script: |
-        git config --global user.email "timwamalwa@gmail.com"
-        git config --global user.name "Timothy Wamalwa"
-        git fetch --all
-        git switch dev
-        cd ..
-        pwd
-        cp -r s DevRepo
-        ls
-        cd s
-        git switch examples_files_migration
+  # - task: PowerShell@2
+  #   displayName: Switch to dev
+  #   inputs:
+  #     targetType: inline
+  #     pwsh: true
+  #     script: |
+  #       git config --global user.email "timwamalwa@gmail.com"
+  #       git config --global user.name "Timothy Wamalwa"
+  #       git fetch --all
+  #       git switch dev
+  #       cd ..
+  #       pwd
+  #       cp -r s DevRepo
+  #       ls
+  #       cd s
+  #       git switch examples_files_migration
 
 
-  - task: PowerShell@2
-    displayName: 'Migrate Examples From Dev Branch'
-    continueOnError: false
-    inputs:
-      targetType: 'filePath'
-      pwsh: true
-      filePath: tools\Migration\ExamplesMigration.ps1
+  # - task: PowerShell@2
+  #   displayName: 'Migrate Examples From Dev Branch'
+  #   continueOnError: false
+  #   inputs:
+  #     targetType: 'filePath'
+  #     pwsh: true
+  #     filePath: tools\Migration\ExamplesMigration.ps1
 
   - task: PowerShell@2
     displayName: Pushing to github
@@ -71,8 +71,10 @@ jobs:
       script: |
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
+        cd s
+        ls
         $date = Get-Date -Format "dd-MM-yyyy"
-        $proposedBranch = "ExamplesMigration/"+$date
+        $proposedBranch = "ExamplesMigration/22-01-2023"
         git add .
         git commit -m "Migrating examples "+$date
         git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
