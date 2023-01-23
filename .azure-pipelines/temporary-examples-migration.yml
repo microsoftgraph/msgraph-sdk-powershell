@@ -30,52 +30,52 @@ jobs:
     name: ${{ parameters.BuildAgent }}
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
-  # - checkout: self
-  #   clean: true
-  #   persistCredentials: true
-  # # - checkout: DevRepo
-
-  # - task: PowerShell@2
-  #   displayName: Switch to dev
-  #   inputs:
-  #     targetType: inline
-  #     pwsh: true
-  #     script: |
-  #       git config --global user.email "timwamalwa@gmail.com"
-  #       git config --global user.name "Timothy Wamalwa"
-  #       git fetch --all
-  #       git switch dev
-  #       cd ..
-  #       pwd
-  #       cp -r s DevRepo
-  #       ls
-  #       cd s
-  #       git switch examples_files_migration
-
-
-  # - task: PowerShell@2
-  #   displayName: 'Migrate Examples From Dev Branch'
-  #   continueOnError: false
-  #   inputs:
-  #     targetType: 'filePath'
-  #     pwsh: true
-  #     filePath: tools\Migration\ExamplesMigration.ps1
+  - checkout: self
+    clean: true
+    persistCredentials: true
+  # - checkout: DevRepo
 
   - task: PowerShell@2
-    displayName: Pushing to github
-    env:
-      GITHUB_TOKEN: $(GITHUB_TOKEN)
+    displayName: Switch to dev
     inputs:
       targetType: inline
       pwsh: true
       script: |
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
-        git switch ExamplesMigration/22-01-2023
+        git fetch --all
+        git switch dev
+        cd ..
+        pwd
+        cp -r s DevRepo
         ls
-        $date = Get-Date -Format "dd-MM-yyyy"
-        $proposedBranch = "ExamplesMigration/22-01-2023"
-        git add .
-        git commit -m "Migrating examples "+$date
-        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
-        git status
+        cd s
+        git switch examples_files_migration
+
+
+  - task: PowerShell@2
+    displayName: 'Migrate Examples From Dev Branch'
+    env:
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+    continueOnError: false
+    inputs:
+      targetType: 'filePath'
+      pwsh: true
+      filePath: tools\Migration\ExamplesMigration.ps1 -Token $(GITHUB_TOKEN)
+
+  # - task: PowerShell@2
+  #   displayName: Pushing to github
+  #   env:
+  #     GITHUB_TOKEN: $(GITHUB_TOKEN)
+  #   inputs:
+  #     targetType: inline
+  #     pwsh: true
+  #     script: |
+  #       git config --global user.email "timwamalwa@gmail.com"
+  #       git config --global user.name "Timothy Wamalwa"
+  #       $date = Get-Date -Format "dd-MM-yyyy"
+  #       $proposedBranch = "ExamplesMigration_$date"
+  #       git add .
+  #       git commit -m "Migrating examples "+$date
+  #       git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
+  #       git status

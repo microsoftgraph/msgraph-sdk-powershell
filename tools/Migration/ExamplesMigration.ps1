@@ -5,7 +5,9 @@ Param(
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\..\config\ModulesMapping.jsonc"),
     #Path where the v1 branch (dev) was checked out to
     #[string] $SourceDir = ("..\..\..\powershell_copy\msgraph-sdk-powershell\src")
-    [string] $SourceDir = (Join-Path $PSScriptRoot "..\..\..\DevRepo\src")
+    [string] $SourceDir = (Join-Path $PSScriptRoot "..\..\..\DevRepo\src"),
+    [ValidateNotNullOrEmpty()]
+    [string] $Token= "Token"
 )
 function Get-GraphMapping {
     $graphMapping = @{}
@@ -40,6 +42,8 @@ function Start-Copy {
     git add .
     git commit -m "Migrating example files"
     Write-Host -ForegroundColor Green "-------------Finished commit-------------"
+    git push --set-upstream "https://$Token@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
+    git status
 
 }
 
