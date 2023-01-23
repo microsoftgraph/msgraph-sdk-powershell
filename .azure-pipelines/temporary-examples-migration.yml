@@ -71,7 +71,7 @@ jobs:
       script: |
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
-        cd s
+        git switch ExamplesMigration/22-01-2023
         ls
         $date = Get-Date -Format "dd-MM-yyyy"
         $proposedBranch = "ExamplesMigration/22-01-2023"
