@@ -36,7 +36,7 @@ function Start-Copy {
         }
         }
     }
-    Set-Location (Join-Path $PSScriptRoot "../../")
+    #Set-Location (Join-Path $PSScriptRoot "../../")
     git config --global user.email "timwamalwa@gmail.com"
     git config --global user.name "Timothy Wamalwa"
     git add .
@@ -154,7 +154,7 @@ if (-not (Test-Path $SourceDir)) {
     Write-Error "SourceDir not be found: $SourceDir."
 }
 $Date = Get-Date -Format "dd-MM-yyyy"
-$ProposedBranch = "ExamplesMigration_$Date"
+$ProposedBranch = "ExampleFilesMigration_$Date"
 $Exists = git branch -l $ProposedBranch
 if ([string]::IsNullOrEmpty($Exists)) {
     git checkout -b $ProposedBranch
