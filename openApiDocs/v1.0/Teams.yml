@@ -2516,11 +2516,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: chats.messages_CreateReplies
       parameters:
         - name: chat-id
@@ -6320,11 +6320,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: groups.team.channels.messages_CreateReplies
       parameters:
         - name: group-id
@@ -10421,11 +10421,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: groups.team.primaryChannel.messages_CreateReplies
       parameters:
         - name: group-id
@@ -16989,11 +16989,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: teams.channels.messages_CreateReplies
       parameters:
         - name: team-id
@@ -22173,11 +22173,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: teams.primaryChannel.messages_CreateReplies
       parameters:
         - name: team-id
@@ -29498,11 +29498,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: users.chats.messages_CreateReplies
       parameters:
         - name: user-id
@@ -33180,11 +33180,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: users.joinedTeams.channels.messages_CreateReplies
       parameters:
         - name: user-id
@@ -37833,11 +37833,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel.messages_CreateReplies
       parameters:
         - name: user-id
@@ -44246,7 +44246,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -45143,6 +45143,9 @@ components:
           type: string
           description: Name of the attachment.
           nullable: true
+        teamsAppId:
+          type: string
+          nullable: true
         thumbnailUrl:
           type: string
           description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
@@ -45412,18 +45415,21 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of owners in a team.
           format: int32
           nullable: true
       additionalProperties:

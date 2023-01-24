@@ -881,6 +881,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get operations from security
+      description: Represents an attack simulation training operation.
       operationId: security.attackSimulation_ListOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -985,6 +986,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get operations from security
+      description: Represents an attack simulation training operation.
       operationId: security.attackSimulation_GetOperations
       parameters:
         - name: attackSimulationOperation-id
@@ -1098,7 +1100,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get payloads from security
+      summary: List payloads
+      description: Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter **source** to filter and query the respective data source.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-payloads?view=graph-rest-1.0
       operationId: security.attackSimulation_ListPayloads
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1245,6 +1251,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get payloads from security
+      description: Represents an attack simulation training campaign payload in a tenant.
       operationId: security.attackSimulation_GetPayloads
       parameters:
         - name: payload-id
@@ -1968,7 +1975,11 @@ paths:
     post:
       tags:
         - security.attackSimulationRoot
-      summary: Create new navigation property to simulations for security
+      summary: Create simulation
+      description: Create an attack simulation campaign for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attacksimulationroot-create-simulation?view=graph-rest-1.0
       operationId: security.attackSimulation_CreateSimulations
       requestBody:
         description: New navigation property
@@ -2119,6 +2130,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get payload from security
+      description: The payload associated with a simulation during its creation.
       operationId: security.attackSimulation.simulations_GetPayload
       parameters:
         - name: simulation-id
@@ -3403,6 +3415,7 @@ paths:
                 - siteCollection
                 - createdByUser
                 - lastModifiedByUser
+                - informationProtection
                 - analytics
                 - columns
                 - contentTypes
@@ -3431,6 +3444,7 @@ paths:
                 - '*'
                 - createdByUser
                 - lastModifiedByUser
+                - informationProtection
                 - analytics
                 - columns
                 - contentTypes
@@ -4950,6 +4964,7 @@ paths:
                 - siteCollection
                 - createdByUser
                 - lastModifiedByUser
+                - informationProtection
                 - analytics
                 - columns
                 - contentTypes
@@ -4978,6 +4993,7 @@ paths:
                 - '*'
                 - createdByUser
                 - lastModifiedByUser
+                - informationProtection
                 - analytics
                 - columns
                 - contentTypes
@@ -17642,11 +17658,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attackSimulationOperation'
+              description: Represents an attack simulation training operation.
               readOnly: true
             payloads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.payload'
+              description: Represents an attack simulation training campaign payload in a tenant.
               readOnly: true
             simulationAutomations:
               type: array
@@ -17672,9 +17690,11 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Percentage of completion of the respective operation.
               format: int32
             tenantId:
               type: string
+              description: Tenant identifier.
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationOperationType'
@@ -17695,35 +17715,43 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time when the attack simulation and training campaign payload.
               format: date-time
               nullable: true
             description:
               type: string
+              description: Description of the attack simulation and training campaign payload.
               nullable: true
             detail:
               $ref: '#/components/schemas/microsoft.graph.payloadDetail'
             displayName:
               type: string
+              description: Display name of the attack simulation and training campaign payload. Supports $filter and $orderby.
               nullable: true
             industry:
               $ref: '#/components/schemas/microsoft.graph.payloadIndustry'
             isAutomated:
               type: boolean
+              description: Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports $filter and $orderby.
               nullable: true
             isControversial:
               type: boolean
+              description: Indicates whether the payload is controversial.
               nullable: true
             isCurrentEvent:
               type: boolean
+              description: Indicates whether the payload is from any recent event.
               nullable: true
             language:
               type: string
+              description: Payload language.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             payloadTags:
@@ -17731,10 +17759,12 @@ components:
               items:
                 type: string
                 nullable: true
+              description: Free text tags for a payload.
             platform:
               $ref: '#/components/schemas/microsoft.graph.payloadDeliveryPlatform'
             predictedCompromiseRate:
               type: number
+              description: Predicted probability for a payload to phish a targeted user.
               format: double
               nullable: true
             simulationAttackType:
@@ -17867,6 +17897,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Simulation duration in days.
               format: int32
               nullable: true
             excludedAccountTarget:
@@ -18053,6 +18084,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
               $ref: '#/components/schemas/microsoft.graph.siteCollection'
+            informationProtection:
+              $ref: '#/components/schemas/microsoft.graph.informationProtection'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             columns:
@@ -18195,7 +18228,7 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -21282,20 +21315,24 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
               type: string
+              description: URI of the resource that the operation is performed on.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
             statusDetail:
               type: string
+              description: Details about the status of the operation.
               nullable: true
           additionalProperties:
             type: object
@@ -21360,11 +21397,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.payloadCoachmark'
+          description: Payload coachmark details.
         content:
           type: string
+          description: Payload content details.
           nullable: true
         phishingUrl:
           type: string
+          description: The phishing URL used to target a user.
           nullable: true
       additionalProperties:
         type: object
@@ -21732,6 +21772,35 @@ components:
           $ref: '#/components/schemas/microsoft.graph.root'
       additionalProperties:
         type: object
+    microsoft.graph.informationProtection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtection
+          type: object
+          properties:
+            bitlocker:
+              $ref: '#/components/schemas/microsoft.graph.bitlocker'
+            dataLossPreventionPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
+              readOnly: true
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              readOnly: true
+            sensitivityPolicySettings:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
+            policy:
+              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
+            threatAssessmentRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
+              readOnly: true
+          additionalProperties:
+            type: object
     microsoft.graph.itemAnalytics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23476,10 +23545,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -25774,18 +25843,23 @@ components:
           $ref: '#/components/schemas/microsoft.graph.coachmarkLocation'
         description:
           type: string
+          description: The description about the coachmark.
           nullable: true
         indicator:
           type: string
+          description: The coachmark indicator.
           nullable: true
         isValid:
           type: boolean
+          description: Indicates whether the coachmark is valid or not.
           nullable: true
         language:
           type: string
+          description: The coachmark language.
           nullable: true
         order:
           type: string
+          description: The coachmark order.
           nullable: true
       additionalProperties:
         type: object
@@ -25928,6 +26002,146 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bitlocker:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bitlocker
+          type: object
+          properties:
+            recoveryKeys:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
+              description: The recovery keys associated with the bitlocker entity.
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.dataLossPreventionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataLossPreventionPolicy
+          type: object
+          properties:
+            name:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            applicableTo:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
+            applicationMode:
+              $ref: '#/components/schemas/microsoft.graph.applicationMode'
+            assignedPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
+            autoLabeling:
+              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            labelActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.sensitivityPolicySettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityPolicySettings
+          type: object
+          properties:
+            applicableTo:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
+            downgradeSensitivityRequiresJustification:
+              type: boolean
+              nullable: true
+            helpWebUrl:
+              type: string
+              nullable: true
+            isMandatory:
+              type: boolean
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.informationProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionPolicy
+          type: object
+          properties:
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.threatAssessmentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: threatAssessmentRequest
+          type: object
+          properties:
+            category:
+              $ref: '#/components/schemas/microsoft.graph.threatCategory'
+            contentType:
+              $ref: '#/components/schemas/microsoft.graph.threatAssessmentContentType'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            expectedAssessment:
+              $ref: '#/components/schemas/microsoft.graph.threatExpectedAssessment'
+            requestSource:
+              $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequestSource'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.threatAssessmentStatus'
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
+              description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
+              readOnly: true
+          additionalProperties:
+            type: object
     microsoft.graph.itemActivityStat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28368,35 +28582,6 @@ components:
               description: Identifier of the service corresponding to the usage right.
             state:
               $ref: '#/components/schemas/microsoft.graph.usageRightState'
-          additionalProperties:
-            type: object
-    microsoft.graph.informationProtection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtection
-          type: object
-          properties:
-            bitlocker:
-              $ref: '#/components/schemas/microsoft.graph.bitlocker'
-            dataLossPreventionPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
-              readOnly: true
-            sensitivityLabels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-              readOnly: true
-            sensitivityPolicySettings:
-              $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
-            policy:
-              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
-            threatAssessmentRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
-              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.servicePrincipal:
@@ -31413,12 +31598,14 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Length of coachmark.
           format: int32
           nullable: true
         offset:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Offset of coachmark.
           format: int32
           nullable: true
         type:
@@ -31542,6 +31729,168 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userTrainingContentEventInfo'
       additionalProperties:
         type: object
+    microsoft.graph.bitlockerRecoveryKey:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bitlockerRecoveryKey
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the key was originally backed up to Azure Active Directory.
+              format: date-time
+            deviceId:
+              type: string
+              description: ID of the device the BitLocker key is originally backed up from.
+              nullable: true
+            key:
+              type: string
+              description: The BitLocker recovery key.
+            volumeType:
+              $ref: '#/components/schemas/microsoft.graph.volumeType'
+          additionalProperties:
+            type: object
+    microsoft.graph.sensitivityLabelTarget:
+      title: sensitivityLabelTarget
+      enum:
+        - email
+        - site
+        - unifiedGroup
+        - unknownFutureValue
+        - teamwork
+      type: string
+    microsoft.graph.applicationMode:
+      title: applicationMode
+      enum:
+        - manual
+        - automatic
+        - recommended
+      type: string
+    microsoft.graph.labelPolicy:
+      title: labelPolicy
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.autoLabeling:
+      title: autoLabeling
+      type: object
+      properties:
+        message:
+          type: string
+          nullable: true
+        sensitiveTypeIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.labelActionBase:
+      title: labelActionBase
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.informationProtectionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionLabel
+          type: object
+          properties:
+            color:
+              type: string
+              description: 'The color that the UI should display for the label, if configured.'
+              nullable: true
+            description:
+              type: string
+              description: The admin-defined description for the label.
+              nullable: true
+            isActive:
+              type: boolean
+              description: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
+            name:
+              type: string
+              description: The plaintext name of the label.
+              nullable: true
+            parent:
+              $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+            sensitivity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'The sensitivity value of the label, where lower is less sensitive.'
+              format: int32
+            tooltip:
+              type: string
+              description: The tooltip that should be displayed for the label in a UI.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.threatCategory:
+      title: threatCategory
+      enum:
+        - undefined
+        - spam
+        - phishing
+        - malware
+        - unknownFutureValue
+      type: string
+    microsoft.graph.threatAssessmentContentType:
+      title: threatAssessmentContentType
+      enum:
+        - mail
+        - url
+        - file
+      type: string
+    microsoft.graph.threatExpectedAssessment:
+      title: threatExpectedAssessment
+      enum:
+        - block
+        - unblock
+      type: string
+    microsoft.graph.threatAssessmentRequestSource:
+      title: threatAssessmentRequestSource
+      enum:
+        - undefined
+        - user
+        - administrator
+      type: string
+    microsoft.graph.threatAssessmentStatus:
+      title: threatAssessmentStatus
+      enum:
+        - pending
+        - completed
+      type: string
+    microsoft.graph.threatAssessmentResult:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: threatAssessmentResult
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            message:
+              type: string
+              description: The result message for each threat assessment.
+              nullable: true
+            resultType:
+              $ref: '#/components/schemas/microsoft.graph.threatAssessmentResultType'
+          additionalProperties:
+            type: object
     microsoft.graph.itemActionStat:
       title: itemActionStat
       type: object
@@ -33633,146 +33982,6 @@ components:
         - suspended
         - unknownFutureValue
       type: string
-    microsoft.graph.bitlocker:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: bitlocker
-          type: object
-          properties:
-            recoveryKeys:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-              description: The recovery keys associated with the bitlocker entity.
-              readOnly: true
-          additionalProperties:
-            type: object
-    microsoft.graph.dataLossPreventionPolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: dataLossPreventionPolicy
-          type: object
-          properties:
-            name:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.sensitivityLabel:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: sensitivityLabel
-          type: object
-          properties:
-            applicableTo:
-              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
-            applicationMode:
-              $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
-            description:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            isDefault:
-              type: boolean
-              nullable: true
-            isEndpointProtectionEnabled:
-              type: boolean
-              nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
-            name:
-              type: string
-              nullable: true
-            priority:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-            toolTip:
-              type: string
-              nullable: true
-            sublabels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-              readOnly: true
-          additionalProperties:
-            type: object
-    microsoft.graph.sensitivityPolicySettings:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: sensitivityPolicySettings
-          type: object
-          properties:
-            applicableTo:
-              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
-            downgradeSensitivityRequiresJustification:
-              type: boolean
-              nullable: true
-            helpWebUrl:
-              type: string
-              nullable: true
-            isMandatory:
-              type: boolean
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.informationProtectionPolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionPolicy
-          type: object
-          properties:
-            labels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
-              readOnly: true
-          additionalProperties:
-            type: object
-    microsoft.graph.threatAssessmentRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: threatAssessmentRequest
-          type: object
-          properties:
-            category:
-              $ref: '#/components/schemas/microsoft.graph.threatCategory'
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.threatAssessmentContentType'
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            expectedAssessment:
-              $ref: '#/components/schemas/microsoft.graph.threatExpectedAssessment'
-            requestSource:
-              $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequestSource'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.threatAssessmentStatus'
-            results:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
-              description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
-              readOnly: true
-          additionalProperties:
-            type: object
     microsoft.graph.passwordSingleSignOnSettings:
       title: passwordSingleSignOnSettings
       type: object
@@ -33867,7 +34076,7 @@ components:
       properties:
         customKeyIdentifier:
           type: string
-          description: Custom key identifier
+          description: 'A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.'
           format: base64url
           nullable: true
         displayName:
@@ -38491,6 +38700,58 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.volumeType:
+      title: volumeType
+      enum:
+        - operatingSystemVolume
+        - fixedDataVolume
+        - removableDataVolume
+        - unknownFutureValue
+      type: string
+    microsoft.graph.parentLabelDetails:
+      title: parentLabelDetails
+      type: object
+      properties:
+        color:
+          type: string
+          description: 'The color that the user interface should display for the label, if configured.'
+          nullable: true
+        description:
+          type: string
+          description: The admin-defined description for the label.
+          nullable: true
+        id:
+          type: string
+          description: The label ID is a globally unique identifier (GUID).
+          nullable: true
+        isActive:
+          type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
+        name:
+          type: string
+          description: The plaintext name of the label.
+          nullable: true
+        parent:
+          $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+        sensitivity:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
+          format: int32
+        tooltip:
+          type: string
+          description: The tooltip that should be displayed for the label in a user interface.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.threatAssessmentResultType:
+      title: threatAssessmentResultType
+      enum:
+        - checkPolicy
+        - rescan
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessAction:
       title: accessAction
       type: object
@@ -39003,7 +39264,7 @@ components:
       title: sectionEmphasisType
       enum:
         - none
-        - netural
+        - neutral
         - soft
         - strong
         - unknownFutureValue
@@ -39624,168 +39885,6 @@ components:
         - citrix
         - unknownFutureValue
       type: string
-    microsoft.graph.bitlockerRecoveryKey:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: bitlockerRecoveryKey
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the key was originally backed up to Azure Active Directory.
-              format: date-time
-            deviceId:
-              type: string
-              description: ID of the device the BitLocker key is originally backed up from.
-              nullable: true
-            key:
-              type: string
-              description: The BitLocker recovery key.
-            volumeType:
-              $ref: '#/components/schemas/microsoft.graph.volumeType'
-          additionalProperties:
-            type: object
-    microsoft.graph.sensitivityLabelTarget:
-      title: sensitivityLabelTarget
-      enum:
-        - email
-        - site
-        - unifiedGroup
-        - unknownFutureValue
-        - teamwork
-      type: string
-    microsoft.graph.applicationMode:
-      title: applicationMode
-      enum:
-        - manual
-        - automatic
-        - recommended
-      type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.informationProtectionLabel:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionLabel
-          type: object
-          properties:
-            color:
-              type: string
-              description: 'The color that the UI should display for the label, if configured.'
-              nullable: true
-            description:
-              type: string
-              description: The admin-defined description for the label.
-              nullable: true
-            isActive:
-              type: boolean
-              description: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
-            name:
-              type: string
-              description: The plaintext name of the label.
-              nullable: true
-            parent:
-              $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
-            sensitivity:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'The sensitivity value of the label, where lower is less sensitive.'
-              format: int32
-            tooltip:
-              type: string
-              description: The tooltip that should be displayed for the label in a UI.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.threatCategory:
-      title: threatCategory
-      enum:
-        - undefined
-        - spam
-        - phishing
-        - malware
-        - unknownFutureValue
-      type: string
-    microsoft.graph.threatAssessmentContentType:
-      title: threatAssessmentContentType
-      enum:
-        - mail
-        - url
-        - file
-      type: string
-    microsoft.graph.threatExpectedAssessment:
-      title: threatExpectedAssessment
-      enum:
-        - block
-        - unblock
-      type: string
-    microsoft.graph.threatAssessmentRequestSource:
-      title: threatAssessmentRequestSource
-      enum:
-        - undefined
-        - user
-        - administrator
-      type: string
-    microsoft.graph.threatAssessmentStatus:
-      title: threatAssessmentStatus
-      enum:
-        - pending
-        - completed
-      type: string
-    microsoft.graph.threatAssessmentResult:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: threatAssessmentResult
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            message:
-              type: string
-              description: The result message for each threat assessment.
-              nullable: true
-            resultType:
-              $ref: '#/components/schemas/microsoft.graph.threatAssessmentResultType'
-          additionalProperties:
-            type: object
     microsoft.graph.passwordSingleSignOnField:
       title: passwordSingleSignOnField
       type: object
@@ -42912,58 +43011,6 @@ components:
         - unknown
         - success
         - failure
-        - unknownFutureValue
-      type: string
-    microsoft.graph.volumeType:
-      title: volumeType
-      enum:
-        - operatingSystemVolume
-        - fixedDataVolume
-        - removableDataVolume
-        - unknownFutureValue
-      type: string
-    microsoft.graph.parentLabelDetails:
-      title: parentLabelDetails
-      type: object
-      properties:
-        color:
-          type: string
-          description: 'The color that the user interface should display for the label, if configured.'
-          nullable: true
-        description:
-          type: string
-          description: The admin-defined description for the label.
-          nullable: true
-        id:
-          type: string
-          description: The label ID is a globally unique identifier (GUID).
-          nullable: true
-        isActive:
-          type: boolean
-          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
-        name:
-          type: string
-          description: The plaintext name of the label.
-          nullable: true
-        parent:
-          $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
-        sensitivity:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'The sensitivity value of the label, where lower is less sensitive.'
-          format: int32
-        tooltip:
-          type: string
-          description: The tooltip that should be displayed for the label in a user interface.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.threatAssessmentResultType:
-      title: threatAssessmentResultType
-      enum:
-        - checkPolicy
-        - rescan
         - unknownFutureValue
       type: string
     microsoft.graph.keyCredentialConfiguration:

@@ -15691,6 +15691,28 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Create new navigation property to sharedUseServicePlans for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_CreateSharedUseServicePlans
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceManagement/virtualEndpoint/sharedUseServicePlans/{cloudPcSharedUseServicePlan-id}':
     get:
       tags:
@@ -15740,6 +15762,63 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update the navigation property sharedUseServicePlans in deviceManagement
+      operationId: deviceManagement.virtualEndpoint_UpdateSharedUseServicePlans
+      parameters:
+        - name: cloudPcSharedUseServicePlan-id
+          in: path
+          description: 'key: id of cloudPcSharedUseServicePlan'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcSharedUseServicePlan
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Delete navigation property sharedUseServicePlans for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_DeleteSharedUseServicePlans
+      parameters:
+        - name: cloudPcSharedUseServicePlan-id
+          in: path
+          description: 'key: id of cloudPcSharedUseServicePlan'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcSharedUseServicePlan
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18770,6 +18849,7 @@ components:
               description: 'The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.'
             virtualNetworkLocation:
               type: string
+              description: 'Indicates resource location of the virtual target network. Read-only, computed value.'
               nullable: true
           additionalProperties:
             type: object
@@ -21896,10 +21976,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
