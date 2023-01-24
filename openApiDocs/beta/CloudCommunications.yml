@@ -2613,6 +2613,8 @@ paths:
                 - metadata desc
                 - recordingInfo
                 - recordingInfo desc
+                - restrictedExperience
+                - restrictedExperience desc
               type: string
         - name: $select
           in: query
@@ -2632,6 +2634,7 @@ paths:
                 - mediaStreams
                 - metadata
                 - recordingInfo
+                - restrictedExperience
               type: string
         - name: $expand
           in: query
@@ -2726,6 +2729,7 @@ paths:
                 - mediaStreams
                 - metadata
                 - recordingInfo
+                - restrictedExperience
               type: string
         - name: $expand
           in: query
@@ -2975,10 +2979,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
@@ -3221,6 +3225,8 @@ paths:
                 - subject desc
                 - videoTeleconferenceId
                 - videoTeleconferenceId desc
+                - watermarkProtection
+                - watermarkProtection desc
               type: string
         - name: $select
           in: query
@@ -3260,6 +3266,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
@@ -3367,6 +3374,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
@@ -4533,11 +4541,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4628,11 +4636,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: communications.onlineMeetings_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -5763,7 +5771,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get onlineMeetings from users
+      summary: Get onlineMeeting
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_ListOnlineMeetings
       parameters:
         - name: user-id
@@ -5845,6 +5857,8 @@ paths:
                 - subject desc
                 - videoTeleconferenceId
                 - videoTeleconferenceId desc
+                - watermarkProtection
+                - watermarkProtection desc
               type: string
         - name: $select
           in: query
@@ -5884,6 +5898,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
@@ -6012,6 +6027,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
@@ -6120,6 +6136,9 @@ paths:
         - users.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from users
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -6808,6 +6827,9 @@ paths:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
       description: The content stream of the attendee report of a Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -7307,6 +7329,9 @@ paths:
         - users.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from users
       description: The content stream of the recording of a Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_GetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -7377,11 +7402,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id
@@ -7488,11 +7513,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: users.onlineMeetings_DeleteRegistration
       parameters:
         - name: user-id
@@ -8928,6 +8953,8 @@ components:
               nullable: true
             recordingInfo:
               $ref: '#/components/schemas/microsoft.graph.recordingInfo'
+            restrictedExperience:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingRestricted'
           additionalProperties:
             type: object
     microsoft.graph.startHoldMusicOperation:
@@ -9144,6 +9171,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             virtualAppointment:
               $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
@@ -9718,6 +9747,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.recordingStatus'
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingRestricted:
+      title: onlineMeetingRestricted
+      type: object
+      properties:
+        contentSharingDisabled:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingContentSharingDisabledReason'
+        videoDisabled:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingVideoDisabledReason'
+      additionalProperties:
+        type: object
     microsoft.graph.teleconferenceDeviceMediaQuality:
       title: teleconferenceDeviceMediaQuality
       type: object
@@ -9979,6 +10018,18 @@ components:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attendanceInterval:
       title: attendanceInterval
       type: object
@@ -10010,11 +10061,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -10758,6 +10809,18 @@ components:
         - sendOnly
         - receiveOnly
         - sendReceive
+      type: string
+    microsoft.graph.onlineMeetingContentSharingDisabledReason:
+      title: onlineMeetingContentSharingDisabledReason
+      enum:
+        - watermarkProtection
+        - unknownFutureValue
+      type: string
+    microsoft.graph.onlineMeetingVideoDisabledReason:
+      title: onlineMeetingVideoDisabledReason
+      enum:
+        - watermarkProtection
+        - unknownFutureValue
       type: string
     ReferenceNumeric:
       enum:

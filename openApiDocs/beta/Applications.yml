@@ -7970,10 +7970,10 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create connectorGroup
-      description: Create a new connectorGroup.
+      description: Create a connectorGroup object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0
       operationId: onPremisesPublishingProfiles_CreateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -17204,7 +17204,7 @@ components:
       properties:
         customKeyIdentifier:
           type: string
-          description: Custom key identifier
+          description: 'A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.'
           format: base64url
           nullable: true
         displayName:
@@ -18812,10 +18812,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -20259,6 +20259,7 @@ components:
         - saml
         - pingHeaderBased
         - aadHeaderBased
+        - oAuthToken
         - unknownFutureValue
       type: string
     microsoft.graph.synchronizationError:

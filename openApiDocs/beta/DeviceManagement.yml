@@ -141,6 +141,7 @@ paths:
                 - userExperienceAnalyticsDeviceStartupProcesses
                 - userExperienceAnalyticsDeviceStartupProcessPerformance
                 - userExperienceAnalyticsDevicesWithoutCloudIdentity
+                - userExperienceAnalyticsDeviceTimelineEvents
                 - userExperienceAnalyticsImpactingProcess
                 - userExperienceAnalyticsMetricHistory
                 - userExperienceAnalyticsModelScores
@@ -310,6 +311,7 @@ paths:
                 - userExperienceAnalyticsDeviceStartupProcesses
                 - userExperienceAnalyticsDeviceStartupProcessPerformance
                 - userExperienceAnalyticsDevicesWithoutCloudIdentity
+                - userExperienceAnalyticsDeviceTimelineEvents
                 - userExperienceAnalyticsImpactingProcess
                 - userExperienceAnalyticsMetricHistory
                 - userExperienceAnalyticsModelScores
@@ -29133,8 +29135,6 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
-                - enableCertificatePinning
-                - enableCertificatePinning desc
                 - internalNetworkProbeUrl
                 - internalNetworkProbeUrl desc
                 - publicAddress
@@ -29165,7 +29165,6 @@ paths:
                 - id
                 - description
                 - displayName
-                - enableCertificatePinning
                 - internalNetworkProbeUrl
                 - publicAddress
                 - roleScopeTagIds
@@ -29251,7 +29250,6 @@ paths:
                 - id
                 - description
                 - displayName
-                - enableCertificatePinning
                 - internalNetworkProbeUrl
                 - publicAddress
                 - roleScopeTagIds
@@ -41130,6 +41128,218 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/userExperienceAnalyticsDeviceTimelineEvents:
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsDeviceTimelineEvents
+      summary: Get userExperienceAnalyticsDeviceTimelineEvents from deviceManagement
+      description: The user experience analytics device events entity contains NRT device timeline events details.
+      operationId: deviceManagement_ListUserExperienceAnalyticsDeviceTimelineEvents
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deviceId
+                - deviceId desc
+                - eventAdditionalInformation
+                - eventAdditionalInformation desc
+                - eventDateTime
+                - eventDateTime desc
+                - eventDetails
+                - eventDetails desc
+                - eventLevel
+                - eventLevel desc
+                - eventName
+                - eventName desc
+                - eventSource
+                - eventSource desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deviceId
+                - eventAdditionalInformation
+                - eventDateTime
+                - eventDetails
+                - eventLevel
+                - eventName
+                - eventSource
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userExperienceAnalyticsDeviceTimelineEventsCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.userExperienceAnalyticsDeviceTimelineEvents
+      summary: Create new navigation property to userExperienceAnalyticsDeviceTimelineEvents for deviceManagement
+      operationId: deviceManagement_CreateUserExperienceAnalyticsDeviceTimelineEvents
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceTimelineEvents'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceTimelineEvents'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/userExperienceAnalyticsDeviceTimelineEvents/{userExperienceAnalyticsDeviceTimelineEvents-id}':
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsDeviceTimelineEvents
+      summary: Get userExperienceAnalyticsDeviceTimelineEvents from deviceManagement
+      description: The user experience analytics device events entity contains NRT device timeline events details.
+      operationId: deviceManagement_GetUserExperienceAnalyticsDeviceTimelineEvents
+      parameters:
+        - name: userExperienceAnalyticsDeviceTimelineEvents-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsDeviceTimelineEvents'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsDeviceTimelineEvents
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deviceId
+                - eventAdditionalInformation
+                - eventDateTime
+                - eventDetails
+                - eventLevel
+                - eventName
+                - eventSource
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceTimelineEvents'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.userExperienceAnalyticsDeviceTimelineEvents
+      summary: Update the navigation property userExperienceAnalyticsDeviceTimelineEvents in deviceManagement
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsDeviceTimelineEvents
+      parameters:
+        - name: userExperienceAnalyticsDeviceTimelineEvents-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsDeviceTimelineEvents'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsDeviceTimelineEvents
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceTimelineEvents'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.userExperienceAnalyticsDeviceTimelineEvents
+      summary: Delete navigation property userExperienceAnalyticsDeviceTimelineEvents for deviceManagement
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsDeviceTimelineEvents
+      parameters:
+        - name: userExperienceAnalyticsDeviceTimelineEvents-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsDeviceTimelineEvents'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsDeviceTimelineEvents
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /deviceManagement/userExperienceAnalyticsImpactingProcess:
     get:
       tags:
@@ -45004,6 +45214,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity'
               description: User experience analytics devices without cloud identity.
               x-ms-navigationProperty: true
+            userExperienceAnalyticsDeviceTimelineEvents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceTimelineEvents'
+              description: The user experience analytics device events entity contains NRT device timeline events details.
+              x-ms-navigationProperty: true
             userExperienceAnalyticsImpactingProcess:
               type: array
               items:
@@ -45728,7 +45944,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -45840,7 +46056,7 @@ components:
               readOnly: true
             ethernetMacAddress:
               type: string
-              description: Ethernet MAC. This property is read-only.
+              description: 'Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             exchangeAccessState:
@@ -46002,7 +46218,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
               readOnly: true
             specificationVersion:
@@ -49528,9 +49744,6 @@ components:
               type: string
               description: The display name for the site. This property is required when a site is created.
               nullable: true
-            enableCertificatePinning:
-              type: boolean
-              description: 'When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.'
             internalNetworkProbeUrl:
               type: string
               description: The site's Internal Network Access Probe URL
@@ -51328,6 +51541,42 @@ components:
           additionalProperties:
             type: object
           description: The user experience analytics Device without Cloud Identity.
+    microsoft.graph.userExperienceAnalyticsDeviceTimelineEvents:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsDeviceTimelineEvents
+          type: object
+          properties:
+            deviceId:
+              type: string
+              description: The id of the device where the event occurred.
+              nullable: true
+            eventAdditionalInformation:
+              type: string
+              description: Placeholder value for future expansion.
+              nullable: true
+            eventDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time the event occured.
+              format: date-time
+            eventDetails:
+              type: string
+              description: 'The details provided by the event, format depends on event type.'
+              nullable: true
+            eventLevel:
+              $ref: '#/components/schemas/microsoft.graph.deviceEventLevel'
+            eventName:
+              type: string
+              description: 'The name of the event. Examples include: BootEvent, LogonEvent, AppCrashEvent, AppHangEvent.'
+              nullable: true
+            eventSource:
+              type: string
+              description: 'The source of the event. Examples include: Intune, Sccm.'
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The user experience analytics device events entity contains NRT device events details.
     microsoft.graph.userExperienceAnalyticsImpactingProcess:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -52327,25 +52576,25 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The number of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+          description: Indicates count of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
           format: int32
         informationalSeverityAnomalyCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The number of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+          description: Indicates count of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
           format: int32
         lowSeverityAnomalyCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The number of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+          description: Indicates count of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
           format: int32
         mediumSeverityAnomalyCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The number of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+          description: Indicates count of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
           format: int32
       additionalProperties:
         type: object
@@ -52562,6 +52811,9 @@ components:
               type: integer
               description: Total number of AOSP devices that have enrolled using the current token.
               format: int32
+            isTeamsDeviceProfile:
+              type: boolean
+              description: Boolean indicating if this profile is an Android AOSP for Teams device profile.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -59751,10 +60003,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -60456,6 +60708,43 @@ components:
           - value: update
             description: Update
             name: update
+    microsoft.graph.deviceEventLevel:
+      title: deviceEventLevel
+      enum:
+        - none
+        - verbose
+        - information
+        - warning
+        - error
+        - critical
+        - unknownFutureValue
+      type: string
+      description: 'Indicates device event level. Possible values are: None, Verbose, Information, Warning, Error, Critical'
+      x-ms-enum:
+        name: deviceEventLevel
+        modelAsString: false
+        values:
+          - value: none
+            description: Indicates that the device event level is none.
+            name: none
+          - value: verbose
+            description: Indicates that the device event level is verbose.
+            name: verbose
+          - value: information
+            description: Indicates that the device event level is information.
+            name: information
+          - value: warning
+            description: Indicates that the device event level is warning.
+            name: warning
+          - value: error
+            description: Indicates that the device event level is error.
+            name: error
+          - value: critical
+            description: Indicates that the device event level is critical.
+            name: critical
+          - value: unknownFutureValue
+            description: Placeholder value for future expansion.
+            name: unknownFutureValue
     microsoft.graph.operatingSystemUpgradeEligibility:
       title: operatingSystemUpgradeEligibility
       enum:
@@ -61989,6 +62278,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userExperienceAnalyticsDeviceTimelineEventsCollectionResponse:
+      title: Collection of userExperienceAnalyticsDeviceTimelineEvents
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceTimelineEvents'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.userExperienceAnalyticsImpactingProcessCollectionResponse:
       title: Collection of userExperienceAnalyticsImpactingProcess
       type: object
@@ -62850,6 +63152,7 @@ components:
               description: 'The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.'
             virtualNetworkLocation:
               type: string
+              description: 'Indicates resource location of the virtual target network. Read-only, computed value.'
               nullable: true
           additionalProperties:
             type: object
@@ -63981,7 +64284,7 @@ components:
               description: Indicates if Weclome screen is disabled
             userlessSharedAadModeEnabled:
               type: boolean
-              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
+              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-shared-ios
             userSessionTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
@@ -65935,7 +66238,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.'
           nullable: true
         signInType:
           type: string
@@ -66077,7 +66380,7 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.'
+          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false.'
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
@@ -67152,7 +67455,7 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -67865,6 +68168,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
               $ref: '#/components/schemas/microsoft.graph.siteCollection'
+            informationProtection:
+              $ref: '#/components/schemas/microsoft.graph.informationProtection'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             columns:
@@ -68927,6 +69232,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             virtualAppointment:
               $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
@@ -70119,6 +70426,12 @@ components:
             displayToneSetupDisabled:
               type: boolean
               description: Indicates if displaytone setup screen is disabled
+            enabledSkipKeys:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: enabledSkipKeys contains all the enabled skip keys as strings
             isDefault:
               type: boolean
               description: Indicates if this is the default profile
@@ -70145,7 +70458,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -71232,7 +71545,7 @@ components:
       properties:
         customKeyIdentifier:
           type: string
-          description: Custom key identifier
+          description: 'A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.'
           format: base64url
           nullable: true
         displayName:
@@ -71554,11 +71867,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -74959,6 +75272,18 @@ components:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.virtualAppointment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -75213,20 +75538,24 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
               type: string
+              description: URI of the resource that the operation is performed on.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
             statusDetail:
               type: string
+              description: Details about the status of the operation.
               nullable: true
           additionalProperties:
             type: object
@@ -85136,7 +85465,7 @@ components:
       title: sectionEmphasisType
       enum:
         - none
-        - netural
+        - neutral
         - soft
         - strong
         - unknownFutureValue
@@ -86965,6 +87294,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponse'
+    microsoft.graph.userExperienceAnalyticsDeviceTimelineEventsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceTimelineEventsCollectionResponse'
     microsoft.graph.userExperienceAnalyticsImpactingProcessCollectionResponse:
       description: Retrieved collection
       content:
