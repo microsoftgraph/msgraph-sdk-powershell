@@ -8559,6 +8559,8 @@ paths:
                 - countryLetterCode desc
                 - createdDateTime
                 - createdDateTime desc
+                - defaultUsageLocation
+                - defaultUsageLocation desc
                 - displayName
                 - displayName desc
                 - marketingNotificationEmails
@@ -8612,6 +8614,7 @@ paths:
                 - country
                 - countryLetterCode
                 - createdDateTime
+                - defaultUsageLocation
                 - displayName
                 - marketingNotificationEmails
                 - onPremisesLastSyncDateTime
@@ -8716,6 +8719,7 @@ paths:
                 - country
                 - countryLetterCode
                 - createdDateTime
+                - defaultUsageLocation
                 - displayName
                 - marketingNotificationEmails
                 - onPremisesLastSyncDateTime
@@ -11303,6 +11307,10 @@ components:
               type: string
               description: 'Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
+              nullable: true
+            defaultUsageLocation:
+              type: string
+              description: Two-letter ISO 3166 country code indicating the default service usage location of an organization.
               nullable: true
             displayName:
               type: string

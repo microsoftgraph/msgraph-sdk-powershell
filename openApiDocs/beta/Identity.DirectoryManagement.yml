@@ -9326,7 +9326,7 @@ paths:
   /directory/impactedResources:
     get:
       tags:
-        - directory.recommendationResource
+        - directory.impactedResource
       summary: Get impactedResources from directory
       operationId: directory_ListImpactedResources
       parameters:
@@ -9355,10 +9355,16 @@ paths:
                 - apiUrl desc
                 - displayName
                 - displayName desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
                 - owner
                 - owner desc
                 - portalUrl
                 - portalUrl desc
+                - postponeUntilDateTime
+                - postponeUntilDateTime desc
                 - rank
                 - rank desc
                 - recommendationId
@@ -9367,6 +9373,8 @@ paths:
                 - resourceType desc
                 - status
                 - status desc
+                - subjectId
+                - subjectId desc
               type: string
         - name: $select
           in: query
@@ -9383,12 +9391,16 @@ paths:
                 - additionalDetails
                 - apiUrl
                 - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
                 - owner
                 - portalUrl
+                - postponeUntilDateTime
                 - rank
                 - recommendationId
                 - resourceType
                 - status
+                - subjectId
               type: string
         - name: $expand
           in: query
@@ -9404,7 +9416,7 @@ paths:
               type: string
       responses:
         2XX:
-          $ref: '#/components/responses/microsoft.graph.recommendationResourceCollectionResponse'
+          $ref: '#/components/responses/microsoft.graph.impactedResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -9413,7 +9425,7 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - directory.recommendationResource
+        - directory.impactedResource
       summary: Create new navigation property to impactedResources for directory
       operationId: directory_CreateImpactedResources
       requestBody:
@@ -9421,7 +9433,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+              $ref: '#/components/schemas/microsoft.graph.impactedResource'
         required: true
       responses:
         2XX:
@@ -9429,25 +9441,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/directory/impactedResources/{recommendationResource-id}':
+  '/directory/impactedResources/{impactedResource-id}':
     get:
       tags:
-        - directory.recommendationResource
+        - directory.impactedResource
       summary: Get impactedResources from directory
       operationId: directory_GetImpactedResources
       parameters:
-        - name: recommendationResource-id
+        - name: impactedResource-id
           in: path
-          description: 'key: id of recommendationResource'
+          description: 'key: id of impactedResource'
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: recommendationResource
+          x-ms-docs-key-type: impactedResource
         - name: $select
           in: query
           description: Select properties to be returned
@@ -9463,12 +9475,16 @@ paths:
                 - additionalDetails
                 - apiUrl
                 - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
                 - owner
                 - portalUrl
+                - postponeUntilDateTime
                 - rank
                 - recommendationId
                 - resourceType
                 - status
+                - subjectId
               type: string
         - name: $expand
           in: query
@@ -9488,30 +9504,30 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - directory.recommendationResource
+        - directory.impactedResource
       summary: Update the navigation property impactedResources in directory
       operationId: directory_UpdateImpactedResources
       parameters:
-        - name: recommendationResource-id
+        - name: impactedResource-id
           in: path
-          description: 'key: id of recommendationResource'
+          description: 'key: id of impactedResource'
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: recommendationResource
+          x-ms-docs-key-type: impactedResource
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+              $ref: '#/components/schemas/microsoft.graph.impactedResource'
         required: true
       responses:
         2XX:
@@ -9519,24 +9535,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - directory.recommendationResource
+        - directory.impactedResource
       summary: Delete navigation property impactedResources for directory
       operationId: directory_DeleteImpactedResources
       parameters:
-        - name: recommendationResource-id
+        - name: impactedResource-id
           in: path
-          description: 'key: id of recommendationResource'
+          description: 'key: id of impactedResource'
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: recommendationResource
+          x-ms-docs-key-type: impactedResource
         - name: If-Match
           in: header
           description: ETag
@@ -9549,46 +9565,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/directory/impactedResources/{recommendationResource-id}/microsoft.graph.complete':
+  '/directory/impactedResources/{impactedResource-id}/microsoft.graph.complete':
     post:
       tags:
         - directory.Actions
       summary: Invoke action complete
       operationId: directory.impactedResources_complete
       parameters:
-        - name: recommendationResource-id
+        - name: impactedResource-id
           in: path
-          description: 'key: id of recommendationResource'
+          description: 'key: id of impactedResource'
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: recommendationResource
+          x-ms-docs-key-type: impactedResource
       responses:
         2XX:
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/directory/impactedResources/{recommendationResource-id}/microsoft.graph.dismiss':
+  '/directory/impactedResources/{impactedResource-id}/microsoft.graph.dismiss':
     post:
       tags:
         - directory.Actions
       summary: Invoke action dismiss
       operationId: directory.impactedResources_dismiss
       parameters:
-        - name: recommendationResource-id
+        - name: impactedResource-id
           in: path
-          description: 'key: id of recommendationResource'
+          description: 'key: id of impactedResource'
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: recommendationResource
+          x-ms-docs-key-type: impactedResource
       requestBody:
         description: Action parameters
         content:
@@ -9608,25 +9624,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/directory/impactedResources/{recommendationResource-id}/microsoft.graph.postpone':
+  '/directory/impactedResources/{impactedResource-id}/microsoft.graph.postpone':
     post:
       tags:
         - directory.Actions
       summary: Invoke action postpone
       operationId: directory.impactedResources_postpone
       parameters:
-        - name: recommendationResource-id
+        - name: impactedResource-id
           in: path
-          description: 'key: id of recommendationResource'
+          description: 'key: id of impactedResource'
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: recommendationResource
+          x-ms-docs-key-type: impactedResource
       requestBody:
         description: Action parameters
         content:
@@ -9647,32 +9663,32 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/directory/impactedResources/{recommendationResource-id}/microsoft.graph.reactivate':
+  '/directory/impactedResources/{impactedResource-id}/microsoft.graph.reactivate':
     post:
       tags:
         - directory.Actions
       summary: Invoke action reactivate
       operationId: directory.impactedResources_reactivate
       parameters:
-        - name: recommendationResource-id
+        - name: impactedResource-id
           in: path
-          description: 'key: id of recommendationResource'
+          description: 'key: id of impactedResource'
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: recommendationResource
+          x-ms-docs-key-type: impactedResource
       responses:
         2XX:
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -10603,8 +10619,12 @@ paths:
                 - category desc
                 - createdDateTime
                 - createdDateTime desc
+                - currentScore
+                - currentScore desc
                 - displayName
                 - displayName desc
+                - featureAreas
+                - featureAreas desc
                 - impactStartDateTime
                 - impactStartDateTime desc
                 - impactType
@@ -10617,10 +10637,16 @@ paths:
                 - lastModifiedBy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - maxScore
+                - maxScore desc
                 - postponeUntilDateTime
                 - postponeUntilDateTime desc
                 - priority
                 - priority desc
+                - recommendationType
+                - recommendationType desc
+                - remediationImpact
+                - remediationImpact desc
                 - status
                 - status desc
               type: string
@@ -10639,15 +10665,20 @@ paths:
                 - benefits
                 - category
                 - createdDateTime
+                - currentScore
                 - displayName
+                - featureAreas
                 - impactStartDateTime
                 - impactType
                 - insights
                 - lastCheckedDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - maxScore
                 - postponeUntilDateTime
                 - priority
+                - recommendationType
+                - remediationImpact
                 - status
                 - impactedResources
               type: string
@@ -10725,15 +10756,20 @@ paths:
                 - benefits
                 - category
                 - createdDateTime
+                - currentScore
                 - displayName
+                - featureAreas
                 - impactStartDateTime
                 - impactType
                 - insights
                 - lastCheckedDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - maxScore
                 - postponeUntilDateTime
                 - priority
+                - recommendationType
+                - remediationImpact
                 - status
                 - impactedResources
               type: string
@@ -10817,432 +10853,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/directory/recommendations/{recommendation-id}/impactedResources':
-    get:
-      tags:
-        - directory.recommendation
-      summary: Get impactedResources from directory
-      operationId: directory.recommendations_ListImpactedResources
-      parameters:
-        - name: recommendation-id
-          in: path
-          description: 'key: id of recommendation'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendation
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - addedDateTime
-                - addedDateTime desc
-                - additionalDetails
-                - additionalDetails desc
-                - apiUrl
-                - apiUrl desc
-                - displayName
-                - displayName desc
-                - owner
-                - owner desc
-                - portalUrl
-                - portalUrl desc
-                - rank
-                - rank desc
-                - recommendationId
-                - recommendationId desc
-                - resourceType
-                - resourceType desc
-                - status
-                - status desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - addedDateTime
-                - additionalDetails
-                - apiUrl
-                - displayName
-                - owner
-                - portalUrl
-                - rank
-                - recommendationId
-                - resourceType
-                - status
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.recommendationResourceCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - directory.recommendation
-      summary: Create new navigation property to impactedResources for directory
-      operationId: directory.recommendations_CreateImpactedResources
-      parameters:
-        - name: recommendation-id
-          in: path
-          description: 'key: id of recommendation'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendation
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}':
-    get:
-      tags:
-        - directory.recommendation
-      summary: Get impactedResources from directory
-      operationId: directory.recommendations_GetImpactedResources
-      parameters:
-        - name: recommendation-id
-          in: path
-          description: 'key: id of recommendation'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendation
-        - name: recommendationResource-id
-          in: path
-          description: 'key: id of recommendationResource'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendationResource
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - addedDateTime
-                - additionalDetails
-                - apiUrl
-                - displayName
-                - owner
-                - portalUrl
-                - rank
-                - recommendationId
-                - resourceType
-                - status
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - directory.recommendation
-      summary: Update the navigation property impactedResources in directory
-      operationId: directory.recommendations_UpdateImpactedResources
-      parameters:
-        - name: recommendation-id
-          in: path
-          description: 'key: id of recommendation'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendation
-        - name: recommendationResource-id
-          in: path
-          description: 'key: id of recommendationResource'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendationResource
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-        required: true
-      responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - directory.recommendation
-      summary: Delete navigation property impactedResources for directory
-      operationId: directory.recommendations_DeleteImpactedResources
-      parameters:
-        - name: recommendation-id
-          in: path
-          description: 'key: id of recommendation'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendation
-        - name: recommendationResource-id
-          in: path
-          description: 'key: id of recommendationResource'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendationResource
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.complete':
-    post:
-      tags:
-        - directory.Actions
-      summary: Invoke action complete
-      operationId: directory.recommendations.impactedResources_complete
-      parameters:
-        - name: recommendation-id
-          in: path
-          description: 'key: id of recommendation'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendation
-        - name: recommendationResource-id
-          in: path
-          description: 'key: id of recommendationResource'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendationResource
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.dismiss':
-    post:
-      tags:
-        - directory.Actions
-      summary: Invoke action dismiss
-      operationId: directory.recommendations.impactedResources_dismiss
-      parameters:
-        - name: recommendation-id
-          in: path
-          description: 'key: id of recommendation'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendation
-        - name: recommendationResource-id
-          in: path
-          description: 'key: id of recommendationResource'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendationResource
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                dismissReason:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.postpone':
-    post:
-      tags:
-        - directory.Actions
-      summary: Invoke action postpone
-      operationId: directory.recommendations.impactedResources_postpone
-      parameters:
-        - name: recommendation-id
-          in: path
-          description: 'key: id of recommendation'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendation
-        - name: recommendationResource-id
-          in: path
-          description: 'key: id of recommendationResource'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendationResource
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                postponeUntilDateTime:
-                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-                  type: string
-                  format: date-time
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.reactivate':
-    post:
-      tags:
-        - directory.Actions
-      summary: Invoke action reactivate
-      operationId: directory.recommendations.impactedResources_reactivate
-      parameters:
-        - name: recommendation-id
-          in: path
-          description: 'key: id of recommendation'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendation
-        - name: recommendationResource-id
-          in: path
-          description: 'key: id of recommendationResource'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: recommendationResource
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/directory/recommendations/{recommendation-id}/microsoft.graph.complete':
     post:
       tags:
@@ -19772,7 +19382,7 @@ components:
             impactedResources:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
               readOnly: true
             recommendations:
               type: array
@@ -19949,10 +19559,10 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.recommendationResource:
+    microsoft.graph.impactedResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: recommendationResource
+        - title: impactedResource
           type: object
           properties:
             addedDateTime:
@@ -19968,11 +19578,20 @@ components:
               nullable: true
             displayName:
               type: string
+            lastModifiedBy:
+              type: string
+            lastModifiedDateTime:
+              type: string
             owner:
               type: string
               nullable: true
             portalUrl:
               type: string
+              nullable: true
+            postponeUntilDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
               nullable: true
             rank:
               maximum: 2147483647
@@ -19986,6 +19605,8 @@ components:
               type: string
             status:
               $ref: '#/components/schemas/microsoft.graph.recommendationStatus'
+            subjectId:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.inboundSharedUserProfile:
@@ -20037,63 +19658,9 @@ components:
         type: object
     microsoft.graph.recommendation:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.recommendationBase'
         - title: recommendation
           type: object
-          properties:
-            actionSteps:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.actionStep'
-            benefits:
-              type: string
-              nullable: true
-            category:
-              $ref: '#/components/schemas/microsoft.graph.recommendationCategory'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            displayName:
-              type: string
-            impactStartDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            impactType:
-              type: string
-              nullable: true
-            insights:
-              type: string
-              nullable: true
-            lastCheckedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            lastModifiedBy:
-              type: string
-              nullable: true
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            postponeUntilDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            priority:
-              $ref: '#/components/schemas/microsoft.graph.recommendationPriority'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.recommendationStatus'
-            impactedResources:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
-              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.sharedEmailDomain:
@@ -20940,37 +20507,84 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.actionStep:
-      title: actionStep
-      type: object
-      properties:
-        actionUrl:
-          $ref: '#/components/schemas/microsoft.graph.actionUrl'
-        stepNumber:
-          type: integer
-          format: int64
-        text:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.recommendationCategory:
-      title: recommendationCategory
-      enum:
-        - usageAndCompliance
-        - security
-        - unknownFutureValue
-        - productivity
-        - health
-        - configuration
-      type: string
-    microsoft.graph.recommendationPriority:
-      title: recommendationPriority
-      enum:
-        - low
-        - medium
-        - high
-      type: string
+    microsoft.graph.recommendationBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: recommendationBase
+          type: object
+          properties:
+            actionSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.actionStep'
+            benefits:
+              type: string
+              nullable: true
+            category:
+              $ref: '#/components/schemas/microsoft.graph.recommendationCategory'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            currentScore:
+              type: number
+              format: double
+              nullable: true
+            displayName:
+              type: string
+            featureAreas:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recommendationFeatureAreas'
+            impactStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            impactType:
+              type: string
+              nullable: true
+            insights:
+              type: string
+              nullable: true
+            lastCheckedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedBy:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            maxScore:
+              type: number
+              format: double
+              nullable: true
+            postponeUntilDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            priority:
+              $ref: '#/components/schemas/microsoft.graph.recommendationPriority'
+            recommendationType:
+              $ref: '#/components/schemas/microsoft.graph.recommendationType'
+            remediationImpact:
+              type: string
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.recommendationStatus'
+            impactedResources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
+              readOnly: true
+          additionalProperties:
+            type: object
     microsoft.graph.settingTemplateValue:
       title: settingTemplateValue
       type: object
@@ -21683,14 +21297,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.recommendationResourceCollectionResponse:
-      title: Collection of recommendationResource
+    microsoft.graph.impactedResourceCollectionResponse:
+      title: Collection of impactedResource
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+            $ref: '#/components/schemas/microsoft.graph.impactedResource'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -21959,17 +21573,87 @@ components:
           $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationDeletionPreventionType'
       additionalProperties:
         type: object
-    microsoft.graph.actionUrl:
-      title: actionUrl
+    microsoft.graph.actionStep:
+      title: actionStep
       type: object
       properties:
-        displayName:
-          type: string
-        url:
+        actionUrl:
+          $ref: '#/components/schemas/microsoft.graph.actionUrl'
+        stepNumber:
+          type: integer
+          format: int64
+        text:
           type: string
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.recommendationCategory:
+      title: recommendationCategory
+      enum:
+        - identityBestPractice
+        - identitySecureScore
+        - unknownFutureValue
+      type: string
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
+    microsoft.graph.recommendationFeatureAreas:
+      title: recommendationFeatureAreas
+      enum:
+        - users
+        - groups
+        - devices
+        - applications
+        - accessReviews
+        - conditionalAccess
+        - governance
+        - unknownFutureValue
+      type: string
+    microsoft.graph.recommendationPriority:
+      title: recommendationPriority
+      enum:
+        - low
+        - medium
+        - high
+      type: string
+    microsoft.graph.recommendationType:
+      title: recommendationType
+      enum:
+        - adfsAppsMigration
+        - enableDesktopSSO
+        - enablePHS
+        - enableProvisioning
+        - switchFromPerUserMFA
+        - tenantMFA
+        - thirdPartyApps
+        - turnOffPerUserMFA
+        - useAuthenticatorApp
+        - useMyApps
+        - staleApps
+        - staleAppCreds
+        - applicationCredentialExpiry
+        - servicePrincipalKeyExpiry
+        - adminMFAV2
+        - blockLegacyAuthentication
+        - integratedApps
+        - mfaRegistrationV2
+        - pwagePolicyNew
+        - passwordHashSync
+        - oneAdmin
+        - roleOverlap
+        - selfServicePasswordReset
+        - signinRiskPolicy
+        - userRiskPolicy
+        - verifyAppPublisher
+        - privateLinkForAAD
+        - appRoleAssignmentsGroups
+        - appRoleAssignmentsUsers
+        - managedIdentity
+        - overprivilegedApps
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationProtocol:
       title: authenticationProtocol
       enum:
@@ -22093,6 +21777,17 @@ components:
         - enabledForPercentage
         - unknownFutureValue
       type: string
+    microsoft.graph.actionUrl:
+      title: actionUrl
+      type: object
+      properties:
+        displayName:
+          type: string
+        url:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.layoutTemplateType:
       title: layoutTemplateType
       enum:
@@ -22217,12 +21912,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.identityProviderBaseCollectionResponse'
-    microsoft.graph.recommendationResourceCollectionResponse:
+    microsoft.graph.impactedResourceCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.recommendationResourceCollectionResponse'
+            $ref: '#/components/schemas/microsoft.graph.impactedResourceCollectionResponse'
     microsoft.graph.inboundSharedUserProfileCollectionResponse:
       description: Retrieved collection
       content:
