@@ -2,6 +2,8 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
+using Microsoft.Graph.PowerShell.Authentication.Properties;
 using System;
 using System.IO;
 using System.Management.Automation;
@@ -9,8 +11,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
-using Microsoft.Graph.PowerShell.Authentication.Properties;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             if (encoding == null)
             {
                 // just use the default encoding if one wasn't provided
-                encoding = ContentHelper.GetDefaultEncoding();
+                encoding = Encoding.UTF8;
             }
 
             return encoding.GetBytes(str);
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             if (encoding == null)
             {
                 // Use the default encoding if one wasn't provided
-                encoding = ContentHelper.GetDefaultEncoding();
+                encoding = Encoding.UTF8;
             }
             var content = responseStream.StreamToString(encoding);
             return content;
