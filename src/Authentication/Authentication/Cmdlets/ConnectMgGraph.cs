@@ -39,7 +39,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string ClientId { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, Position = 2, HelpMessage = HelpMessages.CertificateSubjectName)]
-        [Alias("CertificateSubject")]
+        [Alias("CertificateSubject", "CertificateName")]
         public string CertificateSubjectName { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, Position = 3, HelpMessage = HelpMessages.CertificateThumbprint)]

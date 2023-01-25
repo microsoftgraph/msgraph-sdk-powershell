@@ -49,6 +49,8 @@ paths:
                 - enrollmentTokenType desc
                 - enrollmentTokenUsageCount
                 - enrollmentTokenUsageCount desc
+                - isTeamsDeviceProfile
+                - isTeamsDeviceProfile desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - qrCodeContent
@@ -92,6 +94,7 @@ paths:
                 - enrollmentMode
                 - enrollmentTokenType
                 - enrollmentTokenUsageCount
+                - isTeamsDeviceProfile
                 - lastModifiedDateTime
                 - qrCodeContent
                 - qrCodeImage
@@ -183,6 +186,7 @@ paths:
                 - enrollmentMode
                 - enrollmentTokenType
                 - enrollmentTokenUsageCount
+                - isTeamsDeviceProfile
                 - lastModifiedDateTime
                 - qrCodeContent
                 - qrCodeImage
@@ -1885,6 +1889,7 @@ paths:
                 - deviceNameTemplate
                 - diagnosticsDisabled
                 - displayToneSetupDisabled
+                - enabledSkipKeys
                 - isDefault
                 - isMandatory
                 - locationDisabled
@@ -1989,6 +1994,7 @@ paths:
                 - deviceNameTemplate
                 - diagnosticsDisabled
                 - displayToneSetupDisabled
+                - enabledSkipKeys
                 - isDefault
                 - isMandatory
                 - locationDisabled
@@ -9690,6 +9696,9 @@ components:
               type: integer
               description: Total number of AOSP devices that have enrolled using the current token.
               format: int32
+            isTeamsDeviceProfile:
+              type: boolean
+              description: Boolean indicating if this profile is an Android AOSP for Teams device profile.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -10203,7 +10212,7 @@ components:
               description: Indicates if Weclome screen is disabled
             userlessSharedAadModeEnabled:
               type: boolean
-              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
+              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-shared-ios
             userSessionTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
@@ -11383,6 +11392,12 @@ components:
             displayToneSetupDisabled:
               type: boolean
               description: Indicates if displaytone setup screen is disabled
+            enabledSkipKeys:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: enabledSkipKeys contains all the enabled skip keys as strings
             isDefault:
               type: boolean
               description: Indicates if this is the default profile
@@ -11409,7 +11424,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -12876,11 +12891,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

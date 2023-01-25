@@ -16,14 +16,17 @@ function Start-Copy {
         [ValidateNotNullOrEmpty()]
         [string] $Module = "Users"
     )
+    
+    ../GenerateModules.ps1 -ModuleToGenerate "Teams"
+    
     $GraphMapping = Get-GraphMapping 
     $GraphMapping.Keys | ForEach-Object {
         $GraphProfile = $_
         Get-FilesByProfile -GraphProfile $GraphProfile -ModulesToGenerate $ModulesToGenerate -Module $Module
     }
-    Set-Location  ../../
-    git add .
-    git commit -m "Migrating $Module example files"
+     Set-Location  ../../
+     git add .
+     git commit -m "Migrating $Module example files"
     Write-Host -ForegroundColor Green "-------------Finished commit-------------"
 }
 
@@ -123,5 +126,5 @@ function update-ImportCommand {
 } 
 
 Write-Host -ForegroundColor Green "-------------Fetching docs and examples from dev-------------"
-Start-Copy -Module "Users.Functions"
+Start-Copy -Module "Teams"
 Write-Host -ForegroundColor Green "-------------Done-------------"
