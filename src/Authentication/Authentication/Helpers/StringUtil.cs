@@ -2,6 +2,9 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Properties;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,11 +14,6 @@ using System.Management.Automation;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-
-using Microsoft.Graph.PowerShell.Authentication.Properties;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
@@ -123,15 +121,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                          * return returnHashtable ? PopulateHashTableFromJDictionary(dictionary, out error) : PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
                          * https://github.com/PowerShell/PowerShell/blob/73f852da4252eabe4097ab48a7b67c5d147a01f3/src/System.Management.Automation/engine/MshObject.cs#L965
                          */
-                        if (returnHashtable)
-                            return PopulateHashTableFromJDictionary(dictionary, out error);
-                        else
-                            return PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
+                        return returnHashtable
+                            ? PopulateHashTableFromJDictionary(dictionary, out error)
+                            : (object)PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
                     case JArray list:
-                        if (returnHashtable)
-                            return PopulateHashTableFromJArray(list, out error);
-                        else
-                            return PopulateFromJArray(list, out error);
+                        return returnHashtable ? PopulateHashTableFromJArray(list, out error) : (object)PopulateFromJArray(list, out error);
                     default:
                         return obj;
                 }

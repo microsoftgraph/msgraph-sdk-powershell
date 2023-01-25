@@ -43,41 +43,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return responseStream;
         }
 
-        internal static bool TryGetEncoding(this string characterSet, out Encoding encoding)
-        {
-            var result = false;
-            try
-            {
-                encoding = Encoding.GetEncoding(characterSet);
-                result = true;
-            }
-            catch (ArgumentException)
-            {
-                encoding = null;
-            }
-
-            return result;
-        }
-
-        internal static string DecodeStream(this BufferingStreamReader responseStream, ref Encoding encoding)
-        {
-            if (encoding == null)
-            {
-                // Use the default encoding if one wasn't provided
-                encoding = Encoding.UTF8;
-            }
-            var content = responseStream.StreamToString(encoding);
-            return content;
-        }
-
-        internal static string StreamToString(this Stream stream, Encoding encoding)
-        {
-            using (var reader = new StreamReader(stream, encoding))
-            {
-                return reader.ReadToEnd();
-            }
-        }
-
         internal static void SaveStreamToFile(this Stream baseResponseStream, string filePath,
             InvokeMgGraphRequest invokeGraphRequest, CancellationToken token)
         {
