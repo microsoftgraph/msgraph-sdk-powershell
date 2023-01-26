@@ -754,7 +754,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         private void WaitForCompletion()
         {
             // wait for the result (or cancellation!)
-            WaitHandle.WaitAny(new[] {CancellationToken.WaitHandle, _completed?.WaitHandle});
+            WaitHandle.WaitAny(new[] { CancellationToken.WaitHandle, _completed?.WaitHandle });
 
             // let go of the semaphore
             _semaphore?.Release();
