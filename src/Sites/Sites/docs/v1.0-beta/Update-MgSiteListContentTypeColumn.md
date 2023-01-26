@@ -23,7 +23,7 @@ Update-MgSiteListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <
  [-HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>] [-Id <String>] [-Indexed] [-IsDeletable]
  [-IsReorderable] [-IsSealed] [-Lookup <IMicrosoftGraphLookupColumn>] [-Name <String>]
  [-Number <IMicrosoftGraphNumberColumn>] [-PersonOrGroup <IMicrosoftGraphPersonOrGroupColumn>]
- [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition>]
+ [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition1>]
  [-SourceContentType <IMicrosoftGraphContentTypeInfo>] [-Term <IMicrosoftGraphTermColumn>]
  [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>] [-Type <String>]
  [-Validation <IMicrosoftGraphColumnValidation>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -32,14 +32,14 @@ Update-MgSiteListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <
 ### Update
 ```
 Update-MgSiteListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String> -ListId <String>
- -SiteId <String> -BodyParameter <IMicrosoftGraphColumnDefinition> [-PassThru] [-Confirm] [-WhatIf]
+ -SiteId <String> -BodyParameter <IMicrosoftGraphColumnDefinition1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSiteListContentTypeColumn -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphColumnDefinition> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphColumnDefinition1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -53,7 +53,7 @@ Update-MgSiteListContentTypeColumn -InputObject <ISitesIdentity> [-AdditionalPro
  [-HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>] [-Id <String>] [-Indexed] [-IsDeletable]
  [-IsReorderable] [-IsSealed] [-Lookup <IMicrosoftGraphLookupColumn>] [-Name <String>]
  [-Number <IMicrosoftGraphNumberColumn>] [-PersonOrGroup <IMicrosoftGraphPersonOrGroupColumn>]
- [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition>]
+ [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition1>]
  [-SourceContentType <IMicrosoftGraphContentTypeInfo>] [-Term <IMicrosoftGraphTermColumn>]
  [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>] [-Type <String>]
  [-Validation <IMicrosoftGraphColumnValidation>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -86,7 +86,7 @@ columnDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -596,7 +596,7 @@ columnDefinition
 To construct, please use Get-Help -Online and see NOTES section for SOURCECOLUMN properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -737,7 +737,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 
@@ -754,7 +754,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphColumnDefinition>: columnDefinition
+BODYPARAMETER <IMicrosoftGraphColumnDefinition1>: columnDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
@@ -818,7 +818,7 @@ BODYPARAMETER <IMicrosoftGraphColumnDefinition>: columnDefinition
   - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
-  - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+  - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
   - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The id of the content type.
@@ -921,10 +921,12 @@ HYPERLINKORPICTURE <IMicrosoftGraphHyperlinkOrPictureColumn>: hyperlinkOrPicture
 
 INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[BaseItemId <String>]`: key: id of baseItem
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
   - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
@@ -933,6 +935,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
+  - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
@@ -945,6 +948,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[PermissionId <String>]`: key: id of permission
   - `[RelationId <String>]`: key: id of relation
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
@@ -955,6 +960,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
+  - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
   - `[WebPartId <String>]`: key: id of webPart
@@ -980,7 +987,7 @@ PERSONORGROUP <IMicrosoftGraphPersonOrGroupColumn>: personOrGroupColumn
   - `[ChooseFromType <String>]`: Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
   - `[DisplayAs <String>]`: How to display the information about the person or group chosen. See below.
 
-SOURCECOLUMN <IMicrosoftGraphColumnDefinition>: columnDefinition
+SOURCECOLUMN <IMicrosoftGraphColumnDefinition1>: columnDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
@@ -1044,7 +1051,7 @@ SOURCECOLUMN <IMicrosoftGraphColumnDefinition>: columnDefinition
   - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
-  - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+  - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
   - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The id of the content type.

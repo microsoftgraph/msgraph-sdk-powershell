@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerTaskAssignedToTaskBoardFormat
 
 ## SYNOPSIS
-Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
 
 ## EXAMPLES
 

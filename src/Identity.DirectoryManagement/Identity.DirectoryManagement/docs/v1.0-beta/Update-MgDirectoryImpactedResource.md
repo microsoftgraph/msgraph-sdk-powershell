@@ -14,23 +14,24 @@ Update the navigation property impactedResources in directory
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryImpactedResource -RecommendationResourceId <String> [-AddedDateTime <DateTime>]
+Update-MgDirectoryImpactedResource -ImpactedResourceId <String> [-AddedDateTime <DateTime>]
  [-AdditionalDetails <IMicrosoftGraphKeyValue[]>] [-AdditionalProperties <Hashtable>] [-ApiUrl <String>]
- [-DisplayName <String>] [-Id <String>] [-Owner <String>] [-PortalUrl <String>] [-Rank <Int32>]
- [-RecommendationId <String>] [-ResourceType <String>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <String>] [-LastModifiedDateTime <String>]
+ [-Owner <String>] [-PortalUrl <String>] [-PostponeUntilDateTime <DateTime>] [-Rank <Int32>]
+ [-RecommendationId <String>] [-ResourceType <String>] [-Status <String>] [-SubjectId <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectoryImpactedResource -RecommendationResourceId <String>
- -BodyParameter <IMicrosoftGraphRecommendationResource> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgDirectoryImpactedResource -ImpactedResourceId <String>
+ -BodyParameter <IMicrosoftGraphImpactedResource> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDirectoryImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphRecommendationResource> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphImpactedResource> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -38,8 +39,9 @@ Update-MgDirectoryImpactedResource -InputObject <IIdentityDirectoryManagementIde
 Update-MgDirectoryImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
  [-AddedDateTime <DateTime>] [-AdditionalDetails <IMicrosoftGraphKeyValue[]>]
  [-AdditionalProperties <Hashtable>] [-ApiUrl <String>] [-DisplayName <String>] [-Id <String>]
- [-Owner <String>] [-PortalUrl <String>] [-Rank <Int32>] [-RecommendationId <String>] [-ResourceType <String>]
- [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedBy <String>] [-LastModifiedDateTime <String>] [-Owner <String>] [-PortalUrl <String>]
+ [-PostponeUntilDateTime <DateTime>] [-Rank <Int32>] [-RecommendationId <String>] [-ResourceType <String>]
+ [-Status <String>] [-SubjectId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,11 +113,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-recommendationResource
+impactedResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImpactedResource
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -157,6 +159,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ImpactedResourceId
+key: id of impactedResource
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -170,6 +187,36 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -LastModifiedBy
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LastModifiedDateTime
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -218,6 +265,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PostponeUntilDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Rank
 .
 
@@ -248,21 +310,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RecommendationResourceId
-key: id of recommendationResource
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceType
 .
 
@@ -280,6 +327,21 @@ Accept wildcard characters: False
 
 ### -Status
 recommendationStatus
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubjectId
+.
 
 ```yaml
 Type: System.String
@@ -331,7 +393,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImpactedResource
 
 ## OUTPUTS
 
@@ -350,7 +412,7 @@ ADDITIONALDETAILS <IMicrosoftGraphKeyValue[]>: .
   - `[Key <String>]`: Key.
   - `[Value <String>]`: Value.
 
-BODYPARAMETER <IMicrosoftGraphRecommendationResource>: recommendationResource
+BODYPARAMETER <IMicrosoftGraphImpactedResource>: impactedResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: 
@@ -359,12 +421,16 @@ BODYPARAMETER <IMicrosoftGraphRecommendationResource>: recommendationResource
     - `[Value <String>]`: Value.
   - `[ApiUrl <String>]`: 
   - `[DisplayName <String>]`: 
+  - `[LastModifiedBy <String>]`: 
+  - `[LastModifiedDateTime <String>]`: 
   - `[Owner <String>]`: 
   - `[PortalUrl <String>]`: 
+  - `[PostponeUntilDateTime <DateTime?>]`: 
   - `[Rank <Int32?>]`: 
   - `[RecommendationId <String>]`: 
   - `[ResourceType <String>]`: 
   - `[Status <String>]`: recommendationStatus
+  - `[SubjectId <String>]`: 
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
@@ -384,6 +450,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
+  - `[ImpactedResourceId <String>]`: key: id of impactedResource
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
@@ -393,7 +460,6 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation
-  - `[RecommendationResourceId <String>]`: key: id of recommendationResource
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
   - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
   - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation

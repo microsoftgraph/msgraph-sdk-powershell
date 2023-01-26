@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBusinessScenarioPlannerPlanConfigurationLocalization
 
 ## SYNOPSIS
-Get localizations from solutions
+Localized names for the plan configuration.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgBusinessScenarioPlannerPlanConfigurationLocalization -InputObject <IBookin
 ```
 
 ## DESCRIPTION
-Get localizations from solutions
+Localized names for the plan configuration.
 
 ## EXAMPLES
 

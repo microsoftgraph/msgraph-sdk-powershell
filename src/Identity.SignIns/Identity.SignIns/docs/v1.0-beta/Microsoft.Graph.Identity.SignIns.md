@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 4150b8cd-a254-4793-b062-6721b9c9269a
+Module Guid: 07d18a02-b7c7-4d22-ac38-7701ecd2b17f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -249,6 +249,9 @@ This default configuration may be the service default assigned by Azure AD (**is
 
 ### [Get-MgPolicyCrossTenantAccessPolicyPartner](Get-MgPolicyCrossTenantAccessPolicyPartner.md)
 Defines partner-specific configurations for external Azure Active Directory organizations.
+
+### [Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
+Read the user synchronization policy of a partner-specific configuration.
 
 ### [Get-MgPolicyDefaultAppManagementPolicy](Get-MgPolicyDefaultAppManagementPolicy.md)
 Read the properties of a tenantAppManagementPolicy object.
@@ -1111,6 +1114,9 @@ Delete navigation property default for policies
 ### [Remove-MgPolicyCrossTenantAccessPolicyPartner](Remove-MgPolicyCrossTenantAccessPolicyPartner.md)
 Delete navigation property partners for policies
 
+### [Remove-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Remove-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
+Delete the user synchronization policy for a partner-specific configuration.
+
 ### [Remove-MgPolicyDefaultAppManagementPolicy](Remove-MgPolicyDefaultAppManagementPolicy.md)
 Delete navigation property defaultAppManagementPolicy for policies
 
@@ -1515,6 +1521,9 @@ Update the default configuration of a cross-tenant access policy.
 
 ### [Update-MgPolicyCrossTenantAccessPolicyPartner](Update-MgPolicyCrossTenantAccessPolicyPartner.md)
 Update the navigation property partners in policies
+
+### [Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
+Create a cross-tenant user synchronization policy for a partner-specific configuration.
 
 ### [Update-MgPolicyDefaultAppManagementPolicy](Update-MgPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.

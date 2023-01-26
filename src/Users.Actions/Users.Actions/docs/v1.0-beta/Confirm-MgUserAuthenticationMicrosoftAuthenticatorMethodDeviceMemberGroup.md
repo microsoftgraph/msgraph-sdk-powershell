@@ -16,14 +16,14 @@ Because Microsoft 365 groups cannot contain other groups, membership in a Micros
 
 ## SYNTAX
 
-### CheckExpanded1 (Default)
+### CheckExpanded (Default)
 ```
 Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-GroupIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Check1
+### Check
 ```
 Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
@@ -31,14 +31,14 @@ Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckViaIdentity1
+### CheckViaIdentity
 ```
 Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths19DarayUsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckViaIdentityExpanded1
+### CheckViaIdentityExpanded
 ```
 Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-GroupIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -100,7 +100,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CheckExpanded1, CheckViaIdentityExpanded1
+Parameter Sets: CheckExpanded, CheckViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -116,7 +116,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths19DarayUsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Check1, CheckViaIdentity1
+Parameter Sets: Check, CheckViaIdentity
 Aliases:
 
 Required: True
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CheckExpanded1, CheckViaIdentityExpanded1
+Parameter Sets: CheckExpanded, CheckViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -147,7 +147,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CheckViaIdentity1, CheckViaIdentityExpanded1
+Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -162,7 +162,7 @@ key: id of microsoftAuthenticatorAuthenticationMethod
 
 ```yaml
 Type: System.String
-Parameter Sets: Check1, CheckExpanded1
+Parameter Sets: Check, CheckExpanded
 Aliases:
 
 Required: True
@@ -177,7 +177,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Check1, CheckExpanded1
+Parameter Sets: Check, CheckExpanded
 Aliases:
 
 Required: True

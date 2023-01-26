@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 3ad7255d-a6f7-4206-87c4-182057cac149
+Module Guid: ba0dffb8-a57d-4c71-8288-20aebec0b569
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -175,9 +175,6 @@ Assignments of the PolicySet.
 
 ### [Get-MgDeviceAppMgtPolicySetItem](Get-MgDeviceAppMgtPolicySetItem.md)
 Items of the PolicySet with maximum count 100.
-
-### [Get-MgDeviceAppMgtSideLoadingKey](Get-MgDeviceAppMgtSideLoadingKey.md)
-Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 
 ### [Get-MgDeviceAppMgtSymantecCodeSigningCertificate](Get-MgDeviceAppMgtSymantecCodeSigningCertificate.md)
 The WinPhone Symantec Code Signing Certificate.
@@ -465,9 +462,6 @@ Create new navigation property to assignments for deviceAppManagement
 ### [New-MgDeviceAppMgtPolicySetItem](New-MgDeviceAppMgtPolicySetItem.md)
 Create new navigation property to items for deviceAppManagement
 
-### [New-MgDeviceAppMgtSideLoadingKey](New-MgDeviceAppMgtSideLoadingKey.md)
-Create new navigation property to sideLoadingKeys for deviceAppManagement
-
 ### [New-MgDeviceAppMgtTargetedManagedAppConfiguration](New-MgDeviceAppMgtTargetedManagedAppConfiguration.md)
 Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
 
@@ -698,9 +692,6 @@ Delete navigation property assignments for deviceAppManagement
 
 ### [Remove-MgDeviceAppMgtPolicySetItem](Remove-MgDeviceAppMgtPolicySetItem.md)
 Delete navigation property items for deviceAppManagement
-
-### [Remove-MgDeviceAppMgtSideLoadingKey](Remove-MgDeviceAppMgtSideLoadingKey.md)
-Delete navigation property sideLoadingKeys for deviceAppManagement
 
 ### [Remove-MgDeviceAppMgtSymantecCodeSigningCertificate](Remove-MgDeviceAppMgtSymantecCodeSigningCertificate.md)
 Delete navigation property symantecCodeSigningCertificate for deviceAppManagement
@@ -1001,9 +992,6 @@ Update the navigation property assignments in deviceAppManagement
 
 ### [Update-MgDeviceAppMgtPolicySetItem](Update-MgDeviceAppMgtPolicySetItem.md)
 Update the navigation property items in deviceAppManagement
-
-### [Update-MgDeviceAppMgtSideLoadingKey](Update-MgDeviceAppMgtSideLoadingKey.md)
-Update the navigation property sideLoadingKeys in deviceAppManagement
 
 ### [Update-MgDeviceAppMgtSymantecCodeSigningCertificate](Update-MgDeviceAppMgtSymantecCodeSigningCertificate.md)
 Update the navigation property symantecCodeSigningCertificate in deviceAppManagement

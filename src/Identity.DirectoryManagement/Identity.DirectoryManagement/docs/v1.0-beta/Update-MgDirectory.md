@@ -21,7 +21,7 @@ Update-MgDirectory [-AdditionalProperties <Hashtable>]
  [-DeletedItems <IMicrosoftGraphDirectoryObject[]>]
  [-FeatureRolloutPolicies <IMicrosoftGraphFeatureRolloutPolicy[]>]
  [-FederationConfigurations <IMicrosoftGraphIdentityProviderBase[]>] [-Id <String>]
- [-ImpactedResources <IMicrosoftGraphRecommendationResource[]>]
+ [-ImpactedResources <IMicrosoftGraphImpactedResource[]>]
  [-InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]
  [-OnPremisesSynchronization <IMicrosoftGraphOnPremisesDirectorySynchronization[]>]
  [-OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IMPACTEDRESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImpactedResource[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -428,7 +428,7 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
   - `[FederationConfigurations <IMicrosoftGraphIdentityProviderBase[]>]`: Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The display name of the identity provider.
-  - `[ImpactedResources <IMicrosoftGraphRecommendationResource[]>]`: 
+  - `[ImpactedResources <IMicrosoftGraphImpactedResource[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: 
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
@@ -436,12 +436,16 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
       - `[Value <String>]`: Value.
     - `[ApiUrl <String>]`: 
     - `[DisplayName <String>]`: 
+    - `[LastModifiedBy <String>]`: 
+    - `[LastModifiedDateTime <String>]`: 
     - `[Owner <String>]`: 
     - `[PortalUrl <String>]`: 
+    - `[PostponeUntilDateTime <DateTime?>]`: 
     - `[Rank <Int32?>]`: 
     - `[RecommendationId <String>]`: 
     - `[ResourceType <String>]`: 
     - `[Status <String>]`: recommendationStatus
+    - `[SubjectId <String>]`: 
   - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: 
     - `[DisplayName <String>]`: 
     - `[HomeTenantId <String>]`: 
@@ -483,7 +487,6 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
       - `[TenantId <String>]`: 
     - `[UserId <String>]`: 
   - `[Recommendations <IMicrosoftGraphRecommendation[]>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: 
       - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -494,17 +497,23 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[Benefits <String>]`: 
     - `[Category <String>]`: recommendationCategory
     - `[CreatedDateTime <DateTime?>]`: 
+    - `[CurrentScore <Double?>]`: 
     - `[DisplayName <String>]`: 
+    - `[FeatureAreas <String[]>]`: 
     - `[ImpactStartDateTime <DateTime?>]`: 
     - `[ImpactType <String>]`: 
-    - `[ImpactedResources <IMicrosoftGraphRecommendationResource[]>]`: 
+    - `[ImpactedResources <IMicrosoftGraphImpactedResource[]>]`: 
     - `[Insights <String>]`: 
     - `[LastCheckedDateTime <DateTime?>]`: 
     - `[LastModifiedBy <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[MaxScore <Double?>]`: 
     - `[PostponeUntilDateTime <DateTime?>]`: 
     - `[Priority <String>]`: recommendationPriority
+    - `[RecommendationType <String>]`: recommendationType
+    - `[RemediationImpact <String>]`: 
     - `[Status <String>]`: recommendationStatus
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[SharedEmailDomains <IMicrosoftGraphSharedEmailDomain[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ProvisioningStatus <String>]`: 
@@ -542,7 +551,7 @@ FEDERATIONCONFIGURATIONS <IMicrosoftGraphIdentityProviderBase[]>: Configure doma
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the identity provider.
 
-IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
+IMPACTEDRESOURCES <IMicrosoftGraphImpactedResource[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: 
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
@@ -550,12 +559,16 @@ IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
     - `[Value <String>]`: Value.
   - `[ApiUrl <String>]`: 
   - `[DisplayName <String>]`: 
+  - `[LastModifiedBy <String>]`: 
+  - `[LastModifiedDateTime <String>]`: 
   - `[Owner <String>]`: 
   - `[PortalUrl <String>]`: 
+  - `[PostponeUntilDateTime <DateTime?>]`: 
   - `[Rank <Int32?>]`: 
   - `[RecommendationId <String>]`: 
   - `[ResourceType <String>]`: 
   - `[Status <String>]`: recommendationStatus
+  - `[SubjectId <String>]`: 
 
 INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>: .
   - `[DisplayName <String>]`: 
@@ -601,7 +614,6 @@ OUTBOUNDSHAREDUSERPROFILES <IMicrosoftGraphOutboundSharedUserProfile[]>: .
   - `[UserId <String>]`: 
 
 RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>: .
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: 
     - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -612,10 +624,12 @@ RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>: .
   - `[Benefits <String>]`: 
   - `[Category <String>]`: recommendationCategory
   - `[CreatedDateTime <DateTime?>]`: 
+  - `[CurrentScore <Double?>]`: 
   - `[DisplayName <String>]`: 
+  - `[FeatureAreas <String[]>]`: 
   - `[ImpactStartDateTime <DateTime?>]`: 
   - `[ImpactType <String>]`: 
-  - `[ImpactedResources <IMicrosoftGraphRecommendationResource[]>]`: 
+  - `[ImpactedResources <IMicrosoftGraphImpactedResource[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: 
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
@@ -623,19 +637,27 @@ RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>: .
       - `[Value <String>]`: Value.
     - `[ApiUrl <String>]`: 
     - `[DisplayName <String>]`: 
+    - `[LastModifiedBy <String>]`: 
+    - `[LastModifiedDateTime <String>]`: 
     - `[Owner <String>]`: 
     - `[PortalUrl <String>]`: 
+    - `[PostponeUntilDateTime <DateTime?>]`: 
     - `[Rank <Int32?>]`: 
     - `[RecommendationId <String>]`: 
     - `[ResourceType <String>]`: 
     - `[Status <String>]`: recommendationStatus
+    - `[SubjectId <String>]`: 
   - `[Insights <String>]`: 
   - `[LastCheckedDateTime <DateTime?>]`: 
   - `[LastModifiedBy <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[MaxScore <Double?>]`: 
   - `[PostponeUntilDateTime <DateTime?>]`: 
   - `[Priority <String>]`: recommendationPriority
+  - `[RecommendationType <String>]`: recommendationType
+  - `[RemediationImpact <String>]`: 
   - `[Status <String>]`: recommendationStatus
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
 SHAREDEMAILDOMAINS <IMicrosoftGraphSharedEmailDomain[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

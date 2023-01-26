@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 133cda79-e602-436a-9aad-833c398723ba
+Module Guid: 527fc1c1-0576-4019-9847-0786ad85f62f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -37,26 +37,6 @@ For details about presences sessions, see presence: setPresence.
 
 ### [Clear-MgUserPresenceUserPreferredPresence](Clear-MgUserPresenceUserPreferredPresence.md)
 Clear the preferred availability and activity status for a user.
-
-### [Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup](Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-
-### [Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject](Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject.md)
-Invoke action checkMemberObjects
-
-### [Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup](Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-
-### [Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject](Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject.md)
-Invoke action checkMemberObjects
 
 ### [Confirm-MgUserMemberGroup](Confirm-MgUserMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -131,24 +111,6 @@ If **findMeetingTimes** cannot return any meeting suggestions, the response woul
 \nBased on this value, you can better adjust the parameters and call **findMeetingTimes** again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject.md)
-Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-**Note:** Only users and role-enabled groups can be members of directory roles.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject.md)
-Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-**Note:** Only users and role-enabled groups can be members of directory roles.
 
 ### [Get-MgUserById](Get-MgUserById.md)
 Return the directory objects specified in a list of IDs.
@@ -593,13 +555,6 @@ Reset passcode
 
 ### [Restart-MgUserManagedDeviceNow](Restart-MgUserManagedDeviceNow.md)
 Reboot device
-
-### [Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
-Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
-If an item was accidentally deleted, you can fully restore the item.
-This is not applicable to security groups, which are deleted permanently.
-A recently deleted item will remain available for up to 30 days.
-After 30 days, the item is permanently deleted.
 
 ### [Restore-MgUserDriveItem](Restore-MgUserDriveItem.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.

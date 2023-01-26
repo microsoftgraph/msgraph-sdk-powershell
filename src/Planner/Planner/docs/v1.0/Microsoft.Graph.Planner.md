@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: d3f456ae-5bba-426d-a7c7-6068779540f7
+Module Guid: 24efdb73-3729-491c-8ee3-b635e7e17c51
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -59,7 +59,7 @@ Nullable.
 Returns a collection of the specified tasks
 
 ### [Get-MgPlannerTaskAssignedToTaskBoardFormat](Get-MgPlannerTaskAssignedToTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
 
 ### [Get-MgPlannerTaskBucketTaskBoardFormat](Get-MgPlannerTaskBucketTaskBoardFormat.md)
 Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.

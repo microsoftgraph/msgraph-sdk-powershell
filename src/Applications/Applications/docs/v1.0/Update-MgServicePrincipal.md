@@ -1212,7 +1212,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipal>: servicePrincipal
     - `[SupportUrl <String>]`: Link to the application's support page. For example, https://www.contoso.com/app/support
     - `[TermsOfServiceUrl <String>]`: Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
   - `[KeyCredentials <IMicrosoftGraphKeyCredential[]>]`: The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
-    - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
+    - `[CustomKeyIdentifier <Byte[]>]`: A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
     - `[DisplayName <String>]`: Friendly name for the key. Optional.
     - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
@@ -1380,7 +1380,7 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 KEYCREDENTIALS <IMicrosoftGraphKeyCredential[]>: The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
-  - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
+  - `[CustomKeyIdentifier <Byte[]>]`: A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
   - `[DisplayName <String>]`: Friendly name for the key. Optional.
   - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.

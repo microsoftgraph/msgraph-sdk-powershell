@@ -82,6 +82,8 @@ Accept wildcard characters: False
 
 ### -CreatedDateTime
 The start time of the operation.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -160,6 +162,8 @@ Accept wildcard characters: False
 
 ### -LastActionDateTime
 The time of the last action in the operation.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -333,8 +337,8 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphRichLongRunningOperation>: richLongRunningOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The start time of the operation.
-  - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation.
+  - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
   - `[Status <String>]`: longRunningOperationStatus
   - `[StatusDetail <String>]`: Details about the status of the operation.

@@ -12,7 +12,7 @@ Create new navigation property to operations for security
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgSecurityCaseEdiscoveryCaseOperation -EdiscoveryCaseId <String> [-Action <String>]
  [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
@@ -20,19 +20,19 @@ New-MgSecurityCaseEdiscoveryCaseOperation -EdiscoveryCaseId <String> [-Action <S
  [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgSecurityCaseEdiscoveryCaseOperation -EdiscoveryCaseId <String>
  -BodyParameter <IMicrosoftGraphSecurityCaseOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgSecurityCaseEdiscoveryCaseOperation -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityCaseOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgSecurityCaseEdiscoveryCaseOperation -InputObject <ISecurityIdentity> [-Action <String>]
  [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
@@ -52,7 +52,7 @@ caseAction
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -67,7 +67,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -83,7 +83,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityCaseOperation
-Parameter Sets: Create1, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -98,7 +98,7 @@ The date and time the operation was completed.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -114,7 +114,7 @@ To construct, please use Get-Help -Online and see NOTES section for CREATEDBY pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -129,7 +129,7 @@ The date and time the operation was created.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -144,7 +144,7 @@ key: id of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -160,7 +160,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -176,7 +176,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -191,7 +191,7 @@ The progress of the operation.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -207,7 +207,7 @@ To construct, please use Get-Help -Online and see NOTES section for RESULTINFO p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResultInfo
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -222,7 +222,7 @@ caseOperationStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -318,6 +318,7 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[AlertId <String>]`: key: id of alert
+  - `[AttackSimulationOperationId <String>]`: key: id of attackSimulationOperation
   - `[AuthoredNoteId <String>]`: key: id of authoredNote
   - `[CaseOperationId <String>]`: key: id of caseOperation
   - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
@@ -341,6 +342,7 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
   - `[IncidentId <String>]`: key: id of incident
+  - `[PayloadId <String>]`: key: id of payload
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[RetentionEventId <String>]`: key: id of retentionEvent
   - `[RetentionEventTypeId <String>]`: key: id of retentionEventType

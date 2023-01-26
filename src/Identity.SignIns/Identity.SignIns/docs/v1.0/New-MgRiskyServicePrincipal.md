@@ -31,6 +31,17 @@ Create new navigation property to riskyServicePrincipals for identityProtection
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgRiskyServicePrincipal
+```
+
+This example shows how to use the New-MgRiskyServicePrincipal Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties

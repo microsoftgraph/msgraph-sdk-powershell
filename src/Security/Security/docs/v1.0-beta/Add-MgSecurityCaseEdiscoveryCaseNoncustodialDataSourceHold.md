@@ -14,39 +14,39 @@ The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ## SYNTAX
 
-### ApplyExpanded1 (Default)
+### ApplyExpanded (Default)
 ```
 Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -EdiscoveryCaseId <String>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Apply2
-```
-Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -EdiscoveryCaseId <String>
- -EdiscoveryNoncustodialDataSourceId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Apply3
+### Apply
 ```
 Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -EdiscoveryCaseId <String>
  -BodyParameter <IPathsUr2Sc1SecurityCasesEdiscoverycasesEdiscoverycaseIdNoncustodialdatasourcesMicrosoftGraphSecurityApplyholdPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ApplyViaIdentity2
+### Apply3
 ```
-Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -InputObject <ISecurityIdentity> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -EdiscoveryCaseId <String>
+ -EdiscoveryNoncustodialDataSourceId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ApplyViaIdentity3
+### ApplyViaIdentity
 ```
 Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -InputObject <ISecurityIdentity>
  -BodyParameter <IPathsUr2Sc1SecurityCasesEdiscoverycasesEdiscoverycaseIdNoncustodialdatasourcesMicrosoftGraphSecurityApplyholdPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ApplyViaIdentityExpanded1
+### ApplyViaIdentity3
+```
+Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -InputObject <ISecurityIdentity> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### ApplyViaIdentityExpanded
 ```
 Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -84,7 +84,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ApplyExpanded1, ApplyViaIdentityExpanded1
+Parameter Sets: ApplyExpanded, ApplyViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -100,7 +100,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsUr2Sc1SecurityCasesEdiscoverycasesEdiscoverycaseIdNoncustodialdatasourcesMicrosoftGraphSecurityApplyholdPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Apply3, ApplyViaIdentity3
+Parameter Sets: Apply, ApplyViaIdentity
 Aliases:
 
 Required: True
@@ -115,7 +115,7 @@ key: id of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Apply2, Apply3, ApplyExpanded1
+Parameter Sets: Apply, Apply3, ApplyExpanded
 Aliases:
 
 Required: True
@@ -130,7 +130,7 @@ key: id of ediscoveryNoncustodialDataSource
 
 ```yaml
 Type: System.String
-Parameter Sets: Apply2
+Parameter Sets: Apply3
 Aliases:
 
 Required: True
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: ApplyExpanded1, ApplyViaIdentityExpanded1
+Parameter Sets: ApplyExpanded, ApplyViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -161,7 +161,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: ApplyViaIdentity2, ApplyViaIdentity3, ApplyViaIdentityExpanded1
+Parameter Sets: ApplyViaIdentity, ApplyViaIdentity3, ApplyViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -245,6 +245,7 @@ BODYPARAMETER <IPathsUr2Sc1SecurityCasesEdiscoverycasesEdiscoverycaseIdNoncustod
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[AlertId <String>]`: key: id of alert
+  - `[AttackSimulationOperationId <String>]`: key: id of attackSimulationOperation
   - `[AuthoredNoteId <String>]`: key: id of authoredNote
   - `[CaseOperationId <String>]`: key: id of caseOperation
   - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
@@ -268,6 +269,7 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
   - `[IncidentId <String>]`: key: id of incident
+  - `[PayloadId <String>]`: key: id of payload
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[RetentionEventId <String>]`: key: id of retentionEvent
   - `[RetentionEventTypeId <String>]`: key: id of retentionEventType

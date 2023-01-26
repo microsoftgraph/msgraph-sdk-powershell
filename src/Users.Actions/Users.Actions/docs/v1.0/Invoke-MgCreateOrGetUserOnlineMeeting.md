@@ -17,7 +17,7 @@ If the external ID already exists, this API will return the onlineMeeting object
 ```
 Invoke-MgCreateOrGetUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ChatInfo <IMicrosoftGraphChatInfo>] [-EndDateTime <DateTime>] [-ExternalId <String>]
- [-Participants <IMicrosoftGraphMeetingParticipants>] [-StartDateTime <DateTime>] [-Subject <String>]
+ [-Participants <IMicrosoftGraphMeetingParticipants1>] [-StartDateTime <DateTime>] [-Subject <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -39,7 +39,7 @@ Invoke-MgCreateOrGetUserOnlineMeeting -InputObject <IUsersActionsIdentity>
 ```
 Invoke-MgCreateOrGetUserOnlineMeeting -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ChatInfo <IMicrosoftGraphChatInfo>] [-EndDateTime <DateTime>] [-ExternalId <String>]
- [-Participants <IMicrosoftGraphMeetingParticipants>] [-StartDateTime <DateTime>] [-Subject <String>]
+ [-Participants <IMicrosoftGraphMeetingParticipants1>] [-StartDateTime <DateTime>] [-Subject <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -177,7 +177,7 @@ meetingParticipants
 To construct, please use Get-Help -Online and see NOTES section for PARTICIPANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingParticipants
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingParticipants1
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -275,7 +275,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 
 ## NOTES
 
@@ -295,7 +295,7 @@ BODYPARAMETER <IPaths1H47062UsersUserIdOnlinemeetingsMicrosoftGraphCreateorgetPo
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[EndDateTime <DateTime?>]`: 
   - `[ExternalId <String>]`: 
-  - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
+  - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
       - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -364,7 +364,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
   - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
-PARTICIPANTS <IMicrosoftGraphMeetingParticipants>: meetingParticipants
+PARTICIPANTS <IMicrosoftGraphMeetingParticipants1>: meetingParticipants
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
     - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 4e61386f-e7a1-4cdc-ac51-8508483f4c92
+Module Guid: aaa31421-6471-4b4a-9a65-c0b982cd2a3a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -52,6 +52,9 @@ Invoke action getDeviceManagementIntentSettingsReport
 
 ### [Get-MgDeviceManagementReportDeviceNonComplianceReport](Get-MgDeviceManagementReportDeviceNonComplianceReport.md)
 Invoke action getDeviceNonComplianceReport
+
+### [Get-MgDeviceManagementReportDeviceWithoutCompliancePolicyReport](Get-MgDeviceManagementReportDeviceWithoutCompliancePolicyReport.md)
+Invoke action getDevicesWithoutCompliancePolicyReport
 
 ### [Get-MgDeviceManagementReportFilter](Get-MgDeviceManagementReportFilter.md)
 Invoke action getReportFilters

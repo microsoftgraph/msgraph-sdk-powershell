@@ -16,13 +16,14 @@ Create new navigation property to impactedResources for directory
 ```
 New-MgDirectoryImpactedResource [-AddedDateTime <DateTime>] [-AdditionalDetails <IMicrosoftGraphKeyValue[]>]
  [-AdditionalProperties <Hashtable>] [-ApiUrl <String>] [-DisplayName <String>] [-Id <String>]
- [-Owner <String>] [-PortalUrl <String>] [-Rank <Int32>] [-RecommendationId <String>] [-ResourceType <String>]
- [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedBy <String>] [-LastModifiedDateTime <String>] [-Owner <String>] [-PortalUrl <String>]
+ [-PostponeUntilDateTime <DateTime>] [-Rank <Int32>] [-RecommendationId <String>] [-ResourceType <String>]
+ [-Status <String>] [-SubjectId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryImpactedResource -BodyParameter <IMicrosoftGraphRecommendationResource> [-Confirm] [-WhatIf]
+New-MgDirectoryImpactedResource -BodyParameter <IMicrosoftGraphImpactedResource> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -95,11 +96,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-recommendationResource
+impactedResource
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImpactedResource
 Parameter Sets: Create
 Aliases:
 
@@ -141,6 +142,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LastModifiedBy
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LastModifiedDateTime
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Owner
 .
 
@@ -161,6 +192,21 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PostponeUntilDateTime
+.
+
+```yaml
+Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -231,6 +277,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SubjectId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -267,11 +328,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImpactedResource
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImpactedResource
 
 ## NOTES
 
@@ -286,7 +347,7 @@ ADDITIONALDETAILS <IMicrosoftGraphKeyValue[]>: .
   - `[Key <String>]`: Key.
   - `[Value <String>]`: Value.
 
-BODYPARAMETER <IMicrosoftGraphRecommendationResource>: recommendationResource
+BODYPARAMETER <IMicrosoftGraphImpactedResource>: impactedResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: 
@@ -295,12 +356,16 @@ BODYPARAMETER <IMicrosoftGraphRecommendationResource>: recommendationResource
     - `[Value <String>]`: Value.
   - `[ApiUrl <String>]`: 
   - `[DisplayName <String>]`: 
+  - `[LastModifiedBy <String>]`: 
+  - `[LastModifiedDateTime <String>]`: 
   - `[Owner <String>]`: 
   - `[PortalUrl <String>]`: 
+  - `[PostponeUntilDateTime <DateTime?>]`: 
   - `[Rank <Int32?>]`: 
   - `[RecommendationId <String>]`: 
   - `[ResourceType <String>]`: 
   - `[Status <String>]`: recommendationStatus
+  - `[SubjectId <String>]`: 
 
 ## RELATED LINKS
 

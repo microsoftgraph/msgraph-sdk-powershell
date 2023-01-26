@@ -15,18 +15,18 @@ Create new navigation property to recommendations for directory
 ### CreateExpanded (Default)
 ```
 New-MgDirectoryRecommendation [-ActionSteps <IMicrosoftGraphActionStep[]>] [-AdditionalProperties <Hashtable>]
- [-Benefits <String>] [-Category <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
- [-Id <String>] [-ImpactedResources <IMicrosoftGraphRecommendationResource[]>]
- [-ImpactStartDateTime <DateTime>] [-ImpactType <String>] [-Insights <String>]
- [-LastCheckedDateTime <DateTime>] [-LastModifiedBy <String>] [-LastModifiedDateTime <DateTime>]
- [-PostponeUntilDateTime <DateTime>] [-Priority <String>] [-Status <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Benefits <String>] [-Category <String>] [-CreatedDateTime <DateTime>] [-CurrentScore <Double>]
+ [-DisplayName <String>] [-FeatureAreas <String[]>] [-Id <String>]
+ [-ImpactedResources <IMicrosoftGraphImpactedResource[]>] [-ImpactStartDateTime <DateTime>]
+ [-ImpactType <String>] [-Insights <String>] [-LastCheckedDateTime <DateTime>] [-LastModifiedBy <String>]
+ [-LastModifiedDateTime <DateTime>] [-MaxScore <Double>] [-PostponeUntilDateTime <DateTime>]
+ [-Priority <String>] [-RecommendationType <String>] [-RemediationImpact <String>] [-Status <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryRecommendation -BodyParameter <IMicrosoftGraphRecommendation> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgDirectoryRecommendation -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -84,10 +84,9 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 recommendation
-To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendation
+Type: System.Collections.Hashtable
 Parameter Sets: Create
 Aliases:
 
@@ -128,11 +127,41 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CurrentScore
+.
+
+```yaml
+Type: System.Double
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DisplayName
 .
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FeatureAreas
+.
+
+```yaml
+Type: System.String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -164,7 +193,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for IMPACTEDRESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImpactedResource[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -265,6 +294,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MaxScore
+.
+
+```yaml
+Type: System.Double
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PostponeUntilDateTime
 .
 
@@ -282,6 +326,36 @@ Accept wildcard characters: False
 
 ### -Priority
 recommendationPriority
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RecommendationType
+recommendationType
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemediationImpact
+.
 
 ```yaml
 Type: System.String
@@ -346,7 +420,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendation
+### System.Collections.Hashtable
 
 ## OUTPUTS
 
@@ -369,45 +443,7 @@ ACTIONSTEPS <IMicrosoftGraphActionStep[]>: .
   - `[StepNumber <Int64?>]`: 
   - `[Text <String>]`: 
 
-BODYPARAMETER <IMicrosoftGraphRecommendation>: recommendation
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: 
-    - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: 
-      - `[Url <String>]`: 
-    - `[StepNumber <Int64?>]`: 
-    - `[Text <String>]`: 
-  - `[Benefits <String>]`: 
-  - `[Category <String>]`: recommendationCategory
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[DisplayName <String>]`: 
-  - `[ImpactStartDateTime <DateTime?>]`: 
-  - `[ImpactType <String>]`: 
-  - `[ImpactedResources <IMicrosoftGraphRecommendationResource[]>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[AddedDateTime <DateTime?>]`: 
-    - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
-    - `[ApiUrl <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[Owner <String>]`: 
-    - `[PortalUrl <String>]`: 
-    - `[Rank <Int32?>]`: 
-    - `[RecommendationId <String>]`: 
-    - `[ResourceType <String>]`: 
-    - `[Status <String>]`: recommendationStatus
-  - `[Insights <String>]`: 
-  - `[LastCheckedDateTime <DateTime?>]`: 
-  - `[LastModifiedBy <String>]`: 
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[PostponeUntilDateTime <DateTime?>]`: 
-  - `[Priority <String>]`: recommendationPriority
-  - `[Status <String>]`: recommendationStatus
-
-IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
+IMPACTEDRESOURCES <IMicrosoftGraphImpactedResource[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: 
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
@@ -415,12 +451,16 @@ IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
     - `[Value <String>]`: Value.
   - `[ApiUrl <String>]`: 
   - `[DisplayName <String>]`: 
+  - `[LastModifiedBy <String>]`: 
+  - `[LastModifiedDateTime <String>]`: 
   - `[Owner <String>]`: 
   - `[PortalUrl <String>]`: 
+  - `[PostponeUntilDateTime <DateTime?>]`: 
   - `[Rank <Int32?>]`: 
   - `[RecommendationId <String>]`: 
   - `[ResourceType <String>]`: 
   - `[Status <String>]`: recommendationStatus
+  - `[SubjectId <String>]`: 
 
 ## RELATED LINKS
 

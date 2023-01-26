@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: 2605f878-6207-438e-b901-b41066ebfc00
+Module Guid: f1466665-c823-4941-8689-e9294fa64e61
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -436,6 +436,9 @@ Create a new cloudPcExportJob object.
 ### [New-MgDeviceManagementVirtualEndpointServicePlan](New-MgDeviceManagementVirtualEndpointServicePlan.md)
 Create new navigation property to servicePlans for deviceManagement
 
+### [New-MgDeviceManagementVirtualEndpointSharedUseServicePlan](New-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
+Create new navigation property to sharedUseServicePlans for deviceManagement
+
 ### [New-MgDeviceManagementVirtualEndpointSnapshot](New-MgDeviceManagementVirtualEndpointSnapshot.md)
 Create new navigation property to snapshots for deviceManagement
 
@@ -621,6 +624,9 @@ Delete navigation property exportJobs for deviceManagement
 
 ### [Remove-MgDeviceManagementVirtualEndpointServicePlan](Remove-MgDeviceManagementVirtualEndpointServicePlan.md)
 Delete navigation property servicePlans for deviceManagement
+
+### [Remove-MgDeviceManagementVirtualEndpointSharedUseServicePlan](Remove-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
+Delete navigation property sharedUseServicePlans for deviceManagement
 
 ### [Remove-MgDeviceManagementVirtualEndpointSnapshot](Remove-MgDeviceManagementVirtualEndpointSnapshot.md)
 Delete navigation property snapshots for deviceManagement
@@ -810,6 +816,9 @@ Update the navigation property exportJobs in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointServicePlan](Update-MgDeviceManagementVirtualEndpointServicePlan.md)
 Update the navigation property servicePlans in deviceManagement
+
+### [Update-MgDeviceManagementVirtualEndpointSharedUseServicePlan](Update-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
+Update the navigation property sharedUseServicePlans in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointSnapshot](Update-MgDeviceManagementVirtualEndpointSnapshot.md)
 Update the navigation property snapshots in deviceManagement

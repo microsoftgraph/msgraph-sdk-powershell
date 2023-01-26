@@ -1121,7 +1121,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
   - `[IsDeviceOnlyAuthSupported <Boolean?>]`: Specifies whether this application supports device authentication without a user. The default is false.
   - `[IsFallbackPublicClient <Boolean?>]`: Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
   - `[KeyCredentials <IMicrosoftGraphKeyCredential[]>]`: The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
-    - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
+    - `[CustomKeyIdentifier <Byte[]>]`: A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
     - `[DisplayName <String>]`: Friendly name for the key. Optional.
     - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
@@ -1358,8 +1358,8 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
           - `[Value <Int64?>]`: Value.
         - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
       - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-        - `[Name <String>]`: Name for this key-value pair
-        - `[Value <String>]`: Value for this key-value pair
+        - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+        - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
       - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
     - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
       - `[Key <String>]`: synchronizationSecret
@@ -1520,7 +1520,7 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
     - `[IsDeviceOnlyAuthSupported <Boolean?>]`: Specifies whether this application supports device authentication without a user. The default is false.
     - `[IsFallbackPublicClient <Boolean?>]`: Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
     - `[KeyCredentials <IMicrosoftGraphKeyCredential[]>]`: The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
-      - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
+      - `[CustomKeyIdentifier <Byte[]>]`: A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
       - `[DisplayName <String>]`: Friendly name for the key. Optional.
       - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
@@ -1757,8 +1757,8 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
             - `[Value <Int64?>]`: Value.
           - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
         - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-          - `[Name <String>]`: Name for this key-value pair
-          - `[Value <String>]`: Value for this key-value pair
+          - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+          - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
         - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
       - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
         - `[Key <String>]`: synchronizationSecret
@@ -1866,7 +1866,7 @@ INFO <IMicrosoftGraphInformationalUrl>: informationalUrl
   - `[TermsOfServiceUrl <String>]`: Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 
 KEYCREDENTIALS <IMicrosoftGraphKeyCredential[]>: The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
-  - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
+  - `[CustomKeyIdentifier <Byte[]>]`: A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
   - `[DisplayName <String>]`: Friendly name for the key. Optional.
   - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
@@ -1920,7 +1920,7 @@ ONPREMISESPUBLISHING <IMicrosoftGraphOnPremisesPublishing>: onPremisesPublishing
     - `[Thumbprint <String>]`: The thumbprint associated with the custom domain certificate.
   - `[VerifiedCustomDomainKeyCredential <IMicrosoftGraphKeyCredential>]`: keyCredential
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
+    - `[CustomKeyIdentifier <Byte[]>]`: A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
     - `[DisplayName <String>]`: Friendly name for the key. Optional.
     - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
@@ -2126,8 +2126,8 @@ SYNCHRONIZATION <IMicrosoftGraphSynchronization>: synchronization
         - `[Value <Int64?>]`: Value.
       - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
     - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-      - `[Name <String>]`: Name for this key-value pair
-      - `[Value <String>]`: Value for this key-value pair
+      - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+      - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
     - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
   - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
     - `[Key <String>]`: synchronizationSecret

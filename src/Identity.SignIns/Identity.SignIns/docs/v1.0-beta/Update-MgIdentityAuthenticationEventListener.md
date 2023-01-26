@@ -16,8 +16,8 @@ Update the navigation property authenticationEventListeners in identity
 ```
 Update-MgIdentityAuthenticationEventListener -AuthenticationEventListenerId <String>
  [-AdditionalProperties <Hashtable>] [-AuthenticationEventsFlowId <String>]
- [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>]
- [-Tags <IMicrosoftGraphKeyValuePair[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -38,8 +38,8 @@ Update-MgIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdent
 ```
 Update-MgIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-AuthenticationEventsFlowId <String>]
- [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>]
- [-Tags <IMicrosoftGraphKeyValuePair[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -188,22 +188,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tags
-.
-To construct, please use Get-Help -Online and see NOTES section for TAGS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -269,9 +253,6 @@ BODYPARAMETER <IMicrosoftGraphAuthenticationEventListener>: authenticationEventL
       - `[IncludeApplications <IMicrosoftGraphAuthenticationConditionApplication[]>]`: 
         - `[AppId <String>]`: 
   - `[Priority <Int32?>]`: 
-  - `[Tags <IMicrosoftGraphKeyValuePair[]>]`: 
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
 
 CONDITIONS <IMicrosoftGraphAuthenticationConditions>: authenticationConditions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -357,10 +338,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[UserFlowLanguagePageId <String>]`: key: id of userFlowLanguagePage
   - `[UserId <String>]`: key: id of user
   - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
-
-TAGS <IMicrosoftGraphKeyValuePair[]>: .
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
 
 ## RELATED LINKS
 

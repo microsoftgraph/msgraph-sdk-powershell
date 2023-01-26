@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupSite
 
 ## SYNOPSIS
-The collection of the sub-sites under this site.
+The list of SharePoint sites in this group.
+Access the default site with /sites/root.
 
 ## SYNTAX
 
@@ -19,20 +20,21 @@ Get-MgGroupSite -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
-Get-MgGroupSite -GroupId <String> -SiteId <String> -SiteId1 <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgGroupSite -GroupId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgGroupSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of the sub-sites under this site.
+The list of SharePoint sites in this group.
+Access the default site with /sites/root.
 
 ## EXAMPLES
 
@@ -104,7 +106,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -120,7 +122,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -180,22 +182,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SiteId1
-key: id of site
-
-```yaml
-Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -272,10 +259,12 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[BaseItemId <String>]`: key: id of baseItem
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
   - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
@@ -284,6 +273,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
+  - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
@@ -296,6 +286,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[PermissionId <String>]`: key: id of permission
   - `[RelationId <String>]`: key: id of relation
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
@@ -306,6 +298,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
+  - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
   - `[WebPartId <String>]`: key: id of webPart
