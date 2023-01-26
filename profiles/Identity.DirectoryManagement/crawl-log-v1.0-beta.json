@@ -489,23 +489,23 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directory/impactedResources/{recommendationResource-id}": {
+    "/directory/impactedResources/{impactedResource-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directory/impactedResources/{recommendationResource-id}/microsoft.graph.complete": {
+    "/directory/impactedResources/{impactedResource-id}/microsoft.graph.complete": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directory/impactedResources/{recommendationResource-id}/microsoft.graph.dismiss": {
+    "/directory/impactedResources/{impactedResource-id}/microsoft.graph.dismiss": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directory/impactedResources/{recommendationResource-id}/microsoft.graph.postpone": {
+    "/directory/impactedResources/{impactedResource-id}/microsoft.graph.postpone": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directory/impactedResources/{recommendationResource-id}/microsoft.graph.reactivate": {
+    "/directory/impactedResources/{impactedResource-id}/microsoft.graph.reactivate": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
@@ -558,30 +558,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
     "/directory/recommendations/{recommendation-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
-    },
-    "/directory/recommendations/{recommendation-id}/impactedResources": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
-    },
-    "/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
-    },
-    "/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.complete": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
-    },
-    "/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.dismiss": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
-    },
-    "/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.postpone": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
-    },
-    "/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.reactivate": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },

@@ -8491,6 +8491,8 @@ paths:
                 - countryLetterCode desc
                 - createdDateTime
                 - createdDateTime desc
+                - defaultUsageLocation
+                - defaultUsageLocation desc
                 - displayName
                 - displayName desc
                 - marketingNotificationEmails
@@ -8499,6 +8501,8 @@ paths:
                 - onPremisesLastSyncDateTime desc
                 - onPremisesSyncEnabled
                 - onPremisesSyncEnabled desc
+                - partnerTenantType
+                - partnerTenantType desc
                 - postalCode
                 - postalCode desc
                 - preferredLanguage
@@ -8542,10 +8546,12 @@ paths:
                 - country
                 - countryLetterCode
                 - createdDateTime
+                - defaultUsageLocation
                 - displayName
                 - marketingNotificationEmails
                 - onPremisesLastSyncDateTime
                 - onPremisesSyncEnabled
+                - partnerTenantType
                 - postalCode
                 - preferredLanguage
                 - privacyProfile
@@ -8645,10 +8651,12 @@ paths:
                 - country
                 - countryLetterCode
                 - createdDateTime
+                - defaultUsageLocation
                 - displayName
                 - marketingNotificationEmails
                 - onPremisesLastSyncDateTime
                 - onPremisesSyncEnabled
+                - partnerTenantType
                 - postalCode
                 - preferredLanguage
                 - privacyProfile
@@ -11208,6 +11216,10 @@ components:
               description: 'Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            defaultUsageLocation:
+              type: string
+              description: Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+              nullable: true
             displayName:
               type: string
               description: The display name for the tenant.
@@ -11227,6 +11239,8 @@ components:
               type: boolean
               description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
               nullable: true
+            partnerTenantType:
+              $ref: '#/components/schemas/microsoft.graph.partnerTenantType'
             postalCode:
               type: string
               description: Postal code of the address for the organization.
@@ -11571,6 +11585,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.partnerTenantType:
+      title: partnerTenantType
+      enum:
+        - microsoftSupport
+        - syndicatePartner
+        - breadthPartner
+        - breadthPartnerDelegatedAdmin
+        - resellerPartnerDelegatedAdmin
+        - valueAddedResellerPartnerDelegatedAdmin
+        - unknownFutureValue
+      type: string
     microsoft.graph.privacyProfile:
       title: privacyProfile
       type: object

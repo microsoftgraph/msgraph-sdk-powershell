@@ -2844,10 +2844,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
@@ -3019,6 +3019,8 @@ paths:
                 - isEntryExitAnnounced desc
                 - joinInformation
                 - joinInformation desc
+                - joinMeetingIdSettings
+                - joinMeetingIdSettings desc
                 - joinWebUrl
                 - joinWebUrl desc
                 - lobbyBypassSettings
@@ -3060,6 +3062,7 @@ paths:
                 - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
+                - joinMeetingIdSettings
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
@@ -3154,6 +3157,7 @@ paths:
                 - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
+                - joinMeetingIdSettings
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
@@ -4289,6 +4293,8 @@ paths:
                 - isEntryExitAnnounced desc
                 - joinInformation
                 - joinInformation desc
+                - joinMeetingIdSettings
+                - joinMeetingIdSettings desc
                 - joinWebUrl
                 - joinWebUrl desc
                 - lobbyBypassSettings
@@ -4330,6 +4336,7 @@ paths:
                 - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
+                - joinMeetingIdSettings
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
@@ -4445,6 +4452,7 @@ paths:
                 - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
+                - joinMeetingIdSettings
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
@@ -5953,6 +5961,8 @@ components:
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
+            joinMeetingIdSettings:
+              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
             joinWebUrl:
               type: string
               description: The join URL of the online meeting. Read-only.
@@ -6549,6 +6559,24 @@ components:
           nullable: true
         contentType:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.joinMeetingIdSettings:
+      title: joinMeetingIdSettings
+      type: object
+      properties:
+        isPasscodeRequired:
+          type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+          nullable: true
+        joinMeetingId:
+          type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
+          nullable: true
+        passcode:
+          type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.lobbyBypassSettings:

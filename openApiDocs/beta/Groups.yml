@@ -11749,10 +11749,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: groups.conversations.threads_reply
       parameters:
         - name: group-id
@@ -14001,10 +14001,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: groups.conversations.threads.posts.inReplyTo_reply
       parameters:
         - name: group-id
@@ -15141,10 +15141,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: groups.conversations.threads.posts_reply
       parameters:
         - name: group-id
@@ -30467,6 +30467,649 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/sites/{site-id}/informationProtection/dataLossPreventionPolicies/microsoft.graph.evaluate':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action evaluate
+      operationId: groups.sites.informationProtection.dataLossPreventionPolicies_evaluate
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                target:
+                  type: string
+                  nullable: true
+                evaluationInput:
+                  $ref: '#/components/schemas/microsoft.graph.dlpEvaluationInput'
+                notificationInfo:
+                  $ref: '#/components/schemas/microsoft.graph.dlpNotification'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.dlpEvaluatePoliciesJobResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/sites/{site-id}/informationProtection/microsoft.graph.decryptBuffer':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action decryptBuffer
+      operationId: groups.sites.informationProtection_decryptBuffer
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                encryptedBuffer:
+                  type: string
+                  format: base64url
+                publishingLicense:
+                  type: string
+                  format: base64url
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bufferDecryptionResult'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-15T00:00:00.0000000+00:00'
+        date: '2021-02-15T00:00:00.0000000+00:00'
+        version: 2021-02/Beta_SensitivityLabels
+        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/sites/{site-id}/informationProtection/microsoft.graph.encryptBuffer':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action encryptBuffer
+      operationId: groups.sites.informationProtection_encryptBuffer
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                buffer:
+                  type: string
+                  format: base64url
+                labelId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bufferEncryptionResult'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-15T00:00:00.0000000+00:00'
+        date: '2021-02-15T00:00:00.0000000+00:00'
+        version: 2021-02/Beta_SensitivityLabels
+        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/sites/{site-id}/informationProtection/microsoft.graph.signDigest':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action signDigest
+      operationId: groups.sites.informationProtection_signDigest
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                digest:
+                  type: string
+                  format: base64url
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.signingResult'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-15T00:00:00.0000000+00:00'
+        date: '2021-02-15T00:00:00.0000000+00:00'
+        version: 2021-02/Beta_SensitivityLabels
+        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/sites/{site-id}/informationProtection/microsoft.graph.verifySignature':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action verifySignature
+      operationId: groups.sites.informationProtection_verifySignature
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                digest:
+                  type: string
+                  format: base64url
+                signature:
+                  type: string
+                  format: base64url
+                signingKeyId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.verificationResult'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-15T00:00:00.0000000+00:00'
+        date: '2021-02-15T00:00:00.0000000+00:00'
+        version: 2021-02/Beta_SensitivityLabels
+        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/sites/{site-id}/informationProtection/policy/labels/microsoft.graph.evaluateApplication':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action evaluateApplication
+      description: 'Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-1.0
+      operationId: groups.sites.informationProtection.policy.labels_evaluateApplication
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contentInfo:
+                  $ref: '#/components/schemas/microsoft.graph.contentInfo'
+                labelingOptions:
+                  $ref: '#/components/schemas/microsoft.graph.labelingOptions'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-15T00:00:00.0000000+00:00'
+        date: '2021-02-15T00:00:00.0000000+00:00'
+        version: 2021-02/Beta_SensitivityLabels
+        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groups/{group-id}/sites/{site-id}/informationProtection/policy/labels/microsoft.graph.evaluateClassificationResults':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action evaluateClassificationResults
+      description: 'Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following: '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-1.0
+      operationId: groups.sites.informationProtection.policy.labels_evaluateClassificationResults
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contentInfo:
+                  $ref: '#/components/schemas/microsoft.graph.contentInfo'
+                classificationResults:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.classificationResult'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-15T00:00:00.0000000+00:00'
+        date: '2021-02-15T00:00:00.0000000+00:00'
+        version: 2021-02/Beta_SensitivityLabels
+        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groups/{group-id}/sites/{site-id}/informationProtection/policy/labels/microsoft.graph.evaluateRemoval':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action evaluateRemoval
+      description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
+      operationId: groups.sites.informationProtection.policy.labels_evaluateRemoval
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contentInfo:
+                  $ref: '#/components/schemas/microsoft.graph.contentInfo'
+                downgradeJustification:
+                  $ref: '#/components/schemas/microsoft.graph.downgradeJustification'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-15T00:00:00.0000000+00:00'
+        date: '2021-02-15T00:00:00.0000000+00:00'
+        version: 2021-02/Beta_SensitivityLabels
+        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groups/{group-id}/sites/{site-id}/informationProtection/policy/labels/microsoft.graph.extractLabel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action extractLabel
+      description: 'Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-1.0
+      operationId: groups.sites.informationProtection.policy.labels_extractLabel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contentInfo:
+                  $ref: '#/components/schemas/microsoft.graph.contentInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionContentLabel'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-15T00:00:00.0000000+00:00'
+        date: '2021-02-15T00:00:00.0000000+00:00'
+        version: 2021-02/Beta_SensitivityLabels
+        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/sites/{site-id}/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/microsoft.graph.evaluate':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action evaluate
+      operationId: groups.sites.informationProtection.sensitivityLabels.sublabels_evaluate
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sensitivityLabel-id
+          in: path
+          description: 'key: id of sensitivityLabel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                discoveredSensitiveTypes:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.discoveredSensitiveType'
+                currentLabel:
+                  $ref: '#/components/schemas/microsoft.graph.currentLabel'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/sites/{site-id}/informationProtection/sensitivityLabels/microsoft.graph.evaluate':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action evaluate
+      operationId: groups.sites.informationProtection.sensitivityLabels_evaluate
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                discoveredSensitiveTypes:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.discoveredSensitiveType'
+                currentLabel:
+                  $ref: '#/components/schemas/microsoft.graph.currentLabel'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites':
     post:
       tags:
@@ -34277,6 +34920,7 @@ paths:
                 - siteCollection
                 - createdByUser
                 - lastModifiedByUser
+                - informationProtection
                 - analytics
                 - columns
                 - contentTypes
@@ -37708,10 +38352,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: groups.threads_reply
       parameters:
         - name: group-id
@@ -39720,10 +40364,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: groups.threads.posts.inReplyTo_reply
       parameters:
         - name: group-id
@@ -40732,10 +41376,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: groups.threads.posts_reply
       parameters:
         - name: group-id
@@ -42427,7 +43071,7 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -43960,6 +44604,221 @@ components:
               description: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
           additionalProperties:
             type: object
+    microsoft.graph.dlpEvaluationInput:
+      title: dlpEvaluationInput
+      type: object
+      properties:
+        currentLabel:
+          $ref: '#/components/schemas/microsoft.graph.currentLabel'
+        discoveredSensitiveTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.discoveredSensitiveType'
+      additionalProperties:
+        type: object
+    microsoft.graph.dlpNotification:
+      title: dlpNotification
+      type: object
+      properties:
+        author:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.dlpEvaluatePoliciesJobResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.jobResponseBase'
+        - title: dlpEvaluatePoliciesJobResponse
+          type: object
+          properties:
+            result:
+              $ref: '#/components/schemas/microsoft.graph.dlpPoliciesJobResult'
+          additionalProperties:
+            type: object
+    microsoft.graph.bufferDecryptionResult:
+      title: bufferDecryptionResult
+      type: object
+      properties:
+        decryptedBuffer:
+          type: string
+          format: base64url
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.bufferEncryptionResult:
+      title: bufferEncryptionResult
+      type: object
+      properties:
+        encryptedBuffer:
+          type: string
+          format: base64url
+          nullable: true
+        publishingLicense:
+          type: string
+          format: base64url
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.signingResult:
+      title: signingResult
+      type: object
+      properties:
+        signature:
+          type: string
+          format: base64url
+          nullable: true
+        signingKeyId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.verificationResult:
+      title: verificationResult
+      type: object
+      properties:
+        signatureValid:
+          type: boolean
+      additionalProperties:
+        type: object
+    microsoft.graph.contentInfo:
+      title: contentInfo
+      type: object
+      properties:
+        format:
+          $ref: '#/components/schemas/microsoft.graph.contentFormat'
+        identifier:
+          type: string
+          description: Identifier used for Azure Information Protection Analytics.
+          nullable: true
+        metadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: 'Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.contentState'
+      additionalProperties:
+        type: object
+    microsoft.graph.labelingOptions:
+      title: labelingOptions
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.assignmentMethod'
+        downgradeJustification:
+          $ref: '#/components/schemas/microsoft.graph.downgradeJustification'
+        extendedProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
+        labelId:
+          type: string
+          description: The GUID of the label that should be applied to the information.
+      additionalProperties:
+        type: object
+    microsoft.graph.informationProtectionAction:
+      title: informationProtectionAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.classificationResult:
+      title: classificationResult
+      type: object
+      properties:
+        confidenceLevel:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The confidence level, 0 to 100, of the result.'
+          format: int32
+        count:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of instances of the specific information type in the input.
+          format: int32
+        sensitiveTypeId:
+          type: string
+          description: The GUID of the discovered sensitive information type.
+      additionalProperties:
+        type: object
+    microsoft.graph.downgradeJustification:
+      title: downgradeJustification
+      type: object
+      properties:
+        isDowngradeJustified:
+          type: boolean
+          description: Indicates whether the downgrade is or is not justified.
+        justificationMessage:
+          type: string
+          description: Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.informationProtectionContentLabel:
+      title: informationProtectionContentLabel
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.assignmentMethod'
+        creationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          format: date-time
+          nullable: true
+        label:
+          $ref: '#/components/schemas/microsoft.graph.labelDetails'
+      additionalProperties:
+        type: object
+    microsoft.graph.discoveredSensitiveType:
+      title: discoveredSensitiveType
+      type: object
+      properties:
+        classificationAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.classificationAttribute'
+        confidence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        count:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        id:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          format: uuid
+      additionalProperties:
+        type: object
+    microsoft.graph.currentLabel:
+      title: currentLabel
+      type: object
+      properties:
+        applicationMode:
+          $ref: '#/components/schemas/microsoft.graph.applicationMode'
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.evaluateLabelJobResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.jobResponseBase'
+        - title: evaluateLabelJobResponse
+          type: object
+          properties:
+            result:
+              $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResultGroup'
+          additionalProperties:
+            type: object
     microsoft.graph.site:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -43980,6 +44839,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
               $ref: '#/components/schemas/microsoft.graph.siteCollection'
+            informationProtection:
+              $ref: '#/components/schemas/microsoft.graph.informationProtection'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             columns:
@@ -44281,10 +45142,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -46314,6 +47175,120 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.jobResponseBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: jobResponseBase
+          type: object
+          properties:
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.classificationError'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+            type:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.dlpPoliciesJobResult:
+      title: dlpPoliciesJobResult
+      type: object
+      properties:
+        auditCorrelationId:
+          type: string
+          nullable: true
+        evaluationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        matchingRules:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.matchingDlpRule'
+      additionalProperties:
+        type: object
+    microsoft.graph.contentFormat:
+      title: contentFormat
+      enum:
+        - default
+        - email
+      type: string
+    microsoft.graph.contentState:
+      title: contentState
+      enum:
+        - rest
+        - motion
+        - use
+      type: string
+    microsoft.graph.assignmentMethod:
+      title: assignmentMethod
+      enum:
+        - standard
+        - privileged
+        - auto
+      type: string
+    microsoft.graph.labelDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+        - title: labelDetails
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.classificationAttribute:
+      title: classificationAttribute
+      type: object
+      properties:
+        confidence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        count:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationMode:
+      title: applicationMode
+      enum:
+        - manual
+        - automatic
+        - recommended
+      type: string
+    microsoft.graph.evaluateLabelJobResultGroup:
+      title: evaluateLabelJobResultGroup
+      type: object
+      properties:
+        automatic:
+          $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResult'
+        recommended:
+          $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResult'
+      additionalProperties:
+        type: object
     microsoft.graph.siteSettings:
       title: siteSettings
       type: object
@@ -46344,6 +47319,35 @@ components:
           $ref: '#/components/schemas/microsoft.graph.root'
       additionalProperties:
         type: object
+    microsoft.graph.informationProtection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtection
+          type: object
+          properties:
+            bitlocker:
+              $ref: '#/components/schemas/microsoft.graph.bitlocker'
+            dataLossPreventionPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
+              x-ms-navigationProperty: true
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+            sensitivityPolicySettings:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
+            policy:
+              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
+            threatAssessmentRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.list:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -48614,11 +49618,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -49325,6 +50329,242 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.classificationError:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
+        - title: classificationError
+          type: object
+          properties:
+            details:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
+          additionalProperties:
+            type: object
+    microsoft.graph.matchingDlpRule:
+      title: matchingDlpRule
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dlpActionInfo'
+        isMostRestrictive:
+          type: boolean
+          nullable: true
+        policyId:
+          type: string
+          nullable: true
+        policyName:
+          type: string
+          nullable: true
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        ruleId:
+          type: string
+          nullable: true
+        ruleMode:
+          $ref: '#/components/schemas/microsoft.graph.ruleMode'
+        ruleName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.parentLabelDetails:
+      title: parentLabelDetails
+      type: object
+      properties:
+        color:
+          type: string
+          description: 'The color that the user interface should display for the label, if configured.'
+          nullable: true
+        description:
+          type: string
+          description: The admin-defined description for the label.
+          nullable: true
+        id:
+          type: string
+          description: The label ID is a globally unique identifier (GUID).
+          nullable: true
+        isActive:
+          type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
+        name:
+          type: string
+          description: The plaintext name of the label.
+          nullable: true
+        parent:
+          $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+        sensitivity:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
+          format: int32
+        tooltip:
+          type: string
+          description: The tooltip that should be displayed for the label in a user interface.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.evaluateLabelJobResult:
+      title: evaluateLabelJobResult
+      type: object
+      properties:
+        responsiblePolicy:
+          $ref: '#/components/schemas/microsoft.graph.responsiblePolicy'
+        responsibleSensitiveTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.responsibleSensitiveType'
+        sensitivityLabel:
+          $ref: '#/components/schemas/microsoft.graph.matchingLabel'
+      additionalProperties:
+        type: object
+    microsoft.graph.bitlocker:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bitlocker
+          type: object
+          properties:
+            recoveryKeys:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
+              description: The recovery keys associated with the bitlocker entity.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.dataLossPreventionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataLossPreventionPolicy
+          type: object
+          properties:
+            name:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            applicableTo:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
+            applicationMode:
+              $ref: '#/components/schemas/microsoft.graph.applicationMode'
+            assignedPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
+            autoLabeling:
+              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            labelActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.sensitivityPolicySettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityPolicySettings
+          type: object
+          properties:
+            applicableTo:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
+            downgradeSensitivityRequiresJustification:
+              type: boolean
+              nullable: true
+            helpWebUrl:
+              type: string
+              nullable: true
+            isMandatory:
+              type: boolean
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.informationProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionPolicy
+          type: object
+          properties:
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.threatAssessmentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: threatAssessmentRequest
+          type: object
+          properties:
+            category:
+              $ref: '#/components/schemas/microsoft.graph.threatCategory'
+            contentType:
+              $ref: '#/components/schemas/microsoft.graph.threatAssessmentContentType'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            expectedAssessment:
+              $ref: '#/components/schemas/microsoft.graph.threatExpectedAssessment'
+            requestSource:
+              $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequestSource'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.threatAssessmentStatus'
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
+              description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.listInfo:
       title: listInfo
       type: object
@@ -49352,20 +50592,24 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
               type: string
+              description: URI of the resource that the operation is performed on.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
             statusDetail:
               type: string
+              description: Details about the status of the operation.
               nullable: true
           additionalProperties:
             type: object
@@ -50291,7 +51535,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.'
           nullable: true
         signInType:
           type: string
@@ -50409,7 +51653,7 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.'
+          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false.'
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
@@ -50602,35 +51846,6 @@ components:
               description: Identifier of the service corresponding to the usage right.
             state:
               $ref: '#/components/schemas/microsoft.graph.usageRightState'
-          additionalProperties:
-            type: object
-    microsoft.graph.informationProtection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtection
-          type: object
-          properties:
-            bitlocker:
-              $ref: '#/components/schemas/microsoft.graph.bitlocker'
-            dataLossPreventionPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
-              x-ms-navigationProperty: true
-            sensitivityLabels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-              x-ms-navigationProperty: true
-            sensitivityPolicySettings:
-              $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
-            policy:
-              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
-            threatAssessmentRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.servicePrincipal:
@@ -51794,7 +53009,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -51906,7 +53121,7 @@ components:
               readOnly: true
             ethernetMacAddress:
               type: string
-              description: Ethernet MAC. This property is read-only.
+              description: 'Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             exchangeAccessState:
@@ -52068,7 +53283,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
               readOnly: true
             specificationVersion:
@@ -52990,6 +54205,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             virtualAppointment:
               $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
@@ -53841,6 +55058,270 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.classifcationErrorBase:
+      title: classifcationErrorBase
+      type: object
+      properties:
+        code:
+          type: string
+          nullable: true
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.classificationInnerError'
+        message:
+          type: string
+          nullable: true
+        target:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.dlpActionInfo:
+      title: dlpActionInfo
+      type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/microsoft.graph.dlpAction'
+      additionalProperties:
+        type: object
+    microsoft.graph.ruleMode:
+      title: ruleMode
+      enum:
+        - audit
+        - auditAndNotify
+        - enforce
+        - pendingDeletion
+        - test
+      type: string
+    microsoft.graph.responsiblePolicy:
+      title: responsiblePolicy
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.responsibleSensitiveType:
+      title: responsibleSensitiveType
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        publisherName:
+          type: string
+          nullable: true
+        rulePackageId:
+          type: string
+          nullable: true
+        rulePackageType:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.matchingLabel:
+      title: matchingLabel
+      type: object
+      properties:
+        applicationMode:
+          $ref: '#/components/schemas/microsoft.graph.applicationMode'
+        description:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        isEndpointProtectionEnabled:
+          type: boolean
+          nullable: true
+        labelActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.labelActionBase'
+        name:
+          type: string
+          nullable: true
+        policyTip:
+          type: string
+          nullable: true
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        toolTip:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.bitlockerRecoveryKey:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bitlockerRecoveryKey
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the key was originally backed up to Azure Active Directory.
+              format: date-time
+            deviceId:
+              type: string
+              description: ID of the device the BitLocker key is originally backed up from.
+              nullable: true
+            key:
+              type: string
+              description: The BitLocker recovery key.
+            volumeType:
+              $ref: '#/components/schemas/microsoft.graph.volumeType'
+          additionalProperties:
+            type: object
+    microsoft.graph.sensitivityLabelTarget:
+      title: sensitivityLabelTarget
+      enum:
+        - email
+        - site
+        - unifiedGroup
+        - unknownFutureValue
+        - teamwork
+      type: string
+    microsoft.graph.labelPolicy:
+      title: labelPolicy
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.autoLabeling:
+      title: autoLabeling
+      type: object
+      properties:
+        message:
+          type: string
+          nullable: true
+        sensitiveTypeIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.labelActionBase:
+      title: labelActionBase
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.informationProtectionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionLabel
+          type: object
+          properties:
+            color:
+              type: string
+              description: 'The color that the UI should display for the label, if configured.'
+              nullable: true
+            description:
+              type: string
+              description: The admin-defined description for the label.
+              nullable: true
+            isActive:
+              type: boolean
+              description: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
+            name:
+              type: string
+              description: The plaintext name of the label.
+              nullable: true
+            parent:
+              $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+            sensitivity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'The sensitivity value of the label, where lower is less sensitive.'
+              format: int32
+            tooltip:
+              type: string
+              description: The tooltip that should be displayed for the label in a UI.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.threatCategory:
+      title: threatCategory
+      enum:
+        - undefined
+        - spam
+        - phishing
+        - malware
+        - unknownFutureValue
+      type: string
+    microsoft.graph.threatAssessmentContentType:
+      title: threatAssessmentContentType
+      enum:
+        - mail
+        - url
+        - file
+      type: string
+    microsoft.graph.threatExpectedAssessment:
+      title: threatExpectedAssessment
+      enum:
+        - block
+        - unblock
+      type: string
+    microsoft.graph.threatAssessmentRequestSource:
+      title: threatAssessmentRequestSource
+      enum:
+        - undefined
+        - user
+        - administrator
+      type: string
+    microsoft.graph.threatAssessmentStatus:
+      title: threatAssessmentStatus
+      enum:
+        - pending
+        - completed
+      type: string
+    microsoft.graph.threatAssessmentResult:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: threatAssessmentResult
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            message:
+              type: string
+              description: The result message for each threat assessment.
+              nullable: true
+            resultType:
+              $ref: '#/components/schemas/microsoft.graph.threatAssessmentResultType'
+          additionalProperties:
+            type: object
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
       enum:
@@ -54655,146 +56136,6 @@ components:
         - suspended
         - unknownFutureValue
       type: string
-    microsoft.graph.bitlocker:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: bitlocker
-          type: object
-          properties:
-            recoveryKeys:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-              description: The recovery keys associated with the bitlocker entity.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.dataLossPreventionPolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: dataLossPreventionPolicy
-          type: object
-          properties:
-            name:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.sensitivityLabel:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: sensitivityLabel
-          type: object
-          properties:
-            applicableTo:
-              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
-            applicationMode:
-              $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
-            description:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            isDefault:
-              type: boolean
-              nullable: true
-            isEndpointProtectionEnabled:
-              type: boolean
-              nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
-            name:
-              type: string
-              nullable: true
-            priority:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-            toolTip:
-              type: string
-              nullable: true
-            sublabels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.sensitivityPolicySettings:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: sensitivityPolicySettings
-          type: object
-          properties:
-            applicableTo:
-              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
-            downgradeSensitivityRequiresJustification:
-              type: boolean
-              nullable: true
-            helpWebUrl:
-              type: string
-              nullable: true
-            isMandatory:
-              type: boolean
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.informationProtectionPolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionPolicy
-          type: object
-          properties:
-            labels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.threatAssessmentRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: threatAssessmentRequest
-          type: object
-          properties:
-            category:
-              $ref: '#/components/schemas/microsoft.graph.threatCategory'
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.threatAssessmentContentType'
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            expectedAssessment:
-              $ref: '#/components/schemas/microsoft.graph.threatExpectedAssessment'
-            requestSource:
-              $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequestSource'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.threatAssessmentStatus'
-            results:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
-              description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.passwordSingleSignOnSettings:
       title: passwordSingleSignOnSettings
       type: object
@@ -54889,7 +56230,7 @@ components:
       properties:
         customKeyIdentifier:
           type: string
-          description: Custom key identifier
+          description: 'A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.'
           format: base64url
           nullable: true
         displayName:
@@ -58571,6 +59912,18 @@ components:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.virtualAppointment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -59431,6 +60784,48 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.classificationInnerError:
+      title: classificationInnerError
+      type: object
+      properties:
+        activityId:
+          type: string
+          nullable: true
+        clientRequestId:
+          type: string
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        errorDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.dlpAction:
+      title: dlpAction
+      enum:
+        - notifyUser
+        - blockAccess
+        - deviceRestriction
+      type: string
+    microsoft.graph.volumeType:
+      title: volumeType
+      enum:
+        - operatingSystemVolume
+        - fixedDataVolume
+        - removableDataVolume
+        - unknownFutureValue
+      type: string
+    microsoft.graph.threatAssessmentResultType:
+      title: threatAssessmentResultType
+      enum:
+        - checkPolicy
+        - rescan
+        - unknownFutureValue
+      type: string
     microsoft.graph.metaDataKeyStringPair:
       title: metaDataKeyStringPair
       type: object
@@ -59461,7 +60856,7 @@ components:
       title: sectionEmphasisType
       enum:
         - none
-        - netural
+        - neutral
         - soft
         - strong
         - unknownFutureValue
@@ -59735,168 +61130,6 @@ components:
         - citrix
         - unknownFutureValue
       type: string
-    microsoft.graph.bitlockerRecoveryKey:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: bitlockerRecoveryKey
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the key was originally backed up to Azure Active Directory.
-              format: date-time
-            deviceId:
-              type: string
-              description: ID of the device the BitLocker key is originally backed up from.
-              nullable: true
-            key:
-              type: string
-              description: The BitLocker recovery key.
-            volumeType:
-              $ref: '#/components/schemas/microsoft.graph.volumeType'
-          additionalProperties:
-            type: object
-    microsoft.graph.sensitivityLabelTarget:
-      title: sensitivityLabelTarget
-      enum:
-        - email
-        - site
-        - unifiedGroup
-        - unknownFutureValue
-        - teamwork
-      type: string
-    microsoft.graph.applicationMode:
-      title: applicationMode
-      enum:
-        - manual
-        - automatic
-        - recommended
-      type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.informationProtectionLabel:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionLabel
-          type: object
-          properties:
-            color:
-              type: string
-              description: 'The color that the UI should display for the label, if configured.'
-              nullable: true
-            description:
-              type: string
-              description: The admin-defined description for the label.
-              nullable: true
-            isActive:
-              type: boolean
-              description: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
-            name:
-              type: string
-              description: The plaintext name of the label.
-              nullable: true
-            parent:
-              $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
-            sensitivity:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'The sensitivity value of the label, where lower is less sensitive.'
-              format: int32
-            tooltip:
-              type: string
-              description: The tooltip that should be displayed for the label in a UI.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.threatCategory:
-      title: threatCategory
-      enum:
-        - undefined
-        - spam
-        - phishing
-        - malware
-        - unknownFutureValue
-      type: string
-    microsoft.graph.threatAssessmentContentType:
-      title: threatAssessmentContentType
-      enum:
-        - mail
-        - url
-        - file
-      type: string
-    microsoft.graph.threatExpectedAssessment:
-      title: threatExpectedAssessment
-      enum:
-        - block
-        - unblock
-      type: string
-    microsoft.graph.threatAssessmentRequestSource:
-      title: threatAssessmentRequestSource
-      enum:
-        - undefined
-        - user
-        - administrator
-      type: string
-    microsoft.graph.threatAssessmentStatus:
-      title: threatAssessmentStatus
-      enum:
-        - pending
-        - completed
-      type: string
-    microsoft.graph.threatAssessmentResult:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: threatAssessmentResult
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            message:
-              type: string
-              description: The result message for each threat assessment.
-              nullable: true
-            resultType:
-              $ref: '#/components/schemas/microsoft.graph.threatAssessmentResultType'
-          additionalProperties:
-            type: object
     microsoft.graph.passwordSingleSignOnField:
       title: passwordSingleSignOnField
       type: object
@@ -63016,58 +64249,6 @@ components:
         - unknown
         - success
         - failure
-        - unknownFutureValue
-      type: string
-    microsoft.graph.volumeType:
-      title: volumeType
-      enum:
-        - operatingSystemVolume
-        - fixedDataVolume
-        - removableDataVolume
-        - unknownFutureValue
-      type: string
-    microsoft.graph.parentLabelDetails:
-      title: parentLabelDetails
-      type: object
-      properties:
-        color:
-          type: string
-          description: 'The color that the user interface should display for the label, if configured.'
-          nullable: true
-        description:
-          type: string
-          description: The admin-defined description for the label.
-          nullable: true
-        id:
-          type: string
-          description: The label ID is a globally unique identifier (GUID).
-          nullable: true
-        isActive:
-          type: boolean
-          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
-        name:
-          type: string
-          description: The plaintext name of the label.
-          nullable: true
-        parent:
-          $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
-        sensitivity:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'The sensitivity value of the label, where lower is less sensitive.'
-          format: int32
-        tooltip:
-          type: string
-          description: The tooltip that should be displayed for the label in a user interface.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.threatAssessmentResultType:
-      title: threatAssessmentResultType
-      enum:
-        - checkPolicy
-        - rescan
         - unknownFutureValue
       type: string
     microsoft.graph.keyCredentialConfiguration:

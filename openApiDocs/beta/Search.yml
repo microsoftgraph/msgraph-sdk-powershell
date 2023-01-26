@@ -3186,7 +3186,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.'
+              description: 'A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.'
             platforms:
               type: array
               items:
@@ -4031,6 +4031,9 @@ components:
         hitId:
           type: string
           description: 'The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.'
+          nullable: true
+        isCollapsed:
+          type: boolean
           nullable: true
         rank:
           maximum: 2147483647

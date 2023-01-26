@@ -1533,6 +1533,50 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/dataLossPreventionPolicies/microsoft.graph.evaluate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/microsoft.graph.decryptBuffer": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/microsoft.graph.encryptBuffer": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/microsoft.graph.signDigest": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/microsoft.graph.verifySignature": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/policy/labels/microsoft.graph.evaluateApplication": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/policy/labels/microsoft.graph.evaluateClassificationResults": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/policy/labels/microsoft.graph.evaluateRemoval": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/policy/labels/microsoft.graph.extractLabel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/microsoft.graph.evaluate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/informationProtection/sensitivityLabels/microsoft.graph.evaluate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
     "/groups/{group-id}/sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
