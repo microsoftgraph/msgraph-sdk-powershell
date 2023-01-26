@@ -2,6 +2,9 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Properties;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,11 +14,6 @@ using System.Management.Automation;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-
-using Microsoft.Graph.PowerShell.Authentication.Properties;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
