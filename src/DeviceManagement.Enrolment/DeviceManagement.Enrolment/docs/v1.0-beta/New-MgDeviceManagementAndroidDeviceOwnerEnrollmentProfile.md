@@ -18,7 +18,7 @@ New-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfile [-AccountId <String>]
  [-AdditionalProperties <Hashtable>] [-ConfigureWifi] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-EnrolledDeviceCount <Int32>] [-EnrollmentMode <AndroidDeviceOwnerEnrollmentMode>]
  [-EnrollmentTokenType <AndroidDeviceOwnerEnrollmentTokenType>] [-EnrollmentTokenUsageCount <Int32>]
- [-Id <String>] [-LastModifiedDateTime <DateTime>] [-QrCodeContent <String>]
+ [-Id <String>] [-IsTeamsDeviceProfile] [-LastModifiedDateTime <DateTime>] [-QrCodeContent <String>]
  [-QrCodeImage <IMicrosoftGraphMimeContent>] [-RoleScopeTagIds <String[]>] [-TokenCreationDateTime <DateTime>]
  [-TokenExpirationDateTime <DateTime>] [-TokenValue <String>] [-WifiHidden] [-WifiPassword <String>]
  [-WifiSecurityType <AospWifiSecurityType>] [-WifiSsid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -213,6 +213,21 @@ Read-only.
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsTeamsDeviceProfile
+Boolean indicating if this profile is an Android AOSP for Teams device profile.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -452,6 +467,7 @@ BODYPARAMETER <IMicrosoftGraphAndroidDeviceOwnerEnrollmentProfile>: Enrollment P
   - `[EnrollmentMode <AndroidDeviceOwnerEnrollmentMode?>]`: The enrollment mode for an enrollment profile.
   - `[EnrollmentTokenType <AndroidDeviceOwnerEnrollmentTokenType?>]`: The enrollment token type for an enrollment profile.
   - `[EnrollmentTokenUsageCount <Int32?>]`: Total number of AOSP devices that have enrolled using the current token.
+  - `[IsTeamsDeviceProfile <Boolean?>]`: Boolean indicating if this profile is an Android AOSP for Teams device profile.
   - `[LastModifiedDateTime <DateTime?>]`: Date time the enrollment profile was last modified.
   - `[QrCodeContent <String>]`: String used to generate a QR code for the token.
   - `[QrCodeImage <IMicrosoftGraphMimeContent>]`: Contains properties for a generic mime content.

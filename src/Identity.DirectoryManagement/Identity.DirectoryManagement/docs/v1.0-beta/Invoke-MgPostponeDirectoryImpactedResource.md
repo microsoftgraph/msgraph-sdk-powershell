@@ -14,22 +14,21 @@ Invoke action postpone
 
 ### PostponeExpanded (Default)
 ```
-Invoke-MgPostponeDirectoryImpactedResource -RecommendationResourceId <String>
- [-AdditionalProperties <Hashtable>] [-PostponeUntilDateTime <DateTime>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-MgPostponeDirectoryImpactedResource -ImpactedResourceId <String> [-AdditionalProperties <Hashtable>]
+ [-PostponeUntilDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Postpone
 ```
-Invoke-MgPostponeDirectoryImpactedResource -RecommendationResourceId <String>
- -BodyParameter <IPaths1Uq1ZdqDirectoryImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>
+Invoke-MgPostponeDirectoryImpactedResource -ImpactedResourceId <String>
+ -BodyParameter <IPaths190Xwu6DirectoryImpactedresourcesImpactedresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PostponeViaIdentity
 ```
 Invoke-MgPostponeDirectoryImpactedResource -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IPaths1Uq1ZdqDirectoryImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>
+ -BodyParameter <IPaths190Xwu6DirectoryImpactedresourcesImpactedresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -67,7 +66,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Uq1ZdqDirectoryImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.PowerShell.Models.IPaths190Xwu6DirectoryImpactedresourcesImpactedresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Postpone, PostponeViaIdentity
 Aliases:
 
@@ -75,6 +74,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ImpactedResourceId
+key: id of impactedResource
+
+```yaml
+Type: System.String
+Parameter Sets: Postpone, PostponeExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -103,21 +117,6 @@ Parameter Sets: PostponeExpanded, PostponeViaIdentityExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RecommendationResourceId
-key: id of recommendationResource
-
-```yaml
-Type: System.String
-Parameter Sets: Postpone, PostponeExpanded
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -162,11 +161,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Uq1ZdqDirectoryImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths190Xwu6DirectoryImpactedresourcesImpactedresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImpactedResource
 
 ## NOTES
 
@@ -177,7 +176,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths1Uq1ZdqDirectoryImpactedresourcesRecommendationresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPaths190Xwu6DirectoryImpactedresourcesImpactedresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[PostponeUntilDateTime <DateTime?>]`: 
 
@@ -199,6 +198,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
+  - `[ImpactedResourceId <String>]`: key: id of impactedResource
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
@@ -208,7 +208,6 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[RecommendationId <String>]`: key: id of recommendation
-  - `[RecommendationResourceId <String>]`: key: id of recommendationResource
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
   - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
   - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation

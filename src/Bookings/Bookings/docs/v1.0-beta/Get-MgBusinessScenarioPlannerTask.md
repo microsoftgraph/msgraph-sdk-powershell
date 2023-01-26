@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBusinessScenarioPlannerTask
 
 ## SYNOPSIS
-Get tasks from solutions
+The Planner tasks for the scenario.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBusinessScenarioPlannerTask -InputObject <IBookingsIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get tasks from solutions
+The Planner tasks for the scenario.
 
 ## EXAMPLES
 

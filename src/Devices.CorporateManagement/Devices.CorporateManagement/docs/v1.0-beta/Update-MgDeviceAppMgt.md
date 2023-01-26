@@ -34,7 +34,6 @@ Update-MgDeviceAppMgt [-AdditionalProperties <Hashtable>]
  [-MobileAppCategories <IMicrosoftGraphMobileAppCategory[]>]
  [-MobileAppConfigurations <IMicrosoftGraphManagedDeviceMobileAppConfiguration1[]>]
  [-MobileApps <IMicrosoftGraphMobileApp1[]>] [-PolicySets <IMicrosoftGraphPolicySet[]>]
- [-SideLoadingKeys <IMicrosoftGraphSideLoadingKey[]>]
  [-SymantecCodeSigningCertificate <IMicrosoftGraphSymantecCodeSigningCertificate>]
  [-TargetedManagedAppConfigurations <IMicrosoftGraphTargetedManagedAppConfiguration1[]>]
  [-VppTokens <IMicrosoftGraphVppToken2[]>]
@@ -448,22 +447,6 @@ To construct, please use Get-Help -Online and see NOTES section for POLICYSETS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySet[]
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SideLoadingKeys
-Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-To construct, please use Get-Help -Online and see NOTES section for SIDELOADINGKEYS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSideLoadingKey[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -1445,13 +1428,6 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement>: Singleton entity that acts a
     - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySet.
     - `[RoleScopeTags <String[]>]`: RoleScopeTags of the PolicySet
     - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
-  - `[SideLoadingKeys <IMicrosoftGraphSideLoadingKey[]>]`: Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Description <String>]`: Side Loading Key description displayed to the ITPro Admins..
-    - `[DisplayName <String>]`: Side Loading Key Name displayed to the ITPro Admins.
-    - `[LastUpdatedDateTime <String>]`: Side Loading Key Last Updated Date displayed to the ITPro Admins.
-    - `[TotalActivation <Int32?>]`: Side Loading Key Total Activation displayed to the ITPro Admins.
-    - `[Value <String>]`: Side Loading Key Value, it is 5x5 value, seperated by hiphens.
   - `[SymantecCodeSigningCertificate <IMicrosoftGraphSymantecCodeSigningCertificate>]`: symantecCodeSigningCertificate
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -2268,14 +2244,6 @@ POLICYSETS <IMicrosoftGraphPolicySet[]>: The PolicySet of Policies and Applicati
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySet.
   - `[RoleScopeTags <String[]>]`: RoleScopeTags of the PolicySet
   - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
-
-SIDELOADINGKEYS <IMicrosoftGraphSideLoadingKey[]>: Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Description <String>]`: Side Loading Key description displayed to the ITPro Admins..
-  - `[DisplayName <String>]`: Side Loading Key Name displayed to the ITPro Admins.
-  - `[LastUpdatedDateTime <String>]`: Side Loading Key Last Updated Date displayed to the ITPro Admins.
-  - `[TotalActivation <Int32?>]`: Side Loading Key Total Activation displayed to the ITPro Admins.
-  - `[Value <String>]`: Side Loading Key Value, it is 5x5 value, seperated by hiphens.
 
 SYMANTECCODESIGNINGCERTIFICATE <IMicrosoftGraphSymantecCodeSigningCertificate>: symantecCodeSigningCertificate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

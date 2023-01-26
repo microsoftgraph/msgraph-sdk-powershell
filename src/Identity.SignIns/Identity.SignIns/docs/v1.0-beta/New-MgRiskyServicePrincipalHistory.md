@@ -49,6 +49,17 @@ Create new navigation property to history for identityProtection
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgRiskyServicePrincipalHistory -RiskyServicePrincipalId $riskyServicePrincipalId
+```
+
+This example shows how to use the New-MgRiskyServicePrincipalHistory Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AccountEnabled

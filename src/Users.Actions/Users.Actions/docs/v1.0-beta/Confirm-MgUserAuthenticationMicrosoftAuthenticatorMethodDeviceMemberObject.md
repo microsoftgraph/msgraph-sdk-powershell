@@ -12,14 +12,14 @@ Invoke action checkMemberObjects
 
 ## SYNTAX
 
-### CheckExpanded1 (Default)
+### CheckExpanded (Default)
 ```
 Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Check1
+### Check
 ```
 Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -MicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
@@ -27,7 +27,7 @@ Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckViaIdentity1
+### CheckViaIdentity
 ```
 Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -InputObject <IUsersActionsIdentity>
@@ -35,7 +35,7 @@ Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckViaIdentityExpanded1
+### CheckViaIdentityExpanded
 ```
 Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject
  -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm]
@@ -54,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CheckExpanded1, CheckViaIdentityExpanded1
+Parameter Sets: CheckExpanded, CheckViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -70,7 +70,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1BrvcqxUsersUserIdAuthenticationMicrosoftauthenticatormethodsMicrosoftauthenticatorauthenticationmethodIdDeviceMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Check1, CheckViaIdentity1
+Parameter Sets: Check, CheckViaIdentity
 Aliases:
 
 Required: True
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CheckExpanded1, CheckViaIdentityExpanded1
+Parameter Sets: CheckExpanded, CheckViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -101,7 +101,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CheckViaIdentity1, CheckViaIdentityExpanded1
+Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -116,7 +116,7 @@ key: id of microsoftAuthenticatorAuthenticationMethod
 
 ```yaml
 Type: System.String
-Parameter Sets: Check1, CheckExpanded1
+Parameter Sets: Check, CheckExpanded
 Aliases:
 
 Required: True
@@ -131,7 +131,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Check1, CheckExpanded1
+Parameter Sets: Check, CheckExpanded
 Aliases:
 
 Required: True

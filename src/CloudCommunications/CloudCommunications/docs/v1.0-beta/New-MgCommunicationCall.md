@@ -1248,6 +1248,10 @@ BODYPARAMETER <IMicrosoftGraphCall1>: call
       - `[InitiatedBy <IMicrosoftGraphParticipantInfo1>]`: participantInfo
       - `[Initiator <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[RecordingStatus <String>]`: recordingStatus
+    - `[RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>]`: onlineMeetingRestricted
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[ContentSharingDisabled <String>]`: onlineMeetingContentSharingDisabledReason
+      - `[VideoDisabled <String>]`: onlineMeetingVideoDisabledReason
   - `[RequestedModalities <String[]>]`: 
   - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
   - `[RingingTimeoutInSeconds <Int32?>]`: 
@@ -1375,6 +1379,10 @@ PARTICIPANTS <IMicrosoftGraphParticipant1[]>: .
     - `[InitiatedBy <IMicrosoftGraphParticipantInfo1>]`: participantInfo
     - `[Initiator <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[RecordingStatus <String>]`: recordingStatus
+  - `[RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>]`: onlineMeetingRestricted
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ContentSharingDisabled <String>]`: onlineMeetingContentSharingDisabledReason
+    - `[VideoDisabled <String>]`: onlineMeetingVideoDisabledReason
 
 RESULTINFO <IMicrosoftGraphResultInfo>: resultInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

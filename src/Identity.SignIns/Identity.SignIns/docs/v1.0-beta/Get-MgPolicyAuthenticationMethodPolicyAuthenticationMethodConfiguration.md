@@ -296,7 +296,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration1
 
 ## NOTES
 

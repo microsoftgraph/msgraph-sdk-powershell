@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 50fb3772-f987-4142-8c23-622f033a1fa2
+Module Guid: 2c4f5811-3da7-472c-bebb-49cbac771660
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -29,6 +29,9 @@ This method is part of the content type publishing changes to optimize the synci
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
+### [Confirm-MgSiteInformationProtectionSignature](Confirm-MgSiteInformationProtectionSignature.md)
+Invoke action verifySignature
+
 ### [Copy-MgSiteContentTypeToDefaultContentLocation](Copy-MgSiteContentTypeToDefaultContentLocation.md)
 Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
@@ -55,7 +58,8 @@ Copies a section to a specific section group.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ### [Get-MgGroupSite](Get-MgGroupSite.md)
-The collection of the sub-sites under this site.
+The list of SharePoint sites in this group.
+Access the default site with /sites/root.
 
 ### [Get-MgGroupSiteAnalytic](Get-MgGroupSiteAnalytic.md)
 Analytics about the view activities that took place in this site.
@@ -78,6 +82,41 @@ A Drive is the top-level container for a file system, such as OneDrive or ShareP
 
 ### [Get-MgGroupSiteExternalColumn](Get-MgGroupSiteExternalColumn.md)
 The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+
+### [Get-MgGroupSiteInformationProtection](Get-MgGroupSiteInformationProtection.md)
+Get informationProtection from groups
+
+### [Get-MgGroupSiteInformationProtectionBitlocker](Get-MgGroupSiteInformationProtectionBitlocker.md)
+Get bitlocker from groups
+
+### [Get-MgGroupSiteInformationProtectionBitlockerRecoveryKey](Get-MgGroupSiteInformationProtectionBitlockerRecoveryKey.md)
+The recovery keys associated with the bitlocker entity.
+
+### [Get-MgGroupSiteInformationProtectionDataLossPreventionPolicy](Get-MgGroupSiteInformationProtectionDataLossPreventionPolicy.md)
+Get dataLossPreventionPolicies from groups
+
+### [Get-MgGroupSiteInformationProtectionPolicy](Get-MgGroupSiteInformationProtectionPolicy.md)
+Get policy from groups
+
+### [Get-MgGroupSiteInformationProtectionPolicyLabel](Get-MgGroupSiteInformationProtectionPolicyLabel.md)
+Get labels from groups
+
+### [Get-MgGroupSiteInformationProtectionSensitivityLabel](Get-MgGroupSiteInformationProtectionSensitivityLabel.md)
+Get sensitivityLabels from groups
+
+### [Get-MgGroupSiteInformationProtectionSensitivityLabelSublabel](Get-MgGroupSiteInformationProtectionSensitivityLabelSublabel.md)
+Get sublabels from groups
+
+### [Get-MgGroupSiteInformationProtectionSensitivityPolicySetting](Get-MgGroupSiteInformationProtectionSensitivityPolicySetting.md)
+Get sensitivityPolicySettings from groups
+
+### [Get-MgGroupSiteInformationProtectionThreatAssessmentRequest](Get-MgGroupSiteInformationProtectionThreatAssessmentRequest.md)
+Get threatAssessmentRequests from groups
+
+### [Get-MgGroupSiteInformationProtectionThreatAssessmentRequestResult](Get-MgGroupSiteInformationProtectionThreatAssessmentRequestResult.md)
+A collection of threat assessment results.
+Read-only.
+By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
 
 ### [Get-MgGroupSiteItem](Get-MgGroupSiteItem.md)
 Used to address any item contained in this site.
@@ -221,8 +260,7 @@ Children of current term.
 To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSubSite](Get-MgGroupSubSite.md)
-The list of SharePoint sites in this group.
-Access the default site with /sites/root.
+The collection of the sub-sites under this site.
 
 ### [Get-MgSite](Get-MgSite.md)
 Retrieve properties and relationships for a [site][] resource.\nA **site** resource represents a team site in SharePoint.
@@ -438,11 +476,24 @@ Get followedSites from users
 ### [Grant-MgSitePermission](Grant-MgSitePermission.md)
 Grant users access to a link represented by a [permission][].
 
+### [Invoke-MgBufferSiteInformationProtectionDecrypt](Invoke-MgBufferSiteInformationProtectionDecrypt.md)
+Invoke action decryptBuffer
+
+### [Invoke-MgBufferSiteInformationProtectionEncrypt](Invoke-MgBufferSiteInformationProtectionEncrypt.md)
+Invoke action encryptBuffer
+
+### [Invoke-MgExtractSiteInformationProtectionPolicyLabel](Invoke-MgExtractSiteInformationProtectionPolicyLabel.md)
+Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
+The contentInfo input is resolved to informationProtectionContentLabel.
+
 ### [Invoke-MgPreviewSiteOnenotePage](Invoke-MgPreviewSiteOnenotePage.md)
 Invoke function preview
 
 ### [Invoke-MgReauthorizeSiteListSubscription](Invoke-MgReauthorizeSiteListSubscription.md)
 Invoke action reauthorize
+
+### [Invoke-MgSignSiteInformationProtectionDigest](Invoke-MgSignSiteInformationProtectionDigest.md)
+Invoke action signDigest
 
 ### [Join-MgSiteContentTypeWithHubSite](Join-MgSiteContentTypeWithHubSite.md)
 Associate a [content type][contentType] with a list of hub sites.
@@ -461,6 +512,25 @@ Add a column to a [content type][contentType] in a site or list by specifying a 
 
 ### [New-MgGroupSiteContentTypeColumnLink](New-MgGroupSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
+
+### [New-MgGroupSiteInformationProtectionDataLossPreventionPolicy](New-MgGroupSiteInformationProtectionDataLossPreventionPolicy.md)
+Create new navigation property to dataLossPreventionPolicies for groups
+
+### [New-MgGroupSiteInformationProtectionPolicyLabel](New-MgGroupSiteInformationProtectionPolicyLabel.md)
+Create new navigation property to labels for groups
+
+### [New-MgGroupSiteInformationProtectionSensitivityLabel](New-MgGroupSiteInformationProtectionSensitivityLabel.md)
+Create new navigation property to sensitivityLabels for groups
+
+### [New-MgGroupSiteInformationProtectionSensitivityLabelSublabel](New-MgGroupSiteInformationProtectionSensitivityLabelSublabel.md)
+Create new navigation property to sublabels for groups
+
+### [New-MgGroupSiteInformationProtectionThreatAssessmentRequest](New-MgGroupSiteInformationProtectionThreatAssessmentRequest.md)
+Create a new threat assessment request.
+A threat assessment request can be one of the following types:
+
+### [New-MgGroupSiteInformationProtectionThreatAssessmentRequestResult](New-MgGroupSiteInformationProtectionThreatAssessmentRequestResult.md)
+Create new navigation property to results for groups
 
 ### [New-MgGroupSiteList](New-MgGroupSiteList.md)
 Create a new [list][] in a [site][].
@@ -682,6 +752,33 @@ Delete navigation property columns for groups
 
 ### [Remove-MgGroupSiteContentTypeColumnLink](Remove-MgGroupSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
+
+### [Remove-MgGroupSiteInformationProtection](Remove-MgGroupSiteInformationProtection.md)
+Delete navigation property informationProtection for groups
+
+### [Remove-MgGroupSiteInformationProtectionDataLossPreventionPolicy](Remove-MgGroupSiteInformationProtectionDataLossPreventionPolicy.md)
+Delete navigation property dataLossPreventionPolicies for groups
+
+### [Remove-MgGroupSiteInformationProtectionPolicy](Remove-MgGroupSiteInformationProtectionPolicy.md)
+Delete navigation property policy for groups
+
+### [Remove-MgGroupSiteInformationProtectionPolicyLabel](Remove-MgGroupSiteInformationProtectionPolicyLabel.md)
+Delete navigation property labels for groups
+
+### [Remove-MgGroupSiteInformationProtectionSensitivityLabel](Remove-MgGroupSiteInformationProtectionSensitivityLabel.md)
+Delete navigation property sensitivityLabels for groups
+
+### [Remove-MgGroupSiteInformationProtectionSensitivityLabelSublabel](Remove-MgGroupSiteInformationProtectionSensitivityLabelSublabel.md)
+Delete navigation property sublabels for groups
+
+### [Remove-MgGroupSiteInformationProtectionSensitivityPolicySetting](Remove-MgGroupSiteInformationProtectionSensitivityPolicySetting.md)
+Delete navigation property sensitivityPolicySettings for groups
+
+### [Remove-MgGroupSiteInformationProtectionThreatAssessmentRequest](Remove-MgGroupSiteInformationProtectionThreatAssessmentRequest.md)
+Delete navigation property threatAssessmentRequests for groups
+
+### [Remove-MgGroupSiteInformationProtectionThreatAssessmentRequestResult](Remove-MgGroupSiteInformationProtectionThreatAssessmentRequestResult.md)
+Delete navigation property results for groups
 
 ### [Remove-MgGroupSiteList](Remove-MgGroupSiteList.md)
 Delete navigation property lists for groups
@@ -926,6 +1023,30 @@ The content stream, if the item represents a file.
 ### [Test-MgSiteContentTypePublished](Test-MgSiteContentTypePublished.md)
 Invoke function isPublished
 
+### [Test-MgSiteInformationProtectionDataLossPreventionPolicy](Test-MgSiteInformationProtectionDataLossPreventionPolicy.md)
+Invoke action evaluate
+
+### [Test-MgSiteInformationProtectionPolicyLabelApplication](Test-MgSiteInformationProtectionPolicyLabelApplication.md)
+Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
+This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
+Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
+
+### [Test-MgSiteInformationProtectionPolicyLabelClassificationResult](Test-MgSiteInformationProtectionPolicyLabelClassificationResult.md)
+Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
+This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.
+To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results.
+The API returns an informationProtectionAction that contains one of more of the following:
+
+### [Test-MgSiteInformationProtectionPolicyLabelRemoval](Test-MgSiteInformationProtectionPolicyLabelRemoval.md)
+Indicate to the consuming application what actions it should take to remove the label information.
+Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
+
+### [Test-MgSiteInformationProtectionSensitivityLabel](Test-MgSiteInformationProtectionSensitivityLabel.md)
+Invoke action evaluate
+
+### [Test-MgSiteInformationProtectionSensitivityLabelSublabel](Test-MgSiteInformationProtectionSensitivityLabelSublabel.md)
+Invoke action evaluate
+
 ### [Test-MgSiteListContentTypePublished](Test-MgSiteListContentTypePublished.md)
 Invoke function isPublished
 
@@ -949,6 +1070,33 @@ Update the navigation property columns in groups
 
 ### [Update-MgGroupSiteContentTypeColumnLink](Update-MgGroupSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
+
+### [Update-MgGroupSiteInformationProtection](Update-MgGroupSiteInformationProtection.md)
+Update the navigation property informationProtection in groups
+
+### [Update-MgGroupSiteInformationProtectionDataLossPreventionPolicy](Update-MgGroupSiteInformationProtectionDataLossPreventionPolicy.md)
+Update the navigation property dataLossPreventionPolicies in groups
+
+### [Update-MgGroupSiteInformationProtectionPolicy](Update-MgGroupSiteInformationProtectionPolicy.md)
+Update the navigation property policy in groups
+
+### [Update-MgGroupSiteInformationProtectionPolicyLabel](Update-MgGroupSiteInformationProtectionPolicyLabel.md)
+Update the navigation property labels in groups
+
+### [Update-MgGroupSiteInformationProtectionSensitivityLabel](Update-MgGroupSiteInformationProtectionSensitivityLabel.md)
+Update the navigation property sensitivityLabels in groups
+
+### [Update-MgGroupSiteInformationProtectionSensitivityLabelSublabel](Update-MgGroupSiteInformationProtectionSensitivityLabelSublabel.md)
+Update the navigation property sublabels in groups
+
+### [Update-MgGroupSiteInformationProtectionSensitivityPolicySetting](Update-MgGroupSiteInformationProtectionSensitivityPolicySetting.md)
+Update the navigation property sensitivityPolicySettings in groups
+
+### [Update-MgGroupSiteInformationProtectionThreatAssessmentRequest](Update-MgGroupSiteInformationProtectionThreatAssessmentRequest.md)
+Update the navigation property threatAssessmentRequests in groups
+
+### [Update-MgGroupSiteInformationProtectionThreatAssessmentRequestResult](Update-MgGroupSiteInformationProtectionThreatAssessmentRequestResult.md)
+Update the navigation property results in groups
 
 ### [Update-MgGroupSiteList](Update-MgGroupSiteList.md)
 Update the navigation property lists in groups
