@@ -102,14 +102,12 @@
             bool createChatCondition =
                 resourceSpecificApplicationPermissionsAllowedForChats != null;
 
-            IEnumerable<string> chatRscPermissionIds =
-                await this.ValidateAndGetRscPermissionIds(resourceSpecificApplicationPermissionsAllowedForChats);
-            IEnumerable<string> teamRscPermissionIds =
-                await this.ValidateAndGetRscPermissionIds(resourceSpecificApplicationPermissionsAllowedForTeams);
-
             List<MGTeamsInternalPreapprovalDetail> preApprovalConditions = new List<MGTeamsInternalPreapprovalDetail>();
             if (createChatCondition)
             {
+                IEnumerable<string> chatRscPermissionIds =
+                    await this.ValidateAndGetRscPermissionIds(resourceSpecificApplicationPermissionsAllowedForChats);
+
                 MGTeamsInternalPreapprovalDetail preapprovalDetail = new MGTeamsInternalPreapprovalDetail(
                     scopeType: "chat",
                     sensitivityLabels: new MGTeamsInternalAllScopeSensitivityLabels(),
@@ -120,6 +118,9 @@
 
             if (createTeamCondition)
             {
+                IEnumerable<string> teamRscPermissionIds =
+                    await this.ValidateAndGetRscPermissionIds(resourceSpecificApplicationPermissionsAllowedForTeams);
+
                 MGTeamsInternalPreapprovalDetail preapprovalDetail = new MGTeamsInternalPreapprovalDetail(
                     scopeType: "group",
                     sensitivityLabels: this.GetTeamSensitivityLabelsForPreApprovalDetail(

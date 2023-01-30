@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
     [global::System.Management.Automation.OutputType(typeof(bool))]
     [global::Microsoft.Graph.Beta.PowerShell.Description(@"Delete Preapproval policy associated with a Teams App.")]
     [global::Microsoft.Graph.Beta.PowerShell.Generated]
-    public partial class RemoveMgTeamsAppPreApproval_Delete : global::System.Management.Automation.PSCmdlet,
+    public partial class RemoveMgBetaTeamsAppPreApproval_Delete : global::System.Management.Automation.PSCmdlet,
         Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener
     {
         /// <summary>A copy of the Invocation Info (necessary to allow asJob to clone this cmdlet)</summary>
