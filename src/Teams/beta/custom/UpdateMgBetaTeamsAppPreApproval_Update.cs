@@ -443,7 +443,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         }
 
         /// <summary>
-        /// Intializes a new instance of the <see cref="UpdateMgTeamsAppPreapproval_Update" /> cmdlet class.
+        /// Intializes a new instance of the <see cref="UpdateMgBetaTeamsAppPreApproval_Update" /> cmdlet class.
         /// </summary>
         public UpdateMgBetaTeamsAppPreApproval_Update()
         {
