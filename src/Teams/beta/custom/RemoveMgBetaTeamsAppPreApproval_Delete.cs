@@ -338,7 +338,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         /// <summary>
         /// Intializes a new instance of the <see cref="RemoveMgTeamsAppPreApproval_Delete" /> cmdlet class.
         /// </summary>
-        public RemoveMgTeamsAppPreApproval_Delete()
+        public RemoveMgBetaTeamsAppPreApproval_Delete()
         {
 
         }

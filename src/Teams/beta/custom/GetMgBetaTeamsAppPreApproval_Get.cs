@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         /// <summary>
         /// Intializes a new instance of the <see cref="GetMgTeamsAppPreApproval_Get" /> cmdlet class.
         /// </summary>
-        public GetMgTeamsAppPreApproval_Get()
+        public GetMgBetaTeamsAppPreApproval_Get()
         {
 
         }
