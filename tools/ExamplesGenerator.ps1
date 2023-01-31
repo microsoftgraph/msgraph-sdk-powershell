@@ -2,7 +2,8 @@
 # Licensed under the MIT License.
 Param(
     $ModulesToGenerate = @(),
-    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc")
+    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
+    [string] $MissingExternalDocsUrlFolder = (Join-Path $PSScriptRoot "..\openApiDocs\MissingExternalDocsUrl")
 )
 function Start-Generator {
     Param(
@@ -20,6 +21,12 @@ function Start-Generator {
         "beta" = "examples\v1.0-beta"
     }
     if ($GenerationMode -eq "auto") {
+        #Create MissingExternalDocsUrlFolder if its missing. This folder stores reports for uri paths that don't have external docs link
+        if (-not (Test-Path $MissingExternalDocsUrlFolder)) {
+            New-Item -Path $MissingExternalDocsUrlFolder -ItemType Directory
+        }
+        #Delete all files in the MissingExternalDocsUrlFolder first. This is for purposes of maintainance just incase the open api docs refresh changes the status of uri paths that were previously logged for missing the external docs link
+        Remove-Item –path $MissingExternalDocsUrlFolder* -include *.csv –recurse
         $GraphMapping.Keys | ForEach-Object {
             $graphProfile = $_
             Get-FilesByProfile -GraphProfile $graphProfile -GraphProfilePath $GraphMapping[$graphProfile] -ModulesToGenerate $ModulesToGenerate 
@@ -28,7 +35,7 @@ function Start-Generator {
     else {
           
         $ProfilePathMapping = "examples\v1.0"
-        if($ProfilePath -eq "beta"){
+        if ($ProfilePath -eq "beta") {
             $ProfilePathMapping = "examples\v1.0-beta"
         }
         $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$GraphModule\$ProfilePathMapping"
@@ -48,8 +55,8 @@ function Get-FilesByProfile {
     )
 
 
-     $ModulesToGenerate | ForEach-Object {
-         $ModuleName = $_
+    $ModulesToGenerate | ForEach-Object {
+        $ModuleName = $_
         $ModulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$GraphProfilePath"
         $OpenApiFile = Join-Path $PSScriptRoot "..\openApiDocs\v1.0\$ModuleName.yml"
         #test this path first before proceeding
@@ -99,7 +106,7 @@ function Get-Files {
                
                         if ($UriPath) {
                             $Method = $UriPaths.Method
-                            Get-ExternalDocs-Url -GraphProfile $GraphProfile -Url -UriPath $UriPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method -Module $Module
+                            Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $UriPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method -Module $Module
                         }
                     }
                 }
@@ -115,7 +122,7 @@ function Get-Files {
     }
     
 }
-function Get-ExternalDocs-Url {
+function Get-ExternalDocsUrl {
 
     param(
         [ValidateSet("beta", "v1.0")]
@@ -130,12 +137,13 @@ function Get-ExternalDocs-Url {
         [System.Object] $Method = "GET",
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
     )
-    $MissingExternalDocsUrlFolder = Join-Path $PSScriptRoot "..\openApiDocs\MissingExternalDocsUrl\$Module.csv"
+
+    $MissingExternalDocsUrl = Join-Path $MissingExternalDocsUrlFolder "$Module.csv"
     if ($GenerationMode -eq "manual") {
 
         if (-not([string]::IsNullOrEmpty($ManualExternalDocsUrl))) {
     
-            WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ManualExternalDocsUrl -Command $Command -GraphProfilePath $GraphProfilePath
+            Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ManualExternalDocsUrl -Command $Command -GraphProfilePath $GraphProfilePath
         }
 
     }
@@ -146,19 +154,20 @@ function Get-ExternalDocs-Url {
                     $MethodName = $Method | Out-String
                
                     $externalDocUrl = $path[$UriPath].get.externalDocs.url
-                    if([string]::IsNullOrEmpty($externalDocUrl)) {
-                       $PathSplit = $UriPath.Split("/")
-                       $PathToAppend = $PathSplit[$PathSplit.Count - 1]
-                       if($PathToAppend.StartsWith("{") -or $PathToAppend.StartsWith("$")){
-                        #skip
-                       }else{
-                       $PathRebuild = "/"+$PathSplit[0]
-                       for($i = 1; $i -lt $PathSplit.Count - 1; $i++){
-                        $PathRebuild += $PathSplit[$i]+"/" 
-                       }
-                       $RebuiltPath =  $PathRebuild + "microsoft.graph." +$PathToAppend
-                       $externalDocUrl = $path[$RebuiltPath].get.externalDocs.url
-                    }
+                    if ([string]::IsNullOrEmpty($externalDocUrl)) {
+                        $PathSplit = $UriPath.Split("/")
+                        $PathToAppend = $PathSplit[$PathSplit.Count - 1]
+                        if ($PathToAppend.StartsWith("{") -or $PathToAppend.StartsWith("$")) {
+                            #skip
+                        }
+                        else {
+                            $PathRebuild = "/" + $PathSplit[0]
+                            for ($i = 1; $i -lt $PathSplit.Count - 1; $i++) {
+                                $PathRebuild += $PathSplit[$i] + "/" 
+                            }
+                            $RebuiltPath = $PathRebuild + "microsoft.graph." + $PathToAppend
+                            $externalDocUrl = $path[$RebuiltPath].get.externalDocs.url
+                        }
                     }
                     if ($MethodName -eq "POST") {
                         $externalDocUrl = $path[$UriPath].post.externalDocs.url 
@@ -176,23 +185,23 @@ function Get-ExternalDocs-Url {
                         $externalDocUrl = $path[$UriPath].put.externalDocs.url 
                     }
                     if (-not([string]::IsNullOrEmpty($externalDocUrl))) {
-                        WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $externalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath
+                        Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $externalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath
                     }
                     else {
-                        if (-not (Test-Path $MissingExternalDocsUrlFolder)) {
-                            Write-Error "File: $MissingExternalDocsUrlFolder."
+                        if (-not (Test-Path $MissingExternalDocsUrl)) {
+                            Write-Error "File: $MissingExternalDocsUrl."
                             #New-Item -Path $MissingExternalDocsUrlFolder -ItemType File
-                            "Graph profile, Graph Module, Command, UriPath, ExternalUrlDoc " | Out-File -FilePath  $MissingExternalDocsUrlFolder -Encoding ASCII
+                            "Graph profile, Graph Module, Command, UriPath, ExternalUrlDoc " | Out-File -FilePath  $MissingExternalDocsUrl -Encoding ASCII
                         }
 
                         #Check if module already exists
-                        $File = Get-Content $MissingExternalDocsUrlFolder
+                        $File = Get-Content $MissingExternalDocsUrl
                         $containsWord = $file | % { $_ -match "$GraphProfile, $Module, $Command, $UriPath" }
                         if ($containsWord -contains $true) {
                             #Skip adding to csv
                         }
                         else {
-                            "$GraphProfile, $Module, $Command, $UriPath" | Out-File -FilePath $MissingExternalDocsUrlFolder -Append -Encoding ASCII
+                            "$GraphProfile, $Module, $Command, $UriPath" | Out-File -FilePath $MissingExternalDocsUrl -Append -Encoding ASCII
                         }
                     }
             
@@ -203,7 +212,7 @@ function Get-ExternalDocs-Url {
     }
 
 }
-function WebScrapping {
+function Start-WebScrapping {
     param(
         [ValidateSet("beta", "v1.0")]
         [string] $GraphProfile = "v1.0",
@@ -242,10 +251,10 @@ function WebScrapping {
         
     }
   
-    UpdateExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $ExampleList -ExampleFile $ExampleFile -Description $Description
+    Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $ExampleList -ExampleFile $ExampleFile -Description $Description
 }
 
-function UpdateExampleFile {
+function Update-ExampleFile {
     param(
         [ValidateSet("beta", "v1.0")]
         [string] $GraphProfile = "v1.0",
@@ -278,10 +287,7 @@ function UpdateExampleFile {
     }
 
     $headCount = $HeaderList.Count
-    Write-Host "Header count $headCount"
-    $exampleCount = $ExampleList.Count
-    Write-Host "example count $exampleCount"
-    Write-Host "Flag for replacing everything $ReplaceEverything"    
+    $exampleCount = $ExampleList.Count   
     if ($ReplaceEverything -and $exampleCount -gt 0 -and $headCount -eq $exampleCount) {
         Clear-Content $ExampleFile -Force
         for ($d = 0; $d -lt $headerList.Count; $d++) { 
