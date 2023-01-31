@@ -9,7 +9,7 @@ function Start-Generator {
         $ModulesToGenerate = @(),
         [ValidateNotNullOrEmpty()]
         [string] $GenerationMode = "auto",
-        [string] $GraphCommand = "GetMg-User",
+        [string] $GraphCommand = "Get-MgUser",
         [string] $GraphModule = "Users",
         [string] $ProfilePath = "v1.0",
         [string] $ManualExternalDocsUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell"
