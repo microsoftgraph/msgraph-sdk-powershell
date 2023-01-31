@@ -412,22 +412,23 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
 
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletAfterAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
-                catch (MGTeamsInternalServiceRequestException ex)
+                catch (System.Exception ex)
                 {
-                    this.HandleTeamsInternalServiceRequestException(ex);
+                    TeamsExceptionHandler.HandleException(
+                        ex,
+                        new
+                        {
+                            TeamsAppId = this.TeamsAppId,
+                            TeamLevelSensitivityLabelCondition = this.TeamLevelSensitivityLabelCondition,
+                            SpecificSensitivityLabelIdsApplicableToTeams = this.SpecificSensitivityLabelIdsApplicableToTeams,
+                            ResourceSpecificApplicationPermissionsAllowedForTeams = this.ResourceSpecificApplicationPermissionsAllowedForTeams,
+                            ResourceSpecificApplicationPermissionsAllowedForChats = this.ResourceSpecificApplicationPermissionsAllowedForChats,
+                        },
+                        errorRecord => WriteError(errorRecord),
+                        this);
+                    ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletException, $"{ex.GetType().Name} - {ex.Message} : {ex.StackTrace}").Wait();
+                    if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
-                catch (MGTeamsInternalException ex)
-                {
-                    this.HandleTeamsInternalException(ex);
-                }
-                catch (Microsoft.Graph.Beta.PowerShell.Runtime.UndeclaredResponseException urexception)
-                {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new { TeamsAppId = TeamsAppId })
-                    {
-                        ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
-                    });
-                }
-                catch (System.Exception ex) { ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletException, $"{ex.GetType().Name} - {ex.Message} : {ex.StackTrace}").Wait(); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; } WriteError(new global::System.Management.Automation.ErrorRecord(ex, string.Empty, global::System.Management.Automation.ErrorCategory.NotSpecified, null)); }
                 finally
                 {
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletProcessRecordAsyncEnd);
