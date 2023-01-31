@@ -109,22 +109,39 @@ Function Find-MgGraphCommand {
             [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata = GraphCommand_ReadGraphCommandMetadata
         }
 
-        function FindByCommand {
+        function ResolveCommand {
             param(
                 [Parameter(Mandatory = $true, Position = 0)]
                 [string]$Command
             )
 
-            $Result = @()
-            Write-Debug "Matching Command: $Command"
-            Write-Debug "Matching ApiVersion: $ApiVersion"
-            [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
-                if ($_.ApiVersion -match $ApiVersion -and
-                    $_.Command -match "^$Command$") {
-                    $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
-                }
+            Write-Debug "Received Command: $Command"
+            [array]$ResolvedCommands = GraphCommand_ReadGraphCommandMapping | Where-Object LegacyMapping -Contains $Command | Select-Object -ExpandProperty Command
+            if (!$ResolvedCommands) {
+                $ResolvedCommands = $Command
             }
-            Write-Output $Result -NoEnumerate
+            Write-Debug "Resolved Command: $ResolvedCommands"
+            Write-Output $ResolvedCommands -NoEnumerate
+        }
+
+        function FindByCommand {
+            param(
+                [Parameter(Mandatory = $true, Position = 0)]
+                [string[]]$Command
+            )
+
+            foreach ($c in $Command) {
+                $Result = @()
+                Write-Debug "Matching Command: $c"
+                Write-Debug "Matching ApiVersion: $ApiVersion"
+                [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
+                    if ($_.ApiVersion -match $ApiVersion -and
+                        $_.Command -match "^$c$") {
+                        $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
+                    }
+                }
+                Write-Output $Result -NoEnumerate
+            }
         }
 
         function ResolveUri {
@@ -189,7 +206,8 @@ Function Find-MgGraphCommand {
                             $InputString = $o
                         }
 
-                        $Result = FindByCommand $InputString
+                        $ResolvedCommand = ResolveCommand $InputString
+                        $Result = FindByCommand $ResolvedCommand
                         if ($Result.Count -lt 1) {
                             $GraphUri = ResolveUri $InputString
                             $Result = FindByUri $GraphUri
@@ -211,7 +229,8 @@ Function Find-MgGraphCommand {
                 }
                 "FindByCommand" {
                     foreach ($c in $Command) {
-                        $Result = FindByCommand $c
+                        $ResolvedCommand = ResolveCommand $c
+                        $Result = FindByCommand $ResolvedCommand
                         if ($Result.Count -lt 1) {
                             Write-Error "'$c' is not a valid Microsoft Graph PowerShell command. Please check the name and try again."
                         }
