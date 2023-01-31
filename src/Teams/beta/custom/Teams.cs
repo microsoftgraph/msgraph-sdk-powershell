@@ -278,6 +278,30 @@ namespace Microsoft.Graph.Beta.PowerShell
         }
 
         /// <summary>
+        /// Get sensitivity labels visible to current caller.
+        /// </summary>
+        /// <param name="eventListener">The event listener.</param>
+        /// <param name="sender">The http request sender.</param>
+        /// <returns>Sensitivity label collection.</returns>
+        internal async System.Threading.Tasks.Task<MGTeamsInternalSensitivityLabelCollection> GetSensitivityLabelCollection(
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            // Constant Parameters
+            using (NoSynchronizationContext)
+            {
+                GetSensitivityLabelCollectionRequest request =
+                    new GetSensitivityLabelCollectionRequest();
+
+                return await this.ExecuteHttpRequestAsync(
+                    request,
+                    json => MGTeamsInternalSensitivityLabelCollection.FromJson(json),
+                    eventListener,
+                    sender);
+            }
+        }
+
+        /// <summary>
         /// Execute HTTP request.
         /// </summary>
         /// <typeparam name="T">The type of the response object.</typeparam>

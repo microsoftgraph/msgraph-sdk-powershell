@@ -328,7 +328,14 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
 
                     this.ValidateInputParameters();
 
-                    TeamsAppPreApprovalValidator teamsAppPreApprovalValidator = new TeamsAppPreApprovalValidator();
+                    // Get sensitivity labels.
+                    MGTeamsInternalSensitivityLabelCollection sensitivityLabelCollection = await this.Client.GetSensitivityLabelCollection(
+                        this,
+                        Pipeline);
+
+                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+
+                    TeamsAppPreApprovalValidator teamsAppPreApprovalValidator = new TeamsAppPreApprovalValidator(sensitivityLabelCollection);
                     teamsAppPreApprovalValidator.ValidateConditionsForTeamsAppPreApproval(
                         this.TeamsAppId,
                         this.ResourceSpecificApplicationPermissionsAllowedForChats,

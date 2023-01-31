@@ -394,7 +394,12 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                         teamsAppPreapproval.SpecificSensitivityLabelIdsApplicableToTeams = this.SpecificSensitivityLabelIdsApplicableToTeams;
                     }
 
-                    TeamsAppPreApprovalValidator teamsAppPreApprovalValidator = new TeamsAppPreApprovalValidator();
+                    // Get sensitivity labels.
+                    MGTeamsInternalSensitivityLabelCollection sensitivityLabelCollection = await this.Client.GetSensitivityLabelCollection(
+                        this,
+                        Pipeline);
+
+                    TeamsAppPreApprovalValidator teamsAppPreApprovalValidator = new TeamsAppPreApprovalValidator(sensitivityLabelCollection);
                     teamsAppPreApprovalValidator.Validate(teamsAppPreapproval);
 
                     MGTeamsInternalPermissionGrantPreApprovalPolicy mGTeamsInternalPermissionGrantPreApprovalPolicy =

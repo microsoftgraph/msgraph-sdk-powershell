@@ -1,6 +1,8 @@
 ﻿namespace Microsoft.Graph.Beta.PowerShell.TeamsInternal
 {
     using Microsoft.Graph.Beta.PowerShell.Models;
+    using Microsoft.Graph.Beta.PowerShell.Models.TeamsInternal;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -9,6 +11,13 @@
     /// </summary>
     internal class TeamsAppPreApprovalValidator
     {
+        private IDictionary<string, MGTeamsInternalSensitivityLabel> sensitivityLabelDictionary;
+
+        internal TeamsAppPreApprovalValidator(MGTeamsInternalSensitivityLabelCollection mGTeamsInternalSensitivityLabelCollection)
+        {
+            this.sensitivityLabelDictionary = (mGTeamsInternalSensitivityLabelCollection?.Value ?? Enumerable.Empty<MGTeamsInternalSensitivityLabel>()).ToDictionary(s => s.Id, StringComparer.OrdinalIgnoreCase);
+        }
+
         /// <summary>
         /// Validate the given Teams App Preapproval object.
         /// </summary>
@@ -61,23 +70,42 @@
                         $"Both '{nameof(resourceSpecificApplicationPermissionsAllowedForTeams)}' and '{nameof(resourceSpecificApplicationPermissionsAllowedForChats)}' cannot be empty.");
             }
 
-            foreach (string permissionName in resourceSpecificApplicationPermissionsAllowedForChats)
+            if (resourceSpecificApplicationPermissionsAllowedForChats != null)
             {
-                if (!permissionName.EndsWith("chat", System.StringComparison.OrdinalIgnoreCase))
+                foreach (string permissionName in resourceSpecificApplicationPermissionsAllowedForChats)
                 {
-                    throw new MGTeamsInternalException(
-                        MGTeamsInternalErrorType.InvalidCmdletInput,
-                        $"'{permissionName}' is not a valid permission for chat scope.");
+                    if (!permissionName.EndsWith("chat", System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        throw new MGTeamsInternalException(
+                            MGTeamsInternalErrorType.InvalidCmdletInput,
+                            $"'{permissionName}' is not a valid permission for chat scope.");
+                    }
                 }
             }
 
-            foreach (string permissionName in resourceSpecificApplicationPermissionsAllowedForChats)
+            if (resourceSpecificApplicationPermissionsAllowedForTeams != null)
             {
-                if (!permissionName.EndsWith("group", System.StringComparison.OrdinalIgnoreCase))
+                foreach (string permissionName in resourceSpecificApplicationPermissionsAllowedForChats)
                 {
-                    throw new MGTeamsInternalException(
-                        MGTeamsInternalErrorType.InvalidCmdletInput,
-                        $"'{permissionName}' is not a valid permission for team scope.");
+                    if (!permissionName.EndsWith("group", System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        throw new MGTeamsInternalException(
+                            MGTeamsInternalErrorType.InvalidCmdletInput,
+                            $"'{permissionName}' is not a valid permission for team scope.");
+                    }
+                }
+            }
+
+            if (specificSensitivityLabelIdsApplicableToTeams != null)
+            {
+                foreach (string sensitivityLabelId in specificSensitivityLabelIdsApplicableToTeams)
+                {
+                    if (!this.sensitivityLabelDictionary.TryGetValue(sensitivityLabelId, out _))
+                    {
+                        throw new MGTeamsInternalException(
+                            MGTeamsInternalErrorType.InvalidCmdletInput,
+                            $"'Sensitivity Label '{sensitivityLabelId}' was not found.");
+                    }
                 }
             }
 
