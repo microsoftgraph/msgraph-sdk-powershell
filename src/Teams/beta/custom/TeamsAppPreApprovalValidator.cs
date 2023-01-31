@@ -61,6 +61,26 @@
                         $"Both '{nameof(resourceSpecificApplicationPermissionsAllowedForTeams)}' and '{nameof(resourceSpecificApplicationPermissionsAllowedForChats)}' cannot be empty.");
             }
 
+            foreach (string permissionName in resourceSpecificApplicationPermissionsAllowedForChats)
+            {
+                if (!permissionName.EndsWith("chat", System.StringComparison.OrdinalIgnoreCase))
+                {
+                    throw new MGTeamsInternalException(
+                        MGTeamsInternalErrorType.InvalidCmdletInput,
+                        $"'{permissionName}' is not a valid permission for chat scope.");
+                }
+            }
+
+            foreach (string permissionName in resourceSpecificApplicationPermissionsAllowedForChats)
+            {
+                if (!permissionName.EndsWith("group", System.StringComparison.OrdinalIgnoreCase))
+                {
+                    throw new MGTeamsInternalException(
+                        MGTeamsInternalErrorType.InvalidCmdletInput,
+                        $"'{permissionName}' is not a valid permission for team scope.");
+                }
+            }
+
             if (teamLevelSensitivityLabelCondition == null)
             {
                 if (resourceSpecificApplicationPermissionsAllowedForTeams != null || specificSensitivityLabelIdsApplicableToTeams != null)
