@@ -305,6 +305,8 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                 {
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
+                    this.ValidateInputParameters();
+
                     // Get the Teams App
                     Models.IMicrosoftGraphTeamsApp teamsApp = await this.Client.GetTeamsApp(
                             this.TeamsAppId,
@@ -451,36 +453,17 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
 
         }
 
-        private void HandleTeamsInternalServiceRequestException(MGTeamsInternalServiceRequestException ex)
+        /// <summary>
+        /// Validate the input parameters of the cmdlet.
+        /// </summary>
+        private void ValidateInputParameters()
         {
-            string code = ex.ODataError.Error?.Code;
-            string message = ex.ODataError.Error?.Message;
-            WriteError(new global::System.Management.Automation.ErrorRecord(
-                new global::System.Exception($"[{code}] : {message}"),
-                code,
-                global::System.Management.Automation.ErrorCategory.InvalidOperation,
-                new
-                {
-                    TeamsAppId = TeamsAppId,
-                })
+            if (string.IsNullOrWhiteSpace(this.TeamsAppId))
             {
-                ErrorDetails = new global::System.Management.Automation.ErrorDetails(message)
-            });
-        }
-
-        private void HandleTeamsInternalException(MGTeamsInternalException ex)
-        {
-            WriteError(new global::System.Management.Automation.ErrorRecord(
-                ex,
-                ex.ErrorType.ToString(),
-                global::System.Management.Automation.ErrorCategory.InvalidOperation,
-                new
-                {
-                    TeamsAppId = TeamsAppId,
-                })
-            {
-                ErrorDetails = new global::System.Management.Automation.ErrorDetails(ex.Message)
-            });
+                throw new MGTeamsInternalException(
+                        MGTeamsInternalErrorType.InvalidCmdletInput,
+                        $"'{nameof(this.TeamsAppId)}' cannot be empty.");
+            }
         }
     }
 }

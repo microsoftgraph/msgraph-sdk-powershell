@@ -326,6 +326,8 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                 {
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
+                    this.ValidateInputParameters();
+
                     TeamsAppPreApprovalValidator teamsAppPreApprovalValidator = new TeamsAppPreApprovalValidator();
                     teamsAppPreApprovalValidator.ValidateConditionsForTeamsAppPreApproval(
                         this.TeamsAppId,
@@ -491,6 +493,19 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         {
             ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Cancel();
             base.StopProcessing();
+        }
+
+        /// <summary>
+        /// Validate the input parameters of the cmdlet.
+        /// </summary>
+        private void ValidateInputParameters()
+        {
+            if (string.IsNullOrWhiteSpace(this.TeamsAppId))
+            {
+                throw new MGTeamsInternalException(
+                        MGTeamsInternalErrorType.InvalidCmdletInput,
+                        $"'{nameof(this.TeamsAppId)}' cannot be empty.");
+            }
         }
     }
 }

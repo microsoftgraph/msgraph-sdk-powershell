@@ -53,6 +53,14 @@
                         $"'{nameof(teamsAppId)}' cannot be empty.");
             }
 
+            if (resourceSpecificApplicationPermissionsAllowedForChats == null &&
+                resourceSpecificApplicationPermissionsAllowedForTeams == null)
+            {
+                throw new MGTeamsInternalException(
+                        MGTeamsInternalErrorType.InvalidCmdletInput,
+                        $"Both '{nameof(resourceSpecificApplicationPermissionsAllowedForTeams)}' and '{nameof(resourceSpecificApplicationPermissionsAllowedForChats)}' cannot be empty.");
+            }
+
             if (teamLevelSensitivityLabelCondition == null)
             {
                 if (resourceSpecificApplicationPermissionsAllowedForTeams != null || specificSensitivityLabelIdsApplicableToTeams != null)
