@@ -2,8 +2,7 @@
 # Licensed under the MIT License.
 Param(
     $ModulesToGenerate = @(),
-    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
-    [string] $MissingExternalDocsUrlFolder = (Join-Path $PSScriptRoot "..\openApiDocs\MissingExternalDocsUrl")
+    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc")
 )
 function Start-Generator {
     Param(
@@ -21,12 +20,6 @@ function Start-Generator {
         "beta" = "examples\v1.0-beta"
     }
     if ($GenerationMode -eq "auto") {
-        #Create MissingExternalDocsUrlFolder if its missing. This folder stores reports for uri paths that don't have external docs link
-        if (-not (Test-Path $MissingExternalDocsUrlFolder)) {
-            New-Item -Path $MissingExternalDocsUrlFolder -ItemType Directory
-        }
-        #Delete all files in the MissingExternalDocsUrlFolder first. This is for purposes of maintainance just incase the open api docs refresh changes the status of uri paths that were previously logged for missing the external docs link
-        Remove-Item –path $MissingExternalDocsUrlFolder* -include *.csv –recurse
         $GraphMapping.Keys | ForEach-Object {
             $graphProfile = $_
             Get-FilesByProfile -GraphProfile $graphProfile -GraphProfilePath $GraphMapping[$graphProfile] -ModulesToGenerate $ModulesToGenerate 
@@ -138,7 +131,6 @@ function Get-ExternalDocsUrl {
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
     )
 
-    $MissingExternalDocsUrl = Join-Path $MissingExternalDocsUrlFolder "$Module.csv"
     if ($GenerationMode -eq "manual") {
 
         if (-not([string]::IsNullOrEmpty($ManualExternalDocsUrl))) {
@@ -187,26 +179,8 @@ function Get-ExternalDocsUrl {
                     if (-not([string]::IsNullOrEmpty($externalDocUrl))) {
                         Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $externalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath
                     }
-                    else {
-                        if (-not (Test-Path $MissingExternalDocsUrl)) {
-                            Write-Error "File: $MissingExternalDocsUrl."
-                            #New-Item -Path $MissingExternalDocsUrlFolder -ItemType File
-                            "Graph profile, Graph Module, Command, UriPath, ExternalUrlDoc " | Out-File -FilePath  $MissingExternalDocsUrl -Encoding ASCII
-                        }
-
-                        #Check if module already exists
-                        $File = Get-Content $MissingExternalDocsUrl
-                        $containsWord = $file | % { $_ -match "$GraphProfile, $Module, $Command, $UriPath" }
-                        if ($containsWord -contains $true) {
-                            #Skip adding to csv
-                        }
-                        else {
-                            "$GraphProfile, $Module, $Command, $UriPath" | Out-File -FilePath $MissingExternalDocsUrl -Append -Encoding ASCII
-                        }
-                    }
             
                 }
-
             }
         }
     }
