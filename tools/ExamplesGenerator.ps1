@@ -6,17 +6,36 @@ Param(
 )
 function Start-Generator {
     Param(
-        $ModulesToGenerate = @()
+        $ModulesToGenerate = @(),
+        [ValidateNotNullOrEmpty()]
+        [string] $GenerationMode = "auto",
+        [string] $GraphCommand = "Get-MgUser",
+        [string] $GraphModule = "Users",
+        [string] $ProfilePath = "v1.0",
+        [string] $ManualExternalDocsUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell"
     )
 
     $GraphMapping = @{
         "v1.0" = "examples\v1.0"
         "beta" = "examples\v1.0-beta"
     }
-    $GraphMapping.Keys | ForEach-Object {
-        $graphProfile = $_
-        Get-FilesByProfile -GraphProfile $graphProfile -GraphProfilePath $GraphMapping[$graphProfile] -ModulesToGenerate $ModulesToGenerate 
+    if ($GenerationMode -eq "auto") {
+        $GraphMapping.Keys | ForEach-Object {
+            $graphProfile = $_
+            Get-FilesByProfile -GraphProfile $graphProfile -GraphProfilePath $GraphMapping[$graphProfile] -ModulesToGenerate $ModulesToGenerate 
+        }
     }
+    else {
+          
+        $ProfilePathMapping = "examples\v1.0"
+        if ($ProfilePath -eq "beta") {
+            $ProfilePathMapping = "examples\v1.0-beta"
+        }
+        $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$GraphModule\$ProfilePathMapping"
+        Get-ExternalDocsUrl -ManualExternalDocsUrl $ManualExternalDocsUrl -GenerationMode $GenerationMode -GraphProfilePath $ModulePath -Command $GraphCommand -GraphProfile $ProfilePath -Module -$Module
+            
+    }
+
 }
 function Get-FilesByProfile {
     Param(
@@ -35,9 +54,9 @@ function Get-FilesByProfile {
         $OpenApiFile = Join-Path $PSScriptRoot "..\openApiDocs\v1.0\$ModuleName.yml"
         #test this path first before proceeding
         if (Test-Path $OpenApiFile) {
-        $yamlContent = Get-Content -Path $OpenApiFile
-        $OpenApiContent = ($yamlContent | ConvertFrom-Yaml)
-        Get-Files -GraphProfile $GraphProfile -GraphProfilePath $modulePath -Module $ModuleName -OpenApiContent $OpenApiContent
+            $yamlContent = Get-Content -Path $OpenApiFile
+            $OpenApiContent = ($yamlContent | ConvertFrom-Yaml)
+            Get-Files -GraphProfile $GraphProfile -GraphProfilePath $modulePath -Module $ModuleName -OpenApiContent $OpenApiContent
         }
     }
 
@@ -59,27 +78,31 @@ function Get-Files {
         if (Test-Path $GraphProfilePath) {
 
             foreach ($File in Get-ChildItem $GraphProfilePath) {
+               
                 #Extract command over here
                 $Command = [System.IO.Path]::GetFileNameWithoutExtension($File)
                 #Check for cmdlet existence from the module manifest file
                 if ($ModuleManifestFileContent | Select-String -pattern $Command) {
                 
-                #Extract URI path
-                $Uripaths = Find-MgGraphCommand -Command $Command
-                $UriPath = $null
-                if ($Uripaths.APIVersion.Contains($GraphProfile)) {
-                    if($Uripaths.Length -gt 1){
-                        $UriPath = $UriPaths.URI[0].ToString() 
-                    }else{
-                        $UriPath = $UriPaths.URI.ToString() 
-                    } 
-                }
+                    #Extract URI path
+                    $Uripaths = Find-MgGraphCommand -Command $Command
+                    $UriPath = $null
+                    if (-not([string]::IsNullOrEmpty($Uripaths))) {
+                        if ($Uripaths.APIVersion.Contains($GraphProfile)) {
+                            if ($Uripaths.Length -gt 1) {
+                                $UriPath = $UriPaths.URI[0].ToString() 
+                            }
+                            else {
+                                $UriPath = $UriPaths.URI.ToString() 
+                            } 
+                        }
                
-                if ($UriPath) {
-                   
-                    Get-ExternalDocs-Url -GraphProfile $GraphProfile -Url -UriPath $UriPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath
+                        if ($UriPath) {
+                            $Method = $UriPaths.Method
+                            Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $UriPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method -Module $Module
+                        }
+                    }
                 }
-             }
 
             }
         }
@@ -92,35 +115,78 @@ function Get-Files {
     }
     
 }
-function Get-ExternalDocs-Url {
+function Get-ExternalDocsUrl {
 
     param(
         [ValidateSet("beta", "v1.0")]
         [string] $GraphProfile = "v1.0",
         [string] $UriPath,
+        [string] $Module = "Users",
+        [string] $GenerationMode = "auto",
+        [string] $ManualExternalDocsUrl,
         [ValidateNotNullOrEmpty()]
         [string] $Command = "Get-MgUser",
         [Hashtable] $OpenApiContent,
+        [System.Object] $Method = "GET",
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
     )
 
-    if ($UriPath) {
-        if ($openApiContent.openapi && $openApiContent.info.version) {
-            foreach ($path in $openApiContent.paths) {
-                $externalDocUrl = $path[$UriPath].values.externalDocs.url
+    if ($GenerationMode -eq "manual") {
 
-                if ($externalDocUrl) {
-                    $url = $externalDocUrl.split(" ")
-                    WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $url[0] -Command $Command -GraphProfilePath $GraphProfilePath
-                }
+        if (-not([string]::IsNullOrEmpty($ManualExternalDocsUrl))) {
+    
+            Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ManualExternalDocsUrl -Command $Command -GraphProfilePath $GraphProfilePath
+        }
+
+    }
+    else {
+        if ($UriPath) {
+            if ($openApiContent.openapi && $openApiContent.info.version) {
+                foreach ($path in $openApiContent.paths) {
+                    $MethodName = $Method | Out-String
+               
+                    $externalDocUrl = $path[$UriPath].get.externalDocs.url
+                    if ([string]::IsNullOrEmpty($externalDocUrl)) {
+                        $PathSplit = $UriPath.Split("/")
+                        $PathToAppend = $PathSplit[$PathSplit.Count - 1]
+                        if ($PathToAppend.StartsWith("{") -or $PathToAppend.StartsWith("$")) {
+                            #skip
+                        }
+                        else {
+                            $PathRebuild = "/" + $PathSplit[0]
+                            for ($i = 1; $i -lt $PathSplit.Count - 1; $i++) {
+                                $PathRebuild += $PathSplit[$i] + "/" 
+                            }
+                            $RebuiltPath = $PathRebuild + "microsoft.graph." + $PathToAppend
+                            $externalDocUrl = $path[$RebuiltPath].get.externalDocs.url
+                        }
+                    }
+                    if ($MethodName -eq "POST") {
+                        $externalDocUrl = $path[$UriPath].post.externalDocs.url 
+                    }
+                
+                    if ($MethodName -eq "PATCH") {
+                        $externalDocUrl = $path[$UriPath].patch.externalDocs.url 
+                    }
+                
+                    if ($MethodName -eq "DELETE") {
+                        $externalDocUrl = $path[$UriPath].delete.externalDocs.url 
+                    }
+
+                    if ($MethodName -eq "PUT") {
+                        $externalDocUrl = $path[$UriPath].put.externalDocs.url 
+                    }
+                    if (-not([string]::IsNullOrEmpty($externalDocUrl))) {
+                        Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $externalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath
+                    }
             
+                }
             }
-
         }
     }
 
 }
-function WebScrapping {
+function Start-WebScrapping {
     param(
         [ValidateSet("beta", "v1.0")]
         [string] $GraphProfile = "v1.0",
@@ -159,10 +225,10 @@ function WebScrapping {
         
     }
   
-    UpdateExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $ExampleList -ExampleFile $ExampleFile -Description $Description
+    Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $ExampleList -ExampleFile $ExampleFile -Description $Description
 }
 
-function UpdateExampleFile {
+function Update-ExampleFile {
     param(
         [ValidateSet("beta", "v1.0")]
         [string] $GraphProfile = "v1.0",
@@ -195,8 +261,7 @@ function UpdateExampleFile {
     }
 
     $headCount = $HeaderList.Count
-    $exampleCount = $ExampleList.Count
-        
+    $exampleCount = $ExampleList.Count   
     if ($ReplaceEverything -and $exampleCount -gt 0 -and $headCount -eq $exampleCount) {
         Clear-Content $ExampleFile -Force
         for ($d = 0; $d -lt $headerList.Count; $d++) { 
@@ -254,5 +319,11 @@ if ([string]::IsNullOrEmpty($Exists)) {
      git checkout $ProposedBranch
 }
 
-Start-Generator -ModulesToGenerate $ModulesToGenerate
+Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
+
+#Comment the above and uncomment the below start command, if you manually want to manually pass ExternalDocs url.
+#This is for scenarios where the correponding external docs url to the uri path gotten from Find-MgGraph command, is missing on the openapi.yml file for a particular module.
+#Ensure that you pass all correct parameters as oer the already existing example
+
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0&tabs=http" -GraphCommand "New-MgServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "v1.0"
 Write-Host -ForegroundColor Green "-------------Done-------------"
