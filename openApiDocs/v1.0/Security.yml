@@ -11874,6 +11874,7 @@ components:
       enum:
         - active
         - resolved
+        - inProgress
         - redirected
         - unknownFutureValue
       type: string

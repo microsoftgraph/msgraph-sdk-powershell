@@ -94311,6 +94311,7 @@ components:
               format: date-time
             displayName:
               type: string
+              description: The name of the print job.
               nullable: true
             errorCode:
               maximum: 2147483647
