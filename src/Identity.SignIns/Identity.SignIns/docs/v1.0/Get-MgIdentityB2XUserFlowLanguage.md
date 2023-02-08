@@ -14,20 +14,20 @@ You cannot create custom languages in self-service sign-up user flows.
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgIdentityB2XUserFlowLanguage -B2XIdentityUserFlowId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgIdentityB2XUserFlowLanguage -B2XIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgIdentityB2XUserFlowLanguage -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -65,7 +65,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -80,7 +80,7 @@ key: id of b2xIdentityUserFlow
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -96,7 +96,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -126,7 +126,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -142,7 +142,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -157,7 +157,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -187,7 +187,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -202,7 +202,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -217,7 +217,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -232,7 +232,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -247,7 +247,7 @@ key: id of userFlowLanguageConfiguration
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -294,7 +294,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
-  - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
@@ -304,7 +303,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
-  - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[GroupId <String>]`: key: id of group
@@ -348,7 +346,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
   - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
   - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
-  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserFlowLanguageConfigurationId <String>]`: key: id of userFlowLanguageConfiguration
   - `[UserFlowLanguagePageId <String>]`: key: id of userFlowLanguagePage
   - `[UserId <String>]`: key: id of user

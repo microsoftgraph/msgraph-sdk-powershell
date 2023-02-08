@@ -13,27 +13,27 @@ The response provides details about which memberships could and couldn't be crea
 
 ## SYNTAX
 
-### AddExpanded1 (Default)
+### AddExpanded (Default)
 ```
 Add-MgUserChatMember -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Values <IMicrosoftGraphConversationMember[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Add1
+### Add
 ```
 Add-MgUserChatMember -ChatId <String> -UserId <String>
  -BodyParameter <IPaths1Uoy9ZaUsersUserIdChatsChatIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AddViaIdentity1
+### AddViaIdentity
 ```
 Add-MgUserChatMember -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Uoy9ZaUsersUserIdChatsChatIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AddViaIdentityExpanded1
+### AddViaIdentityExpanded
 ```
 Add-MgUserChatMember -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Values <IMicrosoftGraphConversationMember[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -139,7 +139,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
+Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -155,7 +155,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Uoy9ZaUsersUserIdChatsChatIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Add1, AddViaIdentity1
+Parameter Sets: Add, AddViaIdentity
 Aliases:
 
 Required: True
@@ -170,7 +170,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Add1, AddExpanded1
+Parameter Sets: Add, AddExpanded
 Aliases:
 
 Required: True
@@ -186,7 +186,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: AddViaIdentity1, AddViaIdentityExpanded1
+Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -201,7 +201,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Add1, AddExpanded1
+Parameter Sets: Add, AddExpanded
 Aliases:
 
 Required: True
@@ -217,7 +217,7 @@ To construct, please use Get-Help -Online and see NOTES section for VALUES prope
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember[]
-Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
+Parameter Sets: AddExpanded, AddViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -314,7 +314,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
-  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -322,7 +321,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
   - `[PermissionId <String>]`: key: id of permission
   - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
@@ -332,7 +330,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[TodoTaskId <String>]`: key: id of todoTask
   - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
-  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 VALUES <IMicrosoftGraphConversationMember[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

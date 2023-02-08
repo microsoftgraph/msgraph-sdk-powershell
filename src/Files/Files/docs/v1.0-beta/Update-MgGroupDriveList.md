@@ -4078,7 +4078,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The recent activities that took p
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-            - `[DisplayName <String>]`: 
+            - `[DisplayName <String>]`: The name of the print job.
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -9039,7 +9039,7 @@ BODYPARAMETER <IMicrosoftGraphList1>: list
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-          - `[DisplayName <String>]`: 
+          - `[DisplayName <String>]`: The name of the print job.
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -13973,7 +13973,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
           - `[Scaling <String>]`: printScaling
         - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-        - `[DisplayName <String>]`: 
+        - `[DisplayName <String>]`: The name of the print job.
         - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -18520,7 +18520,7 @@ DRIVE <IMicrosoftGraphDrive1>: drive
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-          - `[DisplayName <String>]`: 
+          - `[DisplayName <String>]`: The name of the print job.
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -23115,7 +23115,7 @@ ITEMS <IMicrosoftGraphListItem1[]>: All items contained in the list.
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-          - `[DisplayName <String>]`: 
+          - `[DisplayName <String>]`: The name of the print job.
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -27742,7 +27742,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
           - `[Scaling <String>]`: printScaling
         - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-        - `[DisplayName <String>]`: 
+        - `[DisplayName <String>]`: The name of the print job.
         - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration

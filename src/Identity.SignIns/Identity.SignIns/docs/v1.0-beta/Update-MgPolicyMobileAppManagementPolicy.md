@@ -1272,7 +1272,7 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
             - `[DisplayName <String>]`: The display name of the user.
             - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
             - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-          - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the chat. Nullable.
+          - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
               - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
@@ -1344,7 +1344,7 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
               - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
               - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
             - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-            - `[Replies <IMicrosoftGraphChatMessage1[]>]`: Replies for a specified message. Supports $expand for channel messages.
+            - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
             - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
             - `[Subject <String>]`: The subject of the chat message, in plaintext.
             - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
@@ -1381,7 +1381,7 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
             - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
           - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[Message <IMicrosoftGraphChatMessage1>]`: chatMessage
+            - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
           - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Configuration <IMicrosoftGraphTeamsTabConfiguration>]`: teamsTabConfiguration
@@ -2287,7 +2287,7 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                   - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
                   - `[Relationship <String>]`: 
-                  - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
+                  - `[Set <IMicrosoftGraphTermStoreSet>]`: set
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                     - `[Children <IMicrosoftGraphTermStoreTerm1[]>]`: Children terms of set in term [store].
@@ -2304,14 +2304,14 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
                       - `[DisplayName <String>]`: Name of the group.
                       - `[ParentSiteId <String>]`: ID of the parent site of this group.
                       - `[Scope <String>]`: 
-                      - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
+                      - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
                     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
                     - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
                     - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
                   - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
-                - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
+                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
               - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
-              - `[TermSet <IMicrosoftGraphTermStoreSet1>]`: set
+              - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
             - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -2534,7 +2534,7 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Href <String>]`: The URL of the link.
                 - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-              - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
+              - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[DisplayName <String>]`: The name of the notebook.
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2543,10 +2543,10 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
                 - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
-                - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
-                - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the section. Read-only. Nullable.
+                - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
+                - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the section. Read-only. Nullable.
                 - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
-                - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in the section group. Read-only. Nullable.
+                - `[Sections <IMicrosoftGraphOnenoteSection[]>]`: The sections in the section group. Read-only. Nullable.
                   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[DisplayName <String>]`: The name of the notebook.
                   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2574,15 +2574,15 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
                       - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[Order <Int32?>]`: The order of the page within its parent section. Read-only.
                     - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
-                    - `[ParentSection <IMicrosoftGraphOnenoteSection1>]`: onenoteSection
+                    - `[ParentSection <IMicrosoftGraphOnenoteSection>]`: onenoteSection
                     - `[Title <String>]`: The title of the page.
                     - `[UserTags <String[]>]`: 
                   - `[PagesUrl <String>]`: The pages endpoint where you can get details for all the pages in the section. Read-only.
                   - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
-                  - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
+                  - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
                 - `[SectionsUrl <String>]`: The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
               - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
-              - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in the notebook. Read-only. Nullable.
+              - `[Sections <IMicrosoftGraphOnenoteSection[]>]`: The sections in the notebook. Read-only. Nullable.
               - `[SectionsUrl <String>]`: The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
               - `[UserRole <String>]`: onenoteUserRole
             - `[Operations <IMicrosoftGraphOnenoteOperation[]>]`: The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
@@ -2603,8 +2603,8 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Content <Byte[]>]`: The content stream
               - `[ContentUrl <String>]`: The URL for downloading the content
-            - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-            - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            - `[Sections <IMicrosoftGraphOnenoteSection[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
           - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
           - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2692,7 +2692,7 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
             - `[DefaultLanguageTag <String>]`: Default language of the term store.
             - `[Groups <IMicrosoftGraphTermStoreGroup1[]>]`: Collection of all groups available in the term store.
             - `[LanguageTags <String[]>]`: List of languages for the term store.
-            - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: Collection of all sets available in the term store.
+            - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
         - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
         - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
@@ -2778,7 +2778,7 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
             - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
             - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
             - `[MembershipType <String>]`: channelMembershipType
-            - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+            - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
             - `[ModerationSettings <IMicrosoftGraphChannelModerationSettings>]`: channelModerationSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowNewMessageFromBots <Boolean?>]`: Indicates whether bots are allowed to post messages.
@@ -4153,7 +4153,7 @@ BODYPARAMETER <IMicrosoftGraphMobilityManagementPolicy>: mobilityManagementPolic
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-              - `[DisplayName <String>]`: 
+              - `[DisplayName <String>]`: The name of the print job.
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -5851,7 +5851,7 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
           - `[DisplayName <String>]`: The display name of the user.
           - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
           - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-        - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the chat. Nullable.
+        - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
             - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
@@ -5923,7 +5923,7 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
             - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
             - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
           - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-          - `[Replies <IMicrosoftGraphChatMessage1[]>]`: Replies for a specified message. Supports $expand for channel messages.
+          - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
           - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
           - `[Subject <String>]`: The subject of the chat message, in plaintext.
           - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
@@ -5960,7 +5960,7 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
           - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
         - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[Message <IMicrosoftGraphChatMessage1>]`: chatMessage
+          - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
         - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Configuration <IMicrosoftGraphTeamsTabConfiguration>]`: teamsTabConfiguration
@@ -6866,7 +6866,7 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
                 - `[Relationship <String>]`: 
-                - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
+                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                   - `[Children <IMicrosoftGraphTermStoreTerm1[]>]`: Children terms of set in term [store].
@@ -6883,14 +6883,14 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
                     - `[DisplayName <String>]`: Name of the group.
                     - `[ParentSiteId <String>]`: ID of the parent site of this group.
                     - `[Scope <String>]`: 
-                    - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
+                    - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
                   - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
                   - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
                   - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
                 - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
-              - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
+              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
             - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
-            - `[TermSet <IMicrosoftGraphTermStoreSet1>]`: set
+            - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
           - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -7113,7 +7113,7 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Href <String>]`: The URL of the link.
               - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
-            - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
+            - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[DisplayName <String>]`: The name of the notebook.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -7122,10 +7122,10 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
               - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
-              - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
-              - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the section. Read-only. Nullable.
+              - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
+              - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the section. Read-only. Nullable.
               - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
-              - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in the section group. Read-only. Nullable.
+              - `[Sections <IMicrosoftGraphOnenoteSection[]>]`: The sections in the section group. Read-only. Nullable.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[DisplayName <String>]`: The name of the notebook.
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -7153,15 +7153,15 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
                     - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[Order <Int32?>]`: The order of the page within its parent section. Read-only.
                   - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
-                  - `[ParentSection <IMicrosoftGraphOnenoteSection1>]`: onenoteSection
+                  - `[ParentSection <IMicrosoftGraphOnenoteSection>]`: onenoteSection
                   - `[Title <String>]`: The title of the page.
                   - `[UserTags <String[]>]`: 
                 - `[PagesUrl <String>]`: The pages endpoint where you can get details for all the pages in the section. Read-only.
                 - `[ParentNotebook <IMicrosoftGraphNotebook>]`: notebook
-                - `[ParentSectionGroup <IMicrosoftGraphSectionGroup1>]`: sectionGroup
+                - `[ParentSectionGroup <IMicrosoftGraphSectionGroup>]`: sectionGroup
               - `[SectionsUrl <String>]`: The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
             - `[SectionGroupsUrl <String>]`: The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
-            - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in the notebook. Read-only. Nullable.
+            - `[Sections <IMicrosoftGraphOnenoteSection[]>]`: The sections in the notebook. Read-only. Nullable.
             - `[SectionsUrl <String>]`: The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
             - `[UserRole <String>]`: onenoteUserRole
           - `[Operations <IMicrosoftGraphOnenoteOperation[]>]`: The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
@@ -7182,8 +7182,8 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Content <Byte[]>]`: The content stream
             - `[ContentUrl <String>]`: The URL for downloading the content
-          - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-          - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+          - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+          - `[Sections <IMicrosoftGraphOnenoteSection[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
         - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -7271,7 +7271,7 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
           - `[DefaultLanguageTag <String>]`: Default language of the term store.
           - `[Groups <IMicrosoftGraphTermStoreGroup1[]>]`: Collection of all groups available in the term store.
           - `[LanguageTags <String[]>]`: List of languages for the term store.
-          - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: Collection of all sets available in the term store.
+          - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
       - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
       - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
       - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
@@ -7357,7 +7357,7 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
           - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
           - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
           - `[MembershipType <String>]`: channelMembershipType
-          - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+          - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
           - `[ModerationSettings <IMicrosoftGraphChannelModerationSettings>]`: channelModerationSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowNewMessageFromBots <Boolean?>]`: Indicates whether bots are allowed to post messages.
@@ -8732,7 +8732,7 @@ INCLUDEDGROUPS <IMicrosoftGraphGroup1[]>: Azure AD groups under the scope of the
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-            - `[DisplayName <String>]`: 
+            - `[DisplayName <String>]`: The name of the print job.
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -9528,7 +9528,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
-  - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
@@ -9538,7 +9537,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
-  - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[GroupId <String>]`: key: id of group
@@ -9582,7 +9580,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
   - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
   - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
-  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserFlowLanguageConfigurationId <String>]`: key: id of userFlowLanguageConfiguration
   - `[UserFlowLanguagePageId <String>]`: key: id of userFlowLanguagePage
   - `[UserId <String>]`: key: id of user

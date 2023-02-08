@@ -114,6 +114,7 @@ Update the properties of a group object.
 $GroupUpdate= @{
   "Description"= "This is a test group"
   "DisplayName"= "Test Group 1"
+  }
 
 Update-MgGroup -GroupId '74a7bfca-7fbc-4a67-b4bb-3ef115b114f1' 
   -BodyParameter $GroupUpdate
@@ -5486,7 +5487,7 @@ BODYPARAMETER <IMicrosoftGraphGroup1>: group
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-            - `[DisplayName <String>]`: 
+            - `[DisplayName <String>]`: The name of the print job.
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -10542,7 +10543,7 @@ DRIVE <IMicrosoftGraphDrive>: drive
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-          - `[DisplayName <String>]`: 
+          - `[DisplayName <String>]`: The name of the print job.
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -15119,7 +15120,7 @@ DRIVES <IMicrosoftGraphDrive[]>: The group's drives. Read-only.
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-          - `[DisplayName <String>]`: 
+          - `[DisplayName <String>]`: The name of the print job.
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -20130,7 +20131,7 @@ SITES <IMicrosoftGraphSite[]>: The list of SharePoint sites in this group. Acces
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-          - `[DisplayName <String>]`: 
+          - `[DisplayName <String>]`: The name of the print job.
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -24170,7 +24171,7 @@ TEAM <IMicrosoftGraphTeam>: team
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-              - `[DisplayName <String>]`: 
+              - `[DisplayName <String>]`: The name of the print job.
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration

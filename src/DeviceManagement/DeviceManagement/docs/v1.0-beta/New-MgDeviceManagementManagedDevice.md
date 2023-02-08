@@ -4634,7 +4634,7 @@ BODYPARAMETER <IMicrosoftGraphManagedDevice1>: Devices that are managed or pre-e
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-          - `[DisplayName <String>]`: 
+          - `[DisplayName <String>]`: The name of the print job.
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -9251,7 +9251,7 @@ DETECTEDAPPS <IMicrosoftGraphDetectedApp1[]>: All applications currently install
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-            - `[DisplayName <String>]`: 
+            - `[DisplayName <String>]`: The name of the print job.
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -14073,7 +14073,7 @@ USERS <IMicrosoftGraphUser1[]>: The primary users associated with the managed de
           - `[Scaling <String>]`: printScaling
         - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-        - `[DisplayName <String>]`: 
+        - `[DisplayName <String>]`: The name of the print job.
         - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration

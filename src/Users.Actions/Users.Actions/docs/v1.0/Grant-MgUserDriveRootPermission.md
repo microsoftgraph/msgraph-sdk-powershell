@@ -12,28 +12,28 @@ Grant users access to a link represented by a [permission][].
 
 ## SYNTAX
 
-### GrantExpanded1 (Default)
+### GrantExpanded (Default)
 ```
 Grant-MgUserDriveRootPermission -DriveId <String> -PermissionId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Grant1
+### Grant
 ```
 Grant-MgUserDriveRootPermission -DriveId <String> -PermissionId <String> -UserId <String>
  -BodyParameter <IPathsQisc3SUsersUserIdDrivesDriveIdRootPermissionsPermissionIdMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GrantViaIdentity1
+### GrantViaIdentity
 ```
 Grant-MgUserDriveRootPermission -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsQisc3SUsersUserIdDrivesDriveIdRootPermissionsPermissionIdMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GrantViaIdentityExpanded1
+### GrantViaIdentityExpanded
 ```
 Grant-MgUserDriveRootPermission -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -76,7 +76,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
+Parameter Sets: GrantExpanded, GrantViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -92,7 +92,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsQisc3SUsersUserIdDrivesDriveIdRootPermissionsPermissionIdMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Grant1, GrantViaIdentity1
+Parameter Sets: Grant, GrantViaIdentity
 Aliases:
 
 Required: True
@@ -107,7 +107,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Grant1, GrantExpanded1
+Parameter Sets: Grant, GrantExpanded
 Aliases:
 
 Required: True
@@ -123,7 +123,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: GrantViaIdentity1, GrantViaIdentityExpanded1
+Parameter Sets: GrantViaIdentity, GrantViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -138,7 +138,7 @@ key: id of permission
 
 ```yaml
 Type: System.String
-Parameter Sets: Grant1, GrantExpanded1
+Parameter Sets: Grant, GrantExpanded
 Aliases:
 
 Required: True
@@ -154,7 +154,7 @@ To construct, please use Get-Help -Online and see NOTES section for RECIPIENTS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
-Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
+Parameter Sets: GrantExpanded, GrantViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
+Parameter Sets: GrantExpanded, GrantViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -184,7 +184,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Grant1, GrantExpanded1
+Parameter Sets: Grant, GrantExpanded
 Aliases:
 
 Required: True
@@ -281,7 +281,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
-  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -289,7 +288,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
   - `[PermissionId <String>]`: key: id of permission
   - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
@@ -299,7 +297,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[TodoTaskId <String>]`: key: id of todoTask
   - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
-  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 RECIPIENTS <IMicrosoftGraphDriveRecipient[]>: .
   - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).

@@ -12,13 +12,13 @@ Unfollow a driveItem.
 
 ## SYNTAX
 
-### Unfollow (Default)
+### Unfollow1 (Default)
 ```
 Invoke-MgUnfollowUserDriveRoot -DriveId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UnfollowViaIdentity
+### UnfollowViaIdentity1
 ```
 Invoke-MgUnfollowUserDriveRoot -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Unfollow
+Parameter Sets: Unfollow1
 Aliases:
 
 Required: True
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: UnfollowViaIdentity
+Parameter Sets: UnfollowViaIdentity1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Unfollow
+Parameter Sets: Unfollow1
 Aliases:
 
 Required: True
@@ -169,7 +169,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
-  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -177,7 +176,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
   - `[PermissionId <String>]`: key: id of permission
   - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
@@ -187,7 +185,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[TodoTaskId <String>]`: key: id of todoTask
   - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
-  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
 

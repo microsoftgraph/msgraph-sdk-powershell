@@ -12,27 +12,27 @@ Unhide a chat for a user.
 
 ## SYNTAX
 
-### GraphExpanded (Default)
+### GraphExpanded1 (Default)
 ```
 Invoke-MgGraphUserChat -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-User <IMicrosoftGraphTeamworkUserIdentity1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Graph
+### Graph1
 ```
 Invoke-MgGraphUserChat -ChatId <String> -UserId <String>
  -BodyParameter <IPathsFqm7NdUsersUserIdChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GraphViaIdentity
+### GraphViaIdentity1
 ```
 Invoke-MgGraphUserChat -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsFqm7NdUsersUserIdChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GraphViaIdentityExpanded
+### GraphViaIdentityExpanded1
 ```
 Invoke-MgGraphUserChat -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-User <IMicrosoftGraphTeamworkUserIdentity1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: GraphExpanded, GraphViaIdentityExpanded
+Parameter Sets: GraphExpanded1, GraphViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsFqm7NdUsersUserIdChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Graph, GraphViaIdentity
+Parameter Sets: Graph1, GraphViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Graph, GraphExpanded
+Parameter Sets: Graph1, GraphExpanded1
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: GraphViaIdentity, GraphViaIdentityExpanded
+Parameter Sets: GraphViaIdentity1, GraphViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -128,7 +128,7 @@ To construct, please use Get-Help -Online and see NOTES section for USER propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity1
-Parameter Sets: GraphExpanded, GraphViaIdentityExpanded
+Parameter Sets: GraphExpanded1, GraphViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -143,7 +143,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Graph, GraphExpanded
+Parameter Sets: Graph1, GraphExpanded1
 Aliases:
 
 Required: True
@@ -240,7 +240,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
-  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -248,7 +247,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
   - `[PermissionId <String>]`: key: id of permission
   - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
@@ -258,7 +256,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[TodoTaskId <String>]`: key: id of todoTask
   - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
-  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 USER <IMicrosoftGraphTeamworkUserIdentity1>: teamworkUserIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -14,12 +14,12 @@ Invoke function getSharePointSiteUsageDetail
 
 ### Get (Default)
 ```
-Get-MgReportSharePointSiteUsageDetail -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSharePointSiteUsageDetail -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### Get3
+### Get1
 ```
-Get-MgReportSharePointSiteUsageDetail -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSharePointSiteUsageDetail -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -28,7 +28,7 @@ Get-MgReportSharePointSiteUsageDetail -InputObject <IReportsIdentity> -OutFile <
  [<CommonParameters>]
 ```
 
-### GetViaIdentity3
+### GetViaIdentity1
 ```
 Get-MgReportSharePointSiteUsageDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
@@ -46,7 +46,7 @@ Usage: date={date}
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: Get3
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -62,7 +62,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity3
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -107,7 +107,7 @@ Usage: period='{period}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
