@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 07d18a02-b7c7-4d22-ac38-7701ecd2b17f
+Module Guid: 3b46bfc4-fd93-494c-bbbf-605b141f3862
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -402,54 +402,6 @@ The details of the Microsoft Authenticator app registered to a user for authenti
 The registered device on which Microsoft Authenticator resides.
 This property is null if the device is not registered for passwordless Phone Sign-In.
 
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand.md)
-Set of commands sent to this device.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommandResponsepayload](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommandResponsepayload.md)
-Get responsepayload from users
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension.md)
-The collection of open extensions defined for the device.
-Read-only.
-Nullable.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberOf](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberOf.md)
-Groups and administrative units that this device is a member of.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwner](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwner.md)
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef.md)
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredUser](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredUser.md)
-Collection of registered users of the device.
-For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceTransitiveMemberOf](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceTransitiveMemberOf.md)
-Groups and administrative units that this device is a member of.
-This operation is transitive.
-Supports $expand.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceUsageRights](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceUsageRights.md)
-Represents the usage rights a device has been granted.
-
 ### [Get-MgUserAuthenticationOperation](Get-MgUserAuthenticationOperation.md)
 Get operations from users
 
@@ -458,54 +410,6 @@ Represents the Microsoft Authenticator Passwordless Phone Sign-in methods regist
 
 ### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice.md)
 Get device from users
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand.md)
-Set of commands sent to this device.
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommandResponsepayload](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommandResponsepayload.md)
-Get responsepayload from users
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension.md)
-The collection of open extensions defined for the device.
-Read-only.
-Nullable.
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberOf](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberOf.md)
-Groups and administrative units that this device is a member of.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwner](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwner.md)
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef.md)
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredUser.md)
-Collection of registered users of the device.
-For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceTransitiveMemberOf](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceTransitiveMemberOf.md)
-Groups and administrative units that this device is a member of.
-This operation is transitive.
-Supports $expand.
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights.md)
-Represents the usage rights a device has been granted.
 
 ### [Get-MgUserAuthenticationPasswordMethod](Get-MgUserAuthenticationPasswordMethod.md)
 Represents the details of the password authentication method registered to a user for authentication.
@@ -527,54 +431,6 @@ The registered device on which this Windows Hello for Business key resides.
 Supports $expand.
 When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand.
 For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommand](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommand.md)
-Set of commands sent to this device.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommandResponsepayload](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommandResponsepayload.md)
-Get responsepayload from users
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension.md)
-The collection of open extensions defined for the device.
-Read-only.
-Nullable.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberOf](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberOf.md)
-Groups and administrative units that this device is a member of.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwner](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwner.md)
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef.md)
-The user that cloud joined the device or registered their personal device.
-The registered owner is set at the time of registration.
-Currently, there can be only one owner.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredUser](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredUser.md)
-Collection of registered users of the device.
-For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
-Read-only.
-Nullable.
-Supports $expand.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceTransitiveMemberOf](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceTransitiveMemberOf.md)
-Groups and administrative units that this device is a member of.
-This operation is transitive.
-Supports $expand.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights.md)
-Represents the usage rights a device has been granted.
 
 ### [Get-MgUserInformationProtection](Get-MgUserInformationProtection.md)
 Get informationProtection from users
@@ -891,32 +747,8 @@ Set a user's emailAuthenticationMethod object.
 Email authentication is a self-service password reset method.
 A user may only have one email authentication method.
 
-### [New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand](New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand.md)
-Create new navigation property to commands for users
-
-### [New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension](New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension.md)
-Create new navigation property to extensions for users
-
-### [New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef](New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef.md)
-Create new navigation property ref to registeredOwners for users
-
-### [New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceUsageRights](New-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceUsageRights.md)
-Create new navigation property to usageRights for users
-
 ### [New-MgUserAuthenticationOperation](New-MgUserAuthenticationOperation.md)
 Create new navigation property to operations for users
-
-### [New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand](New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand.md)
-Create new navigation property to commands for users
-
-### [New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension](New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension.md)
-Create new navigation property to extensions for users
-
-### [New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef](New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef.md)
-Create new navigation property ref to registeredOwners for users
-
-### [New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights](New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights.md)
-Create new navigation property to usageRights for users
 
 ### [New-MgUserAuthenticationPhoneMethod](New-MgUserAuthenticationPhoneMethod.md)
 Add a new phone authentication method.
@@ -930,18 +762,6 @@ Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` n
 Create a new temporaryAccessPassAuthenticationMethod object on a user.
 A user can only have one Temporary Access Pass that's usable within its specified lifetime.
 If the user requires a new Temporary Access Pass while the current Temporary Access Pass is valid, the admin can create a new Temporary Access Pass for the user, the previous Temporary Access Pass will be deleted, and a new Temporary Access Pass will be created.
-
-### [New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommand](New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommand.md)
-Create new navigation property to commands for users
-
-### [New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension](New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension.md)
-Create new navigation property to extensions for users
-
-### [New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef](New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef.md)
-Create new navigation property ref to registeredOwners for users
-
-### [New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights](New-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights.md)
-Create new navigation property to usageRights for users
 
 ### [New-MgUserInformationProtectionDataLossPreventionPolicy](New-MgUserInformationProtectionDataLossPreventionPolicy.md)
 Create new navigation property to dataLossPreventionPolicies for users
@@ -1219,41 +1039,11 @@ Delete navigation property fido2Methods for users
 ### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
 Delete navigation property microsoftAuthenticatorMethods for users
 
-### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice.md)
-Delete navigation property device for users
-
-### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand.md)
-Delete navigation property commands for users
-
-### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension.md)
-Delete navigation property extensions for users
-
-### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef.md)
-Delete ref of navigation property registeredOwners for users
-
-### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceUsageRights](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceUsageRights.md)
-Delete navigation property usageRights for users
-
 ### [Remove-MgUserAuthenticationOperation](Remove-MgUserAuthenticationOperation.md)
 Delete navigation property operations for users
 
 ### [Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod](Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod.md)
 Delete navigation property passwordlessMicrosoftAuthenticatorMethods for users
-
-### [Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice](Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice.md)
-Delete navigation property device for users
-
-### [Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand](Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand.md)
-Delete navigation property commands for users
-
-### [Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension](Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension.md)
-Delete navigation property extensions for users
-
-### [Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef](Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceRegisteredOwnerByRef.md)
-Delete ref of navigation property registeredOwners for users
-
-### [Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights](Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights.md)
-Delete navigation property usageRights for users
 
 ### [Remove-MgUserAuthenticationPhoneMethod](Remove-MgUserAuthenticationPhoneMethod.md)
 Delete navigation property phoneMethods for users
@@ -1266,21 +1056,6 @@ Delete navigation property temporaryAccessPassMethods for users
 
 ### [Remove-MgUserAuthenticationWindowHelloForBusinessMethod](Remove-MgUserAuthenticationWindowHelloForBusinessMethod.md)
 Delete navigation property windowsHelloForBusinessMethods for users
-
-### [Remove-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Remove-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
-Delete navigation property device for users
-
-### [Remove-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommand](Remove-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommand.md)
-Delete navigation property commands for users
-
-### [Remove-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension](Remove-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension.md)
-Delete navigation property extensions for users
-
-### [Remove-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef](Remove-MgUserAuthenticationWindowHelloForBusinessMethodDeviceRegisteredOwnerByRef.md)
-Delete ref of navigation property registeredOwners for users
-
-### [Remove-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights](Remove-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights.md)
-Delete navigation property usageRights for users
 
 ### [Remove-MgUserInformationProtection](Remove-MgUserInformationProtection.md)
 Delete navigation property informationProtection for users
@@ -1615,47 +1390,11 @@ Update the navigation property policies in trustFramework
 ### [Update-MgUserAuthenticationEmailMethod](Update-MgUserAuthenticationEmailMethod.md)
 Update the navigation property emailMethods in users
 
-### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice](Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice.md)
-Update the navigation property device in users
-
-### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand](Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceCommand.md)
-Update the navigation property commands in users
-
-### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension](Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceExtension.md)
-Update the navigation property extensions in users
-
-### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceUsageRights](Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceUsageRights.md)
-Update the navigation property usageRights in users
-
 ### [Update-MgUserAuthenticationOperation](Update-MgUserAuthenticationOperation.md)
 Update the navigation property operations in users
 
-### [Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice](Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice.md)
-Update the navigation property device in users
-
-### [Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand](Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceCommand.md)
-Update the navigation property commands in users
-
-### [Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension](Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceExtension.md)
-Update the navigation property extensions in users
-
-### [Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights](Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceUsageRights.md)
-Update the navigation property usageRights in users
-
 ### [Update-MgUserAuthenticationPhoneMethod](Update-MgUserAuthenticationPhoneMethod.md)
 Update the navigation property phoneMethods in users
-
-### [Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
-Update the navigation property device in users
-
-### [Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommand](Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceCommand.md)
-Update the navigation property commands in users
-
-### [Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension](Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceExtension.md)
-Update the navigation property extensions in users
-
-### [Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights](Update-MgUserAuthenticationWindowHelloForBusinessMethodDeviceUsageRights.md)
-Update the navigation property usageRights in users
 
 ### [Update-MgUserInformationProtection](Update-MgUserInformationProtection.md)
 Update the navigation property informationProtection in users

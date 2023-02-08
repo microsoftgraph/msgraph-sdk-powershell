@@ -12,20 +12,20 @@ Get identityProviders from identity
 
 ## SYNTAX
 
-### List (Default)
+### List2 (Default)
 ```
 Get-MgIdentityB2XUserFlowIdentityProvider -B2XIdentityUserFlowId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgIdentityB2XUserFlowIdentityProvider -B2XIdentityUserFlowId <String> -IdentityProviderId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgIdentityB2XUserFlowIdentityProvider -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -59,7 +59,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -74,7 +74,7 @@ key: id of b2xIdentityUserFlow
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List, List3
+Parameter Sets: Get1, List2, List3
 Aliases:
 
 Required: True
@@ -90,7 +90,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases: CV
 
 Required: False
@@ -120,7 +120,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -135,7 +135,7 @@ key: id of identityProvider
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -151,7 +151,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -166,7 +166,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -196,7 +196,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -211,7 +211,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -226,7 +226,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases: OrderBy
 
 Required: False
@@ -241,7 +241,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List3
+Parameter Sets: List2, List3
 Aliases: Limit
 
 Required: False
@@ -290,7 +290,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
-  - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
@@ -300,7 +299,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
-  - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[GroupId <String>]`: key: id of group
@@ -344,7 +342,6 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
   - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
   - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
-  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserFlowLanguageConfigurationId <String>]`: key: id of userFlowLanguageConfiguration
   - `[UserFlowLanguagePageId <String>]`: key: id of userFlowLanguagePage
   - `[UserId <String>]`: key: id of user
