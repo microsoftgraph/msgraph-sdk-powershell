@@ -281,6 +281,22 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
+    "/print/reports/microsoft.graph.getFormsUserActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/reports/microsoft.graph.getFormsUserActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/reports/microsoft.graph.getFormsUserActivityUserDetail(date={date})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/reports/microsoft.graph.getFormsUserActivityUserDetail(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
     "/print/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
