@@ -1,6 +1,5 @@
 namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
 {
-    using Microsoft.Graph.Beta.PowerShell.Models;
     using Microsoft.Graph.Beta.PowerShell.Models.TeamsInternal;
     using Microsoft.Graph.Beta.PowerShell.TeamsInternal;
     using System;
@@ -8,13 +7,13 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
     using static Microsoft.Graph.Beta.PowerShell.Runtime.Extensions;
 
     /// <summary>
-    /// Update Preapproval policy associated with a Teams App.
+    /// Delete PreApproval policy associated with a Teams App.
     /// </summary>
-    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsData.Update, @"MgBetaTeamsAppPreApproval_Update", SupportsShouldProcess = true)]
+    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsCommon.Remove, @"MgBetaTeamsAppPreApproval_Delete", SupportsShouldProcess = true)]
     [global::System.Management.Automation.OutputType(typeof(bool))]
-    [global::Microsoft.Graph.Beta.PowerShell.Description(@"Update Preapproval policy associated with a Teams App.")]
+    [global::Microsoft.Graph.Beta.PowerShell.Description(@"Delete Preapproval policy associated with a Teams App.")]
     [global::Microsoft.Graph.Beta.PowerShell.Generated]
-    public partial class UpdateMgBetaTeamsAppPreApproval_Update : global::System.Management.Automation.PSCmdlet,
+    public partial class RemoveMgBetaTeamAppPreApproval_Delete : global::System.Management.Automation.PSCmdlet,
         Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener
     {
         /// <summary>A copy of the Invocation Info (necessary to allow asJob to clone this cmdlet)</summary>
@@ -25,16 +24,10 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         /// </summary>
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
 
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Additional Parameters")]
-        public global::System.Collections.Hashtable AdditionalProperties { get; set; } = new System.Collections.Hashtable();
-
         /// <summary>Wait for .NET debugger to attach</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
         [global::Microsoft.Graph.Beta.PowerShell.Category(global::Microsoft.Graph.Beta.PowerShell.ParameterCategory.Runtime)]
         public global::System.Management.Automation.SwitchParameter Break { get; set; }
-
-        /// <summary>The reference to the client API class.</summary>
-        public Microsoft.Graph.Beta.PowerShell.Teams Client => Microsoft.Graph.Beta.PowerShell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="TeamsAppId" /> property.</summary>
         private string _teamsAppId;
@@ -51,69 +44,8 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         PossibleTypes = new[] { typeof(string) })]
         public string TeamsAppId { get => this._teamsAppId; set => this._teamsAppId = value; }
 
-        /// <summary>Backing field for <see cref="ResourceSpecificApplicationPermissionsAllowedForTeams" /> property.</summary>
-        private string[] _resourceSpecificApplicationPermissionsAllowedForTeams;
-
-        /// <summary>
-        /// Resource Specific Permissions Allowed for Teams.
-        /// </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Resource Specific Permissions Allowed for Teams")]
-        [Microsoft.Graph.Beta.PowerShell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Resource Specific Permissions Allowed for Teams",
-        SerializedName = @"resourceSpecificApplicationPermissionsAllowedForTeams",
-        PossibleTypes = new[] { typeof(string) })]
-        public string[] ResourceSpecificApplicationPermissionsAllowedForTeams { get => this._resourceSpecificApplicationPermissionsAllowedForTeams; set => this._resourceSpecificApplicationPermissionsAllowedForTeams = value; }
-
-        /// <summary>
-        /// Backing field for <see cref="ResourceSpecificApplicationPermissionsAllowedForChats" /> property.
-        /// </summary>
-        private string[] _resourceSpecificApplicationPermissionsAllowedForChats;
-
-        /// <summary>
-        /// Resource Specific Permissions Allowed for chats.
-        /// </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Resource Specific Permissions Allowed for Chats")]
-        [Microsoft.Graph.Beta.PowerShell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Resource Specific Permissions Allowed for Chats",
-        SerializedName = @"resourceSpecificApplicationPermissionsAllowedForChats",
-        PossibleTypes = new[] { typeof(string) })]
-        public string[] ResourceSpecificApplicationPermissionsAllowedForChats { get => this._resourceSpecificApplicationPermissionsAllowedForChats; set => this._resourceSpecificApplicationPermissionsAllowedForChats = value; }
-
-        /// <summary>
-        /// Backing field for <see cref="TeamLevelSensitivityLabelCondition" /> property.
-        /// </summary>
-        private MicrosoftGraphSensitivityLabelCondition? _teamLevelSensitivityLabelCondition;
-
-        /// <summary>
-        /// Label selection mode for teams.
-        /// </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Label selection mode for Teams.")]
-        [Microsoft.Graph.Beta.PowerShell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Label selection mode for Teams.",
-        SerializedName = @"teamLevelSensitivityLabelCondition",
-        PossibleTypes = new[] { typeof(MicrosoftGraphSensitivityLabelCondition?) })]
-        public MicrosoftGraphSensitivityLabelCondition? TeamLevelSensitivityLabelCondition { get => this._teamLevelSensitivityLabelCondition; set => this._teamLevelSensitivityLabelCondition = value; }
-
-        /// <summary>Backing field for <see cref="SpecificSensitivityLabelIdsApplicableToTeams" /> property.</summary>
-        private string[] _specificSensitivityLabelIdsApplicableToTeams;
-
-        /// <summary>
-        /// Specific Sensitivity label ids applicable to Teams.
-        /// </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Specific Sensitivity label ids applicable to Teams.")]
-        [Microsoft.Graph.Beta.PowerShell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Specific Sensitivity label ids applicable to Teams.",
-        SerializedName = @"specificSensitivityLabelIdsApplicableToTeams",
-        PossibleTypes = new[] { typeof(string) })]
-        public string[] SpecificSensitivityLabelIdsApplicableToTeams { get => this._specificSensitivityLabelIdsApplicableToTeams; set => this._specificSensitivityLabelIdsApplicableToTeams = value; }
+        /// <summary>The reference to the client API class.</summary>
+        public Microsoft.Graph.Beta.PowerShell.Teams Client => Microsoft.Graph.Beta.PowerShell.Module.Instance.ClientAPI;
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -158,6 +90,16 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Use the default credentials for the proxy")]
         [global::Microsoft.Graph.Beta.PowerShell.Category(global::Microsoft.Graph.Beta.PowerShell.ParameterCategory.Runtime)]
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
+
+        /// <summary>
+        /// <c>overrideOnDefault</c> will be called before the regular onDefault has been processed, allowing customization of what
+        /// happens on that response. Implement this method in a partial class to enable this behavior
+        /// </summary>
+        /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
+        /// <param name="response">the body result as a <see cref="Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError">Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError</see>
+        /// from the remote call</param>
+        /// <param name="returnNow">/// Determines if the rest of the onDefault method should be processed, or if the method should
+        /// return immediately (set to true to skip further processing )</param>
 
         partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow);
 
@@ -251,7 +193,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
             try
             {
                 // work
-                if (ShouldProcess("Update Teams App PreApproval"))
+                if (ShouldProcess("Delete Teams App Pre Approval."))
                 {
                     using (var asyncCommandRuntime = new Microsoft.Graph.Beta.PowerShell.Runtime.PowerShell.AsyncCommandRuntime(this, ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token))
                     {
@@ -305,8 +247,6 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                 {
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    this.ValidateInputParameters();
-
                     // Get the Teams App
                     Models.IMicrosoftGraphTeamsApp teamsApp = await this.Client.GetTeamsApp(
                             this.TeamsAppId,
@@ -349,71 +289,19 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                             this,
                             Pipeline);
 
-                    int numOfPoliciesAssociatedWithServicePrincipal = policiesAssociatedWithServicePrincipal.Value?.Count() ?? 0;
-                    if (numOfPoliciesAssociatedWithServicePrincipal == 0)
+                    foreach (MGTeamsInternalPermissionGrantPreApprovalPolicy preApprovalPolicy in policiesAssociatedWithServicePrincipal.Value)
                     {
-                        throw new MGTeamsInternalException(
-                            MGTeamsInternalErrorType.ResourceNotFound,
-                            $"Service principal with Id: '{servicePrincipal.Id}' has no associated policy.");
-                    }
-                    else if (numOfPoliciesAssociatedWithServicePrincipal > 1)
-                    {
-                        throw new MGTeamsInternalException(
-                            MGTeamsInternalErrorType.UnsupportedScenario,
-                            $"Service principal with Id: '{servicePrincipal.Id}' has more than 1 associated pre-approval policy. Scenario is unsupported.");
-                    }
-
-                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-
-                    MGTeamsInternalResourceSpecificPermissionCollection rscPermissionCollection =
-                        await this.Client.GetMicrosoftGraphResourceSpecificPermissionCollection(this, Pipeline);
-
-                    TeamsAppPreApprovalPolicyConverter teamsAppPreApprovalPolicyConverter =
-                        new TeamsAppPreApprovalPolicyConverter(rscPermissionCollection.Value);
-
-                    Models.IMicrosoftGraphTeamsAppPreApproval teamsAppPreapproval =
-                        await teamsAppPreApprovalPolicyConverter.ConvertToTeamsAppPreApproval(this.TeamsAppId, policiesAssociatedWithServicePrincipal.Value.Single());
-
-                    if (this.InvocationInformation.BoundParameters.ContainsKey("ResourceSpecificApplicationPermissionsAllowedForTeams"))
-                    {
-                        teamsAppPreapproval.ResourceSpecificApplicationPermissionsAllowedForTeams = this.ResourceSpecificApplicationPermissionsAllowedForTeams;
-                    }
-
-                    if (this.InvocationInformation.BoundParameters.ContainsKey("ResourceSpecificApplicationPermissionsAllowedForChats"))
-                    {
-                        teamsAppPreapproval.ResourceSpecificApplicationPermissionsAllowedForChats = this.ResourceSpecificApplicationPermissionsAllowedForChats;
-                    }
-
-                    if (this.InvocationInformation.BoundParameters.ContainsKey("TeamLevelSensitivityLabelCondition"))
-                    {
-                        teamsAppPreapproval.TeamLevelSensitivityLabelCondition = this.TeamLevelSensitivityLabelCondition;
-                    }
-
-                    if (this.InvocationInformation.BoundParameters.ContainsKey("SpecificSensitivityLabelIdsApplicableToTeams"))
-                    {
-                        teamsAppPreapproval.SpecificSensitivityLabelIdsApplicableToTeams = this.SpecificSensitivityLabelIdsApplicableToTeams;
-                    }
-
-                    // Get sensitivity labels.
-                    MGTeamsInternalSensitivityLabelCollection sensitivityLabelCollection = await this.Client.GetSensitivityLabelCollection(
-                        this,
-                        Pipeline);
-
-                    TeamsAppPreApprovalValidator teamsAppPreApprovalValidator = new TeamsAppPreApprovalValidator(sensitivityLabelCollection);
-                    teamsAppPreApprovalValidator.Validate(teamsAppPreapproval);
-
-                    MGTeamsInternalPermissionGrantPreApprovalPolicy mGTeamsInternalPermissionGrantPreApprovalPolicy =
-                        await teamsAppPreApprovalPolicyConverter.ConvertToPermissionGrantPreApprovalPolicy(
-                            teamsAppPreapproval.ResourceSpecificApplicationPermissionsAllowedForChats,
-                            teamsAppPreapproval.TeamLevelSensitivityLabelCondition,
-                            teamsAppPreapproval.SpecificSensitivityLabelIdsApplicableToTeams,
-                            teamsAppPreapproval.ResourceSpecificApplicationPermissionsAllowedForTeams);
-
-                    await this.Client.UpdatePermissionGrantPreApprovalPolicy(
-                            policiesAssociatedWithServicePrincipal.Value.Single().Id,
-                            mGTeamsInternalPermissionGrantPreApprovalPolicy,
+                        await this.Client.RemoveAssociationBetweenServicePrincipalAndPreapprovalPolicy(
+                            servicePrincipal.Id,
+                            preApprovalPolicy.Id,
                             this,
                             Pipeline);
+
+                        await this.Client.RemovePermissionGrantPreApprovalPolicy(
+                            preApprovalPolicy.Id,
+                            this,
+                            Pipeline);
+                    }
 
                     this.WriteObject(true);
 
@@ -426,10 +314,6 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                         new
                         {
                             TeamsAppId = this.TeamsAppId,
-                            TeamLevelSensitivityLabelCondition = this.TeamLevelSensitivityLabelCondition,
-                            SpecificSensitivityLabelIdsApplicableToTeams = this.SpecificSensitivityLabelIdsApplicableToTeams,
-                            ResourceSpecificApplicationPermissionsAllowedForTeams = this.ResourceSpecificApplicationPermissionsAllowedForTeams,
-                            ResourceSpecificApplicationPermissionsAllowedForChats = this.ResourceSpecificApplicationPermissionsAllowedForChats,
                         },
                         errorRecord => WriteError(errorRecord),
                         this);
@@ -443,32 +327,19 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
             }
         }
 
+        /// <summary>
+        /// Intializes a new instance of the <see cref="RemoveMgBetaTeamAppPreApproval_Delete" /> cmdlet class.
+        /// </summary>
+        public RemoveMgBetaTeamAppPreApproval_Delete()
+        {
+
+        }
+
         /// <summary>Interrupts currently running code within the command.</summary>
         protected override void StopProcessing()
         {
             ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Cancel();
             base.StopProcessing();
-        }
-
-        /// <summary>
-        /// Intializes a new instance of the <see cref="UpdateMgBetaTeamsAppPreApproval_Update" /> cmdlet class.
-        /// </summary>
-        public UpdateMgBetaTeamsAppPreApproval_Update()
-        {
-
-        }
-
-        /// <summary>
-        /// Validate the input parameters of the cmdlet.
-        /// </summary>
-        private void ValidateInputParameters()
-        {
-            if (string.IsNullOrWhiteSpace(this.TeamsAppId))
-            {
-                throw new MGTeamsInternalException(
-                        MGTeamsInternalErrorType.InvalidCmdletInput,
-                        $"'{nameof(this.TeamsAppId)}' cannot be empty.");
-            }
         }
     }
 }

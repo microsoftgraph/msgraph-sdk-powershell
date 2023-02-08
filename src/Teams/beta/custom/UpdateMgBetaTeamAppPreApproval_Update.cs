@@ -8,24 +8,25 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
     using static Microsoft.Graph.Beta.PowerShell.Runtime.Extensions;
 
     /// <summary>
-    /// Create Preapproval policy associated with a Teams App.
+    /// Update Preapproval policy associated with a Teams App.
     /// </summary>
-    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsCommon.New, @"MgBetaTeamsAppPreApproval_Create", SupportsShouldProcess = true)]
-    [global::System.Management.Automation.OutputType(typeof(Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppPreApproval))]
-    [global::Microsoft.Graph.Beta.PowerShell.Description(@"Create Preapproval policy associated with a Teams App.")]
+    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsData.Update, @"MgBetaTeamAppPreApproval_Update", SupportsShouldProcess = true)]
+    [global::System.Management.Automation.OutputType(typeof(bool))]
+    [global::Microsoft.Graph.Beta.PowerShell.Description(@"Update Preapproval policy associated with a Teams App.")]
     [global::Microsoft.Graph.Beta.PowerShell.Generated]
-    public partial class NewMgBetaTeamsAppPreapproval_Create : global::System.Management.Automation.PSCmdlet,
+    public partial class UpdateMgBetaTeamAppPreApproval_Update : global::System.Management.Automation.PSCmdlet,
         Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener
     {
-        /// <summary>
-        /// A copy of the Invocation Info (necessary to allow asJob to clone this cmdlet).
-        /// </summary>
+        /// <summary>A copy of the Invocation Info (necessary to allow asJob to clone this cmdlet)</summary>
         private global::System.Management.Automation.InvocationInfo __invocationInfo;
 
         /// <summary>
         /// The <see cref="global::System.Threading.CancellationTokenSource" /> for this operation.
         /// </summary>
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
+
+        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Additional Parameters")]
+        public global::System.Collections.Hashtable AdditionalProperties { get; set; } = new System.Collections.Hashtable();
 
         /// <summary>Wait for .NET debugger to attach</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
@@ -158,36 +159,24 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         [global::Microsoft.Graph.Beta.PowerShell.Category(global::Microsoft.Graph.Beta.PowerShell.ParameterCategory.Runtime)]
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
-        /// <summary>
-        /// <c>overrideOnCreated</c> will be called before the regular onCreated has been processed, allowing customization of what
-        /// happens on that response. Implement this method in a partial class to enable this behavior
-        /// </summary>
-        /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation">Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation</see>
-        /// from the remote call</param>
-        /// <param name="returnNow">/// Determines if the rest of the onCreated method should be processed, or if the method should
-        /// return immediately (set to true to skip further processing )</param>
-
-        partial void overrideOnCreated(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation> response, ref global::System.Threading.Tasks.Task<bool> returnNow);
-
-        /// <summary>
-        /// <c>overrideOnDefault</c> will be called before the regular onDefault has been processed, allowing customization of what
-        /// happens on that response. Implement this method in a partial class to enable this behavior
-        /// </summary>
-        /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError">Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError</see>
-        /// from the remote call</param>
-        /// <param name="returnNow">/// Determines if the rest of the onDefault method should be processed, or if the method should
-        /// return immediately (set to true to skip further processing )</param>
-
         partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow);
+
+        /// <summary>
+        /// <c>overrideOnNoContent</c> will be called before the regular onNoContent has been processed, allowing customization of
+        /// what happens on that response. Implement this method in a partial class to enable this behavior
+        /// </summary>
+        /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
+        /// <param name="returnNow">/// Determines if the rest of the onNoContent method should be processed, or if the method should
+        /// return immediately (set to true to skip further processing )</param>
+
+        partial void overrideOnNoContent(global::System.Net.Http.HttpResponseMessage responseMessage, ref global::System.Threading.Tasks.Task<bool> returnNow);
 
         /// <summary>
         /// (overrides the default BeginProcessing method in global::System.Management.Automation.PSCmdlet)
         /// </summary>
         protected override void BeginProcessing()
         {
-            Microsoft.Graph.Beta.PowerShell.Module.Instance.SetProxyConfiguration(Proxy, ProxyCredential, ProxyUseDefaultCredentials);
+            Module.Instance.SetProxyConfiguration(Proxy, ProxyCredential, ProxyUseDefaultCredentials);
             if (Break)
             {
                 Microsoft.Graph.Beta.PowerShell.Runtime.AttachDebugger.Break();
@@ -255,14 +244,6 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
             }
         }
 
-        /// <summary>
-        /// Intializes a new instance of the <see cref="NewMgBetaTeamsAppPreapproval_Create" /> cmdlet class.
-        /// </summary>
-        public NewMgBetaTeamsAppPreapproval_Create()
-        {
-
-        }
-
         /// <summary>Performs execution of the command.</summary>
         protected override void ProcessRecord()
         {
@@ -270,7 +251,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
             try
             {
                 // work
-                if (ShouldProcess("Create Teams App PreApproval"))
+                if (ShouldProcess("Update Teams App PreApproval"))
                 {
                     using (var asyncCommandRuntime = new Microsoft.Graph.Beta.PowerShell.Runtime.PowerShell.AsyncCommandRuntime(this, ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token))
                     {
@@ -300,9 +281,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
             }
         }
 
-        /// <summary>
-        /// Performs execution of the command, working asynchronously if required.
-        /// </summary>
+        /// <summary>Performs execution of the command, working asynchronously if required.</summary>
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the method is completed.
         /// </returns>
@@ -327,21 +306,6 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
                     this.ValidateInputParameters();
-
-                    // Get sensitivity labels.
-                    MGTeamsInternalSensitivityLabelCollection sensitivityLabelCollection = await this.Client.GetSensitivityLabelCollection(
-                        this,
-                        Pipeline);
-
-                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-
-                    TeamsAppPreApprovalValidator teamsAppPreApprovalValidator = new TeamsAppPreApprovalValidator(sensitivityLabelCollection);
-                    teamsAppPreApprovalValidator.ValidateConditionsForTeamsAppPreApproval(
-                        this.TeamsAppId,
-                        this.ResourceSpecificApplicationPermissionsAllowedForChats,
-                        this.TeamLevelSensitivityLabelCondition,
-                        this.SpecificSensitivityLabelIdsApplicableToTeams,
-                        this.ResourceSpecificApplicationPermissionsAllowedForTeams);
 
                     // Get the Teams App
                     Models.IMicrosoftGraphTeamsApp teamsApp = await this.Client.GetTeamsApp(
@@ -371,60 +335,32 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
 
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    Models.IMicrosoftGraphEntity servicePrincipal = null;
-                    bool isServicePrincipalCreationNeeded = false;
-                    try
-                    {
-                        servicePrincipal = await this.Client.GetServicePrincipal(
+                    Models.IMicrosoftGraphEntity servicePrincipal = await this.Client.GetServicePrincipal(
                             publishedAppDefinition.AzureAdAppId,
                             this,
                             Pipeline);
 
-                        WriteVerbose($"Found service principal with Id: '{servicePrincipal.Id}'");
-                    }
-                    catch (MGTeamsInternalServiceRequestException ex)
-                    {
-                        if (ex.HttpStatusCode == System.Net.HttpStatusCode.NotFound)
-                        {
-                            WriteVerbose($"Could not find service principal for AAD app with Id: '{publishedAppDefinition.AzureAdAppId}'");
-                            isServicePrincipalCreationNeeded = true;
-                        }
-                        else
-                        {
-                            throw;
-                        }
-                    }
+                    WriteVerbose($"Found service principal with Id: '{servicePrincipal.Id}'");
 
-                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-
-                    if (isServicePrincipalCreationNeeded)
-                    {
-                        servicePrincipal = await this.Client.CreateServicePrincipal(
-                            publishedAppDefinition.AzureAdAppId,
+                    // Validate no policies associated with sp
+                    MGTeamsInternalPermissionGrantPreApprovalPolicyCollection policiesAssociatedWithServicePrincipal =
+                        await this.Client.GetPermissionGrantPreApprovalPoliciesAssociatedWithServicePrincipal(
+                            servicePrincipal.Id,
                             this,
                             Pipeline);
 
-                        WriteVerbose($"Created service principal with Id: '{servicePrincipal.Id}'");
-                    }
-                    else
+                    int numOfPoliciesAssociatedWithServicePrincipal = policiesAssociatedWithServicePrincipal.Value?.Count() ?? 0;
+                    if (numOfPoliciesAssociatedWithServicePrincipal == 0)
                     {
-                        // Validate no policies associated with sp
-                        MGTeamsInternalPermissionGrantPreApprovalPolicyCollection policiesAssociatedWithServicePrincipal =
-                            await this.Client.GetPermissionGrantPreApprovalPoliciesAssociatedWithServicePrincipal(
-                                servicePrincipal.Id,
-                                this,
-                                Pipeline);
-
-                        if (policiesAssociatedWithServicePrincipal.Value?.Any() == true)
-                        {
-                            throw new MGTeamsInternalException(
-                                MGTeamsInternalErrorType.ConflictingUpdate,
-                                $"Service principal with Id: '{servicePrincipal.Id}' already has associated pre approval policies.");
-                        }
-                        else
-                        {
-                            WriteVerbose($"No preapproval policies associated with service principal Id: '{servicePrincipal.Id}'.");
-                        }
+                        throw new MGTeamsInternalException(
+                            MGTeamsInternalErrorType.ResourceNotFound,
+                            $"Service principal with Id: '{servicePrincipal.Id}' has no associated policy.");
+                    }
+                    else if (numOfPoliciesAssociatedWithServicePrincipal > 1)
+                    {
+                        throw new MGTeamsInternalException(
+                            MGTeamsInternalErrorType.UnsupportedScenario,
+                            $"Service principal with Id: '{servicePrincipal.Id}' has more than 1 associated pre-approval policy. Scenario is unsupported.");
                     }
 
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
@@ -435,39 +371,51 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                     TeamsAppPreApprovalPolicyConverter teamsAppPreApprovalPolicyConverter =
                         new TeamsAppPreApprovalPolicyConverter(rscPermissionCollection.Value);
 
-                    MGTeamsInternalPermissionGrantPreApprovalPolicy preApprovalPolicyToBeCreated =
-                        await teamsAppPreApprovalPolicyConverter.ConvertToPermissionGrantPreApprovalPolicy(
-                            this.ResourceSpecificApplicationPermissionsAllowedForChats,
-                            this.TeamLevelSensitivityLabelCondition,
-                            this.SpecificSensitivityLabelIdsApplicableToTeams,
-                            this.ResourceSpecificApplicationPermissionsAllowedForTeams);
+                    Models.IMicrosoftGraphTeamsAppPreApproval teamsAppPreapproval =
+                        await teamsAppPreApprovalPolicyConverter.ConvertToTeamsAppPreApproval(this.TeamsAppId, policiesAssociatedWithServicePrincipal.Value.Single());
 
-                    WriteVerbose($"PreApprovalPolicy to be created: '{preApprovalPolicyToBeCreated.ToJson()}'");
+                    if (this.InvocationInformation.BoundParameters.ContainsKey("ResourceSpecificApplicationPermissionsAllowedForTeams"))
+                    {
+                        teamsAppPreapproval.ResourceSpecificApplicationPermissionsAllowedForTeams = this.ResourceSpecificApplicationPermissionsAllowedForTeams;
+                    }
 
-                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+                    if (this.InvocationInformation.BoundParameters.ContainsKey("ResourceSpecificApplicationPermissionsAllowedForChats"))
+                    {
+                        teamsAppPreapproval.ResourceSpecificApplicationPermissionsAllowedForChats = this.ResourceSpecificApplicationPermissionsAllowedForChats;
+                    }
 
-                    MGTeamsInternalPermissionGrantPreApprovalPolicy createdPreApprovalPolicy =
-                        await this.Client.CreatePermissionGrantPreApprovalPolicy(
-                            preApprovalPolicyToBeCreated,
-                            this,
-                            Pipeline);
+                    if (this.InvocationInformation.BoundParameters.ContainsKey("TeamLevelSensitivityLabelCondition"))
+                    {
+                        teamsAppPreapproval.TeamLevelSensitivityLabelCondition = this.TeamLevelSensitivityLabelCondition;
+                    }
 
-                    WriteVerbose($"Created preapproval policy with Id '{createdPreApprovalPolicy.Id}'.");
+                    if (this.InvocationInformation.BoundParameters.ContainsKey("SpecificSensitivityLabelIdsApplicableToTeams"))
+                    {
+                        teamsAppPreapproval.SpecificSensitivityLabelIdsApplicableToTeams = this.SpecificSensitivityLabelIdsApplicableToTeams;
+                    }
 
-                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-
-                    await this.Client.AssociateServicePrincipalWithPermissionGrantPreApprovalPolicy(
-                        servicePrincipal.Id,
-                        createdPreApprovalPolicy.Id,
+                    // Get sensitivity labels.
+                    MGTeamsInternalSensitivityLabelCollection sensitivityLabelCollection = await this.Client.GetSensitivityLabelCollection(
                         this,
                         Pipeline);
 
-                    WriteVerbose($"Associated service principal '{servicePrincipal.Id}' with preapproval policy '{createdPreApprovalPolicy.Id}'.");
+                    TeamsAppPreApprovalValidator teamsAppPreApprovalValidator = new TeamsAppPreApprovalValidator(sensitivityLabelCollection);
+                    teamsAppPreApprovalValidator.Validate(teamsAppPreapproval);
 
-                    IMicrosoftGraphTeamsAppPreApproval createdObject =
-                        await teamsAppPreApprovalPolicyConverter.ConvertToTeamsAppPreApproval(this.TeamsAppId, createdPreApprovalPolicy);
+                    MGTeamsInternalPermissionGrantPreApprovalPolicy mGTeamsInternalPermissionGrantPreApprovalPolicy =
+                        await teamsAppPreApprovalPolicyConverter.ConvertToPermissionGrantPreApprovalPolicy(
+                            teamsAppPreapproval.ResourceSpecificApplicationPermissionsAllowedForChats,
+                            teamsAppPreapproval.TeamLevelSensitivityLabelCondition,
+                            teamsAppPreapproval.SpecificSensitivityLabelIdsApplicableToTeams,
+                            teamsAppPreapproval.ResourceSpecificApplicationPermissionsAllowedForTeams);
 
-                    WriteObject(createdObject);
+                    await this.Client.UpdatePermissionGrantPreApprovalPolicy(
+                            policiesAssociatedWithServicePrincipal.Value.Single().Id,
+                            mGTeamsInternalPermissionGrantPreApprovalPolicy,
+                            this,
+                            Pipeline);
+
+                    this.WriteObject(true);
 
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletAfterAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
@@ -500,6 +448,14 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         {
             ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Cancel();
             base.StopProcessing();
+        }
+
+        /// <summary>
+        /// Intializes a new instance of the <see cref="UpdateMgBetaTeamAppPreApproval_Update" /> cmdlet class.
+        /// </summary>
+        public UpdateMgBetaTeamAppPreApproval_Update()
+        {
+
         }
 
         /// <summary>
