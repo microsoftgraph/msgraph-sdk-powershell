@@ -85,7 +85,7 @@
 
             if (resourceSpecificApplicationPermissionsAllowedForTeams != null)
             {
-                foreach (string permissionName in resourceSpecificApplicationPermissionsAllowedForChats)
+                foreach (string permissionName in resourceSpecificApplicationPermissionsAllowedForTeams)
                 {
                     if (!permissionName.EndsWith("group", System.StringComparison.OrdinalIgnoreCase))
                     {
