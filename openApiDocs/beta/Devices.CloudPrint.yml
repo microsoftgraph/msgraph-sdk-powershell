@@ -5954,6 +5954,128 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/print/reports/microsoft.graph.getFormsUserActivityCounts(period=''{period}'')':
+    get:
+      tags:
+        - print.Functions
+      summary: Invoke function getFormsUserActivityCounts
+      operationId: print.reports_getFormsUserActivityCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/print/reports/microsoft.graph.getFormsUserActivityUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - print.Functions
+      summary: Invoke function getFormsUserActivityUserCounts
+      operationId: print.reports_getFormsUserActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/print/reports/microsoft.graph.getFormsUserActivityUserDetail(date={date})':
+    get:
+      tags:
+        - print.Functions
+      summary: Invoke function getFormsUserActivityUserDetail
+      operationId: print.reports_getFormsUserActivityUserDetail
+      parameters:
+        - name: date
+          in: path
+          description: 'Usage: date={date}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/print/reports/microsoft.graph.getFormsUserActivityUserDetail(period=''{period}'')':
+    get:
+      tags:
+        - print.Functions
+      summary: Invoke function getFormsUserActivityUserDetail
+      operationId: print.reports_getFormsUserActivityUserDetail
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/print/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
@@ -17496,6 +17618,7 @@ components:
               format: date-time
             displayName:
               type: string
+              description: The name of the print job.
               nullable: true
             errorCode:
               maximum: 2147483647
