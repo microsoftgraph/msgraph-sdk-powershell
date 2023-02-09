@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 2af860e3-aa81-4fff-a9c9-72e3db423aa3
+Module Guid: a86cb7f2-3e8f-4adf-88d4-8db111cc76f1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
