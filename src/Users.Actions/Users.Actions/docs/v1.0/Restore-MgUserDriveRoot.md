@@ -13,27 +13,27 @@ Restore a driveItem that has been deleted and is currently in the recycle bin.
 
 ## SYNTAX
 
-### RestoreExpanded1 (Default)
+### RestoreExpanded (Default)
 ```
 Restore-MgUserDriveRoot -DriveId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Restore1
+### Restore
 ```
 Restore-MgUserDriveRoot -DriveId <String> -UserId <String>
  -BodyParameter <IPathsWcmhxwUsersUserIdDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RestoreViaIdentity1
+### RestoreViaIdentity
 ```
 Restore-MgUserDriveRoot -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsWcmhxwUsersUserIdDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RestoreViaIdentityExpanded1
+### RestoreViaIdentityExpanded
 ```
 Restore-MgUserDriveRoot -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: RestoreExpanded1, RestoreViaIdentityExpanded1
+Parameter Sets: RestoreExpanded, RestoreViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -68,7 +68,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsWcmhxwUsersUserIdDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Restore1, RestoreViaIdentity1
+Parameter Sets: Restore, RestoreViaIdentity
 Aliases:
 
 Required: True
@@ -83,7 +83,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore1, RestoreExpanded1
+Parameter Sets: Restore, RestoreExpanded
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: RestoreViaIdentity1, RestoreViaIdentityExpanded1
+Parameter Sets: RestoreViaIdentity, RestoreViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: RestoreExpanded1, RestoreViaIdentityExpanded1
+Parameter Sets: RestoreExpanded, RestoreViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -130,7 +130,7 @@ To construct, please use Get-Help -Online and see NOTES section for PARENTREFERE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
-Parameter Sets: RestoreExpanded1, RestoreViaIdentityExpanded1
+Parameter Sets: RestoreExpanded, RestoreViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -145,7 +145,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore1, RestoreExpanded1
+Parameter Sets: Restore, RestoreExpanded
 Aliases:
 
 Required: True
@@ -256,7 +256,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
-  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -264,7 +263,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
   - `[PermissionId <String>]`: key: id of permission
   - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
@@ -274,7 +272,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[TodoTaskId <String>]`: key: id of todoTask
   - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
-  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 PARENTREFERENCE <IMicrosoftGraphItemReference>: itemReference
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

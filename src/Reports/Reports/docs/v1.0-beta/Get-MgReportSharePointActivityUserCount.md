@@ -12,12 +12,12 @@ Invoke function getSharePointActivityUserCounts
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgReportSharePointActivityUserCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgReportSharePointActivityUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Usage: period='{period}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
