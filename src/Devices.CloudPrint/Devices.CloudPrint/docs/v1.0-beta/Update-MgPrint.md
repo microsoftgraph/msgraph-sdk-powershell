@@ -427,7 +427,7 @@ BODYPARAMETER <IMicrosoftGraphPrint1>: print
         - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
         - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
       - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-      - `[DisplayName <String>]`: 
+      - `[DisplayName <String>]`: The name of the print job.
       - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -5125,7 +5125,7 @@ PRINTERS <IMicrosoftGraphPrinter1[]>: The list of printers registered in the ten
       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
     - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-    - `[DisplayName <String>]`: 
+    - `[DisplayName <String>]`: The name of the print job.
     - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -9702,7 +9702,7 @@ PRINTERSHARES <IMicrosoftGraphPrinterShare[]>: .
       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
     - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-    - `[DisplayName <String>]`: 
+    - `[DisplayName <String>]`: The name of the print job.
     - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -14390,7 +14390,7 @@ SHARES <IMicrosoftGraphPrinterShare[]>: The list of printer shares registered in
       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
     - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
-    - `[DisplayName <String>]`: 
+    - `[DisplayName <String>]`: The name of the print job.
     - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration

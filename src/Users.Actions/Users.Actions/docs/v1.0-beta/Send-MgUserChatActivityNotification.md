@@ -13,7 +13,7 @@ For more details about sending notifications and the requirements for doing so, 
 
 ## SYNTAX
 
-### SendExpanded1 (Default)
+### SendExpanded (Default)
 ```
 Send-MgUserChatActivityNotification -ChatId <String> -UserId <String> [-ActivityType <String>]
  [-AdditionalProperties <Hashtable>] [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>]
@@ -21,21 +21,21 @@ Send-MgUserChatActivityNotification -ChatId <String> -UserId <String> [-Activity
  [-Topic <IMicrosoftGraphTeamworkActivityTopic>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Send1
+### Send
 ```
 Send-MgUserChatActivityNotification -ChatId <String> -UserId <String>
  -BodyParameter <IPathsBdscpeUsersUserIdChatsChatIdMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SendViaIdentity1
+### SendViaIdentity
 ```
 Send-MgUserChatActivityNotification -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsBdscpeUsersUserIdChatsChatIdMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SendViaIdentityExpanded1
+### SendViaIdentityExpanded
 ```
 Send-MgUserChatActivityNotification -InputObject <IUsersActionsIdentity> [-ActivityType <String>]
  [-AdditionalProperties <Hashtable>] [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>]
@@ -185,7 +185,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 
 ```yaml
 Type: System.String
-Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -200,7 +200,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -216,7 +216,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsBdscpeUsersUserIdChatsChatIdMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Send1, SendViaIdentity1
+Parameter Sets: Send, SendViaIdentity
 Aliases:
 
 Required: True
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int64
-Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -246,7 +246,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Send1, SendExpanded1
+Parameter Sets: Send, SendExpanded
 Aliases:
 
 Required: True
@@ -262,7 +262,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: SendViaIdentity1, SendViaIdentityExpanded1
+Parameter Sets: SendViaIdentity, SendViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -293,7 +293,7 @@ To construct, please use Get-Help -Online and see NOTES section for PREVIEWTEXT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
-Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -308,7 +308,7 @@ teamworkNotificationRecipient
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -324,7 +324,7 @@ To construct, please use Get-Help -Online and see NOTES section for TEMPLATEPARA
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
-Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -340,7 +340,7 @@ To construct, please use Get-Help -Online and see NOTES section for TOPIC proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkActivityTopic
-Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -355,7 +355,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Send1, SendExpanded1
+Parameter Sets: Send, SendExpanded
 Aliases:
 
 Required: True
@@ -463,7 +463,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[MailFolderId1 <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
   - `[MessageId <String>]`: key: id of message
-  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
@@ -471,7 +470,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
   - `[PermissionId <String>]`: key: id of permission
   - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
@@ -481,7 +479,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[TodoTaskId <String>]`: key: id of todoTask
   - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
-  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 PREVIEWTEXT <IMicrosoftGraphItemBody>: itemBody
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
