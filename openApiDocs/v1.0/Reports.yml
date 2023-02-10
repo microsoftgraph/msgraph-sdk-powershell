@@ -5518,7 +5518,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
       additionalProperties:
         type: object
-      description: The resource that represents an instance of Enrollment Failure Reports.
     microsoft.graph.printUsageByPrinter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.printUsage'
