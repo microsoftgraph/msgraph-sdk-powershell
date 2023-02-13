@@ -56,7 +56,7 @@ param(
     [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingUser')]
     [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingGroupMember')]
     [Microsoft.Graph.PowerShell.Category('Body')]
-    [Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAnswer[]]
+    [Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAnswer1[]]
     # Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
     # To construct, see NOTES section for ANSWERS properties and create a hash table.
     ${Answers},
