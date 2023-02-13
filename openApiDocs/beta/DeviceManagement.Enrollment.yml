@@ -2016,18 +2016,10 @@ paths:
                 - fileVaultDisabled
                 - iCloudDiagnosticsDisabled
                 - iCloudStorageDisabled
-                - isLocalPrimaryAccount
-                - isPrimaryUser
-                - lockPrimaryAccountInfo
-                - managedLocalUserShortName
                 - passCodeDisabled
-                - prefillAccountInfo
                 - primaryAccountFullName
                 - primaryAccountUserName
-                - primaryUser
-                - primaryUserFullName
                 - registrationDisabled
-                - requestRequiresNetworkTether
                 - setPrimarySetupAccountAsRegularUser
                 - skipPrimarySetupAccountCreation
                 - zoomDisabled
@@ -5676,6 +5668,7 @@ paths:
               enum:
                 - directory
                 - cloudPC
+                - exchange
                 - entitlementManagement
                 - deviceManagement
               type: string
@@ -5692,6 +5685,7 @@ paths:
                 - '*'
                 - directory
                 - cloudPC
+                - exchange
                 - entitlementManagement
                 - deviceManagement
               type: string
@@ -6405,11 +6399,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List unifiedRoleAssignmentMultiple
-      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      summary: Get unifiedRoleAssignmentMultiple
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8368,11 +8362,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List unifiedRoleAssignmentMultiple
-      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      summary: Get unifiedRoleAssignmentMultiple
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10212,7 +10206,7 @@ components:
               description: Indicates if Weclome screen is disabled
             userlessSharedAadModeEnabled:
               type: boolean
-              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-shared-ios
+              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
             userSessionTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
@@ -10261,24 +10255,9 @@ components:
             iCloudStorageDisabled:
               type: boolean
               description: Indicates if iCloud Documents and Desktop screen is disabled
-            isLocalPrimaryAccount:
-              type: boolean
-              description: Indicates whether the profile is a local account
-            isPrimaryUser:
-              type: boolean
-              description: Indicates whether the profile is a primary user
-            lockPrimaryAccountInfo:
-              type: boolean
-              description: Indicates whether the primary account information will be locked
-            managedLocalUserShortName:
-              type: boolean
-              description: Indicates whether or not this is the short name of the local account to manage
             passCodeDisabled:
               type: boolean
               description: Indicates if Passcode setup pane is disabled
-            prefillAccountInfo:
-              type: boolean
-              description: Indicates whether the user will prefill their account info
             primaryAccountFullName:
               type: string
               description: Indicates what the full name for the primary account is
@@ -10287,20 +10266,9 @@ components:
               type: string
               description: Indicates what the account name for the primary account is
               nullable: true
-            primaryUser:
-              type: string
-              description: Indicates who the primary user of the profile is
-              nullable: true
-            primaryUserFullName:
-              type: string
-              description: Indicates who the primary user of the profile is
-              nullable: true
             registrationDisabled:
               type: boolean
               description: Indicates if registration is disabled
-            requestRequiresNetworkTether:
-              type: boolean
-              description: Indicates if the device is network-tethered to run the command
             setPrimarySetupAccountAsRegularUser:
               type: boolean
               description: Indicates whether Setup Assistant will set the account as a regular user
@@ -10867,6 +10835,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.rbacApplication'
         cloudPC:
           $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+        exchange:
+          $ref: '#/components/schemas/microsoft.graph.unifiedRbacApplication'
         entitlementManagement:
           $ref: '#/components/schemas/microsoft.graph.rbacApplication'
         deviceManagement:
@@ -11197,20 +11167,32 @@ components:
         - unknown
         - device
         - user
+        - accountDrivenUserEnrollment
+        - webDeviceEnrollment
+        - unknownFutureValue
       type: string
       x-ms-enum:
         name: appleUserInitiatedEnrollmentType
         modelAsString: false
         values:
           - value: unknown
-            description: Unknown enrollment type
+            description: Default value in case enum parsing fails
             name: unknown
           - value: device
-            description: Device enrollment type
+            description: 'Device enrollment via the iOS Company Portal. The default user-initiated enrollment type, which does not segregate corporate and personal data. Supported on all Intune-supported iOS/iPadOS versions.'
             name: device
           - value: user
-            description: User enrollment type
+            description: Profile-driven user enrollment via the iOS Company Portal. An enrollment type that segregates corportate and personal data. Supported on devices running iOS/iPadOS 13 and higher.
             name: user
+          - value: accountDrivenUserEnrollment
+            description: Account-driven user enrollment. Users will enroll from the iOS Settings app without using the iOS Company Portal. This enrollment type segregates corporate and personal data. Supported on devices running iOS/iPadOS 15 and higher.
+            name: accountDrivenUserEnrollment
+          - value: webDeviceEnrollment
+            description: Device enrollment via the web. Users will enroll without using the iOS Company Portal. This enrollment type does not segregate corporate and personal data. Supported on all Intune-supported iOS/iPadOS versions.
+            name: webDeviceEnrollment
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.devicePlatformType:
       title: devicePlatformType
       enum:
@@ -11283,7 +11265,37 @@ components:
         - successWithTimeout
         - notAttempted
         - disabled
+        - successOnRetry
       type: string
+      description: Deployment states for Autopilot devices
+      x-ms-enum:
+        name: windowsAutopilotDeploymentState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: The deployment state is unknown.
+            name: unknown
+          - value: success
+            description: The deployment succeeded.
+            name: success
+          - value: inProgress
+            description: The deployment state is in progress.
+            name: inProgress
+          - value: failure
+            description: The deployment failed.
+            name: failure
+          - value: successWithTimeout
+            description: The deployment timed out but user clicked past failure.
+            name: successWithTimeout
+          - value: notAttempted
+            description: The deployment was not run.
+            name: notAttempted
+          - value: disabled
+            description: The deployment is disabled.
+            name: disabled
+          - value: successOnRetry
+            description: The deployment succeeded after hitting an initial timeout failure.
+            name: successOnRetry
     microsoft.graph.enrollmentState:
       title: enrollmentState
       enum:
@@ -11424,7 +11436,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -11947,6 +11959,34 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.unifiedRbacApplication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRbacApplication
+          type: object
+          properties:
+            resourceNamespaces:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+              readOnly: true
+            roleAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+              readOnly: true
+            roleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              readOnly: true
+            transitiveRoleAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
               readOnly: true
           additionalProperties:
             type: object
@@ -12891,11 +12931,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
