@@ -749,6 +749,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/deviceHealthScriptStates": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
     "/users/{user-id}/managedDevices/{managedDevice-id}/logCollectionRequests": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"

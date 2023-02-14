@@ -3575,6 +3575,7 @@ components:
         - acronym
         - bookmark
         - chatMessage
+        - qna
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery
@@ -3588,8 +3589,6 @@ components:
           type: string
           description: Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
           nullable: true
-        query_string:
-          $ref: '#/components/schemas/microsoft.graph.searchQueryString'
       additionalProperties:
         type: object
     microsoft.graph.searchAlterationOptions:
@@ -3989,15 +3988,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationSortProperty'
       additionalProperties:
         type: object
-    microsoft.graph.searchQueryString:
-      title: searchQueryString
-      type: object
-      properties:
-        query:
-          type: string
-          description: Contains the actual search terms of the request.
-      additionalProperties:
-        type: object
     microsoft.graph.searchContent:
       title: searchContent
       enum:
@@ -4026,7 +4016,7 @@ components:
       properties:
         contentSource:
           type: string
-          description: The name of the content source which the externalItem is part of .
+          description: The name of the content source that the externalItem is part of.
           nullable: true
         hitId:
           type: string
@@ -4034,6 +4024,7 @@ components:
           nullable: true
         isCollapsed:
           type: boolean
+          description: Indicates whether the current result is collapses when the collapseProperties property is used.
           nullable: true
         rank:
           maximum: 2147483647

@@ -72,6 +72,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -1145,8 +1152,7 @@ paths:
     patch:
       tags:
         - groups.plannerGroup
-      summary: Update plannerAssignedToTaskBoardTaskFormat
-      description: Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+      summary: Update the navigation property assignedToTaskBoardFormat in groups
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -1184,6 +1190,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -1328,8 +1341,7 @@ paths:
     patch:
       tags:
         - groups.plannerGroup
-      summary: Update plannerBucketTaskBoardTaskFormat
-      description: Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+      summary: Update the navigation property bucketTaskBoardFormat in groups
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
@@ -1367,6 +1379,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -1514,8 +1533,7 @@ paths:
     patch:
       tags:
         - groups.plannerGroup
-      summary: Update plannertaskdetails
-      description: Update the properties of **plannerTaskDetails** object.
+      summary: Update the navigation property details in groups
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -1553,6 +1571,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -1697,8 +1722,7 @@ paths:
     patch:
       tags:
         - groups.plannerGroup
-      summary: Update plannerProgressTaskBoardTaskFormat
-      description: Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+      summary: Update the navigation property progressTaskBoardFormat in groups
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -1736,6 +1760,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -1865,8 +1896,7 @@ paths:
     patch:
       tags:
         - groups.plannerGroup
-      summary: Update plannerplandetails
-      description: Update the properties of **plannerplandetails** object.
+      summary: Update the navigation property details in groups
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
@@ -1888,6 +1918,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -2377,8 +2414,7 @@ paths:
     patch:
       tags:
         - groups.plannerGroup
-      summary: Update plannerAssignedToTaskBoardTaskFormat
-      description: Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+      summary: Update the navigation property assignedToTaskBoardFormat in groups
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -2408,6 +2444,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -2536,8 +2579,7 @@ paths:
     patch:
       tags:
         - groups.plannerGroup
-      summary: Update plannerBucketTaskBoardTaskFormat
-      description: Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+      summary: Update the navigation property bucketTaskBoardFormat in groups
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
@@ -2567,6 +2609,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -2698,8 +2747,7 @@ paths:
     patch:
       tags:
         - groups.plannerGroup
-      summary: Update plannertaskdetails
-      description: Update the properties of **plannerTaskDetails** object.
+      summary: Update the navigation property details in groups
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -2729,6 +2777,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -2857,8 +2912,7 @@ paths:
     patch:
       tags:
         - groups.plannerGroup
-      summary: Update plannerProgressTaskBoardTaskFormat
-      description: Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+      summary: Update the navigation property progressTaskBoardFormat in groups
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -2888,6 +2942,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -3176,6 +3237,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -3609,8 +3677,7 @@ paths:
     patch:
       tags:
         - planner.plannerBucket
-      summary: Update plannerAssignedToTaskBoardTaskFormat
-      description: Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+      summary: Update the navigation property assignedToTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -3632,6 +3699,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -3744,8 +3818,7 @@ paths:
     patch:
       tags:
         - planner.plannerBucket
-      summary: Update plannerBucketTaskBoardTaskFormat
-      description: Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+      summary: Update the navigation property bucketTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
@@ -3767,6 +3840,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -3882,8 +3962,7 @@ paths:
     patch:
       tags:
         - planner.plannerBucket
-      summary: Update plannertaskdetails
-      description: Update the properties of **plannerTaskDetails** object.
+      summary: Update the navigation property details in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -3905,6 +3984,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -4017,8 +4103,7 @@ paths:
     patch:
       tags:
         - planner.plannerBucket
-      summary: Update plannerProgressTaskBoardTaskFormat
-      description: Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+      summary: Update the navigation property progressTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -4040,6 +4125,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -4996,8 +5088,7 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update plannerAssignedToTaskBoardTaskFormat
-      description: Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+      summary: Update the navigation property assignedToTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -5027,6 +5118,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -5155,8 +5253,7 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update plannerBucketTaskBoardTaskFormat
-      description: Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+      summary: Update the navigation property bucketTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
@@ -5186,6 +5283,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -5317,8 +5421,7 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update plannertaskdetails
-      description: Update the properties of **plannerTaskDetails** object.
+      summary: Update the navigation property details in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -5348,6 +5451,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -5476,8 +5586,7 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update plannerProgressTaskBoardTaskFormat
-      description: Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+      summary: Update the navigation property progressTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -5507,6 +5616,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -5620,8 +5736,7 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update plannerplandetails
-      description: Update the properties of **plannerplandetails** object.
+      summary: Update the navigation property details in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
@@ -5635,6 +5750,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -6068,8 +6190,7 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update plannerAssignedToTaskBoardTaskFormat
-      description: Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+      summary: Update the navigation property assignedToTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -6091,6 +6212,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -6203,8 +6331,7 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update plannerBucketTaskBoardTaskFormat
-      description: Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+      summary: Update the navigation property bucketTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
@@ -6226,6 +6353,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -6341,8 +6475,7 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update plannertaskdetails
-      description: Update the properties of **plannerTaskDetails** object.
+      summary: Update the navigation property details in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -6364,6 +6497,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -6476,8 +6616,7 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update plannerProgressTaskBoardTaskFormat
-      description: Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+      summary: Update the navigation property progressTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -6499,6 +6638,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -6798,6 +6944,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -6895,8 +7048,7 @@ paths:
     patch:
       tags:
         - planner.plannerTask
-      summary: Update plannerAssignedToTaskBoardTaskFormat
-      description: Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+      summary: Update the navigation property assignedToTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -6910,6 +7062,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -7006,8 +7165,7 @@ paths:
     patch:
       tags:
         - planner.plannerTask
-      summary: Update plannerBucketTaskBoardTaskFormat
-      description: Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+      summary: Update the navigation property bucketTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
@@ -7021,6 +7179,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -7120,8 +7285,7 @@ paths:
     patch:
       tags:
         - planner.plannerTask
-      summary: Update plannertaskdetails
-      description: Update the properties of **plannerTaskDetails** object.
+      summary: Update the navigation property details in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -7135,6 +7299,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -7231,8 +7402,7 @@ paths:
     patch:
       tags:
         - planner.plannerTask
-      summary: Update plannerProgressTaskBoardTaskFormat
-      description: Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+      summary: Update the navigation property progressTaskBoardFormat in planner
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -7246,6 +7416,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -7353,6 +7530,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -8426,8 +8610,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerAssignedToTaskBoardTaskFormat
-      description: Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+      summary: Update the navigation property assignedToTaskBoardFormat in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -8465,6 +8648,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -8609,8 +8799,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerBucketTaskBoardTaskFormat
-      description: Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+      summary: Update the navigation property bucketTaskBoardFormat in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
@@ -8648,6 +8837,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -8795,8 +8991,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannertaskdetails
-      description: Update the properties of **plannerTaskDetails** object.
+      summary: Update the navigation property details in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -8834,6 +9029,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -8978,8 +9180,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerProgressTaskBoardTaskFormat
-      description: Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+      summary: Update the navigation property progressTaskBoardFormat in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -9017,6 +9218,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -9146,8 +9354,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerplandetails
-      description: Update the properties of **plannerplandetails** object.
+      summary: Update the navigation property details in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
@@ -9169,6 +9376,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -9658,8 +9872,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerAssignedToTaskBoardTaskFormat
-      description: Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+      summary: Update the navigation property assignedToTaskBoardFormat in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -9689,6 +9902,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -9817,8 +10037,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerBucketTaskBoardTaskFormat
-      description: Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+      summary: Update the navigation property bucketTaskBoardFormat in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
@@ -9848,6 +10067,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -9979,8 +10205,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannertaskdetails
-      description: Update the properties of **plannerTaskDetails** object.
+      summary: Update the navigation property details in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -10010,6 +10235,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -10138,8 +10370,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerProgressTaskBoardTaskFormat
-      description: Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+      summary: Update the navigation property progressTaskBoardFormat in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -10169,6 +10400,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -10618,8 +10856,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerAssignedToTaskBoardTaskFormat
-      description: Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+      summary: Update the navigation property assignedToTaskBoardFormat in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -10641,6 +10878,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -10753,8 +10997,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerBucketTaskBoardTaskFormat
-      description: Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+      summary: Update the navigation property bucketTaskBoardFormat in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
@@ -10776,6 +11019,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -10891,8 +11141,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannertaskdetails
-      description: Update the properties of **plannerTaskDetails** object.
+      summary: Update the navigation property details in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -10914,6 +11163,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -11026,8 +11282,7 @@ paths:
     patch:
       tags:
         - users.plannerUser
-      summary: Update plannerProgressTaskBoardTaskFormat
-      description: Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+      summary: Update the navigation property progressTaskBoardFormat in users
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -11049,6 +11304,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
       requestBody:
         description: New navigation property values
         content:
@@ -11161,7 +11423,7 @@ components:
               description: Name of the bucket.
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.'
               nullable: true
             planId:
               type: string

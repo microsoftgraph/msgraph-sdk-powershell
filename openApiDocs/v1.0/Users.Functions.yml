@@ -9750,6 +9750,68 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/microsoft.graph.exportDeviceAndAppManagementData()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function exportDeviceAndAppManagementData
+      operationId: users_exportDeviceAndAppManagementData
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        '200':
+          $ref: '#/components/responses/exportDeviceAndAppManagementDataResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function exportDeviceAndAppManagementData
+      operationId: users_exportDeviceAndAppManagementData
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: skip
+          in: path
+          description: 'Usage: skip={skip}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+        - name: top
+          in: path
+          description: 'Usage: top={top}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+      responses:
+        '200':
+          $ref: '#/components/responses/exportDeviceAndAppManagementDataResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/microsoft.graph.getManagedAppDiagnosticStatuses()':
     get:
       tags:
@@ -9844,6 +9906,36 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/getManagedAppPoliciesResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.getManagedDevicesWithAppFailures()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getManagedDevicesWithAppFailures
+      description: Retrieves the list of devices with failed apps
+      operationId: users_getManagedDevicesGraphWPreAppFailures
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        '200':
+          $ref: '#/components/responses/getManagedDevicesWithAppFailuresResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -10570,6 +10662,7 @@ paths:
                 - displayName
                 - employeeHireDate
                 - employeeId
+                - employeeLeaveDateTime
                 - employeeOrgData
                 - employeeType
                 - externalUserState
@@ -10719,6 +10812,8 @@ paths:
                 - employeeHireDate desc
                 - employeeId
                 - employeeId desc
+                - employeeLeaveDateTime
+                - employeeLeaveDateTime desc
                 - employeeOrgData
                 - employeeOrgData desc
                 - employeeType
@@ -11885,6 +11980,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
               type: boolean
+              description: Indicates whether the task has attachments.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -11912,6 +12008,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachmentBase'
+              description: A collection of file attachments for the task.
               x-ms-navigationProperty: true
             attachmentSessions:
               type: array
@@ -12044,6 +12141,11 @@ components:
             employeeId:
               type: string
               description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
+              nullable: true
+            employeeLeaveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
               nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
@@ -12980,6 +13082,7 @@ components:
           nullable: true
         teamsAppId:
           type: string
+          description: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
           nullable: true
         thumbnailUrl:
           type: string
@@ -14054,15 +14157,15 @@ components:
       properties:
         driveId:
           type: string
-          description: Unique identifier of the drive instance that contains the item. Read-only.
+          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. See [drive][] resource for values.'
+          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.'
           nullable: true
         id:
           type: string
-          description: Unique identifier of the item in the drive. Read-only.
+          description: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
           nullable: true
         name:
           type: string
@@ -14080,7 +14183,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -14325,19 +14428,23 @@ components:
           properties:
             contentType:
               type: string
+              description: The MIME type.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             name:
               type: string
+              description: The display name of the attachment. This does not need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
             type: object
@@ -14349,11 +14456,13 @@ components:
           properties:
             content:
               type: string
+              description: The content streams that are uploaded.
               format: base64url
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
               format: date-time
               nullable: true
             nextExpectedRanges:
@@ -14361,6 +14470,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'Indicates a single value {start} that represents the location in the file where the next upload should begin.'
           additionalProperties:
             type: object
     microsoft.graph.checklistItem:
@@ -15247,7 +15357,7 @@ components:
               readOnly: true
             ethernetMacAddress:
               type: string
-              description: 'Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             exchangeAccessState:
@@ -16024,6 +16134,18 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    microsoft.graph.deviceAndAppManagementData:
+      title: deviceAndAppManagementData
+      type: object
+      properties:
+        content:
+          type: string
+          description: Not yet documented
+          format: base64url
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Exported Data
     microsoft.graph.managedAppDiagnosticStatus:
       title: managedAppDiagnosticStatus
       type: object
@@ -20852,7 +20974,7 @@ components:
               description: Name of the bucket.
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.'
               nullable: true
             planId:
               type: string
@@ -22546,6 +22668,7 @@ components:
         - presenter
         - unknownFutureValue
         - producer
+        - coorganizer
       type: string
     microsoft.graph.attendanceInterval:
       title: attendanceInterval
@@ -23219,6 +23342,12 @@ components:
                 nullable: true
             additionalProperties:
               type: object
+    exportDeviceAndAppManagementDataResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementData'
     getManagedAppDiagnosticStatusesResponse:
       description: Success
       content:
@@ -23247,6 +23376,23 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+              '@odata.nextLink':
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
+    getManagedDevicesWithAppFailuresResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: array
+                items:
+                  type: string
+                  nullable: true
               '@odata.nextLink':
                 type: string
                 nullable: true

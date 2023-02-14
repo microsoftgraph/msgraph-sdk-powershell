@@ -567,6 +567,8 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
+                - groupsRequiringPartnerEnrollment
+                - groupsRequiringPartnerEnrollment desc
                 - isConfigured
                 - isConfigured desc
                 - lastHeartbeatDateTime
@@ -594,6 +596,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - groupsRequiringPartnerEnrollment
                 - isConfigured
                 - lastHeartbeatDateTime
                 - partnerAppType
@@ -673,6 +676,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - groupsRequiringPartnerEnrollment
                 - isConfigured
                 - lastHeartbeatDateTime
                 - partnerAppType
@@ -1229,22 +1233,36 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowPartnerToCollectIOSApplicationMetadata
+                - allowPartnerToCollectIOSApplicationMetadata desc
+                - allowPartnerToCollectIOSPersonalApplicationMetadata
+                - allowPartnerToCollectIOSPersonalApplicationMetadata desc
                 - androidDeviceBlockedOnMissingPartnerData
                 - androidDeviceBlockedOnMissingPartnerData desc
                 - androidEnabled
                 - androidEnabled desc
+                - androidMobileApplicationManagementEnabled
+                - androidMobileApplicationManagementEnabled desc
                 - iosDeviceBlockedOnMissingPartnerData
                 - iosDeviceBlockedOnMissingPartnerData desc
                 - iosEnabled
                 - iosEnabled desc
+                - iosMobileApplicationManagementEnabled
+                - iosMobileApplicationManagementEnabled desc
                 - lastHeartbeatDateTime
                 - lastHeartbeatDateTime desc
+                - microsoftDefenderForEndpointAttachEnabled
+                - microsoftDefenderForEndpointAttachEnabled desc
                 - partnerState
                 - partnerState desc
                 - partnerUnresponsivenessThresholdInDays
                 - partnerUnresponsivenessThresholdInDays desc
                 - partnerUnsupportedOsVersionBlocked
                 - partnerUnsupportedOsVersionBlocked desc
+                - windowsDeviceBlockedOnMissingPartnerData
+                - windowsDeviceBlockedOnMissingPartnerData desc
+                - windowsEnabled
+                - windowsEnabled desc
               type: string
         - name: $select
           in: query
@@ -1257,14 +1275,21 @@ paths:
             items:
               enum:
                 - id
+                - allowPartnerToCollectIOSApplicationMetadata
+                - allowPartnerToCollectIOSPersonalApplicationMetadata
                 - androidDeviceBlockedOnMissingPartnerData
                 - androidEnabled
+                - androidMobileApplicationManagementEnabled
                 - iosDeviceBlockedOnMissingPartnerData
                 - iosEnabled
+                - iosMobileApplicationManagementEnabled
                 - lastHeartbeatDateTime
+                - microsoftDefenderForEndpointAttachEnabled
                 - partnerState
                 - partnerUnresponsivenessThresholdInDays
                 - partnerUnsupportedOsVersionBlocked
+                - windowsDeviceBlockedOnMissingPartnerData
+                - windowsEnabled
               type: string
         - name: $expand
           in: query
@@ -1336,14 +1361,21 @@ paths:
             items:
               enum:
                 - id
+                - allowPartnerToCollectIOSApplicationMetadata
+                - allowPartnerToCollectIOSPersonalApplicationMetadata
                 - androidDeviceBlockedOnMissingPartnerData
                 - androidEnabled
+                - androidMobileApplicationManagementEnabled
                 - iosDeviceBlockedOnMissingPartnerData
                 - iosEnabled
+                - iosMobileApplicationManagementEnabled
                 - lastHeartbeatDateTime
+                - microsoftDefenderForEndpointAttachEnabled
                 - partnerState
                 - partnerUnresponsivenessThresholdInDays
                 - partnerUnsupportedOsVersionBlocked
+                - windowsDeviceBlockedOnMissingPartnerData
+                - windowsEnabled
               type: string
         - name: $expand
           in: query
@@ -3655,6 +3687,11 @@ components:
               type: string
               description: Partner display name
               nullable: true
+            groupsRequiringPartnerEnrollment:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementPartnerAssignment'
+              description: User groups that specifies whether enrollment is through partner.
             isConfigured:
               type: boolean
               description: Whether device management partner is configured or not
@@ -3784,23 +3821,38 @@ components:
         - title: mobileThreatDefenseConnector
           type: object
           properties:
+            allowPartnerToCollectIOSApplicationMetadata:
+              type: boolean
+              description: 'When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.'
+            allowPartnerToCollectIOSPersonalApplicationMetadata:
+              type: boolean
+              description: 'When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.'
             androidDeviceBlockedOnMissingPartnerData:
               type: boolean
               description: 'For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
             androidEnabled:
               type: boolean
               description: 'For Android, set whether data from the data sync partner should be used during compliance evaluations'
+            androidMobileApplicationManagementEnabled:
+              type: boolean
+              description: 'When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.'
             iosDeviceBlockedOnMissingPartnerData:
               type: boolean
               description: 'For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
             iosEnabled:
               type: boolean
               description: 'For IOS, get or set whether data from the data sync partner should be used during compliance evaluations'
+            iosMobileApplicationManagementEnabled:
+              type: boolean
+              description: 'When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.'
             lastHeartbeatDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: DateTime of last Heartbeat recieved from the Data Sync Partner
               format: date-time
+            microsoftDefenderForEndpointAttachEnabled:
+              type: boolean
+              description: 'When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.'
             partnerState:
               $ref: '#/components/schemas/microsoft.graph.mobileThreatPartnerTenantState'
             partnerUnresponsivenessThresholdInDays:
@@ -3812,6 +3864,12 @@ components:
             partnerUnsupportedOsVersionBlocked:
               type: boolean
               description: Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+            windowsDeviceBlockedOnMissingPartnerData:
+              type: boolean
+              description: 'When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.'
+            windowsEnabled:
+              type: boolean
+              description: 'When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.'
           additionalProperties:
             type: object
           description: Entity which represents a connection to Mobile threat defense partner.
@@ -4172,6 +4230,15 @@ components:
           - value: unresponsive
             description: Partner is unresponsive.
             name: unresponsive
+    microsoft.graph.deviceManagementPartnerAssignment:
+      title: deviceManagementPartnerAssignment
+      type: object
+      properties:
+        target:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+      additionalProperties:
+        type: object
+      description: User group targeting for Device Management Partner
     microsoft.graph.deviceManagementPartnerAppType:
       title: deviceManagementPartnerAppType
       enum:
@@ -4200,6 +4267,7 @@ components:
         - hosted
         - serviceToService
         - dedicated
+        - unknownFutureValue
       type: string
       description: The type of Exchange Connector.
       x-ms-enum:
@@ -4218,6 +4286,9 @@ components:
           - value: dedicated
             description: Connects to O365 Dedicated Exchange environment.
             name: dedicated
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementExchangeConnectorStatus:
       title: deviceManagementExchangeConnectorStatus
       enum:
@@ -4225,6 +4296,7 @@ components:
         - connectionPending
         - connected
         - disconnected
+        - unknownFutureValue
       type: string
       description: The current status of the Exchange Connector.
       x-ms-enum:
@@ -4243,6 +4315,9 @@ components:
           - value: disconnected
             description: Disconnected from the Exchange Environment
             name: disconnected
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.iosUpdatesInstallStatus:
       title: iosUpdatesInstallStatus
       enum:

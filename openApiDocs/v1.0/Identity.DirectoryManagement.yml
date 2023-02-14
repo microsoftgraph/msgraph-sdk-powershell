@@ -11279,6 +11279,7 @@ components:
               description: Not nullable.
             tenantType:
               type: string
+              description: 'Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.'
               nullable: true
             verifiedDomains:
               type: array

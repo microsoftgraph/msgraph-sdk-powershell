@@ -1819,6 +1819,819 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembers
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members. Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist. You can also use the method addMembersById to add members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_addMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembersById
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_addMembersGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembers
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_removeMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembersById
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_removeMembersGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssets
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_enrollAssets
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssetsById
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_enrollAssetsGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssets
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_unenrollAssets
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssetsById
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_unenrollAssetsGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembers
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members. Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist. You can also use the method addMembersById to add members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.members_addMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembersById
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.members_addMembersGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembers
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.members_removeMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembersById
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.members_removeMembersGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssets
+      operationId: admin.windows.updates.deploymentAudiences.members_enrollAssets
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssetsById
+      operationId: admin.windows.updates.deploymentAudiences.members_enrollAssetsGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssets
+      operationId: admin.windows.updates.deploymentAudiences.members_unenrollAssets
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssetsById
+      operationId: admin.windows.updates.deploymentAudiences.members_unenrollAssetsGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudience':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action updateAudience
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object, if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. If all **updatableAsset** objects are the same type, you can also use the method updateAudienceById to update the **deploymentAudience**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences_updateAudience
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                addMembers:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+                removeMembers:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+                addExclusions:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+                removeExclusions:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudienceById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action updateAudienceById
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. You can also use the method updateAudience to update the **deploymentAudience**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences_updateAudienceGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                memberEntityType:
+                  type: string
+                  nullable: true
+                addMembers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                removeMembers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                addExclusions:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                removeExclusions:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers':
     post:
       tags:
@@ -3239,6 +4052,7 @@ components:
         - feature
         - quality
         - unknownFutureValue
+        - driver
       type: string
     microsoft.graph.entity:
       title: entity
@@ -3722,11 +4536,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -3736,10 +4550,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object

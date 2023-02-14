@@ -10495,7 +10495,11 @@ paths:
     get:
       tags:
         - directory.recommendation
-      summary: Get recommendations from directory
+      summary: List recommendations
+      description: Get a list of the recommendation objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-list-recommendation?view=graph-rest-1.0
       operationId: directory_ListRecommendations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10635,6 +10639,7 @@ paths:
       tags:
         - directory.recommendation
       summary: Get recommendations from directory
+      description: List of recommended improvements to improve tenant posture.
       operationId: directory_GetRecommendations
       parameters:
         - name: recommendation-id
@@ -19196,6 +19201,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recommendation'
+              description: List of recommended improvements to improve tenant posture.
               x-ms-navigationProperty: true
             administrativeUnits:
               type: array
@@ -19376,45 +19382,58 @@ components:
             addedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the impactedResource object was initially associated with the recommendation.
               format: date-time
             additionalDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: Additional information unique to the impactedResource to help contextualize the recommendation.
             apiUrl:
               type: string
+              description: The URL link to the corresponding Azure AD resource.
               nullable: true
             displayName:
               type: string
+              description: Friendly name of the Azure AD resource.
             lastModifiedBy:
               type: string
+              description: Name of the user or service that last updated the status.
             lastModifiedDateTime:
               type: string
+              description: The date and time when the status was last updated.
             owner:
               type: string
+              description: The user responsible for maintaining the resource.
               nullable: true
             portalUrl:
               type: string
+              description: The URL link to the corresponding Azure AD portal page of the resource.
               nullable: true
             postponeUntilDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The future date and time when the status of a postponed impactedResource will be active again.
               format: date-time
               nullable: true
             rank:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
               format: int32
               nullable: true
             recommendationId:
               type: string
+              description: The unique identifier of the recommendation that the resource is associated with.
             resourceType:
               type: string
+              description: 'Indicates the type of Azure AD resource. Examples include user, application.'
             status:
               $ref: '#/components/schemas/microsoft.graph.recommendationStatus'
             subjectId:
               type: string
+              description: 'The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.'
           additionalProperties:
             type: object
     microsoft.graph.inboundSharedUserProfile:
@@ -20003,11 +20022,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -20195,11 +20214,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -20325,56 +20344,70 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.actionStep'
+              description: List of actions to take to complete a recommendation.
             benefits:
               type: string
+              description: An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
               nullable: true
             category:
               $ref: '#/components/schemas/microsoft.graph.recommendationCategory'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the recommendation was detected as applicable to your directory.
               format: date-time
             currentScore:
               type: number
+              description: The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
               format: double
               nullable: true
             displayName:
               type: string
+              description: The title of the recommendation.
             featureAreas:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recommendationFeatureAreas'
+              description: The directory feature that the recommendation is related to.
             impactStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The future date and time when a recommendation should be completed.
               format: date-time
               nullable: true
             impactType:
               type: string
+              description: 'Indicates the scope of impact of a recommendation. Tenant level indicates that the recommendation impacts the whole tenant. Other possible values include users, applications.'
               nullable: true
             insights:
               type: string
+              description: Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
               nullable: true
             lastCheckedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The most recent date and time a recommendation was deemed applicable to your directory.
               format: date-time
               nullable: true
             lastModifiedBy:
               type: string
+              description: Name of the user who last updated the status of the recommendation.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the status of a recommendation was last updated.
               format: date-time
               nullable: true
             maxScore:
               type: number
+              description: The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.
               format: double
               nullable: true
             postponeUntilDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The future date and time when the status of a postponed recommendation will be active again.
               format: date-time
               nullable: true
             priority:
@@ -20383,6 +20416,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.recommendationType'
             remediationImpact:
               type: string
+              description: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.recommendationStatus'
@@ -20390,6 +20424,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.impactedResource'
+              description: The list of directory objects associated with the recommendation.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -21389,9 +21424,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.actionUrl'
         stepNumber:
           type: integer
+          description: Indicates the position for this action in the order of the collection of actions to be taken.
           format: int64
         text:
           type: string
+          description: Friendly description of the action to take.
           nullable: true
       additionalProperties:
         type: object
@@ -21591,8 +21628,10 @@ components:
       properties:
         displayName:
           type: string
+          description: Brief title for the page that the links directs to.
         url:
           type: string
+          description: The URL to the documentation or Azure portal page.
           nullable: true
       additionalProperties:
         type: object

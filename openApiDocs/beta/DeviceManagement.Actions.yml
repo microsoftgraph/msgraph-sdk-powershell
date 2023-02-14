@@ -204,6 +204,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.addApps:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action addApps
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_addApps
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.approveApps:
     post:
       tags:
@@ -1075,6 +1102,40 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.initiateOnDemandProactiveRemediation':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action initiateOnDemandProactiveRemediation
+      description: Perform On Demand Proactive Remediation
+      operationId: deviceManagement.comanagedDevices_initiateOnDemandProactiveRemediation
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scriptPolicyId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -4820,6 +4881,40 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.initiateOnDemandProactiveRemediation':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action initiateOnDemandProactiveRemediation
+      description: Perform On Demand Proactive Remediation
+      operationId: deviceManagement.managedDevices_initiateOnDemandProactiveRemediation
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scriptPolicyId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -12002,7 +12097,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getSharedUseLicenseUsageReport
-      description: 'Get the shared use license usage reports, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.'
+      description: 'Get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-1.0
@@ -13363,6 +13458,7 @@ components:
         - activateDeviceEsim
         - collectDiagnostics
         - initiateMobileDeviceManagementKeyRecovery
+        - initiateOnDemandProactiveRemediation
       type: string
       x-ms-enum:
         name: managedDeviceRemoteAction
@@ -13389,6 +13485,9 @@ components:
           - value: initiateMobileDeviceManagementKeyRecovery
             description: Name of action to initiate MDM key recovery
             name: initiateMobileDeviceManagementKeyRecovery
+          - value: initiateOnDemandProactiveRemediation
+            description: Name of action to initiate On Demand Proactive Remediation
+            name: initiateOnDemandProactiveRemediation
     microsoft.graph.bulkManagedDeviceActionResult:
       title: bulkManagedDeviceActionResult
       type: object
@@ -14437,11 +14536,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appLogDecryptionAlgorithm'
         decryptionKey:
           type: string
-          description: DecryptionKey as string
+          description: Decryption key that used to decrypt the log.
           nullable: true
         downloadUrl:
           type: string
-          description: Download SAS Url for completed AppLogUploadRequest
+          description: Download SAS (Shared Access Signature) Url for completed app log request.
           nullable: true
       additionalProperties:
         type: object
@@ -15966,10 +16065,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -16038,7 +16137,18 @@ components:
       title: appLogDecryptionAlgorithm
       enum:
         - aes256
+        - unknownFutureValue
       type: string
+      x-ms-enum:
+        name: appLogDecryptionAlgorithm
+        modelAsString: false
+        values:
+          - value: aes256
+            description: decrypting using Aes256.
+            name: aes256
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementResourceAccessProfileIntent:
       title: deviceManagementResourceAccessProfileIntent
       enum:
