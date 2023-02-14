@@ -2979,10 +2979,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
@@ -3177,6 +3177,8 @@ paths:
                 - allowAttendeeToEnableMic desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - allowParticipantsToChangeName
+                - allowParticipantsToChangeName desc
                 - allowTeamworkReactions
                 - allowTeamworkReactions desc
                 - alternativeRecording
@@ -3219,6 +3221,8 @@ paths:
                 - recordAutomatically desc
                 - recording
                 - recording desc
+                - shareMeetingChatHistoryDefault
+                - shareMeetingChatHistoryDefault desc
                 - startDateTime
                 - startDateTime desc
                 - subject
@@ -3242,6 +3246,7 @@ paths:
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowParticipantsToChangeName
                 - allowTeamworkReactions
                 - alternativeRecording
                 - anonymizeIdentityForRoles
@@ -3263,6 +3268,7 @@ paths:
                 - participants
                 - recordAutomatically
                 - recording
+                - shareMeetingChatHistoryDefault
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -3350,6 +3356,7 @@ paths:
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowParticipantsToChangeName
                 - allowTeamworkReactions
                 - alternativeRecording
                 - anonymizeIdentityForRoles
@@ -3371,6 +3378,7 @@ paths:
                 - participants
                 - recordAutomatically
                 - recording
+                - shareMeetingChatHistoryDefault
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -4541,11 +4549,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4636,11 +4644,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: communications.onlineMeetings_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -5809,6 +5817,8 @@ paths:
                 - allowAttendeeToEnableMic desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - allowParticipantsToChangeName
+                - allowParticipantsToChangeName desc
                 - allowTeamworkReactions
                 - allowTeamworkReactions desc
                 - alternativeRecording
@@ -5851,6 +5861,8 @@ paths:
                 - recordAutomatically desc
                 - recording
                 - recording desc
+                - shareMeetingChatHistoryDefault
+                - shareMeetingChatHistoryDefault desc
                 - startDateTime
                 - startDateTime desc
                 - subject
@@ -5874,6 +5886,7 @@ paths:
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowParticipantsToChangeName
                 - allowTeamworkReactions
                 - alternativeRecording
                 - anonymizeIdentityForRoles
@@ -5895,6 +5908,7 @@ paths:
                 - participants
                 - recordAutomatically
                 - recording
+                - shareMeetingChatHistoryDefault
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -6003,6 +6017,7 @@ paths:
                 - allowAttendeeToEnableCamera
                 - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowParticipantsToChangeName
                 - allowTeamworkReactions
                 - alternativeRecording
                 - anonymizeIdentityForRoles
@@ -6024,6 +6039,7 @@ paths:
                 - participants
                 - recordAutomatically
                 - recording
+                - shareMeetingChatHistoryDefault
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -7402,11 +7418,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id
@@ -7513,11 +7529,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: users.onlineMeetings_DeleteRegistration
       parameters:
         - name: user-id
@@ -8338,11 +8354,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence
-      description: Get a user's presence information.
+      summary: 'presence: setStatusMessage'
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: users_GetPresence
       parameters:
         - name: user-id
@@ -9081,6 +9097,9 @@ components:
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowParticipantsToChangeName:
+              type: boolean
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
@@ -9157,6 +9176,8 @@ components:
               description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -10018,6 +10039,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
     microsoft.graph.watermarkProtectionValues:
       title: watermarkProtectionValues
       type: object
@@ -10061,11 +10089,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

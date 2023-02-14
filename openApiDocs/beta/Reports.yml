@@ -10320,6 +10320,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedAuthenticationEventListener'
+              description: 'Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.'
             authenticationAppDeviceDetails:
               $ref: '#/components/schemas/microsoft.graph.authenticationAppDeviceDetails'
             authenticationAppPolicyEvaluationDetails:
@@ -11825,11 +11826,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -12046,6 +12047,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationEventType'
         executedListenerId:
           type: string
+          description: ID of the Event Listener that was executed.
           nullable: true
         handlerResult:
           $ref: '#/components/schemas/microsoft.graph.authenticationEventHandlerResult'
@@ -12646,10 +12648,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -12869,11 +12871,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

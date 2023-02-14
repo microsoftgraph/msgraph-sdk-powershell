@@ -57,6 +57,102 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
     },
+    "/admin/windows/updates/deploymentAudiences": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssetsById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssetsById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudience": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudienceById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
     "/admin/windows/updates/deployments": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
@@ -202,6 +298,30 @@
       "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
     },
     "/admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.unenrollAssetsById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/updatePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/updatePolicies/{updatePolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}/updatePolicy": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
     }

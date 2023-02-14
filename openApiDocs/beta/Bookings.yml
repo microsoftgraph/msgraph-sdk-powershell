@@ -3514,6 +3514,8 @@ paths:
                 - previewType desc
                 - priority
                 - priority desc
+                - recurrence
+                - recurrence desc
                 - referenceCount
                 - referenceCount desc
                 - startDateTime
@@ -3555,6 +3557,7 @@ paths:
                 - planId
                 - previewType
                 - priority
+                - recurrence
                 - referenceCount
                 - startDateTime
                 - title
@@ -3679,6 +3682,7 @@ paths:
                 - planId
                 - previewType
                 - priority
+                - recurrence
                 - referenceCount
                 - startDateTime
                 - title
@@ -4816,6 +4820,8 @@ components:
               description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskRecurrence'
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -5132,11 +5138,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -5190,6 +5196,31 @@ components:
         - description
         - reference
       type: string
+    microsoft.graph.plannerTaskRecurrence:
+      title: plannerTaskRecurrence
+      type: object
+      properties:
+        nextInSeriesTaskId:
+          type: string
+          nullable: true
+        occurrenceId:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        previousInSeriesTaskId:
+          type: string
+          nullable: true
+        recurrenceStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        schedule:
+          $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
+        seriesId:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -5391,6 +5422,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.plannerRecurrenceSchedule:
+      title: plannerRecurrenceSchedule
+      type: object
+      properties:
+        nextOccurrenceDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        patternStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerOrderHintsByAssignee:
       title: plannerOrderHintsByAssignee
       type: object
@@ -5469,6 +5518,41 @@ components:
         - relationship
         - unknownFutureValue
       type: string
+    microsoft.graph.recurrencePattern:
+      title: recurrencePattern
+      type: object
+      properties:
+        dayOfMonth:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
+          format: int32
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+        firstDayOfWeek:
+          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+        index:
+          $ref: '#/components/schemas/microsoft.graph.weekIndex'
+        interval:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
+          format: int32
+        month:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The month in which the event occurs.  This is a number from 1 to 12.
+          format: int32
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
+      additionalProperties:
+        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -5499,6 +5583,25 @@ components:
           description: Overridden rules. These are used as rules for the override instead of the default rules.
       additionalProperties:
         type: object
+    microsoft.graph.weekIndex:
+      title: weekIndex
+      enum:
+        - first
+        - second
+        - third
+        - fourth
+        - last
+      type: string
+    microsoft.graph.recurrencePatternType:
+      title: recurrencePatternType
+      enum:
+        - daily
+        - weekly
+        - absoluteMonthly
+        - relativeMonthly
+        - absoluteYearly
+        - relativeYearly
+      type: string
   responses:
     microsoft.graph.bookingBusinessCollectionResponse:
       description: Retrieved collection

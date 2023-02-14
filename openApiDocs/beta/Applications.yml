@@ -5354,28 +5354,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - applicationTemplates.applicationTemplate
-      summary: Add new entity to applicationTemplates
-      operationId: applicationTemplates.applicationTemplate_CreateApplicationTemplate
-      requestBody:
-        description: New entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-        required: true
-      responses:
-        '201':
-          description: Created entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/applicationTemplates/{applicationTemplate-id}':
     get:
       tags:
@@ -5436,59 +5414,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - applicationTemplates.applicationTemplate
-      summary: Update entity in applicationTemplates
-      operationId: applicationTemplates.applicationTemplate_UpdateApplicationTemplate
-      parameters:
-        - name: applicationTemplate-id
-          in: path
-          description: 'key: id of applicationTemplate'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: applicationTemplate
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - applicationTemplates.applicationTemplate
-      summary: Delete entity from applicationTemplates
-      operationId: applicationTemplates.applicationTemplate_DeleteApplicationTemplate
-      parameters:
-        - name: applicationTemplate-id
-          in: path
-          description: 'key: id of applicationTemplate'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: applicationTemplate
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7970,10 +7895,10 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create connectorGroup
-      description: Create a connectorGroup object.
+      description: Create a new connectorGroup.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
       operationId: onPremisesPublishingProfiles_CreateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -18678,7 +18603,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.onPremisesApplicationSegment'
-          description: Represents the application segment collection for an on-premises wildcard application.
         segmentsConfiguration:
           $ref: '#/components/schemas/microsoft.graph.segmentConfiguration'
         singleSignOnSettings:
@@ -18812,10 +18736,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -20137,11 +20061,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object

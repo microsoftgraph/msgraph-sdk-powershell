@@ -96,6 +96,8 @@ paths:
                 - publicClient desc
                 - publisherDomain
                 - publisherDomain desc
+                - requestSignatureVerification
+                - requestSignatureVerification desc
                 - requiredResourceAccess
                 - requiredResourceAccess desc
                 - samlMetadataUrl
@@ -152,6 +154,7 @@ paths:
                 - passwordCredentials
                 - publicClient
                 - publisherDomain
+                - requestSignatureVerification
                 - requiredResourceAccess
                 - samlMetadataUrl
                 - serviceManagementReference
@@ -279,6 +282,7 @@ paths:
                 - passwordCredentials
                 - publicClient
                 - publisherDomain
+                - requestSignatureVerification
                 - requiredResourceAccess
                 - samlMetadataUrl
                 - serviceManagementReference
@@ -2293,6 +2297,7 @@ paths:
                 - passwordCredentials
                 - publicClient
                 - publisherDomain
+                - requestSignatureVerification
                 - requiredResourceAccess
                 - samlMetadataUrl
                 - serviceManagementReference
@@ -2374,6 +2379,8 @@ paths:
                 - publicClient desc
                 - publisherDomain
                 - publisherDomain desc
+                - requestSignatureVerification
+                - requestSignatureVerification desc
                 - requiredResourceAccess
                 - requiredResourceAccess desc
                 - samlMetadataUrl
@@ -2647,28 +2654,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - applicationTemplates.applicationTemplate
-      summary: Add new entity to applicationTemplates
-      operationId: applicationTemplates.applicationTemplate_CreateApplicationTemplate
-      requestBody:
-        description: New entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-        required: true
-      responses:
-        '201':
-          description: Created entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/applicationTemplates/{applicationTemplate-id}':
     get:
       tags:
@@ -2727,59 +2712,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - applicationTemplates.applicationTemplate
-      summary: Update entity in applicationTemplates
-      operationId: applicationTemplates.applicationTemplate_UpdateApplicationTemplate
-      parameters:
-        - name: applicationTemplate-id
-          in: path
-          description: 'key: id of applicationTemplate'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: applicationTemplate
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - applicationTemplates.applicationTemplate
-      summary: Delete entity from applicationTemplates
-      operationId: applicationTemplates.applicationTemplate_DeleteApplicationTemplate
-      parameters:
-        - name: applicationTemplate-id
-          in: path
-          description: 'key: id of applicationTemplate'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: applicationTemplate
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7589,6 +7521,8 @@ components:
               type: string
               description: 'The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application''s publisher domain. Supports $filter (eq, ne, ge, le, startsWith).'
               nullable: true
+            requestSignatureVerification:
+              $ref: '#/components/schemas/microsoft.graph.requestSignatureVerification'
             requiredResourceAccess:
               type: array
               items:
@@ -8468,6 +8402,16 @@ components:
           description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
       additionalProperties:
         type: object
+    microsoft.graph.requestSignatureVerification:
+      title: requestSignatureVerification
+      type: object
+      properties:
+        allowedWeakAlgorithms:
+          $ref: '#/components/schemas/microsoft.graph.weakAlgorithms'
+        isSignedRequestRequired:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.requiredResourceAccess:
       title: requiredResourceAccess
       type: object
@@ -8923,6 +8867,12 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.weakAlgorithms:
+      title: weakAlgorithms
+      enum:
+        - rsaSha1
+        - unknownFutureValue
+      type: string
     microsoft.graph.resourceAccess:
       title: resourceAccess
       type: object

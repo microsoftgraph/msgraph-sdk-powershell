@@ -1897,6 +1897,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.initiateOnDemandProactiveRemediation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
     "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"

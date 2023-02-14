@@ -1511,12 +1511,8 @@ paths:
                 - partnerState desc
                 - singleTenantAppId
                 - singleTenantAppId desc
-                - whenPartnerDevicesWillBeMarkedAsNonCompliant
-                - whenPartnerDevicesWillBeMarkedAsNonCompliant desc
                 - whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime
                 - whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime desc
-                - whenPartnerDevicesWillBeRemoved
-                - whenPartnerDevicesWillBeRemoved desc
                 - whenPartnerDevicesWillBeRemovedDateTime
                 - whenPartnerDevicesWillBeRemovedDateTime desc
               type: string
@@ -1538,9 +1534,7 @@ paths:
                 - partnerAppType
                 - partnerState
                 - singleTenantAppId
-                - whenPartnerDevicesWillBeMarkedAsNonCompliant
                 - whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime
-                - whenPartnerDevicesWillBeRemoved
                 - whenPartnerDevicesWillBeRemovedDateTime
               type: string
         - name: $expand
@@ -1620,9 +1614,7 @@ paths:
                 - partnerAppType
                 - partnerState
                 - singleTenantAppId
-                - whenPartnerDevicesWillBeMarkedAsNonCompliant
                 - whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime
-                - whenPartnerDevicesWillBeRemoved
                 - whenPartnerDevicesWillBeRemovedDateTime
               type: string
         - name: $expand
@@ -8187,6 +8179,8 @@ paths:
                 - customPrivacyMessage desc
                 - disableClientTelemetry
                 - disableClientTelemetry desc
+                - disableDeviceCategorySelection
+                - disableDeviceCategorySelection desc
                 - displayName
                 - displayName desc
                 - enrollmentAvailability
@@ -8253,6 +8247,7 @@ paths:
                 - customCantSeePrivacyMessage
                 - customPrivacyMessage
                 - disableClientTelemetry
+                - disableDeviceCategorySelection
                 - displayName
                 - enrollmentAvailability
                 - isDefaultProfile
@@ -8358,6 +8353,7 @@ paths:
                 - customCantSeePrivacyMessage
                 - customPrivacyMessage
                 - disableClientTelemetry
+                - disableDeviceCategorySelection
                 - displayName
                 - enrollmentAvailability
                 - isDefaultProfile
@@ -14407,6 +14403,8 @@ paths:
                 - displayName desc
                 - domainJoinConfiguration
                 - domainJoinConfiguration desc
+                - domainJoinConfigurations
+                - domainJoinConfigurations desc
                 - enableSingleSignOn
                 - enableSingleSignOn desc
                 - gracePeriodInHours
@@ -14446,6 +14444,7 @@ paths:
                 - description
                 - displayName
                 - domainJoinConfiguration
+                - domainJoinConfigurations
                 - enableSingleSignOn
                 - gracePeriodInHours
                 - imageDisplayName
@@ -14539,6 +14538,7 @@ paths:
                 - description
                 - displayName
                 - domainJoinConfiguration
+                - domainJoinConfigurations
                 - enableSingleSignOn
                 - gracePeriodInHours
                 - imageDisplayName
@@ -15024,7 +15024,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create cloudPcExportJob
-      description: Create a new cloudPcExportJob object.
+      description: 'Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource. When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property. '
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-1.0
@@ -15191,6 +15191,8 @@ paths:
                 - ramInGB desc
                 - storageInGB
                 - storageInGB desc
+                - supportedSolution
+                - supportedSolution desc
                 - type
                 - type desc
                 - userProfileInGB
@@ -15212,6 +15214,7 @@ paths:
                 - displayName
                 - ramInGB
                 - storageInGB
+                - supportedSolution
                 - type
                 - userProfileInGB
                 - vCpuCount
@@ -15289,6 +15292,7 @@ paths:
                 - displayName
                 - ramInGB
                 - storageInGB
+                - supportedSolution
                 - type
                 - userProfileInGB
                 - vCpuCount
@@ -16822,22 +16826,10 @@ components:
               type: string
               description: Partner Single tenant App id
               nullable: true
-            whenPartnerDevicesWillBeMarkedAsNonCompliant:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: DateTime in UTC when PartnerDevices will be marked as NonCompliant. This will become obselete soon.
-              format: date-time
-              nullable: true
             whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: DateTime in UTC when PartnerDevices will be marked as NonCompliant
-              format: date-time
-              nullable: true
-            whenPartnerDevicesWillBeRemoved:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.
               format: date-time
               nullable: true
             whenPartnerDevicesWillBeRemovedDateTime:
@@ -17485,6 +17477,9 @@ components:
             disableClientTelemetry:
               type: boolean
               description: 'Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.'
+            disableDeviceCategorySelection:
+              type: boolean
+              description: Boolean that indicates if Device Category Selection will be shown in Company Portal
             displayName:
               type: string
               description: Company/organization name that is displayed to end users
@@ -17641,10 +17636,10 @@ components:
           properties:
             allowPartnerToCollectIOSApplicationMetadata:
               type: boolean
-              description: 'For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune'
+              description: 'When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.'
             allowPartnerToCollectIOSPersonalApplicationMetadata:
               type: boolean
-              description: 'For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about personally installed applications from Intune'
+              description: 'When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.'
             androidDeviceBlockedOnMissingPartnerData:
               type: boolean
               description: 'For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
@@ -17653,7 +17648,7 @@ components:
               description: 'For Android, set whether data from the data sync partner should be used during compliance evaluations'
             androidMobileApplicationManagementEnabled:
               type: boolean
-              description: 'For Android, set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.'
+              description: 'When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.'
             iosDeviceBlockedOnMissingPartnerData:
               type: boolean
               description: 'For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
@@ -17662,7 +17657,7 @@ components:
               description: 'For IOS, get or set whether data from the data sync partner should be used during compliance evaluations'
             iosMobileApplicationManagementEnabled:
               type: boolean
-              description: 'For IOS, get or set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.'
+              description: 'When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.'
             lastHeartbeatDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -17676,7 +17671,7 @@ components:
               description: 'For Mac, get or set whether data from the data sync partner should be used during compliance evaluations'
             microsoftDefenderForEndpointAttachEnabled:
               type: boolean
-              description: 'When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.'
+              description: 'When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.'
             partnerState:
               $ref: '#/components/schemas/microsoft.graph.mobileThreatPartnerTenantState'
             partnerUnresponsivenessThresholdInDays:
@@ -17690,10 +17685,10 @@ components:
               description: Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
             windowsDeviceBlockedOnMissingPartnerData:
               type: boolean
-              description: 'For Windows, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
+              description: 'When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.'
             windowsEnabled:
               type: boolean
-              description: 'For Windows, get or set whether data from the data sync partner should be used during compliance evaluations'
+              description: 'When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.'
             windowsMobileApplicationManagementEnabled:
               type: boolean
               description: 'When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.'
@@ -18622,6 +18617,10 @@ components:
               nullable: true
             domainJoinConfiguration:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
+            domainJoinConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
             enableSingleSignOn:
               type: boolean
               nullable: true
@@ -18753,6 +18752,8 @@ components:
               type: integer
               description: The size of the OS Disk in GB. Read-only.
               format: int32
+            supportedSolution:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
             type:
               $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
             userProfileInGB:
@@ -19514,6 +19515,7 @@ components:
         - hosted
         - serviceToService
         - dedicated
+        - unknownFutureValue
       type: string
       description: The type of Exchange Connector.
       x-ms-enum:
@@ -19532,6 +19534,9 @@ components:
           - value: dedicated
             description: Connects to O365 Dedicated Exchange environment.
             name: dedicated
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementExchangeConnectorStatus:
       title: deviceManagementExchangeConnectorStatus
       enum:
@@ -19539,6 +19544,7 @@ components:
         - connectionPending
         - connected
         - disconnected
+        - unknownFutureValue
       type: string
       description: The current status of the Exchange Connector.
       x-ms-enum:
@@ -19557,6 +19563,9 @@ components:
           - value: disconnected
             description: Disconnected from the Exchange Environment
             name: disconnected
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementExchangeAccessRule:
       title: deviceManagementExchangeAccessRule
       type: object
@@ -21700,10 +21709,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object

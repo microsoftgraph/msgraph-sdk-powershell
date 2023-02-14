@@ -382,9 +382,9 @@ paths:
   /admin/windows:
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get windows from admin
-      description: A container for all Windows Update for Business deployment service functionality. Read-only.
+      description: A container for all Windows administrator functionalities. Read-only.
       operationId: admin_GetWindows
       parameters:
         - name: $select
@@ -419,13 +419,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.windows'
+                $ref: '#/components/schemas/microsoft.graph.adminWindows'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property windows in admin
       operationId: admin_UpdateWindows
       requestBody:
@@ -433,7 +433,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.windows'
+              $ref: '#/components/schemas/microsoft.graph.adminWindows'
         required: true
       responses:
         '204':
@@ -443,7 +443,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property windows for admin
       operationId: admin_DeleteWindows
       parameters:
@@ -462,9 +462,9 @@ paths:
   /admin/windows/updates:
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get updates from admin
-      description: Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+      description: Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
       operationId: admin.windows_GetUpdates
       parameters:
         - name: $select
@@ -479,9 +479,11 @@ paths:
               enum:
                 - id
                 - catalog
+                - deploymentAudiences
                 - deployments
                 - resourceConnections
                 - updatableAssets
+                - updatePolicies
               type: string
         - name: $expand
           in: query
@@ -495,9 +497,11 @@ paths:
               enum:
                 - '*'
                 - catalog
+                - deploymentAudiences
                 - deployments
                 - resourceConnections
                 - updatableAssets
+                - updatePolicies
               type: string
       responses:
         '200':
@@ -505,13 +509,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updates'
+                $ref: '#/components/schemas/microsoft.graph.adminWindowsUpdates'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property updates in admin
       operationId: admin.windows_UpdateUpdates
       requestBody:
@@ -519,7 +523,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updates'
+              $ref: '#/components/schemas/microsoft.graph.adminWindowsUpdates'
         required: true
       responses:
         '204':
@@ -529,7 +533,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property updates for admin
       operationId: admin.windows_DeleteUpdates
       parameters:
@@ -548,7 +552,7 @@ paths:
   /admin/windows/updates/catalog:
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get catalog from admin
       description: Catalog of content that can be approved for deployment by the deployment service. Read-only.
       operationId: admin.windows.updates_GetCatalog
@@ -591,7 +595,7 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property catalog in admin
       operationId: admin.windows.updates_UpdateCatalog
       requestBody:
@@ -609,7 +613,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property catalog for admin
       operationId: admin.windows.updates_DeleteCatalog
       parameters:
@@ -628,7 +632,7 @@ paths:
   /admin/windows/updates/catalog/entries:
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: List entries
       description: 'Get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from **catalogEntry**. '
       externalDocs:
@@ -698,7 +702,7 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Create new navigation property to entries for admin
       operationId: admin.windows.updates.catalog_CreateEntries
       requestBody:
@@ -721,7 +725,7 @@ paths:
   '/admin/windows/updates/catalog/entries/{catalogEntry-id}':
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get entries from admin
       description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_GetEntries
@@ -773,7 +777,7 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property entries in admin
       operationId: admin.windows.updates.catalog_UpdateEntries
       parameters:
@@ -800,7 +804,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property entries for admin
       operationId: admin.windows.updates.catalog_DeleteEntries
       parameters:
@@ -824,15 +828,1487 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /admin/windows/updates/deploymentAudiences:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: List deploymentAudiences
+      description: Get a list of deploymentAudience objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-deploymentaudiences?view=graph-rest-1.0
+      operationId: admin.windows.updates_ListDeploymentAudiences
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - applicableContent
+                - applicableContent desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - applicableContent
+                - exclusions
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - exclusions
+                - members
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.deploymentAudienceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create deploymentAudience
+      description: Create a new deploymentAudience object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-deploymentaudiences?view=graph-rest-1.0
+      operationId: admin.windows.updates_CreateDeploymentAudiences
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get deploymentAudiences from admin
+      description: The set of updatableAsset resources to which a deployment can apply.
+      operationId: admin.windows.updates_GetDeploymentAudiences
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - applicableContent
+                - exclusions
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - exclusions
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property deploymentAudiences in admin
+      operationId: admin.windows.updates_UpdateDeploymentAudiences
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property deploymentAudiences for admin
+      operationId: admin.windows.updates_DeleteDeploymentAudiences
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: List deployment audience exclusions
+      description: List the updatableAsset resources that are excluded from a deploymentAudience.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-exclusions?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences_ListExclusions
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to exclusions for admin
+      operationId: admin.windows.updates.deploymentAudiences_CreateExclusions
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get exclusions from admin
+      description: Specifies the assets to exclude from the audience.
+      operationId: admin.windows.updates.deploymentAudiences_GetExclusions
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property exclusions in admin
+      operationId: admin.windows.updates.deploymentAudiences_UpdateExclusions
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property exclusions for admin
+      operationId: admin.windows.updates.deploymentAudiences_DeleteExclusions
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembers
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members. Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist. You can also use the method addMembersById to add members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_addMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembersById
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_addMembersGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembers
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_removeMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembersById
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_removeMembersGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssets
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_enrollAssets
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssetsById
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_enrollAssetsGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssets
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_unenrollAssets
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssetsById
+      operationId: admin.windows.updates.deploymentAudiences.exclusions_unenrollAssetsGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: List deployment audience members
+      description: List the updatableAsset resources that are members of a deploymentAudience.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-members?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences_ListMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to members for admin
+      operationId: admin.windows.updates.deploymentAudiences_CreateMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get members from admin
+      description: Specifies the assets to include in the audience.
+      operationId: admin.windows.updates.deploymentAudiences_GetMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property members in admin
+      operationId: admin.windows.updates.deploymentAudiences_UpdateMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property members for admin
+      operationId: admin.windows.updates.deploymentAudiences_DeleteMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembers
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members. Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist. You can also use the method addMembersById to add members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.members_addMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembersById
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.members_addMembersGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembers
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.members_removeMembers
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembersById
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences.members_removeMembersGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: updatableAsset-id
+          in: path
+          description: 'key: id of updatableAsset'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssets
+      operationId: admin.windows.updates.deploymentAudiences.members_enrollAssets
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssetsById
+      operationId: admin.windows.updates.deploymentAudiences.members_enrollAssetsGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssets
+      operationId: admin.windows.updates.deploymentAudiences.members_unenrollAssets
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssetsById
+      operationId: admin.windows.updates.deploymentAudiences.members_unenrollAssetsGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudience':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action updateAudience
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object, if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. If all **updatableAsset** objects are the same type, you can also use the method updateAudienceById to update the **deploymentAudience**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences_updateAudience
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                addMembers:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+                removeMembers:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+                addExclusions:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+                removeExclusions:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudienceById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action updateAudienceById
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. You can also use the method updateAudience to update the **deploymentAudience**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.deploymentAudiences_updateAudienceGraphBPreId
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: 'key: id of deploymentAudience'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                memberEntityType:
+                  type: string
+                  nullable: true
+                addMembers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                removeMembers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                addExclusions:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                removeExclusions:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /admin/windows/updates/deployments:
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: List deployments
       description: Get a list of deployment objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-list-deployments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-deployments?view=graph-rest-1.0
       operationId: admin.windows.updates_ListDeployments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -905,12 +2381,12 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Create deployment
       description: Create a new deployment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-post-deployments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-deployments?view=graph-rest-1.0
       operationId: admin.windows.updates_CreateDeployments
       requestBody:
         description: New navigation property
@@ -932,9 +2408,9 @@ paths:
   '/admin/windows/updates/deployments/{deployment-id}':
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get deployments from admin
-      description: Deployments created using the deployment service. Read-only.
+      description: Deployments created using the deployment service.
       operationId: admin.windows.updates_GetDeployments
       parameters:
         - name: deployment-id
@@ -988,7 +2464,7 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property deployments in admin
       operationId: admin.windows.updates_UpdateDeployments
       parameters:
@@ -1015,7 +2491,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property deployments for admin
       operationId: admin.windows.updates_DeleteDeployments
       parameters:
@@ -1042,7 +2518,7 @@ paths:
   '/admin/windows/updates/deployments/{deployment-id}/audience':
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get audience from admin
       description: Specifies the audience to which content is deployed.
       operationId: admin.windows.updates.deployments_GetAudience
@@ -1066,6 +2542,7 @@ paths:
             items:
               enum:
                 - id
+                - applicableContent
                 - exclusions
                 - members
               type: string
@@ -1095,7 +2572,7 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property audience in admin
       operationId: admin.windows.updates.deployments_UpdateAudience
       parameters:
@@ -1122,7 +2599,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property audience for admin
       operationId: admin.windows.updates.deployments_DeleteAudience
       parameters:
@@ -1149,7 +2626,7 @@ paths:
   '/admin/windows/updates/deployments/{deployment-id}/audience/exclusions':
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: List deployment audience exclusions
       description: List the updatableAsset resources that are excluded from a deploymentAudience.
       externalDocs:
@@ -1218,7 +2695,7 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Create new navigation property to exclusions for admin
       operationId: admin.windows.updates.deployments.audience_CreateExclusions
       parameters:
@@ -1250,7 +2727,7 @@ paths:
   '/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}':
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get exclusions from admin
       description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_GetExclusions
@@ -1307,7 +2784,7 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property exclusions in admin
       operationId: admin.windows.updates.deployments.audience_UpdateExclusions
       parameters:
@@ -1342,7 +2819,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property exclusions for admin
       operationId: admin.windows.updates.deployments.audience_DeleteExclusions
       parameters:
@@ -1729,7 +3206,7 @@ paths:
   '/admin/windows/updates/deployments/{deployment-id}/audience/members':
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: List deployment audience members
       description: List the updatableAsset resources that are members of a deploymentAudience.
       externalDocs:
@@ -1798,7 +3275,7 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Create new navigation property to members for admin
       operationId: admin.windows.updates.deployments.audience_CreateMembers
       parameters:
@@ -1830,7 +3307,7 @@ paths:
   '/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}':
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get members from admin
       description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_GetMembers
@@ -1887,7 +3364,7 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property members in admin
       operationId: admin.windows.updates.deployments.audience_UpdateMembers
       parameters:
@@ -1922,7 +3399,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property members for admin
       operationId: admin.windows.updates.deployments.audience_DeleteMembers
       parameters:
@@ -2418,12 +3895,12 @@ paths:
   /admin/windows/updates/resourceConnections:
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: List resourceConnections
       description: Get a list of the resourceConnection objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-list-resourceconnections?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-resourceconnections?view=graph-rest-1.0
       operationId: admin.windows.updates_ListResourceConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2482,12 +3959,12 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Create operationalInsightsConnection
       description: Create a new operationalInsightsConnection object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-1.0
       operationId: admin.windows.updates_CreateResourceConnections
       requestBody:
         description: New navigation property
@@ -2509,7 +3986,7 @@ paths:
   '/admin/windows/updates/resourceConnections/{resourceConnection-id}':
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get resourceConnections from admin
       description: Service connections to external resources such as analytics workspaces.
       operationId: admin.windows.updates_GetResourceConnections
@@ -2559,7 +4036,7 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property resourceConnections in admin
       operationId: admin.windows.updates_UpdateResourceConnections
       parameters:
@@ -2586,7 +4063,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property resourceConnections for admin
       operationId: admin.windows.updates_DeleteResourceConnections
       parameters:
@@ -2613,12 +4090,12 @@ paths:
   /admin/windows/updates/updatableAssets:
     get:
       tags:
-        - admin.windows
-      summary: List updatableAssetGroup resources
-      description: 'Get a list of updatableAssetGroup objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.updatableAssetGroup`, which inherits from updatableAsset.'
+        - admin.adminWindows
+      summary: List updatableAssets
+      description: 'Get a list of updatableAsset objects and their properties. Listing updatable assets returns **updatableAsset** resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-list-updatableassets-updatableassetgroup?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-updatableassets?view=graph-rest-1.0
       operationId: admin.windows.updates_ListUpdatableAssets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2674,12 +4151,12 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Create updatableAssetGroup
       description: Create a new updatableAssetGroup object. The **updatableAssetGroup** resource inherits from updatableAsset.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-post-updatableassets-updatableassetgroup?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-updatableassets-updatableassetgroup?view=graph-rest-1.0
       operationId: admin.windows.updates_CreateUpdatableAssets
       requestBody:
         description: New navigation property
@@ -2701,9 +4178,9 @@ paths:
   '/admin/windows/updates/updatableAssets/{updatableAsset-id}':
     get:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Get updatableAssets from admin
-      description: Assets registered with the deployment service that can receive updates. Read-only.
+      description: Assets registered with the deployment service that can receive updates.
       operationId: admin.windows.updates_GetUpdatableAssets
       parameters:
         - name: updatableAsset-id
@@ -2750,7 +4227,7 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Update the navigation property updatableAssets in admin
       operationId: admin.windows.updates_UpdateUpdatableAssets
       parameters:
@@ -2777,7 +4254,7 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - admin.windows
+        - admin.adminWindows
       summary: Delete navigation property updatableAssets for admin
       operationId: admin.windows.updates_DeleteUpdatableAssets
       parameters:
@@ -3085,6 +4562,585 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /admin/windows/updates/updatePolicies:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: List updatePolicy
+      description: Get a list of updatePolicy objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-updatepolicies?view=graph-rest-1.0
+      operationId: admin.windows.updates_ListUpdatePolicies
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - complianceChangeRules
+                - complianceChangeRules desc
+                - createdDateTime
+                - createdDateTime desc
+                - deploymentSettings
+                - deploymentSettings desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - complianceChangeRules
+                - createdDateTime
+                - deploymentSettings
+                - audience
+                - complianceChanges
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - audience
+                - complianceChanges
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.updatePolicyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create updatePolicy
+      description: Create a new updatePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-updatepolicies?view=graph-rest-1.0
+      operationId: admin.windows.updates_CreateUpdatePolicies
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get updatePolicies from admin
+      description: A collection of policies for approving the deployment of different content to an audience over time.
+      operationId: admin.windows.updates_GetUpdatePolicies
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - complianceChangeRules
+                - createdDateTime
+                - deploymentSettings
+                - audience
+                - complianceChanges
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - audience
+                - complianceChanges
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property updatePolicies in admin
+      operationId: admin.windows.updates_UpdateUpdatePolicies
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property updatePolicies for admin
+      operationId: admin.windows.updates_DeleteUpdatePolicies
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get audience from admin
+      description: Specifies the audience to target.
+      operationId: admin.windows.updates.updatePolicies_GetAudience
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - applicableContent
+                - exclusions
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - exclusions
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: List complianceChanges
+      description: Get a list of the complianceChange objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-list-compliancechanges?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies_ListComplianceChanges
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - isRevoked
+                - isRevoked desc
+                - revokedDateTime
+                - revokedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - isRevoked
+                - revokedDateTime
+                - updatePolicy
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - updatePolicy
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.complianceChangeCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create contentApproval
+      description: Create a new contentApproval object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-post-compliancechanges-contentapproval?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies_CreateComplianceChanges
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChange'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChange'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get complianceChanges from admin
+      description: Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
+      operationId: admin.windows.updates.updatePolicies_GetComplianceChanges
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: complianceChange-id
+          in: path
+          description: 'key: id of complianceChange'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: complianceChange
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - isRevoked
+                - revokedDateTime
+                - updatePolicy
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - updatePolicy
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChange'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property complianceChanges in admin
+      operationId: admin.windows.updates.updatePolicies_UpdateComplianceChanges
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: complianceChange-id
+          in: path
+          description: 'key: id of complianceChange'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: complianceChange
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChange'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property complianceChanges for admin
+      operationId: admin.windows.updates.updatePolicies_DeleteComplianceChanges
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: complianceChange-id
+          in: path
+          description: 'key: id of complianceChange'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: complianceChange
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}/updatePolicy':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get updatePolicy from admin
+      description: The policy this compliance change is a member of.
+      operationId: admin.windows.updates.updatePolicies.complianceChanges_GetUpdatePolicy
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: 'key: id of updatePolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: complianceChange-id
+          in: path
+          description: 'key: id of complianceChange'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: complianceChange
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - complianceChangeRules
+                - createdDateTime
+                - deploymentSettings
+                - audience
+                - complianceChanges
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - audience
+                - complianceChanges
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.browserSite:
@@ -3233,29 +5289,35 @@ components:
           additionalProperties:
             type: object
           description: A singleton entity which is used to specify IE mode site list metadata
-    microsoft.graph.windowsUpdates.windows:
+    microsoft.graph.adminWindows:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: windows
+        - title: adminWindows
           type: object
           properties:
             updates:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updates'
+              $ref: '#/components/schemas/microsoft.graph.adminWindowsUpdates'
           additionalProperties:
             type: object
-    microsoft.graph.windowsUpdates.updates:
+    microsoft.graph.adminWindowsUpdates:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: updates
+        - title: adminWindowsUpdates
           type: object
           properties:
             catalog:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalog'
+            deploymentAudiences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
+              description: The set of updatableAsset resources to which a deployment can apply.
+              x-ms-navigationProperty: true
             deployments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
-              description: Deployments created using the deployment service. Read-only.
+              description: Deployments created using the deployment service.
               x-ms-navigationProperty: true
             resourceConnections:
               type: array
@@ -3267,7 +5329,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
-              description: Assets registered with the deployment service that can receive updates. Read-only.
+              description: Assets registered with the deployment service that can receive updates.
+              x-ms-navigationProperty: true
+            updatePolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
+              description: A collection of policies for approving the deployment of different content to an audience over time.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -3294,7 +5362,7 @@ components:
             deployableUntilDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date on which the content is no longer available to deploy using the service. Read-only.
+              description: 'The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             displayName:
@@ -3304,34 +5372,8 @@ components:
             releaseDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The release date for the content. Read-only.
+              description: 'The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
-          additionalProperties:
-            type: object
-    microsoft.graph.windowsUpdates.deployment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: deployment
-          type: object
-          properties:
-            content:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployableContent'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time the deployment was created. Returned by default. Read-only.
-              format: date-time
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time the deployment was last modified. Returned by default. Read-only.
-              format: date-time
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentSettings'
-            state:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentState'
-            audience:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.deploymentAudience:
@@ -3340,6 +5382,11 @@ components:
         - title: deploymentAudience
           type: object
           properties:
+            applicableContent:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+              description: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
             exclusions:
               type: array
               items:
@@ -3367,7 +5414,34 @@ components:
         - feature
         - quality
         - unknownFutureValue
+        - driver
       type: string
+    microsoft.graph.windowsUpdates.deployment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deployment
+          type: object
+          properties:
+            content:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployableContent'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the deployment was created. Returned by default. Read-only.
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the deployment was last modified. Returned by default. Read-only.
+              format: date-time
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentSettings'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentState'
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
+          additionalProperties:
+            type: object
     microsoft.graph.windowsUpdates.resourceConnection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3376,6 +5450,61 @@ components:
           properties:
             state:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnectionState'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.updatePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: updatePolicy
+          type: object
+          properties:
+            complianceChangeRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChangeRule'
+              description: Rules for governing the automatic creation of compliance changes.
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the update policy was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            deploymentSettings:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentSettings'
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
+            complianceChanges:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChange'
+              description: Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.complianceChange:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceChange
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when a compliance change was created.
+              format: date-time
+              nullable: true
+            isRevoked:
+              type: boolean
+              description: 'True indicates that a compliance change is revoked, preventing further application. Revoking a compliance change is a final action.'
+              nullable: true
+            revokedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the compliance change was revoked.
+              format: date-time
+              nullable: true
+            updatePolicy:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -3663,6 +5792,19 @@ components:
           - value: unknownFutureValue
             description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shoudn''t be necessary.'
             name: unknownFutureValue
+    microsoft.graph.windowsUpdates.applicableContent:
+      title: applicableContent
+      type: object
+      properties:
+        matchedDevices:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+          description: Collection of devices and recommendations for applicable catalog content.
+        catalogEntry:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+      additionalProperties:
+        type: object
     microsoft.graph.windowsUpdates.deployableContent:
       title: deployableContent
       type: object
@@ -3672,18 +5814,24 @@ components:
       title: deploymentSettings
       type: object
       properties:
+        contentApplicability:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.contentApplicabilitySettings'
+        expedite:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.expediteSettings'
         monitoring:
           $ref: '#/components/schemas/microsoft.graph.windowsUpdates.monitoringSettings'
-        rollout:
-          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.rolloutSettings'
-        safeguard:
-          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardSettings'
+        schedule:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.scheduleSettings'
+        userExperience:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.userExperienceSettings'
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.deploymentState:
       title: deploymentState
       type: object
       properties:
+        effectiveValue:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentStateValue'
         reasons:
           type: array
           items:
@@ -3691,8 +5839,6 @@ components:
           description: Specifies the reasons the deployment has its state value. Read-only.
         requestedValue:
           $ref: '#/components/schemas/microsoft.graph.windowsUpdates.requestedDeploymentStateValue'
-        value:
-          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentStateValue'
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.resourceConnectionState:
@@ -3703,6 +5849,30 @@ components:
         - notFound
         - unknownFutureValue
       type: string
+    microsoft.graph.windowsUpdates.complianceChangeRule:
+      title: complianceChangeRule
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the rule was created.
+          format: date-time
+          nullable: true
+        lastEvaluatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the rule was last evaluated.
+          format: date-time
+          nullable: true
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the rule was last modified.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -3725,14 +5895,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.windowsUpdates.deploymentCollectionResponse:
-      title: Collection of deployment
+    microsoft.graph.windowsUpdates.deploymentAudienceCollectionResponse:
+      title: Collection of deploymentAudience
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -3751,6 +5921,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.deploymentCollectionResponse:
+      title: Collection of deployment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse:
       title: Collection of resourceConnection
       type: object
@@ -3764,17 +5947,80 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.updatePolicyCollectionResponse:
+      title: Collection of updatePolicy
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.complianceChangeCollectionResponse:
+      title: Collection of complianceChange
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChange'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.applicableContentDeviceMatch:
+      title: applicableContentDeviceMatch
+      type: object
+      properties:
+        deviceId:
+          type: string
+        recommendedBy:
+          type: array
+          items:
+            type: string
+          description: Collection of vendors who recommend the content.
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.contentApplicabilitySettings:
+      title: contentApplicabilitySettings
+      type: object
+      properties:
+        offerWhileRecommendedBy:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'Offer if the update is recommended by a vendor in the list, otherwise withhold the offer.'
+        safeguard:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardSettings'
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.expediteSettings:
+      title: expediteSettings
+      type: object
+      properties:
+        isExpedited:
+          type: boolean
+          description: True indicates that the deployment of the content is expedited.
           nullable: true
       additionalProperties:
         type: object
@@ -3789,44 +6035,43 @@ components:
           description: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or'.
       additionalProperties:
         type: object
-    microsoft.graph.windowsUpdates.rolloutSettings:
-      title: rolloutSettings
+    microsoft.graph.windowsUpdates.scheduleSettings:
+      title: scheduleSettings
       type: object
       properties:
-        devicesPerOffer:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.'
-          format: int32
-        durationBetweenOffers:
-          type: string
-          description: Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).
-          nullable: true
-        endDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.'
-          format: date-time
+        gradualRollout:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.gradualRolloutSettings'
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.'
+          description: 'The date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.windowsUpdates.safeguardSettings:
-      title: safeguardSettings
+    microsoft.graph.windowsUpdates.userExperienceSettings:
+      title: userExperienceSettings
       type: object
       properties:
-        disabledSafeguardProfiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardProfile'
-          description: List of safeguards to ignore per device.
+        daysUntilForcedReboot:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.'
+          format: int32
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.deploymentStateValue:
+      title: deploymentStateValue
+      enum:
+        - scheduled
+        - offering
+        - paused
+        - faulted
+        - archived
+        - unknownFutureValue
+      type: string
     microsoft.graph.windowsUpdates.deploymentStateReason:
       title: deploymentStateReason
       type: object
@@ -3840,16 +6085,6 @@ components:
       enum:
         - none
         - paused
-        - archived
-        - unknownFutureValue
-      type: string
-    microsoft.graph.windowsUpdates.deploymentStateValue:
-      title: deploymentStateValue
-      enum:
-        - scheduled
-        - offering
-        - paused
-        - faulted
         - archived
         - unknownFutureValue
       type: string
@@ -3874,6 +6109,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.safeguardSettings:
+      title: safeguardSettings
+      type: object
+      properties:
+        disabledSafeguardProfiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardProfile'
+          description: List of safeguards to ignore per device.
+      additionalProperties:
+        type: object
     microsoft.graph.windowsUpdates.monitoringRule:
       title: monitoringRule
       type: object
@@ -3891,12 +6137,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.windowsUpdates.safeguardProfile:
-      title: safeguardProfile
+    microsoft.graph.windowsUpdates.gradualRolloutSettings:
+      title: gradualRolloutSettings
       type: object
       properties:
-        category:
-          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardCategory'
+        durationBetweenOffers:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (1 day).
+          format: duration
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.deploymentStateReasonValue:
@@ -3929,6 +6179,14 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.windowsUpdates.safeguardProfile:
+      title: safeguardProfile
+      type: object
+      properties:
+        category:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardCategory'
+      additionalProperties:
+        type: object
     microsoft.graph.windowsUpdates.monitoringAction:
       title: monitoringAction
       enum:
@@ -3961,24 +6219,42 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntryCollectionResponse'
-    microsoft.graph.windowsUpdates.deploymentCollectionResponse:
+    microsoft.graph.windowsUpdates.deploymentAudienceCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentCollectionResponse'
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudienceCollectionResponse'
     microsoft.graph.windowsUpdates.updatableAssetCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
+    microsoft.graph.windowsUpdates.deploymentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentCollectionResponse'
     microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse'
+    microsoft.graph.windowsUpdates.updatePolicyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicyCollectionResponse'
+    microsoft.graph.windowsUpdates.complianceChangeCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChangeCollectionResponse'
   parameters:
     top:
       name: $top
