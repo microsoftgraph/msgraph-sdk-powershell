@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add an educationSubmissionResource to a submission resource list.
-Only the student assigned to the submission can perform this operation.
+Only teachers and students can perform this operation.
 The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
 To create a new file-based resource, upload the file to the resources folder associated with the submission.
 If the file doesn't exist or is not in that folder, the POST request will fail.
@@ -44,12 +44,23 @@ New-MgEducationMeAssignmentSubmissionResource -InputObject <IEducationIdentity>
 
 ## DESCRIPTION
 Add an educationSubmissionResource to a submission resource list.
-Only the student assigned to the submission can perform this operation.
+Only teachers and students can perform this operation.
 The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
 To create a new file-based resource, upload the file to the resources folder associated with the submission.
 If the file doesn't exist or is not in that folder, the POST request will fail.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Education
+
+Get-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+```
+
+This example shows how to use the New-MgEducationMeAssignmentSubmissionResource Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

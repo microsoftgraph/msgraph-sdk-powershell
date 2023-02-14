@@ -29,6 +29,17 @@ Get the metadata for the location where the files of a channel are stored.
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgTeamChannelFileFolder -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the Get-MgGroupTeamPrimaryChannelFileFolder Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -ExpandProperty
@@ -101,7 +112,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
 
 ## NOTES
 

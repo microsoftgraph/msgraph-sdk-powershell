@@ -204,6 +204,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.addApps:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action addApps
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_addApps
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.approveApps:
     post:
       tags:
@@ -1075,6 +1102,40 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.initiateOnDemandProactiveRemediation':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action initiateOnDemandProactiveRemediation
+      description: Perform On Demand Proactive Remediation
+      operationId: deviceManagement.comanagedDevices_initiateOnDemandProactiveRemediation
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scriptPolicyId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -3826,6 +3887,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport-id}/microsoft.graph.updateScopeTags':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action updateScopeTags
+      operationId: deviceManagement.groupPolicyMigrationReports_updateScopeTags
+      parameters:
+        - name: groupPolicyMigrationReport-id
+          in: path
+          description: 'key: id of groupPolicyMigrationReport'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyMigrationReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                roleScopeTagIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/groupPolicyMigrationReports/microsoft.graph.createMigrationReport:
     post:
       tags:
@@ -4774,6 +4881,40 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.initiateOnDemandProactiveRemediation':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action initiateOnDemandProactiveRemediation
+      description: Perform On Demand Proactive Remediation
+      operationId: deviceManagement.managedDevices_initiateOnDemandProactiveRemediation
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scriptPolicyId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -6352,7 +6493,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPortalNotificationAsSent
-      description: Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
+      description: 'Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-1.0
@@ -8640,6 +8781,78 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action getDeviceNonComplianceReport
       operationId: deviceManagement.reports_getDeviceNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDevicesWithoutCompliancePolicyReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDevicesWithoutCompliancePolicyReport
+      operationId: deviceManagement.reports_getDevicesWithoutCompliancePolicyReport
       requestBody:
         description: Action parameters
         content:
@@ -11884,6 +12097,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getSharedUseLicenseUsageReport
+      description: 'Get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.reports_getSharedUseLicenseUsageReport
       requestBody:
         description: Action parameters
@@ -13241,6 +13458,7 @@ components:
         - activateDeviceEsim
         - collectDiagnostics
         - initiateMobileDeviceManagementKeyRecovery
+        - initiateOnDemandProactiveRemediation
       type: string
       x-ms-enum:
         name: managedDeviceRemoteAction
@@ -13267,6 +13485,9 @@ components:
           - value: initiateMobileDeviceManagementKeyRecovery
             description: Name of action to initiate MDM key recovery
             name: initiateMobileDeviceManagementKeyRecovery
+          - value: initiateOnDemandProactiveRemediation
+            description: Name of action to initiate On Demand Proactive Remediation
+            name: initiateOnDemandProactiveRemediation
     microsoft.graph.bulkManagedDeviceActionResult:
       title: bulkManagedDeviceActionResult
       type: object
@@ -14315,11 +14536,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appLogDecryptionAlgorithm'
         decryptionKey:
           type: string
-          description: DecryptionKey as string
+          description: Decryption key that used to decrypt the log.
           nullable: true
         downloadUrl:
           type: string
-          description: Download SAS Url for completed AppLogUploadRequest
+          description: Download SAS (Shared Access Signature) Url for completed app log request.
           nullable: true
       additionalProperties:
         type: object
@@ -15916,7 +16137,18 @@ components:
       title: appLogDecryptionAlgorithm
       enum:
         - aes256
+        - unknownFutureValue
       type: string
+      x-ms-enum:
+        name: appLogDecryptionAlgorithm
+        modelAsString: false
+        values:
+          - value: aes256
+            description: decrypting using Aes256.
+            name: aes256
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementResourceAccessProfileIntent:
       title: deviceManagementResourceAccessProfileIntent
       enum:

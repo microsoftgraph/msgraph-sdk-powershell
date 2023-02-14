@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserTodoListTaskAttachment
 
 ## SYNOPSIS
-Get attachments from users
+A collection of file attachments for the task.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-Property <Strin
 ```
 
 ## DESCRIPTION
-Get attachments from users
+A collection of file attachments for the task.
 
 ## EXAMPLES
 

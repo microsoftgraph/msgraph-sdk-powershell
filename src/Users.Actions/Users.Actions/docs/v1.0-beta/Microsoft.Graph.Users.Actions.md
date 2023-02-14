@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 858d0128-7086-4d5d-b326-c605e352a9a4
+Module Guid: d579c3ad-f66b-4a27-935c-53e0d9dd108e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -62,36 +62,6 @@ Invoke action complete
 
 ### [Complete-MgUserOutlookTaskGroupTaskFolderTask](Complete-MgUserOutlookTaskGroupTaskFolderTask.md)
 Invoke action complete
-
-### [Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup](Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-
-### [Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject](Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject.md)
-Invoke action checkMemberObjects
-
-### [Confirm-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberGroup](Confirm-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-
-### [Confirm-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberObject](Confirm-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberObject.md)
-Invoke action checkMemberObjects
-
-### [Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup](Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-
-### [Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject](Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject.md)
-Invoke action checkMemberObjects
 
 ### [Confirm-MgUserChatPermissionGrantMemberGroup](Confirm-MgUserChatPermissionGrantMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -197,27 +167,6 @@ If **findMeetingTimes** cannot return any meeting suggestions, the response woul
 \nBased on this value, you can better adjust the parameters and call **findMeetingTimes** again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject.md)
-Invoke action getMemberObjects
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberGroup](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-
-### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberObject](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberObject.md)
-Invoke action getMemberObjects
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject.md)
-Invoke action getMemberObjects
 
 ### [Get-MgUserById](Get-MgUserById.md)
 Return the directory objects specified in a list of IDs.
@@ -452,6 +401,9 @@ Invoke action hasPayloadLinks
 
 ### [Invoke-MgInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery.md)
 Perform MDM key recovery and TPM attestation
+
+### [Invoke-MgInitiateUserManagedDeviceOnDemandProactiveRemediation](Invoke-MgInitiateUserManagedDeviceOnDemandProactiveRemediation.md)
+Perform On Demand Proactive Remediation
 
 ### [Invoke-MgInvalidateUserRefreshToken](Invoke-MgInvalidateUserRefreshToken.md)
 Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the **refreshTokensValidFromDateTime** user property to the current date-time.
@@ -928,13 +880,6 @@ Reboot a specific Cloud PC.
 ### [Restart-MgUserManagedDeviceNow](Restart-MgUserManagedDeviceNow.md)
 Reboot device
 
-### [Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
-Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
-If an item was accidentally deleted, you can fully restore the item.
-This is not applicable to security groups, which are deleted permanently.
-A recently deleted item will remain available for up to 30 days.
-After 30 days, the item is permanently deleted.
-
 ### [Restore-MgUserCloudPc](Restore-MgUserCloudPc.md)
 Restore a specific Cloud PC.
 Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
@@ -1066,7 +1011,8 @@ Set device name of the device.
 Set the availability and activity status in a presence session of an application for a user.
 
 ### [Set-MgUserPresenceStatusMessage](Set-MgUserPresenceStatusMessage.md)
-Invoke action setStatusMessage
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
 
 ### [Set-MgUserPresenceUserPreferredPresence](Set-MgUserPresenceUserPreferredPresence.md)
 Set the preferred availability and activity status for a user.

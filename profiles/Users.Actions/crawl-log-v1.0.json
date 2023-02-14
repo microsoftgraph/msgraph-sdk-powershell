@@ -5,51 +5,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.checkMemberGroups": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.checkMemberObjects": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.getMemberGroups": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.getMemberObjects": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.restore": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
     "/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}/microsoft.graph.disableSmsSignIn": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
     "/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}/microsoft.graph.enableSmsSignIn": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
-    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.checkMemberGroups": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
-    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.checkMemberObjects": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
-    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.getMemberGroups": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
-    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.getMemberObjects": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
-    },
-    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.restore": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
@@ -521,6 +481,22 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
+    "/users/{user-id}/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.softDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
     "/users/{user-id}/chats/{chat-id}/microsoft.graph.hideForUser": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
@@ -773,6 +749,22 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
+    "/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
     "/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/microsoft.graph.completeMigration": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
@@ -814,6 +806,22 @@
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
     "/users/{user-id}/joinedTeams/{team-id}/primaryChannel/members/microsoft.graph.add": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.softDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },

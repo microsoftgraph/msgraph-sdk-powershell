@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBusinessScenarioPlannerPlanConfigurationLocalization
 
 ## SYNOPSIS
-Create new navigation property to localizations for solutions
+Create a new plannerPlanConfigurationLocalization object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgBusinessScenarioPlannerPlanConfigurationLocalization -InputObject <IBookin
 ```
 
 ## DESCRIPTION
-Create new navigation property to localizations for solutions
+Create a new plannerPlanConfigurationLocalization object.
 
 ## EXAMPLES
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Buckets
-.
+Localized names for configured buckets in the plan configuration.
 To construct, please use Get-Help -Online and see NOTES section for BUCKETS properties and create a hash table.
 
 ```yaml
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -LanguageTag
-.
+The language code associated with the localized names in this object.
 
 ```yaml
 Type: System.String
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlanTitle
-.
+Localized title of the plan.
 
 ```yaml
 Type: System.String
@@ -227,15 +227,15 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphPlannerPlanConfigurationLocalization>: plannerPlanConfigurationLocalization
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Buckets <IMicrosoftGraphPlannerPlanConfigurationBucketLocalization[]>]`: 
-    - `[ExternalBucketId <String>]`: 
-    - `[Name <String>]`: 
-  - `[LanguageTag <String>]`: 
-  - `[PlanTitle <String>]`: 
+  - `[Buckets <IMicrosoftGraphPlannerPlanConfigurationBucketLocalization[]>]`: Localized names for configured buckets in the plan configuration.
+    - `[ExternalBucketId <String>]`: Application-specified identifier of the bucket.
+    - `[Name <String>]`: Name of the bucket.
+  - `[LanguageTag <String>]`: The language code associated with the localized names in this object.
+  - `[PlanTitle <String>]`: Localized title of the plan.
 
-BUCKETS <IMicrosoftGraphPlannerPlanConfigurationBucketLocalization[]>: .
-  - `[ExternalBucketId <String>]`: 
-  - `[Name <String>]`: 
+BUCKETS <IMicrosoftGraphPlannerPlanConfigurationBucketLocalization[]>: Localized names for configured buckets in the plan configuration.
+  - `[ExternalBucketId <String>]`: Application-specified identifier of the bucket.
+  - `[Name <String>]`: Name of the bucket.
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
   - `[BookingAppointmentId <String>]`: key: id of bookingAppointment

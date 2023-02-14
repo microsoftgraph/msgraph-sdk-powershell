@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
 
 ## SYNOPSIS
-Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
+Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
 ```
 
 ## DESCRIPTION
-Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
+Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.
 
 ## EXAMPLES
 
@@ -163,6 +163,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[EmbeddedSimActivationCodePoolId <String>]`: key: id of embeddedSIMActivationCodePool
   - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
   - `[GroupPolicyConfigurationId <String>]`: key: id of groupPolicyConfiguration
+  - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport
   - `[GroupPolicyUploadedDefinitionFileId <String>]`: key: id of groupPolicyUploadedDefinitionFile
   - `[IntuneBrandingProfileId <String>]`: key: id of intuneBrandingProfile
   - `[ManagedDeviceId <String>]`: key: id of managedDevice

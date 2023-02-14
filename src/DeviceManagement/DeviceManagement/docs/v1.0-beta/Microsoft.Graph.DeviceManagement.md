@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: 7a1e5ed1-a08a-4e97-bbd3-b56749668604
+Module Guid: 1b323c59-edc4-429b-a45a-92532273061a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -58,6 +58,11 @@ Device configuration states for this device.
 
 ### [Get-MgDeviceManagementComanagedDeviceDetectedApp](Get-MgDeviceManagementComanagedDeviceDetectedApp.md)
 All applications currently installed on the device
+
+### [Get-MgDeviceManagementComanagedDeviceHealthScriptState](Get-MgDeviceManagementComanagedDeviceHealthScriptState.md)
+Results of device health scripts that ran for this device.
+Default is empty list.
+This property is read-only.
 
 ### [Get-MgDeviceManagementComanagedDeviceLogCollectionRequest](Get-MgDeviceManagementComanagedDeviceLogCollectionRequest.md)
 List of log collection requests
@@ -340,6 +345,11 @@ All applications currently installed on the device
 ### [Get-MgDeviceManagementManagedDeviceEncryptionState](Get-MgDeviceManagementManagedDeviceEncryptionState.md)
 Encryption report for devices in this account
 
+### [Get-MgDeviceManagementManagedDeviceHealthScriptState](Get-MgDeviceManagementManagedDeviceHealthScriptState.md)
+Results of device health scripts that ran for this device.
+Default is empty list.
+This property is read-only.
+
 ### [Get-MgDeviceManagementManagedDeviceLogCollectionRequest](Get-MgDeviceManagementManagedDeviceLogCollectionRequest.md)
 List of log collection requests
 
@@ -577,6 +587,9 @@ User experience analytics device Startup Processes
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance](Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance.md)
 User experience analytics device Startup Process Performance
+
+### [Get-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent](Get-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent.md)
+The user experience analytics device events entity contains NRT device timeline event details.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity](Get-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity.md)
 User experience analytics devices without cloud identity.
@@ -1048,6 +1061,9 @@ Create new navigation property to userExperienceAnalyticsDeviceStartupProcesses 
 
 ### [New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance](New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance.md)
 Create new navigation property to userExperienceAnalyticsDeviceStartupProcessPerformance for deviceManagement
+
+### [New-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent](New-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent.md)
+Create new navigation property to userExperienceAnalyticsDeviceTimelineEvent for deviceManagement
 
 ### [New-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity](New-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity.md)
 Create new navigation property to userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
@@ -1582,6 +1598,9 @@ Delete navigation property userExperienceAnalyticsDeviceStartupProcesses for dev
 
 ### [Remove-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance](Remove-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance.md)
 Delete navigation property userExperienceAnalyticsDeviceStartupProcessPerformance for deviceManagement
+
+### [Remove-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent](Remove-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent.md)
+Delete navigation property userExperienceAnalyticsDeviceTimelineEvent for deviceManagement
 
 ### [Remove-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity](Remove-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity.md)
 Delete navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
@@ -2122,6 +2141,9 @@ Update the navigation property userExperienceAnalyticsDeviceStartupProcesses in 
 
 ### [Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance](Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance.md)
 Update the navigation property userExperienceAnalyticsDeviceStartupProcessPerformance in deviceManagement
+
+### [Update-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent](Update-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent.md)
+Update the navigation property userExperienceAnalyticsDeviceTimelineEvent in deviceManagement
 
 ### [Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity](Update-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity.md)
 Update the navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity in deviceManagement

@@ -53,6 +53,50 @@ Create new navigation property to chats for users
 
 ## EXAMPLES
 
+### Example 1: List all chats
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgUserChat -UserId $userId
+```
+
+This example shows how to use the New-MgUserChat Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: List all chats along with the members of each chat
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgUserChat -UserId $userId -ExpandProperty "members"
+```
+
+This example shows how to use the New-MgUserChat Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: List all chats in order of the most to least recent chat messages
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgChat -Sort "lastMessagePreview/createdDateTime desc"
+```
+
+This example shows how to use the New-MgUserChat Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: List chats along with the preview of the last message sent in the chat
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+Get-MgChat -ExpandProperty "lastMessagePreview"
+```
+
+This example shows how to use the New-MgUserChat Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -480,6 +524,7 @@ BODYPARAMETER <IMicrosoftGraphChat1>: chat
       - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
       - `[Id <String>]`: Read-only. Unique id of the attachment.
       - `[Name <String>]`: Name of the attachment.
+      - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
       - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -673,6 +718,7 @@ MESSAGES <IMicrosoftGraphChatMessage1[]>: A collection of all the messages in th
     - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
     - `[Id <String>]`: Read-only. Unique id of the attachment.
     - `[Name <String>]`: Name of the attachment.
+    - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
     - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -764,6 +810,7 @@ PINNEDMESSAGES <IMicrosoftGraphPinnedChatMessageInfo[]>: A collection of all the
       - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
       - `[Id <String>]`: Read-only. Unique id of the attachment.
       - `[Name <String>]`: Name of the attachment.
+      - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
       - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

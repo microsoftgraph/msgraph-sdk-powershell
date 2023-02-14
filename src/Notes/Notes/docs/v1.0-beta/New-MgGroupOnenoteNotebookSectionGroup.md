@@ -51,6 +51,18 @@ Create a new section group in the specified notebook.
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Notes
+
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteNotebookSectionGroup -UserId $userId -NotebookId $notebookId
+```
+
+This example shows how to use the New-MgGroupOnenoteNotebookSectionGroup Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties

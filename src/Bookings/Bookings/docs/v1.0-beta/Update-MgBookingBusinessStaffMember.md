@@ -17,7 +17,7 @@ Update the navigation property staffMembers in bookingBusinesses
 Update-MgBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMemberId <String>
  [-AdditionalProperties <Hashtable>] [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>]
  [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled]
- [-Role <String>] [-TimeZone <String>] [-UseBusinessHours]
+ [-MembershipStatus <String>] [-Role <String>] [-TimeZone <String>] [-UseBusinessHours]
  [-WorkingHours <IMicrosoftGraphBookingWorkHours1[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -37,9 +37,9 @@ Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity>
 ```
 Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-DisplayName <String>]
- [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled] [-Role <String>] [-TimeZone <String>]
- [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours1[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled] [-MembershipStatus <String>]
+ [-Role <String>] [-TimeZone <String>] [-UseBusinessHours]
+ [-WorkingHours <IMicrosoftGraphBookingWorkHours1[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -277,10 +277,25 @@ Accept wildcard characters: False
 ```
 
 ### -IsEmailNotificationEnabled
-.
+True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MembershipStatus
+bookingStaffMembershipStatus
+
+```yaml
+Type: System.String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -430,7 +445,8 @@ BODYPARAMETER <IMicrosoftGraphBookingStaffMember>: Represents a staff member who
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AvailabilityIsAffectedByPersonalCalendar <Boolean?>]`: True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
   - `[ColorIndex <Int32?>]`: Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
-  - `[IsEmailNotificationEnabled <Boolean?>]`: 
+  - `[IsEmailNotificationEnabled <Boolean?>]`: True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+  - `[MembershipStatus <String>]`: bookingStaffMembershipStatus
   - `[Role <String>]`: bookingStaffRole
   - `[TimeZone <String>]`: The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
   - `[UseBusinessHours <Boolean?>]`: True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.

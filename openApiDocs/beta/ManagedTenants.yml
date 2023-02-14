@@ -12503,8 +12503,10 @@ components:
       properties:
         displayName:
           type: string
+          description: Brief title for the page that the links directs to.
         url:
           type: string
+          description: The URL to the documentation or Azure portal page.
           nullable: true
       additionalProperties:
         type: object

@@ -33,6 +33,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.addApps": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.approveApps": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -146,6 +150,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.initiateMobileDeviceManagementKeyRecovery": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.initiateOnDemandProactiveRemediation": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -465,6 +473,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport-id}/microsoft.graph.updateScopeTags": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/groupPolicyMigrationReports/microsoft.graph.createMigrationReport": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -574,6 +586,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.initiateMobileDeviceManagementKeyRecovery": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.initiateOnDemandProactiveRemediation": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -918,6 +934,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/reports/microsoft.graph.getDeviceNonComplianceReport": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getDevicesWithoutCompliancePolicyReport": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },

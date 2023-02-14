@@ -15,8 +15,8 @@ Create new navigation property to servicePlans for deviceManagement
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementVirtualEndpointServicePlan [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
- [-Id <String>] [-RamInGb <Int32>] [-StorageInGb <Int32>] [-Type <String>] [-UserProfileInGb <Int32>]
- [-VCpuCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-RamInGb <Int32>] [-StorageInGb <Int32>] [-SupportedSolution <String>] [-Type <String>]
+ [-UserProfileInGb <Int32>] [-VCpuCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -117,6 +117,21 @@ Read-only.
 
 ```yaml
 Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SupportedSolution
+cloudPcManagementService
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -231,6 +246,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcServicePlan>: cloudPcServicePlan
   - `[DisplayName <String>]`: The name for the service plan. Read-only.
   - `[RamInGb <Int32?>]`: The size of the RAM in GB. Read-only.
   - `[StorageInGb <Int32?>]`: The size of the OS Disk in GB. Read-only.
+  - `[SupportedSolution <String>]`: cloudPcManagementService
   - `[Type <String>]`: cloudPcServicePlanType
   - `[UserProfileInGb <Int32?>]`: The size of the user profile disk in GB. Read-only.
   - `[VCpuCount <Int32?>]`: The number of vCPUs. Read-only.

@@ -465,6 +465,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[DeviceNameTemplate <String>]`: Sets a literal or name pattern.
     - `[DiagnosticsDisabled <Boolean?>]`: Indicates if diagnostics setup pane is disabled
     - `[DisplayToneSetupDisabled <Boolean?>]`: Indicates if displaytone setup screen is disabled
+    - `[EnabledSkipKeys <String[]>]`: enabledSkipKeys contains all the enabled skip keys as strings
     - `[IsDefault <Boolean?>]`: Indicates if this is the default profile
     - `[IsMandatory <Boolean?>]`: Indicates if the profile is mandatory
     - `[LocationDisabled <Boolean?>]`: Indicates if Location service setup pane is disabled
@@ -524,6 +525,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[DeviceNameTemplate <String>]`: Sets a literal or name pattern.
     - `[DiagnosticsDisabled <Boolean?>]`: Indicates if diagnostics setup pane is disabled
     - `[DisplayToneSetupDisabled <Boolean?>]`: Indicates if displaytone setup screen is disabled
+    - `[EnabledSkipKeys <String[]>]`: enabledSkipKeys contains all the enabled skip keys as strings
     - `[IsDefault <Boolean?>]`: Indicates if this is the default profile
     - `[IsMandatory <Boolean?>]`: Indicates if the profile is mandatory
     - `[LocationDisabled <Boolean?>]`: Indicates if Location service setup pane is disabled
@@ -552,18 +554,10 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[FileVaultDisabled <Boolean?>]`: Indicates if file vault is disabled
     - `[ICloudDiagnosticsDisabled <Boolean?>]`: Indicates if iCloud Analytics screen is disabled
     - `[ICloudStorageDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
-    - `[IsLocalPrimaryAccount <Boolean?>]`: Indicates whether the profile is a local account
-    - `[IsPrimaryUser <Boolean?>]`: Indicates whether the profile is a primary user
-    - `[LockPrimaryAccountInfo <Boolean?>]`: Indicates whether the primary account information will be locked
-    - `[ManagedLocalUserShortName <Boolean?>]`: Indicates whether or not this is the short name of the local account to manage
     - `[PassCodeDisabled <Boolean?>]`: Indicates if Passcode setup pane is disabled
-    - `[PrefillAccountInfo <Boolean?>]`: Indicates whether the user will prefill their account info
     - `[PrimaryAccountFullName <String>]`: Indicates what the full name for the primary account is
     - `[PrimaryAccountUserName <String>]`: Indicates what the account name for the primary account is
-    - `[PrimaryUser <String>]`: Indicates who the primary user of the profile is
-    - `[PrimaryUserFullName <String>]`: Indicates who the primary user of the profile is
     - `[RegistrationDisabled <Boolean?>]`: Indicates if registration is disabled
-    - `[RequestRequiresNetworkTether <Boolean?>]`: Indicates if the device is network-tethered to run the command
     - `[SetPrimarySetupAccountAsRegularUser <Boolean?>]`: Indicates whether Setup Assistant will set the account as a regular user
     - `[SkipPrimarySetupAccountCreation <Boolean?>]`: Indicates whether Setup Assistant will skip the user interface for primary account setup
     - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled
@@ -607,6 +601,7 @@ DEFAULTIOSENROLLMENTPROFILE <IMicrosoftGraphDepIosEnrollmentProfile>: The DepIOS
   - `[DeviceNameTemplate <String>]`: Sets a literal or name pattern.
   - `[DiagnosticsDisabled <Boolean?>]`: Indicates if diagnostics setup pane is disabled
   - `[DisplayToneSetupDisabled <Boolean?>]`: Indicates if displaytone setup screen is disabled
+  - `[EnabledSkipKeys <String[]>]`: enabledSkipKeys contains all the enabled skip keys as strings
   - `[IsDefault <Boolean?>]`: Indicates if this is the default profile
   - `[IsMandatory <Boolean?>]`: Indicates if the profile is mandatory
   - `[LocationDisabled <Boolean?>]`: Indicates if Location service setup pane is disabled
@@ -667,6 +662,7 @@ DEFAULTMACOSENROLLMENTPROFILE <IMicrosoftGraphDepMacOSEnrollmentProfile>: The De
   - `[DeviceNameTemplate <String>]`: Sets a literal or name pattern.
   - `[DiagnosticsDisabled <Boolean?>]`: Indicates if diagnostics setup pane is disabled
   - `[DisplayToneSetupDisabled <Boolean?>]`: Indicates if displaytone setup screen is disabled
+  - `[EnabledSkipKeys <String[]>]`: enabledSkipKeys contains all the enabled skip keys as strings
   - `[IsDefault <Boolean?>]`: Indicates if this is the default profile
   - `[IsMandatory <Boolean?>]`: Indicates if the profile is mandatory
   - `[LocationDisabled <Boolean?>]`: Indicates if Location service setup pane is disabled
@@ -695,18 +691,10 @@ DEFAULTMACOSENROLLMENTPROFILE <IMicrosoftGraphDepMacOSEnrollmentProfile>: The De
   - `[FileVaultDisabled <Boolean?>]`: Indicates if file vault is disabled
   - `[ICloudDiagnosticsDisabled <Boolean?>]`: Indicates if iCloud Analytics screen is disabled
   - `[ICloudStorageDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
-  - `[IsLocalPrimaryAccount <Boolean?>]`: Indicates whether the profile is a local account
-  - `[IsPrimaryUser <Boolean?>]`: Indicates whether the profile is a primary user
-  - `[LockPrimaryAccountInfo <Boolean?>]`: Indicates whether the primary account information will be locked
-  - `[ManagedLocalUserShortName <Boolean?>]`: Indicates whether or not this is the short name of the local account to manage
   - `[PassCodeDisabled <Boolean?>]`: Indicates if Passcode setup pane is disabled
-  - `[PrefillAccountInfo <Boolean?>]`: Indicates whether the user will prefill their account info
   - `[PrimaryAccountFullName <String>]`: Indicates what the full name for the primary account is
   - `[PrimaryAccountUserName <String>]`: Indicates what the account name for the primary account is
-  - `[PrimaryUser <String>]`: Indicates who the primary user of the profile is
-  - `[PrimaryUserFullName <String>]`: Indicates who the primary user of the profile is
   - `[RegistrationDisabled <Boolean?>]`: Indicates if registration is disabled
-  - `[RequestRequiresNetworkTether <Boolean?>]`: Indicates if the device is network-tethered to run the command
   - `[SetPrimarySetupAccountAsRegularUser <Boolean?>]`: Indicates whether Setup Assistant will set the account as a regular user
   - `[SkipPrimarySetupAccountCreation <Boolean?>]`: Indicates whether Setup Assistant will skip the user interface for primary account setup
   - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled

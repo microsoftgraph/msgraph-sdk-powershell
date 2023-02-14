@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -AnonymousJoinWebUrl
-.
+The URL of the meeting to join anonymously.
 
 ```yaml
 Type: System.String
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -Customers
-It lists down the customer properties for an appointment.
+A collection of customer properties for an appointment.
 An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment.
 Optional.
 
@@ -591,9 +591,9 @@ BODYPARAMETER <IMicrosoftGraphBookingAppointment>: Represents a booked appointme
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
-  - `[AnonymousJoinWebUrl <String>]`: 
+  - `[AnonymousJoinWebUrl <String>]`: The URL of the meeting to join anonymously.
   - `[CustomerTimeZone <String>]`: The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-  - `[Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]`: It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+  - `[Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]`: A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
   - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).

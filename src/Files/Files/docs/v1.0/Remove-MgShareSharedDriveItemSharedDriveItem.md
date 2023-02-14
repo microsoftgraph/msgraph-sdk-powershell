@@ -29,6 +29,39 @@ Delete entity from shares
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Files
+
+Get-MgShareSharedDriveItemSharedDriveItem -SharedDriveItemId $sharedDriveItemId
+```
+
+This example shows how to use the Remove-MgShareSharedDriveItemSharedDriveItem Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Files
+
+Get-MgShareDriveItem -SharedDriveItemId $sharedDriveItemId
+```
+
+This example shows how to use the Remove-MgShareSharedDriveItemSharedDriveItem Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Files
+
+Get-MgShareDriveItem -SharedDriveItemId $sharedDriveItemId -ExpandProperty "children"
+```
+
+This example shows how to use the Remove-MgShareSharedDriveItemSharedDriveItem Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -IfMatch
@@ -156,6 +189,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Retrieve role definitions for the directory provider
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.DeviceManagement.Enrolment
+
+Get-MgRoleManagementDirectoryRoleDefinition
 ```
+This example shows how to use the New-MgRoleManagementEntitlementManagementRoleDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Retrieve role definitions for the entitlement management provider
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.DeviceManagement.Enrolment
 
-{{ Add output here }}
+Get-MgRoleManagementEntitlementManagementRoleDefinition
 ```
-
-{{ Add description here }}
+This example shows how to use the New-MgRoleManagementEntitlementManagementRoleDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

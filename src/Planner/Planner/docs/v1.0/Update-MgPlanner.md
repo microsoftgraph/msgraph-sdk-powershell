@@ -205,7 +205,7 @@ BODYPARAMETER <IMicrosoftGraphPlanner1>: planner
   - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Returns a collection of the specified buckets
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the bucket.
-    - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+    - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
     - `[PlanId <String>]`: Plan ID to which the bucket belongs.
     - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -267,9 +267,9 @@ BODYPARAMETER <IMicrosoftGraphPlanner1>: planner
     - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
     - `[Container <IMicrosoftGraphPlannerPlanContainer>]`: plannerPlanContainer
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ContainerId <String>]`: The identifier of the resource that contains the plan.
+      - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
       - `[Type <String>]`: 
-      - `[Url <String>]`: The full canonical URL of the container.
+      - `[Url <String>]`: The full canonical URL of the container. Optional.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Details <IMicrosoftGraphPlannerPlanDetails>]`: plannerPlanDetails
@@ -312,7 +312,7 @@ BODYPARAMETER <IMicrosoftGraphPlanner1>: planner
 BUCKETS <IMicrosoftGraphPlannerBucket[]>: Read-only. Nullable. Returns a collection of the specified buckets
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Name <String>]`: Name of the bucket.
-  - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+  - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
   - `[PlanId <String>]`: Plan ID to which the bucket belongs.
   - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -375,7 +375,7 @@ PLANS <IMicrosoftGraphPlannerPlan[]>: Read-only. Nullable. Returns a collection 
   - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the bucket.
-    - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+    - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
     - `[PlanId <String>]`: Plan ID to which the bucket belongs.
     - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -434,9 +434,9 @@ PLANS <IMicrosoftGraphPlannerPlan[]>: Read-only. Nullable. Returns a collection 
       - `[Title <String>]`: Title of the task.
   - `[Container <IMicrosoftGraphPlannerPlanContainer>]`: plannerPlanContainer
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ContainerId <String>]`: The identifier of the resource that contains the plan.
+    - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
     - `[Type <String>]`: 
-    - `[Url <String>]`: The full canonical URL of the container.
+    - `[Url <String>]`: The full canonical URL of the container. Optional.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[CreatedDateTime <DateTime?>]`: Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Details <IMicrosoftGraphPlannerPlanDetails>]`: plannerPlanDetails

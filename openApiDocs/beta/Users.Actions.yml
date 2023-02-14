@@ -110,861 +110,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.checkMemberGroups':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_checkMemberGroups
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: microsoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                groupIds:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.checkMemberObjects':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action checkMemberObjects
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_checkMemberObjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: microsoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ids:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.getMemberGroups':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_getMemberGroups
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: microsoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.getMemberObjects':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action getMemberObjects
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_getMemberObjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: microsoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.restore':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: users.authentication.microsoftAuthenticatorMethods.device_restore
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: microsoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.checkMemberGroups':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_checkMemberGroups
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                groupIds:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.checkMemberObjects':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action checkMemberObjects
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_checkMemberObjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ids:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.getMemberGroups':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_getMemberGroups
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.getMemberObjects':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action getMemberObjects
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_getMemberObjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}/device/microsoft.graph.restore':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device_restore
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.checkMemberGroups':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_checkMemberGroups
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: windowsHelloForBusinessAuthenticationMethod-id
-          in: path
-          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                groupIds:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.checkMemberObjects':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action checkMemberObjects
-      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_checkMemberObjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: windowsHelloForBusinessAuthenticationMethod-id
-          in: path
-          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ids:
-                  type: array
-                  items:
-                    type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.getMemberGroups':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_getMemberGroups
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: windowsHelloForBusinessAuthenticationMethod-id
-          in: path
-          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.getMemberObjects':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action getMemberObjects
-      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_getMemberObjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: windowsHelloForBusinessAuthenticationMethod-id
-          in: path
-          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                securityEnabledOnly:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device/microsoft.graph.restore':
-    post:
-      tags:
-        - users.Actions
-      summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_restore
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: windowsHelloForBusinessAuthenticationMethod-id
-          in: path
-          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/users/{user-id}/calendar/calendarView/{event-id}/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -28962,6 +28107,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.initiateOnDemandProactiveRemediation':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action initiateOnDemandProactiveRemediation
+      description: Perform On Demand Proactive Remediation
+      operationId: users.managedDevices_initiateOnDemandProactiveRemediation
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scriptPolicyId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice':
     post:
       tags:
@@ -34557,6 +33744,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action setStatusMessage
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: users.presence_setStatusMessage
       parameters:
         - name: user-id
@@ -35115,20 +34306,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.directoryObject:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: directoryObject
-          type: object
-          properties:
-            deletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-              format: date-time
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.attachmentItem:
       title: attachmentItem
       type: object
@@ -35321,6 +34498,20 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcUserAccountType:
       title: cloudPcUserAccountType
       enum:
@@ -35508,15 +34699,15 @@ components:
       properties:
         driveId:
           type: string
-          description: Unique identifier of the drive instance that contains the item. Read-only.
+          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. See [drive][] resource for values.'
+          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.'
           nullable: true
         id:
           type: string
-          description: Unique identifier of the item in the drive. Read-only.
+          description: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
           nullable: true
         name:
           type: string
@@ -35534,7 +34725,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -36495,6 +35686,7 @@ components:
         - activateDeviceEsim
         - collectDiagnostics
         - initiateMobileDeviceManagementKeyRecovery
+        - initiateOnDemandProactiveRemediation
       type: string
       x-ms-enum:
         name: managedDeviceRemoteAction
@@ -36521,6 +35713,9 @@ components:
           - value: initiateMobileDeviceManagementKeyRecovery
             description: Name of action to initiate MDM key recovery
             name: initiateMobileDeviceManagementKeyRecovery
+          - value: initiateOnDemandProactiveRemediation
+            description: Name of action to initiate On Demand Proactive Remediation
+            name: initiateOnDemandProactiveRemediation
     microsoft.graph.bulkManagedDeviceActionResult:
       title: bulkManagedDeviceActionResult
       type: object
@@ -36559,11 +35754,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appLogDecryptionAlgorithm'
         decryptionKey:
           type: string
-          description: DecryptionKey as string
+          description: Decryption key that used to decrypt the log.
           nullable: true
         downloadUrl:
           type: string
-          description: Download SAS Url for completed AppLogUploadRequest
+          description: Download SAS (Shared Access Signature) Url for completed app log request.
           nullable: true
       additionalProperties:
         type: object
@@ -36712,6 +35907,9 @@ components:
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowParticipantsToChangeName:
+              type: boolean
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
@@ -36788,6 +35986,8 @@ components:
               description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -36802,6 +36002,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             virtualAppointment:
               $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
@@ -36897,6 +36099,7 @@ components:
         publishedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
           format: date-time
           nullable: true
       additionalProperties:
@@ -37031,15 +36234,6 @@ components:
           description: The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
       additionalProperties:
         type: object
-    microsoft.graph.entity:
-      title: entity
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier for an entity. Read-only.
-      additionalProperties:
-        type: object
     microsoft.graph.attachmentType:
       title: attachmentType
       enum:
@@ -37122,6 +36316,15 @@ components:
           nullable: true
         timeZone:
           $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
+      additionalProperties:
+        type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.publicError:
@@ -38090,7 +37293,7 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.'
+              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.'
               nullable: true
             notificationContentType:
               type: string
@@ -38098,7 +37301,7 @@ components:
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.'
+              description: 'Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
               nullable: true
             notificationUrl:
               type: string
@@ -38777,7 +37980,18 @@ components:
       title: appLogDecryptionAlgorithm
       enum:
         - aes256
+        - unknownFutureValue
       type: string
+      x-ms-enum:
+        name: appLogDecryptionAlgorithm
+        modelAsString: false
+        values:
+          - value: aes256
+            description: decrypting using Aes256.
+            name: aes256
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.operation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -38971,6 +38185,25 @@ components:
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.virtualAppointment:
@@ -41546,7 +40779,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.'
           nullable: true
         signInType:
           type: string
@@ -41688,7 +40921,7 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.'
+          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false.'
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
@@ -42851,7 +42084,7 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -43349,6 +42582,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
               $ref: '#/components/schemas/microsoft.graph.siteCollection'
+            informationProtection:
+              $ref: '#/components/schemas/microsoft.graph.informationProtection'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             columns:
@@ -43612,7 +42847,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -43724,7 +42959,7 @@ components:
               readOnly: true
             ethernetMacAddress:
               type: string
-              description: Ethernet MAC. This property is read-only.
+              description: 'Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             exchangeAccessState:
@@ -43987,6 +43222,12 @@ components:
               x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+            deviceHealthScriptStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptPolicyState'
+              description: Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
+              x-ms-navigationProperty: true
             logCollectionRequests:
               type: array
               items:
@@ -46460,7 +45701,7 @@ components:
       properties:
         customKeyIdentifier:
           type: string
-          description: Custom key identifier
+          description: 'A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.'
           format: base64url
           nullable: true
         displayName:
@@ -49232,6 +48473,84 @@ components:
           additionalProperties:
             type: object
           description: 'Device categories provides a way to organize your devices. Using device categories, company administrators can define their own categories that make sense to their company. These categories can then be applied to a device in the Intune Azure console or selected by a user during device enrollment. You can filter reports and create dynamic Azure Active Directory device groups based on device categories.'
+    microsoft.graph.deviceHealthScriptPolicyState:
+      title: deviceHealthScriptPolicyState
+      type: object
+      properties:
+        assignmentFilterIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of the assignment filter ids used for health script applicability evaluation
+        detectionState:
+          $ref: '#/components/schemas/microsoft.graph.runState'
+        deviceId:
+          type: string
+          description: The Intune device Id
+        deviceName:
+          type: string
+          description: Display name of the device
+          nullable: true
+        expectedStateUpdateDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The next timestamp of when the device health script is expected to execute
+          format: date-time
+          nullable: true
+        id:
+          type: string
+          description: Key of the device health script policy state is a concatenation of the MT sideCar policy Id and Intune device Id
+        lastStateUpdateDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The last timestamp of when the device health script executed
+          format: date-time
+        lastSyncDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The last time that Intune Managment Extension synced with Intune
+          format: date-time
+        osVersion:
+          type: string
+          description: Value of the OS Version in string
+          nullable: true
+        policyId:
+          type: string
+          description: The MT sideCar policy Id
+        policyName:
+          type: string
+          description: Display name of the device health script
+          nullable: true
+        postRemediationDetectionScriptError:
+          type: string
+          description: Error from the detection script after remediation
+          nullable: true
+        postRemediationDetectionScriptOutput:
+          type: string
+          description: Detection script output after remediation
+          nullable: true
+        preRemediationDetectionScriptError:
+          type: string
+          description: Error from the detection script before remediation
+          nullable: true
+        preRemediationDetectionScriptOutput:
+          type: string
+          description: Output of the detection script before remediation
+          nullable: true
+        remediationScriptError:
+          type: string
+          description: Error output of the remediation script
+          nullable: true
+        remediationState:
+          $ref: '#/components/schemas/microsoft.graph.remediationState'
+        userName:
+          type: string
+          description: Name of the user whom ran the device health script
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Contains properties for policy run state of the device health script.
     microsoft.graph.windowsProtectionState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -49501,7 +48820,7 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time at which the upload log request reached a terminal state
+              description: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
               format: date-time
               nullable: true
             customLogFolders:
@@ -49512,13 +48831,13 @@ components:
               description: List of log folders.
             errorMessage:
               type: string
-              description: Error message if any during the upload process
+              description: Indicates error message if any during the upload process.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
             type: object
-          description: AppLogCollectionRequest Entity.
+          description: Entity for AppLogCollectionRequest contains all logs values.
     microsoft.graph.payloadTypes:
       title: payloadTypes
       type: object
@@ -49590,6 +48909,10 @@ components:
             owner:
               type: string
               nullable: true
+            sharedWithContainers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerSharedWithContainer'
             title:
               type: string
               description: Required. Title of the plan.
@@ -49697,6 +49020,8 @@ components:
               description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskRecurrence'
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -50716,11 +50041,6 @@ components:
               description: The timestamp when this key was registered to the user.
               format: date-time
               nullable: true
-            creationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
             displayName:
               type: string
               description: The display name of the key as given by the user.
@@ -50775,20 +50095,24 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
               type: string
+              description: URI of the resource that the operation is performed on.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
             statusDetail:
               type: string
+              description: Details about the status of the operation.
               nullable: true
           additionalProperties:
             type: object
@@ -50880,10 +50204,6 @@ components:
               description: The date and time when the Temporary Access Pass was created.
               format: date-time
               nullable: true
-            isUsable:
-              type: boolean
-              description: The state of the authentication method that indicates whether it's currently usable by the user.
-              nullable: true
             isUsableOnce:
               type: boolean
               description: 'Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.'
@@ -50894,10 +50214,6 @@ components:
               type: integer
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
-              nullable: true
-            methodUsabilityReason:
-              type: string
-              description: 'Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -51911,11 +51227,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -53742,6 +53058,72 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+    microsoft.graph.runState:
+      title: runState
+      enum:
+        - unknown
+        - success
+        - fail
+        - scriptError
+        - pending
+        - notApplicable
+      type: string
+      description: Indicates the type of execution status of the device management script.
+      x-ms-enum:
+        name: runState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown result.
+            name: unknown
+          - value: success
+            description: Script is run successfully.
+            name: success
+          - value: fail
+            description: Script failed to run.
+            name: fail
+          - value: scriptError
+            description: Discovery script hits error.
+            name: scriptError
+          - value: pending
+            description: Script is pending to execute.
+            name: pending
+          - value: notApplicable
+            description: Script is not applicable for this device.
+            name: notApplicable
+    microsoft.graph.remediationState:
+      title: remediationState
+      enum:
+        - unknown
+        - skipped
+        - success
+        - remediationFailed
+        - scriptError
+        - unknownFutureValue
+      type: string
+      description: Indicates the type of execution status of the device management script.
+      x-ms-enum:
+        name: remediationState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown result.
+            name: unknown
+          - value: skipped
+            description: Remediation script execution was skipped
+            name: skipped
+          - value: success
+            description: Remediation script executed successfully and remediated the device state
+            name: success
+          - value: remediationFailed
+            description: Remediation script executed successfully but failed to remediated the device state
+            name: remediationFailed
+          - value: scriptError
+            description: Remediation script execution encountered and error or timed out
+            name: scriptError
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -54046,6 +53428,7 @@ components:
         - pending
         - completed
         - failed
+        - unknownFutureValue
       type: string
       description: AppLogUploadStatus
       x-ms-enum:
@@ -54053,14 +53436,17 @@ components:
         modelAsString: false
         values:
           - value: pending
-            description: Request is waiting to be processed or under processing
+            description: Default. Indicates that request is waiting to be processed or under processing.
             name: pending
           - value: completed
-            description: Request is completed with file uploaded to Azure blob for download.
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
             name: completed
           - value: failed
-            description: Request finished processing and in error state.
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
             name: failed
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.visualProperties:
       title: visualProperties
       type: object
@@ -54081,13 +53467,13 @@ components:
       properties:
         containerId:
           type: string
-          description: The identifier of the resource that contains the plan.
+          description: The identifier of the resource that contains the plan. Optional.
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
         url:
           type: string
-          description: The full canonical URL of the container.
+          description: The full canonical URL of the container. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -54104,6 +53490,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
       additionalProperties:
         type: object
+    microsoft.graph.plannerSharedWithContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
+        - title: plannerSharedWithContainer
+          type: object
+          properties:
+            accessLevel:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanAccessLevel'
+          additionalProperties:
+            type: object
     microsoft.graph.plannerBucket:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -54117,7 +53513,7 @@ components:
               description: Name of the bucket.
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.'
               nullable: true
             planId:
               type: string
@@ -54174,6 +53570,31 @@ components:
         - description
         - reference
       type: string
+    microsoft.graph.plannerTaskRecurrence:
+      title: plannerTaskRecurrence
+      type: object
+      properties:
+        nextInSeriesTaskId:
+          type: string
+          nullable: true
+        occurrenceId:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        previousInSeriesTaskId:
+          type: string
+          nullable: true
+        recurrenceStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        schedule:
+          $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
+        seriesId:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -56105,6 +55526,7 @@ components:
               format: date-time
             displayName:
               type: string
+              description: The name of the print job.
               nullable: true
             errorCode:
               maximum: 2147483647
@@ -56929,6 +56351,7 @@ components:
         - unknownFutureValue
         - roster
         - project
+        - driveItem
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -56936,6 +56359,14 @@ components:
         - none
         - external
         - publication
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerPlanAccessLevel:
+      title: plannerPlanAccessLevel
+      enum:
+        - readAccess
+        - readWriteAccess
+        - fullAccess
         - unknownFutureValue
       type: string
     microsoft.graph.plannerBucketCreation:
@@ -57092,6 +56523,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.plannerRecurrenceSchedule:
+      title: plannerRecurrenceSchedule
+      type: object
+      properties:
+        nextOccurrenceDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        patternStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerOrderHintsByAssignee:
       title: plannerOrderHintsByAssignee
       type: object
@@ -59272,7 +58721,7 @@ components:
       title: sectionEmphasisType
       enum:
         - none
-        - netural
+        - neutral
         - soft
         - strong
         - unknownFutureValue

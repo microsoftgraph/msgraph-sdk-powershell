@@ -1,18 +1,23 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Code snippet
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Teams
+
+$params = @{
+	MemberSettings = @{
+		AllowCreateUpdateChannels = $true
+	}
+	MessagingSettings = @{
+		AllowUserEditMessages = $true
+		AllowUserDeleteMessages = $true
+	}
+	FunSettings = @{
+		AllowGiphy = $true
+		GiphyContentRating = "strict"
+	}
+}
+
+Update-MgTeam -TeamId $teamId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Remove-MgTeam Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

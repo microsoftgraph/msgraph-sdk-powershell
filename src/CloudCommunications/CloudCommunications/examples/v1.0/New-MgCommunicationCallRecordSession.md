@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get session list
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.CloudCommunications
+
+Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId
 ```
+This example shows how to use the New-MgCommunicationCallRecordSession Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Get session list with segments
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.CloudCommunications
 
-{{ Add output here }}
+Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId -ExpandProperty "segments"
 ```
-
-{{ Add description here }}
+This example shows how to use the New-MgCommunicationCallRecordSession Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: efe9dee6-145c-484e-947c-cbff6498c3cf
+Module Guid: 2841c60f-1057-467f-8007-ab1645279169
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,6 +11,9 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.DeviceManagement.Actions Cmdlets
+### [Add-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingApp](Add-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingApp.md)
+Invoke action addApps
+
 ### [Add-MgDeviceManagementGroupPolicyUploadedDefinitionFileLanguageFile](Add-MgDeviceManagementGroupPolicyUploadedDefinitionFileLanguageFile.md)
 Invoke action addLanguageFiles
 
@@ -211,6 +214,9 @@ Invoke action getDeviceManagementIntentSettingsReport
 ### [Get-MgDeviceManagementReportDeviceNonComplianceReport](Get-MgDeviceManagementReportDeviceNonComplianceReport.md)
 Invoke action getDeviceNonComplianceReport
 
+### [Get-MgDeviceManagementReportDeviceWithoutCompliancePolicyReport](Get-MgDeviceManagementReportDeviceWithoutCompliancePolicyReport.md)
+Invoke action getDevicesWithoutCompliancePolicyReport
+
 ### [Get-MgDeviceManagementReportEncryptionReportForDevice](Get-MgDeviceManagementReportEncryptionReportForDevice.md)
 Invoke action getEncryptionReportForDevices
 
@@ -305,7 +311,7 @@ Get the daily aggregated remote connection reports, such as round trip time, ava
 Get the remote connection history records of a Cloud PC during a given period.
 
 ### [Get-MgDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport](Get-MgDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport.md)
-Invoke action getSharedUseLicenseUsageReport
+Get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
 
 ### [Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport](Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport.md)
 Get the total aggregated remote connection usage of a Cloud PC during a given time span.
@@ -428,8 +434,14 @@ Invoke action hasActiveDeployments
 ### [Invoke-MgInitiateDeviceManagementComanagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgInitiateDeviceManagementComanagedDeviceMobileDeviceManagementKeyRecovery.md)
 Perform MDM key recovery and TPM attestation
 
+### [Invoke-MgInitiateDeviceManagementComanagedDeviceOnDemandProactiveRemediation](Invoke-MgInitiateDeviceManagementComanagedDeviceOnDemandProactiveRemediation.md)
+Perform On Demand Proactive Remediation
+
 ### [Invoke-MgInitiateDeviceManagementManagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgInitiateDeviceManagementManagedDeviceMobileDeviceManagementKeyRecovery.md)
 Perform MDM key recovery and TPM attestation
+
+### [Invoke-MgInitiateDeviceManagementManagedDeviceOnDemandProactiveRemediation](Invoke-MgInitiateDeviceManagementManagedDeviceOnDemandProactiveRemediation.md)
+Perform On Demand Proactive Remediation
 
 ### [Invoke-MgLogoutDeviceManagementComanagedDeviceSharedAppleDeviceActiveUser](Invoke-MgLogoutDeviceManagementComanagedDeviceSharedAppleDeviceActiveUser.md)
 Logout shared Apple device active user
@@ -791,7 +803,7 @@ After the review is completed, use this API again to set the Cloud PC back to a 
 Set device name of the device.
 
 ### [Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent](Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent.md)
-Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
+Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.
 
 ### [Set-MgDeviceManagementResourceAccessProfile](Set-MgDeviceManagementResourceAccessProfile.md)
 Invoke action assign
@@ -907,6 +919,9 @@ Update the Proprietary Device Health Script
 
 ### [Update-MgDeviceManagementGroupPolicyConfigurationMultipleDefinitionValue](Update-MgDeviceManagementGroupPolicyConfigurationMultipleDefinitionValue.md)
 Invoke action updateDefinitionValues
+
+### [Update-MgDeviceManagementGroupPolicyMigrationReportScopeTag](Update-MgDeviceManagementGroupPolicyMigrationReportScopeTag.md)
+Invoke action updateScopeTags
 
 ### [Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileLanguageFile](Update-MgDeviceManagementGroupPolicyUploadedDefinitionFileLanguageFile.md)
 Invoke action updateLanguageFiles

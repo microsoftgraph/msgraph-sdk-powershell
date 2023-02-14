@@ -15,18 +15,18 @@ Create new navigation property to recommendations for directory
 ### CreateExpanded (Default)
 ```
 New-MgDirectoryRecommendation [-ActionSteps <IMicrosoftGraphActionStep[]>] [-AdditionalProperties <Hashtable>]
- [-Benefits <String>] [-Category <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
- [-Id <String>] [-ImpactedResources <IMicrosoftGraphRecommendationResource[]>]
- [-ImpactStartDateTime <DateTime>] [-ImpactType <String>] [-Insights <String>]
- [-LastCheckedDateTime <DateTime>] [-LastModifiedBy <String>] [-LastModifiedDateTime <DateTime>]
- [-PostponeUntilDateTime <DateTime>] [-Priority <String>] [-Status <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Benefits <String>] [-Category <String>] [-CreatedDateTime <DateTime>] [-CurrentScore <Double>]
+ [-DisplayName <String>] [-FeatureAreas <String[]>] [-Id <String>]
+ [-ImpactedResources <IMicrosoftGraphImpactedResource[]>] [-ImpactStartDateTime <DateTime>]
+ [-ImpactType <String>] [-Insights <String>] [-LastCheckedDateTime <DateTime>] [-LastModifiedBy <String>]
+ [-LastModifiedDateTime <DateTime>] [-MaxScore <Double>] [-PostponeUntilDateTime <DateTime>]
+ [-Priority <String>] [-RecommendationType <String>] [-RemediationImpact <String>] [-Status <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryRecommendation -BodyParameter <IMicrosoftGraphRecommendation> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgDirectoryRecommendation -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,7 +37,7 @@ Create new navigation property to recommendations for directory
 ## PARAMETERS
 
 ### -ActionSteps
-.
+List of actions to take to complete a recommendation.
 To construct, please use Get-Help -Online and see NOTES section for ACTIONSTEPS properties and create a hash table.
 
 ```yaml
@@ -68,7 +68,8 @@ Accept wildcard characters: False
 ```
 
 ### -Benefits
-.
+An explanation of why completing the recommendation will benefit you.
+Corresponds to the Value section of a recommendation shown in the Azure AD portal.
 
 ```yaml
 Type: System.String
@@ -84,10 +85,9 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 recommendation
-To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendation
+Type: System.Collections.Hashtable
 Parameter Sets: Create
 Aliases:
 
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The date and time when the recommendation was detected as applicable to your directory.
 
 ```yaml
 Type: System.DateTime
@@ -128,11 +128,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CurrentScore
+The number of points the tenant has attained.
+Only applies to recommendations with category set to identitySecureScore.
+
+```yaml
+Type: System.Double
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DisplayName
-.
+The title of the recommendation.
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FeatureAreas
+The directory feature that the recommendation is related to.
+
+```yaml
+Type: System.String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -160,11 +191,11 @@ Accept wildcard characters: False
 ```
 
 ### -ImpactedResources
-.
+The list of directory objects associated with the recommendation.
 To construct, please use Get-Help -Online and see NOTES section for IMPACTEDRESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendationResource[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImpactedResource[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -176,7 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -ImpactStartDateTime
-.
+The future date and time when a recommendation should be completed.
 
 ```yaml
 Type: System.DateTime
@@ -191,7 +222,9 @@ Accept wildcard characters: False
 ```
 
 ### -ImpactType
-.
+Indicates the scope of impact of a recommendation.
+Tenant level indicates that the recommendation impacts the whole tenant.
+Other possible values include users, applications.
 
 ```yaml
 Type: System.String
@@ -206,7 +239,8 @@ Accept wildcard characters: False
 ```
 
 ### -Insights
-.
+Describes why a recommendation uniquely applies to your directory.
+Corresponds to the Description section of a recommendation shown in the Azure AD portal.
 
 ```yaml
 Type: System.String
@@ -221,7 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastCheckedDateTime
-.
+The most recent date and time a recommendation was deemed applicable to your directory.
 
 ```yaml
 Type: System.DateTime
@@ -236,7 +270,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedBy
-.
+Name of the user who last updated the status of the recommendation.
 
 ```yaml
 Type: System.String
@@ -251,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+The date and time the status of a recommendation was last updated.
 
 ```yaml
 Type: System.DateTime
@@ -265,8 +299,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MaxScore
+The maximum number of points attainable.
+Only applies to recommendations with category set to identitySecureScore.
+
+```yaml
+Type: System.Double
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PostponeUntilDateTime
-.
+The future date and time when the status of a postponed recommendation will be active again.
 
 ```yaml
 Type: System.DateTime
@@ -282,6 +332,37 @@ Accept wildcard characters: False
 
 ### -Priority
 recommendationPriority
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RecommendationType
+recommendationType
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemediationImpact
+Description of the impact on users of the remediation.
+Only applies to recommendations with category set to identitySecureScore.
 
 ```yaml
 Type: System.String
@@ -346,7 +427,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecommendation
+### System.Collections.Hashtable
 
 ## OUTPUTS
 
@@ -361,66 +442,32 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACTIONSTEPS <IMicrosoftGraphActionStep[]>: .
+ACTIONSTEPS <IMicrosoftGraphActionStep[]>: List of actions to take to complete a recommendation.
   - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: 
-    - `[Url <String>]`: 
-  - `[StepNumber <Int64?>]`: 
-  - `[Text <String>]`: 
+    - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+    - `[Url <String>]`: The URL to the documentation or Azure portal page.
+  - `[StepNumber <Int64?>]`: Indicates the position for this action in the order of the collection of actions to be taken.
+  - `[Text <String>]`: Friendly description of the action to take.
 
-BODYPARAMETER <IMicrosoftGraphRecommendation>: recommendation
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+IMPACTEDRESOURCES <IMicrosoftGraphImpactedResource[]>: The list of directory objects associated with the recommendation.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: 
-    - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: 
-      - `[Url <String>]`: 
-    - `[StepNumber <Int64?>]`: 
-    - `[Text <String>]`: 
-  - `[Benefits <String>]`: 
-  - `[Category <String>]`: recommendationCategory
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[DisplayName <String>]`: 
-  - `[ImpactStartDateTime <DateTime?>]`: 
-  - `[ImpactType <String>]`: 
-  - `[ImpactedResources <IMicrosoftGraphRecommendationResource[]>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[AddedDateTime <DateTime?>]`: 
-    - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
-    - `[ApiUrl <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[Owner <String>]`: 
-    - `[PortalUrl <String>]`: 
-    - `[Rank <Int32?>]`: 
-    - `[RecommendationId <String>]`: 
-    - `[ResourceType <String>]`: 
-    - `[Status <String>]`: recommendationStatus
-  - `[Insights <String>]`: 
-  - `[LastCheckedDateTime <DateTime?>]`: 
-  - `[LastModifiedBy <String>]`: 
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[PostponeUntilDateTime <DateTime?>]`: 
-  - `[Priority <String>]`: recommendationPriority
+  - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
+  - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
+    - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+    - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+  - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
+  - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
+  - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
+  - `[LastModifiedDateTime <String>]`: The date and time when the status was last updated.
+  - `[Owner <String>]`: The user responsible for maintaining the resource.
+  - `[PortalUrl <String>]`: The URL link to the corresponding Azure AD portal page of the resource.
+  - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed impactedResource will be active again.
+  - `[Rank <Int32?>]`: Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
+  - `[RecommendationId <String>]`: The unique identifier of the recommendation that the resource is associated with.
+  - `[ResourceType <String>]`: Indicates the type of Azure AD resource. Examples include user, application.
   - `[Status <String>]`: recommendationStatus
-
-IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AddedDateTime <DateTime?>]`: 
-  - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-    - `[Key <String>]`: Key.
-    - `[Value <String>]`: Value.
-  - `[ApiUrl <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[Owner <String>]`: 
-  - `[PortalUrl <String>]`: 
-  - `[Rank <Int32?>]`: 
-  - `[RecommendationId <String>]`: 
-  - `[ResourceType <String>]`: 
-  - `[Status <String>]`: recommendationStatus
+  - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
 
 ## RELATED LINKS
 

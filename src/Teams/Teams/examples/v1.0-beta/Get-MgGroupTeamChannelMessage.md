@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Code snippet
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -Top 3
 ```
+This example shows how to use the Get-MgGroupTeamChannelMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Code snippet
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Teams
 
-{{ Add output here }}
+Get-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -Top 1 -ExpandProperty "replies"
 ```
-
-{{ Add description here }}
+This example shows how to use the Get-MgGroupTeamChannelMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

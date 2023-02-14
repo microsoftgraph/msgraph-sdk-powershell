@@ -89,6 +89,78 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
     },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssetsById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssetsById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudience": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
+    "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudienceById": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
     "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"

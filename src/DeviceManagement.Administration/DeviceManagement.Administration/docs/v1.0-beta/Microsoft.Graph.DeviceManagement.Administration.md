@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: 87380e30-9e41-4076-a5a9-176c238a0e71
+Module Guid: ce186d0a-752e-4edd-8b54-c53385bb0424
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -431,10 +431,15 @@ Create a new cloudPcProvisioningPolicy object.
 Create new navigation property to assignments for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointReportExportJob](New-MgDeviceManagementVirtualEndpointReportExportJob.md)
-Create a new cloudPcExportJob object.
+Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
+Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
+When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
 
 ### [New-MgDeviceManagementVirtualEndpointServicePlan](New-MgDeviceManagementVirtualEndpointServicePlan.md)
 Create new navigation property to servicePlans for deviceManagement
+
+### [New-MgDeviceManagementVirtualEndpointSharedUseServicePlan](New-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
+Create new navigation property to sharedUseServicePlans for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointSnapshot](New-MgDeviceManagementVirtualEndpointSnapshot.md)
 Create new navigation property to snapshots for deviceManagement
@@ -621,6 +626,9 @@ Delete navigation property exportJobs for deviceManagement
 
 ### [Remove-MgDeviceManagementVirtualEndpointServicePlan](Remove-MgDeviceManagementVirtualEndpointServicePlan.md)
 Delete navigation property servicePlans for deviceManagement
+
+### [Remove-MgDeviceManagementVirtualEndpointSharedUseServicePlan](Remove-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
+Delete navigation property sharedUseServicePlans for deviceManagement
 
 ### [Remove-MgDeviceManagementVirtualEndpointSnapshot](Remove-MgDeviceManagementVirtualEndpointSnapshot.md)
 Delete navigation property snapshots for deviceManagement
@@ -810,6 +818,9 @@ Update the navigation property exportJobs in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointServicePlan](Update-MgDeviceManagementVirtualEndpointServicePlan.md)
 Update the navigation property servicePlans in deviceManagement
+
+### [Update-MgDeviceManagementVirtualEndpointSharedUseServicePlan](Update-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
+Update the navigation property sharedUseServicePlans in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointSnapshot](Update-MgDeviceManagementVirtualEndpointSnapshot.md)
 Update the navigation property snapshots in deviceManagement

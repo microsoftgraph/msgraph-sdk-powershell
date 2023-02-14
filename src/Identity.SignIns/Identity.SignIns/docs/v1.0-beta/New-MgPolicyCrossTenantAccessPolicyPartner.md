@@ -15,10 +15,12 @@ Create a new partner configuration in a cross-tenant access policy.
 ### CreateExpanded (Default)
 ```
 New-MgPolicyCrossTenantAccessPolicyPartner [-AdditionalProperties <Hashtable>]
+ [-AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]
  [-B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BCollaborationOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BDirectConnectInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BDirectConnectOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
+ [-IdentitySynchronization <IMicrosoftGraphCrossTenantIdentitySyncPolicyPartner>]
  [-InboundTrust <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>] [-IsServiceProvider]
  [-TenantId <String>] [-TenantRestrictions <IMicrosoftGraphCrossTenantAccessPolicyTenantRestrictions>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -77,6 +79,22 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AutomaticUserConsentSettings
+inboundOutboundPolicyConfiguration
+To construct, please use Get-Help -Online and see NOTES section for AUTOMATICUSERCONSENTSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInboundOutboundPolicyConfiguration
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -164,6 +182,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -IdentitySynchronization
+crossTenantIdentitySyncPolicyPartner
+To construct, please use Get-Help -Online and see NOTES section for IDENTITYSYNCHRONIZATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantIdentitySyncPolicyPartner
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -282,6 +316,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+AUTOMATICUSERCONSENTSETTINGS <IMicrosoftGraphInboundOutboundPolicyConfiguration>: inboundOutboundPolicyConfiguration
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
+  - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
+
 B2BCOLLABORATIONINBOUND <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>: crossTenantAccessPolicyB2BSetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration
@@ -324,6 +363,10 @@ B2BDIRECTCONNECTOUTBOUND <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>: cro
 
 BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1>: crossTenantAccessPolicyConfigurationPartner
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
+    - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
   - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration
@@ -336,6 +379,13 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1>: cro
   - `[B2BCollaborationOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
   - `[B2BDirectConnectInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
   - `[B2BDirectConnectOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
+  - `[IdentitySynchronization <IMicrosoftGraphCrossTenantIdentitySyncPolicyPartner>]`: crossTenantIdentitySyncPolicyPartner
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DisplayName <String>]`: Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD tenant to easily identify the policy. Optional.
+    - `[TenantId <String>]`: Tenant identifier for the partner Azure AD organization. Read-only.
+    - `[UserSyncInbound <IMicrosoftGraphCrossTenantUserSyncInbound>]`: crossTenantUserSyncInbound
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsSyncAllowed <Boolean?>]`: Defines whether user objects should be synchronized from the partner tenant. If set to false, any current user synchronization from the source tenant to the target tenant will stop. There is no impact on existing users that have already been synchronized.
   - `[InboundTrust <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>]`: crossTenantAccessPolicyInboundTrust
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsCompliantDeviceAccepted <Boolean?>]`: Specifies whether compliant devices from external Azure AD organizations are trusted.
@@ -351,6 +401,14 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1>: cro
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Mode <String>]`: crossTenantAccessPolicyTargetConfigurationAccessType
       - `[Rule <String>]`: 
+
+IDENTITYSYNCHRONIZATION <IMicrosoftGraphCrossTenantIdentitySyncPolicyPartner>: crossTenantIdentitySyncPolicyPartner
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[DisplayName <String>]`: Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD tenant to easily identify the policy. Optional.
+  - `[TenantId <String>]`: Tenant identifier for the partner Azure AD organization. Read-only.
+  - `[UserSyncInbound <IMicrosoftGraphCrossTenantUserSyncInbound>]`: crossTenantUserSyncInbound
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsSyncAllowed <Boolean?>]`: Defines whether user objects should be synchronized from the partner tenant. If set to false, any current user synchronization from the source tenant to the target tenant will stop. There is no impact on existing users that have already been synchronized.
 
 INBOUNDTRUST <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>: crossTenantAccessPolicyInboundTrust
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

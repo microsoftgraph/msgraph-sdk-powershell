@@ -28,6 +28,62 @@ Delete entity from drives
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Files
+
+# A UPN can also be used as -UserId.
+Get-MgUserDefaultDrive -UserId $userId
+```
+
+This example shows how to use the Remove-MgDrive Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Files
+
+Get-MgUserDefaultDrive -UserId $userId
+```
+
+This example shows how to use the Remove-MgDrive Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Files
+
+Get-MgGroupDefaultDrive -GroupId $groupId
+```
+
+This example shows how to use the Remove-MgDrive Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Sites
+
+Get-MgSiteDefaultDrive -SiteId $siteId
+```
+
+This example shows how to use the Remove-MgDrive Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Files
+
+Get-MgDrive -DriveId $driveId
+```
+
+This example shows how to use the Remove-MgDrive Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -DriveId
@@ -155,6 +211,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

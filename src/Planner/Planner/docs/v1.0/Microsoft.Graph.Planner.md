@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: e7dc21ba-3b04-4110-b4c6-e468c2ec8075
+Module Guid: 84ae3966-3cd2-4cd4-82b4-9875e86022a9
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -59,7 +59,7 @@ Nullable.
 Returns a collection of the specified tasks
 
 ### [Get-MgPlannerTaskAssignedToTaskBoardFormat](Get-MgPlannerTaskAssignedToTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
 
 ### [Get-MgPlannerTaskBucketTaskBoardFormat](Get-MgPlannerTaskBucketTaskBoardFormat.md)
 Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
@@ -114,7 +114,7 @@ Delete navigation property progressTaskBoardFormat for planner
 Update the navigation property planner in groups
 
 ### [Update-MgGroupPlannerPlanDetail](Update-MgGroupPlannerPlanDetail.md)
-Update the properties of **plannerplandetails** object.
+Update the navigation property details in groups
 
 ### [Update-MgPlanner](Update-MgPlanner.md)
 Update planner
@@ -126,22 +126,22 @@ Update the navigation property buckets in planner
 Update the navigation property plans in planner
 
 ### [Update-MgPlannerPlanDetail](Update-MgPlannerPlanDetail.md)
-Update the properties of **plannerplandetails** object.
+Update the navigation property details in planner
 
 ### [Update-MgPlannerTask](Update-MgPlannerTask.md)
 Update the navigation property tasks in planner
 
 ### [Update-MgPlannerTaskAssignedToTaskBoardFormat](Update-MgPlannerTaskAssignedToTaskBoardFormat.md)
-Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+Update the navigation property assignedToTaskBoardFormat in planner
 
 ### [Update-MgPlannerTaskBucketTaskBoardFormat](Update-MgPlannerTaskBucketTaskBoardFormat.md)
-Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+Update the navigation property bucketTaskBoardFormat in planner
 
 ### [Update-MgPlannerTaskDetail](Update-MgPlannerTaskDetail.md)
-Update the properties of **plannerTaskDetails** object.
+Update the navigation property details in planner
 
 ### [Update-MgPlannerTaskProgressTaskBoardFormat](Update-MgPlannerTaskProgressTaskBoardFormat.md)
-Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+Update the navigation property progressTaskBoardFormat in planner
 
 ### [Update-MgUserPlanner](Update-MgUserPlanner.md)
 Update the navigation property planner in users

@@ -285,6 +285,10 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicy1>: crossTenantAccessPolicy
   - `[Default <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1>]`: crossTenantAccessPolicyConfigurationDefault
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
+      - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
     - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration
@@ -312,10 +316,18 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicy1>: crossTenantAccessPolicy
         - `[Mode <String>]`: crossTenantAccessPolicyTargetConfigurationAccessType
         - `[Rule <String>]`: 
   - `[Partners <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1[]>]`: Defines partner-specific configurations for external Azure Active Directory organizations.
+    - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
     - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[B2BCollaborationOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[B2BDirectConnectInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[B2BDirectConnectOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
+    - `[IdentitySynchronization <IMicrosoftGraphCrossTenantIdentitySyncPolicyPartner>]`: crossTenantIdentitySyncPolicyPartner
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DisplayName <String>]`: Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD tenant to easily identify the policy. Optional.
+      - `[TenantId <String>]`: Tenant identifier for the partner Azure AD organization. Read-only.
+      - `[UserSyncInbound <IMicrosoftGraphCrossTenantUserSyncInbound>]`: crossTenantUserSyncInbound
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsSyncAllowed <Boolean?>]`: Defines whether user objects should be synchronized from the partner tenant. If set to false, any current user synchronization from the source tenant to the target tenant will stop. There is no impact on existing users that have already been synchronized.
     - `[InboundTrust <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>]`: crossTenantAccessPolicyInboundTrust
     - `[IsServiceProvider <Boolean?>]`: Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
     - `[TenantId <String>]`: The tenant identifier for the partner Azure AD organization. Read-only. Key.
@@ -324,6 +336,10 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicy1>: crossTenantAccessPolicy
 DEFAULT <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1>: crossTenantAccessPolicyConfigurationDefault
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
+    - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
   - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration
@@ -352,6 +368,10 @@ DEFAULT <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1>: crossTena
       - `[Rule <String>]`: 
 
 PARTNERS <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1[]>: Defines partner-specific configurations for external Azure Active Directory organizations.
+  - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
+    - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
   - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration
@@ -364,6 +384,13 @@ PARTNERS <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1[]>: Define
   - `[B2BCollaborationOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
   - `[B2BDirectConnectInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
   - `[B2BDirectConnectOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
+  - `[IdentitySynchronization <IMicrosoftGraphCrossTenantIdentitySyncPolicyPartner>]`: crossTenantIdentitySyncPolicyPartner
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DisplayName <String>]`: Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD tenant to easily identify the policy. Optional.
+    - `[TenantId <String>]`: Tenant identifier for the partner Azure AD organization. Read-only.
+    - `[UserSyncInbound <IMicrosoftGraphCrossTenantUserSyncInbound>]`: crossTenantUserSyncInbound
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsSyncAllowed <Boolean?>]`: Defines whether user objects should be synchronized from the partner tenant. If set to false, any current user synchronization from the source tenant to the target tenant will stop. There is no impact on existing users that have already been synchronized.
   - `[InboundTrust <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>]`: crossTenantAccessPolicyInboundTrust
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsCompliantDeviceAccepted <Boolean?>]`: Specifies whether compliant devices from external Azure AD organizations are trusted.

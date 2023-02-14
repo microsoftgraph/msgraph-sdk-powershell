@@ -43,6 +43,18 @@ Add a conversationMember to a chat.
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+# A UPN can also be used as -UserId.
+Get-MgUserChatMember -UserId $userId -ChatId $chatId
+```
+
+This example shows how to use the New-MgUserChatMember Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties

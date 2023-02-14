@@ -416,8 +416,8 @@ ACCEPTEDFOR <IMicrosoftGraphManagedTenantsManagementTemplateStep>: managementTem
     - `[Description <String>]`: The description for the management template. Optional. Read-only.
     - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
     - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
-      - `[DisplayName <String>]`: 
-      - `[Url <String>]`: 
+      - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+      - `[Url <String>]`: The URL to the documentation or Azure portal page.
     - `[LastActionByUserId <String>]`: 
     - `[LastActionDateTime <DateTime?>]`: 
     - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
@@ -480,8 +480,8 @@ BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>: mana
       - `[Description <String>]`: The description for the management template. Optional. Read-only.
       - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
       - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
-        - `[DisplayName <String>]`: 
-        - `[Url <String>]`: 
+        - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+        - `[Url <String>]`: The URL to the documentation or Azure portal page.
       - `[LastActionByUserId <String>]`: 
       - `[LastActionDateTime <DateTime?>]`: 
       - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
@@ -577,8 +577,8 @@ DEPLOYMENTS <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>: .
         - `[Description <String>]`: The description for the management template. Optional. Read-only.
         - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
         - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
-          - `[DisplayName <String>]`: 
-          - `[Url <String>]`: 
+          - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+          - `[Url <String>]`: The URL to the documentation or Azure portal page.
         - `[LastActionByUserId <String>]`: 
         - `[LastActionDateTime <DateTime?>]`: 
         - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
@@ -711,8 +711,8 @@ TEMPLATESTEP <IMicrosoftGraphManagedTenantsManagementTemplateStep>: managementTe
     - `[Description <String>]`: The description for the management template. Optional. Read-only.
     - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
     - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
-      - `[DisplayName <String>]`: 
-      - `[Url <String>]`: 
+      - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+      - `[Url <String>]`: The URL to the documentation or Azure portal page.
     - `[LastActionByUserId <String>]`: 
     - `[LastActionDateTime <DateTime?>]`: 
     - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 

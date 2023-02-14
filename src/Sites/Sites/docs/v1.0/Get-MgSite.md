@@ -12,19 +12,19 @@ Retrieve properties and relationships for a [site][] resource.\nA **site** resou
 
 ## SYNTAX
 
-### List2 (Default)
+### List3 (Default)
 ```
 Get-MgSite [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
-### Get2
+### Get3
 ```
 Get-MgSite -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity3
 ```
 Get-MgSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -69,7 +69,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List2
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -85,7 +85,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List2
+Parameter Sets: List3
 Aliases: CV
 
 Required: False
@@ -115,7 +115,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List2
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -131,7 +131,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity2
+Parameter Sets: GetViaIdentity3
 Aliases:
 
 Required: True
@@ -146,7 +146,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List2
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -176,7 +176,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List2
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -191,7 +191,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get3
 Aliases:
 
 Required: True
@@ -206,7 +206,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List2
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -221,7 +221,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List2
+Parameter Sets: List3
 Aliases: OrderBy
 
 Required: False
@@ -236,7 +236,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List2
+Parameter Sets: List3
 Aliases: Limit
 
 Required: False
@@ -268,10 +268,12 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[BaseItemId <String>]`: key: id of baseItem
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
   - `[ContentTypeId1 <String>]`: key: id of contentType
+  - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
   - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
@@ -280,6 +282,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
+  - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
@@ -292,6 +295,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[PermissionId <String>]`: key: id of permission
   - `[RelationId <String>]`: key: id of relation
   - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
@@ -302,6 +307,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
+  - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
   - `[WebPartId <String>]`: key: id of webPart

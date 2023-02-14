@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBusinessScenarioPlannerTaskConfiguration
 
 ## SYNOPSIS
-Update the navigation property taskConfiguration in solutions
+Update the properties of a plannerTaskConfiguration object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgBusinessScenarioPlannerTaskConfiguration -InputObject <IBookingsIdentit
 ```
 
 ## DESCRIPTION
-Update the navigation property taskConfiguration in solutions
+Update the properties of a plannerTaskConfiguration object.
 
 ## EXAMPLES
 
@@ -214,60 +214,60 @@ BODYPARAMETER <IMicrosoftGraphPlannerTaskConfiguration>: plannerTaskConfiguratio
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[EditPolicy <IMicrosoftGraphPlannerTaskPolicy>]`: plannerTaskPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Rules <IMicrosoftGraphPlannerTaskRoleBasedRule[]>]`: 
-      - `[DefaultRule <String>]`: 
+    - `[Rules <IMicrosoftGraphPlannerTaskRoleBasedRule[]>]`: The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
+      - `[DefaultRule <String>]`: Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
       - `[PropertyRule <IMicrosoftGraphPlannerTaskPropertyRule>]`: plannerTaskPropertyRule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[RuleKind <String>]`: plannerRuleKind
         - `[AppliedCategories <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DefaultRules <String[]>]`: 
-          - `[Overrides <IMicrosoftGraphPlannerRuleOverride[]>]`: 
-            - `[Name <String>]`: 
-            - `[Rules <String[]>]`: 
+          - `[DefaultRules <String[]>]`: The default rules that apply if no override matches to the current data.
+          - `[Overrides <IMicrosoftGraphPlannerRuleOverride[]>]`: Overrides that specify different rules for specific data associated with the field.
+            - `[Name <String>]`: Name of the override. Allowed override values will be dependent on the property affected by the rule.
+            - `[Rules <String[]>]`: Overridden rules. These are used as rules for the override instead of the default rules.
         - `[Assignments <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
         - `[CheckLists <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
-        - `[Delete <String[]>]`: 
-        - `[DueDate <String[]>]`: 
-        - `[Move <String[]>]`: 
-        - `[Notes <String[]>]`: 
-        - `[Order <String[]>]`: 
-        - `[PercentComplete <String[]>]`: 
-        - `[PreviewType <String[]>]`: 
-        - `[Priority <String[]>]`: 
+        - `[Delete <String[]>]`: Rules and restrictions for deleting the task. Accepted values are allow and block.
+        - `[DueDate <String[]>]`: Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
+        - `[Move <String[]>]`: Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
+        - `[Notes <String[]>]`: Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
+        - `[Order <String[]>]`: Rules and restrictions for changing the order of the task. Accepted values are allow and block.
+        - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
+        - `[PreviewType <String[]>]`: Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
+        - `[Priority <String[]>]`: Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
         - `[References <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
-        - `[StartDate <String[]>]`: 
-        - `[Title <String[]>]`: 
+        - `[StartDate <String[]>]`: Rules and restrictions for changing the start date of the task. Accepted values are allow and block.
+        - `[Title <String[]>]`: Rules and restrictions for changing the title of the task. Accepted values are allow and block.
       - `[Role <IMicrosoftGraphPlannerTaskConfigurationRoleBase>]`: plannerTaskConfigurationRoleBase
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[RoleKind <String>]`: plannerUserRoleKind
 
 EDITPOLICY <IMicrosoftGraphPlannerTaskPolicy>: plannerTaskPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Rules <IMicrosoftGraphPlannerTaskRoleBasedRule[]>]`: 
-    - `[DefaultRule <String>]`: 
+  - `[Rules <IMicrosoftGraphPlannerTaskRoleBasedRule[]>]`: The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
+    - `[DefaultRule <String>]`: Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
     - `[PropertyRule <IMicrosoftGraphPlannerTaskPropertyRule>]`: plannerTaskPropertyRule
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[RuleKind <String>]`: plannerRuleKind
       - `[AppliedCategories <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DefaultRules <String[]>]`: 
-        - `[Overrides <IMicrosoftGraphPlannerRuleOverride[]>]`: 
-          - `[Name <String>]`: 
-          - `[Rules <String[]>]`: 
+        - `[DefaultRules <String[]>]`: The default rules that apply if no override matches to the current data.
+        - `[Overrides <IMicrosoftGraphPlannerRuleOverride[]>]`: Overrides that specify different rules for specific data associated with the field.
+          - `[Name <String>]`: Name of the override. Allowed override values will be dependent on the property affected by the rule.
+          - `[Rules <String[]>]`: Overridden rules. These are used as rules for the override instead of the default rules.
       - `[Assignments <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
       - `[CheckLists <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
-      - `[Delete <String[]>]`: 
-      - `[DueDate <String[]>]`: 
-      - `[Move <String[]>]`: 
-      - `[Notes <String[]>]`: 
-      - `[Order <String[]>]`: 
-      - `[PercentComplete <String[]>]`: 
-      - `[PreviewType <String[]>]`: 
-      - `[Priority <String[]>]`: 
+      - `[Delete <String[]>]`: Rules and restrictions for deleting the task. Accepted values are allow and block.
+      - `[DueDate <String[]>]`: Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
+      - `[Move <String[]>]`: Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
+      - `[Notes <String[]>]`: Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
+      - `[Order <String[]>]`: Rules and restrictions for changing the order of the task. Accepted values are allow and block.
+      - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
+      - `[PreviewType <String[]>]`: Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
+      - `[Priority <String[]>]`: Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
       - `[References <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
-      - `[StartDate <String[]>]`: 
-      - `[Title <String[]>]`: 
+      - `[StartDate <String[]>]`: Rules and restrictions for changing the start date of the task. Accepted values are allow and block.
+      - `[Title <String[]>]`: Rules and restrictions for changing the title of the task. Accepted values are allow and block.
     - `[Role <IMicrosoftGraphPlannerTaskConfigurationRoleBase>]`: plannerTaskConfigurationRoleBase
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[RoleKind <String>]`: plannerUserRoleKind

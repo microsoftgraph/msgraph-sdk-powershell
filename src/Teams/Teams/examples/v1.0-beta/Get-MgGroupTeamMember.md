@@ -1,18 +1,27 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get list of members in team
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamMember -TeamId $teamId
 ```
+This example shows how to use the Get-MgGroupTeamMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Find members of a team by their Azure AD user object ID
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Teams
 
-{{ Add output here }}
+Get-MgTeamMember -TeamId $teamId -Filter "(microsoft.graph.aadUserConversationMember/userId eq '73761f06-2ac9-469c-9f10-279a8cc267f9')"
 ```
+This example shows how to use the Get-MgGroupTeamMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 3: Find members of a team by their names or email
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamMember -TeamId $teamId -Filter "(microsoft.graph.aadUserConversationMember/displayName eq 'Harry Johnson' or microsoft.graph.aadUserConversationMember/email eq 'admin@M365x987948.OnMicrosoft.com')"
+```
+This example shows how to use the Get-MgGroupTeamMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserTodoListTaskAttachmentSessionContent
 
 ## SYNOPSIS
-Get content for the navigation property attachmentSessions from users
+The content streams that are uploaded.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserTodoListTaskAttachmentSessionContent -InputObject <IUsersIdentity> -Ou
 ```
 
 ## DESCRIPTION
-Get content for the navigation property attachmentSessions from users
+The content streams that are uploaded.
 
 ## EXAMPLES
 

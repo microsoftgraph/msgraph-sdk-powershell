@@ -73,6 +73,38 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
+    "/drives/{drive-id}/items/{driveItem-id}/analytics/allTime": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/items/{driveItem-id}/analytics/lastSevenDays": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
     "/drives/{drive-id}/items/{driveItem-id}/children": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
@@ -525,6 +557,38 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
+    "/drives/{drive-id}/root/analytics/allTime": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/root/analytics/itemActivityStats": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/root/analytics/lastSevenDays": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
     "/drives/{drive-id}/root/children": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
@@ -825,6 +889,38 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/allTime": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/lastSevenDays": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
     "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/children": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
@@ -1102,6 +1198,38 @@
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/groups/{group-id}/drives/{drive-id}/root/analytics": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/analytics/allTime": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/analytics/lastSevenDays": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
@@ -1645,6 +1773,38 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/allTime": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/lastSevenDays": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
     "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/children": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
@@ -1922,6 +2082,38 @@
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/users/{user-id}/drives/{drive-id}/root/analytics": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/analytics/allTime": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/analytics/lastSevenDays": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },

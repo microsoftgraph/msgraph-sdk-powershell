@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: 27fc4f9f-3c8b-4d45-9421-d523d96e3ff8
+Module Guid: ff835420-1489-4281-8bc7-9a7bd0cb7771
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -589,10 +589,7 @@ To get properties that are _not_ returned by default, do a GET operation and spe
 Create new navigation property ref to acceptedSenders for groups
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Use reply thread or reply post to further post to that conversation.
 
 ### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
 Create a new thread in the specified conversation.
@@ -966,7 +963,8 @@ Unpublish a [contentType][] from a content type hub site.
 Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Update the properties of a group object.
+Add a member to a security or Microsoft 365 group through the **members** navigation property.
+The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
 Update the navigation property threads in groups

@@ -49,7 +49,7 @@ directive:
   - where:
       verb: Get
       subject: ^Site$
-      variant: ^Get1$|^GetViaIdentity1$|^Get3$|^GetViaIdentity3$|^List1$|^List3$
+      variant: ^Get$|^GetViaIdentity$|^List$|^Get2$|^GetViaIdentity2$|^List2$
     set:
       subject: SubSite
   - where:
@@ -60,7 +60,7 @@ directive:
   - where:
       verb: Get
       subject: ^GroupSite$
-      variant: ^Get$|^GetViaIdentity$|^Get3$|^GetViaIdentity3$|^List1$|^List3$
+      variant: ^Get1$|^GetViaIdentity1$|^List1$|^Get3$|^GetViaIdentity3$|^List3$
     set:
       subject: GroupSubSite
   - where:
@@ -88,6 +88,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.19.0
+module-version: 1.22.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

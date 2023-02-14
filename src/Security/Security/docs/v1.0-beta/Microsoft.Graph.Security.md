@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: dcb2bc0b-0467-4b93-8e83-c032bcbac3a5
+Module Guid: 81b10cc5-55bd-4d74-b961-37560f368cdf
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -31,7 +31,7 @@ After the operation is created, you can get the status of the operation by retri
 The location provides a URL that will return a Add to review set operation.
 
 ### [Clear-MgSecurityCaseEdiscoveryCaseSearchData](Clear-MgSecurityCaseEdiscoveryCaseSearchData.md)
-Permanently delete Microsoft Teams messages contained in a eDiscovery search.
+Delete Microsoft Teams messages contained in a eDiscovery search.
 You can collect and purge the following categories of Teams content:\n- **Teams 1:1 chats** - Chat messages, posts, and attachments shared in a Teams conversation between two people.
 Teams 1:1 chats are also called *conversations*.\n- **Teams group chats** - Chat messages, posts, and attachments shared in a Teams conversation between three or more people.
 Also called *1:N* chats or *group conversations*.\n- **Teams channels** - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- **Private channels** - Message posts, replies, and attachments shared in a private Teams channel.\n- **Shared channels** - Message posts, replies, and attachments shared in a shared Teams channel.
@@ -63,6 +63,12 @@ Represents simulation automation created to run on a tenant.
 
 ### [Get-MgSecurityAttackSimulationAutomationRun](Get-MgSecurityAttackSimulationAutomationRun.md)
 A collection of simulation automation runs.
+
+### [Get-MgSecurityAttackSimulationOperation](Get-MgSecurityAttackSimulationOperation.md)
+Represents an attack simulation training operation.
+
+### [Get-MgSecurityAttackSimulationPayload](Get-MgSecurityAttackSimulationPayload.md)
+Represents an attack simulation training campaign payload in a tenant.
 
 ### [Get-MgSecurityCase](Get-MgSecurityCase.md)
 Get cases from security
@@ -298,13 +304,19 @@ Create a new securityAction object.
 Create new navigation property to alerts for security
 
 ### [New-MgSecurityAttackSimulation](New-MgSecurityAttackSimulation.md)
-Create new navigation property to simulations for security
+Create an attack simulation campaign for a tenant.
 
 ### [New-MgSecurityAttackSimulationAutomation](New-MgSecurityAttackSimulationAutomation.md)
 Create new navigation property to simulationAutomations for security
 
 ### [New-MgSecurityAttackSimulationAutomationRun](New-MgSecurityAttackSimulationAutomationRun.md)
 Create new navigation property to runs for security
+
+### [New-MgSecurityAttackSimulationOperation](New-MgSecurityAttackSimulationOperation.md)
+Create new navigation property to operations for security
+
+### [New-MgSecurityAttackSimulationPayload](New-MgSecurityAttackSimulationPayload.md)
+Create new navigation property to payloads for security
 
 ### [New-MgSecurityCaseEdiscoveryCase](New-MgSecurityCaseEdiscoveryCase.md)
 Create a new ediscoveryCase object.
@@ -439,6 +451,12 @@ Delete navigation property simulationAutomations for security
 
 ### [Remove-MgSecurityAttackSimulationAutomationRun](Remove-MgSecurityAttackSimulationAutomationRun.md)
 Delete navigation property runs for security
+
+### [Remove-MgSecurityAttackSimulationOperation](Remove-MgSecurityAttackSimulationOperation.md)
+Delete navigation property operations for security
+
+### [Remove-MgSecurityAttackSimulationPayload](Remove-MgSecurityAttackSimulationPayload.md)
+Delete navigation property payloads for security
 
 ### [Remove-MgSecurityCase](Remove-MgSecurityCase.md)
 Delete navigation property cases for security
@@ -647,6 +665,12 @@ Update the navigation property simulationAutomations in security
 
 ### [Update-MgSecurityAttackSimulationAutomationRun](Update-MgSecurityAttackSimulationAutomationRun.md)
 Update the navigation property runs in security
+
+### [Update-MgSecurityAttackSimulationOperation](Update-MgSecurityAttackSimulationOperation.md)
+Update the navigation property operations in security
+
+### [Update-MgSecurityAttackSimulationPayload](Update-MgSecurityAttackSimulationPayload.md)
+Update the navigation property payloads in security
 
 ### [Update-MgSecurityCase](Update-MgSecurityCase.md)
 Update the navigation property cases in security

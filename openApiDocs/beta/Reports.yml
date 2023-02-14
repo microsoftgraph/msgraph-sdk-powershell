@@ -4664,6 +4664,128 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getFormsUserActivityCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getFormsUserActivityCounts
+      operationId: reports_getFormsUserActivityCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getFormsUserActivityUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getFormsUserActivityUserCounts
+      operationId: reports_getFormsUserActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getFormsUserActivityUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getFormsUserActivityUserDetail
+      operationId: reports_getFormsUserActivityUserDetail
+      parameters:
+        - name: date
+          in: path
+          description: 'Usage: date={date}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getFormsUserActivityUserDetail(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getFormsUserActivityUserDetail
+      operationId: reports_getFormsUserActivityUserDetail
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
@@ -10198,6 +10320,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedAuthenticationEventListener'
+              description: 'Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.'
             authenticationAppDeviceDetails:
               $ref: '#/components/schemas/microsoft.graph.authenticationAppDeviceDetails'
             authenticationAppPolicyEvaluationDetails:
@@ -11703,11 +11826,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -11924,6 +12047,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationEventType'
         executedListenerId:
           type: string
+          description: ID of the Event Listener that was executed.
           nullable: true
         handlerResult:
           $ref: '#/components/schemas/microsoft.graph.authenticationEventHandlerResult'

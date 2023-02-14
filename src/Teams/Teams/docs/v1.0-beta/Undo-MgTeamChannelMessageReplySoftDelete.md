@@ -12,13 +12,13 @@ Undo soft deletion of a single message or a message reply in a channel or a chat
 
 ## SYNTAX
 
-### Undo (Default)
+### Undo1 (Default)
 ```
 Undo-MgTeamChannelMessageReplySoftDelete -ChannelId <String> -ChatMessageId <String> -ChatMessageId1 <String>
  -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UndoViaIdentity
+### UndoViaIdentity1
 ```
 Undo-MgTeamChannelMessageReplySoftDelete -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Undo
+Parameter Sets: Undo1
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Undo
+Parameter Sets: Undo1
 Aliases:
 
 Required: True
@@ -66,7 +66,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Undo
+Parameter Sets: Undo1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: UndoViaIdentity
+Parameter Sets: UndoViaIdentity1
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Undo
+Parameter Sets: Undo1
 Aliases:
 
 Required: True

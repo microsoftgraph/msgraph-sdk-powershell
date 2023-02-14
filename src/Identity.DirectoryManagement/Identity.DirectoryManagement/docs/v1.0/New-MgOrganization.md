@@ -17,14 +17,14 @@ Add new entity to organization
 New-MgOrganization [-AdditionalProperties <Hashtable>] [-AssignedPlans <IMicrosoftGraphAssignedPlan[]>]
  [-Branding <IMicrosoftGraphOrganizationalBranding>] [-BusinessPhones <String[]>]
  [-CertificateBasedAuthConfiguration <IMicrosoftGraphCertificateBasedAuthConfiguration[]>] [-City <String>]
- [-Country <String>] [-CountryLetterCode <String>] [-CreatedDateTime <DateTime>] [-DeletedDateTime <DateTime>]
- [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>]
- [-MarketingNotificationEmails <String[]>] [-MobileDeviceManagementAuthority <MdmAuthority>]
- [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled] [-PostalCode <String>]
- [-PreferredLanguage <String>] [-PrivacyProfile <IMicrosoftGraphPrivacyProfile>]
- [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>] [-SecurityComplianceNotificationMails <String[]>]
- [-SecurityComplianceNotificationPhones <String[]>] [-State <String>] [-Street <String>]
- [-TechnicalNotificationMails <String[]>] [-TenantType <String>]
+ [-Country <String>] [-CountryLetterCode <String>] [-CreatedDateTime <DateTime>]
+ [-DefaultUsageLocation <String>] [-DeletedDateTime <DateTime>] [-DisplayName <String>]
+ [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-MarketingNotificationEmails <String[]>]
+ [-MobileDeviceManagementAuthority <MdmAuthority>] [-OnPremisesLastSyncDateTime <DateTime>]
+ [-OnPremisesSyncEnabled] [-PartnerTenantType <String>] [-PostalCode <String>] [-PreferredLanguage <String>]
+ [-PrivacyProfile <IMicrosoftGraphPrivacyProfile>] [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]
+ [-SecurityComplianceNotificationMails <String[]>] [-SecurityComplianceNotificationPhones <String[]>]
+ [-State <String>] [-Street <String>] [-TechnicalNotificationMails <String[]>] [-TenantType <String>]
  [-VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -37,6 +37,17 @@ New-MgOrganization -BodyParameter <IMicrosoftGraphOrganization1> [-Confirm] [-Wh
 Add new entity to organization
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgOrganization
+```
+
+This example shows how to use the New-MgOrganization Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -201,6 +212,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DefaultUsageLocation
+Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DeletedDateTime
 Date and time when this object was deleted.
 Always null when the object hasn't been deleted.
@@ -321,6 +347,21 @@ null if this object has never been synced from an on-premises directory (default
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PartnerTenantType
+partnerTenantType
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -470,7 +511,10 @@ Accept wildcard characters: False
 ```
 
 ### -TenantType
-.
+Not nullable.
+The tenant type option that was selected when the tenant was created.
+The possible values are: AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.
+AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
 
 ```yaml
 Type: System.String
@@ -606,6 +650,7 @@ BODYPARAMETER <IMicrosoftGraphOrganization1>: organization
   - `[Country <String>]`: Country/region name of the address for the organization.
   - `[CountryLetterCode <String>]`: Country or region abbreviation for the organization in ISO 3166-2 format.
   - `[CreatedDateTime <DateTime?>]`: Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[DefaultUsageLocation <String>]`: Two-letter ISO 3166 country code indicating the default service usage location of an organization.
   - `[DisplayName <String>]`: The display name for the tenant.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the organization. Read-only. Nullable.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -613,6 +658,7 @@ BODYPARAMETER <IMicrosoftGraphOrganization1>: organization
   - `[MobileDeviceManagementAuthority <MdmAuthority?>]`: Mobile device management authority.
   - `[OnPremisesLastSyncDateTime <DateTime?>]`: The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
+  - `[PartnerTenantType <String>]`: partnerTenantType
   - `[PostalCode <String>]`: Postal code of the address for the organization.
   - `[PreferredLanguage <String>]`: The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
   - `[PrivacyProfile <IMicrosoftGraphPrivacyProfile>]`: privacyProfile
@@ -628,7 +674,7 @@ BODYPARAMETER <IMicrosoftGraphOrganization1>: organization
   - `[State <String>]`: State name of the address for the organization.
   - `[Street <String>]`: Street name of the address for organization.
   - `[TechnicalNotificationMails <String[]>]`: Not nullable.
-  - `[TenantType <String>]`: 
+  - `[TenantType <String>]`: Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
   - `[VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>]`: The collection of domains associated with this tenant. Not nullable.
     - `[Capabilities <String>]`: For example, Email, OfficeCommunicationsOnline.
     - `[IsDefault <Boolean?>]`: true if this is the default domain associated with the tenant; otherwise, false.

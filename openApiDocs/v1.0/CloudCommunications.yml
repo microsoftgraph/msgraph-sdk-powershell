@@ -3019,6 +3019,8 @@ paths:
                 - isEntryExitAnnounced desc
                 - joinInformation
                 - joinInformation desc
+                - joinMeetingIdSettings
+                - joinMeetingIdSettings desc
                 - joinWebUrl
                 - joinWebUrl desc
                 - lobbyBypassSettings
@@ -3060,6 +3062,7 @@ paths:
                 - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
+                - joinMeetingIdSettings
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
@@ -3154,6 +3157,7 @@ paths:
                 - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
+                - joinMeetingIdSettings
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
@@ -4289,6 +4293,8 @@ paths:
                 - isEntryExitAnnounced desc
                 - joinInformation
                 - joinInformation desc
+                - joinMeetingIdSettings
+                - joinMeetingIdSettings desc
                 - joinWebUrl
                 - joinWebUrl desc
                 - lobbyBypassSettings
@@ -4330,6 +4336,7 @@ paths:
                 - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
+                - joinMeetingIdSettings
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
@@ -4445,6 +4452,7 @@ paths:
                 - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
+                - joinMeetingIdSettings
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
@@ -5953,6 +5961,8 @@ components:
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
+            joinMeetingIdSettings:
+              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
             joinWebUrl:
               type: string
               description: The join URL of the online meeting. Read-only.
@@ -6549,6 +6559,24 @@ components:
           nullable: true
         contentType:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.joinMeetingIdSettings:
+      title: joinMeetingIdSettings
+      type: object
+      properties:
+        isPasscodeRequired:
+          type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+          nullable: true
+        joinMeetingId:
+          type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
+          nullable: true
+        passcode:
+          type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.lobbyBypassSettings:
@@ -7290,6 +7318,7 @@ components:
         - presenter
         - unknownFutureValue
         - producer
+        - coorganizer
       type: string
     microsoft.graph.ODataErrors.MainError:
       required:

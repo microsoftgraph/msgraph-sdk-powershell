@@ -1814,11 +1814,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -2274,6 +2274,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action softDelete
+      operationId: chats.messages_softDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: chats.messages_undoSoftDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -2422,11 +2480,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: chats.messages_CreateReplies
       parameters:
         - name: chat-id
@@ -2954,6 +3012,80 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action softDelete
+      operationId: chats.messages.replies_softDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: chats.messages.replies_undoSoftDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
     get:
       tags:
@@ -4528,7 +4660,7 @@ paths:
       tags:
         - groups.team
       summary: List channels
-      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
+      description: Retrieve the list of channels in this team.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -4631,7 +4763,7 @@ paths:
       tags:
         - groups.team
       summary: Create channel
-      description: 'Create a new channel in a team, as specified in the request body.'
+      description: 'Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel''s `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. If you''re creating a private channel, you can add a maximum of 200 members.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
@@ -5086,11 +5218,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: groups.team.channels_CreateMembers
       parameters:
         - name: group-id
@@ -5428,11 +5560,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: groups.team.channels_CreateMessages
       parameters:
         - name: group-id
@@ -6116,11 +6248,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: groups.team.channels.messages_CreateReplies
       parameters:
         - name: group-id
@@ -9259,11 +9391,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: groups.team.primaryChannel_CreateMembers
       parameters:
         - name: group-id
@@ -9561,11 +9693,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: groups.team.primaryChannel_CreateMessages
       parameters:
         - name: group-id
@@ -10169,11 +10301,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: groups.team.primaryChannel.messages_CreateReplies
       parameters:
         - name: group-id
@@ -12678,7 +12810,7 @@ paths:
       tags:
         - groups.team
       summary: Create shift
-      description: Create a new shift instance in a schedule.
+      description: Create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
@@ -14927,7 +15059,7 @@ paths:
       tags:
         - teams.channel
       summary: List channels
-      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
+      description: Retrieve the list of channels in this team.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -15030,7 +15162,7 @@ paths:
       tags:
         - teams.channel
       summary: Create channel
-      description: 'Create a new channel in a team, as specified in the request body.'
+      description: 'Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel''s `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. If you''re creating a private channel, you can add a maximum of 200 members.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
@@ -15485,11 +15617,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: teams.channels_CreateMembers
       parameters:
         - name: team-id
@@ -15891,11 +16023,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teams.channels_CreateMessages
       parameters:
         - name: team-id
@@ -16423,6 +16555,80 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action softDelete
+      operationId: teams.channels.messages_softDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teams.channels.messages_undoSoftDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -16579,11 +16785,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teams.channels.messages_CreateReplies
       parameters:
         - name: team-id
@@ -17183,6 +17389,96 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action softDelete
+      operationId: teams.channels.messages.replies_softDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teams.channels.messages.replies_undoSoftDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
     get:
       tags:
@@ -20601,11 +20897,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: teams.primaryChannel_CreateMembers
       parameters:
         - name: team-id
@@ -20959,11 +21255,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teams.primaryChannel_CreateMessages
       parameters:
         - name: team-id
@@ -21419,6 +21715,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action softDelete
+      operationId: teams.primaryChannel.messages_softDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teams.primaryChannel.messages_undoSoftDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -21567,11 +21921,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teams.primaryChannel.messages_CreateReplies
       parameters:
         - name: team-id
@@ -22099,6 +22453,80 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action softDelete
+      operationId: teams.primaryChannel.messages.replies_softDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action undoSoftDelete
+      operationId: teams.primaryChannel.messages.replies_undoSoftDelete
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
     get:
       tags:
@@ -24541,7 +24969,7 @@ paths:
       tags:
         - teams.schedule
       summary: Create shift
-      description: Create a new shift instance in a schedule.
+      description: Create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
@@ -28034,11 +28462,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: users.chats_CreateMessages
       parameters:
         - name: user-id
@@ -28722,11 +29150,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: users.chats.messages_CreateReplies
       parameters:
         - name: user-id
@@ -30588,7 +31016,7 @@ paths:
       tags:
         - users.team
       summary: List channels
-      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
+      description: Retrieve the list of channels in this team.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -30699,7 +31127,7 @@ paths:
       tags:
         - users.team
       summary: Create channel
-      description: 'Create a new channel in a team, as specified in the request body.'
+      description: 'Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel''s `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. If you''re creating a private channel, you can add a maximum of 200 members.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
@@ -31218,11 +31646,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_CreateMembers
       parameters:
         - name: user-id
@@ -31600,11 +32028,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_CreateMessages
       parameters:
         - name: user-id
@@ -32368,11 +32796,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: users.joinedTeams.channels.messages_CreateReplies
       parameters:
         - name: user-id
@@ -35943,11 +36371,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_CreateMembers
       parameters:
         - name: user-id
@@ -36285,11 +36713,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_CreateMessages
       parameters:
         - name: user-id
@@ -36973,11 +37401,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel.messages_CreateReplies
       parameters:
         - name: user-id
@@ -39850,7 +40278,7 @@ paths:
       tags:
         - users.team
       summary: Create shift
-      description: Create a new shift instance in a schedule.
+      description: Create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
@@ -43310,7 +43738,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -44207,6 +44635,10 @@ components:
           type: string
           description: Name of the attachment.
           nullable: true
+        teamsAppId:
+          type: string
+          description: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+          nullable: true
         thumbnailUrl:
           type: string
           description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
@@ -44476,18 +44908,21 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of owners in a team.
           format: int32
           nullable: true
       additionalProperties:
@@ -45234,11 +45669,11 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.'
+              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.'
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.'
+              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
               nullable: true
             notificationUrl:
               type: string
@@ -46693,15 +47128,15 @@ components:
       properties:
         driveId:
           type: string
-          description: Unique identifier of the drive instance that contains the item. Read-only.
+          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. See [drive][] resource for values.'
+          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.'
           nullable: true
         id:
           type: string
-          description: Unique identifier of the item in the drive. Read-only.
+          description: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
           nullable: true
         name:
           type: string
@@ -46719,7 +47154,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -46797,6 +47232,11 @@ components:
             employeeId:
               type: string
               description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
+              nullable: true
+            employeeLeaveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
               nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
@@ -48841,7 +49281,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.'
           nullable: true
         signInType:
           type: string
@@ -48953,7 +49393,7 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.'
+          description: true if the user must change her password on the next login; otherwise false.
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
@@ -49670,7 +50110,7 @@ components:
           properties:
             activationLockBypassCode:
               type: string
-              description: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -49748,7 +50188,7 @@ components:
               readOnly: true
             ethernetMacAddress:
               type: string
-              description: Ethernet MAC. This property is read-only.
+              description: 'Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             exchangeAccessState:
@@ -50203,6 +50643,8 @@ components:
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
+            joinMeetingIdSettings:
+              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
             joinWebUrl:
               type: string
               description: The join URL of the online meeting. Read-only.
@@ -51186,13 +51628,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The start time of the operation.
+              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The time of the last action in the operation.
+              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
@@ -51295,13 +51737,13 @@ components:
       properties:
         containerId:
           type: string
-          description: The identifier of the resource that contains the plan.
+          description: The identifier of the resource that contains the plan. Optional.
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
         url:
           type: string
-          description: The full canonical URL of the container.
+          description: The full canonical URL of the container. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -51316,7 +51758,7 @@ components:
               description: Name of the bucket.
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.'
               nullable: true
             planId:
               type: string
@@ -52837,6 +53279,24 @@ components:
         threadId:
           type: string
           description: The unique identifier for a thread in Microsoft Teams.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.joinMeetingIdSettings:
+      title: joinMeetingIdSettings
+      type: object
+      properties:
+        isPasscodeRequired:
+          type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+          nullable: true
+        joinMeetingId:
+          type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
+          nullable: true
+        passcode:
+          type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -54594,6 +55054,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
               type: boolean
+              description: Indicates whether the task has attachments.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -54621,6 +55082,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachmentBase'
+              description: A collection of file attachments for the task.
               x-ms-navigationProperty: true
             attachmentSessions:
               type: array
@@ -54959,6 +55421,7 @@ components:
         - presenter
         - unknownFutureValue
         - producer
+        - coorganizer
       type: string
     microsoft.graph.attendanceInterval:
       title: attendanceInterval
@@ -55024,19 +55487,23 @@ components:
           properties:
             contentType:
               type: string
+              description: The MIME type.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             name:
               type: string
+              description: The display name of the attachment. This does not need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
             type: object
@@ -55048,11 +55515,13 @@ components:
           properties:
             content:
               type: string
+              description: The content streams that are uploaded.
               format: base64url
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
               format: date-time
               nullable: true
             nextExpectedRanges:
@@ -55060,6 +55529,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'Indicates a single value {start} that represents the location in the file where the next upload should begin.'
           additionalProperties:
             type: object
     microsoft.graph.checklistItem:

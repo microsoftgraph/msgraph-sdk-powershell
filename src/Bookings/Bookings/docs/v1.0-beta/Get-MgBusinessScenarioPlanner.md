@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBusinessScenarioPlanner
 
 ## SYNOPSIS
-Get planner from solutions
+Read the properties and relationships of a businessScenarioPlanner object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBusinessScenarioPlanner -InputObject <IBookingsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get planner from solutions
+Read the properties and relationships of a businessScenarioPlanner object.
 
 ## EXAMPLES
 

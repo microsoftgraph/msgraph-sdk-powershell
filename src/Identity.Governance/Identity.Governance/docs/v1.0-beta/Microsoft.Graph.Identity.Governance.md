@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 7602d12c-8ae9-4cf8-a91c-6f2fa95e4d28
+Module Guid: 819c49a4-be4a-41dc-8f47-f1c92e98587d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -420,6 +420,81 @@ The associated individual task execution.
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersion](Get-MgIdentityGovernanceLifecycleWorkflowVersion.md)
 The workflow versions that are available.
 
+### [Get-MgIdentityGovernancePrivilegedAccess](Get-MgIdentityGovernancePrivilegedAccess.md)
+Get privilegedAccess from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroup](Get-MgIdentityGovernancePrivilegedAccessGroup.md)
+Get group from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
+Get assignmentSchedules from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleActivatedUsing](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleActivatedUsing.md)
+Get activatedUsing from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroup](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroup.md)
+Get group from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance.md)
+Get assignmentScheduleInstances from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceActivatedUsing](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceActivatedUsing.md)
+Get activatedUsing from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroup](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroup.md)
+Get group from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstancePrincipal](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstancePrincipal.md)
+Get principal from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedulePrincipal](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedulePrincipal.md)
+Get principal from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
+Get assignmentScheduleRequests from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing.md)
+Get activatedUsing from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroup](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroup.md)
+Get group from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestPrincipal](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestPrincipal.md)
+Get principal from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestTargetSchedule](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestTargetSchedule.md)
+Get targetSchedule from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule.md)
+Get eligibilitySchedules from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroup](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroup.md)
+Get group from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance.md)
+Get eligibilityScheduleInstances from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroup](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroup.md)
+Get group from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstancePrincipal](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstancePrincipal.md)
+Get principal from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedulePrincipal](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedulePrincipal.md)
+Get principal from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
+Get eligibilityScheduleRequests from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroup](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroup.md)
+Get group from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestPrincipal](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestPrincipal.md)
+Get principal from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestTargetSchedule](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestTargetSchedule.md)
+Get targetSchedule from identityGovernance
+
 ### [Get-MgIdentityGovernanceTermOfUseAgreement](Get-MgIdentityGovernanceTermOfUseAgreement.md)
 Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 
@@ -739,6 +814,24 @@ Invoke function filterByCurrentUser
 ### [Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser](Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser.md)
 Invoke function filterByCurrentUser
 
+### [Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleByCurrentUser](Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceByCurrentUser](Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestByCurrentUser](Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleByCurrentUser](Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceByCurrentUser](Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceByCurrentUser.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestByCurrentUser](Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestByCurrentUser.md)
+Invoke function filterByCurrentUser
+
 ### [Invoke-MgMyPrivilegedApprovalRequest](Invoke-MgMyPrivilegedApprovalRequest.md)
 Invoke function myRequests
 
@@ -972,65 +1065,29 @@ You can create up to 50 workflows in a tenant.
 ### [New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Create a new customTaskExtension object.
 
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
-Create new navigation property to workflows for identityGovernance
-
 ### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion.md)
 Create a new version of the workflow object.
-
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
-Create new navigation property to runs for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
-Create new navigation property to taskReports for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
-Create new navigation property to userProcessingResults for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
-Create new navigation property to versions for identityGovernance
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](New-MgIdentityGovernanceLifecycleWorkflowNewVersion.md)
 Create a new version of the workflow object.
 
-### [New-MgIdentityGovernanceLifecycleWorkflowRun](New-MgIdentityGovernanceLifecycleWorkflowRun.md)
-Create new navigation property to runs for identityGovernance
+### [New-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](New-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
+Create new navigation property to assignmentSchedules for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
-Create new navigation property to taskProcessingResults for identityGovernance
+### [New-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance](New-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance.md)
+Create new navigation property to assignmentScheduleInstances for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
-Create new navigation property to userProcessingResults for identityGovernance
+### [New-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](New-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
+Create new navigation property to assignmentScheduleRequests for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
-Create new navigation property to taskProcessingResults for identityGovernance
+### [New-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule](New-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule.md)
+Create new navigation property to eligibilitySchedules for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowTaskDefinition](New-MgIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
-Create new navigation property to taskDefinitions for identityGovernance
+### [New-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance](New-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance.md)
+Create new navigation property to eligibilityScheduleInstances for identityGovernance
 
-### [New-MgIdentityGovernanceLifecycleWorkflowTaskReport](New-MgIdentityGovernanceLifecycleWorkflowTaskReport.md)
-Create new navigation property to taskReports for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
-Create new navigation property to taskProcessingResults for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowTemplate](New-MgIdentityGovernanceLifecycleWorkflowTemplate.md)
-Create new navigation property to workflowTemplates for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowTemplateTask](New-MgIdentityGovernanceLifecycleWorkflowTemplateTask.md)
-Create new navigation property to tasks for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
-Create new navigation property to taskProcessingResults for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
-Create new navigation property to userProcessingResults for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](New-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
-Create new navigation property to taskProcessingResults for identityGovernance
-
-### [New-MgIdentityGovernanceLifecycleWorkflowVersion](New-MgIdentityGovernanceLifecycleWorkflowVersion.md)
-Create new navigation property to versions for identityGovernance
+### [New-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](New-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
+Create new navigation property to eligibilityScheduleRequests for identityGovernance
 
 ### [New-MgIdentityGovernanceTermOfUseAgreement](New-MgIdentityGovernanceTermOfUseAgreement.md)
 Create a new agreement object.
@@ -1290,59 +1347,29 @@ Delete navigation property deletedItems for identityGovernance
 ### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Delete navigation property workflows for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
-Delete navigation property runs for identityGovernance
+### [Remove-MgIdentityGovernancePrivilegedAccess](Remove-MgIdentityGovernancePrivilegedAccess.md)
+Delete navigation property privilegedAccess for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
-Delete navigation property taskReports for identityGovernance
+### [Remove-MgIdentityGovernancePrivilegedAccessGroup](Remove-MgIdentityGovernancePrivilegedAccessGroup.md)
+Delete navigation property group for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
-Delete navigation property userProcessingResults for identityGovernance
+### [Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
+Delete navigation property assignmentSchedules for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
-Delete navigation property versions for identityGovernance
+### [Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance](Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance.md)
+Delete navigation property assignmentScheduleInstances for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowRun](Remove-MgIdentityGovernanceLifecycleWorkflowRun.md)
-Delete navigation property runs for identityGovernance
+### [Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
+Delete navigation property assignmentScheduleRequests for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
-Delete navigation property taskProcessingResults for identityGovernance
+### [Remove-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule](Remove-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule.md)
+Delete navigation property eligibilitySchedules for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
-Delete navigation property userProcessingResults for identityGovernance
+### [Remove-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance](Remove-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance.md)
+Delete navigation property eligibilityScheduleInstances for identityGovernance
 
-### [Remove-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
-Delete navigation property taskProcessingResults for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowSetting](Remove-MgIdentityGovernanceLifecycleWorkflowSetting.md)
-Delete navigation property settings for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTaskDefinition](Remove-MgIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
-Delete navigation property taskDefinitions for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTaskReport](Remove-MgIdentityGovernanceLifecycleWorkflowTaskReport.md)
-Delete navigation property taskReports for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
-Delete navigation property taskProcessingResults for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTemplate](Remove-MgIdentityGovernanceLifecycleWorkflowTemplate.md)
-Delete navigation property workflowTemplates for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTemplateTask](Remove-MgIdentityGovernanceLifecycleWorkflowTemplateTask.md)
-Delete navigation property tasks for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
-Delete navigation property taskProcessingResults for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
-Delete navigation property userProcessingResults for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Remove-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
-Delete navigation property taskProcessingResults for identityGovernance
-
-### [Remove-MgIdentityGovernanceLifecycleWorkflowVersion](Remove-MgIdentityGovernanceLifecycleWorkflowVersion.md)
-Delete navigation property versions for identityGovernance
+### [Remove-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Remove-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
+Delete navigation property eligibilityScheduleRequests for identityGovernance
 
 ### [Remove-MgIdentityGovernanceTermOfUseAgreement](Remove-MgIdentityGovernanceTermOfUseAgreement.md)
 Delete navigation property agreements for identityGovernance
@@ -1586,6 +1613,12 @@ After the access review stage stops, the stage **status** will be `Completed` an
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
 
+### [Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
+Invoke action cancel
+
+### [Stop-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Stop-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
+Invoke action cancel
+
 ### [Stop-MgPrivilegedAccessResourceRoleAssignmentRequest](Stop-MgPrivilegedAccessResourceRoleAssignmentRequest.md)
 Invoke action cancel
 
@@ -1780,65 +1813,32 @@ Update the navigation property workflows in identityGovernance
 ### [Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Update the navigation property customTaskExtensions in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItem](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItem.md)
-Update the navigation property deletedItems in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
-Update the navigation property workflows in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
-Update the navigation property runs in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
-Update the navigation property taskReports in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
-Update the navigation property userProcessingResults in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Update-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
-Update the navigation property versions in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowRun](Update-MgIdentityGovernanceLifecycleWorkflowRun.md)
-Update the navigation property runs in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
-Update the navigation property taskProcessingResults in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
-Update the navigation property userProcessingResults in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
-Update the navigation property taskProcessingResults in identityGovernance
-
 ### [Update-MgIdentityGovernanceLifecycleWorkflowSetting](Update-MgIdentityGovernanceLifecycleWorkflowSetting.md)
 Update the properties of a lifecycleManagementSettings object.
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTaskDefinition](Update-MgIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
-Update the navigation property taskDefinitions in identityGovernance
+### [Update-MgIdentityGovernancePrivilegedAccess](Update-MgIdentityGovernancePrivilegedAccess.md)
+Update the navigation property privilegedAccess in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTaskReport](Update-MgIdentityGovernanceLifecycleWorkflowTaskReport.md)
-Update the navigation property taskReports in identityGovernance
+### [Update-MgIdentityGovernancePrivilegedAccessGroup](Update-MgIdentityGovernancePrivilegedAccessGroup.md)
+Update the navigation property group in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
-Update the navigation property taskProcessingResults in identityGovernance
+### [Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
+Update the navigation property assignmentSchedules in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTemplate](Update-MgIdentityGovernanceLifecycleWorkflowTemplate.md)
-Update the navigation property workflowTemplates in identityGovernance
+### [Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance](Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance.md)
+Update the navigation property assignmentScheduleInstances in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTemplateTask](Update-MgIdentityGovernanceLifecycleWorkflowTemplateTask.md)
-Update the navigation property tasks in identityGovernance
+### [Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
+Update the navigation property assignmentScheduleRequests in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
-Update the navigation property taskProcessingResults in identityGovernance
+### [Update-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule](Update-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule.md)
+Update the navigation property eligibilitySchedules in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
-Update the navigation property userProcessingResults in identityGovernance
+### [Update-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance](Update-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance.md)
+Update the navigation property eligibilityScheduleInstances in identityGovernance
 
-### [Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
-Update the navigation property taskProcessingResults in identityGovernance
-
-### [Update-MgIdentityGovernanceLifecycleWorkflowVersion](Update-MgIdentityGovernanceLifecycleWorkflowVersion.md)
-Update the navigation property versions in identityGovernance
+### [Update-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Update-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
+Update the navigation property eligibilityScheduleRequests in identityGovernance
 
 ### [Update-MgIdentityGovernanceTermOfUseAgreement](Update-MgIdentityGovernanceTermOfUseAgreement.md)
 Update the navigation property agreements in identityGovernance

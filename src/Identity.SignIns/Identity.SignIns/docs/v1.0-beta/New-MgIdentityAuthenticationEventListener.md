@@ -16,7 +16,7 @@ Create new navigation property to authenticationEventListeners for identity
 ```
 New-MgIdentityAuthenticationEventListener [-AdditionalProperties <Hashtable>]
  [-AuthenticationEventsFlowId <String>] [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>]
- [-Priority <Int32>] [-Tags <IMicrosoftGraphKeyValuePair[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Priority <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -125,22 +125,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tags
-.
-To construct, please use Get-Help -Online and see NOTES section for TAGS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -204,9 +188,6 @@ BODYPARAMETER <IMicrosoftGraphAuthenticationEventListener>: authenticationEventL
       - `[IncludeApplications <IMicrosoftGraphAuthenticationConditionApplication[]>]`: 
         - `[AppId <String>]`: 
   - `[Priority <Int32?>]`: 
-  - `[Tags <IMicrosoftGraphKeyValuePair[]>]`: 
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
 
 CONDITIONS <IMicrosoftGraphAuthenticationConditions>: authenticationConditions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -215,10 +196,6 @@ CONDITIONS <IMicrosoftGraphAuthenticationConditions>: authenticationConditions
     - `[IncludeAllApplications <Boolean?>]`: 
     - `[IncludeApplications <IMicrosoftGraphAuthenticationConditionApplication[]>]`: 
       - `[AppId <String>]`: 
-
-TAGS <IMicrosoftGraphKeyValuePair[]>: .
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
 
 ## RELATED LINKS
 

@@ -17,7 +17,8 @@ Create new navigation property to participants for communications
 New-MgCommunicationCallParticipant -CallId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Info <IMicrosoftGraphParticipantInfo1>] [-IsIdentityAnonymized] [-IsInLobby] [-IsMuted]
  [-MediaStreams <IMicrosoftGraphMediaStream1[]>] [-Metadata <String>]
- [-RecordingInfo <IMicrosoftGraphRecordingInfo1>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RecordingInfo <IMicrosoftGraphRecordingInfo1>]
+ [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
@@ -37,14 +38,25 @@ New-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
 New-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Info <IMicrosoftGraphParticipantInfo1>]
  [-IsIdentityAnonymized] [-IsInLobby] [-IsMuted] [-MediaStreams <IMicrosoftGraphMediaStream1[]>]
- [-Metadata <String>] [-RecordingInfo <IMicrosoftGraphRecordingInfo1>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Metadata <String>] [-RecordingInfo <IMicrosoftGraphRecordingInfo1>]
+ [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Create new navigation property to participants for communications
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+
+Get-MgCommunicationCallParticipant -CallId $callId
+```
+
+This example shows how to use the New-MgCommunicationCallParticipant Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -234,6 +246,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RestrictedExperience
+onlineMeetingRestricted
+To construct, please use Get-Help -Online and see NOTES section for RESTRICTEDEXPERIENCE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeetingRestricted
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -322,6 +350,10 @@ BODYPARAMETER <IMicrosoftGraphParticipant1>: participant
     - `[InitiatedBy <IMicrosoftGraphParticipantInfo1>]`: participantInfo
     - `[Initiator <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[RecordingStatus <String>]`: recordingStatus
+  - `[RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>]`: onlineMeetingRestricted
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ContentSharingDisabled <String>]`: onlineMeetingContentSharingDisabledReason
+    - `[VideoDisabled <String>]`: onlineMeetingVideoDisabledReason
 
 INFO <IMicrosoftGraphParticipantInfo1>: participantInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -385,6 +417,11 @@ RECORDINGINFO <IMicrosoftGraphRecordingInfo1>: recordingInfo
     - `[Region <String>]`: The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
   - `[Initiator <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[RecordingStatus <String>]`: recordingStatus
+
+RESTRICTEDEXPERIENCE <IMicrosoftGraphOnlineMeetingRestricted>: onlineMeetingRestricted
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ContentSharingDisabled <String>]`: onlineMeetingContentSharingDisabledReason
+  - `[VideoDisabled <String>]`: onlineMeetingVideoDisabledReason
 
 ## RELATED LINKS
 

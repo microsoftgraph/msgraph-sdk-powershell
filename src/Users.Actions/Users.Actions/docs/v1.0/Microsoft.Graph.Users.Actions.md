@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 858d0128-7086-4d5d-b326-c605e352a9a4
+Module Guid: d579c3ad-f66b-4a27-935c-53e0d9dd108e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -37,26 +37,6 @@ For details about presences sessions, see presence: setPresence.
 
 ### [Clear-MgUserPresenceUserPreferredPresence](Clear-MgUserPresenceUserPreferredPresence.md)
 Clear the preferred availability and activity status for a user.
-
-### [Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup](Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-
-### [Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject](Confirm-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject.md)
-Invoke action checkMemberObjects
-
-### [Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup](Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-
-### [Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject](Confirm-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject.md)
-Invoke action checkMemberObjects
 
 ### [Confirm-MgUserMemberGroup](Confirm-MgUserMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -131,24 +111,6 @@ If **findMeetingTimes** cannot return any meeting suggestions, the response woul
 \nBased on this value, you can better adjust the parameters and call **findMeetingTimes** again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-
-### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDeviceMemberObject.md)
-Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-**Note:** Only users and role-enabled groups can be members of directory roles.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-
-### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject](Get-MgUserAuthenticationWindowHelloForBusinessMethodDeviceMemberObject.md)
-Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-**Note:** Only users and role-enabled groups can be members of directory roles.
 
 ### [Get-MgUserById](Get-MgUserById.md)
 Return the directory objects specified in a list of IDs.
@@ -382,6 +344,12 @@ Postpone a reminder for an event in a user calendar until a new time.
 ### [Invoke-MgSnoozeUserEventReminder](Invoke-MgSnoozeUserEventReminder.md)
 Postpone a reminder for an event in a user calendar until a new time.
 
+### [Invoke-MgSoftUserChatMessageDelete](Invoke-MgSoftUserChatMessageDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftUserChatMessageReplyDelete](Invoke-MgSoftUserChatMessageReplyDelete.md)
+Invoke action softDelete
+
 ### [Invoke-MgTranslateUserExchangeId](Invoke-MgTranslateUserExchangeId.md)
 Translate identifiers of Outlook-related resources between formats.
 
@@ -565,7 +533,11 @@ Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
 
 ### [New-MgUserTodoListTaskAttachmentUploadSession](New-MgUserTodoListTaskAttachmentUploadSession.md)
-Invoke action createUploadSession
+Create an upload session to iteratively upload ranges of a file as an attachment to a todoTask.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
+The request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+This allows the transfer to be resumed, in case the network connection is dropped during the upload.
+The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.
 
 ### [Publish-MgUserDriveListContentType](Publish-MgUserDriveListContentType.md)
 Publishes a [contentType][] present in the content type hub site.
@@ -587,13 +559,6 @@ Reset passcode
 
 ### [Restart-MgUserManagedDeviceNow](Restart-MgUserManagedDeviceNow.md)
 Reboot device
-
-### [Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
-Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
-If an item was accidentally deleted, you can fully restore the item.
-This is not applicable to security groups, which are deleted permanently.
-A recently deleted item will remain available for up to 30 days.
-After 30 days, the item is permanently deleted.
 
 ### [Restore-MgUserDriveItem](Restore-MgUserDriveItem.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.
@@ -723,6 +688,12 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
+
+### [Undo-MgUserChatMessageReplySoftDelete](Undo-MgUserChatMessageReplySoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgUserChatMessageSoftDelete](Undo-MgUserChatMessageSoftDelete.md)
+Invoke action undoSoftDelete
 
 ### [Unpublish-MgUserDriveListContentType](Unpublish-MgUserDriveListContentType.md)
 Unpublish a [contentType][] from a content type hub site.

@@ -15,8 +15,8 @@ Create new navigation property to onlineMeetings for communications
 ### CreateExpanded2 (Default)
 ```
 New-MgCommunicationOnlineMeeting [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera]
- [-AllowAttendeeToEnableMic] [-AllowedPresenters <String>] [-AllowTeamworkReactions]
- [-AlternativeRecordingInputFile <String>] [-AnonymizeIdentityForRoles <String[]>]
+ [-AllowAttendeeToEnableMic] [-AllowedPresenters <String>] [-AllowParticipantsToChangeName]
+ [-AllowTeamworkReactions] [-AlternativeRecordingInputFile <String>] [-AnonymizeIdentityForRoles <String[]>]
  [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>] [-AttendeeReportInputFile <String>]
  [-AudioConferencing <IMicrosoftGraphAudioConferencing>]
  [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>] [-Capabilities <String[]>]
@@ -26,9 +26,10 @@ New-MgCommunicationOnlineMeeting [-AdditionalProperties <Hashtable>] [-AllowAtte
  [-JoinUrl <String>] [-JoinWebUrl <String>] [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
  [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]
  [-Participants <IMicrosoftGraphMeetingParticipants1>] [-RecordAutomatically] [-RecordingInputFile <String>]
- [-Registration <IMicrosoftGraphMeetingRegistration>] [-StartDateTime <DateTime>] [-Subject <String>]
- [-Transcripts <IMicrosoftGraphCallTranscript[]>] [-VideoTeleconferenceId <String>]
- [-VirtualAppointment <IMicrosoftGraphVirtualAppointment>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Registration <IMicrosoftGraphMeetingRegistration>] [-ShareMeetingChatHistoryDefault <String>]
+ [-StartDateTime <DateTime>] [-Subject <String>] [-Transcripts <IMicrosoftGraphCallTranscript[]>]
+ [-VideoTeleconferenceId <String>] [-VirtualAppointment <IMicrosoftGraphVirtualAppointment>]
+ [-WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create2
@@ -41,6 +42,53 @@ New-MgCommunicationOnlineMeeting -BodyParameter <IMicrosoftGraphOnlineMeeting1> 
 Create new navigation property to onlineMeetings for communications
 
 ## EXAMPLES
+
+### Example 1: Retrieve an online meeting by videoTeleconferenceId
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+
+Get-MgCommunicationOnlineMeeting -Filter "VideoTeleconferenceId eq '123456789'"
+```
+
+This example shows how to use the New-MgCommunicationOnlineMeeting Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Retrieve an online meeting by meeting ID
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId
+```
+
+This example shows how to use the New-MgCommunicationOnlineMeeting Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Retrieve an online meeting by joinWebUrl
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeeting -UserId $userId -Filter "JoinWebUrl eq 'https://teams.microsoft.com/l/meetup-join/19:meeting_MGQ4MDQyNTEtNTQ2NS00YjQxLTlkM2EtZWVkODYxODYzMmY2@thread.v2/0?context"
+```
+
+This example shows how to use the New-MgCommunicationOnlineMeeting Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Fetch attendee report of a Teams live event
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeetingAttendeeReport -UserId $userId -OnlineMeetingId $onlineMeetingId
+```
+
+This example shows how to use the New-MgCommunicationOnlineMeeting Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -94,6 +142,21 @@ onlineMeetingPresenters
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded2
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowParticipantsToChangeName
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded2
 Aliases:
 
@@ -514,6 +577,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ShareMeetingChatHistoryDefault
+meetingChatHistoryDefaultMode
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded2
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -StartDateTime
 The meeting start time in UTC.
 
@@ -583,6 +661,22 @@ To construct, please use Get-Help -Online and see NOTES section for VIRTUALAPPOI
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualAppointment
+Parameter Sets: CreateExpanded2
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WatermarkProtection
+watermarkProtectionValues
+To construct, please use Get-Help -Online and see NOTES section for WATERMARKPROTECTION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWatermarkProtectionValues
 Parameter Sets: CreateExpanded2
 Aliases:
 
@@ -678,6 +772,7 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
   - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
+  - `[AllowParticipantsToChangeName <Boolean?>]`: 
   - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
   - `[AllowedPresenters <String>]`: onlineMeetingPresenters
   - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
@@ -751,17 +846,17 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
   - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]`: meetingAttendanceReport
   - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
+    - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
       - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
-      - `[Role <String>]`: 
+      - `[Role <String>]`: onlineMeetingRole
       - `[Upn <String>]`: User principal name of the participant.
-    - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
-    - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
-    - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+    - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+    - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
+    - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
   - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
   - `[Recording <Byte[]>]`: The content stream of the recording of a Teams live event. Read-only.
   - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -786,6 +881,7 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
       - `[DisplayName <String>]`: Display name of the speaker.
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the meeting.
+  - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
   - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
   - `[Subject <String>]`: The subject of the online meeting.
   - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
@@ -806,6 +902,10 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
     - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
+  - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsEnabledForContentSharing <Boolean?>]`: 
+    - `[IsEnabledForVideo <Boolean?>]`: 
 
 BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings>: broadcastMeetingSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -865,7 +965,7 @@ MEETINGATTENDANCEREPORT <IMicrosoftGraphMeetingAttendanceReport1>: meetingAttend
 
 PARTICIPANTS <IMicrosoftGraphMeetingParticipants1>: meetingParticipants
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
+  - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
     - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -874,11 +974,11 @@ PARTICIPANTS <IMicrosoftGraphMeetingParticipants1>: meetingParticipants
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[Role <String>]`: 
+    - `[Role <String>]`: onlineMeetingRole
     - `[Upn <String>]`: User principal name of the participant.
-  - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
-  - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
-  - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+  - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+  - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
+  - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
 
 REGISTRATION <IMicrosoftGraphMeetingRegistration>: meetingRegistration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -921,6 +1021,11 @@ VIRTUALAPPOINTMENT <IMicrosoftGraphVirtualAppointment>: virtualAppointment
   - `[Settings <IMicrosoftGraphVirtualAppointmentSettings>]`: virtualAppointmentSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
+
+WATERMARKPROTECTION <IMicrosoftGraphWatermarkProtectionValues>: watermarkProtectionValues
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[IsEnabledForContentSharing <Boolean?>]`: 
+  - `[IsEnabledForVideo <Boolean?>]`: 
 
 ## RELATED LINKS
 

@@ -1,18 +1,27 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: List hosted content for a channel message
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamChannelMessageHostedContent -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId
 ```
+This example shows how to use the New-MgUserChatMessageHostedContent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: List hosted content for reply to a channel message
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Teams
 
-{{ Add output here }}
+Get-MgTeamChannelMessageReplyHostedContent -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -ChatMessageId1 $chatMessageId1
 ```
+This example shows how to use the New-MgUserChatMessageHostedContent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 3: List hosted content for message in a chat
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgChatMessageHostedContent -ChatId $chatId -ChatMessageId $chatMessageId
+```
+This example shows how to use the New-MgUserChatMessageHostedContent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

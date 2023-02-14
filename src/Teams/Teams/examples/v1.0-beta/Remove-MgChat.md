@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Code snippet
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Teams
+
+$params = @{
+	Topic = "Group chat title update"
+}
+
+Update-MgChat -ChatId $chatId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Remove-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -3186,7 +3186,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.'
+              description: 'A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.'
             platforms:
               type: array
               items:
@@ -3575,6 +3575,7 @@ components:
         - acronym
         - bookmark
         - chatMessage
+        - qna
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery
@@ -3588,8 +3589,6 @@ components:
           type: string
           description: Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
           nullable: true
-        query_string:
-          $ref: '#/components/schemas/microsoft.graph.searchQueryString'
       additionalProperties:
         type: object
     microsoft.graph.searchAlterationOptions:
@@ -3989,15 +3988,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationSortProperty'
       additionalProperties:
         type: object
-    microsoft.graph.searchQueryString:
-      title: searchQueryString
-      type: object
-      properties:
-        query:
-          type: string
-          description: Contains the actual search terms of the request.
-      additionalProperties:
-        type: object
     microsoft.graph.searchContent:
       title: searchContent
       enum:
@@ -4026,11 +4016,15 @@ components:
       properties:
         contentSource:
           type: string
-          description: The name of the content source which the externalItem is part of .
+          description: The name of the content source that the externalItem is part of.
           nullable: true
         hitId:
           type: string
           description: 'The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.'
+          nullable: true
+        isCollapsed:
+          type: boolean
+          description: Indicates whether the current result is collapses when the collapseProperties property is used.
           nullable: true
         rank:
           maximum: 2147483647

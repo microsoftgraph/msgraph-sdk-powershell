@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 6a8f508a-ce85-44e3-b3b2-7a63c766b6bc
+Module Guid: ec060e8a-a328-428d-8349-7db0b54b021f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -864,6 +864,9 @@ Add (pin) a tab to the specified chat.
 
 ### [New-MgGroupTeamChannel](New-MgGroupTeamChannel.md)
 Create a new channel in a team, as specified in the request body.
+When you create a channel, the maximum length of the channel's `displayName` is 50 characters.
+This is the name that appears to the user in Microsoft Teams.
+You can add a maximum of 200 members when you create a private channel.
 
 ### [New-MgGroupTeamChannelMember](New-MgGroupTeamChannelMember.md)
 Add a conversationMember to a channel.
@@ -935,6 +938,7 @@ Create a new schedulingGroup.
 
 ### [New-MgGroupTeamScheduleShift](New-MgGroupTeamScheduleShift.md)
 Create a new shift instance in a schedule.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ### [New-MgGroupTeamScheduleSwapShiftChangeRequest](New-MgGroupTeamScheduleSwapShiftChangeRequest.md)
 Create an instance of a swapShiftsChangeRequest object.
@@ -962,6 +966,9 @@ Create a new team.
 
 ### [New-MgTeamChannel](New-MgTeamChannel.md)
 Create a new channel in a team, as specified in the request body.
+When you create a channel, the maximum length of the channel's `displayName` is 50 characters.
+This is the name that appears to the user in Microsoft Teams.
+You can add a maximum of 200 members when you create a private channel.
 
 ### [New-MgTeamChannelEmail](New-MgTeamChannelEmail.md)
 Provision an email address for a channel.
@@ -1045,6 +1052,7 @@ Create a new schedulingGroup.
 
 ### [New-MgTeamScheduleShift](New-MgTeamScheduleShift.md)
 Create a new shift instance in a schedule.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ### [New-MgTeamScheduleSwapShiftChangeRequest](New-MgTeamScheduleSwapShiftChangeRequest.md)
 Create an instance of a swapShiftsChangeRequest object.

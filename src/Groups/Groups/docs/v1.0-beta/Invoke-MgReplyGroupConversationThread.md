@@ -8,9 +8,8 @@ schema: 2.0.0
 # Invoke-MgReplyGroupConversationThread
 
 ## SYNOPSIS
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ## SYNTAX
 
@@ -43,9 +42,8 @@ Invoke-MgReplyGroupConversationThread -InputObject <IGroupsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ## EXAMPLES
 
@@ -403,6 +401,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[Q <String>]`: Usage: q='{q}'
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
   - `[SiteId <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage

@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: List risk detections
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgServicePrincipalRiskDetection
 ```
+This example shows how to use the New-MgServicePrincipalRiskDetection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: List risk detections and filter the results
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-{{ Add output here }}
+Get-MgServicePrincipalRiskDetection -Filter "riskEventType eq 'investigationsThreatIntelligence' or riskLevel eq 'medium'"
 ```
-
-{{ Add description here }}
+This example shows how to use the New-MgServicePrincipalRiskDetection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

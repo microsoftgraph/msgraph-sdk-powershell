@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: 5b523200-b57e-4044-9a8a-b6cf56b5e43a
+Module Guid: 7ed39982-8bef-40f6-8920-8adb7f16a471
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -55,22 +55,23 @@ Use the **id** property, which is the currency code, to specify the currency.
 Get businessScenarios from solutions
 
 ### [Get-MgBusinessScenarioPlanner](Get-MgBusinessScenarioPlanner.md)
-Get planner from solutions
+Read the properties and relationships of a businessScenarioPlanner object.
 
 ### [Get-MgBusinessScenarioPlannerPlan](Get-MgBusinessScenarioPlannerPlan.md)
-Invoke action getPlan
+Get information about the plannerPlan mapped to a given target.
+If a **plannerPlan** doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
 
 ### [Get-MgBusinessScenarioPlannerPlanConfiguration](Get-MgBusinessScenarioPlannerPlanConfiguration.md)
-Get planConfiguration from solutions
+Read the properties and relationships of a plannerPlanConfiguration object.
 
 ### [Get-MgBusinessScenarioPlannerPlanConfigurationLocalization](Get-MgBusinessScenarioPlannerPlanConfigurationLocalization.md)
-Get localizations from solutions
+Localized names for the plan configuration.
 
 ### [Get-MgBusinessScenarioPlannerTask](Get-MgBusinessScenarioPlannerTask.md)
-Get tasks from solutions
+The Planner tasks for the scenario.
 
 ### [Get-MgBusinessScenarioPlannerTaskConfiguration](Get-MgBusinessScenarioPlannerTaskConfiguration.md)
-Get taskConfiguration from solutions
+Read the properties and relationships of a plannerTaskConfiguration object.
 
 ### [New-MgBookingBusiness](New-MgBookingBusiness.md)
 Create a new Microsoft Bookings business in a tenant.
@@ -99,13 +100,13 @@ Create a new staff member in the specified bookingBusiness.
 Add new entity to bookingCurrencies
 
 ### [New-MgBusinessScenario](New-MgBusinessScenario.md)
-Create new navigation property to businessScenarios for solutions
+Create a new businessScenario object.
 
 ### [New-MgBusinessScenarioPlannerPlanConfigurationLocalization](New-MgBusinessScenarioPlannerPlanConfigurationLocalization.md)
-Create new navigation property to localizations for solutions
+Create a new plannerPlanConfigurationLocalization object.
 
 ### [New-MgBusinessScenarioPlannerTask](New-MgBusinessScenarioPlannerTask.md)
-Create new navigation property to tasks for solutions
+Create a new businessScenarioTask object.
 
 ### [Publish-MgBookingBusiness](Publish-MgBookingBusiness.md)
 Make the scheduling page of this business available to external customers.
@@ -194,7 +195,7 @@ Update the navigation property businessScenarios in solutions
 Update the navigation property planner in solutions
 
 ### [Update-MgBusinessScenarioPlannerPlanConfiguration](Update-MgBusinessScenarioPlannerPlanConfiguration.md)
-Update the navigation property planConfiguration in solutions
+Update the properties of a plannerPlanConfiguration object for a businessScenario.
 
 ### [Update-MgBusinessScenarioPlannerPlanConfigurationLocalization](Update-MgBusinessScenarioPlannerPlanConfigurationLocalization.md)
 Update the navigation property localizations in solutions
@@ -203,5 +204,5 @@ Update the navigation property localizations in solutions
 Update the navigation property tasks in solutions
 
 ### [Update-MgBusinessScenarioPlannerTaskConfiguration](Update-MgBusinessScenarioPlannerTaskConfiguration.md)
-Update the navigation property taskConfiguration in solutions
+Update the properties of a plannerTaskConfiguration object.
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: e42894a4-059c-45ff-ab98-570f22253083
+Module Guid: a3004618-00ab-4401-b90e-066f3f72ef11
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -99,7 +99,7 @@ Read-only.
 Nullable.
 
 ### [Get-MgUserTodoListTaskAttachment](Get-MgUserTodoListTaskAttachment.md)
-Get attachments from users
+A collection of file attachments for the task.
 
 ### [Get-MgUserTodoListTaskAttachmentContent](Get-MgUserTodoListTaskAttachmentContent.md)
 Get media content for the navigation property attachments from users
@@ -108,7 +108,7 @@ Get media content for the navigation property attachments from users
 Get attachmentSessions from users
 
 ### [Get-MgUserTodoListTaskAttachmentSessionContent](Get-MgUserTodoListTaskAttachmentSessionContent.md)
-Get content for the navigation property attachmentSessions from users
+The content streams that are uploaded.
 
 ### [Get-MgUserTodoListTaskChecklistItem](Get-MgUserTodoListTaskChecklistItem.md)
 A collection of checklistItems linked to a task.
@@ -145,7 +145,9 @@ Create new navigation property to extensions for users
 Create a new task object in a specified todoTaskList.
 
 ### [New-MgUserTodoListTaskAttachment](New-MgUserTodoListTaskAttachment.md)
-Create new navigation property to attachments for users
+Add a new taskFileAttachment object to a todoTask.
+This operation limits the size of the attachment you can add to under 3 MB.
+If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 
 ### [New-MgUserTodoListTaskChecklistItem](New-MgUserTodoListTaskChecklistItem.md)
 Create new navigation property to checklistItems for users
@@ -216,7 +218,7 @@ Update media content for the navigation property photo in users
 Update media content for the navigation property attachments in users
 
 ### [Set-MgUserTodoListTaskAttachmentSessionContent](Set-MgUserTodoListTaskAttachmentSessionContent.md)
-Update content for the navigation property attachmentSessions in users
+The content streams that are uploaded.
 
 ### [Update-MgUser](Update-MgUser.md)
 Update the properties of a user object.

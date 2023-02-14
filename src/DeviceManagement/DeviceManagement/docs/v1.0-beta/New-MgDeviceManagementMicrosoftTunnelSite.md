@@ -15,7 +15,7 @@ Create new navigation property to microsoftTunnelSites for deviceManagement
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementMicrosoftTunnelSite [-AdditionalProperties <Hashtable>] [-Description <String>]
- [-DisplayName <String>] [-EnableCertificatePinning] [-Id <String>] [-InternalNetworkProbeUrl <String>]
+ [-DisplayName <String>] [-Id <String>] [-InternalNetworkProbeUrl <String>]
  [-MicrosoftTunnelConfiguration <IMicrosoftGraphMicrosoftTunnelConfiguration>]
  [-MicrosoftTunnelServers <IMicrosoftGraphMicrosoftTunnelServer[]>] [-PublicAddress <String>]
  [-RoleScopeTagIds <String[]>] [-UpgradeAutomatically] [-UpgradeAvailable] [-UpgradeWindowEndTime <String>]
@@ -88,22 +88,6 @@ This property is required when a site is created.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EnableCertificatePinning
-When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients.
-When set to false, certificate pinning will be disabled.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -339,7 +323,6 @@ BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelSite>: Entity that represents a Mic
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Description <String>]`: The site's description (optional)
   - `[DisplayName <String>]`: The display name for the site. This property is required when a site is created.
-  - `[EnableCertificatePinning <Boolean?>]`: When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.
   - `[InternalNetworkProbeUrl <String>]`: The site's Internal Network Access Probe URL
   - `[MicrosoftTunnelConfiguration <IMicrosoftGraphMicrosoftTunnelConfiguration>]`: Entity that represents a collection of Microsoft Tunnel settings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
