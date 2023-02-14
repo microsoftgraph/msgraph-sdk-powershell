@@ -8,40 +8,40 @@ schema: 2.0.0
 # Update-MgPlannerTaskAssignedToTaskBoardFormat
 
 ## SYNOPSIS
-Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+Update the navigation property assignedToTaskBoardFormat in planner
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-OrderHintsByAssignee <Hashtable>] [-UnassignedOrderHint <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> -IfMatch <String>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHintsByAssignee <Hashtable>]
+ [-UnassignedOrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String>
+Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> -IfMatch <String>
  -BodyParameter <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity>
+Update-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> -IfMatch <String>
  -BodyParameter <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity>
+Update-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> -IfMatch <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHintsByAssignee <Hashtable>]
  [-UnassignedOrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+Update the navigation property assignedToTaskBoardFormat in planner
 
 ## EXAMPLES
 
@@ -102,6 +102,21 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag value.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -14,7 +14,7 @@ Update the navigation property tasks in planner
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPlannerTask -PlannerTaskId <String> [-ActiveChecklistItemCount <Int32>]
+Update-MgPlannerTask -PlannerTaskId <String> -IfMatch <String> [-ActiveChecklistItemCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-AppliedCategories <Hashtable>]
  [-AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]
  [-AssigneePriority <String>] [-Assignments <Hashtable>] [-BucketId <String>]
@@ -30,19 +30,19 @@ Update-MgPlannerTask -PlannerTaskId <String> [-ActiveChecklistItemCount <Int32>]
 
 ### Update
 ```
-Update-MgPlannerTask -PlannerTaskId <String> -BodyParameter <IMicrosoftGraphPlannerTask> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerTask -PlannerTaskId <String> -IfMatch <String> -BodyParameter <IMicrosoftGraphPlannerTask>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPlannerTask -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerTask> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerTask -InputObject <IPlannerIdentity> -IfMatch <String>
+ -BodyParameter <IMicrosoftGraphPlannerTask> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPlannerTask -InputObject <IPlannerIdentity> [-ActiveChecklistItemCount <Int32>]
+Update-MgPlannerTask -InputObject <IPlannerIdentity> -IfMatch <String> [-ActiveChecklistItemCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-AppliedCategories <Hashtable>]
  [-AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]
  [-AssigneePriority <String>] [-Assignments <Hashtable>] [-BucketId <String>]
@@ -384,6 +384,21 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag value.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

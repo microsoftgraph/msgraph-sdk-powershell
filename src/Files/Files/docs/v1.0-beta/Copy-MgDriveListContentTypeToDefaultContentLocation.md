@@ -13,28 +13,28 @@ The file can then be added as a default file or template via a POST operation.
 
 ## SYNTAX
 
-### CopyExpanded (Default)
+### CopyExpanded1 (Default)
 ```
 Copy-MgDriveListContentTypeToDefaultContentLocation -ContentTypeId <String> -DriveId <String>
  [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
  [-SourceFile <IMicrosoftGraphItemReference>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Copy
+### Copy1
 ```
 Copy-MgDriveListContentTypeToDefaultContentLocation -ContentTypeId <String> -DriveId <String>
  -BodyParameter <IPaths18D2Wr5DrivesDriveIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CopyViaIdentity
+### CopyViaIdentity1
 ```
 Copy-MgDriveListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
  -BodyParameter <IPaths18D2Wr5DrivesDriveIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CopyViaIdentityExpanded
+### CopyViaIdentityExpanded1
 ```
 Copy-MgDriveListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
  [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
@@ -54,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
+Parameter Sets: CopyExpanded1, CopyViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -70,7 +70,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths18D2Wr5DrivesDriveIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Copy, CopyViaIdentity
+Parameter Sets: Copy1, CopyViaIdentity1
 Aliases:
 
 Required: True
@@ -85,7 +85,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Copy, CopyExpanded
+Parameter Sets: Copy1, CopyExpanded1
 Aliases:
 
 Required: True
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
+Parameter Sets: CopyExpanded1, CopyViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -115,7 +115,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Copy, CopyExpanded
+Parameter Sets: Copy1, CopyExpanded1
 Aliases:
 
 Required: True
@@ -131,7 +131,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: CopyViaIdentity, CopyViaIdentityExpanded
+Parameter Sets: CopyViaIdentity1, CopyViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -162,7 +162,7 @@ To construct, please use Get-Help -Online and see NOTES section for SOURCEFILE p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
-Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
+Parameter Sets: CopyExpanded1, CopyViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -230,9 +230,9 @@ BODYPARAMETER <IPaths18D2Wr5DrivesDriveIdListContenttypesContenttypeIdMicrosoftG
   - `[DestinationFileName <String>]`: 
   - `[SourceFile <IMicrosoftGraphItemReference>]`: itemReference
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-    - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-    - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+    - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+    - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
     - `[Name <String>]`: The name of the item being referenced. Read-only.
     - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
     - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -245,7 +245,7 @@ BODYPARAMETER <IPaths18D2Wr5DrivesDriveIdListContenttypesContenttypeIdMicrosoftG
       - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
       - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
       - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 
 INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
@@ -260,6 +260,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission
@@ -274,9 +275,9 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
 
 SOURCEFILE <IMicrosoftGraphItemReference>: itemReference
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-  - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-  - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+  - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+  - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+  - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
   - `[Name <String>]`: The name of the item being referenced. Read-only.
   - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
   - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -289,7 +290,7 @@ SOURCEFILE <IMicrosoftGraphItemReference>: itemReference
     - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
     - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
     - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-  - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+  - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 
 ## RELATED LINKS
 

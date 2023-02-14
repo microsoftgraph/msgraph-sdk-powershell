@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 288856c3-9dc9-40e7-a767-f103af5e896d
+Module Guid: 819c49a4-be4a-41dc-8f47-f1c92e98587d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -79,6 +79,9 @@ Read-only.
 Catalog of the access package containing this policy.
 Read-only.
 
+### [Get-MgEntitlementManagementAssignmentPolicyQuestion](Get-MgEntitlementManagementAssignmentPolicyQuestion.md)
+Get questions from identityGovernance
+
 ### [Get-MgEntitlementManagementAssignmentRequest](Get-MgEntitlementManagementAssignmentRequest.md)
 Access package assignment requests created by or on behalf of a subject.
 
@@ -99,6 +102,9 @@ Read-only.
 ### [Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyCatalog](Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyCatalog.md)
 Catalog of the access package containing this policy.
 Read-only.
+
+### [Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion](Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion.md)
+Get questions from identityGovernance
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackage](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackage.md)
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
@@ -293,15 +299,21 @@ Create new navigation property to assignments for identityGovernance
 In Azure AD entitlement management, create a new accessPackageAssignmentPolicy object.
 The request will include a reference to the accessPackage that will contain this policy, which must already exist.
 
+### [New-MgEntitlementManagementAssignmentPolicyQuestion](New-MgEntitlementManagementAssignmentPolicyQuestion.md)
+Create new navigation property to questions for identityGovernance
+
 ### [New-MgEntitlementManagementAssignmentRequest](New-MgEntitlementManagementAssignmentRequest.md)
 In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.
-This operation is used to assign a user to an access package, or to remove an access package assignment.
+This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
 
 ### [New-MgEntitlementManagementCatalog](New-MgEntitlementManagementCatalog.md)
 Create a new accessPackageCatalog object.
 
 ### [New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
 Create new navigation property to assignmentPolicies for identityGovernance
+
+### [New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion](New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion.md)
+Create new navigation property to questions for identityGovernance
 
 ### [New-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef](New-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef.md)
 Create new navigation property ref to incompatibleAccessPackages for identityGovernance
@@ -404,6 +416,9 @@ Delete navigation property assignments for identityGovernance
 ### [Remove-MgEntitlementManagementAssignmentPolicy](Remove-MgEntitlementManagementAssignmentPolicy.md)
 Delete navigation property assignmentPolicies for identityGovernance
 
+### [Remove-MgEntitlementManagementAssignmentPolicyQuestion](Remove-MgEntitlementManagementAssignmentPolicyQuestion.md)
+Delete navigation property questions for identityGovernance
+
 ### [Remove-MgEntitlementManagementAssignmentRequest](Remove-MgEntitlementManagementAssignmentRequest.md)
 Delete navigation property assignmentRequests for identityGovernance
 
@@ -412,6 +427,9 @@ Delete navigation property catalogs for identityGovernance
 
 ### [Remove-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](Remove-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
 Delete navigation property assignmentPolicies for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion](Remove-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion.md)
+Delete navigation property questions for identityGovernance
 
 ### [Remove-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef](Remove-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef.md)
 Delete ref of navigation property incompatibleAccessPackages for identityGovernance
@@ -557,6 +575,9 @@ Update the navigation property stages in identityGovernance
 ### [Update-MgEntitlementManagementAssignment](Update-MgEntitlementManagementAssignment.md)
 Invoke action reprocess
 
+### [Update-MgEntitlementManagementAssignmentPolicyQuestion](Update-MgEntitlementManagementAssignmentPolicyQuestion.md)
+Update the navigation property questions in identityGovernance
+
 ### [Update-MgEntitlementManagementAssignmentRequest](Update-MgEntitlementManagementAssignmentRequest.md)
 Invoke action reprocess
 
@@ -565,6 +586,9 @@ Update the navigation property catalogs in identityGovernance
 
 ### [Update-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](Update-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
 Update the navigation property assignmentPolicies in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion](Update-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion.md)
+Update the navigation property questions in identityGovernance
 
 ### [Update-MgEntitlementManagementConnectedOrganization](Update-MgEntitlementManagementConnectedOrganization.md)
 Update the navigation property connectedOrganizations in identityGovernance

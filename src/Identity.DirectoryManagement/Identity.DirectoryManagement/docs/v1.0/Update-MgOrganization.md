@@ -602,7 +602,10 @@ Accept wildcard characters: False
 ```
 
 ### -TenantType
-.
+Not nullable.
+The tenant type option that was selected when the tenant was created.
+The possible values are: AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.
+AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
 
 ```yaml
 Type: System.String
@@ -764,7 +767,7 @@ BODYPARAMETER <IMicrosoftGraphOrganization1>: organization
   - `[State <String>]`: State name of the address for the organization.
   - `[Street <String>]`: Street name of the address for organization.
   - `[TechnicalNotificationMails <String[]>]`: Not nullable.
-  - `[TenantType <String>]`: 
+  - `[TenantType <String>]`: Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
   - `[VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>]`: The collection of domains associated with this tenant. Not nullable.
     - `[Capabilities <String>]`: For example, Email, OfficeCommunicationsOnline.
     - `[IsDefault <Boolean?>]`: true if this is the default domain associated with the tenant; otherwise, false.

@@ -8,27 +8,26 @@ schema: 2.0.0
 # New-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent
 
 ## SYNOPSIS
-Create new navigation property to userExperienceAnalyticsDeviceTimelineEvents for deviceManagement
+Create new navigation property to userExperienceAnalyticsDeviceTimelineEvent for deviceManagement
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent [-AdditionalProperties <Hashtable>]
- [-DeviceId <String>] [-EventAdditionalInformation <String>] [-EventDateTime <DateTime>]
- [-EventDetails <String>] [-EventLevel <DeviceEventLevel>] [-EventName <String>] [-EventSource <String>]
- [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DeviceId <String>] [-EventDateTime <DateTime>] [-EventDetails <String>] [-EventLevel <DeviceEventLevel>]
+ [-EventName <String>] [-EventSource <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents> [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to userExperienceAnalyticsDeviceTimelineEvents for deviceManagement
+Create new navigation property to userExperienceAnalyticsDeviceTimelineEvent for deviceManagement
 
 ## EXAMPLES
 
@@ -50,11 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-The user experience analytics device events entity contains NRT device events details.
+The user experience analytics device event entity contains NRT device event details.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent
 Parameter Sets: Create
 Aliases:
 
@@ -67,21 +66,6 @@ Accept wildcard characters: False
 
 ### -DeviceId
 The id of the device where the event occurred.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EventAdditionalInformation
-Placeholder value for future expansion.
 
 ```yaml
 Type: System.String
@@ -225,11 +209,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent
 
 ## NOTES
 
@@ -240,11 +224,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents>: The user experience analytics device events entity contains NRT device events details.
+BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent>: The user experience analytics device event entity contains NRT device event details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeviceId <String>]`: The id of the device where the event occurred.
-  - `[EventAdditionalInformation <String>]`: Placeholder value for future expansion.
   - `[EventDateTime <DateTime?>]`: The time the event occured.
   - `[EventDetails <String>]`: The details provided by the event, format depends on event type.
   - `[EventLevel <DeviceEventLevel?>]`: Indicates device event level. Possible values are: None, Verbose, Information, Warning, Error, Critical

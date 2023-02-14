@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 4590f434-0d0a-4b97-9af0-f87f17d27ae9
+Module Guid: ec060e8a-a328-428d-8349-7db0b54b021f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -593,14 +593,13 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgChatMessage](New-MgChatMessage.md)
-Send a new chatMessage in the specified chat.
-This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgChatMessageHostedContent](New-MgChatMessageHostedContent.md)
 Create new navigation property to hostedContents for chats
 
 ### [New-MgChatMessageReply](New-MgChatMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgChatMessageReplyHostedContent](New-MgChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -629,7 +628,7 @@ Send a new chatMessage in the specified channel.
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamChannelMessageReply](New-MgGroupTeamChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamChannelMessageReplyHostedContent](New-MgGroupTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -659,7 +658,7 @@ Send a new chatMessage in the specified channel.
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamPrimaryChannelMessageReply](New-MgGroupTeamPrimaryChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamPrimaryChannelMessageReplyHostedContent](New-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -684,6 +683,7 @@ Create a new schedulingGroup.
 
 ### [New-MgGroupTeamScheduleShift](New-MgGroupTeamScheduleShift.md)
 Create a new shift instance in a schedule.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ### [New-MgGroupTeamScheduleSwapShiftChangeRequest](New-MgGroupTeamScheduleSwapShiftChangeRequest.md)
 Create an instance of a swapShiftsChangeRequest object.
@@ -728,7 +728,7 @@ Send a new chatMessage in the specified channel.
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamChannelMessageReply](New-MgTeamChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamChannelMessageReplyHostedContent](New-MgTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -764,7 +764,7 @@ Send a new chatMessage in the specified channel.
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamPrimaryChannelMessageReply](New-MgTeamPrimaryChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamPrimaryChannelMessageReplyHostedContent](New-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -789,6 +789,7 @@ Create a new schedulingGroup.
 
 ### [New-MgTeamScheduleShift](New-MgTeamScheduleShift.md)
 Create a new shift instance in a schedule.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ### [New-MgTeamScheduleSwapShiftChangeRequest](New-MgTeamScheduleSwapShiftChangeRequest.md)
 Create an instance of a swapShiftsChangeRequest object.
@@ -821,14 +822,13 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgUserChatMessage](New-MgUserChatMessage.md)
-Send a new chatMessage in the specified chat.
-This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgUserChatMessageHostedContent](New-MgUserChatMessageHostedContent.md)
 Create new navigation property to hostedContents for users
 
 ### [New-MgUserChatMessageReply](New-MgUserChatMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgUserChatMessageReplyHostedContent](New-MgUserChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for users

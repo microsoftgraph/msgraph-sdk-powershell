@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: cce82142-1339-493d-9649-e8d05163070a
+Module Guid: 7c96d5fb-e0c2-4c96-b262-227030bac7ff
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -277,6 +277,11 @@ Device configuration states for this device.
 
 ### [Get-MgUserManagedDeviceDetectedApp](Get-MgUserManagedDeviceDetectedApp.md)
 All applications currently installed on the device
+
+### [Get-MgUserManagedDeviceHealthScriptState](Get-MgUserManagedDeviceHealthScriptState.md)
+Results of device health scripts that ran for this device.
+Default is empty list.
+This property is read-only.
 
 ### [Get-MgUserManagedDeviceLogCollectionResponse](Get-MgUserManagedDeviceLogCollectionResponse.md)
 List of log collection requests

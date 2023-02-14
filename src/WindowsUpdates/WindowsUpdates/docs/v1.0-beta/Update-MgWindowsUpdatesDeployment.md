@@ -339,6 +339,16 @@ To create the parameters described below, construct a hash table containing the 
 AUDIENCE <IMicrosoftGraphWindowsUpdatesDeploymentAudience>: deploymentAudience
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[ApplicableContent <IMicrosoftGraphWindowsUpdatesApplicableContent[]>]`: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+    - `[CatalogEntry <IMicrosoftGraphWindowsUpdatesCatalogEntry>]`: catalogEntry
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[DeployableUntilDateTime <DateTime?>]`: The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+      - `[DisplayName <String>]`: The display name of the content. Read-only.
+      - `[ReleaseDateTime <DateTime?>]`: The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+    - `[MatchedDevices <IMicrosoftGraphWindowsUpdatesApplicableContentDeviceMatch[]>]`: Collection of devices and recommendations for applicable catalog content.
+      - `[DeviceId <String>]`: 
+      - `[RecommendedBy <String[]>]`: Collection of vendors who recommend the content.
   - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to include in the audience.
@@ -349,6 +359,16 @@ BODYPARAMETER <IMicrosoftGraphWindowsUpdatesDeployment>: deployment
   - `[Audience <IMicrosoftGraphWindowsUpdatesDeploymentAudience>]`: deploymentAudience
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[ApplicableContent <IMicrosoftGraphWindowsUpdatesApplicableContent[]>]`: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+      - `[CatalogEntry <IMicrosoftGraphWindowsUpdatesCatalogEntry>]`: catalogEntry
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[DeployableUntilDateTime <DateTime?>]`: The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+        - `[DisplayName <String>]`: The display name of the content. Read-only.
+        - `[ReleaseDateTime <DateTime?>]`: The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+      - `[MatchedDevices <IMicrosoftGraphWindowsUpdatesApplicableContentDeviceMatch[]>]`: Collection of devices and recommendations for applicable catalog content.
+        - `[DeviceId <String>]`: 
+        - `[RecommendedBy <String[]>]`: Collection of vendors who recommend the content.
     - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to include in the audience.
@@ -358,60 +378,80 @@ BODYPARAMETER <IMicrosoftGraphWindowsUpdatesDeployment>: deployment
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the deployment was last modified. Returned by default. Read-only.
   - `[Settings <IMicrosoftGraphWindowsUpdatesDeploymentSettings>]`: deploymentSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ContentApplicability <IMicrosoftGraphWindowsUpdatesContentApplicabilitySettings>]`: contentApplicabilitySettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[OfferWhileRecommendedBy <String[]>]`: Offer if the update is recommended by a vendor in the list, otherwise withhold the offer.
+      - `[Safeguard <IMicrosoftGraphWindowsUpdatesSafeguardSettings>]`: safeguardSettings
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[DisabledSafeguardProfiles <IMicrosoftGraphWindowsUpdatesSafeguardProfile[]>]`: List of safeguards to ignore per device.
+          - `[Category <String>]`: safeguardCategory
+    - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
     - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or'.
         - `[Action <String>]`: monitoringAction
         - `[Signal <String>]`: monitoringSignal
         - `[Threshold <Int32?>]`: The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
-    - `[Rollout <IMicrosoftGraphWindowsUpdatesRolloutSettings>]`: rolloutSettings
+    - `[Schedule <IMicrosoftGraphWindowsUpdatesScheduleSettings>]`: scheduleSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DevicesPerOffer <Int32?>]`: Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
-      - `[DurationBetweenOffers <String>]`: Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).
-      - `[EndDateTime <DateTime?>]`: Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
-      - `[StartDateTime <DateTime?>]`: Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.
+      - `[GradualRollout <IMicrosoftGraphWindowsUpdatesGradualRolloutSettings>]`: gradualRolloutSettings
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[DurationBetweenOffers <TimeSpan?>]`: The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (1 day).
+      - `[StartDateTime <DateTime?>]`: The date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[UserExperience <IMicrosoftGraphWindowsUpdatesUserExperienceSettings>]`: userExperienceSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
+  - `[State <IMicrosoftGraphWindowsUpdatesDeploymentState>]`: deploymentState
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[EffectiveValue <String>]`: deploymentStateValue
+    - `[Reasons <IMicrosoftGraphWindowsUpdatesDeploymentStateReason[]>]`: Specifies the reasons the deployment has its state value. Read-only.
+      - `[Value <String>]`: deploymentStateReasonValue
+    - `[RequestedValue <String>]`: requestedDeploymentStateValue
+
+INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
+  - `[CatalogEntryId <String>]`: key: id of catalogEntry
+  - `[ComplianceChangeId <String>]`: key: id of complianceChange
+  - `[DeploymentId <String>]`: key: id of deployment
+  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
+  - `[UpdatableAssetId <String>]`: key: id of updatableAsset
+  - `[UpdatePolicyId <String>]`: key: id of updatePolicy
+
+SETTINGS <IMicrosoftGraphWindowsUpdatesDeploymentSettings>: deploymentSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ContentApplicability <IMicrosoftGraphWindowsUpdatesContentApplicabilitySettings>]`: contentApplicabilitySettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[OfferWhileRecommendedBy <String[]>]`: Offer if the update is recommended by a vendor in the list, otherwise withhold the offer.
     - `[Safeguard <IMicrosoftGraphWindowsUpdatesSafeguardSettings>]`: safeguardSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisabledSafeguardProfiles <IMicrosoftGraphWindowsUpdatesSafeguardProfile[]>]`: List of safeguards to ignore per device.
         - `[Category <String>]`: safeguardCategory
-  - `[State <IMicrosoftGraphWindowsUpdatesDeploymentState>]`: deploymentState
+  - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Reasons <IMicrosoftGraphWindowsUpdatesDeploymentStateReason[]>]`: Specifies the reasons the deployment has its state value. Read-only.
-      - `[Value <String>]`: deploymentStateReasonValue
-    - `[RequestedValue <String>]`: requestedDeploymentStateValue
-    - `[Value <String>]`: deploymentStateValue
-
-INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
-  - `[CatalogEntryId <String>]`: key: id of catalogEntry
-  - `[DeploymentId <String>]`: key: id of deployment
-  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
-  - `[UpdatableAssetId <String>]`: key: id of updatableAsset
-
-SETTINGS <IMicrosoftGraphWindowsUpdatesDeploymentSettings>: deploymentSettings
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
   - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or'.
       - `[Action <String>]`: monitoringAction
       - `[Signal <String>]`: monitoringSignal
       - `[Threshold <Int32?>]`: The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
-  - `[Rollout <IMicrosoftGraphWindowsUpdatesRolloutSettings>]`: rolloutSettings
+  - `[Schedule <IMicrosoftGraphWindowsUpdatesScheduleSettings>]`: scheduleSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DevicesPerOffer <Int32?>]`: Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
-    - `[DurationBetweenOffers <String>]`: Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).
-    - `[EndDateTime <DateTime?>]`: Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
-    - `[StartDateTime <DateTime?>]`: Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.
-  - `[Safeguard <IMicrosoftGraphWindowsUpdatesSafeguardSettings>]`: safeguardSettings
+    - `[GradualRollout <IMicrosoftGraphWindowsUpdatesGradualRolloutSettings>]`: gradualRolloutSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DurationBetweenOffers <TimeSpan?>]`: The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (1 day).
+    - `[StartDateTime <DateTime?>]`: The date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[UserExperience <IMicrosoftGraphWindowsUpdatesUserExperienceSettings>]`: userExperienceSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisabledSafeguardProfiles <IMicrosoftGraphWindowsUpdatesSafeguardProfile[]>]`: List of safeguards to ignore per device.
-      - `[Category <String>]`: safeguardCategory
+    - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
 
 STATE <IMicrosoftGraphWindowsUpdatesDeploymentState>: deploymentState
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[EffectiveValue <String>]`: deploymentStateValue
   - `[Reasons <IMicrosoftGraphWindowsUpdatesDeploymentStateReason[]>]`: Specifies the reasons the deployment has its state value. Read-only.
     - `[Value <String>]`: deploymentStateReasonValue
   - `[RequestedValue <String>]`: requestedDeploymentStateValue
-  - `[Value <String>]`: deploymentStateValue
 
 ## RELATED LINKS
 

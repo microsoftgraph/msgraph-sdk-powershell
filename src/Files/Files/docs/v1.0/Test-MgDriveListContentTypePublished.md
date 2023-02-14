@@ -12,12 +12,12 @@ Invoke function isPublished
 
 ## SYNTAX
 
-### Is1 (Default)
+### Is (Default)
 ```
 Test-MgDriveListContentTypePublished -ContentTypeId <String> -DriveId <String> [<CommonParameters>]
 ```
 
-### IsViaIdentity1
+### IsViaIdentity
 ```
 Test-MgDriveListContentTypePublished -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
@@ -34,7 +34,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Is1
+Parameter Sets: Is
 Aliases:
 
 Required: True
@@ -49,7 +49,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Is1
+Parameter Sets: Is
 Aliases:
 
 Required: True
@@ -65,7 +65,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: IsViaIdentity1
+Parameter Sets: IsViaIdentity
 Aliases:
 
 Required: True
@@ -108,6 +108,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

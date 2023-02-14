@@ -14,28 +14,28 @@ Update the navigation property buckets in planner
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPlannerBucket -PlannerBucketId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Name <String>] [-OrderHint <String>] [-PlanId <String>] [-Tasks <IMicrosoftGraphPlannerTask[]>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerBucket -PlannerBucketId <String> -IfMatch <String> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-Name <String>] [-OrderHint <String>] [-PlanId <String>]
+ [-Tasks <IMicrosoftGraphPlannerTask[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPlannerBucket -PlannerBucketId <String> -BodyParameter <IMicrosoftGraphPlannerBucket> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerBucket -PlannerBucketId <String> -IfMatch <String>
+ -BodyParameter <IMicrosoftGraphPlannerBucket> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPlannerBucket -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerBucket>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerBucket -InputObject <IPlannerIdentity> -IfMatch <String>
+ -BodyParameter <IMicrosoftGraphPlannerBucket> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPlannerBucket -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Name <String>] [-OrderHint <String>] [-PlanId <String>] [-Tasks <IMicrosoftGraphPlannerTask[]>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerBucket -InputObject <IPlannerIdentity> -IfMatch <String> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-Name <String>] [-OrderHint <String>] [-PlanId <String>]
+ [-Tasks <IMicrosoftGraphPlannerTask[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,6 +104,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -IfMatch
+ETag value.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -137,7 +152,7 @@ Accept wildcard characters: False
 
 ### -OrderHint
 Hint used to order items of this type in a list view.
-The format is defined as outlined here.
+For details about the supported format, see Using order hints in Planner.
 
 ```yaml
 Type: System.String
@@ -271,7 +286,7 @@ BODYPARAMETER <IMicrosoftGraphPlannerBucket>: plannerBucket
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Name <String>]`: Name of the bucket.
-  - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+  - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
   - `[PlanId <String>]`: Plan ID to which the bucket belongs.
   - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.

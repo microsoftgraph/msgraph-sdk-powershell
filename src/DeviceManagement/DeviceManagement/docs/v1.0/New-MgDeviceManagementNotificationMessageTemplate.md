@@ -17,8 +17,8 @@ Create new navigation property to notificationMessageTemplates for deviceManagem
 New-MgDeviceManagementNotificationMessageTemplate [-AdditionalProperties <Hashtable>]
  [-BrandingOptions <NotificationTemplateBrandingOptions>] [-DefaultLocale <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>]
+ [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -160,6 +160,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RoleScopeTagIds
+List of Scope Tags for this Entity instance.
+
+```yaml
+Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -225,6 +240,7 @@ BODYPARAMETER <IMicrosoftGraphNotificationMessageTemplate>: Notification message
     - `[Locale <String>]`: The Locale for which this message is destined.
     - `[MessageTemplate <String>]`: The Message Template content.
     - `[Subject <String>]`: The Message Template Subject.
+  - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
 
 LOCALIZEDNOTIFICATIONMESSAGES <IMicrosoftGraphLocalizedNotificationMessage[]>: The list of localized messages for this Notification Message Template.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

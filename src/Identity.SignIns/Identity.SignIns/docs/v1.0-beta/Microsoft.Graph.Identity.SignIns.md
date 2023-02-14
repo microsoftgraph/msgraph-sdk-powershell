@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 3b46bfc4-fd93-494c-bbbf-605b141f3862
+Module Guid: c4469390-e5d2-44ba-be0b-37cf80a60894
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -588,7 +588,7 @@ Create a new conditionalAccessPolicy.
 Create new navigation property to customAuthenticationExtensions for identity
 
 ### [New-MgIdentityProvider](New-MgIdentityProvider.md)
-Create an identity provider resource that is of the type specified in the request body.
+Create an identity provider object that is of the type specified in the request body.
 Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD.
 In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 

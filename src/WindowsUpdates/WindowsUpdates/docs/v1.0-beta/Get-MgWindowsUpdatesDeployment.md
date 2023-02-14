@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deployments created using the deployment service.
-Read-only.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-ExpandPr
 
 ## DESCRIPTION
 Deployments created using the deployment service.
-Read-only.
 
 ## EXAMPLES
 
@@ -264,9 +262,11 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
+  - `[ComplianceChangeId <String>]`: key: id of complianceChange
   - `[DeploymentId <String>]`: key: id of deployment
   - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
+  - `[UpdatePolicyId <String>]`: key: id of updatePolicy
 
 ## RELATED LINKS
 

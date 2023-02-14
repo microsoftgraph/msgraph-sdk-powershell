@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: f1466665-c823-4941-8689-e9294fa64e61
+Module Guid: ce186d0a-752e-4edd-8b54-c53385bb0424
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -431,7 +431,9 @@ Create a new cloudPcProvisioningPolicy object.
 Create new navigation property to assignments for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointReportExportJob](New-MgDeviceManagementVirtualEndpointReportExportJob.md)
-Create a new cloudPcExportJob object.
+Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
+Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
+When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
 
 ### [New-MgDeviceManagementVirtualEndpointServicePlan](New-MgDeviceManagementVirtualEndpointServicePlan.md)
 Create new navigation property to servicePlans for deviceManagement

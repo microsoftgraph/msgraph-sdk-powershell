@@ -658,9 +658,9 @@ BASE <IMicrosoftGraphContentType1>: contentType
   - `[Hidden <Boolean?>]`: Indicates whether the content type is hidden in the list's 'New' menu.
   - `[InheritedFrom <IMicrosoftGraphItemReference>]`: itemReference
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-    - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-    - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+    - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+    - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
     - `[Name <String>]`: The name of the item being referenced. Read-only.
     - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
     - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -673,7 +673,7 @@ BASE <IMicrosoftGraphContentType1>: contentType
       - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
       - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
       - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
   - `[IsBuiltIn <Boolean?>]`: Specifies if a content type is a built-in content type.
   - `[Name <String>]`: The name of the content type.
   - `[Order <IMicrosoftGraphContentTypeOrder>]`: contentTypeOrder
@@ -845,9 +845,9 @@ BASETYPES <IMicrosoftGraphContentType1[]>: The collection of content types that 
   - `[Hidden <Boolean?>]`: Indicates whether the content type is hidden in the list's 'New' menu.
   - `[InheritedFrom <IMicrosoftGraphItemReference>]`: itemReference
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-    - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-    - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+    - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+    - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
     - `[Name <String>]`: The name of the item being referenced. Read-only.
     - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
     - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -860,7 +860,7 @@ BASETYPES <IMicrosoftGraphContentType1[]>: The collection of content types that 
       - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
       - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
       - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
   - `[IsBuiltIn <Boolean?>]`: Specifies if a content type is a built-in content type.
   - `[Name <String>]`: The name of the content type.
   - `[Order <IMicrosoftGraphContentTypeOrder>]`: contentTypeOrder
@@ -1033,9 +1033,9 @@ BODYPARAMETER <IMicrosoftGraphContentType1>: contentType
   - `[Hidden <Boolean?>]`: Indicates whether the content type is hidden in the list's 'New' menu.
   - `[InheritedFrom <IMicrosoftGraphItemReference>]`: itemReference
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-    - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-    - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+    - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+    - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
     - `[Name <String>]`: The name of the item being referenced. Read-only.
     - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
     - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -1048,7 +1048,7 @@ BODYPARAMETER <IMicrosoftGraphContentType1>: contentType
       - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
       - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
       - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
   - `[IsBuiltIn <Boolean?>]`: Specifies if a content type is a built-in content type.
   - `[Name <String>]`: The name of the content type.
   - `[Order <IMicrosoftGraphContentTypeOrder>]`: contentTypeOrder
@@ -1487,9 +1487,9 @@ DOCUMENTTEMPLATE <IMicrosoftGraphDocumentSetContent>: documentSetContent
 
 INHERITEDFROM <IMicrosoftGraphItemReference>: itemReference
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-  - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-  - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+  - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+  - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+  - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
   - `[Name <String>]`: The name of the item being referenced. Read-only.
   - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
   - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -1502,7 +1502,7 @@ INHERITEDFROM <IMicrosoftGraphItemReference>: itemReference
     - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
     - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
     - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-  - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+  - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 
 INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
@@ -1517,6 +1517,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

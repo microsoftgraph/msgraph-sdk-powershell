@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: a86cb7f2-3e8f-4adf-88d4-8db111cc76f1
+Module Guid: d579c3ad-f66b-4a27-935c-53e0d9dd108e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -401,6 +401,9 @@ Invoke action hasPayloadLinks
 
 ### [Invoke-MgInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery.md)
 Perform MDM key recovery and TPM attestation
+
+### [Invoke-MgInitiateUserManagedDeviceOnDemandProactiveRemediation](Invoke-MgInitiateUserManagedDeviceOnDemandProactiveRemediation.md)
+Perform On Demand Proactive Remediation
 
 ### [Invoke-MgInvalidateUserRefreshToken](Invoke-MgInvalidateUserRefreshToken.md)
 Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the **refreshTokensValidFromDateTime** user property to the current date-time.

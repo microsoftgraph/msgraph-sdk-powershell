@@ -440,8 +440,8 @@ BODYPARAMETER <IMicrosoftGraphSecurityAction>: securityAction
   - `[LastActionDateTime <DateTime?>]`: Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Name <String>]`: Action name.
   - `[Parameters <IMicrosoftGraphKeyValuePair[]>]`: Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.
-    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Name <String>]`: Name for this key-value pair
+    - `[Value <String>]`: Value for this key-value pair
   - `[States <IMicrosoftGraphSecurityActionState[]>]`: Collection of securityActionState to keep the history of an action.
     - `[AppId <String>]`: The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.
     - `[Status <String>]`: operationStatus
@@ -509,8 +509,8 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[UserSourceId <String>]`: key: id of userSource
 
 PARAMETERS <IMicrosoftGraphKeyValuePair[]>: Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.
-  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Name <String>]`: Name for this key-value pair
+  - `[Value <String>]`: Value for this key-value pair
 
 STATES <IMicrosoftGraphSecurityActionState[]>: Collection of securityActionState to keep the history of an action.
   - `[AppId <String>]`: The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.

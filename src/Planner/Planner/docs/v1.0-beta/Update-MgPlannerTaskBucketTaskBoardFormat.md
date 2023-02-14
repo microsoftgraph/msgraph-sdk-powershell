@@ -8,38 +8,40 @@ schema: 2.0.0
 # Update-MgPlannerTaskBucketTaskBoardFormat
 
 ## SYNOPSIS
-Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+Update the navigation property bucketTaskBoardFormat in planner
 
 ## SYNTAX
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId <String> -IfMatch <String>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId <String>
+Update-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId <String> -IfMatch <String>
  -BodyParameter <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity>
+Update-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> -IfMatch <String>
  -BodyParameter <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> -IfMatch <String>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+Update the navigation property bucketTaskBoardFormat in planner
 
 ## EXAMPLES
 
@@ -98,6 +100,21 @@ Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag value.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

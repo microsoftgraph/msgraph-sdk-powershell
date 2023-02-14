@@ -291,21 +291,21 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ADDITIONALINFORMATION <IMicrosoftGraphKeyValuePair[]>: A set of string key and string value pairs which provides additional information on the Troubleshooting event
-  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Name <String>]`: Name for this key-value pair
+  - `[Value <String>]`: Value for this key-value pair
 
 APPLOGCOLLECTIONREQUESTS <IMicrosoftGraphAppLogCollectionRequest[]>: The collection property of AppLogUploadRequest.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a terminal state
+  - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
   - `[CustomLogFolders <String[]>]`: List of log folders.
-  - `[ErrorMessage <String>]`: Error message if any during the upload process
+  - `[ErrorMessage <String>]`: Indicates error message if any during the upload process.
   - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
 
 BODYPARAMETER <IMicrosoftGraphMobileAppTroubleshootingEvent>: Event representing a users device application install status.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
-    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Name <String>]`: Name for this key-value pair
+    - `[Value <String>]`: Value for this key-value pair
   - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
   - `[EventDateTime <DateTime?>]`: Time when the event occurred .
   - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
@@ -321,9 +321,9 @@ BODYPARAMETER <IMicrosoftGraphMobileAppTroubleshootingEvent>: Event representing
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppLogCollectionRequests <IMicrosoftGraphAppLogCollectionRequest[]>]`: The collection property of AppLogUploadRequest.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a terminal state
+    - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
     - `[CustomLogFolders <String[]>]`: List of log folders.
-    - `[ErrorMessage <String>]`: Error message if any during the upload process
+    - `[ErrorMessage <String>]`: Indicates error message if any during the upload process.
     - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
   - `[ApplicationId <String>]`: Intune application identifier.
   - `[History <IMicrosoftGraphMobileAppTroubleshootingHistoryItem[]>]`: Intune Mobile Application Troubleshooting History Item

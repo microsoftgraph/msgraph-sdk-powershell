@@ -12,13 +12,13 @@ Invoke function sharedWithMe
 
 ## SYNTAX
 
-### Graph1 (Default)
+### Graph (Default)
 ```
 Invoke-MgGraphDrive -DriveId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
-### GraphViaIdentity1
+### GraphViaIdentity
 ```
 Invoke-MgGraphDrive -InputObject <IFilesIdentity> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
@@ -51,7 +51,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Graph1
+Parameter Sets: Graph
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GraphViaIdentity1
+Parameter Sets: GraphViaIdentity
 Aliases:
 
 Required: True
@@ -200,6 +200,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

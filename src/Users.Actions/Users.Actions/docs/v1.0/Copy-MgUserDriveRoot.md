@@ -211,9 +211,9 @@ BODYPARAMETER <IPaths46YeauUsersUserIdDrivesDriveIdRootMicrosoftGraphCopyPostReq
   - `[Name <String>]`: 
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-    - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-    - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+    - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+    - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+    - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
     - `[Name <String>]`: The name of the item being referenced. Read-only.
     - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
     - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -226,7 +226,7 @@ BODYPARAMETER <IPaths46YeauUsersUserIdDrivesDriveIdRootMicrosoftGraphCopyPostReq
       - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
       - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
       - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+    - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -273,9 +273,9 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
 
 PARENTREFERENCE <IMicrosoftGraphItemReference>: itemReference
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-  - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-  - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+  - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+  - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+  - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
   - `[Name <String>]`: The name of the item being referenced. Read-only.
   - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
   - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -288,7 +288,7 @@ PARENTREFERENCE <IMicrosoftGraphItemReference>: itemReference
     - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
     - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
     - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-  - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+  - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 
 ## RELATED LINKS
 

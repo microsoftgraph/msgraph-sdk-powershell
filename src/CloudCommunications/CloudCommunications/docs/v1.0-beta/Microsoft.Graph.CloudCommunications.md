@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 18a6ece4-14a2-44d1-9dc5-ae5637df5970
+Module Guid: 66e008c9-7e43-4042-a1f7-fb9598449159
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -71,7 +71,7 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgCommunicationOnlineMeetingRegistration](Get-MgCommunicationOnlineMeetingRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion](Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
@@ -117,7 +117,7 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgUserOnlineMeetingRegistration](Get-MgUserOnlineMeetingRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgUserOnlineMeetingRegistrationCustomQuestion](Get-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
@@ -134,7 +134,8 @@ Read-only.
 Get virtualAppointment from users
 
 ### [Get-MgUserPresence](Get-MgUserPresence.md)
-Get a user's presence information.
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
 
 ### [Invoke-MgAnswerCommunicationCall](Invoke-MgAnswerCommunicationCall.md)
 Enable a bot to answer an incoming call.
@@ -149,11 +150,8 @@ Create an onlineMeeting object with a custom specified external ID.
 If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 
 ### [Invoke-MgInviteCommunicationCallParticipant](Invoke-MgInviteCommunicationCallParticipant.md)
-Delete a specific participant in a call.
-In some situations, it is appropriate for an application to remove a participant from an active call.
-This action can be done before or after the participant answers the call.
-When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
-When an invited participant is removed, any outstanding add participant request is canceled.
+Invite participants to the active call.
+For more information about how to handle operations, see commsOperation.
 
 ### [Invoke-MgKeepCommunicationCallAlive](Invoke-MgKeepCommunicationCallAlive.md)
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
@@ -310,7 +308,7 @@ Delete navigation property attendanceReports for communications
 Delete navigation property attendanceRecords for communications
 
 ### [Remove-MgCommunicationOnlineMeetingRegistration](Remove-MgCommunicationOnlineMeetingRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete navigation property customQuestions for communications
@@ -334,7 +332,7 @@ Delete navigation property attendanceReports for users
 Delete navigation property attendanceRecords for users
 
 ### [Remove-MgUserOnlineMeetingRegistration](Remove-MgUserOnlineMeetingRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgUserOnlineMeetingRegistrationCustomQuestion](Remove-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete navigation property customQuestions for users

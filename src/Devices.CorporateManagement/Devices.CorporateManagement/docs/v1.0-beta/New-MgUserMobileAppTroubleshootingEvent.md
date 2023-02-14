@@ -347,9 +347,9 @@ ADDITIONALINFORMATION <IMicrosoftGraphKeyValuePair[]>: A set of string key and s
 
 APPLOGCOLLECTIONREQUESTS <IMicrosoftGraphAppLogCollectionRequest[]>: The collection property of AppLogUploadRequest.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a terminal state
+  - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
   - `[CustomLogFolders <String[]>]`: List of log folders.
-  - `[ErrorMessage <String>]`: Error message if any during the upload process
+  - `[ErrorMessage <String>]`: Indicates error message if any during the upload process.
   - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
 
 BODYPARAMETER <IMicrosoftGraphMobileAppTroubleshootingEvent>: Event representing a users device application install status.
@@ -372,9 +372,9 @@ BODYPARAMETER <IMicrosoftGraphMobileAppTroubleshootingEvent>: Event representing
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppLogCollectionRequests <IMicrosoftGraphAppLogCollectionRequest[]>]`: The collection property of AppLogUploadRequest.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a terminal state
+    - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
     - `[CustomLogFolders <String[]>]`: List of log folders.
-    - `[ErrorMessage <String>]`: Error message if any during the upload process
+    - `[ErrorMessage <String>]`: Indicates error message if any during the upload process.
     - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
   - `[ApplicationId <String>]`: Intune application identifier.
   - `[History <IMicrosoftGraphMobileAppTroubleshootingHistoryItem[]>]`: Intune Mobile Application Troubleshooting History Item
@@ -413,6 +413,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
   - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
   - `[EnterpriseCodeSigningCertificateId <String>]`: key: id of enterpriseCodeSigningCertificate
+  - `[Id <String>]`: key: id of deviceHealthScriptPolicyState
   - `[IosLobAppProvisioningConfigurationAssignmentId <String>]`: key: id of iosLobAppProvisioningConfigurationAssignment
   - `[IosLobAppProvisioningConfigurationId <String>]`: key: id of iosLobAppProvisioningConfiguration
   - `[IosManagedAppProtectionId <String>]`: key: id of iosManagedAppProtection
@@ -441,6 +442,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[OfficeClientConfigurationAssignmentId <String>]`: key: id of officeClientConfigurationAssignment
   - `[OfficeClientConfigurationId <String>]`: key: id of officeClientConfiguration
+  - `[PolicyId <String>]`: key: policyId of deviceHealthScriptPolicyState
   - `[PolicySetAssignmentId <String>]`: key: id of policySetAssignment
   - `[PolicySetId <String>]`: key: id of policySet
   - `[PolicySetItemId <String>]`: key: id of policySetItem

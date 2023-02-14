@@ -20,8 +20,9 @@ New-MgDeviceManagementIntuneBrandingProfile [-AdditionalProperties <Hashtable>]
  [-ContactItEmailAddress <String>] [-ContactItName <String>] [-ContactItNotes <String>]
  [-ContactItPhoneNumber <String>] [-CreatedDateTime <DateTime>] [-CustomCanSeePrivacyMessage <String>]
  [-CustomCantSeePrivacyMessage <String>] [-CustomPrivacyMessage <String>] [-DisableClientTelemetry]
- [-DisplayName <String>] [-EnrollmentAvailability <EnrollmentAvailabilityOptions>] [-Id <String>]
- [-IsDefaultProfile] [-IsFactoryResetDisabled] [-IsRemoveDeviceDisabled]
+ [-DisableDeviceCategorySelection] [-DisplayName <String>]
+ [-EnrollmentAvailability <EnrollmentAvailabilityOptions>] [-Id <String>] [-IsDefaultProfile]
+ [-IsFactoryResetDisabled] [-IsRemoveDeviceDisabled]
  [-LandingPageCustomizedImage <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>]
  [-LightBackgroundLogo <IMicrosoftGraphMimeContent>] [-OnlineSupportSiteName <String>]
  [-OnlineSupportSiteUrl <String>] [-PrivacyUrl <String>] [-ProfileDescription <String>]
@@ -230,6 +231,21 @@ Accept wildcard characters: False
 ### -DisableClientTelemetry
 Applies to telemetry sent from all clients to the Intune service.
 When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisableDeviceCategorySelection
+Boolean that indicates if Device Category Selection will be shown in Company Portal
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -673,6 +689,7 @@ BODYPARAMETER <IMicrosoftGraphIntuneBrandingProfile>: This entity contains data 
   - `[CustomCantSeePrivacyMessage <String>]`: Text comments regarding what the admin doesn't have access to on the device
   - `[CustomPrivacyMessage <String>]`: Text comments regarding what the admin doesn't have access to on the device
   - `[DisableClientTelemetry <Boolean?>]`: Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
+  - `[DisableDeviceCategorySelection <Boolean?>]`: Boolean that indicates if Device Category Selection will be shown in Company Portal
   - `[DisplayName <String>]`: Company/organization name that is displayed to end users
   - `[EnrollmentAvailability <EnrollmentAvailabilityOptions?>]`: Options available for enrollment flow customization
   - `[IsDefaultProfile <Boolean?>]`: Boolean that represents whether the profile is used as default or not

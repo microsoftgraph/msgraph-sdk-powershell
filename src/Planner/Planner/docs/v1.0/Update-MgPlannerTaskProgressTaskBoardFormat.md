@@ -8,39 +8,40 @@ schema: 2.0.0
 # Update-MgPlannerTaskProgressTaskBoardFormat
 
 ## SYNOPSIS
-Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+Update the navigation property progressTaskBoardFormat in planner
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId <String> -IfMatch <String>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId <String>
+Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId <String> -IfMatch <String>
  -BodyParameter <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity>
+Update-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity> -IfMatch <String>
  -BodyParameter <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity>
+Update-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity> -IfMatch <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+Update the navigation property progressTaskBoardFormat in planner
 
 ## EXAMPLES
 
@@ -99,6 +100,21 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag value.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

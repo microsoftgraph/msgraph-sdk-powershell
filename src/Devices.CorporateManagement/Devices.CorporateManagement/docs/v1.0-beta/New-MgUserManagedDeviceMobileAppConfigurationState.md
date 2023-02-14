@@ -365,6 +365,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
   - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
   - `[EnterpriseCodeSigningCertificateId <String>]`: key: id of enterpriseCodeSigningCertificate
+  - `[Id <String>]`: key: id of deviceHealthScriptPolicyState
   - `[IosLobAppProvisioningConfigurationAssignmentId <String>]`: key: id of iosLobAppProvisioningConfigurationAssignment
   - `[IosLobAppProvisioningConfigurationId <String>]`: key: id of iosLobAppProvisioningConfiguration
   - `[IosManagedAppProtectionId <String>]`: key: id of iosManagedAppProtection
@@ -393,6 +394,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[OfficeClientConfigurationAssignmentId <String>]`: key: id of officeClientConfigurationAssignment
   - `[OfficeClientConfigurationId <String>]`: key: id of officeClientConfiguration
+  - `[PolicyId <String>]`: key: policyId of deviceHealthScriptPolicyState
   - `[PolicySetAssignmentId <String>]`: key: id of policySetAssignment
   - `[PolicySetId <String>]`: key: id of policySet
   - `[PolicySetItemId <String>]`: key: id of policySetItem

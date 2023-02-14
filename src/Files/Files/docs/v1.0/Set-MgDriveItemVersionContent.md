@@ -12,13 +12,13 @@ The content stream for this version of the item.
 
 ## SYNTAX
 
-### Set (Default)
+### Set1 (Default)
 ```
 Set-MgDriveItemVersionContent -DriveId <String> -DriveItemId <String> -DriveItemVersionId <String>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### SetViaIdentity1
 ```
 Set-MgDriveItemVersionContent -InputObject <IFilesIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -51,7 +51,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Set
+Parameter Sets: Set1
 Aliases:
 
 Required: True
@@ -66,7 +66,7 @@ key: id of driveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Set
+Parameter Sets: Set1
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ key: id of driveItemVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Set
+Parameter Sets: Set1
 Aliases:
 
 Required: True
@@ -114,7 +114,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: SetViaIdentity
+Parameter Sets: SetViaIdentity1
 Aliases:
 
 Required: True
@@ -205,6 +205,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

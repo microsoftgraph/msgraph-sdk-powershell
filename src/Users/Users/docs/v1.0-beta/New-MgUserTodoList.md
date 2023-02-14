@@ -296,15 +296,15 @@ BODYPARAMETER <IMicrosoftGraphTodoTaskList>: todoTaskList
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Content <Byte[]>]`: 
-      - `[ExpirationDateTime <DateTime?>]`: 
-      - `[NextExpectedRanges <String[]>]`: 
-    - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+      - `[Content <Byte[]>]`: The content streams that are uploaded.
+      - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+      - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+    - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[ContentType <String>]`: 
-      - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[Name <String>]`: 
-      - `[Size <Int32?>]`: 
+      - `[ContentType <String>]`: The MIME type.
+      - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+      - `[Size <Int32?>]`: The length of the attachment in bytes.
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: The content of the item.
@@ -324,7 +324,7 @@ BODYPARAMETER <IMicrosoftGraphTodoTaskList>: todoTaskList
     - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-    - `[HasAttachments <Boolean?>]`: 
+    - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
     - `[Importance <String>]`: importance
     - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -387,15 +387,15 @@ TASKS <IMicrosoftGraphTodoTask[]>: The tasks in this task list. Read-only. Nulla
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Content <Byte[]>]`: 
-    - `[ExpirationDateTime <DateTime?>]`: 
-    - `[NextExpectedRanges <String[]>]`: 
-  - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+    - `[Content <Byte[]>]`: The content streams that are uploaded.
+    - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+    - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+  - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[ContentType <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Name <String>]`: 
-    - `[Size <Int32?>]`: 
+    - `[ContentType <String>]`: The MIME type.
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+    - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
@@ -416,7 +416,7 @@ TASKS <IMicrosoftGraphTodoTask[]>: The tasks in this task list. Read-only. Nulla
   - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[HasAttachments <Boolean?>]`: 
+  - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
   - `[Importance <String>]`: importance
   - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.

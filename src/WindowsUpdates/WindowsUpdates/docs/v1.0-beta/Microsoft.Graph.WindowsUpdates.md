@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.WindowsUpdates
-Module Guid: bc947609-9f66-468b-b58e-fce44454ae7f
+Module Guid: 1225acf8-391d-4dc5-81c3-44f23763e453
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -41,7 +41,6 @@ Read-only.
 
 ### [Get-MgWindowsUpdatesDeployment](Get-MgWindowsUpdatesDeployment.md)
 Deployments created using the deployment service.
-Read-only.
 
 ### [Get-MgWindowsUpdatesDeploymentAudienceExclusion](Get-MgWindowsUpdatesDeploymentAudienceExclusion.md)
 Specifies the assets to exclude from the audience.
@@ -49,12 +48,23 @@ Specifies the assets to exclude from the audience.
 ### [Get-MgWindowsUpdatesDeploymentAudienceMember](Get-MgWindowsUpdatesDeploymentAudienceMember.md)
 Specifies the assets to include in the audience.
 
+### [Get-MgWindowsUpdatesPolicy](Get-MgWindowsUpdatesPolicy.md)
+A collection of policies for approving the deployment of different content to an audience over time.
+
+### [Get-MgWindowsUpdatesPolicyAudience](Get-MgWindowsUpdatesPolicyAudience.md)
+Specifies the audience to target.
+
+### [Get-MgWindowsUpdatesPolicyComplianceChange](Get-MgWindowsUpdatesPolicyComplianceChange.md)
+Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
+
+### [Get-MgWindowsUpdatesPolicyComplianceChangeUpdatePolicy](Get-MgWindowsUpdatesPolicyComplianceChangeUpdatePolicy.md)
+The policy this compliance change is a member of.
+
 ### [Get-MgWindowsUpdatesResourceConnection](Get-MgWindowsUpdatesResourceConnection.md)
 Service connections to external resources such as analytics workspaces.
 
 ### [Get-MgWindowsUpdatesUpdatableAsset](Get-MgWindowsUpdatesUpdatableAsset.md)
 Assets registered with the deployment service that can receive updates.
-Read-only.
 
 ### [Invoke-MgEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById](Invoke-MgEnrollWindowsUpdatesDeploymentAudienceExclusionAssetById.md)
 Invoke action enrollAssetsById
@@ -83,6 +93,12 @@ Invoke action unenrollAssets
 ### [New-MgWindowsUpdatesDeployment](New-MgWindowsUpdatesDeployment.md)
 Create a new deployment object.
 
+### [New-MgWindowsUpdatesPolicy](New-MgWindowsUpdatesPolicy.md)
+Create a new updatePolicy object.
+
+### [New-MgWindowsUpdatesPolicyComplianceChange](New-MgWindowsUpdatesPolicyComplianceChange.md)
+Create a new contentApproval object.
+
 ### [New-MgWindowsUpdatesResourceConnection](New-MgWindowsUpdatesResourceConnection.md)
 Create a new operationalInsightsConnection object.
 
@@ -100,6 +116,12 @@ You can also use the method removeMembers to remove members.
 ### [Remove-MgWindowsUpdatesDeploymentAudienceMemberById](Remove-MgWindowsUpdatesDeploymentAudienceMemberById.md)
 Remove members of the same type from an updatableAssetGroup.
 You can also use the method removeMembers to remove members.
+
+### [Remove-MgWindowsUpdatesPolicy](Remove-MgWindowsUpdatesPolicy.md)
+Delete navigation property updatePolicies for admin
+
+### [Remove-MgWindowsUpdatesPolicyComplianceChange](Remove-MgWindowsUpdatesPolicyComplianceChange.md)
+Delete navigation property complianceChanges for admin
 
 ### [Remove-MgWindowsUpdatesResourceConnection](Remove-MgWindowsUpdatesResourceConnection.md)
 Delete navigation property resourceConnections for admin
@@ -129,6 +151,12 @@ Update the members and exclusions collections of a deploymentAudience with updat
 Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist.
 If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset.
 You can also use the method updateAudience to update the **deploymentAudience**.
+
+### [Update-MgWindowsUpdatesPolicy](Update-MgWindowsUpdatesPolicy.md)
+Update the navigation property updatePolicies in admin
+
+### [Update-MgWindowsUpdatesPolicyComplianceChange](Update-MgWindowsUpdatesPolicyComplianceChange.md)
+Update the navigation property complianceChanges in admin
 
 ### [Update-MgWindowsUpdatesResourceConnection](Update-MgWindowsUpdatesResourceConnection.md)
 Update the navigation property resourceConnections in admin

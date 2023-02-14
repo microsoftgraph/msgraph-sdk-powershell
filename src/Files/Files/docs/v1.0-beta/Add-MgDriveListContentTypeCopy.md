@@ -12,27 +12,27 @@ Add a copy of a [content type][contentType] from a [site][site] to a [list][list
 
 ## SYNTAX
 
-### AddExpanded (Default)
+### AddExpanded1 (Default)
 ```
 Add-MgDriveListContentTypeCopy -DriveId <String> [-AdditionalProperties <Hashtable>] [-ContentType <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Add
+### Add1
 ```
 Add-MgDriveListContentTypeCopy -DriveId <String>
  -BodyParameter <IPathsMy40GxDrivesDriveIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AddViaIdentity
+### AddViaIdentity1
 ```
 Add-MgDriveListContentTypeCopy -InputObject <IFilesIdentity>
  -BodyParameter <IPathsMy40GxDrivesDriveIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AddViaIdentityExpanded
+### AddViaIdentityExpanded1
 ```
 Add-MgDriveListContentTypeCopy -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: AddExpanded, AddViaIdentityExpanded
+Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsMy40GxDrivesDriveIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Add, AddViaIdentity
+Parameter Sets: Add1, AddViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: AddExpanded, AddViaIdentityExpanded
+Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -96,7 +96,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Add, AddExpanded
+Parameter Sets: Add1, AddExpanded1
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
+Parameter Sets: AddViaIdentity1, AddViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -192,6 +192,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

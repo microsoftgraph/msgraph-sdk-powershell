@@ -1355,7 +1355,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
               - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
               - `[Id <String>]`: Read-only. Unique id of the attachment.
               - `[Name <String>]`: Name of the attachment.
-              - `[TeamsAppId <String>]`: 
+              - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
               - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
             - `[Body <IMicrosoftGraphItemBody>]`: itemBody
             - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -1527,9 +1527,9 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-            - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-            - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+            - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+            - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+            - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
             - `[Name <String>]`: The name of the item being referenced. Read-only.
             - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
             - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -1542,7 +1542,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
               - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
               - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
               - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-            - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+            - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
           - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
@@ -2308,6 +2308,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
         - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
         - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
         - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+        - `[EmployeeLeaveDateTime <DateTime?>]`: 
         - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -2678,7 +2679,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
                 - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                   - `[Name <String>]`: Name of the bucket.
-                  - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
                   - `[PlanId <String>]`: Plan ID to which the bucket belongs.
                   - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3258,7 +3259,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
               - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[Role <String>]`: 
+              - `[Role <String>]`: onlineMeetingRole
               - `[Upn <String>]`: User principal name of the participant.
             - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
           - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -3390,15 +3391,15 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[Content <Byte[]>]`: 
-                - `[ExpirationDateTime <DateTime?>]`: 
-                - `[NextExpectedRanges <String[]>]`: 
-              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+                - `[Content <Byte[]>]`: The content streams that are uploaded.
+                - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[ContentType <String>]`: 
-                - `[LastModifiedDateTime <DateTime?>]`: 
-                - `[Name <String>]`: 
-                - `[Size <Int32?>]`: 
+                - `[ContentType <String>]`: The MIME type.
+                - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                - `[Size <Int32?>]`: The length of the attachment in bytes.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -3412,7 +3413,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
               - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-              - `[HasAttachments <Boolean?>]`: 
+              - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
               - `[Importance <String>]`: importance
               - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
               - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -3611,6 +3612,8 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
   - `[DeviceManagementPartners <IMicrosoftGraphDeviceManagementPartner[]>]`: The list of Device Management Partners configured by the tenant.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: Partner display name
+    - `[GroupsRequiringPartnerEnrollment <IMicrosoftGraphDeviceManagementPartnerAssignment[]>]`: User groups that specifies whether enrollment is through partner.
+      - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[IsConfigured <Boolean?>]`: Whether device management partner is configured or not
     - `[LastHeartbeatDateTime <DateTime?>]`: Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
     - `[PartnerAppType <DeviceManagementPartnerAppType?>]`: Partner App Type.
@@ -3710,14 +3713,21 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
   - `[ManagedDevices <IMicrosoftGraphManagedDevice[]>]`: The list of managed devices.
   - `[MobileThreatDefenseConnectors <IMicrosoftGraphMobileThreatDefenseConnector[]>]`: The list of Mobile threat Defense connectors configured by the tenant.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AllowPartnerToCollectIosApplicationMetadata <Boolean?>]`: When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+    - `[AllowPartnerToCollectIosPersonalApplicationMetadata <Boolean?>]`: When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
     - `[AndroidDeviceBlockedOnMissingPartnerData <Boolean?>]`: For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
     - `[AndroidEnabled <Boolean?>]`: For Android, set whether data from the data sync partner should be used during compliance evaluations
+    - `[AndroidMobileApplicationManagementEnabled <Boolean?>]`: When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
     - `[IosDeviceBlockedOnMissingPartnerData <Boolean?>]`: For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
     - `[IosEnabled <Boolean?>]`: For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
+    - `[IosMobileApplicationManagementEnabled <Boolean?>]`: When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
     - `[LastHeartbeatDateTime <DateTime?>]`: DateTime of last Heartbeat recieved from the Data Sync Partner
+    - `[MicrosoftDefenderForEndpointAttachEnabled <Boolean?>]`: When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.
     - `[PartnerState <MobileThreatPartnerTenantState?>]`: Partner state of this tenant.
     - `[PartnerUnresponsivenessThresholdInDays <Int32?>]`: Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
     - `[PartnerUnsupportedOSVersionBlocked <Boolean?>]`: Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+    - `[WindowsDeviceBlockedOnMissingPartnerData <Boolean?>]`: When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
+    - `[WindowsEnabled <Boolean?>]`: When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.
   - `[NotificationMessageTemplates <IMicrosoftGraphNotificationMessageTemplate[]>]`: The Notification Message Templates.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[BrandingOptions <NotificationTemplateBrandingOptions?>]`: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
@@ -3731,6 +3741,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a
       - `[Locale <String>]`: The Locale for which this message is destined.
       - `[MessageTemplate <String>]`: The Message Template content.
       - `[Subject <String>]`: The Message Template Subject.
+    - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[RemoteAssistancePartners <IMicrosoftGraphRemoteAssistancePartner[]>]`: The remote assist partners.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: Display name of the partner.
@@ -4383,7 +4394,7 @@ DETECTEDAPPS <IMicrosoftGraphDetectedApp[]>: The list of detected apps associate
             - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
             - `[Id <String>]`: Read-only. Unique id of the attachment.
             - `[Name <String>]`: Name of the attachment.
-            - `[TeamsAppId <String>]`: 
+            - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
             - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
           - `[Body <IMicrosoftGraphItemBody>]`: itemBody
           - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -4555,9 +4566,9 @@ DETECTEDAPPS <IMicrosoftGraphDetectedApp[]>: The list of detected apps associate
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-          - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-          - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+          - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+          - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+          - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
           - `[Name <String>]`: The name of the item being referenced. Read-only.
           - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
           - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -4570,7 +4581,7 @@ DETECTEDAPPS <IMicrosoftGraphDetectedApp[]>: The list of detected apps associate
             - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
             - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
             - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-          - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+          - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
         - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
@@ -5336,6 +5347,7 @@ DETECTEDAPPS <IMicrosoftGraphDetectedApp[]>: The list of detected apps associate
       - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
       - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
       - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+      - `[EmployeeLeaveDateTime <DateTime?>]`: 
       - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -5706,7 +5718,7 @@ DETECTEDAPPS <IMicrosoftGraphDetectedApp[]>: The list of detected apps associate
               - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[Name <String>]`: Name of the bucket.
-                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
                 - `[PlanId <String>]`: Plan ID to which the bucket belongs.
                 - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -6286,7 +6298,7 @@ DETECTEDAPPS <IMicrosoftGraphDetectedApp[]>: The list of detected apps associate
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
             - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[Role <String>]`: 
+            - `[Role <String>]`: onlineMeetingRole
             - `[Upn <String>]`: User principal name of the participant.
           - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
         - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -6418,15 +6430,15 @@ DETECTEDAPPS <IMicrosoftGraphDetectedApp[]>: The list of detected apps associate
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-              - `[Content <Byte[]>]`: 
-              - `[ExpirationDateTime <DateTime?>]`: 
-              - `[NextExpectedRanges <String[]>]`: 
-            - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+              - `[Content <Byte[]>]`: The content streams that are uploaded.
+              - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+              - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+            - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-              - `[ContentType <String>]`: 
-              - `[LastModifiedDateTime <DateTime?>]`: 
-              - `[Name <String>]`: 
-              - `[Size <Int32?>]`: 
+              - `[ContentType <String>]`: The MIME type.
+              - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+              - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+              - `[Size <Int32?>]`: The length of the attachment in bytes.
             - `[Body <IMicrosoftGraphItemBody>]`: itemBody
             - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
             - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -6440,7 +6452,7 @@ DETECTEDAPPS <IMicrosoftGraphDetectedApp[]>: The list of detected apps associate
             - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
             - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-            - `[HasAttachments <Boolean?>]`: 
+            - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
             - `[Importance <String>]`: importance
             - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
             - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -6663,6 +6675,9 @@ DEVICEENROLLMENTCONFIGURATIONS <IMicrosoftGraphDeviceEnrollmentConfiguration[]>:
 DEVICEMANAGEMENTPARTNERS <IMicrosoftGraphDeviceManagementPartner[]>: The list of Device Management Partners configured by the tenant.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: Partner display name
+  - `[GroupsRequiringPartnerEnrollment <IMicrosoftGraphDeviceManagementPartnerAssignment[]>]`: User groups that specifies whether enrollment is through partner.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[IsConfigured <Boolean?>]`: Whether device management partner is configured or not
   - `[LastHeartbeatDateTime <DateTime?>]`: Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
   - `[PartnerAppType <DeviceManagementPartnerAppType?>]`: Partner App Type.
@@ -7261,7 +7276,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The list of managed devices.
           - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
           - `[Id <String>]`: Read-only. Unique id of the attachment.
           - `[Name <String>]`: Name of the attachment.
-          - `[TeamsAppId <String>]`: 
+          - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
           - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
         - `[Body <IMicrosoftGraphItemBody>]`: itemBody
         - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -7433,9 +7448,9 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The list of managed devices.
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-        - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-        - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+        - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+        - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+        - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
         - `[Name <String>]`: The name of the item being referenced. Read-only.
         - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
         - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -7448,7 +7463,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The list of managed devices.
           - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
           - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
           - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-        - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+        - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
       - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
@@ -8214,6 +8229,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The list of managed devices.
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+    - `[EmployeeLeaveDateTime <DateTime?>]`: 
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -8584,7 +8600,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The list of managed devices.
             - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Name <String>]`: Name of the bucket.
-              - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
               - `[PlanId <String>]`: Plan ID to which the bucket belongs.
               - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -9164,7 +9180,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The list of managed devices.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: 
+          - `[Role <String>]`: onlineMeetingRole
           - `[Upn <String>]`: User principal name of the participant.
         - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -9296,15 +9312,15 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The list of managed devices.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[Content <Byte[]>]`: 
-            - `[ExpirationDateTime <DateTime?>]`: 
-            - `[NextExpectedRanges <String[]>]`: 
-          - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+            - `[Content <Byte[]>]`: The content streams that are uploaded.
+            - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+            - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+          - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ContentType <String>]`: 
-            - `[LastModifiedDateTime <DateTime?>]`: 
-            - `[Name <String>]`: 
-            - `[Size <Int32?>]`: 
+            - `[ContentType <String>]`: The MIME type.
+            - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+            - `[Size <Int32?>]`: The length of the attachment in bytes.
           - `[Body <IMicrosoftGraphItemBody>]`: itemBody
           - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -9318,7 +9334,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The list of managed devices.
           - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-          - `[HasAttachments <Boolean?>]`: 
+          - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
           - `[Importance <String>]`: importance
           - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -9341,14 +9357,21 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The list of managed devices.
 
 MOBILETHREATDEFENSECONNECTORS <IMicrosoftGraphMobileThreatDefenseConnector[]>: The list of Mobile threat Defense connectors configured by the tenant.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AllowPartnerToCollectIosApplicationMetadata <Boolean?>]`: When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+  - `[AllowPartnerToCollectIosPersonalApplicationMetadata <Boolean?>]`: When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
   - `[AndroidDeviceBlockedOnMissingPartnerData <Boolean?>]`: For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
   - `[AndroidEnabled <Boolean?>]`: For Android, set whether data from the data sync partner should be used during compliance evaluations
+  - `[AndroidMobileApplicationManagementEnabled <Boolean?>]`: When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
   - `[IosDeviceBlockedOnMissingPartnerData <Boolean?>]`: For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
   - `[IosEnabled <Boolean?>]`: For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
+  - `[IosMobileApplicationManagementEnabled <Boolean?>]`: When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
   - `[LastHeartbeatDateTime <DateTime?>]`: DateTime of last Heartbeat recieved from the Data Sync Partner
+  - `[MicrosoftDefenderForEndpointAttachEnabled <Boolean?>]`: When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.
   - `[PartnerState <MobileThreatPartnerTenantState?>]`: Partner state of this tenant.
   - `[PartnerUnresponsivenessThresholdInDays <Int32?>]`: Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
   - `[PartnerUnsupportedOSVersionBlocked <Boolean?>]`: Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+  - `[WindowsDeviceBlockedOnMissingPartnerData <Boolean?>]`: When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
+  - `[WindowsEnabled <Boolean?>]`: When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.
 
 NOTIFICATIONMESSAGETEMPLATES <IMicrosoftGraphNotificationMessageTemplate[]>: The Notification Message Templates.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -9363,6 +9386,7 @@ NOTIFICATIONMESSAGETEMPLATES <IMicrosoftGraphNotificationMessageTemplate[]>: The
     - `[Locale <String>]`: The Locale for which this message is destined.
     - `[MessageTemplate <String>]`: The Message Template content.
     - `[Subject <String>]`: The Message Template Subject.
+  - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
 
 REMOTEASSISTANCEPARTNERS <IMicrosoftGraphRemoteAssistancePartner[]>: The remote assist partners.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

@@ -13,13 +13,13 @@ This will create a new version with the contents of the previous version, but pr
 
 ## SYNTAX
 
-### Restore1 (Default)
+### Restore (Default)
 ```
 Restore-MgDriveItemVersion -DriveId <String> -DriveItemId <String> -DriveItemVersionId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RestoreViaIdentity1
+### RestoreViaIdentity
 ```
 Restore-MgDriveItemVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -46,7 +46,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore1
+Parameter Sets: Restore
 Aliases:
 
 Required: True
@@ -61,7 +61,7 @@ key: id of driveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore1
+Parameter Sets: Restore
 Aliases:
 
 Required: True
@@ -76,7 +76,7 @@ key: id of driveItemVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore1
+Parameter Sets: Restore
 Aliases:
 
 Required: True
@@ -92,7 +92,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: RestoreViaIdentity1
+Parameter Sets: RestoreViaIdentity
 Aliases:
 
 Required: True
@@ -181,6 +181,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

@@ -14,28 +14,28 @@ Update the navigation property planner in users
 
 ### UpdateExpanded (Default)
 ```
-Update-MgUserPlanner -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgUserPlanner -UserId <String> -IfMatch <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Plans <IMicrosoftGraphPlannerPlan[]>] [-Tasks <IMicrosoftGraphPlannerTask[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserPlanner -UserId <String> -BodyParameter <IMicrosoftGraphPlannerUser1> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgUserPlanner -UserId <String> -IfMatch <String> -BodyParameter <IMicrosoftGraphPlannerUser1>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserPlanner -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerUser1> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserPlanner -InputObject <IPlannerIdentity> -IfMatch <String>
+ -BodyParameter <IMicrosoftGraphPlannerUser1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgUserPlanner -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Plans <IMicrosoftGraphPlannerPlan[]>] [-Tasks <IMicrosoftGraphPlannerTask[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgUserPlanner -InputObject <IPlannerIdentity> -IfMatch <String> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-Plans <IMicrosoftGraphPlannerPlan[]>] [-Tasks <IMicrosoftGraphPlannerTask[]>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,6 +86,21 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag value.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -235,7 +250,7 @@ BODYPARAMETER <IMicrosoftGraphPlannerUser1>: plannerUser
     - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Name <String>]`: Name of the bucket.
-      - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+      - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
       - `[PlanId <String>]`: Plan ID to which the bucket belongs.
       - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -351,7 +366,7 @@ PLANS <IMicrosoftGraphPlannerPlan[]>: Read-only. Nullable. Returns the plannerTa
   - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the bucket.
-    - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+    - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
     - `[PlanId <String>]`: Plan ID to which the bucket belongs.
     - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.

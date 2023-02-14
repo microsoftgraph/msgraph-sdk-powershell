@@ -14,8 +14,8 @@ Update the properties of a teamsAppSettings object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgTeamworkTeamAppSetting [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-IsChatResourceSpecificConsentEnabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgTeamworkTeamAppSetting [-AdditionalProperties <Hashtable>] [-AllowUserRequestsForAppAccess]
+ [-Id <String>] [-IsChatResourceSpecificConsentEnabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -49,6 +49,21 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowUserRequestsForAppAccess
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -177,6 +192,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTeamsAppSettings>: teamsAppSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AllowUserRequestsForAppAccess <Boolean?>]`: 
   - `[IsChatResourceSpecificConsentEnabled <Boolean?>]`: Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
 
 ## RELATED LINKS

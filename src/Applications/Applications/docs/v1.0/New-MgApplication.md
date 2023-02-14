@@ -30,6 +30,7 @@ New-MgApplication [-AddIns <IMicrosoftGraphAddIn[]>] [-AdditionalProperties <Has
  [-ParentalControlSettings <IMicrosoftGraphParentalControlSettings>]
  [-PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]
  [-PublicClient <IMicrosoftGraphPublicClientApplication>] [-PublisherDomain <String>]
+ [-RequestSignatureVerification <IMicrosoftGraphRequestSignatureVerification>]
  [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-SamlMetadataUrl <String>]
  [-ServiceManagementReference <String>] [-SignInAudience <String>] [-Spa <IMicrosoftGraphSpaApplication>]
  [-Tags <String[]>] [-TokenEncryptionKeyId <String>]
@@ -634,6 +635,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RequestSignatureVerification
+requestSignatureVerification
+To construct, please use Get-Help -Online and see NOTES section for REQUESTSIGNATUREVERIFICATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRequestSignatureVerification
+Parameter Sets: CreateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RequiredResourceAccess
 Specifies the resources that the application needs to access.
 This property also specifies the set of delegated permissions and application roles that it needs for each of those resources.
@@ -1036,6 +1053,10 @@ BODYPARAMETER <IMicrosoftGraphApplication1>: application
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RedirectUris <String[]>]`: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
   - `[PublisherDomain <String>]`: The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
+  - `[RequestSignatureVerification <IMicrosoftGraphRequestSignatureVerification>]`: requestSignatureVerification
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AllowedWeakAlgorithms <String>]`: weakAlgorithms
+    - `[IsSignedRequestRequired <Boolean?>]`: 
   - `[RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>]`: Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
     - `[ResourceAccess <IMicrosoftGraphResourceAccess[]>]`: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
       - `[Id <String>]`: The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
@@ -1171,6 +1192,11 @@ PASSWORDCREDENTIALS <IMicrosoftGraphPasswordCredential[]>: The collection of pas
 PUBLICCLIENT <IMicrosoftGraphPublicClientApplication>: publicClientApplication
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[RedirectUris <String[]>]`: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
+
+REQUESTSIGNATUREVERIFICATION <IMicrosoftGraphRequestSignatureVerification>: requestSignatureVerification
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AllowedWeakAlgorithms <String>]`: weakAlgorithms
+  - `[IsSignedRequestRequired <Boolean?>]`: 
 
 REQUIREDRESOURCEACCESS <IMicrosoftGraphRequiredResourceAccess[]>: Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
   - `[ResourceAccess <IMicrosoftGraphResourceAccess[]>]`: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.

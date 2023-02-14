@@ -12,13 +12,13 @@ Publishes a [contentType][] present in the content type hub site.
 
 ## SYNTAX
 
-### Publish1 (Default)
+### Publish (Default)
 ```
 Publish-MgDriveListContentType -ContentTypeId <String> -DriveId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### PublishViaIdentity1
+### PublishViaIdentity
 ```
 Publish-MgDriveListContentType -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Publish1
+Parameter Sets: Publish
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Publish1
+Parameter Sets: Publish
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: PublishViaIdentity1
+Parameter Sets: PublishViaIdentity
 Aliases:
 
 Required: True
@@ -156,6 +156,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserTodoListTaskAttachmentSessionContent
 
 ## SYNOPSIS
-Update content for the navigation property attachmentSessions in users
+The content streams that are uploaded.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Set-MgUserTodoListTaskAttachmentSessionContent -InputObject <IUsersIdentity> -In
 ```
 
 ## DESCRIPTION
-Update content for the navigation property attachmentSessions in users
+The content streams that are uploaded.
 
 ## EXAMPLES
 

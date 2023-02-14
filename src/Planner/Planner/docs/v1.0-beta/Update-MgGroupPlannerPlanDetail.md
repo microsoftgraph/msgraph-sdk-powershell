@@ -8,38 +8,40 @@ schema: 2.0.0
 # Update-MgGroupPlannerPlanDetail
 
 ## SYNOPSIS
-Update the properties of **plannerplandetails** object.
+Update the navigation property details in groups
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupPlannerPlanDetail -GroupId <String> -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
- [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>] [-ContextDetails <Hashtable>]
- [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgGroupPlannerPlanDetail -GroupId <String> -PlannerPlanId <String> -IfMatch <String>
+ [-AdditionalProperties <Hashtable>] [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>]
+ [-ContextDetails <Hashtable>] [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupPlannerPlanDetail -GroupId <String> -PlannerPlanId <String>
+Update-MgGroupPlannerPlanDetail -GroupId <String> -PlannerPlanId <String> -IfMatch <String>
  -BodyParameter <IMicrosoftGraphPlannerPlanDetails1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity>
+Update-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> -IfMatch <String>
  -BodyParameter <IMicrosoftGraphPlannerPlanDetails1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>] [-ContextDetails <Hashtable>]
- [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> -IfMatch <String>
+ [-AdditionalProperties <Hashtable>] [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>]
+ [-ContextDetails <Hashtable>] [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of **plannerplandetails** object.
+Update the navigation property details in groups
 
 ## EXAMPLES
 
@@ -154,6 +156,21 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag value.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

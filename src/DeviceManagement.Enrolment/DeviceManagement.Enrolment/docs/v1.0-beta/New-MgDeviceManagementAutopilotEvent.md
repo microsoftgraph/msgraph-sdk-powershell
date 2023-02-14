@@ -14,14 +14,15 @@ Create new navigation property to autopilotEvents for deviceManagement
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceManagementAutopilotEvent [-AccountSetupDuration <TimeSpan>] [-AccountSetupStatus <String>]
- [-AdditionalProperties <Hashtable>] [-DeploymentDuration <TimeSpan>] [-DeploymentEndDateTime <DateTime>]
- [-DeploymentStartDateTime <DateTime>] [-DeploymentState <String>] [-DeploymentTotalDuration <TimeSpan>]
+New-MgDeviceManagementAutopilotEvent [-AccountSetupDuration <TimeSpan>]
+ [-AccountSetupStatus <WindowsAutopilotDeploymentState>] [-AdditionalProperties <Hashtable>]
+ [-DeploymentDuration <TimeSpan>] [-DeploymentEndDateTime <DateTime>] [-DeploymentStartDateTime <DateTime>]
+ [-DeploymentState <WindowsAutopilotDeploymentState>] [-DeploymentTotalDuration <TimeSpan>]
  [-DeviceId <String>] [-DevicePreparationDuration <TimeSpan>] [-DeviceRegisteredDateTime <DateTime>]
- [-DeviceSerialNumber <String>] [-DeviceSetupDuration <TimeSpan>] [-DeviceSetupStatus <String>]
- [-EnrollmentFailureDetails <String>] [-EnrollmentStartDateTime <DateTime>]
- [-EnrollmentState <EnrollmentState>] [-EnrollmentType <String>] [-EventDateTime <DateTime>] [-Id <String>]
- [-ManagedDeviceName <String>] [-OSVersion <String>]
+ [-DeviceSerialNumber <String>] [-DeviceSetupDuration <TimeSpan>]
+ [-DeviceSetupStatus <WindowsAutopilotDeploymentState>] [-EnrollmentFailureDetails <String>]
+ [-EnrollmentStartDateTime <DateTime>] [-EnrollmentState <EnrollmentState>] [-EnrollmentType <String>]
+ [-EventDateTime <DateTime>] [-Id <String>] [-ManagedDeviceName <String>] [-OSVersion <String>]
  [-PolicyStatusDetails <IMicrosoftGraphDeviceManagementAutopilotPolicyStatusDetail[]>]
  [-TargetedAppCount <Int32>] [-TargetedPolicyCount <Int32>] [-UserPrincipalName <String>]
  [-Windows10EnrollmentCompletionPageConfigurationDisplayName <String>]
@@ -58,10 +59,10 @@ Accept wildcard characters: False
 ```
 
 ### -AccountSetupStatus
-windowsAutopilotDeploymentState
+Deployment states for Autopilot devices
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.WindowsAutopilotDeploymentState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -149,10 +150,10 @@ Accept wildcard characters: False
 ```
 
 ### -DeploymentState
-windowsAutopilotDeploymentState
+Deployment states for Autopilot devices
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.WindowsAutopilotDeploymentState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -254,10 +255,10 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceSetupStatus
-windowsAutopilotDeploymentState
+Deployment states for Autopilot devices
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.WindowsAutopilotDeploymentState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -550,18 +551,18 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementAutopilotEvent>: Represents an Aut
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AccountSetupDuration <TimeSpan?>]`: Time spent in user ESP.
-  - `[AccountSetupStatus <String>]`: windowsAutopilotDeploymentState
+  - `[AccountSetupStatus <WindowsAutopilotDeploymentState?>]`: Deployment states for Autopilot devices
   - `[DeploymentDuration <TimeSpan?>]`: Autopilot deployment duration including enrollment.
   - `[DeploymentEndDateTime <DateTime?>]`: Deployment end time.
   - `[DeploymentStartDateTime <DateTime?>]`: Deployment start time.
-  - `[DeploymentState <String>]`: windowsAutopilotDeploymentState
+  - `[DeploymentState <WindowsAutopilotDeploymentState?>]`: Deployment states for Autopilot devices
   - `[DeploymentTotalDuration <TimeSpan?>]`: Total deployment duration from enrollment to Desktop screen.
   - `[DeviceId <String>]`: Device id associated with the object
   - `[DevicePreparationDuration <TimeSpan?>]`: Time spent in device enrollment.
   - `[DeviceRegisteredDateTime <DateTime?>]`: Device registration date.
   - `[DeviceSerialNumber <String>]`: Device serial number.
   - `[DeviceSetupDuration <TimeSpan?>]`: Time spent in device ESP.
-  - `[DeviceSetupStatus <String>]`: windowsAutopilotDeploymentState
+  - `[DeviceSetupStatus <WindowsAutopilotDeploymentState?>]`: Deployment states for Autopilot devices
   - `[EnrollmentFailureDetails <String>]`: Enrollment failure details.
   - `[EnrollmentStartDateTime <DateTime?>]`: Device enrollment start date.
   - `[EnrollmentState <EnrollmentState?>]`: 

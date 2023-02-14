@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrolment
-Module Guid: 97f00694-8ff5-45b7-a687-8ab56a3817ab
+Module Guid: 2b701c94-3ce3-404b-a3b8-da94c2b5affd
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.enrolment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -488,6 +488,75 @@ Provided so that callers can get the role definition using $expand at the same t
 roleDefinition.id will be auto expanded.
 Supports $expand.
 
+### [Get-MgRoleManagementExchange](Get-MgRoleManagementExchange.md)
+Get exchange from roleManagement
+
+### [Get-MgRoleManagementExchangeResourceNamespace](Get-MgRoleManagementExchangeResourceNamespace.md)
+Get resourceNamespaces from roleManagement
+
+### [Get-MgRoleManagementExchangeResourceNamespaceResourceAction](Get-MgRoleManagementExchangeResourceNamespaceResourceAction.md)
+Operations that an authorized principal are allowed to perform.
+
+### [Get-MgRoleManagementExchangeResourceNamespaceResourceActionResourceScope](Get-MgRoleManagementExchangeResourceNamespaceResourceActionResourceScope.md)
+Get resourceScope from roleManagement
+
+### [Get-MgRoleManagementExchangeRoleAssignment](Get-MgRoleManagementExchangeRoleAssignment.md)
+Get roleAssignments from roleManagement
+
+### [Get-MgRoleManagementExchangeRoleAssignmentAppScope](Get-MgRoleManagementExchangeRoleAssignmentAppScope.md)
+Details of the app specific scope when the assignment scope is app specific.
+Containment entity.
+
+### [Get-MgRoleManagementExchangeRoleAssignmentDirectoryScope](Get-MgRoleManagementExchangeRoleAssignmentDirectoryScope.md)
+The directory object that is the scope of the assignment.
+Provided so that callers can get the directory object using $expand at the same time as getting the role assignment.
+Read-only.
+Supports $expand.
+
+### [Get-MgRoleManagementExchangeRoleAssignmentPrincipal](Get-MgRoleManagementExchangeRoleAssignmentPrincipal.md)
+The assigned principal.
+Provided so that callers can get the principal using $expand at the same time as getting the role assignment.
+Read-only.
+Supports $expand.
+
+### [Get-MgRoleManagementExchangeRoleAssignmentRoleDefinition](Get-MgRoleManagementExchangeRoleAssignmentRoleDefinition.md)
+The roleDefinition the assignment is for.
+Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
+roleDefinition.id will be auto expanded.
+Supports $expand.
+
+### [Get-MgRoleManagementExchangeRoleDefinition](Get-MgRoleManagementExchangeRoleDefinition.md)
+Get roleDefinitions from roleManagement
+
+### [Get-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom](Get-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom.md)
+Read-only collection of role definitions that the given role definition inherits from.
+Only Azure AD built-in roles support this attribute.
+
+### [Get-MgRoleManagementExchangeTransitiveRoleAssignment](Get-MgRoleManagementExchangeTransitiveRoleAssignment.md)
+Get transitiveRoleAssignments from roleManagement
+
+### [Get-MgRoleManagementExchangeTransitiveRoleAssignmentAppScope](Get-MgRoleManagementExchangeTransitiveRoleAssignmentAppScope.md)
+Details of the app specific scope when the assignment scope is app specific.
+Containment entity.
+
+### [Get-MgRoleManagementExchangeTransitiveRoleAssignmentDirectoryScope](Get-MgRoleManagementExchangeTransitiveRoleAssignmentDirectoryScope.md)
+The directory object that is the scope of the assignment.
+Provided so that callers can get the directory object using $expand at the same time as getting the role assignment.
+Read-only.
+Supports $expand.
+
+### [Get-MgRoleManagementExchangeTransitiveRoleAssignmentPrincipal](Get-MgRoleManagementExchangeTransitiveRoleAssignmentPrincipal.md)
+The assigned principal.
+Provided so that callers can get the principal using $expand at the same time as getting the role assignment.
+Read-only.
+Supports $expand.
+
+### [Get-MgRoleManagementExchangeTransitiveRoleAssignmentRoleDefinition](Get-MgRoleManagementExchangeTransitiveRoleAssignmentRoleDefinition.md)
+The roleDefinition the assignment is for.
+Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
+roleDefinition.id will be auto expanded.
+Supports $expand.
+
 ### [Import-MgRoleManagementCloudPcResourceNamespaceResourceAction](Import-MgRoleManagementCloudPcResourceNamespaceResourceAction.md)
 Invoke action importResourceActions
 
@@ -500,6 +569,9 @@ Invoke action importResourceActions
 ### [Import-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction](Import-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction.md)
 Invoke action importResourceActions
 
+### [Import-MgRoleManagementExchangeResourceNamespaceResourceAction](Import-MgRoleManagementExchangeResourceNamespaceResourceAction.md)
+Invoke action importResourceActions
+
 ### [Invoke-MgAssignedRoleManagementCloudPcRoleDefinitionPrincipal](Invoke-MgAssignedRoleManagementCloudPcRoleDefinitionPrincipal.md)
 Invoke function assignedPrincipals
 
@@ -510,6 +582,9 @@ Invoke function assignedPrincipals
 Invoke function assignedPrincipals
 
 ### [Invoke-MgAssignedRoleManagementEntitlementManagementRoleDefinitionPrincipal](Invoke-MgAssignedRoleManagementEntitlementManagementRoleDefinitionPrincipal.md)
+Invoke function assignedPrincipals
+
+### [Invoke-MgAssignedRoleManagementExchangeRoleDefinitionPrincipal](Invoke-MgAssignedRoleManagementExchangeRoleDefinitionPrincipal.md)
 Invoke function assignedPrincipals
 
 ### [Invoke-MgFilterRoleManagementDirectoryRoleAssignmentApprovalByCurrentUser](Invoke-MgFilterRoleManagementDirectoryRoleAssignmentApprovalByCurrentUser.md)
@@ -761,6 +836,24 @@ This operation allows both admins and eligible users to add, revoke, or extend e
 ### [New-MgRoleManagementEntitlementManagementTransitiveRoleAssignment](New-MgRoleManagementEntitlementManagementTransitiveRoleAssignment.md)
 Create new navigation property to transitiveRoleAssignments for roleManagement
 
+### [New-MgRoleManagementExchangeResourceNamespace](New-MgRoleManagementExchangeResourceNamespace.md)
+Create new navigation property to resourceNamespaces for roleManagement
+
+### [New-MgRoleManagementExchangeResourceNamespaceResourceAction](New-MgRoleManagementExchangeResourceNamespaceResourceAction.md)
+Create new navigation property to resourceActions for roleManagement
+
+### [New-MgRoleManagementExchangeRoleAssignment](New-MgRoleManagementExchangeRoleAssignment.md)
+Create new navigation property to roleAssignments for roleManagement
+
+### [New-MgRoleManagementExchangeRoleDefinition](New-MgRoleManagementExchangeRoleDefinition.md)
+Create new navigation property to roleDefinitions for roleManagement
+
+### [New-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom](New-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom.md)
+Create new navigation property to inheritsPermissionsFrom for roleManagement
+
+### [New-MgRoleManagementExchangeTransitiveRoleAssignment](New-MgRoleManagementExchangeTransitiveRoleAssignment.md)
+Create new navigation property to transitiveRoleAssignments for roleManagement
+
 ### [Remove-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfile](Remove-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfile.md)
 Delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
 
@@ -978,6 +1071,36 @@ Delete navigation property roleEligibilityScheduleRequests for roleManagement
 Delete navigation property transitiveRoleAssignments for roleManagement
 
 ### [Remove-MgRoleManagementEntitlementManagementTransitiveRoleAssignmentAppScope](Remove-MgRoleManagementEntitlementManagementTransitiveRoleAssignmentAppScope.md)
+Delete navigation property appScope for roleManagement
+
+### [Remove-MgRoleManagementExchange](Remove-MgRoleManagementExchange.md)
+Delete navigation property exchange for roleManagement
+
+### [Remove-MgRoleManagementExchangeResourceNamespace](Remove-MgRoleManagementExchangeResourceNamespace.md)
+Delete navigation property resourceNamespaces for roleManagement
+
+### [Remove-MgRoleManagementExchangeResourceNamespaceResourceAction](Remove-MgRoleManagementExchangeResourceNamespaceResourceAction.md)
+Delete navigation property resourceActions for roleManagement
+
+### [Remove-MgRoleManagementExchangeResourceNamespaceResourceActionResourceScope](Remove-MgRoleManagementExchangeResourceNamespaceResourceActionResourceScope.md)
+Delete navigation property resourceScope for roleManagement
+
+### [Remove-MgRoleManagementExchangeRoleAssignment](Remove-MgRoleManagementExchangeRoleAssignment.md)
+Delete navigation property roleAssignments for roleManagement
+
+### [Remove-MgRoleManagementExchangeRoleAssignmentAppScope](Remove-MgRoleManagementExchangeRoleAssignmentAppScope.md)
+Delete navigation property appScope for roleManagement
+
+### [Remove-MgRoleManagementExchangeRoleDefinition](Remove-MgRoleManagementExchangeRoleDefinition.md)
+Delete navigation property roleDefinitions for roleManagement
+
+### [Remove-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom](Remove-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom.md)
+Delete navigation property inheritsPermissionsFrom for roleManagement
+
+### [Remove-MgRoleManagementExchangeTransitiveRoleAssignment](Remove-MgRoleManagementExchangeTransitiveRoleAssignment.md)
+Delete navigation property transitiveRoleAssignments for roleManagement
+
+### [Remove-MgRoleManagementExchangeTransitiveRoleAssignmentAppScope](Remove-MgRoleManagementExchangeTransitiveRoleAssignmentAppScope.md)
 Delete navigation property appScope for roleManagement
 
 ### [Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
@@ -1213,5 +1336,35 @@ Update the navigation property roleEligibilityScheduleRequests in roleManagement
 Update the navigation property transitiveRoleAssignments in roleManagement
 
 ### [Update-MgRoleManagementEntitlementManagementTransitiveRoleAssignmentAppScope](Update-MgRoleManagementEntitlementManagementTransitiveRoleAssignmentAppScope.md)
+Update the navigation property appScope in roleManagement
+
+### [Update-MgRoleManagementExchange](Update-MgRoleManagementExchange.md)
+Update the navigation property exchange in roleManagement
+
+### [Update-MgRoleManagementExchangeResourceNamespace](Update-MgRoleManagementExchangeResourceNamespace.md)
+Update the navigation property resourceNamespaces in roleManagement
+
+### [Update-MgRoleManagementExchangeResourceNamespaceResourceAction](Update-MgRoleManagementExchangeResourceNamespaceResourceAction.md)
+Update the navigation property resourceActions in roleManagement
+
+### [Update-MgRoleManagementExchangeResourceNamespaceResourceActionResourceScope](Update-MgRoleManagementExchangeResourceNamespaceResourceActionResourceScope.md)
+Update the navigation property resourceScope in roleManagement
+
+### [Update-MgRoleManagementExchangeRoleAssignment](Update-MgRoleManagementExchangeRoleAssignment.md)
+Update the navigation property roleAssignments in roleManagement
+
+### [Update-MgRoleManagementExchangeRoleAssignmentAppScope](Update-MgRoleManagementExchangeRoleAssignmentAppScope.md)
+Update the navigation property appScope in roleManagement
+
+### [Update-MgRoleManagementExchangeRoleDefinition](Update-MgRoleManagementExchangeRoleDefinition.md)
+Update the navigation property roleDefinitions in roleManagement
+
+### [Update-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom](Update-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom.md)
+Update the navigation property inheritsPermissionsFrom in roleManagement
+
+### [Update-MgRoleManagementExchangeTransitiveRoleAssignment](Update-MgRoleManagementExchangeTransitiveRoleAssignment.md)
+Update the navigation property transitiveRoleAssignments in roleManagement
+
+### [Update-MgRoleManagementExchangeTransitiveRoleAssignmentAppScope](Update-MgRoleManagementExchangeTransitiveRoleAssignmentAppScope.md)
 Update the navigation property appScope in roleManagement
 

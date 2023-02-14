@@ -12,28 +12,28 @@ Invoke function getActivitiesByInterval
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgDriveListItemActivityByInterval -DriveId <String> -ListItemId <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
-### Get2
+### Get1
 ```
 Get-MgDriveListItemActivityByInterval -DriveId <String> -EndDateTime <String> -Interval <String>
  -ListItemId <String> -StartDateTime <String> [-Count] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgDriveListItemActivityByInterval -InputObject <IFilesIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity1
 ```
 Get-MgDriveListItemActivityByInterval -InputObject <IFilesIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
@@ -67,7 +67,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, Get2
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ Usage: endDateTime='{endDateTime}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -113,7 +113,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentity2
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -128,7 +128,7 @@ Usage: interval='{interval}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -143,7 +143,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, Get2
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -218,7 +218,7 @@ Usage: startDateTime='{startDateTime}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -276,6 +276,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

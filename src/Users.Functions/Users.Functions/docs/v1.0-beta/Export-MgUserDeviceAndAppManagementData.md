@@ -12,24 +12,24 @@ Invoke function exportDeviceAndAppManagementData
 
 ## SYNTAX
 
-### Export (Default)
+### Export2 (Default)
 ```
 Export-MgUserDeviceAndAppManagementData -UserId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### Export1
+### Export3
 ```
 Export-MgUserDeviceAndAppManagementData -Skip <Int32> -Top <Int32> -UserId <String> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
-### ExportViaIdentity
+### ExportViaIdentity2
 ```
 Export-MgUserDeviceAndAppManagementData -InputObject <IUsersFunctionsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
-### ExportViaIdentity1
+### ExportViaIdentity3
 ```
 Export-MgUserDeviceAndAppManagementData -InputObject <IUsersFunctionsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
@@ -48,7 +48,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: ExportViaIdentity, ExportViaIdentity1
+Parameter Sets: ExportViaIdentity2, ExportViaIdentity3
 Aliases:
 
 Required: True
@@ -93,7 +93,7 @@ Usage: skip={skip}
 
 ```yaml
 Type: System.Int32
-Parameter Sets: Export1
+Parameter Sets: Export3
 Aliases:
 
 Required: True
@@ -108,7 +108,7 @@ Usage: top={top}
 
 ```yaml
 Type: System.Int32
-Parameter Sets: Export1
+Parameter Sets: Export3
 Aliases: Limit
 
 Required: True
@@ -123,7 +123,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Export, Export1
+Parameter Sets: Export2, Export3
 Aliases:
 
 Required: True

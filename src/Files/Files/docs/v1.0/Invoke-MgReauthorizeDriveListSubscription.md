@@ -12,13 +12,13 @@ Invoke action reauthorize
 
 ## SYNTAX
 
-### Reauthorize1 (Default)
+### Reauthorize (Default)
 ```
 Invoke-MgReauthorizeDriveListSubscription -DriveId <String> -SubscriptionId <String> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### ReauthorizeViaIdentity1
+### ReauthorizeViaIdentity
 ```
 Invoke-MgReauthorizeDriveListSubscription -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Reauthorize1
+Parameter Sets: Reauthorize
 Aliases:
 
 Required: True
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: ReauthorizeViaIdentity1
+Parameter Sets: ReauthorizeViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of subscription
 
 ```yaml
 Type: System.String
-Parameter Sets: Reauthorize1
+Parameter Sets: Reauthorize
 Aliases:
 
 Required: True
@@ -156,6 +156,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission
