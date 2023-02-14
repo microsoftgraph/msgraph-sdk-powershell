@@ -8,38 +8,38 @@ schema: 2.0.0
 # Update-MgPlannerPlanDetail
 
 ## SYNOPSIS
-Update the properties of **plannerplandetails** object.
+Update the navigation property details in planner
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPlannerPlanDetail -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
+Update-MgPlannerPlanDetail -PlannerPlanId <String> -IfMatch <String> [-AdditionalProperties <Hashtable>]
  [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>] [-Id <String>] [-SharedWith <Hashtable>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPlannerPlanDetail -PlannerPlanId <String> -BodyParameter <IMicrosoftGraphPlannerPlanDetails>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerPlanDetail -PlannerPlanId <String> -IfMatch <String>
+ -BodyParameter <IMicrosoftGraphPlannerPlanDetails> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlanDetails>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> -IfMatch <String>
+ -BodyParameter <IMicrosoftGraphPlannerPlanDetails> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>] [-Id <String>] [-SharedWith <Hashtable>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> -IfMatch <String>
+ [-AdditionalProperties <Hashtable>] [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>]
+ [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of **plannerplandetails** object.
+Update the navigation property details in planner
 
 ## EXAMPLES
 
@@ -121,6 +121,21 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag value.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

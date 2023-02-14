@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: a86cb7f2-3e8f-4adf-88d4-8db111cc76f1
+Module Guid: d579c3ad-f66b-4a27-935c-53e0d9dd108e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -533,7 +533,11 @@ Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
 
 ### [New-MgUserTodoListTaskAttachmentUploadSession](New-MgUserTodoListTaskAttachmentUploadSession.md)
-Invoke action createUploadSession
+Create an upload session to iteratively upload ranges of a file as an attachment to a todoTask.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
+The request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+This allows the transfer to be resumed, in case the network connection is dropped during the upload.
+The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.
 
 ### [Publish-MgUserDriveListContentType](Publish-MgUserDriveListContentType.md)
 Publishes a [contentType][] present in the content type hub site.

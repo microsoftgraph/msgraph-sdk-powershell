@@ -284,6 +284,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageId <String>]`: key: id of accessPackage
   - `[AccessPackageId1 <String>]`: key: id of accessPackage
   - `[AccessPackageId2 <String>]`: Usage: accessPackageId='{accessPackageId}'
+  - `[AccessPackageQuestionId <String>]`: key: id of accessPackageQuestion
   - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest

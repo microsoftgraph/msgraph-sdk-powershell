@@ -264,7 +264,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFido2AuthenticationMethod1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFido2AuthenticationMethod
 
 ## NOTES
 

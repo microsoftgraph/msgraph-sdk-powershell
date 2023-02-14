@@ -8,44 +8,44 @@ schema: 2.0.0
 # Update-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent
 
 ## SYNOPSIS
-Update the navigation property userExperienceAnalyticsDeviceTimelineEvents in deviceManagement
+Update the navigation property userExperienceAnalyticsDeviceTimelineEvent in deviceManagement
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent
- -UserExperienceAnalyticsDeviceTimelineEventsId <String> [-AdditionalProperties <Hashtable>]
- [-DeviceId <String>] [-EventAdditionalInformation <String>] [-EventDateTime <DateTime>]
- [-EventDetails <String>] [-EventLevel <DeviceEventLevel>] [-EventName <String>] [-EventSource <String>]
- [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UserExperienceAnalyticsDeviceTimelineEventId <String> [-AdditionalProperties <Hashtable>]
+ [-DeviceId <String>] [-EventDateTime <DateTime>] [-EventDetails <String>] [-EventLevel <DeviceEventLevel>]
+ [-EventName <String>] [-EventSource <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent
- -UserExperienceAnalyticsDeviceTimelineEventsId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents> [-PassThru] [-Confirm] [-WhatIf]
+ -UserExperienceAnalyticsDeviceTimelineEventId <String>
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDeviceTimelineEvent -InputObject <IDeviceManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-DeviceId <String>] [-EventAdditionalInformation <String>]
- [-EventDateTime <DateTime>] [-EventDetails <String>] [-EventLevel <DeviceEventLevel>] [-EventName <String>]
- [-EventSource <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DeviceId <String>] [-EventDateTime <DateTime>] [-EventDetails <String>]
+ [-EventLevel <DeviceEventLevel>] [-EventName <String>] [-EventSource <String>] [-Id <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property userExperienceAnalyticsDeviceTimelineEvents in deviceManagement
+Update the navigation property userExperienceAnalyticsDeviceTimelineEvent in deviceManagement
 
 ## EXAMPLES
 
@@ -67,11 +67,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-The user experience analytics device events entity contains NRT device events details.
+The user experience analytics device event entity contains NRT device event details.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -84,21 +84,6 @@ Accept wildcard characters: False
 
 ### -DeviceId
 The id of the device where the event occurred.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EventAdditionalInformation
-Placeholder value for future expansion.
 
 ```yaml
 Type: System.String
@@ -237,8 +222,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserExperienceAnalyticsDeviceTimelineEventsId
-key: id of userExperienceAnalyticsDeviceTimelineEvents
+### -UserExperienceAnalyticsDeviceTimelineEventId
+key: id of userExperienceAnalyticsDeviceTimelineEvent
 
 ```yaml
 Type: System.String
@@ -290,7 +275,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent
 
 ## OUTPUTS
 
@@ -305,11 +290,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvents>: The user experience analytics device events entity contains NRT device events details.
+BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent>: The user experience analytics device event entity contains NRT device event details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeviceId <String>]`: The id of the device where the event occurred.
-  - `[EventAdditionalInformation <String>]`: Placeholder value for future expansion.
   - `[EventDateTime <DateTime?>]`: The time the event occured.
   - `[EventDetails <String>]`: The details provided by the event, format depends on event type.
   - `[EventLevel <DeviceEventLevel?>]`: Indicates device event level. Possible values are: None, Verbose, Information, Warning, Error, Critical
@@ -345,6 +329,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[DeviceHealthScriptAssignmentId <String>]`: key: id of deviceHealthScriptAssignment
   - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
   - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
+  - `[DeviceId <String>]`: key: deviceId of deviceHealthScriptPolicyState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
   - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
@@ -384,6 +369,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[GroupPolicyConfigurationId <String>]`: key: id of groupPolicyConfiguration
   - `[GroupPolicyDefinitionValueId <String>]`: key: id of groupPolicyDefinitionValue
   - `[GroupPolicyPresentationValueId <String>]`: key: id of groupPolicyPresentationValue
+  - `[Id <String>]`: key: id of deviceHealthScriptPolicyState
   - `[LocalizedNotificationMessageId <String>]`: key: id of localizedNotificationMessage
   - `[MacOSSoftwareUpdateAccountSummaryId <String>]`: key: id of macOSSoftwareUpdateAccountSummary
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: key: id of macOSSoftwareUpdateCategorySummary
@@ -399,6 +385,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: key: id of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: key: id of notificationMessageTemplate
+  - `[PolicyId <String>]`: key: policyId of deviceHealthScriptPolicyState
   - `[RemoteActionAuditId <String>]`: key: id of remoteActionAudit
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
@@ -428,7 +415,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
   - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess
   - `[UserExperienceAnalyticsDeviceStartupProcessPerformanceId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcessPerformance
-  - `[UserExperienceAnalyticsDeviceTimelineEventsId <String>]`: key: id of userExperienceAnalyticsDeviceTimelineEvents
+  - `[UserExperienceAnalyticsDeviceTimelineEventId <String>]`: key: id of userExperienceAnalyticsDeviceTimelineEvent
   - `[UserExperienceAnalyticsDeviceWithoutCloudIdentityId <String>]`: key: id of userExperienceAnalyticsDeviceWithoutCloudIdentity
   - `[UserExperienceAnalyticsImpactingProcessId <String>]`: key: id of userExperienceAnalyticsImpactingProcess
   - `[UserExperienceAnalyticsMetricHistoryId <String>]`: key: id of userExperienceAnalyticsMetricHistory

@@ -16,10 +16,10 @@ Create a new **printerShare** for the specified printer.
 ```
 New-MgPrintShare [-AdditionalProperties <Hashtable>] [-AllowAllUsers]
  [-AllowedGroups <IMicrosoftGraphGroup[]>] [-AllowedUsers <IMicrosoftGraphUser[]>]
- [-Capabilities <IMicrosoftGraphPrinterCapabilities>] [-CreatedDateTime <DateTime>]
+ [-Capabilities <IMicrosoftGraphPrinterCapabilities1>] [-CreatedDateTime <DateTime>]
  [-Defaults <IMicrosoftGraphPrinterDefaults1>] [-DisplayName <String>] [-Id <String>] [-IsAcceptingJobs]
  [-Jobs <IMicrosoftGraphPrintJob1[]>] [-Location <IMicrosoftGraphPrinterLocation1>] [-Manufacturer <String>]
- [-Model <String>] [-Printer <IMicrosoftGraphPrinter>] [-Status <IMicrosoftGraphPrinterStatus1>] [-Confirm]
+ [-Model <String>] [-Printer <IMicrosoftGraphPrinter1>] [-Status <IMicrosoftGraphPrinterStatus1>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -133,7 +133,7 @@ printerCapabilities
 To construct, please use Get-Help -Online and see NOTES section for CAPABILITIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterCapabilities
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterCapabilities1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -289,7 +289,7 @@ printer
 To construct, please use Get-Help -Online and see NOTES section for PRINTER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinter
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinter1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -671,7 +671,7 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
         - `[EmailMethods <IMicrosoftGraphEmailAuthenticationMethod[]>]`: The email address registered to a user for authentication.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[EmailAddress <String>]`: The email address registered to this user.
-        - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod1[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
+        - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
           - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -737,7 +737,7 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
         - `[SoftwareOathMethods <IMicrosoftGraphSoftwareOathAuthenticationMethod[]>]`: The software OATH TOTP applications registered to a user for authentication.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[SecretKey <String>]`: The secret key of the method. Always returns null.
-        - `[TemporaryAccessPassMethods <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod[]>]`: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+        - `[TemporaryAccessPassMethods <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod1[]>]`: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[CreatedDateTime <DateTime?>]`: The date and time when the Temporary Access Pass was created.
           - `[IsUsable <Boolean?>]`: The state of the authentication method that indicates whether it's currently usable by the user.
@@ -820,7 +820,7 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
             - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
             - `[Id <String>]`: Read-only. Unique id of the attachment.
             - `[Name <String>]`: Name of the attachment.
-            - `[TeamsAppId <String>]`: 
+            - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
             - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
           - `[Body <IMicrosoftGraphItemBody>]`: itemBody
           - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -983,6 +983,7 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
       - `[Drives <IMicrosoftGraphDrive1[]>]`: A collection of drives available for this user. Read-only.
       - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
       - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+      - `[EmployeeLeaveDateTime <DateTime?>]`: 
       - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -1005,9 +1006,9 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-          - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-          - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+          - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+          - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+          - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
           - `[Name <String>]`: The name of the item being referenced. Read-only.
           - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
           - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -1020,7 +1021,7 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
             - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
             - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
             - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-          - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+          - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
         - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
@@ -2567,11 +2568,11 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
           - `[Scope <String>]`: lobbyBypassScope
         - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+          - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
             - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[Role <String>]`: 
+            - `[Role <String>]`: onlineMeetingRole
             - `[Upn <String>]`: User principal name of the participant.
-          - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+          - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
         - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
         - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
         - `[Subject <String>]`: The subject of the online meeting.
@@ -2634,7 +2635,7 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
           - `[Buckets <IMicrosoftGraphPlannerBucket1[]>]`: Read-only. Nullable. Collection of buckets in the plan.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Name <String>]`: Name of the bucket.
-            - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+            - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
             - `[PlanId <String>]`: Plan ID to which the bucket belongs.
             - `[Tasks <IMicrosoftGraphPlannerTask1[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -2797,15 +2798,15 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-              - `[Content <Byte[]>]`: 
-              - `[ExpirationDateTime <DateTime?>]`: 
-              - `[NextExpectedRanges <String[]>]`: 
-            - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+              - `[Content <Byte[]>]`: The content streams that are uploaded.
+              - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+              - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+            - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-              - `[ContentType <String>]`: 
-              - `[LastModifiedDateTime <DateTime?>]`: 
-              - `[Name <String>]`: 
-              - `[Size <Int32?>]`: 
+              - `[ContentType <String>]`: The MIME type.
+              - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+              - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+              - `[Size <Int32?>]`: The length of the attachment in bytes.
             - `[Body <IMicrosoftGraphItemBody>]`: itemBody
             - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
             - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -2819,7 +2820,7 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
             - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
             - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-            - `[HasAttachments <Boolean?>]`: 
+            - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
             - `[Importance <String>]`: importance
             - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
             - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -3025,7 +3026,7 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
     - `[EmailMethods <IMicrosoftGraphEmailAuthenticationMethod[]>]`: The email address registered to a user for authentication.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[EmailAddress <String>]`: The email address registered to this user.
-    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod1[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
+    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
       - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -3094,7 +3095,7 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
     - `[SoftwareOathMethods <IMicrosoftGraphSoftwareOathAuthenticationMethod[]>]`: The software OATH TOTP applications registered to a user for authentication.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[SecretKey <String>]`: The secret key of the method. Always returns null.
-    - `[TemporaryAccessPassMethods <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod[]>]`: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+    - `[TemporaryAccessPassMethods <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod1[]>]`: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time when the Temporary Access Pass was created.
       - `[IsUsable <Boolean?>]`: The state of the authentication method that indicates whether it's currently usable by the user.
@@ -3337,7 +3338,7 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
         - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
         - `[Id <String>]`: Read-only. Unique id of the attachment.
         - `[Name <String>]`: Name of the attachment.
-        - `[TeamsAppId <String>]`: 
+        - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
         - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
       - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -3509,9 +3510,9 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
     - `[Name <String>]`: The name of the item. Read-write.
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-      - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-      - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+      - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+      - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+      - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
       - `[Name <String>]`: The name of the item being referenced. Read-only.
       - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
       - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -3524,7 +3525,7 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
         - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
         - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
         - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-      - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+      - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
     - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Bundles <IMicrosoftGraphDriveItem1[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
@@ -4290,6 +4291,7 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
   - `[Drives <IMicrosoftGraphDrive1[]>]`: A collection of drives available for this user. Read-only.
   - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
   - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+  - `[EmployeeLeaveDateTime <DateTime?>]`: 
   - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -4660,7 +4662,7 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
           - `[Buckets <IMicrosoftGraphPlannerBucket1[]>]`: Read-only. Nullable. Collection of buckets in the plan.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Name <String>]`: Name of the bucket.
-            - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+            - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
             - `[PlanId <String>]`: Plan ID to which the bucket belongs.
             - `[Tasks <IMicrosoftGraphPlannerTask1[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -5340,11 +5342,11 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
       - `[Scope <String>]`: lobbyBypassScope
     - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
         - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[Role <String>]`: 
+        - `[Role <String>]`: onlineMeetingRole
         - `[Upn <String>]`: User principal name of the participant.
-      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
     - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the online meeting.
@@ -5474,15 +5476,15 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[Content <Byte[]>]`: 
-          - `[ExpirationDateTime <DateTime?>]`: 
-          - `[NextExpectedRanges <String[]>]`: 
-        - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+          - `[Content <Byte[]>]`: The content streams that are uploaded.
+          - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+          - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+        - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[ContentType <String>]`: 
-          - `[LastModifiedDateTime <DateTime?>]`: 
-          - `[Name <String>]`: 
-          - `[Size <Int32?>]`: 
+          - `[ContentType <String>]`: The MIME type.
+          - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+          - `[Size <Int32?>]`: The length of the attachment in bytes.
         - `[Body <IMicrosoftGraphItemBody>]`: itemBody
         - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -5496,7 +5498,7 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
         - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-        - `[HasAttachments <Boolean?>]`: 
+        - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
         - `[Importance <String>]`: importance
         - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
         - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -5519,7 +5521,7 @@ ALLOWEDUSERS <IMicrosoftGraphUser[]>: The users who have access to print using t
 
 BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+  - `[Capabilities <IMicrosoftGraphPrinterCapabilities1>]`: printerCapabilities
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[BottomMargins <Int32[]>]`: A list of supported bottom margins(in microns) for the printer.
     - `[Collation <Boolean?>]`: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
@@ -5974,7 +5976,7 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
           - `[EmailMethods <IMicrosoftGraphEmailAuthenticationMethod[]>]`: The email address registered to a user for authentication.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[EmailAddress <String>]`: The email address registered to this user.
-          - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod1[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
+          - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
             - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -6040,7 +6042,7 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
           - `[SoftwareOathMethods <IMicrosoftGraphSoftwareOathAuthenticationMethod[]>]`: The software OATH TOTP applications registered to a user for authentication.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[SecretKey <String>]`: The secret key of the method. Always returns null.
-          - `[TemporaryAccessPassMethods <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod[]>]`: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+          - `[TemporaryAccessPassMethods <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod1[]>]`: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[CreatedDateTime <DateTime?>]`: The date and time when the Temporary Access Pass was created.
             - `[IsUsable <Boolean?>]`: The state of the authentication method that indicates whether it's currently usable by the user.
@@ -6123,7 +6125,7 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
               - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
               - `[Id <String>]`: Read-only. Unique id of the attachment.
               - `[Name <String>]`: Name of the attachment.
-              - `[TeamsAppId <String>]`: 
+              - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
               - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
             - `[Body <IMicrosoftGraphItemBody>]`: itemBody
             - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -6286,6 +6288,7 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
         - `[Drives <IMicrosoftGraphDrive1[]>]`: A collection of drives available for this user. Read-only.
         - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
         - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+        - `[EmployeeLeaveDateTime <DateTime?>]`: 
         - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -6308,9 +6311,9 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-            - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-            - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+            - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+            - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+            - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
             - `[Name <String>]`: The name of the item being referenced. Read-only.
             - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
             - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -6323,7 +6326,7 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
               - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
               - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
               - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-            - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+            - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
           - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
@@ -7870,11 +7873,11 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
             - `[Scope <String>]`: lobbyBypassScope
           - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+            - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
               - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[Role <String>]`: 
+              - `[Role <String>]`: onlineMeetingRole
               - `[Upn <String>]`: User principal name of the participant.
-            - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+            - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
           - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
           - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
           - `[Subject <String>]`: The subject of the online meeting.
@@ -7937,7 +7940,7 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
             - `[Buckets <IMicrosoftGraphPlannerBucket1[]>]`: Read-only. Nullable. Collection of buckets in the plan.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Name <String>]`: Name of the bucket.
-              - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
               - `[PlanId <String>]`: Plan ID to which the bucket belongs.
               - `[Tasks <IMicrosoftGraphPlannerTask1[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -8100,15 +8103,15 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[Content <Byte[]>]`: 
-                - `[ExpirationDateTime <DateTime?>]`: 
-                - `[NextExpectedRanges <String[]>]`: 
-              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+                - `[Content <Byte[]>]`: The content streams that are uploaded.
+                - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[ContentType <String>]`: 
-                - `[LastModifiedDateTime <DateTime?>]`: 
-                - `[Name <String>]`: 
-                - `[Size <Int32?>]`: 
+                - `[ContentType <String>]`: The MIME type.
+                - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                - `[Size <Int32?>]`: The length of the attachment in bytes.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -8122,7 +8125,7 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
               - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-              - `[HasAttachments <Boolean?>]`: 
+              - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
               - `[Importance <String>]`: importance
               - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
               - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -8246,9 +8249,9 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
     - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
   - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
   - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
-  - `[Printer <IMicrosoftGraphPrinter>]`: printer
+  - `[Printer <IMicrosoftGraphPrinter1>]`: printer
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+    - `[Capabilities <IMicrosoftGraphPrinterCapabilities1>]`: printerCapabilities
     - `[Defaults <IMicrosoftGraphPrinterDefaults1>]`: printerDefaults
     - `[DisplayName <String>]`: The name of the printer/printerShare.
     - `[IsAcceptingJobs <Boolean?>]`: Whether the printer/printerShare is currently accepting new print jobs.
@@ -8273,7 +8276,7 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare1>: printerShare
     - `[Shares <IMicrosoftGraphPrinterShare1[]>]`: The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
     - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger1[]>]`: A list of task triggers that are associated with the printer.
 
-CAPABILITIES <IMicrosoftGraphPrinterCapabilities>: printerCapabilities
+CAPABILITIES <IMicrosoftGraphPrinterCapabilities1>: printerCapabilities
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[BottomMargins <Int32[]>]`: A list of supported bottom margins(in microns) for the printer.
   - `[Collation <Boolean?>]`: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
@@ -8419,9 +8422,9 @@ LOCATION <IMicrosoftGraphPrinterLocation1>: printerLocation
   - `[Subdivision <String[]>]`: The subdivision that the printer is located in. The elements should be in hierarchical order.
   - `[Subunit <String[]>]`: 
 
-PRINTER <IMicrosoftGraphPrinter>: printer
+PRINTER <IMicrosoftGraphPrinter1>: printer
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+  - `[Capabilities <IMicrosoftGraphPrinterCapabilities1>]`: printerCapabilities
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[BottomMargins <Int32[]>]`: A list of supported bottom margins(in microns) for the printer.
     - `[Collation <Boolean?>]`: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
@@ -8584,7 +8587,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
   - `[LastSeenDateTime <DateTime?>]`: The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
   - `[RegisteredDateTime <DateTime?>]`: The DateTimeOffset when the printer was registered. Read-only.
   - `[Shares <IMicrosoftGraphPrinterShare1[]>]`: The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
-    - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+    - `[Capabilities <IMicrosoftGraphPrinterCapabilities1>]`: printerCapabilities
     - `[Defaults <IMicrosoftGraphPrinterDefaults1>]`: printerDefaults
     - `[DisplayName <String>]`: The name of the printer/printerShare.
     - `[IsAcceptingJobs <Boolean?>]`: Whether the printer/printerShare is currently accepting new print jobs.
@@ -8899,7 +8902,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
             - `[EmailMethods <IMicrosoftGraphEmailAuthenticationMethod[]>]`: The email address registered to a user for authentication.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[EmailAddress <String>]`: The email address registered to this user.
-            - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod1[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
+            - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
               - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -8965,7 +8968,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
             - `[SoftwareOathMethods <IMicrosoftGraphSoftwareOathAuthenticationMethod[]>]`: The software OATH TOTP applications registered to a user for authentication.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[SecretKey <String>]`: The secret key of the method. Always returns null.
-            - `[TemporaryAccessPassMethods <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod[]>]`: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+            - `[TemporaryAccessPassMethods <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod1[]>]`: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[CreatedDateTime <DateTime?>]`: The date and time when the Temporary Access Pass was created.
               - `[IsUsable <Boolean?>]`: The state of the authentication method that indicates whether it's currently usable by the user.
@@ -9048,7 +9051,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
                 - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
                 - `[Id <String>]`: Read-only. Unique id of the attachment.
                 - `[Name <String>]`: Name of the attachment.
-                - `[TeamsAppId <String>]`: 
+                - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
                 - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -9211,6 +9214,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
           - `[Drives <IMicrosoftGraphDrive1[]>]`: A collection of drives available for this user. Read-only.
           - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
           - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+          - `[EmployeeLeaveDateTime <DateTime?>]`: 
           - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -9233,9 +9237,9 @@ PRINTER <IMicrosoftGraphPrinter>: printer
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-              - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-              - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+              - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+              - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+              - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
               - `[Name <String>]`: The name of the item being referenced. Read-only.
               - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
               - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -9248,7 +9252,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
                 - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
                 - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
                 - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-              - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+              - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
@@ -10795,11 +10799,11 @@ PRINTER <IMicrosoftGraphPrinter>: printer
               - `[Scope <String>]`: lobbyBypassScope
             - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+              - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
                 - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[Role <String>]`: 
+                - `[Role <String>]`: onlineMeetingRole
                 - `[Upn <String>]`: User principal name of the participant.
-              - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+              - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
             - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
@@ -10862,7 +10866,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
               - `[Buckets <IMicrosoftGraphPlannerBucket1[]>]`: Read-only. Nullable. Collection of buckets in the plan.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[Name <String>]`: Name of the bucket.
-                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
                 - `[PlanId <String>]`: Plan ID to which the bucket belongs.
                 - `[Tasks <IMicrosoftGraphPlannerTask1[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -11025,15 +11029,15 @@ PRINTER <IMicrosoftGraphPrinter>: printer
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[Content <Byte[]>]`: 
-                  - `[ExpirationDateTime <DateTime?>]`: 
-                  - `[NextExpectedRanges <String[]>]`: 
-                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+                  - `[Content <Byte[]>]`: The content streams that are uploaded.
+                  - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                  - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[ContentType <String>]`: 
-                  - `[LastModifiedDateTime <DateTime?>]`: 
-                  - `[Name <String>]`: 
-                  - `[Size <Int32?>]`: 
+                  - `[ContentType <String>]`: The MIME type.
+                  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                  - `[Size <Int32?>]`: The length of the attachment in bytes.
                 - `[Body <IMicrosoftGraphItemBody>]`: itemBody
                 - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -11047,7 +11051,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
                 - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
                 - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-                - `[HasAttachments <Boolean?>]`: 
+                - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
                 - `[Importance <String>]`: importance
                 - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
                 - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -11171,7 +11175,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
       - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
     - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
     - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
-    - `[Printer <IMicrosoftGraphPrinter>]`: printer
+    - `[Printer <IMicrosoftGraphPrinter1>]`: printer
   - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger1[]>]`: A list of task triggers that are associated with the printer.
 
 STATUS <IMicrosoftGraphPrinterStatus1>: printerStatus

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 4590f434-0d0a-4b97-9af0-f87f17d27ae9
+Module Guid: ec060e8a-a328-428d-8349-7db0b54b021f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -873,7 +873,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamChannelMessageHostedContent](New-MgGroupTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -907,7 +907,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamPrimaryChannelMessageHostedContent](New-MgGroupTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -938,6 +938,7 @@ Create a new schedulingGroup.
 
 ### [New-MgGroupTeamScheduleShift](New-MgGroupTeamScheduleShift.md)
 Create a new shift instance in a schedule.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ### [New-MgGroupTeamScheduleSwapShiftChangeRequest](New-MgGroupTeamScheduleSwapShiftChangeRequest.md)
 Create an instance of a swapShiftsChangeRequest object.
@@ -980,7 +981,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1020,7 +1021,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1051,6 +1052,7 @@ Create a new schedulingGroup.
 
 ### [New-MgTeamScheduleShift](New-MgTeamScheduleShift.md)
 Create a new shift instance in a schedule.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ### [New-MgTeamScheduleSwapShiftChangeRequest](New-MgTeamScheduleSwapShiftChangeRequest.md)
 Create an instance of a swapShiftsChangeRequest object.
@@ -1090,7 +1092,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teamwork

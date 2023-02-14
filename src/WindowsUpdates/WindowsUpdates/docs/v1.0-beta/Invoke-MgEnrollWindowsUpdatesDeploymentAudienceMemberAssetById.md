@@ -232,9 +232,11 @@ BODYPARAMETER <IPaths1Cgy4T7AdminWindowsUpdatesDeploymentsDeploymentIdAudienceMe
 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry
+  - `[ComplianceChangeId <String>]`: key: id of complianceChange
   - `[DeploymentId <String>]`: key: id of deployment
   - `[ResourceConnectionId <String>]`: key: id of resourceConnection
   - `[UpdatableAssetId <String>]`: key: id of updatableAsset
+  - `[UpdatePolicyId <String>]`: key: id of updatePolicy
 
 ## RELATED LINKS
 

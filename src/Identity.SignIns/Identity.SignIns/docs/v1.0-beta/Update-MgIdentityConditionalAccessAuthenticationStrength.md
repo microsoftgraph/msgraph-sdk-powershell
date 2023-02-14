@@ -16,8 +16,8 @@ Update the navigation property authenticationStrengths in identity
 ```
 Update-MgIdentityConditionalAccessAuthenticationStrength [-AdditionalProperties <Hashtable>]
  [-AuthenticationCombinations <String[]>]
- [-AuthenticationMethodModes <IMicrosoftGraphAuthenticationMethodModeDetail[]>] [-Id <String>]
- [-Policies <IMicrosoftGraphAuthenticationStrengthPolicy[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-AuthenticationMethodModes <IMicrosoftGraphAuthenticationMethodModeDetail[]>] [-Combinations <String[]>]
+ [-Id <String>] [-Policies <IMicrosoftGraphAuthenticationStrengthPolicy[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -94,6 +94,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Combinations
+.
+
+```yaml
+Type: System.String[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -208,6 +223,7 @@ BODYPARAMETER <IMicrosoftGraphAuthenticationStrengthRoot>: authenticationStrengt
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AuthenticationMethod <String>]`: baseAuthenticationMethod
     - `[DisplayName <String>]`: The display name of this mode
+  - `[Combinations <String[]>]`: 
   - `[Policies <IMicrosoftGraphAuthenticationStrengthPolicy[]>]`: A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AllowedCombinations <String[]>]`: A collection of authentication method modes that are required be used to satify this authentication strength.

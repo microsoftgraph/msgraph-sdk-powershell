@@ -1097,7 +1097,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
                 - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
                 - `[Id <String>]`: Read-only. Unique id of the attachment.
                 - `[Name <String>]`: Name of the attachment.
-                - `[TeamsAppId <String>]`: 
+                - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
                 - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -1260,6 +1260,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
           - `[Drives <IMicrosoftGraphDrive1[]>]`: A collection of drives available for this user. Read-only.
           - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
           - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+          - `[EmployeeLeaveDateTime <DateTime?>]`: 
           - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -1282,9 +1283,9 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-              - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-              - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+              - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+              - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+              - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
               - `[Name <String>]`: The name of the item being referenced. Read-only.
               - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
               - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -1297,7 +1298,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
                 - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
                 - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
                 - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-              - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+              - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
@@ -2062,7 +2063,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
               - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
               - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
+            - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Notebooks <IMicrosoftGraphNotebook1[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
@@ -2777,7 +2778,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
           - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
           - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
           - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-          - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
+          - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
           - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
@@ -2846,7 +2847,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
                 - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[Role <String>]`: 
+                - `[Role <String>]`: onlineMeetingRole
                 - `[Upn <String>]`: User principal name of the participant.
               - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
             - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -2911,7 +2912,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
               - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[Name <String>]`: Name of the bucket.
-                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
                 - `[PlanId <String>]`: Plan ID to which the bucket belongs.
                 - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3070,15 +3071,15 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[Content <Byte[]>]`: 
-                  - `[ExpirationDateTime <DateTime?>]`: 
-                  - `[NextExpectedRanges <String[]>]`: 
-                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+                  - `[Content <Byte[]>]`: The content streams that are uploaded.
+                  - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                  - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[ContentType <String>]`: 
-                  - `[LastModifiedDateTime <DateTime?>]`: 
-                  - `[Name <String>]`: 
-                  - `[Size <Int32?>]`: 
+                  - `[ContentType <String>]`: The MIME type.
+                  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                  - `[Size <Int32?>]`: The length of the attachment in bytes.
                 - `[Body <IMicrosoftGraphItemBody>]`: itemBody
                 - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -3092,7 +3093,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
                 - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
                 - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-                - `[HasAttachments <Boolean?>]`: 
+                - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
                 - `[Importance <String>]`: importance
                 - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
                 - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -3176,7 +3177,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
       - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
       - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
       - `[OnPremisesSyncEnabled <Boolean?>]`: true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-      - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
+      - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
       - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
       - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permission that has been granted for a group to a specific application. Supports $expand.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -3188,7 +3189,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool1>: educationSchool
         - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
       - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
-      - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
+      - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
@@ -3847,7 +3848,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
               - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
               - `[Id <String>]`: Read-only. Unique id of the attachment.
               - `[Name <String>]`: Name of the attachment.
-              - `[TeamsAppId <String>]`: 
+              - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
               - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
             - `[Body <IMicrosoftGraphItemBody>]`: itemBody
             - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -4010,6 +4011,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
         - `[Drives <IMicrosoftGraphDrive1[]>]`: A collection of drives available for this user. Read-only.
         - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
         - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+        - `[EmployeeLeaveDateTime <DateTime?>]`: 
         - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -4032,9 +4034,9 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
           - `[Name <String>]`: The name of the item. Read-write.
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-            - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-            - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+            - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+            - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+            - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
             - `[Name <String>]`: The name of the item being referenced. Read-only.
             - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
             - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -4047,7 +4049,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
               - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
               - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
               - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-            - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+            - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
           - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
@@ -4812,7 +4814,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
             - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
             - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
+          - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Notebooks <IMicrosoftGraphNotebook1[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
@@ -5527,7 +5529,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
         - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
         - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-        - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
+        - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
         - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
@@ -5596,7 +5598,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
               - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[Role <String>]`: 
+              - `[Role <String>]`: onlineMeetingRole
               - `[Upn <String>]`: User principal name of the participant.
             - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
           - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -5661,7 +5663,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
             - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Name <String>]`: Name of the bucket.
-              - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
               - `[PlanId <String>]`: Plan ID to which the bucket belongs.
               - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -5824,15 +5826,15 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[Content <Byte[]>]`: 
-                - `[ExpirationDateTime <DateTime?>]`: 
-                - `[NextExpectedRanges <String[]>]`: 
-              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+                - `[Content <Byte[]>]`: The content streams that are uploaded.
+                - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+              - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[ContentType <String>]`: 
-                - `[LastModifiedDateTime <DateTime?>]`: 
-                - `[Name <String>]`: 
-                - `[Size <Int32?>]`: 
+                - `[ContentType <String>]`: The MIME type.
+                - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                - `[Size <Int32?>]`: The length of the attachment in bytes.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -5846,7 +5848,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
               - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
               - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-              - `[HasAttachments <Boolean?>]`: 
+              - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
               - `[Importance <String>]`: importance
               - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
               - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -5930,7 +5932,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
     - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
     - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
     - `[OnPremisesSyncEnabled <Boolean?>]`: true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-    - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
+    - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
     - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
     - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permission that has been granted for a group to a specific application. Supports $expand.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -5942,7 +5944,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes taught at the school. Nullab
       - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
-    - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
+    - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
@@ -6648,7 +6650,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
                 - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
                 - `[Id <String>]`: Read-only. Unique id of the attachment.
                 - `[Name <String>]`: Name of the attachment.
-                - `[TeamsAppId <String>]`: 
+                - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
                 - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -6811,6 +6813,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
           - `[Drives <IMicrosoftGraphDrive1[]>]`: A collection of drives available for this user. Read-only.
           - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
           - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+          - `[EmployeeLeaveDateTime <DateTime?>]`: 
           - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -6833,9 +6836,9 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-              - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-              - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+              - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+              - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+              - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
               - `[Name <String>]`: The name of the item being referenced. Read-only.
               - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
               - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -6848,7 +6851,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
                 - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
                 - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
                 - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-              - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+              - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
@@ -7613,7 +7616,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
               - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
               - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
+            - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Notebooks <IMicrosoftGraphNotebook1[]>]`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
@@ -8328,7 +8331,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
           - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
           - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
           - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-          - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
+          - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
           - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
@@ -8397,7 +8400,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
                 - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[Role <String>]`: 
+                - `[Role <String>]`: onlineMeetingRole
                 - `[Upn <String>]`: User principal name of the participant.
               - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
             - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -8462,7 +8465,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
               - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[Name <String>]`: Name of the bucket.
-                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
                 - `[PlanId <String>]`: Plan ID to which the bucket belongs.
                 - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -8625,15 +8628,15 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[Content <Byte[]>]`: 
-                  - `[ExpirationDateTime <DateTime?>]`: 
-                  - `[NextExpectedRanges <String[]>]`: 
-                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+                  - `[Content <Byte[]>]`: The content streams that are uploaded.
+                  - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                  - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[ContentType <String>]`: 
-                  - `[LastModifiedDateTime <DateTime?>]`: 
-                  - `[Name <String>]`: 
-                  - `[Size <Int32?>]`: 
+                  - `[ContentType <String>]`: The MIME type.
+                  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                  - `[Size <Int32?>]`: The length of the attachment in bytes.
                 - `[Body <IMicrosoftGraphItemBody>]`: itemBody
                 - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -8647,7 +8650,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
                 - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
                 - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-                - `[HasAttachments <Boolean?>]`: 
+                - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
                 - `[Importance <String>]`: importance
                 - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
                 - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -8731,7 +8734,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
       - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
       - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
       - `[OnPremisesSyncEnabled <Boolean?>]`: true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-      - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
+      - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
       - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
       - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permission that has been granted for a group to a specific application. Supports $expand.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -8743,7 +8746,7 @@ USERS <IMicrosoftGraphEducationUser1[]>: Users in the school. Nullable.
         - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
       - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
-      - `[Planner <IMicrosoftGraphPlannerGroup1>]`: plannerGroup
+      - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.

@@ -127,7 +127,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 

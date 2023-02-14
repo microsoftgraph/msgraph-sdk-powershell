@@ -282,7 +282,7 @@ BODYPARAMETER <IMicrosoftGraphPlannerPlan>: plannerPlan
   - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the bucket.
-    - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+    - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
     - `[PlanId <String>]`: Plan ID to which the bucket belongs.
     - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -385,7 +385,7 @@ BODYPARAMETER <IMicrosoftGraphPlannerPlan>: plannerPlan
 BUCKETS <IMicrosoftGraphPlannerBucket[]>: Read-only. Nullable. Collection of buckets in the plan.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Name <String>]`: Name of the bucket.
-  - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+  - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
   - `[PlanId <String>]`: Plan ID to which the bucket belongs.
   - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryRecommendation
 
 ## SYNOPSIS
-Get recommendations from directory
+List of recommended improvements to improve tenant posture.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDirectoryRecommendation -InputObject <IIdentityDirectoryManagementIdentity
 ```
 
 ## DESCRIPTION
-Get recommendations from directory
+List of recommended improvements to improve tenant posture.
 
 ## EXAMPLES
 

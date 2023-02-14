@@ -8,38 +8,39 @@ schema: 2.0.0
 # Update-MgPlannerTaskDetail
 
 ## SYNOPSIS
-Update the properties of **plannerTaskDetails** object.
+Update the navigation property details in planner
 
 ## SYNTAX
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgPlannerTaskDetail -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
+Update-MgPlannerTaskDetail -PlannerTaskId <String> -IfMatch <String> [-AdditionalProperties <Hashtable>]
  [-Checklist <Hashtable>] [-Description <String>] [-Id <String>] [-Notes <IMicrosoftGraphItemBody>]
  [-PreviewType <String>] [-References <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgPlannerTaskDetail -PlannerTaskId <String> -BodyParameter <IMicrosoftGraphPlannerTaskDetails1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerTaskDetail -PlannerTaskId <String> -IfMatch <String>
+ -BodyParameter <IMicrosoftGraphPlannerTaskDetails1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerTaskDetails1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> -IfMatch <String>
+ -BodyParameter <IMicrosoftGraphPlannerTaskDetails1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-Checklist <Hashtable>] [-Description <String>] [-Id <String>] [-Notes <IMicrosoftGraphItemBody>]
- [-PreviewType <String>] [-References <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> -IfMatch <String>
+ [-AdditionalProperties <Hashtable>] [-Checklist <Hashtable>] [-Description <String>] [-Id <String>]
+ [-Notes <IMicrosoftGraphItemBody>] [-PreviewType <String>] [-References <Hashtable>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of **plannerTaskDetails** object.
+Update the navigation property details in planner
 
 ## EXAMPLES
 
@@ -153,6 +154,21 @@ Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag value.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

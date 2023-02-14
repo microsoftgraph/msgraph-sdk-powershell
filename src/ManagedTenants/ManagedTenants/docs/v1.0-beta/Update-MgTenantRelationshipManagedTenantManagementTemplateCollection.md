@@ -320,8 +320,8 @@ BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementTemplateCollection>: manag
     - `[Description <String>]`: The description for the management template. Optional. Read-only.
     - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
     - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
-      - `[DisplayName <String>]`: 
-      - `[Url <String>]`: 
+      - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+      - `[Url <String>]`: The URL to the documentation or Azure portal page.
     - `[LastActionByUserId <String>]`: 
     - `[LastActionDateTime <DateTime?>]`: 
     - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
@@ -433,8 +433,8 @@ MANAGEMENTTEMPLATES <IMicrosoftGraphManagedTenantsManagementTemplate[]>: .
   - `[Description <String>]`: The description for the management template. Optional. Read-only.
   - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
   - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
-    - `[DisplayName <String>]`: 
-    - `[Url <String>]`: 
+    - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+    - `[Url <String>]`: The URL to the documentation or Azure portal page.
   - `[LastActionByUserId <String>]`: 
   - `[LastActionDateTime <DateTime?>]`: 
   - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 

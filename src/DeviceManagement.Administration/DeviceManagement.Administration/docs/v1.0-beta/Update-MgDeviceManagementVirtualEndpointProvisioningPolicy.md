@@ -18,7 +18,8 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicy -CloudPcProvisioningP
  [-AdditionalProperties <Hashtable>] [-AlternateResourceUrl <String>]
  [-Assignments <IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]>] [-CloudPcGroupDisplayName <String>]
  [-Description <String>] [-DisplayName <String>]
- [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-EnableSingleSignOn]
+ [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>]
+ [-DomainJoinConfigurations <IMicrosoftGraphCloudPcDomainJoinConfiguration[]>] [-EnableSingleSignOn]
  [-GracePeriodInHours <Int32>] [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>]
  [-ImageType <String>] [-LocalAdminEnabled] [-ManagedBy <String>]
  [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>] [-OnPremisesConnectionId <String>]
@@ -47,7 +48,8 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicy
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-AlternateResourceUrl <String>] [-Assignments <IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]>]
  [-CloudPcGroupDisplayName <String>] [-Description <String>] [-DisplayName <String>]
- [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-EnableSingleSignOn]
+ [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>]
+ [-DomainJoinConfigurations <IMicrosoftGraphCloudPcDomainJoinConfiguration[]>] [-EnableSingleSignOn]
  [-GracePeriodInHours <Int32>] [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>]
  [-ImageType <String>] [-LocalAdminEnabled] [-ManagedBy <String>]
  [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>] [-OnPremisesConnectionId <String>]
@@ -216,6 +218,22 @@ To construct, please use Get-Help -Online and see NOTES section for DOMAINJOINCO
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcDomainJoinConfiguration
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DomainJoinConfigurations
+.
+To construct, please use Get-Help -Online and see NOTES section for DOMAINJOINCONFIGURATIONS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcDomainJoinConfiguration[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -523,6 +541,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcProvisioningPolicy>: cloudPcProvisioningPol
     - `[RegionGroup <String>]`: cloudPcRegionGroup
     - `[RegionName <String>]`: The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
     - `[Type <String>]`: cloudPcDomainJoinType
+  - `[DomainJoinConfigurations <IMicrosoftGraphCloudPcDomainJoinConfiguration[]>]`: 
   - `[EnableSingleSignOn <Boolean?>]`: 
   - `[GracePeriodInHours <Int32?>]`: The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
   - `[ImageDisplayName <String>]`: The display name for the OS image you’re provisioning.
@@ -542,6 +561,12 @@ BODYPARAMETER <IMicrosoftGraphCloudPcProvisioningPolicy>: cloudPcProvisioningPol
 
 DOMAINJOINCONFIGURATION <IMicrosoftGraphCloudPcDomainJoinConfiguration>: cloudPcDomainJoinConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[OnPremisesConnectionId <String>]`: The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
+  - `[RegionGroup <String>]`: cloudPcRegionGroup
+  - `[RegionName <String>]`: The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
+  - `[Type <String>]`: cloudPcDomainJoinType
+
+DOMAINJOINCONFIGURATIONS <IMicrosoftGraphCloudPcDomainJoinConfiguration[]>: .
   - `[OnPremisesConnectionId <String>]`: The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
   - `[RegionGroup <String>]`: cloudPcRegionGroup
   - `[RegionName <String>]`: The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.

@@ -405,7 +405,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[RestoreBlocked <Boolean?>]`: Indicates if Restore setup pane is blocked
     - `[ScreenTimeScreenDisabled <Boolean?>]`: Indicates if screen timeout setup is disabled
     - `[SiriDisabled <Boolean?>]`: Indicates if siri setup pane is disabled
-    - `[SupervisedModeEnabled <Boolean?>]`: Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+    - `[SupervisedModeEnabled <Boolean?>]`: Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
     - `[SupportDepartment <String>]`: Support department information
     - `[SupportPhoneNumber <String>]`: Support phone number
     - `[TermsAndConditionsDisabled <Boolean?>]`: Indicates if 'Terms and Conditions' setup pane is disabled
@@ -444,7 +444,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[TemporarySessionTimeoutInSeconds <Int32?>]`: Indicates timeout of temporary session
     - `[UpdateCompleteScreenDisabled <Boolean?>]`: Indicates if Weclome screen is disabled
     - `[UserSessionTimeoutInSeconds <Int32?>]`: Indicates timeout of temporary session
-    - `[UserlessSharedAadModeEnabled <Boolean?>]`: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-shared-ios
+    - `[UserlessSharedAadModeEnabled <Boolean?>]`: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
     - `[WatchMigrationScreenDisabled <Boolean?>]`: Indicates if the watch migration screen is disabled
     - `[WelcomeScreenDisabled <Boolean?>]`: Indicates if Weclome screen is disabled
     - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled
@@ -465,7 +465,7 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[RestoreBlocked <Boolean?>]`: Indicates if Restore setup pane is blocked
     - `[ScreenTimeScreenDisabled <Boolean?>]`: Indicates if screen timeout setup is disabled
     - `[SiriDisabled <Boolean?>]`: Indicates if siri setup pane is disabled
-    - `[SupervisedModeEnabled <Boolean?>]`: Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+    - `[SupervisedModeEnabled <Boolean?>]`: Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
     - `[SupportDepartment <String>]`: Support department information
     - `[SupportPhoneNumber <String>]`: Support phone number
     - `[TermsAndConditionsDisabled <Boolean?>]`: Indicates if 'Terms and Conditions' setup pane is disabled
@@ -485,18 +485,10 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[FileVaultDisabled <Boolean?>]`: Indicates if file vault is disabled
     - `[ICloudDiagnosticsDisabled <Boolean?>]`: Indicates if iCloud Analytics screen is disabled
     - `[ICloudStorageDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
-    - `[IsLocalPrimaryAccount <Boolean?>]`: Indicates whether the profile is a local account
-    - `[IsPrimaryUser <Boolean?>]`: Indicates whether the profile is a primary user
-    - `[LockPrimaryAccountInfo <Boolean?>]`: Indicates whether the primary account information will be locked
-    - `[ManagedLocalUserShortName <Boolean?>]`: Indicates whether or not this is the short name of the local account to manage
     - `[PassCodeDisabled <Boolean?>]`: Indicates if Passcode setup pane is disabled
-    - `[PrefillAccountInfo <Boolean?>]`: Indicates whether the user will prefill their account info
     - `[PrimaryAccountFullName <String>]`: Indicates what the full name for the primary account is
     - `[PrimaryAccountUserName <String>]`: Indicates what the account name for the primary account is
-    - `[PrimaryUser <String>]`: Indicates who the primary user of the profile is
-    - `[PrimaryUserFullName <String>]`: Indicates who the primary user of the profile is
     - `[RegistrationDisabled <Boolean?>]`: Indicates if registration is disabled
-    - `[RequestRequiresNetworkTether <Boolean?>]`: Indicates if the device is network-tethered to run the command
     - `[SetPrimarySetupAccountAsRegularUser <Boolean?>]`: Indicates whether Setup Assistant will set the account as a regular user
     - `[SkipPrimarySetupAccountCreation <Boolean?>]`: Indicates whether Setup Assistant will skip the user interface for primary account setup
     - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled
@@ -549,7 +541,7 @@ DEFAULTIOSENROLLMENTPROFILE <IMicrosoftGraphDepIosEnrollmentProfile>: The DepIOS
   - `[RestoreBlocked <Boolean?>]`: Indicates if Restore setup pane is blocked
   - `[ScreenTimeScreenDisabled <Boolean?>]`: Indicates if screen timeout setup is disabled
   - `[SiriDisabled <Boolean?>]`: Indicates if siri setup pane is disabled
-  - `[SupervisedModeEnabled <Boolean?>]`: Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+  - `[SupervisedModeEnabled <Boolean?>]`: Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
   - `[SupportDepartment <String>]`: Support department information
   - `[SupportPhoneNumber <String>]`: Support phone number
   - `[TermsAndConditionsDisabled <Boolean?>]`: Indicates if 'Terms and Conditions' setup pane is disabled
@@ -588,7 +580,7 @@ DEFAULTIOSENROLLMENTPROFILE <IMicrosoftGraphDepIosEnrollmentProfile>: The DepIOS
   - `[TemporarySessionTimeoutInSeconds <Int32?>]`: Indicates timeout of temporary session
   - `[UpdateCompleteScreenDisabled <Boolean?>]`: Indicates if Weclome screen is disabled
   - `[UserSessionTimeoutInSeconds <Int32?>]`: Indicates timeout of temporary session
-  - `[UserlessSharedAadModeEnabled <Boolean?>]`: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-shared-ios
+  - `[UserlessSharedAadModeEnabled <Boolean?>]`: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
   - `[WatchMigrationScreenDisabled <Boolean?>]`: Indicates if the watch migration screen is disabled
   - `[WelcomeScreenDisabled <Boolean?>]`: Indicates if Weclome screen is disabled
   - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled
@@ -610,7 +602,7 @@ DEFAULTMACOSENROLLMENTPROFILE <IMicrosoftGraphDepMacOSEnrollmentProfile>: The De
   - `[RestoreBlocked <Boolean?>]`: Indicates if Restore setup pane is blocked
   - `[ScreenTimeScreenDisabled <Boolean?>]`: Indicates if screen timeout setup is disabled
   - `[SiriDisabled <Boolean?>]`: Indicates if siri setup pane is disabled
-  - `[SupervisedModeEnabled <Boolean?>]`: Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+  - `[SupervisedModeEnabled <Boolean?>]`: Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
   - `[SupportDepartment <String>]`: Support department information
   - `[SupportPhoneNumber <String>]`: Support phone number
   - `[TermsAndConditionsDisabled <Boolean?>]`: Indicates if 'Terms and Conditions' setup pane is disabled
@@ -630,18 +622,10 @@ DEFAULTMACOSENROLLMENTPROFILE <IMicrosoftGraphDepMacOSEnrollmentProfile>: The De
   - `[FileVaultDisabled <Boolean?>]`: Indicates if file vault is disabled
   - `[ICloudDiagnosticsDisabled <Boolean?>]`: Indicates if iCloud Analytics screen is disabled
   - `[ICloudStorageDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
-  - `[IsLocalPrimaryAccount <Boolean?>]`: Indicates whether the profile is a local account
-  - `[IsPrimaryUser <Boolean?>]`: Indicates whether the profile is a primary user
-  - `[LockPrimaryAccountInfo <Boolean?>]`: Indicates whether the primary account information will be locked
-  - `[ManagedLocalUserShortName <Boolean?>]`: Indicates whether or not this is the short name of the local account to manage
   - `[PassCodeDisabled <Boolean?>]`: Indicates if Passcode setup pane is disabled
-  - `[PrefillAccountInfo <Boolean?>]`: Indicates whether the user will prefill their account info
   - `[PrimaryAccountFullName <String>]`: Indicates what the full name for the primary account is
   - `[PrimaryAccountUserName <String>]`: Indicates what the account name for the primary account is
-  - `[PrimaryUser <String>]`: Indicates who the primary user of the profile is
-  - `[PrimaryUserFullName <String>]`: Indicates who the primary user of the profile is
   - `[RegistrationDisabled <Boolean?>]`: Indicates if registration is disabled
-  - `[RequestRequiresNetworkTether <Boolean?>]`: Indicates if the device is network-tethered to run the command
   - `[SetPrimarySetupAccountAsRegularUser <Boolean?>]`: Indicates whether Setup Assistant will set the account as a regular user
   - `[SkipPrimarySetupAccountCreation <Boolean?>]`: Indicates whether Setup Assistant will skip the user interface for primary account setup
   - `[ZoomDisabled <Boolean?>]`: Indicates if zoom setup pane is disabled

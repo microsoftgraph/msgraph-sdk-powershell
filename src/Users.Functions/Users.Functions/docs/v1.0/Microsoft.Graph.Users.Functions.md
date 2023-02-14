@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: 105431cc-2a7c-420a-b0ed-0465e8f52a69
+Module Guid: ae4d97ce-584e-4ad3-ba83-509ba5695241
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,6 +11,9 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Users.Functions Cmdlets
+### [Export-MgUserDeviceAndAppManagementData](Export-MgUserDeviceAndAppManagementData.md)
+Invoke function exportDeviceAndAppManagementData
+
 ### [Get-MgAllUserChatMessage](Get-MgAllUserChatMessage.md)
 Invoke function getAllMessages
 
@@ -115,6 +118,9 @@ Gets diagnostics validation status for a given user.
 
 ### [Get-MgUserManagedAppPolicy](Get-MgUserManagedAppPolicy.md)
 Gets app restrictions for a given user.
+
+### [Get-MgUserManagedDeviceWithAppFailure](Get-MgUserManagedDeviceWithAppFailure.md)
+Retrieves the list of devices with failed apps
 
 ### [Get-MgUserMessageDelta](Get-MgUserMessageDelta.md)
 Get a set of messages that have been added, deleted, or updated in a specified folder.

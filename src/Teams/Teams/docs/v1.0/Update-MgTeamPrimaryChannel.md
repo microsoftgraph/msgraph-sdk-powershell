@@ -15,7 +15,7 @@ Update the navigation property primaryChannel in teams
 ### UpdateExpanded (Default)
 ```
 Update-MgTeamPrimaryChannel -TeamId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
- [-Description <String>] [-DisplayName <String>] [-Email <String>] [-FilesFolder <IMicrosoftGraphDriveItem1>]
+ [-Description <String>] [-DisplayName <String>] [-Email <String>] [-FilesFolder <IMicrosoftGraphDriveItem>]
  [-Id <String>] [-IsFavoriteByDefault] [-Members <IMicrosoftGraphConversationMember[]>]
  [-MembershipType <String>] [-Messages <IMicrosoftGraphChatMessage1[]>]
  [-SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>] [-Tabs <IMicrosoftGraphTeamsTab[]>]
@@ -38,7 +38,7 @@ Update-MgTeamPrimaryChannel -InputObject <ITeamsIdentity> -BodyParameter <IMicro
 ```
 Update-MgTeamPrimaryChannel -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Email <String>]
- [-FilesFolder <IMicrosoftGraphDriveItem1>] [-Id <String>] [-IsFavoriteByDefault]
+ [-FilesFolder <IMicrosoftGraphDriveItem>] [-Id <String>] [-IsFavoriteByDefault]
  [-Members <IMicrosoftGraphConversationMember[]>] [-MembershipType <String>]
  [-Messages <IMicrosoftGraphChatMessage1[]>] [-SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]
  [-Tabs <IMicrosoftGraphTeamsTab[]>] [-TenantId <String>] [-WebUrl <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -162,7 +162,7 @@ driveItem
 To construct, please use Get-Help -Online and see NOTES section for FILESFOLDER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -427,7 +427,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
   - `[Description <String>]`: Optional textual description for the channel.
   - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
   - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
-  - `[FilesFolder <IMicrosoftGraphDriveItem1>]`: driveItem
+  - `[FilesFolder <IMicrosoftGraphDriveItem>]`: driveItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -826,7 +826,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
             - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
             - `[Id <String>]`: Read-only. Unique id of the attachment.
             - `[Name <String>]`: Name of the attachment.
-            - `[TeamsAppId <String>]`: 
+            - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
             - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
           - `[Body <IMicrosoftGraphItemBody>]`: itemBody
           - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -998,9 +998,9 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
         - `[Name <String>]`: The name of the item. Read-write.
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-          - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-          - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+          - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+          - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+          - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
           - `[Name <String>]`: The name of the item being referenced. Read-only.
           - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
           - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -1013,13 +1013,13 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
             - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
             - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
             - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-          - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+          - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
         - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Bundles <IMicrosoftGraphDriveItem1[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+        - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         - `[DriveType <String>]`: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
-        - `[Following <IMicrosoftGraphDriveItem1[]>]`: The list of items the user is following. Only in OneDrive for Business.
-        - `[Items <IMicrosoftGraphDriveItem1[]>]`: All items contained in the drive. Read-only. Nullable.
+        - `[Following <IMicrosoftGraphDriveItem[]>]`: The list of items the user is following. Only in OneDrive for Business.
+        - `[Items <IMicrosoftGraphDriveItem[]>]`: All items contained in the drive. Read-only. Nullable.
         - `[List <IMicrosoftGraphList>]`: list
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -1235,7 +1235,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[ActivityDateTime <DateTime?>]`: Details about when the activity took place. Read-only.
                   - `[Actor <IMicrosoftGraphIdentitySet>]`: identitySet
-                  - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
+                  - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
                 - `[Create <IMicrosoftGraphItemActionStat>]`: itemActionStat
                 - `[Delete <IMicrosoftGraphItemActionStat>]`: itemActionStat
                 - `[Edit <IMicrosoftGraphItemActionStat>]`: itemActionStat
@@ -1269,7 +1269,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
                 - `[Title <String>]`: The title of the item.
                 - `[VersionId <String>]`: The version ID of the item.
               - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
-            - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
+            - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
             - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
             - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
             - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
@@ -1338,13 +1338,14 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
             - `[UpgradeAvailable <Boolean?>]`: Indicates whether there are higher storage quota plans available. Read-only.
           - `[Total <Int64?>]`: Total allowed storage space, in bytes. Read-only.
           - `[Used <Int64?>]`: Total space used, in bytes. Read-only.
-        - `[Root <IMicrosoftGraphDriveItem1>]`: driveItem
+        - `[Root <IMicrosoftGraphDriveItem>]`: driveItem
         - `[SharePointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-        - `[Special <IMicrosoftGraphDriveItem1[]>]`: Collection of common folders available in OneDrive. Read-only. Nullable.
+        - `[Special <IMicrosoftGraphDriveItem[]>]`: Collection of common folders available in OneDrive. Read-only. Nullable.
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
       - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
       - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+      - `[EmployeeLeaveDateTime <DateTime?>]`: 
       - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -1730,7 +1731,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
               - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[Name <String>]`: Name of the bucket.
-                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
                 - `[PlanId <String>]`: Plan ID to which the bucket belongs.
                 - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -2412,7 +2413,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
             - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[Role <String>]`: 
+            - `[Role <String>]`: onlineMeetingRole
             - `[Upn <String>]`: User principal name of the participant.
           - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
         - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -2544,15 +2545,15 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-              - `[Content <Byte[]>]`: 
-              - `[ExpirationDateTime <DateTime?>]`: 
-              - `[NextExpectedRanges <String[]>]`: 
-            - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+              - `[Content <Byte[]>]`: The content streams that are uploaded.
+              - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+              - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+            - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-              - `[ContentType <String>]`: 
-              - `[LastModifiedDateTime <DateTime?>]`: 
-              - `[Name <String>]`: 
-              - `[Size <Int32?>]`: 
+              - `[ContentType <String>]`: The MIME type.
+              - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+              - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+              - `[Size <Int32?>]`: The length of the attachment in bytes.
             - `[Body <IMicrosoftGraphItemBody>]`: itemBody
             - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
             - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -2566,7 +2567,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
             - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
             - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-            - `[HasAttachments <Boolean?>]`: 
+            - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
             - `[Importance <String>]`: importance
             - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
             - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -2622,7 +2623,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
         - `[CoverImageItemId <String>]`: Unique identifier of the [driveItem][] that is the cover of the album.
       - `[ChildCount <Int32?>]`: Number of children contained immediately within this container.
     - `[CTag <String>]`: An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-    - `[Children <IMicrosoftGraphDriveItem1[]>]`: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+    - `[Children <IMicrosoftGraphDriveItem[]>]`: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
     - `[Content <Byte[]>]`: The content stream, if the item represents a file.
     - `[Deleted <IMicrosoftGraphDeleted>]`: deleted
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2997,7 +2998,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
   - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
   - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
 
-FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
+FILESFOLDER <IMicrosoftGraphDriveItem>: driveItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3396,7 +3397,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
           - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
           - `[Id <String>]`: Read-only. Unique id of the attachment.
           - `[Name <String>]`: Name of the attachment.
-          - `[TeamsAppId <String>]`: 
+          - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
           - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
         - `[Body <IMicrosoftGraphItemBody>]`: itemBody
         - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -3568,9 +3569,9 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
       - `[Name <String>]`: The name of the item. Read-write.
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-        - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-        - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+        - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+        - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+        - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
         - `[Name <String>]`: The name of the item being referenced. Read-only.
         - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
         - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -3583,13 +3584,13 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
           - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
           - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
           - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-        - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+        - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
       - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Bundles <IMicrosoftGraphDriveItem1[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+      - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
       - `[DriveType <String>]`: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
-      - `[Following <IMicrosoftGraphDriveItem1[]>]`: The list of items the user is following. Only in OneDrive for Business.
-      - `[Items <IMicrosoftGraphDriveItem1[]>]`: All items contained in the drive. Read-only. Nullable.
+      - `[Following <IMicrosoftGraphDriveItem[]>]`: The list of items the user is following. Only in OneDrive for Business.
+      - `[Items <IMicrosoftGraphDriveItem[]>]`: All items contained in the drive. Read-only. Nullable.
       - `[List <IMicrosoftGraphList>]`: list
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -3805,7 +3806,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[ActivityDateTime <DateTime?>]`: Details about when the activity took place. Read-only.
                 - `[Actor <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
+                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
               - `[Create <IMicrosoftGraphItemActionStat>]`: itemActionStat
               - `[Delete <IMicrosoftGraphItemActionStat>]`: itemActionStat
               - `[Edit <IMicrosoftGraphItemActionStat>]`: itemActionStat
@@ -3839,7 +3840,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
               - `[Title <String>]`: The title of the item.
               - `[VersionId <String>]`: The version ID of the item.
             - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
-          - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
+          - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
           - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
           - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
           - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
@@ -3908,13 +3909,14 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
           - `[UpgradeAvailable <Boolean?>]`: Indicates whether there are higher storage quota plans available. Read-only.
         - `[Total <Int64?>]`: Total allowed storage space, in bytes. Read-only.
         - `[Used <Int64?>]`: Total space used, in bytes. Read-only.
-      - `[Root <IMicrosoftGraphDriveItem1>]`: driveItem
+      - `[Root <IMicrosoftGraphDriveItem>]`: driveItem
       - `[SharePointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-      - `[Special <IMicrosoftGraphDriveItem1[]>]`: Collection of common folders available in OneDrive. Read-only. Nullable.
+      - `[Special <IMicrosoftGraphDriveItem[]>]`: Collection of common folders available in OneDrive. Read-only. Nullable.
       - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+    - `[EmployeeLeaveDateTime <DateTime?>]`: 
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -4180,7 +4182,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
         - `[Description <String>]`: Optional textual description for the channel.
         - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
         - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
-        - `[FilesFolder <IMicrosoftGraphDriveItem1>]`: driveItem
+        - `[FilesFolder <IMicrosoftGraphDriveItem>]`: driveItem
         - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
         - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
         - `[MembershipType <String>]`: channelMembershipType
@@ -4320,7 +4322,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
             - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Name <String>]`: Name of the bucket.
-              - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
               - `[PlanId <String>]`: Plan ID to which the bucket belongs.
               - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -5002,7 +5004,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: 
+          - `[Role <String>]`: onlineMeetingRole
           - `[Upn <String>]`: User principal name of the participant.
         - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -5134,15 +5136,15 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[Content <Byte[]>]`: 
-            - `[ExpirationDateTime <DateTime?>]`: 
-            - `[NextExpectedRanges <String[]>]`: 
-          - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+            - `[Content <Byte[]>]`: The content streams that are uploaded.
+            - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+            - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+          - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ContentType <String>]`: 
-            - `[LastModifiedDateTime <DateTime?>]`: 
-            - `[Name <String>]`: 
-            - `[Size <Int32?>]`: 
+            - `[ContentType <String>]`: The MIME type.
+            - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+            - `[Size <Int32?>]`: The length of the attachment in bytes.
           - `[Body <IMicrosoftGraphItemBody>]`: itemBody
           - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -5156,7 +5158,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
           - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-          - `[HasAttachments <Boolean?>]`: 
+          - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
           - `[Importance <String>]`: importance
           - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -5212,7 +5214,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
       - `[CoverImageItemId <String>]`: Unique identifier of the [driveItem][] that is the cover of the album.
     - `[ChildCount <Int32?>]`: Number of children contained immediately within this container.
   - `[CTag <String>]`: An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-  - `[Children <IMicrosoftGraphDriveItem1[]>]`: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+  - `[Children <IMicrosoftGraphDriveItem[]>]`: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
   - `[Content <Byte[]>]`: The content stream, if the item represents a file.
   - `[Deleted <IMicrosoftGraphDeleted>]`: deleted
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5626,7 +5628,7 @@ MESSAGES <IMicrosoftGraphChatMessage1[]>: A collection of all the messages in th
     - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
     - `[Id <String>]`: Read-only. Unique id of the attachment.
     - `[Name <String>]`: Name of the attachment.
-    - `[TeamsAppId <String>]`: 
+    - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
     - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5708,7 +5710,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
       - `[Description <String>]`: Optional textual description for the channel.
       - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
       - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
-      - `[FilesFolder <IMicrosoftGraphDriveItem1>]`: driveItem
+      - `[FilesFolder <IMicrosoftGraphDriveItem>]`: driveItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -6107,7 +6109,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
                 - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
                 - `[Id <String>]`: Read-only. Unique id of the attachment.
                 - `[Name <String>]`: Name of the attachment.
-                - `[TeamsAppId <String>]`: 
+                - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
                 - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
               - `[Body <IMicrosoftGraphItemBody>]`: itemBody
               - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
@@ -6279,9 +6281,9 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
             - `[Name <String>]`: The name of the item. Read-write.
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DriveId <String>]`: Unique identifier of the drive instance that contains the item. Read-only.
-              - `[DriveType <String>]`: Identifies the type of drive. See [drive][] resource for values.
-              - `[Id <String>]`: Unique identifier of the item in the drive. Read-only.
+              - `[DriveId <String>]`: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+              - `[DriveType <String>]`: Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+              - `[Id <String>]`: Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
               - `[Name <String>]`: The name of the item being referenced. Read-only.
               - `[Path <String>]`: Path that can be used to navigate to the item. Read-only.
               - `[ShareId <String>]`: A unique identifier for a shared resource that can be accessed via the [Shares][] API.
@@ -6294,13 +6296,13 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
                 - `[SiteUrl <String>]`: The SharePoint URL for the site that contains the item.
                 - `[TenantId <String>]`: The unique identifier (guid) for the tenancy.
                 - `[WebId <String>]`: The unique identifier (guid) for the item's site (SPWeb).
-              - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+              - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[Bundles <IMicrosoftGraphDriveItem1[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+            - `[Bundles <IMicrosoftGraphDriveItem[]>]`: Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
             - `[DriveType <String>]`: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
-            - `[Following <IMicrosoftGraphDriveItem1[]>]`: The list of items the user is following. Only in OneDrive for Business.
-            - `[Items <IMicrosoftGraphDriveItem1[]>]`: All items contained in the drive. Read-only. Nullable.
+            - `[Following <IMicrosoftGraphDriveItem[]>]`: The list of items the user is following. Only in OneDrive for Business.
+            - `[Items <IMicrosoftGraphDriveItem[]>]`: All items contained in the drive. Read-only. Nullable.
             - `[List <IMicrosoftGraphList>]`: list
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6516,7 +6518,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[ActivityDateTime <DateTime?>]`: Details about when the activity took place. Read-only.
                       - `[Actor <IMicrosoftGraphIdentitySet>]`: identitySet
-                      - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
+                      - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
                     - `[Create <IMicrosoftGraphItemActionStat>]`: itemActionStat
                     - `[Delete <IMicrosoftGraphItemActionStat>]`: itemActionStat
                     - `[Edit <IMicrosoftGraphItemActionStat>]`: itemActionStat
@@ -6550,7 +6552,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
                     - `[Title <String>]`: The title of the item.
                     - `[VersionId <String>]`: The version ID of the item.
                   - `[ShouldCaptureMinorVersion <Boolean?>]`: If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
-                - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
+                - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
                 - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
                 - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
                 - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
@@ -6619,13 +6621,14 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
                 - `[UpgradeAvailable <Boolean?>]`: Indicates whether there are higher storage quota plans available. Read-only.
               - `[Total <Int64?>]`: Total allowed storage space, in bytes. Read-only.
               - `[Used <Int64?>]`: Total space used, in bytes. Read-only.
-            - `[Root <IMicrosoftGraphDriveItem1>]`: driveItem
+            - `[Root <IMicrosoftGraphDriveItem>]`: driveItem
             - `[SharePointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-            - `[Special <IMicrosoftGraphDriveItem1[]>]`: Collection of common folders available in OneDrive. Read-only. Nullable.
+            - `[Special <IMicrosoftGraphDriveItem[]>]`: Collection of common folders available in OneDrive. Read-only. Nullable.
             - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
           - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
           - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
           - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+          - `[EmployeeLeaveDateTime <DateTime?>]`: 
           - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -7286,7 +7289,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
                 - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[Role <String>]`: 
+                - `[Role <String>]`: onlineMeetingRole
                 - `[Upn <String>]`: User principal name of the participant.
               - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
             - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -7351,7 +7354,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
               - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[Name <String>]`: Name of the bucket.
-                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
                 - `[PlanId <String>]`: Plan ID to which the bucket belongs.
                 - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. The collection of tasks in the bucket.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -7514,15 +7517,15 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[Content <Byte[]>]`: 
-                  - `[ExpirationDateTime <DateTime?>]`: 
-                  - `[NextExpectedRanges <String[]>]`: 
-                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+                  - `[Content <Byte[]>]`: The content streams that are uploaded.
+                  - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+                  - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
+                - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[ContentType <String>]`: 
-                  - `[LastModifiedDateTime <DateTime?>]`: 
-                  - `[Name <String>]`: 
-                  - `[Size <Int32?>]`: 
+                  - `[ContentType <String>]`: The MIME type.
+                  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+                  - `[Size <Int32?>]`: The length of the attachment in bytes.
                 - `[Body <IMicrosoftGraphItemBody>]`: itemBody
                 - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
@@ -7536,7 +7539,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
                 - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
                 - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
                 - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-                - `[HasAttachments <Boolean?>]`: 
+                - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
                 - `[Importance <String>]`: importance
                 - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
                 - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -7592,7 +7595,7 @@ SHAREDWITHTEAMS <IMicrosoftGraphSharedWithChannelTeamInfo[]>: A collection of te
             - `[CoverImageItemId <String>]`: Unique identifier of the [driveItem][] that is the cover of the album.
           - `[ChildCount <Int32?>]`: Number of children contained immediately within this container.
         - `[CTag <String>]`: An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-        - `[Children <IMicrosoftGraphDriveItem1[]>]`: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+        - `[Children <IMicrosoftGraphDriveItem[]>]`: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
         - `[Content <Byte[]>]`: The content stream, if the item represents a file.
         - `[Deleted <IMicrosoftGraphDeleted>]`: deleted
           - `[(Any) <Object>]`: This indicates any property can be added to this object.

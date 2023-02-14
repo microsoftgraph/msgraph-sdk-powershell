@@ -14,7 +14,8 @@ Create new navigation property to deviceManagementPartners for deviceManagement
 
 ### CreateExpanded1 (Default)
 ```
-New-MgDeviceManagementPartner [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
+New-MgDeviceManagementPartner [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+ [-GroupsRequiringPartnerEnrollment <IMicrosoftGraphDeviceManagementPartnerAssignment[]>] [-Id <String>]
  [-IsConfigured] [-LastHeartbeatDateTime <DateTime>] [-PartnerAppType <DeviceManagementPartnerAppType>]
  [-PartnerState <DeviceManagementPartnerTenantState>] [-SingleTenantAppId <String>]
  [-WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime <DateTime>]
@@ -70,6 +71,22 @@ Partner display name
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GroupsRequiringPartnerEnrollment
+User groups that specifies whether enrollment is through partner.
+To construct, please use Get-Help -Online and see NOTES section for GROUPSREQUIRINGPARTNERENROLLMENT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPartnerAssignment[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -256,6 +273,9 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementPartner1>: Entity which represents
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: Partner display name
+  - `[GroupsRequiringPartnerEnrollment <IMicrosoftGraphDeviceManagementPartnerAssignment[]>]`: User groups that specifies whether enrollment is through partner.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[IsConfigured <Boolean?>]`: Whether device management partner is configured or not
   - `[LastHeartbeatDateTime <DateTime?>]`: Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
   - `[PartnerAppType <DeviceManagementPartnerAppType?>]`: Partner App Type.
@@ -263,6 +283,10 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementPartner1>: Entity which represents
   - `[SingleTenantAppId <String>]`: Partner Single tenant App id
   - `[WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime <DateTime?>]`: DateTime in UTC when PartnerDevices will be marked as NonCompliant
   - `[WhenPartnerDevicesWillBeRemovedDateTime <DateTime?>]`: DateTime in UTC when PartnerDevices will be removed
+
+GROUPSREQUIRINGPARTNERENROLLMENT <IMicrosoftGraphDeviceManagementPartnerAssignment[]>: User groups that specifies whether enrollment is through partner.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

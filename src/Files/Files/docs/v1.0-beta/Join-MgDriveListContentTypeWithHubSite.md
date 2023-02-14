@@ -12,28 +12,28 @@ Associate a [content type][contentType] with a list of hub sites.
 
 ## SYNTAX
 
-### AssociateExpanded (Default)
+### AssociateExpanded1 (Default)
 ```
 Join-MgDriveListContentTypeWithHubSite -ContentTypeId <String> -DriveId <String>
  [-AdditionalProperties <Hashtable>] [-HubSiteUrls <String[]>] [-PropagateToExistingLists] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Associate
+### Associate1
 ```
 Join-MgDriveListContentTypeWithHubSite -ContentTypeId <String> -DriveId <String>
  -BodyParameter <IPathsWa4CdpDrivesDriveIdListContenttypesContenttypeIdMicrosoftGraphAssociatewithhubsitesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AssociateViaIdentity
+### AssociateViaIdentity1
 ```
 Join-MgDriveListContentTypeWithHubSite -InputObject <IFilesIdentity>
  -BodyParameter <IPathsWa4CdpDrivesDriveIdListContenttypesContenttypeIdMicrosoftGraphAssociatewithhubsitesPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AssociateViaIdentityExpanded
+### AssociateViaIdentityExpanded1
 ```
 Join-MgDriveListContentTypeWithHubSite -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-HubSiteUrls <String[]>] [-PropagateToExistingLists] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -51,7 +51,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: AssociateExpanded, AssociateViaIdentityExpanded
+Parameter Sets: AssociateExpanded1, AssociateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsWa4CdpDrivesDriveIdListContenttypesContenttypeIdMicrosoftGraphAssociatewithhubsitesPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Associate, AssociateViaIdentity
+Parameter Sets: Associate1, AssociateViaIdentity1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Associate, AssociateExpanded
+Parameter Sets: Associate1, AssociateExpanded1
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Associate, AssociateExpanded
+Parameter Sets: Associate1, AssociateExpanded1
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: AssociateExpanded, AssociateViaIdentityExpanded
+Parameter Sets: AssociateExpanded1, AssociateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -128,7 +128,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: AssociateViaIdentity, AssociateViaIdentityExpanded
+Parameter Sets: AssociateViaIdentity1, AssociateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: AssociateExpanded, AssociateViaIdentityExpanded
+Parameter Sets: AssociateExpanded1, AssociateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -239,6 +239,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[PermissionId <String>]`: key: id of permission

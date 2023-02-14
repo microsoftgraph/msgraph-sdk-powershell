@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: b71ad1c3-9b34-45b8-a920-69076d07fd03
+Module Guid: ff835420-1489-4281-8bc7-9a7bd0cb7771
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -534,16 +534,12 @@ This operation limits the size of the attachment you can add to under 3 MB.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupConversationThreadPostInReplyTo](Invoke-MgReplyGroupConversationThreadPostInReplyTo.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
 Add an attachment when creating a group post.
@@ -551,16 +547,12 @@ This operation limits the size of the attachment you can add to under 3 MB.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupThreadPostInReplyTo](Invoke-MgReplyGroupThreadPostInReplyTo.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgSnoozeGroupCalendarEventReminder](Invoke-MgSnoozeGroupCalendarEventReminder.md)
 Postpone a reminder for an event in a user calendar until a new time.
@@ -971,7 +963,8 @@ Unpublish a [contentType][] from a content type hub site.
 Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Update the properties of a group object.
+Add a member to a security or Microsoft 365 group through the **members** navigation property.
+The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
 Update the navigation property threads in groups

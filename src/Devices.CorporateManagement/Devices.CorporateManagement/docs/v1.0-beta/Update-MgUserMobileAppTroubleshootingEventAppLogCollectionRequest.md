@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-AppLogCollectionRequest Entity.
+Entity for AppLogCollectionRequest contains all logs values.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompletedDateTime
-Time at which the upload log request reached a terminal state
+Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
 
 ```yaml
 Type: System.DateTime
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -ErrorMessage
-Error message if any during the upload process
+Indicates error message if any during the upload process.
 
 ```yaml
 Type: System.String
@@ -285,12 +285,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphAppLogCollectionRequest>: AppLogCollectionRequest Entity.
+BODYPARAMETER <IMicrosoftGraphAppLogCollectionRequest>: Entity for AppLogCollectionRequest contains all logs values.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a terminal state
+  - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
   - `[CustomLogFolders <String[]>]`: List of log folders.
-  - `[ErrorMessage <String>]`: Error message if any during the upload process
+  - `[ErrorMessage <String>]`: Indicates error message if any during the upload process.
   - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
@@ -311,6 +311,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
   - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
   - `[EnterpriseCodeSigningCertificateId <String>]`: key: id of enterpriseCodeSigningCertificate
+  - `[Id <String>]`: key: id of deviceHealthScriptPolicyState
   - `[IosLobAppProvisioningConfigurationAssignmentId <String>]`: key: id of iosLobAppProvisioningConfigurationAssignment
   - `[IosLobAppProvisioningConfigurationId <String>]`: key: id of iosLobAppProvisioningConfiguration
   - `[IosManagedAppProtectionId <String>]`: key: id of iosManagedAppProtection
@@ -339,6 +340,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[OfficeClientConfigurationAssignmentId <String>]`: key: id of officeClientConfigurationAssignment
   - `[OfficeClientConfigurationId <String>]`: key: id of officeClientConfiguration
+  - `[PolicyId <String>]`: key: policyId of deviceHealthScriptPolicyState
   - `[PolicySetAssignmentId <String>]`: key: id of policySetAssignment
   - `[PolicySetId <String>]`: key: id of policySet
   - `[PolicySetItemId <String>]`: key: id of policySetItem

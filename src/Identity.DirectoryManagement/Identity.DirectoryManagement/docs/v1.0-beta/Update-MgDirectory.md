@@ -268,7 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -Recommendations
-.
+List of recommended improvements to improve tenant posture.
 To construct, please use Get-Help -Online and see NOTES section for RECOMMENDATIONS properties and create a hash table.
 
 ```yaml
@@ -430,22 +430,22 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[DisplayName <String>]`: The display name of the identity provider.
   - `[ImpactedResources <IMicrosoftGraphImpactedResource[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[AddedDateTime <DateTime?>]`: 
-    - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
-    - `[ApiUrl <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedBy <String>]`: 
-    - `[LastModifiedDateTime <String>]`: 
-    - `[Owner <String>]`: 
-    - `[PortalUrl <String>]`: 
-    - `[PostponeUntilDateTime <DateTime?>]`: 
-    - `[Rank <Int32?>]`: 
-    - `[RecommendationId <String>]`: 
-    - `[ResourceType <String>]`: 
+    - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
+    - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
+      - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+      - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+    - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
+    - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
+    - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
+    - `[LastModifiedDateTime <String>]`: The date and time when the status was last updated.
+    - `[Owner <String>]`: The user responsible for maintaining the resource.
+    - `[PortalUrl <String>]`: The URL link to the corresponding Azure AD portal page of the resource.
+    - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed impactedResource will be active again.
+    - `[Rank <Int32?>]`: Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
+    - `[RecommendationId <String>]`: The unique identifier of the recommendation that the resource is associated with.
+    - `[ResourceType <String>]`: Indicates the type of Azure AD resource. Examples include user, application.
     - `[Status <String>]`: recommendationStatus
-    - `[SubjectId <String>]`: 
+    - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
   - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: 
     - `[DisplayName <String>]`: 
     - `[HomeTenantId <String>]`: 
@@ -486,32 +486,32 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
       - `[TenantId <String>]`: 
     - `[UserId <String>]`: 
-  - `[Recommendations <IMicrosoftGraphRecommendation[]>]`: 
-    - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: 
+  - `[Recommendations <IMicrosoftGraphRecommendation[]>]`: List of recommended improvements to improve tenant posture.
+    - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: List of actions to take to complete a recommendation.
       - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: 
-        - `[Url <String>]`: 
-      - `[StepNumber <Int64?>]`: 
-      - `[Text <String>]`: 
-    - `[Benefits <String>]`: 
+        - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+        - `[Url <String>]`: The URL to the documentation or Azure portal page.
+      - `[StepNumber <Int64?>]`: Indicates the position for this action in the order of the collection of actions to be taken.
+      - `[Text <String>]`: Friendly description of the action to take.
+    - `[Benefits <String>]`: An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
     - `[Category <String>]`: recommendationCategory
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[CurrentScore <Double?>]`: 
-    - `[DisplayName <String>]`: 
-    - `[FeatureAreas <String[]>]`: 
-    - `[ImpactStartDateTime <DateTime?>]`: 
-    - `[ImpactType <String>]`: 
-    - `[ImpactedResources <IMicrosoftGraphImpactedResource[]>]`: 
-    - `[Insights <String>]`: 
-    - `[LastCheckedDateTime <DateTime?>]`: 
-    - `[LastModifiedBy <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[MaxScore <Double?>]`: 
-    - `[PostponeUntilDateTime <DateTime?>]`: 
+    - `[CreatedDateTime <DateTime?>]`: The date and time when the recommendation was detected as applicable to your directory.
+    - `[CurrentScore <Double?>]`: The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
+    - `[DisplayName <String>]`: The title of the recommendation.
+    - `[FeatureAreas <String[]>]`: The directory feature that the recommendation is related to.
+    - `[ImpactStartDateTime <DateTime?>]`: The future date and time when a recommendation should be completed.
+    - `[ImpactType <String>]`: Indicates the scope of impact of a recommendation. Tenant level indicates that the recommendation impacts the whole tenant. Other possible values include users, applications.
+    - `[ImpactedResources <IMicrosoftGraphImpactedResource[]>]`: The list of directory objects associated with the recommendation.
+    - `[Insights <String>]`: Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+    - `[LastCheckedDateTime <DateTime?>]`: The most recent date and time a recommendation was deemed applicable to your directory.
+    - `[LastModifiedBy <String>]`: Name of the user who last updated the status of the recommendation.
+    - `[LastModifiedDateTime <DateTime?>]`: The date and time the status of a recommendation was last updated.
+    - `[MaxScore <Double?>]`: The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.
+    - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed recommendation will be active again.
     - `[Priority <String>]`: recommendationPriority
     - `[RecommendationType <String>]`: recommendationType
-    - `[RemediationImpact <String>]`: 
+    - `[RemediationImpact <String>]`: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
     - `[Status <String>]`: recommendationStatus
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[SharedEmailDomains <IMicrosoftGraphSharedEmailDomain[]>]`: 
@@ -553,22 +553,22 @@ FEDERATIONCONFIGURATIONS <IMicrosoftGraphIdentityProviderBase[]>: Configure doma
 
 IMPACTEDRESOURCES <IMicrosoftGraphImpactedResource[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AddedDateTime <DateTime?>]`: 
-  - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-    - `[Key <String>]`: Key.
-    - `[Value <String>]`: Value.
-  - `[ApiUrl <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[LastModifiedBy <String>]`: 
-  - `[LastModifiedDateTime <String>]`: 
-  - `[Owner <String>]`: 
-  - `[PortalUrl <String>]`: 
-  - `[PostponeUntilDateTime <DateTime?>]`: 
-  - `[Rank <Int32?>]`: 
-  - `[RecommendationId <String>]`: 
-  - `[ResourceType <String>]`: 
+  - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
+  - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
+    - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+    - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+  - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
+  - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
+  - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
+  - `[LastModifiedDateTime <String>]`: The date and time when the status was last updated.
+  - `[Owner <String>]`: The user responsible for maintaining the resource.
+  - `[PortalUrl <String>]`: The URL link to the corresponding Azure AD portal page of the resource.
+  - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed impactedResource will be active again.
+  - `[Rank <Int32?>]`: Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
+  - `[RecommendationId <String>]`: The unique identifier of the recommendation that the resource is associated with.
+  - `[ResourceType <String>]`: Indicates the type of Azure AD resource. Examples include user, application.
   - `[Status <String>]`: recommendationStatus
-  - `[SubjectId <String>]`: 
+  - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
 
 INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>: .
   - `[DisplayName <String>]`: 
@@ -613,49 +613,49 @@ OUTBOUNDSHAREDUSERPROFILES <IMicrosoftGraphOutboundSharedUserProfile[]>: .
     - `[TenantId <String>]`: 
   - `[UserId <String>]`: 
 
-RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>: .
-  - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: 
+RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>: List of recommended improvements to improve tenant posture.
+  - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: List of actions to take to complete a recommendation.
     - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: 
-      - `[Url <String>]`: 
-    - `[StepNumber <Int64?>]`: 
-    - `[Text <String>]`: 
-  - `[Benefits <String>]`: 
+      - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+      - `[Url <String>]`: The URL to the documentation or Azure portal page.
+    - `[StepNumber <Int64?>]`: Indicates the position for this action in the order of the collection of actions to be taken.
+    - `[Text <String>]`: Friendly description of the action to take.
+  - `[Benefits <String>]`: An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
   - `[Category <String>]`: recommendationCategory
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[CurrentScore <Double?>]`: 
-  - `[DisplayName <String>]`: 
-  - `[FeatureAreas <String[]>]`: 
-  - `[ImpactStartDateTime <DateTime?>]`: 
-  - `[ImpactType <String>]`: 
-  - `[ImpactedResources <IMicrosoftGraphImpactedResource[]>]`: 
+  - `[CreatedDateTime <DateTime?>]`: The date and time when the recommendation was detected as applicable to your directory.
+  - `[CurrentScore <Double?>]`: The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
+  - `[DisplayName <String>]`: The title of the recommendation.
+  - `[FeatureAreas <String[]>]`: The directory feature that the recommendation is related to.
+  - `[ImpactStartDateTime <DateTime?>]`: The future date and time when a recommendation should be completed.
+  - `[ImpactType <String>]`: Indicates the scope of impact of a recommendation. Tenant level indicates that the recommendation impacts the whole tenant. Other possible values include users, applications.
+  - `[ImpactedResources <IMicrosoftGraphImpactedResource[]>]`: The list of directory objects associated with the recommendation.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[AddedDateTime <DateTime?>]`: 
-    - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
-    - `[ApiUrl <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedBy <String>]`: 
-    - `[LastModifiedDateTime <String>]`: 
-    - `[Owner <String>]`: 
-    - `[PortalUrl <String>]`: 
-    - `[PostponeUntilDateTime <DateTime?>]`: 
-    - `[Rank <Int32?>]`: 
-    - `[RecommendationId <String>]`: 
-    - `[ResourceType <String>]`: 
+    - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
+    - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
+      - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+      - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+    - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
+    - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
+    - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
+    - `[LastModifiedDateTime <String>]`: The date and time when the status was last updated.
+    - `[Owner <String>]`: The user responsible for maintaining the resource.
+    - `[PortalUrl <String>]`: The URL link to the corresponding Azure AD portal page of the resource.
+    - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed impactedResource will be active again.
+    - `[Rank <Int32?>]`: Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
+    - `[RecommendationId <String>]`: The unique identifier of the recommendation that the resource is associated with.
+    - `[ResourceType <String>]`: Indicates the type of Azure AD resource. Examples include user, application.
     - `[Status <String>]`: recommendationStatus
-    - `[SubjectId <String>]`: 
-  - `[Insights <String>]`: 
-  - `[LastCheckedDateTime <DateTime?>]`: 
-  - `[LastModifiedBy <String>]`: 
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[MaxScore <Double?>]`: 
-  - `[PostponeUntilDateTime <DateTime?>]`: 
+    - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
+  - `[Insights <String>]`: Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+  - `[LastCheckedDateTime <DateTime?>]`: The most recent date and time a recommendation was deemed applicable to your directory.
+  - `[LastModifiedBy <String>]`: Name of the user who last updated the status of the recommendation.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time the status of a recommendation was last updated.
+  - `[MaxScore <Double?>]`: The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.
+  - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed recommendation will be active again.
   - `[Priority <String>]`: recommendationPriority
   - `[RecommendationType <String>]`: recommendationType
-  - `[RemediationImpact <String>]`: 
+  - `[RemediationImpact <String>]`: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
   - `[Status <String>]`: recommendationStatus
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 

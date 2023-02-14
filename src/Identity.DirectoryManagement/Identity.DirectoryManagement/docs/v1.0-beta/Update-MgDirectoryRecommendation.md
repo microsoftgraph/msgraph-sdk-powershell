@@ -56,7 +56,7 @@ Update the navigation property recommendations in directory
 ## PARAMETERS
 
 ### -ActionSteps
-.
+List of actions to take to complete a recommendation.
 To construct, please use Get-Help -Online and see NOTES section for ACTIONSTEPS properties and create a hash table.
 
 ```yaml
@@ -87,7 +87,8 @@ Accept wildcard characters: False
 ```
 
 ### -Benefits
-.
+An explanation of why completing the recommendation will benefit you.
+Corresponds to the Value section of a recommendation shown in the Azure AD portal.
 
 ```yaml
 Type: System.String
@@ -132,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The date and time when the recommendation was detected as applicable to your directory.
 
 ```yaml
 Type: System.DateTime
@@ -147,7 +148,8 @@ Accept wildcard characters: False
 ```
 
 ### -CurrentScore
-.
+The number of points the tenant has attained.
+Only applies to recommendations with category set to identitySecureScore.
 
 ```yaml
 Type: System.Double
@@ -162,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The title of the recommendation.
 
 ```yaml
 Type: System.String
@@ -177,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -FeatureAreas
-.
+The directory feature that the recommendation is related to.
 
 ```yaml
 Type: System.String[]
@@ -208,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -ImpactedResources
-.
+The list of directory objects associated with the recommendation.
 To construct, please use Get-Help -Online and see NOTES section for IMPACTEDRESOURCES properties and create a hash table.
 
 ```yaml
@@ -224,7 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -ImpactStartDateTime
-.
+The future date and time when a recommendation should be completed.
 
 ```yaml
 Type: System.DateTime
@@ -239,7 +241,9 @@ Accept wildcard characters: False
 ```
 
 ### -ImpactType
-.
+Indicates the scope of impact of a recommendation.
+Tenant level indicates that the recommendation impacts the whole tenant.
+Other possible values include users, applications.
 
 ```yaml
 Type: System.String
@@ -270,7 +274,8 @@ Accept wildcard characters: False
 ```
 
 ### -Insights
-.
+Describes why a recommendation uniquely applies to your directory.
+Corresponds to the Description section of a recommendation shown in the Azure AD portal.
 
 ```yaml
 Type: System.String
@@ -285,7 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastCheckedDateTime
-.
+The most recent date and time a recommendation was deemed applicable to your directory.
 
 ```yaml
 Type: System.DateTime
@@ -300,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedBy
-.
+Name of the user who last updated the status of the recommendation.
 
 ```yaml
 Type: System.String
@@ -315,7 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+The date and time the status of a recommendation was last updated.
 
 ```yaml
 Type: System.DateTime
@@ -330,7 +335,8 @@ Accept wildcard characters: False
 ```
 
 ### -MaxScore
-.
+The maximum number of points attainable.
+Only applies to recommendations with category set to identitySecureScore.
 
 ```yaml
 Type: System.Double
@@ -360,7 +366,7 @@ Accept wildcard characters: False
 ```
 
 ### -PostponeUntilDateTime
-.
+The future date and time when the status of a postponed recommendation will be active again.
 
 ```yaml
 Type: System.DateTime
@@ -420,7 +426,8 @@ Accept wildcard characters: False
 ```
 
 ### -RemediationImpact
-.
+Description of the impact on users of the remediation.
+Only applies to recommendations with category set to identitySecureScore.
 
 ```yaml
 Type: System.String
@@ -502,32 +509,32 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACTIONSTEPS <IMicrosoftGraphActionStep[]>: .
+ACTIONSTEPS <IMicrosoftGraphActionStep[]>: List of actions to take to complete a recommendation.
   - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: 
-    - `[Url <String>]`: 
-  - `[StepNumber <Int64?>]`: 
-  - `[Text <String>]`: 
+    - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+    - `[Url <String>]`: The URL to the documentation or Azure portal page.
+  - `[StepNumber <Int64?>]`: Indicates the position for this action in the order of the collection of actions to be taken.
+  - `[Text <String>]`: Friendly description of the action to take.
 
-IMPACTEDRESOURCES <IMicrosoftGraphImpactedResource[]>: .
+IMPACTEDRESOURCES <IMicrosoftGraphImpactedResource[]>: The list of directory objects associated with the recommendation.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AddedDateTime <DateTime?>]`: 
-  - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-    - `[Key <String>]`: Key.
-    - `[Value <String>]`: Value.
-  - `[ApiUrl <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[LastModifiedBy <String>]`: 
-  - `[LastModifiedDateTime <String>]`: 
-  - `[Owner <String>]`: 
-  - `[PortalUrl <String>]`: 
-  - `[PostponeUntilDateTime <DateTime?>]`: 
-  - `[Rank <Int32?>]`: 
-  - `[RecommendationId <String>]`: 
-  - `[ResourceType <String>]`: 
+  - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
+  - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
+    - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+    - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+  - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
+  - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
+  - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
+  - `[LastModifiedDateTime <String>]`: The date and time when the status was last updated.
+  - `[Owner <String>]`: The user responsible for maintaining the resource.
+  - `[PortalUrl <String>]`: The URL link to the corresponding Azure AD portal page of the resource.
+  - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed impactedResource will be active again.
+  - `[Rank <Int32?>]`: Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
+  - `[RecommendationId <String>]`: The unique identifier of the recommendation that the resource is associated with.
+  - `[ResourceType <String>]`: Indicates the type of Azure AD resource. Examples include user, application.
   - `[Status <String>]`: recommendationStatus
-  - `[SubjectId <String>]`: 
+  - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit

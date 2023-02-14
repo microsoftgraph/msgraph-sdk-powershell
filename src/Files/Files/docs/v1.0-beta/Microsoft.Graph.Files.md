@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: bb8dc6d4-b8a1-4c54-bc80-f6a8e33dedee
+Module Guid: e77bdc4d-84c3-431d-89b0-63aef63f20dc
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -77,6 +77,18 @@ Invoke function getActivitiesByInterval
 
 ### [Get-MgDriveItemAnalytic](Get-MgDriveItemAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+
+### [Get-MgDriveItemAnalyticItemActivityStat](Get-MgDriveItemAnalyticItemActivityStat.md)
+Get itemActivityStats from drives
+
+### [Get-MgDriveItemAnalyticItemActivityStatActivity](Get-MgDriveItemAnalyticItemActivityStatActivity.md)
+Exposes the itemActivities represented in this itemActivityStat resource.
+
+### [Get-MgDriveItemAnalyticLastSevenDay](Get-MgDriveItemAnalyticLastSevenDay.md)
+Get lastSevenDays from drives
+
+### [Get-MgDriveItemAnalyticTime](Get-MgDriveItemAnalyticTime.md)
+Get allTime from drives
 
 ### [Get-MgDriveItemChild](Get-MgDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -242,6 +254,18 @@ Invoke function getActivitiesByInterval
 ### [Get-MgDriveRootAnalytic](Get-MgDriveRootAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
+### [Get-MgDriveRootAnalyticItemActivityStat](Get-MgDriveRootAnalyticItemActivityStat.md)
+Get itemActivityStats from drives
+
+### [Get-MgDriveRootAnalyticItemActivityStatActivity](Get-MgDriveRootAnalyticItemActivityStatActivity.md)
+Exposes the itemActivities represented in this itemActivityStat resource.
+
+### [Get-MgDriveRootAnalyticLastSevenDay](Get-MgDriveRootAnalyticLastSevenDay.md)
+Get lastSevenDays from drives
+
+### [Get-MgDriveRootAnalyticTime](Get-MgDriveRootAnalyticTime.md)
+Get allTime from drives
+
 ### [Get-MgDriveRootChild](Get-MgDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
 Only items representing folders have children.
@@ -356,6 +380,18 @@ The list of recent activities that took place on this item.
 
 ### [Get-MgGroupDriveItemAnalytic](Get-MgGroupDriveItemAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+
+### [Get-MgGroupDriveItemAnalyticItemActivityStat](Get-MgGroupDriveItemAnalyticItemActivityStat.md)
+Get itemActivityStats from groups
+
+### [Get-MgGroupDriveItemAnalyticItemActivityStatActivity](Get-MgGroupDriveItemAnalyticItemActivityStatActivity.md)
+Exposes the itemActivities represented in this itemActivityStat resource.
+
+### [Get-MgGroupDriveItemAnalyticLastSevenDay](Get-MgGroupDriveItemAnalyticLastSevenDay.md)
+Get lastSevenDays from groups
+
+### [Get-MgGroupDriveItemAnalyticTime](Get-MgGroupDriveItemAnalyticTime.md)
+Get allTime from groups
 
 ### [Get-MgGroupDriveItemChild](Get-MgGroupDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -502,6 +538,18 @@ The list of recent activities that took place on this item.
 
 ### [Get-MgGroupDriveRootAnalytic](Get-MgGroupDriveRootAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+
+### [Get-MgGroupDriveRootAnalyticItemActivityStat](Get-MgGroupDriveRootAnalyticItemActivityStat.md)
+Get itemActivityStats from groups
+
+### [Get-MgGroupDriveRootAnalyticItemActivityStatActivity](Get-MgGroupDriveRootAnalyticItemActivityStatActivity.md)
+Exposes the itemActivities represented in this itemActivityStat resource.
+
+### [Get-MgGroupDriveRootAnalyticLastSevenDay](Get-MgGroupDriveRootAnalyticLastSevenDay.md)
+Get lastSevenDays from groups
+
+### [Get-MgGroupDriveRootAnalyticTime](Get-MgGroupDriveRootAnalyticTime.md)
+Get allTime from groups
 
 ### [Get-MgGroupDriveRootChild](Get-MgGroupDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -721,6 +769,18 @@ The list of recent activities that took place on this item.
 ### [Get-MgUserDriveItemAnalytic](Get-MgUserDriveItemAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
+### [Get-MgUserDriveItemAnalyticItemActivityStat](Get-MgUserDriveItemAnalyticItemActivityStat.md)
+Get itemActivityStats from users
+
+### [Get-MgUserDriveItemAnalyticItemActivityStatActivity](Get-MgUserDriveItemAnalyticItemActivityStatActivity.md)
+Exposes the itemActivities represented in this itemActivityStat resource.
+
+### [Get-MgUserDriveItemAnalyticLastSevenDay](Get-MgUserDriveItemAnalyticLastSevenDay.md)
+Get lastSevenDays from users
+
+### [Get-MgUserDriveItemAnalyticTime](Get-MgUserDriveItemAnalyticTime.md)
+Get allTime from users
+
 ### [Get-MgUserDriveItemChild](Get-MgUserDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
 Only items representing folders have children.
@@ -866,6 +926,18 @@ The list of recent activities that took place on this item.
 
 ### [Get-MgUserDriveRootAnalytic](Get-MgUserDriveRootAnalytic.md)
 Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+
+### [Get-MgUserDriveRootAnalyticItemActivityStat](Get-MgUserDriveRootAnalyticItemActivityStat.md)
+Get itemActivityStats from users
+
+### [Get-MgUserDriveRootAnalyticItemActivityStatActivity](Get-MgUserDriveRootAnalyticItemActivityStatActivity.md)
+Exposes the itemActivities represented in this itemActivityStat resource.
+
+### [Get-MgUserDriveRootAnalyticLastSevenDay](Get-MgUserDriveRootAnalyticLastSevenDay.md)
+Get lastSevenDays from users
+
+### [Get-MgUserDriveRootAnalyticTime](Get-MgUserDriveRootAnalyticTime.md)
+Get allTime from users
 
 ### [Get-MgUserDriveRootChild](Get-MgUserDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -1021,6 +1093,12 @@ Add new entity to drives
 ### [New-MgDriveItem](New-MgDriveItem.md)
 Create new navigation property to items for drives
 
+### [New-MgDriveItemAnalyticItemActivityStat](New-MgDriveItemAnalyticItemActivityStat.md)
+Create new navigation property to itemActivityStats for drives
+
+### [New-MgDriveItemChild](New-MgDriveItemChild.md)
+Create new navigation property to children for drives
+
 ### [New-MgDriveItemLink](New-MgDriveItemLink.md)
 You can use **createLink** action to share a driveItem via a sharing link.
 The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
@@ -1086,6 +1164,12 @@ Create new navigation property to operations for drives
 ### [New-MgDriveListSubscription](New-MgDriveListSubscription.md)
 Create new navigation property to subscriptions for drives
 
+### [New-MgDriveRootAnalyticItemActivityStat](New-MgDriveRootAnalyticItemActivityStat.md)
+Create new navigation property to itemActivityStats for drives
+
+### [New-MgDriveRootChild](New-MgDriveRootChild.md)
+Create new navigation property to children for drives
+
 ### [New-MgDriveRootLink](New-MgDriveRootLink.md)
 You can use **createLink** action to share a driveItem via a sharing link.
 The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
@@ -1124,6 +1208,12 @@ Create new navigation property to drives for groups
 
 ### [New-MgGroupDriveItem](New-MgGroupDriveItem.md)
 Create new navigation property to items for groups
+
+### [New-MgGroupDriveItemAnalyticItemActivityStat](New-MgGroupDriveItemAnalyticItemActivityStat.md)
+Create new navigation property to itemActivityStats for groups
+
+### [New-MgGroupDriveItemChild](New-MgGroupDriveItemChild.md)
+Create new navigation property to children for groups
 
 ### [New-MgGroupDriveItemListItemDocumentSetVersion](New-MgGroupDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
@@ -1169,6 +1259,12 @@ Create new navigation property to operations for groups
 
 ### [New-MgGroupDriveListSubscription](New-MgGroupDriveListSubscription.md)
 Create new navigation property to subscriptions for groups
+
+### [New-MgGroupDriveRootAnalyticItemActivityStat](New-MgGroupDriveRootAnalyticItemActivityStat.md)
+Create new navigation property to itemActivityStats for groups
+
+### [New-MgGroupDriveRootChild](New-MgGroupDriveRootChild.md)
+Create new navigation property to children for groups
 
 ### [New-MgGroupDriveRootListItemDocumentSetVersion](New-MgGroupDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
@@ -1224,6 +1320,12 @@ Create new navigation property to drives for users
 ### [New-MgUserDriveItem](New-MgUserDriveItem.md)
 Create new navigation property to items for users
 
+### [New-MgUserDriveItemAnalyticItemActivityStat](New-MgUserDriveItemAnalyticItemActivityStat.md)
+Create new navigation property to itemActivityStats for users
+
+### [New-MgUserDriveItemChild](New-MgUserDriveItemChild.md)
+Create new navigation property to children for users
+
 ### [New-MgUserDriveItemListItemDocumentSetVersion](New-MgUserDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
@@ -1269,6 +1371,12 @@ Create new navigation property to operations for users
 ### [New-MgUserDriveListSubscription](New-MgUserDriveListSubscription.md)
 Create new navigation property to subscriptions for users
 
+### [New-MgUserDriveRootAnalyticItemActivityStat](New-MgUserDriveRootAnalyticItemActivityStat.md)
+Create new navigation property to itemActivityStats for users
+
+### [New-MgUserDriveRootChild](New-MgUserDriveRootChild.md)
+Create new navigation property to children for users
+
 ### [New-MgUserDriveRootListItemDocumentSetVersion](New-MgUserDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
@@ -1298,6 +1406,12 @@ Delete entity from drives
 
 ### [Remove-MgDriveItem](Remove-MgDriveItem.md)
 Delete navigation property items for drives
+
+### [Remove-MgDriveItemAnalytic](Remove-MgDriveItemAnalytic.md)
+Delete navigation property analytics for drives
+
+### [Remove-MgDriveItemAnalyticItemActivityStat](Remove-MgDriveItemAnalyticItemActivityStat.md)
+Delete navigation property itemActivityStats for drives
 
 ### [Remove-MgDriveItemListItem](Remove-MgDriveItemListItem.md)
 Delete navigation property listItem for drives
@@ -1365,6 +1479,12 @@ Delete navigation property subscriptions for drives
 ### [Remove-MgDriveRoot](Remove-MgDriveRoot.md)
 Delete navigation property root for drives
 
+### [Remove-MgDriveRootAnalytic](Remove-MgDriveRootAnalytic.md)
+Delete navigation property analytics for drives
+
+### [Remove-MgDriveRootAnalyticItemActivityStat](Remove-MgDriveRootAnalyticItemActivityStat.md)
+Delete navigation property itemActivityStats for drives
+
 ### [Remove-MgDriveRootListItem](Remove-MgDriveRootListItem.md)
 Delete navigation property listItem for drives
 
@@ -1397,6 +1517,12 @@ Delete navigation property drives for groups
 
 ### [Remove-MgGroupDriveItem](Remove-MgGroupDriveItem.md)
 Delete navigation property items for groups
+
+### [Remove-MgGroupDriveItemAnalytic](Remove-MgGroupDriveItemAnalytic.md)
+Delete navigation property analytics for groups
+
+### [Remove-MgGroupDriveItemAnalyticItemActivityStat](Remove-MgGroupDriveItemAnalyticItemActivityStat.md)
+Delete navigation property itemActivityStats for groups
 
 ### [Remove-MgGroupDriveItemListItem](Remove-MgGroupDriveItemListItem.md)
 Delete navigation property listItem for groups
@@ -1463,6 +1589,12 @@ Delete navigation property subscriptions for groups
 
 ### [Remove-MgGroupDriveRoot](Remove-MgGroupDriveRoot.md)
 Delete navigation property root for groups
+
+### [Remove-MgGroupDriveRootAnalytic](Remove-MgGroupDriveRootAnalytic.md)
+Delete navigation property analytics for groups
+
+### [Remove-MgGroupDriveRootAnalyticItemActivityStat](Remove-MgGroupDriveRootAnalyticItemActivityStat.md)
+Delete navigation property itemActivityStats for groups
 
 ### [Remove-MgGroupDriveRootListItem](Remove-MgGroupDriveRootListItem.md)
 Delete navigation property listItem for groups
@@ -1539,6 +1671,12 @@ Delete navigation property drives for users
 ### [Remove-MgUserDriveItem](Remove-MgUserDriveItem.md)
 Delete navigation property items for users
 
+### [Remove-MgUserDriveItemAnalytic](Remove-MgUserDriveItemAnalytic.md)
+Delete navigation property analytics for users
+
+### [Remove-MgUserDriveItemAnalyticItemActivityStat](Remove-MgUserDriveItemAnalyticItemActivityStat.md)
+Delete navigation property itemActivityStats for users
+
 ### [Remove-MgUserDriveItemListItem](Remove-MgUserDriveItemListItem.md)
 Delete navigation property listItem for users
 
@@ -1604,6 +1742,12 @@ Delete navigation property subscriptions for users
 
 ### [Remove-MgUserDriveRoot](Remove-MgUserDriveRoot.md)
 Delete navigation property root for users
+
+### [Remove-MgUserDriveRootAnalytic](Remove-MgUserDriveRootAnalytic.md)
+Delete navigation property analytics for users
+
+### [Remove-MgUserDriveRootAnalyticItemActivityStat](Remove-MgUserDriveRootAnalyticItemActivityStat.md)
+Delete navigation property itemActivityStats for users
 
 ### [Remove-MgUserDriveRootListItem](Remove-MgUserDriveRootListItem.md)
 Delete navigation property listItem for users
@@ -1838,6 +1982,12 @@ Update entity in drives
 ### [Update-MgDriveItem](Update-MgDriveItem.md)
 Update the navigation property items in drives
 
+### [Update-MgDriveItemAnalytic](Update-MgDriveItemAnalytic.md)
+Update the navigation property analytics in drives
+
+### [Update-MgDriveItemAnalyticItemActivityStat](Update-MgDriveItemAnalyticItemActivityStat.md)
+Update the navigation property itemActivityStats in drives
+
 ### [Update-MgDriveItemListItem](Update-MgDriveItemListItem.md)
 Update the navigation property listItem in drives
 
@@ -1904,6 +2054,12 @@ Update the navigation property subscriptions in drives
 ### [Update-MgDriveRoot](Update-MgDriveRoot.md)
 Update the navigation property root in drives
 
+### [Update-MgDriveRootAnalytic](Update-MgDriveRootAnalytic.md)
+Update the navigation property analytics in drives
+
+### [Update-MgDriveRootAnalyticItemActivityStat](Update-MgDriveRootAnalyticItemActivityStat.md)
+Update the navigation property itemActivityStats in drives
+
 ### [Update-MgDriveRootListItem](Update-MgDriveRootListItem.md)
 Update the navigation property listItem in drives
 
@@ -1936,6 +2092,12 @@ Update the navigation property drives in groups
 
 ### [Update-MgGroupDriveItem](Update-MgGroupDriveItem.md)
 Update the navigation property items in groups
+
+### [Update-MgGroupDriveItemAnalytic](Update-MgGroupDriveItemAnalytic.md)
+Update the navigation property analytics in groups
+
+### [Update-MgGroupDriveItemAnalyticItemActivityStat](Update-MgGroupDriveItemAnalyticItemActivityStat.md)
+Update the navigation property itemActivityStats in groups
 
 ### [Update-MgGroupDriveItemListItem](Update-MgGroupDriveItemListItem.md)
 Update the navigation property listItem in groups
@@ -2002,6 +2164,12 @@ Update the navigation property subscriptions in groups
 
 ### [Update-MgGroupDriveRoot](Update-MgGroupDriveRoot.md)
 Update the navigation property root in groups
+
+### [Update-MgGroupDriveRootAnalytic](Update-MgGroupDriveRootAnalytic.md)
+Update the navigation property analytics in groups
+
+### [Update-MgGroupDriveRootAnalyticItemActivityStat](Update-MgGroupDriveRootAnalyticItemActivityStat.md)
+Update the navigation property itemActivityStats in groups
 
 ### [Update-MgGroupDriveRootListItem](Update-MgGroupDriveRootListItem.md)
 Update the navigation property listItem in groups
@@ -2078,6 +2246,12 @@ Update the navigation property drives in users
 ### [Update-MgUserDriveItem](Update-MgUserDriveItem.md)
 Update the navigation property items in users
 
+### [Update-MgUserDriveItemAnalytic](Update-MgUserDriveItemAnalytic.md)
+Update the navigation property analytics in users
+
+### [Update-MgUserDriveItemAnalyticItemActivityStat](Update-MgUserDriveItemAnalyticItemActivityStat.md)
+Update the navigation property itemActivityStats in users
+
 ### [Update-MgUserDriveItemListItem](Update-MgUserDriveItemListItem.md)
 Update the navigation property listItem in users
 
@@ -2143,6 +2317,12 @@ Update the navigation property subscriptions in users
 
 ### [Update-MgUserDriveRoot](Update-MgUserDriveRoot.md)
 Update the navigation property root in users
+
+### [Update-MgUserDriveRootAnalytic](Update-MgUserDriveRootAnalytic.md)
+Update the navigation property analytics in users
+
+### [Update-MgUserDriveRootAnalyticItemActivityStat](Update-MgUserDriveRootAnalyticItemActivityStat.md)
+Update the navigation property itemActivityStats in users
 
 ### [Update-MgUserDriveRootListItem](Update-MgUserDriveRootListItem.md)
 Update the navigation property listItem in users
