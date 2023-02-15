@@ -648,12 +648,12 @@ directive:
         let outFileParameterRegex = /(^\s*)public\s*global::System\.String\s*OutFile\s*/gmi
         let streamResponseRegex = /global::System\.Threading\.Tasks\.Task<global::System\.IO\.Stream>\s*response/gmi
         let octetStreamSchemaResponseRegex = /global::System\.Threading\.Tasks\.Task<.*(OctetStreamSchema|GraphReport)>\s*response/gmi
-        let overrideOnOkCallRegex = /(^\s*)(overrideOnOk\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
+        let overrideOn2XxCallRegex = /(^\s*)(overrideOn2Xx\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
         if($.match(outFileParameterRegex) && $.match(streamResponseRegex)) {
           // Handle file download.
-          $ = $.replace(overrideOnOkCallRegex, '$1$2\n$1using(var stream = await response){ this.WriteToFile(responseMessage, stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
+          $ = $.replace(overrideOn2XxCallRegex, '$1$2\n$1using(var stream = await response){ this.WriteToFile(responseMessage, stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
         } else if ($.match(outFileParameterRegex) && $.match(octetStreamSchemaResponseRegex)){
-          $ = $.replace(overrideOnOkCallRegex, '$1$2\n$1using(var stream = await responseMessage.Content.ReadAsStreamAsync()){ this.WriteToFile(responseMessage, stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
+          $ = $.replace(overrideOn2XxCallRegex, '$1$2\n$1using(var stream = await responseMessage.Content.ReadAsStreamAsync()){ this.WriteToFile(responseMessage, stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
         }
         return $;
       }
