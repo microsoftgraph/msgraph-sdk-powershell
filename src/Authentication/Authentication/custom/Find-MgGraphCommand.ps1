@@ -116,7 +116,17 @@ Function Find-MgGraphCommand {
             )
 
             Write-Debug "Received Command: $Command"
-            [array]$ResolvedCommands = GraphCommand_ReadGraphCommandMapping | Where-Object LegacyMapping -Contains $Command | Select-Object -ExpandProperty Command
+
+            # Read content of mapping file and cache in session object.
+            if ($null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance -and
+                $null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping) {
+                Write-Debug "Reading MgLegacyCommandMapping from session object."
+            }
+            else {
+                [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping = GraphCommand_ReadLegacyGraphCommandMapping
+            }
+
+            [array]$ResolvedCommands = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping | Where-Object LegacyMapping -Contains $Command | Select-Object -ExpandProperty Command
             if (!$ResolvedCommands) {
                 $ResolvedCommands = $Command
             }

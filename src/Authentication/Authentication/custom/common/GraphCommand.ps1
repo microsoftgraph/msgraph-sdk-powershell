@@ -33,22 +33,23 @@ function GraphCommand_ReadGraphCommandMetadata {
     return $Result
 }
 
-function GraphCommand_ReadGraphCommandMapping {
+function GraphCommand_ReadLegacyGraphCommandMapping {
     [CmdletBinding()]
     param(
         [Parameter(Position = 0)]
-        [string]$Path = (Join-Path $PSScriptRoot "MgCommandMapping.json")
-    )
+        [string]$Path = (Join-Path $PSScriptRoot "MgLegacyCommandMapping.json")    )
     if (!(Test-Path $Path)) {
-        throw "MgCommandMapping file not found at $Path."
+        throw "MgLegacyCommandMapping file not found at $Path."
     }
 
-    ## The following command will produce new json content for "MgCommandMapping.json" containing the latest cmdlet mappings from documentation.
-    # Invoke-WebRequest 'https://learn.microsoft.com/en-us/powershell/microsoftgraph/azuread-msoline-cmdlet-map?view=graph-powershell-1.0' | Select-Object -ExpandProperty Content | Select-String -Pattern '<td>.*?([a-z0-9-]+).*?</td>\s?<td><a href=.*>(.*)</a></td>' -AllMatches | Select-Object -ExpandProperty Matches | ForEach-Object { @{ LegacyMapping = $_.Groups[1].Value; Command = $_.Groups[2].Value } } | Group-Object Command | ForEach-Object { [pscustomobject][ordered]@{ Command = $_.Name; LegacyMapping = [string[]]$_.Group.LegacyMapping } } | ConvertTo-Json
+    ## The following command will produce new json content for "MgLegacyCommandMapping.json" containing the latest cmdlet mappings from documentation.
+    # Invoke-WebRequest 'https://learn.microsoft.com/en-us/powershell/microsoftgraph/azuread-msoline-cmdlet-map?view=graph-powershell-1.0' | Select-Object -ExpandProperty Content | Select-String -Pattern '<td>([a-z0-9-]+).*?</td>\s?<td><a href=.*>([a-z0-9-]+).*?</a></td>' -AllMatches | Select-Object -ExpandProperty Matches | ForEach-Object { @{ LegacyMapping = $_.Groups[1].Value; Command = $_.Groups[2].Value } } | Group-Object Command | ForEach-Object { [pscustomobject][ordered]@{ Command = $_.Name; LegacyMapping = [string[]]$_.Group.LegacyMapping } } | ConvertTo-Json
+    ## The following command will produce new json content for "MgLegacyCommandMapping.json" containing the latest cmdlet mappings from documentation markdown.
+    # Invoke-WebRequest 'https://github.com/MicrosoftDocs/microsoftgraph-docs-powershell/raw/main/microsoftgraph/docs-conceptual/azuread-msoline-cmdlet-map.md' | Select-Object -ExpandProperty Content | Select-String -Pattern '[|]([a-z0-9][a-z0-9-]+).*?\|\[?([a-z0-9][a-z0-9-]+).*?[]|]' -AllMatches | Select-Object -ExpandProperty Matches | ForEach-Object { @{ LegacyMapping = $_.Groups[1].Value; Command = $_.Groups[2].Value } } | Group-Object Command | ForEach-Object { [pscustomobject][ordered]@{ Command = $_.Name; LegacyMapping = [string[]]$_.Group.LegacyMapping } } | ConvertTo-Json
     
     $Result = @{}
     try {
-        Write-Debug "Reading MgCommandMapping from file path - $Path."
+        Write-Debug "Reading MgLegacyCommandMapping from file path - $Path."
         $FileProvider = [Microsoft.Graph.PowerShell.Authentication.Common.ProtectedFileProvider]::CreateFileProvider($Path, [Microsoft.Graph.PowerShell.Authentication.Common.FileProtection]::SharedRead)
         if ($PSEdition -eq "Core") {
             $Result = $FileProvider.CreateReader().ReadToEnd() | ConvertFrom-Json -AsHashtable

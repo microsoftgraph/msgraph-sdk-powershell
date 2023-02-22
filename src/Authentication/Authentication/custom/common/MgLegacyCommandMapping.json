@@ -16,13 +16,8 @@
   {
     "Command": "Add-MgServicePrincipalKey",
     "LegacyMapping": [
+      "New-AzureADServicePrincipalKeyCredential",
       "New-MsolServicePrincipalCredential"
-    ]
-  },
-  {
-    "Command": "Add-MgServicePrincipalKey ",
-    "LegacyMapping": [
-      "New-AzureADServicePrincipalKeyCredential"
     ]
   },
   {
@@ -249,6 +244,7 @@
     "LegacyMapping": [
       "Get-AzureADGroup",
       "Get-AzureADMSGroup",
+      "Get-MsolDirSyncProvisioningError",
       "Get-MsolGroup"
     ]
   },
@@ -451,7 +447,6 @@
     "Command": "Get-MgUser",
     "LegacyMapping": [
       "Get-AzureADUser",
-      "Get-MsolDirSyncProvisioningError",
       "Get-MsolUser"
     ]
   },
