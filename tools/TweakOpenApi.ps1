@@ -4,7 +4,10 @@
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
-    [string] $OpenAPIFilesPath
+    [string] $OpenAPIFilesPath,
+
+    [Parameter(Mandatory = $false)]
+    [Switch] $SetNavigationPropertiesAsReadOnly
 )
 
 $prepositionReplacements = @{
@@ -33,7 +36,7 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
             return $operationId
         }
 
-        if ($_.contains("x-ms-navigationProperty: true")) {
+        if ($SetNavigationPropertiesAsReadOnly.IsPresent -and $_.contains("x-ms-navigationProperty: true")) {
             # Mark navigation properties as readOnly.
             $navigationPropertyExtension = ($_ -replace "x-ms-navigationProperty", "readOnly")
             $modified = $true

@@ -17264,7 +17264,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
               description: The children categories
-              readOnly: true
+              x-ms-navigationProperty: true
             definitionFile:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
             definitions:
@@ -17272,7 +17272,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The immediate GroupPolicyDefinition children of the category
-              readOnly: true
+              x-ms-navigationProperty: true
             parent:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
           additionalProperties:
@@ -17326,7 +17326,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The group policy definitions associated with the file.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
@@ -17392,7 +17392,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
               description: The group policy presentations associated with the definition.
-              readOnly: true
+              x-ms-navigationProperty: true
             previousVersionDefinition:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
           additionalProperties:
@@ -17491,13 +17491,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicySettingMapping'
               description: A list of group policy settings to MDM/Intune mappings.
-              readOnly: true
+              x-ms-navigationProperty: true
             unsupportedGroupPolicyExtensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unsupportedGroupPolicyExtension'
               description: A list of unsupported group policy extensions inside the Group Policy Object.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Group Policy migration report.
@@ -17680,7 +17680,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyOperation'
               description: The list of operations on the uploaded ADMX file.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The entity represents an ADMX (Administrative Template) XML file uploaded by Administrator. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
@@ -17833,7 +17833,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.intuneBrandingProfileAssignment'
               description: The list of group assignments for the branding profile
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: This entity contains data which is used in customizing the tenant level appearance of the Company Portal applications as well as the end user web portal.
@@ -18086,7 +18086,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
               description: The set of Role Scope Tags defined on the Role Assignment.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
@@ -18113,7 +18113,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
               description: The list of assignments for this Role Scope Tag.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Role Scope Tag
@@ -18158,7 +18158,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleAssignment'
               description: List of Role assignments for this role definition.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: 'The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.'
@@ -18291,19 +18291,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
               description: The list of acceptance statuses for this T&C policy.
-              readOnly: true
+              x-ms-navigationProperty: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
               description: The list of assignments for this T&C policy.
-              readOnly: true
+              x-ms-navigationProperty: true
             groupAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsGroupAssignment'
               description: The list of group assignments for this T&C policy.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
@@ -18432,13 +18432,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcAuditEvent'
               description: Cloud PC audit event.
-              readOnly: true
+              x-ms-navigationProperty: true
             cloudPCs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
               description: Cloud managed virtual desktops.
-              readOnly: true
+              x-ms-navigationProperty: true
             crossCloudGovernmentOrganizationMapping:
               $ref: '#/components/schemas/microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping'
             deviceImages:
@@ -18446,25 +18446,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
               description: The image resource on Cloud PC.
-              readOnly: true
+              x-ms-navigationProperty: true
             externalPartnerSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
               description: The external partner settings on a Cloud PC.
-              readOnly: true
+              x-ms-navigationProperty: true
             galleryImages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
               description: The gallery image resource on Cloud PC.
-              readOnly: true
+              x-ms-navigationProperty: true
             onPremisesConnections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
               description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-              readOnly: true
+              x-ms-navigationProperty: true
             organizationSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOrganizationSettings'
             provisioningPolicies:
@@ -18472,7 +18472,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
               description: Cloud PC provisioning policy.
-              readOnly: true
+              x-ms-navigationProperty: true
             reports:
               $ref: '#/components/schemas/microsoft.graph.cloudPcReports'
             servicePlans:
@@ -18480,30 +18480,30 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
               description: Cloud PC service plans.
-              readOnly: true
+              x-ms-navigationProperty: true
             sharedUseServicePlans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
-              readOnly: true
+              x-ms-navigationProperty: true
             snapshots:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
               description: Cloud PC snapshots.
-              readOnly: true
+              x-ms-navigationProperty: true
             supportedRegions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
               description: Cloud PC supported regions.
-              readOnly: true
+              x-ms-navigationProperty: true
             userSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcUserSetting'
               description: Cloud PC user settings.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcAuditEvent:
@@ -18938,7 +18938,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
               description: A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcProvisioningPolicyAssignment:
@@ -18962,7 +18962,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
               description: The export jobs created for downloading reports.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcExportJob:
@@ -19148,7 +19148,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
               description: 'Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcUserSettingAssignment:

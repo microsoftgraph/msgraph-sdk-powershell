@@ -5217,17 +5217,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-              readOnly: true
+              x-ms-navigationProperty: true
             provisioning:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-              readOnly: true
+              x-ms-navigationProperty: true
             signIns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.signIn'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.directoryAudit:
@@ -5440,7 +5440,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
               description: Entity representing a job to export a report
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Singleton entity that acts as a container for all reports functionality.
@@ -5498,22 +5498,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-          readOnly: true
+          x-ms-navigationProperty: true
         dailyPrintUsageByUser:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-          readOnly: true
+          x-ms-navigationProperty: true
         monthlyPrintUsageByPrinter:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-          readOnly: true
+          x-ms-navigationProperty: true
         monthlyPrintUsageByUser:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-          readOnly: true
+          x-ms-navigationProperty: true
         security:
           $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
       additionalProperties:

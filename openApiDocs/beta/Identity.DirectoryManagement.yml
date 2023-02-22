@@ -18946,19 +18946,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Users and groups that are members of this administrative unit. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             scopedRoleMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
               description: Scoped-role members of this administrative unit.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for this administrative unit. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -19071,7 +19071,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -19079,18 +19079,18 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The transitive reports for a contact. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.contract:
@@ -19283,43 +19283,43 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
               description: Represents the usage rights a device has been granted.
-              readOnly: true
+              x-ms-navigationProperty: true
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the device. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             commands:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
               description: Set of commands sent to this device.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.command:
@@ -19388,68 +19388,68 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.impactedResource'
-              readOnly: true
+              x-ms-navigationProperty: true
             recommendations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recommendation'
               description: List of recommended improvements to improve tenant posture.
-              readOnly: true
+              x-ms-navigationProperty: true
             administrativeUnits:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
               description: Conceptual container for user and group directory objects.
-              readOnly: true
+              x-ms-navigationProperty: true
             attributeSets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attributeSet'
               description: Group of related custom security attribute definitions.
-              readOnly: true
+              x-ms-navigationProperty: true
             customSecurityAttributeDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
               description: Schema of a custom security attributes (key-value pairs).
-              readOnly: true
+              x-ms-navigationProperty: true
             deletedItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              readOnly: true
+              x-ms-navigationProperty: true
             federationConfigurations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
               description: Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-              readOnly: true
+              x-ms-navigationProperty: true
             inboundSharedUserProfiles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
-              readOnly: true
+              x-ms-navigationProperty: true
             onPremisesSynchronization:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
               description: A container for on-premises directory synchronization functionalities that are available for the organization.
-              readOnly: true
+              x-ms-navigationProperty: true
             outboundSharedUserProfiles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outboundSharedUserProfile'
-              readOnly: true
+              x-ms-navigationProperty: true
             sharedEmailDomains:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedEmailDomain'
-              readOnly: true
+              x-ms-navigationProperty: true
             featureRolloutPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.attributeSet:
@@ -19509,7 +19509,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.allowedValue'
               description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.allowedValue:
@@ -19550,7 +19550,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.identityProviderBase:
@@ -19664,7 +19664,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.tenantReference'
-          readOnly: true
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.tenantReference:
@@ -19716,13 +19716,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             scopedMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
               description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.directoryRoleTemplate:
@@ -19816,30 +19816,30 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
-              readOnly: true
+              x-ms-navigationProperty: true
             federationConfiguration:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internalDomainFederation'
               description: Domain settings configured by customer when federated with Azure AD. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             serviceConfigurationRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
               description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             sharedEmailDomainInvitations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedEmailDomainInvitation'
-              readOnly: true
+              x-ms-navigationProperty: true
             verificationDnsRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
               description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.internalDomainFederation:
@@ -20035,13 +20035,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
               description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the organization resource. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.organizationSettings'
           additionalProperties:
@@ -20057,7 +20057,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.organizationalBrandingLocalization'
               description: Add different branding based on a locale.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.organizationalBrandingLocalization:
@@ -20086,7 +20086,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
               description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.insightsSettings:
@@ -20617,7 +20617,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.impactedResource'
               description: The list of directory objects associated with the recommendation.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.settingTemplateValue:

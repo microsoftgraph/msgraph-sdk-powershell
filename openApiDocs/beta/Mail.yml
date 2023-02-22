@@ -8928,7 +8928,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
               description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.inferenceClassificationOverride:
@@ -8991,36 +8991,36 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The collection of child folders in the mailFolder.
-              readOnly: true
+              x-ms-navigationProperty: true
             messageRules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
               description: The collection of rules that apply to the user's Inbox folder.
-              readOnly: true
+              x-ms-navigationProperty: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The collection of messages in the mailFolder.
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             userConfigurations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConfiguration'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.messageRule:
@@ -9168,31 +9168,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: The fileAttachment and itemAttachment attachments for the message.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the message. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             mentions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mention'
               description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the message. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the message. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.attachment:

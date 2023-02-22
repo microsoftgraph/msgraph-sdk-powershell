@@ -1147,7 +1147,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
               description: The list of group assignments for the device configuration profile
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -1356,49 +1356,49 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
               description: Resource to grant access to users or groups.
-              readOnly: true
+              x-ms-navigationProperty: true
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
               description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignmentScheduleInstances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
               description: Instances for active role assignments.
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignmentScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
               description: Requests for active role assignments to principals through PIM.
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignmentSchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
               description: Schedules for active role assignment operations.
-              readOnly: true
+              x-ms-navigationProperty: true
             roleEligibilityScheduleInstances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
               description: Instances for role eligibility requests.
-              readOnly: true
+              x-ms-navigationProperty: true
             roleEligibilityScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
               description: Requests for role eligibilities for principals through PIM.
-              readOnly: true
+              x-ms-navigationProperty: true
             roleEligibilitySchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
               description: Schedules for role eligibility operations.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -1570,7 +1570,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
               description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleAssignmentScheduleInstance:

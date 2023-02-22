@@ -43198,31 +43198,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
               description: The permissions of the users with whom the calendar is shared.
-              readOnly: true
+              x-ms-navigationProperty: true
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The calendar view for the calendar. Navigation property. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The events in the calendar. Navigation property. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.calendarPermission:
@@ -43369,7 +43369,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             extensions:
@@ -43377,25 +43377,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the event. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.attachment:
@@ -43506,7 +43506,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
               description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.entity:

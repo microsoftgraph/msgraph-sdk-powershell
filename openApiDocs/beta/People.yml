@@ -6234,7 +6234,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
               description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activityStatistics:
@@ -6369,115 +6369,115 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
-              readOnly: true
+              x-ms-navigationProperty: true
             addresses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
               description: Represents details of addresses associated with the user.
-              readOnly: true
+              x-ms-navigationProperty: true
             anniversaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
               description: Represents the details of meaningful dates associated with a person.
-              readOnly: true
+              x-ms-navigationProperty: true
             awards:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
               description: Represents the details of awards or honors associated with a person.
-              readOnly: true
+              x-ms-navigationProperty: true
             certifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
               description: Represents the details of certifications associated with a person.
-              readOnly: true
+              x-ms-navigationProperty: true
             educationalActivities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
               description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
-              readOnly: true
+              x-ms-navigationProperty: true
             emails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
               description: Represents detailed information about email addresses associated with the user.
-              readOnly: true
+              x-ms-navigationProperty: true
             interests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
               description: Provides detailed information about interests the user has associated with themselves in various services.
-              readOnly: true
+              x-ms-navigationProperty: true
             languages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
               description: Represents detailed information about languages that a user has added to their profile.
-              readOnly: true
+              x-ms-navigationProperty: true
             names:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personName'
               description: Represents the names a user has added to their profile.
-              readOnly: true
+              x-ms-navigationProperty: true
             notes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
               description: Represents notes that a user has added to their profile.
-              readOnly: true
+              x-ms-navigationProperty: true
             patents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
               description: Represents patents that a user has added to their profile.
-              readOnly: true
+              x-ms-navigationProperty: true
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
               description: Represents detailed information about phone numbers associated with a user in various services.
-              readOnly: true
+              x-ms-navigationProperty: true
             positions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
               description: Represents detailed information about work positions associated with a user's profile.
-              readOnly: true
+              x-ms-navigationProperty: true
             projects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
               description: Represents detailed information about projects associated with a user.
-              readOnly: true
+              x-ms-navigationProperty: true
             publications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
               description: Represents details of any publications a user has added to their profile.
-              readOnly: true
+              x-ms-navigationProperty: true
             skills:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
               description: Represents detailed information about skills associated with a user in various services.
-              readOnly: true
+              x-ms-navigationProperty: true
             webAccounts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
               description: Represents web accounts the user has indicated they use or has added to their user profile.
-              readOnly: true
+              x-ms-navigationProperty: true
             websites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
               description: Represents detailed information about websites associated with a user in various services.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userAccountInformation:

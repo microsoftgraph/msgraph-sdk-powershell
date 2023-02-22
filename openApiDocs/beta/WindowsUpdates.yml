@@ -5339,13 +5339,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.browserSharedCookie'
               description: A collection of shared cookies defined for the site list.
-              readOnly: true
+              x-ms-navigationProperty: true
             sites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.browserSite'
               description: A collection of sites defined for the site list.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: A singleton entity which is used to specify IE mode site list metadata
@@ -5372,31 +5372,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
               description: The set of updatableAsset resources to which a deployment can apply.
-              readOnly: true
+              x-ms-navigationProperty: true
             deployments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
               description: Deployments created using the deployment service.
-              readOnly: true
+              x-ms-navigationProperty: true
             resourceConnections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
               description: Service connections to external resources such as analytics workspaces.
-              readOnly: true
+              x-ms-navigationProperty: true
             updatableAssets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
               description: Assets registered with the deployment service that can receive updates.
-              readOnly: true
+              x-ms-navigationProperty: true
             updatePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
               description: A collection of policies for approving the deployment of different content to an audience over time.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.catalog:
@@ -5410,7 +5410,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
               description: Lists the content that you can approve for deployment. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.catalogEntry:
@@ -5452,13 +5452,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
               description: Specifies the assets to exclude from the audience.
-              readOnly: true
+              x-ms-navigationProperty: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
               description: Specifies the assets to include in the audience.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.updatableAsset:
@@ -5538,7 +5538,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChange'
               description: Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.complianceChange:

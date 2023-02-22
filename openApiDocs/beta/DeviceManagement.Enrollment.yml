@@ -9836,7 +9836,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appleEnrollmentProfileAssignment'
               description: The list of assignments for this profile.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile's configurations at enrollment of the corresponding device.
@@ -9970,7 +9970,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
               description: Policy and application status details for this device.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Represents an Autopilot flow event.
@@ -10103,13 +10103,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentProfile'
               description: The enrollment profiles.
-              readOnly: true
+              x-ms-navigationProperty: true
             importedAppleDeviceIdentities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentity'
               description: The imported Apple device identities.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The depOnboardingSetting represents an instance of the Apple DEP service being onboarded to Intune. The onboarded service instance manages an Apple Token used to synchronize data between Apple and Intune.
@@ -10410,7 +10410,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
               description: The list of group assignments for the device configuration profile
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -10607,13 +10607,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
               description: The list of assigned devices for the profile.
-              readOnly: true
+              x-ms-navigationProperty: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfileAssignment'
               description: The list of group assignments for the profile.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Windows Autopilot Deployment Profile
@@ -10812,7 +10812,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfileAssignment'
               description: The list of group assignments of the profile.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Windows Feature Update Profile
@@ -10853,17 +10853,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRbacResourceNamespace:
@@ -10880,7 +10880,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
               description: Operations that an authorized principal are allowed to perform.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRbacResourceAction:
@@ -10973,19 +10973,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
               description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             directoryScopes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             principals:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             roleDefinition:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
           additionalProperties:
@@ -11065,7 +11065,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
               description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -11909,57 +11909,57 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignmentApprovals:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approval'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignmentScheduleInstances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignmentScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignmentSchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleEligibilityScheduleInstances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleEligibilityScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleEligibilitySchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRbacApplication:
@@ -11972,22 +11972,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
-              readOnly: true
+              x-ms-navigationProperty: true
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRolePermission:
@@ -12488,7 +12488,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStep'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleAssignmentScheduleInstance:

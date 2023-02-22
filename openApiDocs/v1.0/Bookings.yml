@@ -2444,12 +2444,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
-          readOnly: true
+          x-ms-navigationProperty: true
         bookingCurrencies:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
-          readOnly: true
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.bookingBusiness:
@@ -2509,37 +2509,37 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
               description: All the appointments of this business. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
               description: The set of appointments of this business in a specified date range. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             customers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
               description: All the customers of this business. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             customQuestions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
               description: All the custom questions of this business. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             services:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
               description: All the services offered by this business. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             staffMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
               description: All the staff members that provide services in this business. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Represents a Microsot Bookings Business.

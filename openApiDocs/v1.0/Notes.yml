@@ -21980,37 +21980,37 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
               description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
               description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             pages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
               description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             resources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
               description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             sectionGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
               description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.notebook:
@@ -22044,13 +22044,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
               description: The section groups in the notebook. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in the notebook. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.sectionGroup:
@@ -22076,13 +22076,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
               description: The section groups in the section. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in the section group. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.onenoteSection:
@@ -22106,7 +22106,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
               description: The collection of pages in the section.  Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             parentNotebook:
               $ref: '#/components/schemas/microsoft.graph.notebook'
             parentSectionGroup:

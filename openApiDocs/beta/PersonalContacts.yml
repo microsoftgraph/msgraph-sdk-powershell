@@ -6392,25 +6392,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
               description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
               description: The contacts in the folder. Navigation property. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.contact:
@@ -6545,13 +6545,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the contact. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             singleValueExtendedProperties:
@@ -6559,7 +6559,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.extension:

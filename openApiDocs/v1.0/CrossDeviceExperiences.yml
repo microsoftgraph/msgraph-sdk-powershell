@@ -739,7 +739,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
               description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activityHistoryItem:

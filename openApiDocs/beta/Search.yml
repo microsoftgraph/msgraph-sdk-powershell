@@ -2817,7 +2817,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-          readOnly: true
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalConnection:
@@ -2859,17 +2859,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-              readOnly: true
+              x-ms-navigationProperty: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
-              readOnly: true
+              x-ms-navigationProperty: true
             quota:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
             schema:
@@ -2895,7 +2895,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
               description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.identity:
@@ -2928,7 +2928,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
               description: Write-only property. Returns results.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.externalActivity:
@@ -3010,19 +3010,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.acronym'
               description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
-              readOnly: true
+              x-ms-navigationProperty: true
             bookmarks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.bookmark'
               description: Administrative answer in Microsoft Search results for common search queries in an organization.
-              readOnly: true
+              x-ms-navigationProperty: true
             qnas:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.qna'
               description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.search.acronym:
