@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             await authProvider.AuthenticateRequestAsync(requestMessage);
 
             // Assert
-            Assert.IsType<TokenCredentialAuthProvider>(authProvider);
+            Assert.IsType<AzureIdentityAuthProvider>(authProvider);
             Assert.Equal("Bearer", requestMessage.Headers.Authorization.Scheme);
             Assert.Equal(accessToken, requestMessage.Headers.Authorization.Parameter);
 

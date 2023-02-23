@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext))
             };
-            
+
             if (IsAuthFlowNotSupported())
             {
                 throw new Exception(string.Format(CultureInfo.InvariantCulture, ErrorConstants.Message.AuthNotSupported, "Username and password"));
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             var tokenCrdential = await GetTokenCredentialAsync(authContext, default).ConfigureAwait(false);
-            return new TokenCredentialAuthProvider(tokenCrdential, GetScopes(authContext));
+            return new AzureIdentityAuthProvider(tokenCrdential, GetScopes(authContext));
         }
 
         public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken)
