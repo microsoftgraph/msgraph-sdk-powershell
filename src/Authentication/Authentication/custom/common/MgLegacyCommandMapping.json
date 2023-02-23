@@ -86,7 +86,8 @@
     "Command": "Get-MgContact",
     "LegacyMapping": [
       "Get-AzureADContact",
-      "Get-MsolContact"
+      "Get-MsolContact",
+      "Get-MsolDirSyncProvisioningError"
     ]
   },
   {
@@ -447,6 +448,7 @@
     "Command": "Get-MgUser",
     "LegacyMapping": [
       "Get-AzureADUser",
+      "Get-MsolDirSyncProvisioningError",
       "Get-MsolUser"
     ]
   },
