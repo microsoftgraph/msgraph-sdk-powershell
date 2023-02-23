@@ -174,7 +174,7 @@ function New-MgMigrationPlan {
 
 # TODO: Remove test when done.
 #New-MgMigrationPlan -FilePath "C:\Dev\M\msgraph-sdk-powershell\samples\6-Sites.ps1"
-#New-MgMigrationPlan -FilePath "C:\Projects\msgraph-sdk-powershell\samples\6-Sites.ps1"
+#New-MgMigrationPlan -FilePath "C:\Projects\msgraph-sdk-powershell\samples\6-Sites.ps1" -GraphProfile Beta
 # Test cases:
 # 1. Cmdlet with no changes.
 # 2. Cmdlet with changes.
