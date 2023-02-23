@@ -2269,7 +2269,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule

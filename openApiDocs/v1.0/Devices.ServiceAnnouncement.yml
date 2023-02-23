@@ -1807,19 +1807,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealth'
               description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
-              readOnly: true
+              x-ms-navigationProperty: true
             issues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
               description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
-              readOnly: true
+              x-ms-navigationProperty: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
               description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.serviceHealth:
@@ -1838,7 +1838,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
               description: 'A collection of issues that happened on the service, with detailed information for each issue.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.serviceHealthIssue:
@@ -1926,7 +1926,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
               description: A collection of serviceAnnouncementAttachments.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.serviceAnnouncementAttachment:

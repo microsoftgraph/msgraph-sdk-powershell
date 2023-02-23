@@ -11603,7 +11603,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans owned by the group.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.plannerPlan:
@@ -11633,7 +11633,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
               description: Read-only. Nullable. Collection of buckets in the plan.
-              readOnly: true
+              x-ms-navigationProperty: true
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
@@ -11641,7 +11641,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. Collection of tasks in the plan.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.plannerBucket:
@@ -11666,7 +11666,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. The collection of tasks in the bucket.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.plannerTask:
@@ -11860,19 +11860,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
               description: Read-only. Nullable. Returns a collection of the specified buckets
-              readOnly: true
+              x-ms-navigationProperty: true
             plans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns a collection of the specified plans
-              readOnly: true
+              x-ms-navigationProperty: true
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. Returns a collection of the specified tasks
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.plannerUser:
@@ -11886,13 +11886,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
-              readOnly: true
+              x-ms-navigationProperty: true
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. Returns the plannerPlans shared with the user.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.entity:

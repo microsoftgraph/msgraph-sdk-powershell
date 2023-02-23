@@ -17114,7 +17114,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
               description: The appManagementPolicy applied to this application.
-              readOnly: true
+              x-ms-navigationProperty: true
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             extensionProperties:
@@ -17122,35 +17122,35 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
               description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-              readOnly: true
+              x-ms-navigationProperty: true
             federatedIdentityCredentials:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
               description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
-              readOnly: true
+              x-ms-navigationProperty: true
             homeRealmDiscoveryPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-              readOnly: true
+              x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-              readOnly: true
+              x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-              readOnly: true
+              x-ms-navigationProperty: true
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
               description: The tokenLifetimePolicies assigned to this application. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             connectorGroup:
               $ref: '#/components/schemas/microsoft.graph.connectorGroup'
             synchronization:
@@ -17177,12 +17177,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.application'
-              readOnly: true
+              x-ms-navigationProperty: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connector'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:
@@ -17362,13 +17362,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
               description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
-              readOnly: true
+              x-ms-navigationProperty: true
             templates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
               description: Pre-configured synchronization settings for a particular application.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.synchronizationJob:
@@ -17463,7 +17463,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
               description: Contains the collection of directories and all of their objects.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.directoryDefinition:
@@ -17765,31 +17765,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
               description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             agents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
               description: List of existing onPremisesAgent objects. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             connectorGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
               description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             connectors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connector'
               description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             publishedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
               description: List of existing publishedResource objects. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.onPremisesAgentGroup:
@@ -17811,13 +17811,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
               description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             publishedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
               description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.onPremisesAgent:
@@ -17843,7 +17843,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
               description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.publishedResource:
@@ -17867,7 +17867,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
               description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.connector:
@@ -17889,7 +17889,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
               description: The connectorGroup that the connector is a member of. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.servicePrincipal:
@@ -18060,100 +18060,100 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
               description: The appManagementPolicy applied to this service principal.
-              readOnly: true
+              x-ms-navigationProperty: true
             appRoleAssignedTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             appRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             claimsMappingPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             createdObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects created by this service principal. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             delegatedPermissionClassifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
               description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             endpoints:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
               description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
-              readOnly: true
+              x-ms-navigationProperty: true
             federatedIdentityCredentials:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-              readOnly: true
+              x-ms-navigationProperty: true
             homeRealmDiscoveryPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
               description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             licenseDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
-              readOnly: true
+              x-ms-navigationProperty: true
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             oauth2PermissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
               description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-              readOnly: true
+              x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-              readOnly: true
+              x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
               description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
               description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              readOnly: true
+              x-ms-navigationProperty: true
             synchronization:
               $ref: '#/components/schemas/microsoft.graph.synchronization'
           additionalProperties:
@@ -18172,7 +18172,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.delegatedPermissionClassification:
@@ -18797,7 +18797,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.synchronizationSchedule:

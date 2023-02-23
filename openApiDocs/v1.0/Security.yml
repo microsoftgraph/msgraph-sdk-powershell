@@ -8149,30 +8149,30 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alert'
               description: A collection of alerts in Microsoft 365 Defender.
-              readOnly: true
+              x-ms-navigationProperty: true
             incidents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.incident'
               description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
-              readOnly: true
+              x-ms-navigationProperty: true
             attackSimulation:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
             alerts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alert'
-              readOnly: true
+              x-ms-navigationProperty: true
             secureScoreControlProfiles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
-              readOnly: true
+              x-ms-navigationProperty: true
             secureScores:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.secureScore'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.alert:
@@ -8498,13 +8498,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
               description: Represents simulation automation created to run on a tenant.
-              readOnly: true
+              x-ms-navigationProperty: true
             simulations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.simulation'
               description: Represents an attack simulation training campaign in a tenant.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.simulationAutomation:
@@ -8556,7 +8556,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
               description: A collection of simulation automation runs.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.simulationAutomationRun:
@@ -8657,7 +8657,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoveryCase:
@@ -8683,31 +8683,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
               description: Returns a list of case ediscoveryCustodian objects for this case.
-              readOnly: true
+              x-ms-navigationProperty: true
             noncustodialDataSources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
               description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
               description: Returns a list of case caseOperation objects for this case.
-              readOnly: true
+              x-ms-navigationProperty: true
             reviewSets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
               description: Returns a list of eDiscoveryReviewSet objects in the case.
-              readOnly: true
+              x-ms-navigationProperty: true
             searches:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
               description: Returns a list of eDiscoverySearch objects associated with this case.
-              readOnly: true
+              x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
             tags:
@@ -8715,7 +8715,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
               description: Returns a list of ediscoveryReviewTag objects associated to this case.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoveryCustodian:
@@ -8741,19 +8741,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.siteSource'
               description: Data source entity for SharePoint sites associated with the custodian.
-              readOnly: true
+              x-ms-navigationProperty: true
             unifiedGroupSources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
               description: Data source entity for groups associated with the custodian.
-              readOnly: true
+              x-ms-navigationProperty: true
             userSources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.userSource'
               description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoveryIndexOperation:
@@ -8798,13 +8798,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions reusable across lists under this site.
-              readOnly: true
+              x-ms-navigationProperty: true
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
               description: The collection of content types defined for this site.
-              readOnly: true
+              x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             drives:
@@ -8812,42 +8812,42 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.drive'
               description: The collection of drives (document libraries) under this site.
-              readOnly: true
+              x-ms-navigationProperty: true
             externalColumns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              readOnly: true
+              x-ms-navigationProperty: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseItem'
               description: Used to address any item contained in this site. This collection can't be enumerated.
-              readOnly: true
+              x-ms-navigationProperty: true
             lists:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.list'
               description: The collection of lists under this site.
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the site.
-              readOnly: true
+              x-ms-navigationProperty: true
             permissions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The permissions associated with the site. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             sites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.site'
               description: The collection of the sub-sites under this site.
-              readOnly: true
+              x-ms-navigationProperty: true
             termStore:
               $ref: '#/components/schemas/microsoft.graph.termStore.store'
             termStores:
@@ -8855,7 +8855,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.store'
               description: The collection of termStores under this site.
-              readOnly: true
+              x-ms-navigationProperty: true
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
           additionalProperties:
@@ -9047,7 +9047,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: Represents the app roles a group has been granted for an application. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -9055,55 +9055,55 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
-              readOnly: true
+              x-ms-navigationProperty: true
             membersWithLicenseErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: A list of group members with license errors from this group-based license assignment. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
-              readOnly: true
+              x-ms-navigationProperty: true
             permissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               description: The permission that has been granted for a group to a specific application. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             settings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupSetting'
               description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The direct and transitive members of a group. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             acceptedSenders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-              readOnly: true
+              x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             calendarView:
@@ -9111,31 +9111,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The calendar view for the calendar. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             conversations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversation'
               description: The group's conversations.
-              readOnly: true
+              x-ms-navigationProperty: true
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's calendar events.
-              readOnly: true
+              x-ms-navigationProperty: true
             rejectedSenders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-              readOnly: true
+              x-ms-navigationProperty: true
             threads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationThread'
               description: The group's conversation threads. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             drives:
@@ -9143,25 +9143,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.drive'
               description: The group's drives. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             sites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.site'
               description: The list of SharePoint sites in this group. Access the default site with /sites/root.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the group. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             groupLifecyclePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
               description: The collection of lifecycle policies for this group. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             planner:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
@@ -9173,7 +9173,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
               description: The profile photos owned by the group. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -9275,7 +9275,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
               description: Represents queries within the review set.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoverySearch:
@@ -9291,7 +9291,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.dataSource'
               description: Adds an additional source to the eDiscovery search.
-              readOnly: true
+              x-ms-navigationProperty: true
             addToReviewSetOperation:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryAddToReviewSetOperation'
             custodianSources:
@@ -9299,7 +9299,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.dataSource'
               description: Custodian sources that are included in the eDiscovery search.
-              readOnly: true
+              x-ms-navigationProperty: true
             lastEstimateStatisticsOperation:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryEstimateOperation'
             noncustodialSources:
@@ -9307,7 +9307,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
               description: noncustodialDataSource sources that are included in the eDiscovery search
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.security.additionalDataOptions:
@@ -9337,7 +9337,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
               description: Returns the tags that are a child of a tag.
-              readOnly: true
+              x-ms-navigationProperty: true
             parent:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
           additionalProperties:
@@ -9486,7 +9486,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alert'
               description: The list of related alerts. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.security.huntingQueryResults:
@@ -10654,7 +10654,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
-              readOnly: true
+              x-ms-navigationProperty: true
             lastSevenDays:
               $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
           additionalProperties:
@@ -10820,25 +10820,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
               description: The collection of content types that are ancestors of this content type.
-              readOnly: true
+              x-ms-navigationProperty: true
             columnLinks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnLink'
               description: The collection of columns that are required by this content type.
-              readOnly: true
+              x-ms-navigationProperty: true
             columnPositions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: Column order information in a content type.
-              readOnly: true
+              x-ms-navigationProperty: true
             columns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions for this contentType.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.drive:
@@ -10864,19 +10864,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
-              readOnly: true
+              x-ms-navigationProperty: true
             following:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: The list of items the user is following. Only in OneDrive for Business.
-              readOnly: true
+              x-ms-navigationProperty: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: All items contained in the drive. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             list:
               $ref: '#/components/schemas/microsoft.graph.list'
             root:
@@ -10886,7 +10886,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: Collection of common folders available in OneDrive. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.list:
@@ -10910,13 +10910,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of field definitions for this list.
-              readOnly: true
+              x-ms-navigationProperty: true
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
               description: The collection of content types present in this list.
-              readOnly: true
+              x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             items:
@@ -10924,19 +10924,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
               description: All items contained in the list.
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the list.
-              readOnly: true
+              x-ms-navigationProperty: true
             subscriptions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
               description: The set of subscriptions on the list.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.richLongRunningOperation:
@@ -11030,13 +11030,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.group'
               description: Collection of all groups available in the term store.
-              readOnly: true
+              x-ms-navigationProperty: true
             sets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.set'
               description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.onenote:
@@ -11050,37 +11050,37 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
               description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
               description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             pages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
               description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             resources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
               description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             sectionGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
               description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.security.sourceType:
@@ -11320,31 +11320,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
               description: The permissions of the users with whom the calendar is shared.
-              readOnly: true
+              x-ms-navigationProperty: true
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The calendar view for the calendar. Navigation property. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The events in the calendar. Navigation property. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.event:
@@ -11466,7 +11466,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             extensions:
@@ -11474,25 +11474,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the event. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.conversation:
@@ -11525,7 +11525,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationThread'
               description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.conversationThread:
@@ -11570,7 +11570,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -11614,7 +11614,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans owned by the group.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.profilePhoto:
@@ -11698,13 +11698,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
               description: List of channels either hosted in or shared with the team (incoming channels).
-              readOnly: true
+              x-ms-navigationProperty: true
             channels:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
               description: The collection of channels and messages associated with the team.
-              readOnly: true
+              x-ms-navigationProperty: true
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
             incomingChannels:
@@ -11712,25 +11712,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
               description: List of channels shared with the team.
-              readOnly: true
+              x-ms-navigationProperty: true
             installedApps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
               description: The apps installed in this team.
-              readOnly: true
+              x-ms-navigationProperty: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: Members and owners of the team.
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
               description: The async operations that ran or are running on this team.
-              readOnly: true
+              x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
@@ -11740,7 +11740,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkTag'
               description: The tags associated with the team.
-              readOnly: true
+              x-ms-navigationProperty: true
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
             schedule:
@@ -13011,25 +13011,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: Represents the app roles a user has been granted for an application. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             createdObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that were created by the user. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             directReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             licenseDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               description: A collection of this user's license details. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -13037,41 +13037,41 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             oauth2PermissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
-              readOnly: true
+              x-ms-navigationProperty: true
             ownedDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-              readOnly: true
+              x-ms-navigationProperty: true
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             registeredDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             scopedRoleMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             calendarGroups:
@@ -13079,37 +13079,37 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarGroup'
               description: The user's calendar groups. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             calendars:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
               description: The user's calendars. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The calendar view for the calendar. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             contactFolders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
               description: The user's contacts folders. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
               description: The user's contacts. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             inferenceClassification:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
             mailFolders:
@@ -13117,13 +13117,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The user's mail folders. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The messages in a mailbox or folder. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             outlook:
               $ref: '#/components/schemas/microsoft.graph.outlookUser'
             people:
@@ -13131,7 +13131,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.person'
               description: People that are relevant to the user. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             drives:
@@ -13139,42 +13139,42 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.drive'
               description: A collection of drives available for this user. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             followedSites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.site'
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the user. Read-only. Supports $expand. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             agreementAcceptances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
               description: The user's terms of use acceptance statuses. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             managedDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
               description: The managed devices associated with the user.
-              readOnly: true
+              x-ms-navigationProperty: true
             managedAppRegistrations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
               description: Zero or more managed app registrations that belong to the user.
-              readOnly: true
+              x-ms-navigationProperty: true
             deviceManagementTroubleshootingEvents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
               description: The list of troubleshooting events for this user.
-              readOnly: true
+              x-ms-navigationProperty: true
             planner:
               $ref: '#/components/schemas/microsoft.graph.plannerUser'
             insights:
@@ -13189,18 +13189,18 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              readOnly: true
+              x-ms-navigationProperty: true
             activities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
               description: The user's activities across devices. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             onlineMeetings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-              readOnly: true
+              x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
             authentication:
@@ -13209,12 +13209,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
-              readOnly: true
+              x-ms-navigationProperty: true
             joinedTeams:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.team'
-              readOnly: true
+              x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
@@ -13301,7 +13301,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemActivity'
               description: Exposes the itemActivities represented in this itemActivityStat resource.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.booleanColumn:
@@ -13614,12 +13614,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-          readOnly: true
+          x-ms-navigationProperty: true
         welcomePageColumns:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-          readOnly: true
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.documentSetContent:
@@ -13777,7 +13777,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             listItem:
               $ref: '#/components/schemas/microsoft.graph.listItem'
             permissions:
@@ -13785,25 +13785,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             subscriptions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
               description: The set of subscriptions on the item. Only supported on the root of a drive.
-              readOnly: true
+              x-ms-navigationProperty: true
             thumbnails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
               description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
               description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.listInfo:
@@ -13841,7 +13841,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
               description: Version information for a document set version created by a user.
-              readOnly: true
+              x-ms-navigationProperty: true
             driveItem:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
             fields:
@@ -13851,7 +13851,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.listItemVersion'
               description: The list of previous versions of the list item.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.subscription:
@@ -14038,7 +14038,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.set'
               description: 'All sets under the group in a term [store].'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.termStore.set:
@@ -14072,7 +14072,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.term'
               description: 'Children terms of set in term [store].'
-              readOnly: true
+              x-ms-navigationProperty: true
             parentGroup:
               $ref: '#/components/schemas/microsoft.graph.termStore.group'
             relations:
@@ -14080,13 +14080,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.relation'
               description: Indicates which terms have been pinned or reused directly under the set.
-              readOnly: true
+              x-ms-navigationProperty: true
             terms:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.term'
               description: All the terms under the set.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.notebook:
@@ -14120,13 +14120,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
               description: The section groups in the notebook. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in the notebook. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.onenoteOperation:
@@ -14247,13 +14247,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
               description: The section groups in the section. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in the section group. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.onenoteSection:
@@ -14277,7 +14277,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
               description: The collection of pages in the section.  Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             parentNotebook:
               $ref: '#/components/schemas/microsoft.graph.notebook'
             parentSectionGroup:
@@ -14650,13 +14650,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             inReplyTo:
               $ref: '#/components/schemas/microsoft.graph.post'
             multiValueExtendedProperties:
@@ -14664,13 +14664,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.plannerPlan:
@@ -14700,7 +14700,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
               description: Read-only. Nullable. Collection of buckets in the plan.
-              readOnly: true
+              x-ms-navigationProperty: true
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
@@ -14708,7 +14708,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. Collection of tasks in the plan.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.teamFunSettings:
@@ -14892,25 +14892,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of membership records associated with the channel.
-              readOnly: true
+              x-ms-navigationProperty: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the channel. A navigation property. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             sharedWithTeams:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
               description: A collection of teams with which a channel is shared.
-              readOnly: true
+              x-ms-navigationProperty: true
             tabs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the channel. A navigation property.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.teamsAppInstallation:
@@ -15019,7 +15019,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
               description: Users assigned to the tag.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.teamsTemplate:
@@ -15079,51 +15079,51 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
-              readOnly: true
+              x-ms-navigationProperty: true
             openShiftChangeRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
-              readOnly: true
+              x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
-              readOnly: true
+              x-ms-navigationProperty: true
             schedulingGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
               description: The logical grouping of users in the schedule (usually by role).
-              readOnly: true
+              x-ms-navigationProperty: true
             shifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shift'
               description: The shifts in the schedule.
-              readOnly: true
+              x-ms-navigationProperty: true
             swapShiftsChangeRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
-              readOnly: true
+              x-ms-navigationProperty: true
             timeOffReasons:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffReason'
               description: The set of reasons for a time off in the schedule.
-              readOnly: true
+              x-ms-navigationProperty: true
             timeOffRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
-              readOnly: true
+              x-ms-navigationProperty: true
             timesOff:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOff'
               description: The instances of times off in the schedule.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.certificationControl:
@@ -15615,7 +15615,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
               description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.contactFolder:
@@ -15637,25 +15637,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
               description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
               description: The contacts in the folder. Navigation property. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.contact:
@@ -15789,13 +15789,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the contact. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             singleValueExtendedProperties:
@@ -15803,7 +15803,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.inferenceClassification:
@@ -15817,7 +15817,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
               description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.mailFolder:
@@ -15864,31 +15864,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The collection of child folders in the mailFolder.
-              readOnly: true
+              x-ms-navigationProperty: true
             messageRules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
               description: The collection of rules that apply to the user's Inbox folder.
-              readOnly: true
+              x-ms-navigationProperty: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The collection of messages in the mailFolder.
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.message:
@@ -15989,25 +15989,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: The fileAttachment and itemAttachment attachments for the message.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the message. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the message. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the message. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.outlookUser:
@@ -16021,7 +16021,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookCategory'
               description: A list of categories defined for the user.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.person:
@@ -16420,13 +16420,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
               description: Device compliance policy states for this device.
-              readOnly: true
+              x-ms-navigationProperty: true
             deviceConfigurationStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
               description: Device configuration states for this device.
-              readOnly: true
+              x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
             users:
@@ -16434,7 +16434,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: The primary users associated with the managed device.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Devices that are managed or pre-enrolled through Intune
@@ -16498,19 +16498,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
               description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
-              readOnly: true
+              x-ms-navigationProperty: true
             intendedPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
               description: Zero or more policies admin intended for the app as of now.
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
               description: Zero or more long running operations triggered on the app registration.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
@@ -16543,13 +16543,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
-              readOnly: true
+              x-ms-navigationProperty: true
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. Returns the plannerPlans shared with the user.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.officeGraphInsights:
@@ -16563,19 +16563,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
               description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
-              readOnly: true
+              x-ms-navigationProperty: true
             trending:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
               description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
-              readOnly: true
+              x-ms-navigationProperty: true
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
               description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userSettings:
@@ -16652,7 +16652,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
               description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.onlineMeeting:
@@ -16746,7 +16746,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
               description: The attendance reports of an online meeting. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -16776,61 +16776,61 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
               description: The email address registered to a user for authentication.
-              readOnly: true
+              x-ms-navigationProperty: true
             fido2Methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
               description: Represents the FIDO2 security keys registered to a user for authentication.
-              readOnly: true
+              x-ms-navigationProperty: true
             methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
               description: Represents all authentication methods registered to a user.
-              readOnly: true
+              x-ms-navigationProperty: true
             microsoftAuthenticatorMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
               description: The details of the Microsoft Authenticator app registered to a user for authentication.
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
               description: Represents the status of a long-running operation.
-              readOnly: true
+              x-ms-navigationProperty: true
             passwordMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
               description: 'Represents the password that''s registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.'
-              readOnly: true
+              x-ms-navigationProperty: true
             phoneMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               description: The phone numbers registered to a user for authentication.
-              readOnly: true
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               description: The software OATH TOTP applications registered to a user for authentication.
-              readOnly: true
+              x-ms-navigationProperty: true
             temporaryAccessPassMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               description: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
-              readOnly: true
+              x-ms-navigationProperty: true
             windowsHelloForBusinessMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
               description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.chat:
@@ -16874,7 +16874,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
               description: A collection of all the apps in the chat. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             lastMessagePreview:
               $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
             members:
@@ -16882,25 +16882,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of all the members in the chat. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             pinnedMessages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
               description: A collection of all the pinned messages in the chat. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             tabs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -16914,13 +16914,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
               description: The list of associatedTeamInfo objects that a user is associated with.
-              readOnly: true
+              x-ms-navigationProperty: true
             installedApps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
               description: The apps installed in the personal scope of this user.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.todo:
@@ -16934,7 +16934,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.itemActionStat:
@@ -17031,13 +17031,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.term'
               description: Children of current term.
-              readOnly: true
+              x-ms-navigationProperty: true
             relations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.relation'
               description: To indicate which terms are related to the current term as either pinned or reused.
-              readOnly: true
+              x-ms-navigationProperty: true
             set:
               $ref: '#/components/schemas/microsoft.graph.termStore.set'
           additionalProperties:
@@ -17550,7 +17550,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookComment'
-              readOnly: true
+              x-ms-navigationProperty: true
             functions:
               $ref: '#/components/schemas/microsoft.graph.workbookFunctions'
             names:
@@ -17558,25 +17558,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookNamedItem'
               description: Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookOperation'
               description: 'The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.'
-              readOnly: true
+              x-ms-navigationProperty: true
             tables:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
               description: Represents a collection of tables associated with the workbook. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             worksheets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookWorksheet'
               description: Represents a collection of worksheets associated with the workbook. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.thumbnailSet:
@@ -18103,7 +18103,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. The collection of tasks in the bucket.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.plannerPlanDetails:
@@ -18336,13 +18336,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
               description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
-              readOnly: true
+              x-ms-navigationProperty: true
             replies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: Replies for a specified message. Supports $expand for channel messages.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.sharedWithChannelTeamInfo:
@@ -18360,7 +18360,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of team members who have access to the shared channel.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.teamsTab:
@@ -18404,7 +18404,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
               description: The details for each version of the app.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.teamsAppDefinition:
@@ -20080,7 +20080,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
               description: List of attendance records of an attendance report. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.emailAuthenticationMethod:
@@ -20391,13 +20391,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the task list. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.accessAction:
@@ -20527,7 +20527,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -20627,13 +20627,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTableColumn'
               description: Represents a collection of all the columns in the table. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             rows:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTableRow'
               description: Represents a collection of all the rows in the table. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             sort:
               $ref: '#/components/schemas/microsoft.graph.workbookTableSort'
             worksheet:
@@ -20664,19 +20664,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChart'
               description: Returns collection of charts that are part of the worksheet. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             names:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookNamedItem'
               description: Returns collection of names that are associated with the worksheet. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             pivotTables:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookPivotTable'
               description: Collection of PivotTables that are part of the worksheet.
-              readOnly: true
+              x-ms-navigationProperty: true
             protection:
               $ref: '#/components/schemas/microsoft.graph.workbookWorksheetProtection'
             tables:
@@ -20684,7 +20684,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
               description: Collection of tables that are part of the worksheet. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.thumbnail:
@@ -22145,31 +22145,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the device. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.authenticationPhoneType:
@@ -22275,30 +22275,30 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachmentBase'
               description: A collection of file attachments for the task.
-              readOnly: true
+              x-ms-navigationProperty: true
             attachmentSessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachmentSession'
-              readOnly: true
+              x-ms-navigationProperty: true
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
               description: A collection of checklistItems linked to a task.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the task. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             linkedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.workbookCommentReply:
@@ -22436,7 +22436,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChartSeries'
               description: Represents either a single series or collection of series in the chart. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             title:
               $ref: '#/components/schemas/microsoft.graph.workbookChartTitle'
             worksheet:
@@ -23041,7 +23041,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChartPoint'
               description: Represents a collection of all points in the series. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.workbookChartTitle:

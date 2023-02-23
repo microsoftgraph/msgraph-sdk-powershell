@@ -4024,7 +4024,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleAssignment'
               description: List of Role assignments for this role definition.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: 'The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.'
@@ -4127,13 +4127,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
               description: The list of acceptance statuses for this T&C policy.
-              readOnly: true
+              x-ms-navigationProperty: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
               description: The list of assignments for this T&C policy.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.

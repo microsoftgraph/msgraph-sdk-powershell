@@ -31152,7 +31152,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.company'
-          readOnly: true
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.company:
@@ -31177,177 +31177,177 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.account'
-              readOnly: true
+              x-ms-navigationProperty: true
             agedAccountsPayable:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agedAccountsPayable'
-              readOnly: true
+              x-ms-navigationProperty: true
             agedAccountsReceivable:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agedAccountsReceivable'
-              readOnly: true
+              x-ms-navigationProperty: true
             companyInformation:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.companyInformation'
-              readOnly: true
+              x-ms-navigationProperty: true
             countriesRegions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.countryRegion'
-              readOnly: true
+              x-ms-navigationProperty: true
             currencies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.currency'
-              readOnly: true
+              x-ms-navigationProperty: true
             customerPaymentJournals:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.customerPaymentJournal'
-              readOnly: true
+              x-ms-navigationProperty: true
             customerPayments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.customerPayment'
-              readOnly: true
+              x-ms-navigationProperty: true
             customers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.customer'
-              readOnly: true
+              x-ms-navigationProperty: true
             dimensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.dimension'
-              readOnly: true
+              x-ms-navigationProperty: true
             dimensionValues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-              readOnly: true
+              x-ms-navigationProperty: true
             employees:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.employee'
-              readOnly: true
+              x-ms-navigationProperty: true
             generalLedgerEntries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.generalLedgerEntry'
-              readOnly: true
+              x-ms-navigationProperty: true
             itemCategories:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemCategory'
-              readOnly: true
+              x-ms-navigationProperty: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.item'
-              readOnly: true
+              x-ms-navigationProperty: true
             journalLines:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.journalLine'
-              readOnly: true
+              x-ms-navigationProperty: true
             journals:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.journal'
-              readOnly: true
+              x-ms-navigationProperty: true
             paymentMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.paymentMethod'
-              readOnly: true
+              x-ms-navigationProperty: true
             paymentTerms:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.paymentTerm'
-              readOnly: true
+              x-ms-navigationProperty: true
             picture:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.picture'
-              readOnly: true
+              x-ms-navigationProperty: true
             purchaseInvoiceLines:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLine'
-              readOnly: true
+              x-ms-navigationProperty: true
             purchaseInvoices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.purchaseInvoice'
-              readOnly: true
+              x-ms-navigationProperty: true
             salesCreditMemoLines:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLine'
-              readOnly: true
+              x-ms-navigationProperty: true
             salesCreditMemos:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesCreditMemo'
-              readOnly: true
+              x-ms-navigationProperty: true
             salesInvoiceLines:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesInvoiceLine'
-              readOnly: true
+              x-ms-navigationProperty: true
             salesInvoices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesInvoice'
-              readOnly: true
+              x-ms-navigationProperty: true
             salesOrderLines:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesOrderLine'
-              readOnly: true
+              x-ms-navigationProperty: true
             salesOrders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesOrder'
-              readOnly: true
+              x-ms-navigationProperty: true
             salesQuoteLines:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesQuoteLine'
-              readOnly: true
+              x-ms-navigationProperty: true
             salesQuotes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesQuote'
-              readOnly: true
+              x-ms-navigationProperty: true
             shipmentMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shipmentMethod'
-              readOnly: true
+              x-ms-navigationProperty: true
             taxAreas:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.taxArea'
-              readOnly: true
+              x-ms-navigationProperty: true
             taxGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.taxGroup'
-              readOnly: true
+              x-ms-navigationProperty: true
             unitsOfMeasure:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unitOfMeasure'
-              readOnly: true
+              x-ms-navigationProperty: true
             vendors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.vendor'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.account:
@@ -31598,7 +31598,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.customerPayment'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.customerPayment:
@@ -31746,7 +31746,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.picture'
-              readOnly: true
+              x-ms-navigationProperty: true
             shipmentMethod:
               $ref: '#/components/schemas/microsoft.graph.shipmentMethod'
           additionalProperties:
@@ -31869,7 +31869,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.dimensionValue:
@@ -31959,7 +31959,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.picture'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.generalLedgerEntry:
@@ -32094,7 +32094,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.picture'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.journalLine:
@@ -32181,7 +32181,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.journalLine'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.purchaseInvoiceLine:
@@ -32385,7 +32385,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLine'
-              readOnly: true
+              x-ms-navigationProperty: true
             vendor:
               $ref: '#/components/schemas/microsoft.graph.vendor'
           additionalProperties:
@@ -32459,7 +32459,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.picture'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.salesCreditMemoLine:
@@ -32683,7 +32683,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLine'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.salesInvoiceLine:
@@ -32923,7 +32923,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesInvoiceLine'
-              readOnly: true
+              x-ms-navigationProperty: true
             shipmentMethod:
               $ref: '#/components/schemas/microsoft.graph.shipmentMethod'
           additionalProperties:
@@ -33171,7 +33171,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesOrderLine'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.salesQuoteLine:
@@ -33400,7 +33400,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.salesQuoteLine'
-              readOnly: true
+              x-ms-navigationProperty: true
             shipmentMethod:
               $ref: '#/components/schemas/microsoft.graph.shipmentMethod'
           additionalProperties:

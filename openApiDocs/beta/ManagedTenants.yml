@@ -10438,193 +10438,193 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyCompliance'
               description: Aggregate view of device compliance policies across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             auditEvents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.auditEvent'
               description: The collection of audit events across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             cloudPcConnections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcConnection'
               description: The collection of cloud PC connections across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             cloudPcDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcDevice'
               description: The collection of cloud PC devices across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             cloudPcsOverview:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcOverview'
               description: Overview of cloud PC information across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             conditionalAccessPolicyCoverages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.conditionalAccessPolicyCoverage'
               description: Aggregate view of conditional access policy coverage across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             credentialUserRegistrationsSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummary'
               description: Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             deviceCompliancePolicySettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
               description: Summary information for device compliance policy setting states across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             managedDeviceCompliances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceCompliance'
               description: The collection of compliance for managed devices across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             managedDeviceComplianceTrends:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
               description: Trend insights for device compliance across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             managedTenantAlertLogs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
-              readOnly: true
+              x-ms-navigationProperty: true
             managedTenantAlertRuleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
-              readOnly: true
+              x-ms-navigationProperty: true
             managedTenantAlertRules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
-              readOnly: true
+              x-ms-navigationProperty: true
             managedTenantAlerts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
-              readOnly: true
+              x-ms-navigationProperty: true
             managedTenantApiNotifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
-              readOnly: true
+              x-ms-navigationProperty: true
             managedTenantEmailNotifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
-              readOnly: true
+              x-ms-navigationProperty: true
             managedTenantTicketingEndpoints:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
-              readOnly: true
+              x-ms-navigationProperty: true
             managementActions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementAction'
               description: The collection of baseline management actions across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             managementActionTenantDeploymentStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionTenantDeploymentStatus'
               description: The tenant level status of management actions across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             managementIntents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementIntent'
               description: The collection of baseline management intents across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             managementTemplateCollections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
-              readOnly: true
+              x-ms-navigationProperty: true
             managementTemplateCollectionTenantSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary'
-              readOnly: true
+              x-ms-navigationProperty: true
             managementTemplates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
               description: The collection of baseline management templates across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             managementTemplateSteps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
-              readOnly: true
+              x-ms-navigationProperty: true
             managementTemplateStepTenantSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepTenantSummary'
-              readOnly: true
+              x-ms-navigationProperty: true
             managementTemplateStepVersions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
-              readOnly: true
+              x-ms-navigationProperty: true
             myRoles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.myRole'
               description: The collection of role assignments to a signed-in user for a managed tenant.
-              readOnly: true
+              x-ms-navigationProperty: true
             tenantGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
               description: The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-              readOnly: true
+              x-ms-navigationProperty: true
             tenants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
               description: The collection of tenants associated with the managing entity.
-              readOnly: true
+              x-ms-navigationProperty: true
             tenantsCustomizedInformation:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantCustomizedInformation'
               description: The collection of tenant level customized information across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             tenantsDetailedInformation:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantDetailedInformation'
               description: The collection tenant level detailed information across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             tenantTags:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
               description: The collection of tenant tags across managed tenants.
-              readOnly: true
+              x-ms-navigationProperty: true
             windowsDeviceMalwareStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsDeviceMalwareState'
               description: 'The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
-              readOnly: true
+              x-ms-navigationProperty: true
             windowsProtectionStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsProtectionState'
               description: 'The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.aggregatedPolicyCompliance:
@@ -11373,19 +11373,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
-              readOnly: true
+              x-ms-navigationProperty: true
             alertRule:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
             apiNotifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
-              readOnly: true
+              x-ms-navigationProperty: true
             emailNotifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.managedTenantAlertRuleDefinition:
@@ -11419,7 +11419,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.managedTenantAlertRule:
@@ -11480,7 +11480,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
-              readOnly: true
+              x-ms-navigationProperty: true
             ruleDefinition:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
           additionalProperties:
@@ -11696,7 +11696,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.managementTemplate:
@@ -11765,12 +11765,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
-              readOnly: true
+              x-ms-navigationProperty: true
             managementTemplateSteps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary:
@@ -11903,7 +11903,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.managementTemplateStepVersion:
@@ -11949,7 +11949,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
-              readOnly: true
+              x-ms-navigationProperty: true
             templateStep:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
           additionalProperties:

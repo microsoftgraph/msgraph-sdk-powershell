@@ -7608,34 +7608,34 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
               description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-              readOnly: true
+              x-ms-navigationProperty: true
             federatedIdentityCredentials:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
               description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
-              readOnly: true
+              x-ms-navigationProperty: true
             homeRealmDiscoveryPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-              readOnly: true
+              x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-              readOnly: true
+              x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-              readOnly: true
+              x-ms-navigationProperty: true
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:
@@ -8049,88 +8049,88 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             appRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             claimsMappingPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             createdObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects created by this service principal. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             delegatedPermissionClassifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
-              readOnly: true
+              x-ms-navigationProperty: true
             endpoints:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
-              readOnly: true
+              x-ms-navigationProperty: true
             federatedIdentityCredentials:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
               description: 'Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-              readOnly: true
+              x-ms-navigationProperty: true
             homeRealmDiscoveryPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
               description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             oauth2PermissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
               description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-              readOnly: true
+              x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-              readOnly: true
+              x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
               description: The tokenIssuancePolicies assigned to this service principal.
-              readOnly: true
+              x-ms-navigationProperty: true
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
               description: The tokenLifetimePolicies assigned to this service principal.
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.delegatedPermissionClassification:
@@ -8554,7 +8554,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permissionScope:

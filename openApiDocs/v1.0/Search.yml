@@ -1518,7 +1518,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-          readOnly: true
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalConnection:
@@ -1543,17 +1543,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-              readOnly: true
+              x-ms-navigationProperty: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
-              readOnly: true
+              x-ms-navigationProperty: true
             schema:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
           additionalProperties:
@@ -1577,7 +1577,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
               description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.identity:

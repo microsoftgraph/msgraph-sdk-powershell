@@ -2790,7 +2790,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activityHistoryItem:
@@ -3006,43 +3006,43 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
               description: Represents the usage rights a device has been granted.
-              readOnly: true
+              x-ms-navigationProperty: true
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-              readOnly: true
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-              readOnly: true
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the device. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
             commands:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
               description: Set of commands sent to this device.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.command:

@@ -8588,22 +8588,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.call'
-              readOnly: true
+              x-ms-navigationProperty: true
             callRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
-              readOnly: true
+              x-ms-navigationProperty: true
             onlineMeetings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-              readOnly: true
+              x-ms-navigationProperty: true
             presences:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.presence'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callRecords.callRecord:
@@ -8654,7 +8654,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.session'
               description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callRecords.session:
@@ -8689,7 +8689,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
               description: The list of segments involved in the session. Read-only. Nullable.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callRecords.segment:
@@ -8806,22 +8806,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
-              readOnly: true
+              x-ms-navigationProperty: true
             contentSharingSessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
-              readOnly: true
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.commsOperation'
-              readOnly: true
+              x-ms-navigationProperty: true
             participants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.participant'
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.audioRoutingGroup:
@@ -9317,7 +9317,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
               description: The attendance reports of an online meeting. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
             meetingAttendanceReport:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
@@ -9327,7 +9327,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
               description: The transcripts of an online meeting. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.meetingAttendanceReport:
@@ -9360,7 +9360,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
               description: List of attendance records of an attendance report. Read-only.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.attendanceRecord:
@@ -9444,7 +9444,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
               description: Custom registration questions.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.meetingRegistrationQuestion:
@@ -10226,7 +10226,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
               description: Registrants of the online meeting.
-              readOnly: true
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.meetingSpeaker:
