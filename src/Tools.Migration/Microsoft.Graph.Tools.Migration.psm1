@@ -51,7 +51,7 @@ function Read-MgScript {
             
         }
         if($Result.Count -gt 0){
-            Write-Host -ForegroundColor Green "--------- Command name updates on your script are required as per the details on the following table ---------"
+            Write-Host -ForegroundColor Green "--------- Your script(s) contains commands that need to conform to the naming convention as per the 'New' column on the table below ---------"
         }
         Write-Output $Result | Format-Table
     }
