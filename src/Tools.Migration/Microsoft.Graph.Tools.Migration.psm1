@@ -77,7 +77,7 @@ function Invoke-MgScriptAnalyzer {
     foreach ($_ in $scriptContent) {
         $LineContent.Add($_)
 
-        if ($_ -ieq "Select-MgProfile beta" -or $_ -ieq "Select-MgProfile 'beta'" -or $_ -ieq 'Select-MgProfile "beta"') {
+        if ($_ -ieq "Select-MgProfile beta" -or $_ -ieq "Select-MgProfile 'beta'" -or $_ -ieq 'Select-MgProfile "beta"' -or $_ -ieq "Select-MgProfile -Name beta" -or $_ -ieq "Select-MgProfile -Name 'beta'" -or $_ -ieq 'Select-MgProfile -Name "beta"') {
             
             $LineNumbers.Add($i)
         }
@@ -98,7 +98,7 @@ function Invoke-MgScriptAnalyzer {
         for ($j = 0; $j -lt $Lines; $j++) {
          
             for ($k = $LineNumbers[$j]; $k -lt $LineContent.Count; $k++) {
-                if ($LineContent[$k] -ieq "Select-MgProfile v1.0" -or $LineContent[$k] -ieq "Select-MgProfile 'v1.0'" -or $LineContent[$k] -ieq 'select-MgProfile "v1.0"') {
+                if ($LineContent[$k] -ieq "Select-MgProfile v1.0" -or $LineContent[$k] -ieq "Select-MgProfile 'v1.0'" -or $LineContent[$k] -ieq 'select-MgProfile "v1.0"' -or $LineContent[$k] -ieq "Select-MgProfile -Name v1.0" -or $LineContent[$k] -ieq "Select-MgProfile -Name 'v1.0'" -or $LineContent[$k] -ieq 'select-MgProfile -Name "v1.0"') {
             
             
                     if (-not $LineUpdate.ContainsKey($LineNumbers[$j])) {
@@ -175,6 +175,7 @@ function New-MgMigrationPlan {
 # TODO: Remove test when done.
 #New-MgMigrationPlan -FilePath "C:\Dev\M\msgraph-sdk-powershell\samples\6-Sites.ps1"
 #New-MgMigrationPlan -FilePath "C:\Projects\msgraph-sdk-powershell\samples\6-Sites.ps1" -GraphProfile Beta
+#New-MgMigrationPlan -FilePath "C:\Projects\msgraph-sdk-powershell\samples\5-Teams.ps1"
 # Test cases:
 # 1. Cmdlet with no changes.
 # 2. Cmdlet with changes.
