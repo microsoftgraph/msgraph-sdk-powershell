@@ -11,9 +11,9 @@ function Read-MgScriptDirectory {
     )
 
     process {
-        $supportedFileTypes = ".ps1", ".psm1"
+        $SupportedFileTypes = ".ps1", ".psm1"
         Get-ChildItem $DirectoryPath -Recurse -File | ForEach-Object {
-            if ($_.Extension -in $supportedFileTypes) {
+            if ($_.Extension -in $SupportedFileTypes) {
                 Read-MgScript -FilePath $_.FullName -GraphProfile $GraphProfile
                 
             }
@@ -33,15 +33,15 @@ function Read-MgScript {
     )
 
     process {
-        $supportedFileTypes = ".ps1", ".psm1"
-        if ($supportedFileTypes -notContains [System.IO.Path]::GetExtension($FilePath)) {
+        $SupportedFileTypes = ".ps1", ".psm1"
+        if ($SupportedFileTypes -notContains [System.IO.Path]::GetExtension($FilePath)) {
             throw "Unsupported file type: $FilePath"
         }
 
-        $scriptContent = Get-Content $FilePath
+        $ScriptContent = Get-Content $FilePath
         #Write-Host "Read-MgScript: $FilePath :$($scriptContent.Length)"
 
-        $Analysis = Invoke-MgScriptAnalyzer -ScriptContent $scriptContent -GraphProfile $GraphProfile
+        $Analysis = Invoke-MgScriptAnalyzer -ScriptContent $ScriptContent -GraphProfile $GraphProfile
         $Result = @()
         foreach ($item in $Original.GetEnumerator() | Sort Name) {
             $LineNumber = $item.Key
@@ -74,7 +74,7 @@ function Invoke-MgScriptAnalyzer {
     # Order | Location (file name:line:tab) | Type (Cmdlet|CmdletParameter|ModuleName) | ApiVersion | Original | New
  
     $i = 0
-    foreach ($_ in $scriptContent) {
+    foreach ($_ in $ScriptContent) {
         $LineContent.Add($_)
 
         if ($_ -ieq "Select-MgProfile beta" -or $_ -ieq "Select-MgProfile 'beta'" -or $_ -ieq 'Select-MgProfile "beta"' -or $_ -ieq "Select-MgProfile -Name beta" -or $_ -ieq "Select-MgProfile -Name 'beta'" -or $_ -ieq 'Select-MgProfile -Name "beta"') {
