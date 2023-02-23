@@ -633,6 +633,10 @@ directive:
           // Format all Search values by adding quotes around them.
           let searchQueryRegex = /this\.InvocationInformation\.BoundParameters\.ContainsKey\("Search"\)\s*\?\s*Search\s*:\s*null/gm
           $ = $.replace(searchQueryRegex, 'this.FormatSearchValue(this.InvocationInformation.BoundParameters, Search)');
+
+          // Unescape -Filter values before escaping.
+          let filterQueryRegex = /(this\.InvocationInformation\.BoundParameters\.ContainsKey\("Filter"\)\s*\?\s*)(Filter)(\s*:\s*null)/gm
+          $ = $.replace(filterQueryRegex, '$1this.UnescapeString($2)$3');
         }
         return $;
       }

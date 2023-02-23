@@ -17,6 +17,24 @@ namespace NamespacePrefixPlaceholder.PowerShell
     internal static class PSCmdletExtensions
     {
         private static readonly char[] PathSeparators = new char[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
+        
+        // Converts a string to its unescaped form. The method also replaces '+' with spaces.
+        internal static string UnescapeString(this PSCmdlet cmdlet, string value)
+        {
+            if (value == null)
+                return null;
+
+            try
+            {
+                var unescapedString = Uri.UnescapeDataString(value);
+                return unescapedString.Replace('+', ' ');
+            }
+            catch (UriFormatException ex)
+            {
+                cmdlet.ThrowTerminatingError(new ErrorRecord(ex, string.Empty, ErrorCategory.InvalidArgument, value));
+                return null;
+            }
+        }
 
         /// <summary>
         /// Gets a resolved or unresolved path from PSPath.
