@@ -7,14 +7,16 @@ function Read-MgScriptDirectory {
     param (
         [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
         [ValidateNotNullorEmpty()]
-        [string] $DirectoryPath
+        [string] $DirectoryPath,
+        [string] $GraphProfile,
+        [string] $UpdatedFilePath
     )
 
     process {
         $SupportedFileTypes = ".ps1", ".psm1"
         Get-ChildItem $DirectoryPath -Recurse -File | ForEach-Object {
             if ($_.Extension -in $SupportedFileTypes) {
-                Read-MgScript -FilePath $_.FullName -GraphProfile $GraphProfile
+                Read-MgScript -FilePath $_.FullName -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
                 
             }
             else {
@@ -29,7 +31,8 @@ function Read-MgScript {
         [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
         [ValidateNotNullorEmpty()]
         [string] $FilePath,
-        [string] $GraphProfile
+        [string] $GraphProfile,
+        [string] $UpdatedFilePath
     )
 
     process {
@@ -37,10 +40,16 @@ function Read-MgScript {
         if ($SupportedFileTypes -notContains [System.IO.Path]::GetExtension($FilePath)) {
             throw "Unsupported file type: $FilePath"
         }
-
+        $WriteToFile = $false
+        $FileName = [System.IO.Path]::GetFileName($FilePath)
+        $UpdatedFile = ""
+        if (-not ([string]::IsNullOrEmpty($UpdatedFilePath))) {
+            $WriteToFile = $true
+            $UpdatedFile = Join-Path $UpdatedFilePath "Migration-$FileName"
+            if (-not (Test-Path $UpdatedFilePath)) { throw "Path does not exist: $UpdatedFilePath" }
+        }
         $ScriptContent = Get-Content $FilePath
         #Write-Host "Read-MgScript: $FilePath :$($scriptContent.Length)"
-
         $Analysis = Invoke-MgScriptAnalyzer -ScriptContent $ScriptContent -GraphProfile $GraphProfile
         $Result = @()
         foreach ($item in $Original.GetEnumerator() | Sort Name) {
@@ -48,12 +57,27 @@ function Read-MgScript {
             $OriginalValue = $Original[$LineNumber].ToString()
             $ProposedValue = $ProposedChanges[$LineNumber].ToString()
             $Result += [pscustomobject]@{"Location" = $FilePath; "Line number" = $LineNumber; "ApiVersion" = "Beta"; "Original" = $OriginalValue; "New" = $ProposedValue }
-            
+            if ($WriteToFile) {
+                foreach ($Content in $ScriptContent) {
+
+                    if ($Content -eq $OriginalValue) {
+                        $ScriptContent = $ScriptContent | ForEach-Object { $_ -replace [regex]::Escape($OriginalValue), $ProposedValue }   
+                    }
+                    if ($Content.StartsWith("Select-MgProfile")) {
+                        $ScriptContent = $ScriptContent -replace $Content, $null
+                    }
+                     
+                }
+                $ScriptContent > $UpdatedFile
+            }
         }
-        if($Result.Count -gt 0){
+        if ($Result.Count -gt 0) {
             Write-Host -ForegroundColor Green "--------- Your script(s) contains commands that need to conform to the naming convention as per the 'New' column on the table below ---------"
         }
         Write-Output $Result | Format-Table
+        if($WriteToFile){
+            Write-Host -ForegroundColor Blue "Your updated script is on this path: $UpdatedFile" 
+        }
     }
 }
 
@@ -142,29 +166,30 @@ function New-MgMigrationPlan {
         [string] $FilePath,
         [Parameter(ParameterSetName = 'FileOrDirectory', Mandatory = $true, ValueFromPipeline = $true, Position = 0)]
         [PSCustomObject] $InputObject,
-        [string] $GraphProfile
+        [string] $GraphProfile,
+        [string] $UpdatedFilePath
     )
 
     process {
         switch ($PSCmdlet.ParameterSetName) {
             'File' {
                 if (-not (Test-Path $FilePath)) { throw "Path does not exist: $FilePath" }
-                Read-MgScript -FilePath $FilePath -GraphProfile $GraphProfile
+                Read-MgScript -FilePath $FilePath -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
             }
             'Directory' {
                 if (-not (Test-Path $DirectoryPath)) { throw "Path does not exist: $DirectoryPath" }
-                Read-MgScriptDirectory -DirectoryPath $DirectoryPath -GraphProfile $GraphProfile
+                Read-MgScriptDirectory -DirectoryPath $DirectoryPath -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
             }
             'FileOrDirectory' {
                 foreach ($input in $InputObject) {
                     if (-not (Test-Path $input)) { throw "Path does not exist: $input" }
                     if ([System.IO.Path]::HasExtension($input)) {
                         # Process as file.
-                        Read-MgScript -FilePath $input -GraphProfile $GraphProfile
+                        Read-MgScript -FilePath $input -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
                     }
                     else {
                         # Process as directory.
-                        Read-MgScriptDirectory -DirectoryPath $input -GraphProfile $GraphProfile
+                        Read-MgScriptDirectory -DirectoryPath $input -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
                     }
                 }
             }
@@ -176,6 +201,7 @@ function New-MgMigrationPlan {
 #New-MgMigrationPlan -FilePath "C:\Dev\M\msgraph-sdk-powershell\samples\6-Sites.ps1"
 #New-MgMigrationPlan -FilePath "C:\Projects\msgraph-sdk-powershell\samples\6-Sites.ps1" -GraphProfile Beta
 #New-MgMigrationPlan -FilePath "C:\Projects\msgraph-sdk-powershell\samples\5-Teams.ps1"
+#New-MgMigrationPlan -FilePath "C:\Projects\msgraph-sdk-powershell\samples\5-Teams.ps1" -UpdatedFilePath C:\PlayGround
 # Test cases:
 # 1. Cmdlet with no changes.
 # 2. Cmdlet with changes.
