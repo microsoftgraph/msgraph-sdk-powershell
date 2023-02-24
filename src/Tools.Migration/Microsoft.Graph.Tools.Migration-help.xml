@@ -10,7 +10,8 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Powershell Microsoft Graph SDK Version I to Version II Migration Toolkit
+</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -221,9 +222,23 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>New-MgMigrationPlan -FilePath $FilePath</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Changes are only expected if there are Select-MgProfile directives on the script</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>New-MgMigrationPlan -FilePath $FilePath -GraphProfile Beta</dev:code>
+        <dev:remarks>
+          <maml:para>All commandlets will be updated according to v2 sdk naming convention for beta api version</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>New-MgMigrationPlan -FilePath $FilePath -UpdatedFilePath $UpdatedFilePath</dev:code>
+        <dev:remarks>
+          <maml:para>Scripts will be modified and dumped to the path provided as a value to UpdatedFilePath</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>

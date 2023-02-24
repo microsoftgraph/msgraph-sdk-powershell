@@ -31,16 +31,30 @@ New-MgMigrationPlan -FilePath <String> [-GraphProfile <String>] [-UpdatedFilePat
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Powershell Microsoft Graph SDK Version I to Version II Migration Toolkit  
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+New-MgMigrationPlan -FilePath $FilePath
 ```
 
-{{ Add example description here }}
+Changes are only expected if there are Select-MgProfile directives on the script
+
+### Example 2
+```powershell
+New-MgMigrationPlan -FilePath $FilePath -GraphProfile Beta
+```
+
+All commandlets will be updated according to v2 sdk naming convention for beta api version
+
+### Example 3
+```powershell
+New-MgMigrationPlan -FilePath $FilePath -UpdatedFilePath $UpdatedFilePath
+```
+
+Scripts will be modified and dumped to the path provided as a value to UpdatedFilePath
 
 ## PARAMETERS
 
