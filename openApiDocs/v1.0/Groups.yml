@@ -219,7 +219,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -785,7 +785,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -887,7 +887,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -956,7 +956,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1120,7 +1120,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1174,7 +1174,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1234,7 +1234,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1275,7 +1275,7 @@ paths:
             type: string
           x-ms-docs-key-type: event
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1333,7 +1333,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1386,7 +1386,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1446,7 +1446,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1706,7 +1706,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1752,7 +1752,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1804,7 +1804,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1837,7 +1837,7 @@ paths:
             type: string
           x-ms-docs-key-type: event
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1887,7 +1887,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1932,7 +1932,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1984,7 +1984,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2350,7 +2350,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2404,7 +2404,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2464,7 +2464,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2505,7 +2505,7 @@ paths:
             type: string
           x-ms-docs-key-type: event
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2563,7 +2563,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2616,7 +2616,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2676,7 +2676,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2936,7 +2936,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2982,7 +2982,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3034,7 +3034,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3067,7 +3067,7 @@ paths:
             type: string
           x-ms-docs-key-type: event
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3117,7 +3117,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3162,7 +3162,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3214,7 +3214,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3697,7 +3697,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3751,7 +3751,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3811,7 +3811,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3852,7 +3852,7 @@ paths:
             type: string
           x-ms-docs-key-type: event
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3910,7 +3910,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3963,7 +3963,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4023,7 +4023,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4283,7 +4283,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4329,7 +4329,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4381,7 +4381,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4414,7 +4414,7 @@ paths:
             type: string
           x-ms-docs-key-type: event
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4464,7 +4464,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4509,7 +4509,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4561,7 +4561,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4958,7 +4958,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5269,7 +5269,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5322,7 +5322,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5856,7 +5856,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6269,7 +6269,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6673,7 +6673,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7086,7 +7086,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7152,7 +7152,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7213,7 +7213,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7566,7 +7566,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7919,7 +7919,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7985,7 +7985,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8046,7 +8046,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8399,7 +8399,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8752,7 +8752,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8852,7 +8852,7 @@ paths:
             type: string
           x-ms-docs-key-type: documentSetVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -9151,7 +9151,7 @@ paths:
             type: string
           x-ms-docs-key-type: listItemVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -9208,7 +9208,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -9249,7 +9249,7 @@ paths:
             type: string
           x-ms-docs-key-type: driveItem
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -10598,7 +10598,7 @@ paths:
             type: string
           x-ms-docs-key-type: driveItem
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -10650,7 +10650,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -10781,7 +10781,7 @@ paths:
             type: string
           x-ms-docs-key-type: subscription
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -10830,7 +10830,7 @@ paths:
             type: string
           x-ms-docs-key-type: driveItemVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -10889,7 +10889,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -10945,7 +10945,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11033,7 +11033,7 @@ paths:
             type: string
           x-ms-docs-key-type: contentType
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11074,7 +11074,7 @@ paths:
             type: string
           x-ms-docs-key-type: contentType
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11345,7 +11345,7 @@ paths:
             type: string
           x-ms-docs-key-type: documentSetVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11644,7 +11644,7 @@ paths:
             type: string
           x-ms-docs-key-type: listItemVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11681,7 +11681,7 @@ paths:
             type: string
           x-ms-docs-key-type: subscription
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -12243,7 +12243,7 @@ paths:
             type: string
           x-ms-docs-key-type: documentSetVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -12518,7 +12518,7 @@ paths:
             type: string
           x-ms-docs-key-type: listItemVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -12567,7 +12567,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -12600,7 +12600,7 @@ paths:
             type: string
           x-ms-docs-key-type: drive
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -13845,7 +13845,7 @@ paths:
             type: string
           x-ms-docs-key-type: drive
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -13889,7 +13889,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14004,7 +14004,7 @@ paths:
             type: string
           x-ms-docs-key-type: subscription
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14045,7 +14045,7 @@ paths:
             type: string
           x-ms-docs-key-type: driveItemVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14209,7 +14209,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14263,7 +14263,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14323,7 +14323,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14364,7 +14364,7 @@ paths:
             type: string
           x-ms-docs-key-type: event
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14422,7 +14422,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14475,7 +14475,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14535,7 +14535,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14795,7 +14795,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14841,7 +14841,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14893,7 +14893,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14926,7 +14926,7 @@ paths:
             type: string
           x-ms-docs-key-type: event
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14976,7 +14976,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15021,7 +15021,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15073,7 +15073,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15504,7 +15504,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15748,7 +15748,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16127,7 +16127,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16207,7 +16207,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16381,7 +16381,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16714,7 +16714,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16739,7 +16739,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16764,7 +16764,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16818,7 +16818,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16843,7 +16843,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16889,7 +16889,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -17257,7 +17257,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -17588,7 +17588,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -17832,7 +17832,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18139,7 +18139,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18430,7 +18430,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18596,7 +18596,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18676,7 +18676,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18932,7 +18932,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -19389,7 +19389,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -19514,7 +19514,7 @@ paths:
               format: binary
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -19698,7 +19698,7 @@ paths:
               format: binary
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -19800,7 +19800,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -19869,7 +19869,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20117,7 +20117,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20176,7 +20176,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20232,7 +20232,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20320,7 +20320,7 @@ paths:
             type: string
           x-ms-docs-key-type: contentType
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20361,7 +20361,7 @@ paths:
             type: string
           x-ms-docs-key-type: contentType
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20650,7 +20650,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20714,7 +20714,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20818,7 +20818,7 @@ paths:
             type: string
           x-ms-docs-key-type: contentType
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20867,7 +20867,7 @@ paths:
             type: string
           x-ms-docs-key-type: contentType
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -21170,7 +21170,7 @@ paths:
             type: string
           x-ms-docs-key-type: documentSetVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -21493,7 +21493,7 @@ paths:
             type: string
           x-ms-docs-key-type: listItemVersion
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -21538,7 +21538,7 @@ paths:
             type: string
           x-ms-docs-key-type: subscription
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -22352,7 +22352,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -22723,7 +22723,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -23007,7 +23007,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -23354,7 +23354,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -23685,7 +23685,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24027,7 +24027,7 @@ paths:
             type: string
           x-ms-docs-key-type: chatMessage
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24064,7 +24064,7 @@ paths:
             type: string
           x-ms-docs-key-type: chatMessage
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24109,7 +24109,7 @@ paths:
             type: string
           x-ms-docs-key-type: chatMessage
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24154,7 +24154,7 @@ paths:
             type: string
           x-ms-docs-key-type: chatMessage
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24485,7 +24485,7 @@ paths:
             type: string
           x-ms-docs-key-type: channel
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24618,7 +24618,7 @@ paths:
             type: string
           x-ms-docs-key-type: channel
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24785,7 +24785,7 @@ paths:
             type: string
           x-ms-docs-key-type: teamsAppInstallation
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24880,7 +24880,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24931,7 +24931,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -24956,7 +24956,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25008,7 +25008,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25033,7 +25033,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25118,7 +25118,7 @@ paths:
             type: string
           x-ms-docs-key-type: chatMessage
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25147,7 +25147,7 @@ paths:
             type: string
           x-ms-docs-key-type: chatMessage
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25184,7 +25184,7 @@ paths:
             type: string
           x-ms-docs-key-type: chatMessage
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25221,7 +25221,7 @@ paths:
             type: string
           x-ms-docs-key-type: chatMessage
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25528,7 +25528,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25637,7 +25637,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25686,7 +25686,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25931,7 +25931,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -25976,7 +25976,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -26462,7 +26462,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -26827,7 +26827,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -27191,7 +27191,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -27556,7 +27556,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -27614,7 +27614,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -27667,7 +27667,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -27980,7 +27980,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -28293,7 +28293,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -28351,7 +28351,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -28404,7 +28404,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -28717,7 +28717,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -29030,7 +29030,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -29683,7 +29683,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -29901,7 +29901,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'

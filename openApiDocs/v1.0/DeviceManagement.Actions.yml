@@ -89,7 +89,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -177,7 +177,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -213,7 +213,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -234,7 +234,7 @@ paths:
             type: string
           x-ms-docs-key-type: deviceManagementPartner
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -267,7 +267,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -333,7 +333,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -368,7 +368,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -403,7 +403,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -425,7 +425,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -447,7 +447,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -469,7 +469,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -491,7 +491,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -513,7 +513,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -535,7 +535,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -557,7 +557,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -579,7 +579,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -601,7 +601,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -623,7 +623,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -644,7 +644,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -677,7 +677,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -711,7 +711,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -732,7 +732,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -779,7 +779,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -801,7 +801,7 @@ paths:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -823,7 +823,7 @@ paths:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -845,7 +845,7 @@ paths:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2170,7 +2170,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2192,7 +2192,7 @@ paths:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2236,7 +2236,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'

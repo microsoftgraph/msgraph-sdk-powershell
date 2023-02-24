@@ -695,7 +695,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -932,7 +932,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1044,7 +1044,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1700,7 +1700,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1937,7 +1937,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2049,7 +2049,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2277,7 +2277,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2314,7 +2314,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2534,7 +2534,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2774,7 +2774,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3007,7 +3007,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3268,7 +3268,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3501,7 +3501,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3540,7 +3540,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3789,7 +3789,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4321,7 +4321,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4558,7 +4558,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4670,7 +4670,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4926,7 +4926,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4961,7 +4961,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5225,7 +5225,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5478,7 +5478,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5521,7 +5521,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5774,7 +5774,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5817,7 +5817,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6062,7 +6062,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6294,7 +6294,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6490,7 +6490,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6734,7 +6734,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6971,7 +6971,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7365,7 +7365,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7478,7 +7478,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7513,7 +7513,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7762,7 +7762,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8063,7 +8063,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8375,7 +8375,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8432,7 +8432,7 @@ paths:
       description: Syncs Intune account with Microsoft Store For Business
       operationId: deviceAppManagement_syncMicrosoftStoreGraphFPreBusinessApps
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8628,7 +8628,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8864,7 +8864,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -9097,7 +9097,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -9358,7 +9358,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -9474,7 +9474,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -9509,7 +9509,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -9758,7 +9758,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -9873,7 +9873,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -10161,7 +10161,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -10410,7 +10410,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -10824,7 +10824,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11030,7 +11030,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11065,7 +11065,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11159,7 +11159,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11408,7 +11408,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -11665,7 +11665,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -12075,7 +12075,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -12650,7 +12650,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -12887,7 +12887,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -13148,7 +13148,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -13196,7 +13196,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -13332,7 +13332,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -13576,7 +13576,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -13813,7 +13813,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14054,7 +14054,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14166,7 +14166,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14201,7 +14201,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14238,7 +14238,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14538,7 +14538,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14577,7 +14577,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14658,7 +14658,7 @@ paths:
       summary: Invoke action syncLicenseCounts
       operationId: deviceAppManagement.vppTokens_syncLicenseCounts
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -14890,7 +14890,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15123,7 +15123,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15232,7 +15232,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15501,7 +15501,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15608,7 +15608,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15820,7 +15820,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -15841,7 +15841,7 @@ paths:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionDeviceRegistration
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16201,7 +16201,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16413,7 +16413,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16721,7 +16721,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -16958,7 +16958,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -17199,7 +17199,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -17234,7 +17234,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -17269,7 +17269,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -17602,7 +17602,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -17835,7 +17835,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -17944,7 +17944,7 @@ paths:
               format: binary
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18000,7 +18000,7 @@ paths:
               format: binary
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18034,7 +18034,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18299,7 +18299,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18580,7 +18580,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -18829,7 +18829,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -19627,7 +19627,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -19900,7 +19900,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20203,7 +20203,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20504,7 +20504,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -20805,7 +20805,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -21335,7 +21335,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -21636,7 +21636,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -21925,7 +21925,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -22266,7 +22266,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -22865,7 +22865,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -23174,7 +23174,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -23415,7 +23415,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -23684,7 +23684,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -23969,7 +23969,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'

@@ -194,7 +194,7 @@ paths:
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -215,7 +215,7 @@ paths:
             type: string
           x-ms-docs-key-type: subscription
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
