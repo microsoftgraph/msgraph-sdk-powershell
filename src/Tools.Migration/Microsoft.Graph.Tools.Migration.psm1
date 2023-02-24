@@ -74,11 +74,20 @@ function Read-MgScript {
         if ($Result.Count -gt 0) {
             Write-Host -ForegroundColor Green "--------- Your script(s) contains commands that need to conform to the naming convention as per the 'New' column on the table below ---------"
         }
+        Write-Host "counting stuff " $Result.Count
+        if($Result.Count -gt 0){
         Write-Output $Result | Format-Table
+        }
         if($WriteToFile){
             Write-Host -ForegroundColor Blue "Your updated script is on this path: $UpdatedFile" 
         }
+        $LineUpdate.Clear()
+        $Original.Clear()
+        $ProposedChanges.Clear()
+        $Result.Clear() 
     }
+    #clear everything
+
 }
 
 function Invoke-MgScriptAnalyzer {
