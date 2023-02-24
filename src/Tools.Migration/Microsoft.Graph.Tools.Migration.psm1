@@ -52,11 +52,12 @@ function Read-MgScript {
         #Write-Host "Read-MgScript: $FilePath :$($scriptContent.Length)"
         $Analysis = Invoke-MgScriptAnalyzer -ScriptContent $ScriptContent -GraphProfile $GraphProfile
         $Result = @()
+        $i = 1
         foreach ($item in $Original.GetEnumerator() | Sort Name) {
             $LineNumber = $item.Key
             $OriginalValue = $Original[$LineNumber].ToString()
             $ProposedValue = $ProposedChanges[$LineNumber].ToString()
-            $Result += [pscustomobject]@{"Location" = $FilePath; "Line number" = $LineNumber; "ApiVersion" = "Beta"; "Original" = $OriginalValue; "New" = $ProposedValue }
+            $Result += [pscustomobject]@{"Order" = $i;"Location" = $FileName+":"+$LineNumber; "Type"="Cmdlet"; "ApiVersion" = "Beta"; "Original" = $OriginalValue; "New" = $ProposedValue }
             if ($WriteToFile) {
                 foreach ($Content in $ScriptContent) {
 
@@ -70,6 +71,7 @@ function Read-MgScript {
                 }
                 $ScriptContent > $UpdatedFile
             }
+            $i++
         }
         if ($Result.Count -gt 0) {
             Write-Host -ForegroundColor Green "--------- Your script(s) contains commands that need to conform to the naming convention as per the 'New' column on the table below ---------"
