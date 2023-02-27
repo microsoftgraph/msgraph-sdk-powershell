@@ -71,7 +71,7 @@ Microsoft.Graph.PowerShell.Authentication.Models.IGraphCommand with the followin
 https://learn.microsoft.com/powershell/microsoftgraph/find-mg-graph-command
 #>
 Function Find-MgGraphCommand {
-    [CmdletBinding(DefaultParameterSetName = 'FindByUri', PositionalBinding = $false)]
+    [CmdletBinding(DefaultParameterSetName = 'FindByCommandOrUri', PositionalBinding = $false)]
     [OutputType([Microsoft.Graph.PowerShell.Authentication.Models.IGraphCommand])]
     param (
         [Parameter(ParameterSetName = "FindByUri", Mandatory = $true, Position = 0, ValueFromPipeline = $true)]
@@ -81,6 +81,7 @@ Function Find-MgGraphCommand {
         [ValidateSet("GET", "POST", "PUT", "PATCH", "DELETE")]
         [string]$Method,
 
+        [Parameter(ParameterSetName = "FindByCommandOrUri")]
         [Parameter(ParameterSetName = "FindByUri")]
         [Parameter(ParameterSetName = "FindByCommand")]
         [ValidateSet("v1.0", "beta")]
@@ -88,7 +89,10 @@ Function Find-MgGraphCommand {
 
         [Parameter(ParameterSetName = "FindByCommand", Mandatory = $true)]
         [ValidateNotNullorEmpty()]
-        [string[]]$Command
+        [string[]]$Command,
+
+        [Parameter(ParameterSetName = 'FindByCommandOrUri', Mandatory = $true, Position = 0, ValueFromPipeline = $true)]
+        [object[]]$InputObject
     )
 
     begin {
@@ -104,42 +108,131 @@ Function Find-MgGraphCommand {
         else {
             [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata = GraphCommand_ReadGraphCommandMetadata
         }
+
+        function ResolveCommand {
+            param(
+                [Parameter(Mandatory = $true, Position = 0)]
+                [string]$Command
+            )
+
+            Write-Debug "Received Command: $Command"
+
+            # Read content of mapping file and cache in session object.
+            if ($null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance -and
+                $null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping) {
+                Write-Debug "Reading MgLegacyCommandMapping from session object."
+            }
+            else {
+                [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping = GraphCommand_ReadLegacyGraphCommandMapping
+            }
+
+            # Resolve legacy commands.
+            [array]$ResolvedCommands = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping | Where-Object LegacyMapping -Contains $Command | Select-Object -ExpandProperty Command
+            if (!$ResolvedCommands) {
+                $ResolvedCommands = $Command
+            }
+            Write-Debug "Resolved Command: $ResolvedCommands"
+            Write-Output $ResolvedCommands -NoEnumerate
+        }
+
+        function FindByCommand {
+            param(
+                [Parameter(Mandatory = $true, Position = 0)]
+                [string[]]$Command
+            )
+
+            foreach ($c in $Command) {
+                $Result = @()
+                Write-Debug "Matching Command: $c"
+                Write-Debug "Matching ApiVersion: $ApiVersion"
+                [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
+                    if ($_.ApiVersion -match $ApiVersion -and
+                        $_.Command -match "^$c$") {
+                        $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
+                    }
+                }
+                Write-Output $Result -NoEnumerate
+            }
+        }
+
+        function ResolveUri {
+            param(
+                [Parameter(Mandatory = $true, Position = 0)]
+                [string]$Uri
+            )
+
+            $Result = @()
+            Write-Debug "Received URI: $Uri."
+            $Uri = GraphUri_RemoveNamespaceFromActionFunction $Uri
+            $GraphUri = GraphUri_ConvertStringToUri $Uri
+
+            # Use API version in URI if -ApiVersion is not provided.
+            if ([System.String]::IsNullOrWhiteSpace($ApiVersion) -and ($GraphUri.OriginalString -match "(v1.0|beta)\/")) {
+                $ApiVersion = $Matches[1]
+            }
+
+            if (!$GraphUri.IsAbsoluteUri) {
+                $GraphUri = GraphUri_ConvertRelativeUriToAbsoluteUri -Uri $GraphUri -ApiVersion $ApiVersion
+            }
+            Write-Debug "Resolved URI: $GraphUri."
+
+            return $GraphUri
+        }
+
+        function FindByUri {
+            param(
+                [Parameter(Mandatory = $true, Position = 0)]
+                [System.Uri]$Uri
+            )
+
+            $Result = @()
+            $TokenizedUri = GraphUri_TokenizeIds $Uri
+            Write-Debug "Tokenized URI: $TokenizedUri."
+
+            $ResourceSegmentRegex = GraphUri_GetResourceSegmentRegex $TokenizedUri
+            Write-Debug "Matching URI: $ResourceSegmentRegex"
+            Write-Debug "Matching Method: $Method"
+            Write-Debug "Matching ApiVersion: $ApiVersion"
+            [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
+                if ($_.Method -match $Method -and
+                    $_.ApiVersion -match $ApiVersion -and
+                    $_.Uri -match $ResourceSegmentRegex) {
+                    $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
+                }
+            }
+            Write-Output $Result -NoEnumerate
+        }
     }
 
     process {
         $Result = @()
         try {
             switch ($PSCmdlet.ParameterSetName) {
+                "FindByCommandOrUri" {
+                    foreach ($o in $InputObject) {
+                        if ($o -is [System.Management.Automation.CommandInfo]) {
+                            $InputString = $o.Name
+                        }
+                        else {
+                            $InputString = $o
+                        }
+
+                        $ResolvedCommand = ResolveCommand $InputString
+                        $Result = FindByCommand $ResolvedCommand
+                        if ($Result.Count -lt 1) {
+                            $GraphUri = ResolveUri $InputString
+                            $Result = FindByUri $GraphUri
+                        }
+                        if ($Result.Count -lt 1) {
+                            Write-Error "'$InputString' is not a valid Microsoft Graph PowerShell command. Please check the name and try again."
+                            Write-Error "URI '$Method $GraphUri' in $ApiVersion is not valid or is not currently supported by the SDK. Ensure the URI is formatted correctly and try again."
+                        }
+                    }
+                }
                 "FindByUri" {
                     foreach ($u in $Uri) {
-                        Write-Debug "Received URI: $u."
-                        $u = GraphUri_RemoveNamespaceFromActionFunction $u
-                        $GraphUri = GraphUri_ConvertStringToUri $u
-
-                        # Use API version in URI if -ApiVersion is not provided.
-                        if ([System.String]::IsNullOrWhiteSpace($ApiVersion) -and ($GraphUri.OriginalString -match "(v1.0|beta)\/")) {
-                            $ApiVersion = $Matches[1]
-                        }
-
-                        if (!$GraphUri.IsAbsoluteUri) {
-                            $GraphUri = GraphUri_ConvertRelativeUriToAbsoluteUri -Uri $GraphUri -ApiVersion $ApiVersion
-                        }
-                        Write-Debug "Resolved URI: $GraphUri."
-
-                        $TokenizedUri = GraphUri_TokenizeIds $GraphUri
-                        Write-Debug "Tokenized URI: $TokenizedUri."
-
-                        $ResourceSegmentRegex = GraphUri_GetResourceSegmentRegex $TokenizedUri
-                        Write-Debug "Matching URI: $ResourceSegmentRegex"
-                        Write-Debug "Matching Method: $Method"
-                        Write-Debug "Matching ApiVersion: $ApiVersion"
-                        [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
-                            if ($_.Method -match $Method -and
-                                $_.ApiVersion -match $ApiVersion -and
-                                $_.Uri -match $ResourceSegmentRegex) {
-                                $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
-                            }
-                        }
+                        $GraphUri = ResolveUri $u
+                        $Result = FindByUri $GraphUri
                         if ($Result.Count -lt 1) {
                             Write-Error "URI '$Method $GraphUri' in $ApiVersion is not valid or is not currently supported by the SDK. Ensure the URI is formatted correctly and try again."
                         }
@@ -147,14 +240,8 @@ Function Find-MgGraphCommand {
                 }
                 "FindByCommand" {
                     foreach ($c in $Command) {
-                        Write-Debug "Matching Command: $c"
-                        Write-Debug "Matching ApiVersion: $ApiVersion"
-                        [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
-                            if ($_.ApiVersion -match $ApiVersion -and
-                                $_.Command -match "^$c$") {
-                                $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
-                            }
-                        }
+                        $ResolvedCommand = ResolveCommand $c
+                        $Result = FindByCommand $ResolvedCommand
                         if ($Result.Count -lt 1) {
                             Write-Error "'$c' is not a valid Microsoft Graph PowerShell command. Please check the name and try again."
                         }
