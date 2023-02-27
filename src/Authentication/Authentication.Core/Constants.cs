@@ -16,7 +16,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
         public static readonly string GraphDirectoryPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), ".mg");
         internal const int TokenExpirationBufferInMinutes = 5;
         internal const string DefaultAzureADEndpoint = "https://login.microsoftonline.com";
-        internal static readonly string DefaultGraphEndpoint = "https://graph.microsoft.com";
+        internal const string DefaultGraphEndpoint = "https://graph.microsoft.com";
+        internal const string DefaultScopeUrl = "https://graph.microsoft.com/.default";
         internal const string CacheName = "mg.msal.cache";
         internal const string AuthRecordName = "mg.authrecord.json";
         internal const int MaxAuthRetry = 2;
