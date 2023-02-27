@@ -36,6 +36,15 @@ Describe "New-MgMigrationPlan Command" {
     #         } | Should -Not -Throw
     #     }
     #   }
+    Context "Commented out profile changes. i.e '# Select-MgProfile'" {
+        It 'Should throw' {
+            {
+                $FilePath = Join-Path $PSScriptRoot "..\..\..\samples\11-CommentedOutProfileChanges.ps1"
+                $UpdatedFilePath = Join-Path $PSScriptRoot "..\..\..\samples"
+                $MgCommand = New-MgMigrationPlan -FilePath $FilePath -UpdatedFilePath $UpdatedFilePath
+            } | Should -Not -Throw
+        }
+      }
       Context "Extract updated script from migration tool" {
         It 'Should output an object' {
             {

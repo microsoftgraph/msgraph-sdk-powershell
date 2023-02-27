@@ -3,6 +3,8 @@
 $LineUpdate = @{}
 $Original = @{}
 $ProposedChanges = @{}
+$BetaProfileRegex = "^(Select-MgProfile)\s+(?:-Name)?(\s+)?([beta{'}])"
+$V1ProfileRegex = "^(Select-MgProfile)\s+(?:-Name)?(\s+)?('v1\.0'|v1\.0)"
 function Read-MgScriptDirectory {
     param (
         [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
@@ -76,7 +78,6 @@ function Read-MgScript {
         if ($Result.Count -gt 0) {
             Write-Host -ForegroundColor Green "--------- Your script(s) contains commands that need to conform to the naming convention as per the 'New' column on the table below ---------"
         }
-        Write-Host "counting stuff " $Result.Count
         if($Result.Count -gt 0){
         Write-Output $Result | Format-Table
         }
@@ -107,23 +108,26 @@ function Invoke-MgScriptAnalyzer {
 
     # Proposed Output
     # Order | Location (file name:line:tab) | Type (Cmdlet|CmdletParameter|ModuleName) | ApiVersion | Original | New
- 
+    
     $i = 0
-    foreach ($_ in $ScriptContent) {
+    foreach ($_ in $scriptContent) {
+        $_ = $_.ToString().TrimStart()
         $LineContent.Add($_)
-
-        if ($_ -ieq "Select-MgProfile beta" -or $_ -ieq "Select-MgProfile 'beta'" -or $_ -ieq 'Select-MgProfile "beta"' -or $_ -ieq "Select-MgProfile -Name beta" -or $_ -ieq "Select-MgProfile -Name 'beta'" -or $_ -ieq 'Select-MgProfile -Name "beta"') {
+        
+        if ($_ -match $BetaProfileRegex) {
+            if(-not $_.StartsWith("#")){
+                $LineNumbers.Add($i)
+            }
             
-            $LineNumbers.Add($i)
         }
     
         $i++
     }
     if ($GraphProfile -ieq "beta") {
         for ($g = 0; $g -lt $LineContent.Count; $g++) {
-            if ($LineContent[$g].Contains("Mg")) {
+            if ($LineContent[$g].Contains("-Mg")) {
                 $Original.Add($g + 1, $LineContent[$g])
-                $ProposedChanges.Add($g + 1, $LineContent[$g].ToString().Replace("Mg", "MgBeta"))
+                $ProposedChanges.Add($g + 1, $LineContent[$g].ToString().Replace("-Mg", "-MgBeta"))
             }
         }
     }
@@ -133,7 +137,7 @@ function Invoke-MgScriptAnalyzer {
         for ($j = 0; $j -lt $Lines; $j++) {
          
             for ($k = $LineNumbers[$j]; $k -lt $LineContent.Count; $k++) {
-                if ($LineContent[$k] -ieq "Select-MgProfile v1.0" -or $LineContent[$k] -ieq "Select-MgProfile 'v1.0'" -or $LineContent[$k] -ieq 'select-MgProfile "v1.0"' -or $LineContent[$k] -ieq "Select-MgProfile -Name v1.0" -or $LineContent[$k] -ieq "Select-MgProfile -Name 'v1.0'" -or $LineContent[$k] -ieq 'select-MgProfile -Name "v1.0"') {
+                if ($LineContent[$k] -match $V1ProfileRegex) {
             
             
                     if (-not $LineUpdate.ContainsKey($LineNumbers[$j])) {
@@ -145,18 +149,18 @@ function Invoke-MgScriptAnalyzer {
         $LineUpdate.Keys | ForEach-Object {
             $LineNumber = $_
             for ($m = $lineNumber + 1; $m -lt $LineUpdate[$LineNumber]; $m++) {
-                if ($LineContent[$m].Contains("Mg")) {
+                if ($LineContent[$m].Contains("-Mg")) {
                     $Original.Add($m + 1, $LineContent[$m])
-                    $ProposedChanges.Add($m + 1, $LineContent[$m].ToString().Replace("Mg", "MgBeta"))
+                    $ProposedChanges.Add($m + 1, $LineContent[$m].ToString().Replace("-Mg", "-MgBeta"))
                 }
             
             }
         }
         if ($Lines -gt $LineUpdate.Count) {
             for ($n = $LineNumbers[$Lines - 1] + 1; $n -lt $LineContent.Count; $n++) {
-                if ($LineContent[$n].Contains("Mg")) {
+                if ($LineContent[$n].Contains("-Mg")) {
                     $Original.Add($n + 1, $LineContent[$n])
-                    $ProposedChanges.Add($n + 1, $LineContent[$n].ToString().Replace("Mg", "MgBeta"))
+                    $ProposedChanges.Add($n + 1, $LineContent[$n].ToString().Replace("-Mg", "-MgBeta"))
                 }
             }
         }
