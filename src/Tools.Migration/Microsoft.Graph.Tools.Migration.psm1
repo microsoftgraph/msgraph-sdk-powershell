@@ -1,9 +1,4 @@
-﻿[System.Collections.ArrayList]$LineContent = @()
-[System.Collections.ArrayList]$LineNumbers = @()
-$LineUpdate = @{}
-$Original = @{}
-$ProposedChanges = @{}
-$BetaProfileRegex = "^(Select-MgProfile)\s+(?:-Name)?(\s+)?([beta{'}])"
+﻿$BetaProfileRegex = "^(Select-MgProfile)\s+(?:-Name)?(\s+)?([beta{'}])"
 $V1ProfileRegex = "^(Select-MgProfile)\s+(?:-Name)?(\s+)?('v1\.0'|v1\.0)"
 function Read-MgScriptDirectory {
     param (
@@ -18,7 +13,7 @@ function Read-MgScriptDirectory {
         $SupportedFileTypes = ".ps1", ".psm1"
         Get-ChildItem $DirectoryPath -Recurse -File | ForEach-Object {
             if ($_.Extension -in $SupportedFileTypes) {
-                Read-MgScript -FilePath $_.FullName -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
+                Invoke-MgScriptAnalyzer -FilePath $_.FullName -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
                 
             }
             else {
@@ -28,7 +23,7 @@ function Read-MgScriptDirectory {
     }
 }
 
-function Read-MgScript {
+function Invoke-MgScriptAnalyzer {
     param (
         [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
         [ValidateNotNullorEmpty()]
@@ -37,7 +32,21 @@ function Read-MgScript {
         [string] $UpdatedFilePath
     )
 
-    process {
+    # TODO: Analyze script content for breaking change.
+    # TODO: Store changes in an object.
+    # TODO: Write object as output.
+    # TODO: Settle on object members.
+
+    # Proposed Output
+    # Order | Location (file name:line:tab) | Type (Cmdlet|CmdletParameter|ModuleName) | ApiVersion | Original | New
+
+    [System.Collections.ArrayList]$LineContent = @()
+    [System.Collections.ArrayList]$LineNumbers = @()
+    $LineUpdate = @{}
+    [Hashtable]$Original = @{}
+    [Hashtable]$ProposedChanges = @{}
+    $Result = @()
+
         $SupportedFileTypes = ".ps1", ".psm1"
         if ($SupportedFileTypes -notContains [System.IO.Path]::GetExtension($FilePath)) {
             throw "Unsupported file type: $FilePath"
@@ -50,16 +59,71 @@ function Read-MgScript {
             $UpdatedFile = Join-Path $UpdatedFilePath "Migration-$FileName"
             if (-not (Test-Path $UpdatedFilePath)) { throw "Path does not exist: $UpdatedFilePath" }
         }
-        $ScriptContent = Get-Content $FilePath
-        #Write-Host "Read-MgScript: $FilePath :$($scriptContent.Length)"
-        $Analysis = Invoke-MgScriptAnalyzer -ScriptContent $ScriptContent -GraphProfile $GraphProfile
-        $Result = @()
-        $i = 1
+        $ScriptContent = Get-Content $FilePath     
+        $i = 0
+        foreach ($_ in $ScriptContent) {
+            $_ = $_.ToString().TrimStart()
+            $indexOfItem = $LineContent.Add($_)
+            
+            if ($_ -match $BetaProfileRegex) {
+                if(-not $_.StartsWith("#")){
+                    $indexOfLineItem = $LineNumbers.Add($i)
+                }
+                
+            }
+            
+            $i++
+        }
+        if ($GraphProfile -ieq "beta") {
+            for ($g = 0; $g -lt $LineContent.Count; $g++) {
+                if ($LineContent[$g].Contains("-Mg")) {
+                    $Original.Add($g + 1, $LineContent[$g])
+                    $ProposedChanges.Add($g + 1, $LineContent[$g].ToString().Replace("-Mg", "-MgBeta"))
+                }
+            }
+        }
+        else {
+            $Lines = $LineNumbers.Count
+    
+            for ($j = 0; $j -lt $Lines; $j++) {
+             
+                for ($k = $LineNumbers[$j]; $k -lt $LineContent.Count; $k++) {
+                    if ($LineContent[$k] -match $V1ProfileRegex) {
+                
+                
+                        if (-not $LineUpdate.ContainsKey($LineNumbers[$j])) {
+                            $LineUpdate.Add($LineNumbers[$j], $k)
+                        }
+                    }
+                }
+            }
+            $LineUpdate.Keys | ForEach-Object {
+                $LineNumber = $_
+                for ($m = $lineNumber + 1; $m -lt $LineUpdate[$LineNumber]; $m++) {
+                    if ($LineContent[$m].Contains("-Mg")) {
+                        $Original.Add($m + 1, $LineContent[$m])
+                        $ProposedChanges.Add($m + 1, $LineContent[$m].ToString().Replace("-Mg", "-MgBeta"))
+                    }
+                
+                }
+            }
+            if ($Lines -gt $LineUpdate.Count) {
+                for ($n = $LineNumbers[$Lines - 1] + 1; $n -lt $LineContent.Count; $n++) {
+                    if ($LineContent[$n].Contains("-Mg")) {
+                        $Original.Add($n + 1, $LineContent[$n])
+                        $ProposedChanges.Add($n + 1, $LineContent[$n].ToString().Replace("-Mg", "-MgBeta"))
+                    }
+                }
+            }
+    
+        }
+
+        $p = 1
         foreach ($item in $Original.GetEnumerator() | Sort Name) {
             $LineNumber = $item.Key
             $OriginalValue = $Original[$LineNumber].ToString()
             $ProposedValue = $ProposedChanges[$LineNumber].ToString()
-            $Result += [pscustomobject]@{"Order" = $i;"Location" = $FileName+":"+$LineNumber; "Type"="Cmdlet"; "ApiVersion" = "Beta"; "Original" = $OriginalValue; "New" = $ProposedValue }
+            $Result += [pscustomobject]@{"Order" = $p;"Location" = $FileName+":"+$LineNumber; "Type"="Cmdlet"; "ApiVersion" = "Beta"; "Original" = $OriginalValue; "New" = $ProposedValue }
             if ($WriteToFile) {
                 foreach ($Content in $ScriptContent) {
 
@@ -73,100 +137,16 @@ function Read-MgScript {
                 }
                 $ScriptContent > $UpdatedFile
             }
-            $i++
+            $p++
         }
         if ($Result.Count -gt 0) {
             Write-Host -ForegroundColor Green "--------- Your script(s) contains commands that need to conform to the naming convention as per the 'New' column on the table below ---------"
-        }
-        if($Result.Count -gt 0){
-        Write-Output $Result | Format-Table
+            Write-Output $Result | Format-Table
         }
         if($WriteToFile){
             Write-Host -ForegroundColor Blue "Your updated script is on this path: $UpdatedFile" 
         }
-        $LineUpdate.Clear()
-        $Original.Clear()
-        $ProposedChanges.Clear()
-        $Result.Clear() 
-    }
-    #clear everything
-
-}
-
-function Invoke-MgScriptAnalyzer {
-    param (
-        [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
-        [ValidateNotNullorEmpty()]
-        [PSCustomObject] $ScriptContent,
-        [string] $GraphProfile
-    )
-
-    # TODO: Analyze script content for breaking change.
-    # TODO: Store changes in an object.
-    # TODO: Write object as output.
-    # TODO: Settle on object members.
-
-    # Proposed Output
-    # Order | Location (file name:line:tab) | Type (Cmdlet|CmdletParameter|ModuleName) | ApiVersion | Original | New
-    
-    $i = 0
-    foreach ($_ in $scriptContent) {
-        $_ = $_.ToString().TrimStart()
-        $LineContent.Add($_)
-        
-        if ($_ -match $BetaProfileRegex) {
-            if(-not $_.StartsWith("#")){
-                $LineNumbers.Add($i)
-            }
-            
-        }
-    
-        $i++
-    }
-    if ($GraphProfile -ieq "beta") {
-        for ($g = 0; $g -lt $LineContent.Count; $g++) {
-            if ($LineContent[$g].Contains("-Mg")) {
-                $Original.Add($g + 1, $LineContent[$g])
-                $ProposedChanges.Add($g + 1, $LineContent[$g].ToString().Replace("-Mg", "-MgBeta"))
-            }
-        }
-    }
-    else {
-        $Lines = $LineNumbers.Count
-
-        for ($j = 0; $j -lt $Lines; $j++) {
-         
-            for ($k = $LineNumbers[$j]; $k -lt $LineContent.Count; $k++) {
-                if ($LineContent[$k] -match $V1ProfileRegex) {
-            
-            
-                    if (-not $LineUpdate.ContainsKey($LineNumbers[$j])) {
-                        $LineUpdate.Add($LineNumbers[$j], $k)
-                    }
-                }
-            }
-        }
-        $LineUpdate.Keys | ForEach-Object {
-            $LineNumber = $_
-            for ($m = $lineNumber + 1; $m -lt $LineUpdate[$LineNumber]; $m++) {
-                if ($LineContent[$m].Contains("-Mg")) {
-                    $Original.Add($m + 1, $LineContent[$m])
-                    $ProposedChanges.Add($m + 1, $LineContent[$m].ToString().Replace("-Mg", "-MgBeta"))
-                }
-            
-            }
-        }
-        if ($Lines -gt $LineUpdate.Count) {
-            for ($n = $LineNumbers[$Lines - 1] + 1; $n -lt $LineContent.Count; $n++) {
-                if ($LineContent[$n].Contains("-Mg")) {
-                    $Original.Add($n + 1, $LineContent[$n])
-                    $ProposedChanges.Add($n + 1, $LineContent[$n].ToString().Replace("-Mg", "-MgBeta"))
-                }
-            }
-        }
-
-    }
-    
+        $Result = @()
 
 }
 
@@ -189,7 +169,7 @@ function New-MgMigrationPlan {
         switch ($PSCmdlet.ParameterSetName) {
             'File' {
                 if (-not (Test-Path $FilePath)) { throw "Path does not exist: $FilePath" }
-                Read-MgScript -FilePath $FilePath -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
+                Invoke-MgScriptAnalyzer -FilePath $FilePath -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
             }
             'Directory' {
                 if (-not (Test-Path $DirectoryPath)) { throw "Path does not exist: $DirectoryPath" }
@@ -200,7 +180,7 @@ function New-MgMigrationPlan {
                     if (-not (Test-Path $input)) { throw "Path does not exist: $input" }
                     if ([System.IO.Path]::HasExtension($input)) {
                         # Process as file.
-                        Read-MgScript -FilePath $input -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
+                        Invoke-MgScriptAnalyzer -FilePath $input -GraphProfile $GraphProfile -UpdatedFilePath $UpdatedFilePath
                     }
                     else {
                         # Process as directory.
