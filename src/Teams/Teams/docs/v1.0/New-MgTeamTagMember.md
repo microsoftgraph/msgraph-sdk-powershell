@@ -45,8 +45,11 @@ Create a new teamworkTagMember object in a team.
 ### Example 1: Code snippet
 ```powershell
 Import-Module Microsoft.Graph.Teams
-
-Get-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId
+$group = Get-MgGroup -Filter "DisplayName eq '30 Seconds To Mars'"
+$tags = Get-MgTeamTag -TeamId $group.Id
+$tag = $tags | where { $_.DisplayName -eq 'VIP' }
+$user = Get-MgUser -Filter "DisplayName eq 'Jared Leto'"
+Get-MgTeamTagMember -TeamId $group.id -TeamworkTagId $tag.id -UserId $user.id
 ```
 
 This example shows how to use the New-MgTeamTagMember Cmdlet.
