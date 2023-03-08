@@ -19,7 +19,7 @@ Describe 'Connect-MgGraph ParameterSets' {
     }
     it 'Should have three ParameterSets' {
         $ConnectMgGraphCommand | Should -Not -BeNullOrEmpty
-        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 6
+        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 3
     }
     It 'Should have UserParameterSet' {
         $UserParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'UserParameterSet'
