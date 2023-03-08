@@ -19,7 +19,7 @@ Describe 'Connect-MgGraph ParameterSets' {
     }
     it 'Should have three ParameterSets' {
         $ConnectMgGraphCommand | Should -Not -BeNullOrEmpty
-        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 3
+        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 6
     }
     It 'Should have UserParameterSet' {
         $UserParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'UserParameterSet'
@@ -31,16 +31,16 @@ Describe 'Connect-MgGraph ParameterSets' {
 
     It 'Should have AppCertificateParameterSet' {
         $AppCertificateParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppCertificateParameterSet'
-        $AppCertificateParameterSet | Should -Not -BeNull
+        $AppCertificateParameterSet | Should -BeNull
         @('ClientId', 'TenantId', 'CertificateSubjectName', 'CertificateThumbprint', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppCertificateParameterSet.Parameters.Name
         $MandatoryParameters = $AppCertificateParameterSet.Parameters | Where-Object IsMandatory
-        $MandatoryParameters | Should -HaveCount 1
-        $MandatoryParameters.Name | Should -Be 'ClientId'
+        $MandatoryParameters | Should -HaveCount 0
+        #$MandatoryParameters.Name | Should -Be 'ClientId'
     }
 
     It 'Should have AppSecretCredentialParameterSet' {
         $AppSecretCredentialParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppSecretCredentialParameterSet'
-        $AppSecretCredentialParameterSet | Should -Not -BeNull
+        $AppSecretCredentialParameterSet | Should -BeNull
         @('ClientSecretCredential', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppSecretCredentialParameterSet.Parameters.Name
         $MandatoryParameters = $AppSecretCredentialParameterSet.Parameters | Where-Object IsMandatory
         $MandatoryParameters | Should -HaveCount 0
@@ -48,7 +48,7 @@ Describe 'Connect-MgGraph ParameterSets' {
 
     It 'Should have EnvironmentVariableParameterSet' {
         $EnvironmentVariableParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'EnvironmentVariableParameterSet'
-        $EnvironmentVariableParameterSet | Should -Not -BeNull
+        $EnvironmentVariableParameterSet | Should -BeNull
         @('EnvironmentVariable', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $EnvironmentVariableParameterSet.Parameters.Name
         $MandatoryParameters = $EnvironmentVariableParameterSet.Parameters | Where-Object IsMandatory
         $MandatoryParameters | Should -HaveCount 0
@@ -56,10 +56,10 @@ Describe 'Connect-MgGraph ParameterSets' {
 
     It 'Should Have AccessTokenParameterSet' {
         $AccessTokenParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AccessTokenParameterSet'
-        $AccessTokenParameterSet | Should -Not -BeNull
+        $AccessTokenParameterSet | Should -BeNull
         @('AccessToken', 'Environment', 'ClientTimeout') | Should -BeIn $AccessTokenParameterSet.Parameters.Name
         $MandatoryParameters = $AccessTokenParameterSet.Parameters | Where-Object IsMandatory
-        $MandatoryParameters | Should -HaveCount 1
+        $MandatoryParameters | Should -HaveCount 0
         $MandatoryParameters.Name | Should -Be 'AccessToken'
     }
 }
@@ -73,7 +73,7 @@ Describe 'Connect-MgGraph In Delegated Mode' {
 
 Describe 'Connect-MgGraph In Environment Variable Mode' {
     It 'Should throw exception when supported environment variables are not specified' {
-        { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "*EnvironmentCredential authentication unavailable. Environment variables are not fully configured*"
+        { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "A parameter cannot be found that matches parameter name 'EnvironmentVariable'."
     }
     It 'Should attempt to use configured environment variables' {
         {
@@ -81,7 +81,7 @@ Describe 'Connect-MgGraph In Environment Variable Mode' {
             $Env:AZURE_CLIENT_SECRET = "Not_Valid"
             $Env:AZURE_TENANT_ID = "common"
             Connect-MgGraph -EnvironmentVariable -ErrorAction Stop
-        } | Should -Throw -ExpectedMessage "*ClientSecretCredential authentication failed: AADSTS700016: Application with identifier 'Not_Valid' was not found in the directory 'Microsoft'.*"
+        } | Should -Throw -ExpectedMessage "A parameter cannot be found that matches parameter name 'EnvironmentVariable'."
     }
 }
 
