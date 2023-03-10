@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -69,7 +69,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -100,7 +100,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -128,7 +128,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -209,7 +209,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -242,7 +242,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -250,7 +250,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sharedInsight-id
           in: path
-          description: 'key: id of sharedInsight'
+          description: The unique identifier of sharedInsight
           required: true
           style: simple
           schema:
@@ -306,7 +306,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -314,7 +314,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sharedInsight-id
           in: path
-          description: 'key: id of sharedInsight'
+          description: The unique identifier of sharedInsight
           required: true
           style: simple
           schema:
@@ -345,7 +345,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -353,7 +353,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sharedInsight-id
           in: path
-          description: 'key: id of sharedInsight'
+          description: The unique identifier of sharedInsight
           required: true
           style: simple
           schema:
@@ -380,7 +380,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -388,7 +388,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sharedInsight-id
           in: path
-          description: 'key: id of sharedInsight'
+          description: The unique identifier of sharedInsight
           required: true
           style: simple
           schema:
@@ -438,7 +438,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -446,7 +446,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sharedInsight-id
           in: path
-          description: 'key: id of sharedInsight'
+          description: The unique identifier of sharedInsight
           required: true
           style: simple
           schema:
@@ -496,7 +496,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -575,7 +575,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -608,7 +608,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -616,7 +616,7 @@ paths:
           x-ms-docs-key-type: user
         - name: trending-id
           in: path
-          description: 'key: id of trending'
+          description: The unique identifier of trending
           required: true
           style: simple
           schema:
@@ -670,7 +670,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -678,7 +678,7 @@ paths:
           x-ms-docs-key-type: user
         - name: trending-id
           in: path
-          description: 'key: id of trending'
+          description: The unique identifier of trending
           required: true
           style: simple
           schema:
@@ -709,7 +709,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -717,7 +717,7 @@ paths:
           x-ms-docs-key-type: user
         - name: trending-id
           in: path
-          description: 'key: id of trending'
+          description: The unique identifier of trending
           required: true
           style: simple
           schema:
@@ -745,7 +745,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -753,7 +753,7 @@ paths:
           x-ms-docs-key-type: user
         - name: trending-id
           in: path
-          description: 'key: id of trending'
+          description: The unique identifier of trending
           required: true
           style: simple
           schema:
@@ -806,7 +806,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -882,7 +882,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -915,7 +915,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -923,7 +923,7 @@ paths:
           x-ms-docs-key-type: user
         - name: usedInsight-id
           in: path
-          description: 'key: id of usedInsight'
+          description: The unique identifier of usedInsight
           required: true
           style: simple
           schema:
@@ -976,7 +976,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -984,7 +984,7 @@ paths:
           x-ms-docs-key-type: user
         - name: usedInsight-id
           in: path
-          description: 'key: id of usedInsight'
+          description: The unique identifier of usedInsight
           required: true
           style: simple
           schema:
@@ -1015,7 +1015,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1023,7 +1023,7 @@ paths:
           x-ms-docs-key-type: user
         - name: usedInsight-id
           in: path
-          description: 'key: id of usedInsight'
+          description: The unique identifier of usedInsight
           required: true
           style: simple
           schema:
@@ -1051,7 +1051,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1059,7 +1059,7 @@ paths:
           x-ms-docs-key-type: user
         - name: usedInsight-id
           in: path
-          description: 'key: id of usedInsight'
+          description: The unique identifier of usedInsight
           required: true
           style: simple
           schema:
@@ -1112,7 +1112,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1224,7 +1224,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1232,7 +1232,7 @@ paths:
           x-ms-docs-key-type: user
         - name: person-id
           in: path
-          description: 'key: id of person'
+          description: The unique identifier of person
           required: true
           style: simple
           schema:

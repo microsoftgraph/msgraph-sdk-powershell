@@ -203,7 +203,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -259,7 +259,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -290,7 +290,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -318,7 +318,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -386,7 +386,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -419,7 +419,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -427,7 +427,7 @@ paths:
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: enrollmentConfigurationAssignment-id
           in: path
-          description: 'key: id of enrollmentConfigurationAssignment'
+          description: The unique identifier of enrollmentConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -476,7 +476,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -484,7 +484,7 @@ paths:
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: enrollmentConfigurationAssignment-id
           in: path
-          description: 'key: id of enrollmentConfigurationAssignment'
+          description: The unique identifier of enrollmentConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -515,7 +515,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -523,7 +523,7 @@ paths:
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: enrollmentConfigurationAssignment-id
           in: path
-          description: 'key: id of enrollmentConfigurationAssignment'
+          description: The unique identifier of enrollmentConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -653,7 +653,7 @@ paths:
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          description: The unique identifier of importedWindowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -708,7 +708,7 @@ paths:
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          description: The unique identifier of importedWindowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -739,7 +739,7 @@ paths:
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          description: The unique identifier of importedWindowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -896,7 +896,7 @@ paths:
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of windowsAutopilotDeviceIdentity'
+          description: The unique identifier of windowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -960,7 +960,7 @@ paths:
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of windowsAutopilotDeviceIdentity'
+          description: The unique identifier of windowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -991,7 +991,7 @@ paths:
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of windowsAutopilotDeviceIdentity'
+          description: The unique identifier of windowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
