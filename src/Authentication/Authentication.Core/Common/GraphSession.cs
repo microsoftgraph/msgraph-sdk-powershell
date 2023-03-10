@@ -56,6 +56,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// </summary>
         public Hashtable[] MgCommandMetadata { get; set; }
 
+        /// <summary>
+        /// Represents a collection of Microsoft Graph PowerShell command names mapped to legacy commands.
+        /// </summary>
+        public Hashtable[] MgLegacyCommandMapping { get; set; }
+
         public HttpClient GraphHttpClient { get; set; }
 
         /// <summary>

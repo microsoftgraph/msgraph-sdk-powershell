@@ -42,6 +42,14 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
             $modified = $true
             return $navigationPropertyExtension
         }
+
+        if ($_ -match "'2\d\d':") {
+            # Replace '2\d\d' with '2xx' to avoid status code mismatch errors.
+            $newStatusCode = ($_ -replace $Matches[0], "2XX:")
+            $modified = $true
+            return $newStatusCode
+        }
+
         return $_
     }
     if ($modified) { $updatedContent | Out-File $filePath -Force }

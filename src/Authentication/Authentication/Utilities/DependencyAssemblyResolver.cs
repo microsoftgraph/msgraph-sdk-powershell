@@ -12,22 +12,22 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
     public static class DependencyAssemblyResolver
     {
         // Catalog our dependencies here to ensure we don't load anything else.
-        private static IReadOnlyDictionary<string, Version> Dependencies = new Dictionary<string, Version>
+        private static readonly IReadOnlyDictionary<string, Version> Dependencies = new Dictionary<string, Version>
         {
-            { "Azure.Core", new Version("1.25.0") },
-            { "Azure.Identity", new Version("1.6.1") },
+            { "Azure.Core", new Version("1.28.0") },
+            { "Azure.Identity", new Version("1.8.2") },
             { "Microsoft.Bcl.AsyncInterfaces", new Version("6.0.0") },
-            { "Microsoft.Graph.Core", new Version("2.0.11") },
-            { "Microsoft.Identity.Client", new Version("4.46.0") },
-            { "Microsoft.Identity.Client.Extensions.Msal", new Version("2.23.0") },
-            { "Microsoft.IdentityModel.Abstractions", new Version("6.22.0") },
-            { "Microsoft.IdentityModel.JsonWebTokens", new Version("6.22.0") },
-            { "Microsoft.IdentityModel.Logging", new Version("6.22.0") },
-            { "Microsoft.IdentityModel.Tokens", new Version("6.22.0") },
-            { "System.IdentityModel.Tokens.Jwt", new Version("6.22.0") },
-            { "System.Security.Cryptography.ProtectedData", new Version("6.0.0") },
-            { "Newtonsoft.Json", new Version("13.0.1") },
-            { "System.Text.Json", new Version("6.0.5") },
+            { "Microsoft.Graph.Core", new Version("2.0.15") },
+            { "Microsoft.Identity.Client", new Version("4.50.0") },
+            { "Microsoft.Identity.Client.Extensions.Msal", new Version("2.26.0") },
+            { "Microsoft.IdentityModel.Abstractions", new Version("6.27.0") },
+            { "Microsoft.IdentityModel.JsonWebTokens", new Version("6.27.0") },
+            { "Microsoft.IdentityModel.Logging", new Version("6.27.0") },
+            { "Microsoft.IdentityModel.Tokens", new Version("6.27.0") },
+            { "System.IdentityModel.Tokens.Jwt", new Version("6.27.0") },
+            { "System.Security.Cryptography.ProtectedData", new Version("7.0.1") },
+            { "Newtonsoft.Json", new Version("13.0.2") },
+            { "System.Text.Json", new Version("7.0.2") },
             { "System.Text.Encodings.Web", new Version("6.0.0") },
             { "System.Threading.Tasks.Extensions", new Version("4.5.4") },
             { "System.Diagnostics.DiagnosticSource", new Version("4.0.4") },

@@ -50,7 +50,7 @@ Describe "Find-MgGraphCommand Command" {
         It 'Should find command using URI with query parameters' {
             {
                 $Uri = "beta/users?`$select=displayName&`$filter=identities/any(c:c/issuerAssignedId eq 'j.smith@yahoo.com')"
-                $MgCommand = Find-MgGraphCommand -Uri $Uri -Method GET
+                $MgCommand = Find-MgGraphCommand -Uri $Uri -Method GET -ApiVersion beta
                 $MgCommand | Should -HaveCount 1
                 $MgCommand.Method | Should -Be "GET"
                 $MgCommand.APIVersion | Should -Be "beta"
