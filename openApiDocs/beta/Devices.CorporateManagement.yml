@@ -499,7 +499,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -647,7 +647,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -674,7 +674,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -702,7 +702,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -773,7 +773,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -806,7 +806,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -814,7 +814,7 @@ paths:
           x-ms-docs-key-type: androidManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -864,7 +864,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -872,7 +872,7 @@ paths:
           x-ms-docs-key-type: androidManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -899,7 +899,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -907,7 +907,7 @@ paths:
           x-ms-docs-key-type: androidManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -935,7 +935,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -988,7 +988,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1015,7 +1015,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: id of androidManagedAppProtection'
+          description: The unique identifier of androidManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1484,7 +1484,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1640,7 +1640,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1667,7 +1667,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1695,7 +1695,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1766,7 +1766,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1799,7 +1799,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1807,7 +1807,7 @@ paths:
           x-ms-docs-key-type: defaultManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -1857,7 +1857,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1865,7 +1865,7 @@ paths:
           x-ms-docs-key-type: defaultManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -1892,7 +1892,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1900,7 +1900,7 @@ paths:
           x-ms-docs-key-type: defaultManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -1928,7 +1928,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -1981,7 +1981,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -2008,7 +2008,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: id of defaultManagedAppProtection'
+          description: The unique identifier of defaultManagedAppProtection
           required: true
           style: simple
           schema:
@@ -2147,7 +2147,7 @@ paths:
       parameters:
         - name: deviceAppManagementTask-id
           in: path
-          description: 'key: id of deviceAppManagementTask'
+          description: The unique identifier of deviceAppManagementTask
           required: true
           style: simple
           schema:
@@ -2205,7 +2205,7 @@ paths:
       parameters:
         - name: deviceAppManagementTask-id
           in: path
-          description: 'key: id of deviceAppManagementTask'
+          description: The unique identifier of deviceAppManagementTask
           required: true
           style: simple
           schema:
@@ -2232,7 +2232,7 @@ paths:
       parameters:
         - name: deviceAppManagementTask-id
           in: path
-          description: 'key: id of deviceAppManagementTask'
+          description: The unique identifier of deviceAppManagementTask
           required: true
           style: simple
           schema:
@@ -2260,7 +2260,7 @@ paths:
       parameters:
         - name: deviceAppManagementTask-id
           in: path
-          description: 'key: id of deviceAppManagementTask'
+          description: The unique identifier of deviceAppManagementTask
           required: true
           style: simple
           schema:
@@ -2402,7 +2402,7 @@ paths:
       parameters:
         - name: enterpriseCodeSigningCertificate-id
           in: path
-          description: 'key: id of enterpriseCodeSigningCertificate'
+          description: The unique identifier of enterpriseCodeSigningCertificate
           required: true
           style: simple
           schema:
@@ -2458,7 +2458,7 @@ paths:
       parameters:
         - name: enterpriseCodeSigningCertificate-id
           in: path
-          description: 'key: id of enterpriseCodeSigningCertificate'
+          description: The unique identifier of enterpriseCodeSigningCertificate
           required: true
           style: simple
           schema:
@@ -2485,7 +2485,7 @@ paths:
       parameters:
         - name: enterpriseCodeSigningCertificate-id
           in: path
-          description: 'key: id of enterpriseCodeSigningCertificate'
+          description: The unique identifier of enterpriseCodeSigningCertificate
           required: true
           style: simple
           schema:
@@ -2629,7 +2629,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -2694,7 +2694,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -2721,7 +2721,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -2749,7 +2749,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -2817,7 +2817,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -2850,7 +2850,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -2858,7 +2858,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: iosLobAppProvisioningConfigurationAssignment-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfigurationAssignment'
+          description: The unique identifier of iosLobAppProvisioningConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -2907,7 +2907,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -2915,7 +2915,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: iosLobAppProvisioningConfigurationAssignment-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfigurationAssignment'
+          description: The unique identifier of iosLobAppProvisioningConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -2942,7 +2942,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -2950,7 +2950,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: iosLobAppProvisioningConfigurationAssignment-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfigurationAssignment'
+          description: The unique identifier of iosLobAppProvisioningConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -2978,7 +2978,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3067,7 +3067,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3100,7 +3100,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3108,7 +3108,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: managedDeviceMobileAppConfigurationDeviceStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationDeviceStatus
           required: true
           style: simple
           schema:
@@ -3164,7 +3164,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3172,7 +3172,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: managedDeviceMobileAppConfigurationDeviceStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationDeviceStatus
           required: true
           style: simple
           schema:
@@ -3199,7 +3199,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3207,7 +3207,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: managedDeviceMobileAppConfigurationDeviceStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationDeviceStatus
           required: true
           style: simple
           schema:
@@ -3235,7 +3235,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3303,7 +3303,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3336,7 +3336,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3344,7 +3344,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: mobileAppProvisioningConfigGroupAssignment-id
           in: path
-          description: 'key: id of mobileAppProvisioningConfigGroupAssignment'
+          description: The unique identifier of mobileAppProvisioningConfigGroupAssignment
           required: true
           style: simple
           schema:
@@ -3393,7 +3393,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3401,7 +3401,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: mobileAppProvisioningConfigGroupAssignment-id
           in: path
-          description: 'key: id of mobileAppProvisioningConfigGroupAssignment'
+          description: The unique identifier of mobileAppProvisioningConfigGroupAssignment
           required: true
           style: simple
           schema:
@@ -3428,7 +3428,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3436,7 +3436,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: mobileAppProvisioningConfigGroupAssignment-id
           in: path
-          description: 'key: id of mobileAppProvisioningConfigGroupAssignment'
+          description: The unique identifier of mobileAppProvisioningConfigGroupAssignment
           required: true
           style: simple
           schema:
@@ -3463,7 +3463,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3503,7 +3503,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3583,7 +3583,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3616,7 +3616,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3624,7 +3624,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: managedDeviceMobileAppConfigurationUserStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationUserStatus
           required: true
           style: simple
           schema:
@@ -3677,7 +3677,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3685,7 +3685,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: managedDeviceMobileAppConfigurationUserStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationUserStatus
           required: true
           style: simple
           schema:
@@ -3712,7 +3712,7 @@ paths:
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
-          description: 'key: id of iosLobAppProvisioningConfiguration'
+          description: The unique identifier of iosLobAppProvisioningConfiguration
           required: true
           style: simple
           schema:
@@ -3720,7 +3720,7 @@ paths:
           x-ms-docs-key-type: iosLobAppProvisioningConfiguration
         - name: managedDeviceMobileAppConfigurationUserStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationUserStatus
           required: true
           style: simple
           schema:
@@ -4095,7 +4095,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4221,7 +4221,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4248,7 +4248,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4276,7 +4276,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4347,7 +4347,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4380,7 +4380,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4388,7 +4388,7 @@ paths:
           x-ms-docs-key-type: iosManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -4438,7 +4438,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4446,7 +4446,7 @@ paths:
           x-ms-docs-key-type: iosManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -4473,7 +4473,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4481,7 +4481,7 @@ paths:
           x-ms-docs-key-type: iosManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -4509,7 +4509,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4562,7 +4562,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4589,7 +4589,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: id of iosManagedAppProtection'
+          description: The unique identifier of iosManagedAppProtection
           required: true
           style: simple
           schema:
@@ -4760,7 +4760,7 @@ paths:
       parameters:
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -4814,7 +4814,7 @@ paths:
       parameters:
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -4841,7 +4841,7 @@ paths:
       parameters:
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -4868,7 +4868,7 @@ paths:
       parameters:
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -5039,7 +5039,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5109,7 +5109,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5136,7 +5136,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5164,7 +5164,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5247,7 +5247,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5280,7 +5280,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5288,7 +5288,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -5342,7 +5342,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5350,7 +5350,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -5377,7 +5377,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5385,7 +5385,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -5412,7 +5412,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5420,7 +5420,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -5456,7 +5456,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5539,7 +5539,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5572,7 +5572,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5580,7 +5580,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -5634,7 +5634,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5642,7 +5642,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -5669,7 +5669,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5677,7 +5677,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -5704,7 +5704,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5712,7 +5712,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: id of managedAppPolicy'
+          description: The unique identifier of managedAppPolicy
           required: true
           style: simple
           schema:
@@ -5748,7 +5748,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5825,7 +5825,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5858,7 +5858,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5866,7 +5866,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppOperation-id
           in: path
-          description: 'key: id of managedAppOperation'
+          description: The unique identifier of managedAppOperation
           required: true
           style: simple
           schema:
@@ -5918,7 +5918,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5926,7 +5926,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppOperation-id
           in: path
-          description: 'key: id of managedAppOperation'
+          description: The unique identifier of managedAppOperation
           required: true
           style: simple
           schema:
@@ -5953,7 +5953,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -5961,7 +5961,7 @@ paths:
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppOperation-id
           in: path
-          description: 'key: id of managedAppOperation'
+          description: The unique identifier of managedAppOperation
           required: true
           style: simple
           schema:
@@ -6112,7 +6112,7 @@ paths:
       parameters:
         - name: managedAppStatus-id
           in: path
-          description: 'key: id of managedAppStatus'
+          description: The unique identifier of managedAppStatus
           required: true
           style: simple
           schema:
@@ -6162,7 +6162,7 @@ paths:
       parameters:
         - name: managedAppStatus-id
           in: path
-          description: 'key: id of managedAppStatus'
+          description: The unique identifier of managedAppStatus
           required: true
           style: simple
           schema:
@@ -6189,7 +6189,7 @@ paths:
       parameters:
         - name: managedAppStatus-id
           in: path
-          description: 'key: id of managedAppStatus'
+          description: The unique identifier of managedAppStatus
           required: true
           style: simple
           schema:
@@ -6304,7 +6304,7 @@ paths:
       parameters:
         - name: managedEBookCategory-id
           in: path
-          description: 'key: id of managedEBookCategory'
+          description: The unique identifier of managedEBookCategory
           required: true
           style: simple
           schema:
@@ -6354,7 +6354,7 @@ paths:
       parameters:
         - name: managedEBookCategory-id
           in: path
-          description: 'key: id of managedEBookCategory'
+          description: The unique identifier of managedEBookCategory
           required: true
           style: simple
           schema:
@@ -6381,7 +6381,7 @@ paths:
       parameters:
         - name: managedEBookCategory-id
           in: path
-          description: 'key: id of managedEBookCategory'
+          description: The unique identifier of managedEBookCategory
           required: true
           style: simple
           schema:
@@ -6527,7 +6527,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6594,7 +6594,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6621,7 +6621,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6649,7 +6649,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6720,7 +6720,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6753,7 +6753,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6761,7 +6761,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: managedEBookAssignment-id
           in: path
-          description: 'key: id of managedEBookAssignment'
+          description: The unique identifier of managedEBookAssignment
           required: true
           style: simple
           schema:
@@ -6811,7 +6811,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6819,7 +6819,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: managedEBookAssignment-id
           in: path
-          description: 'key: id of managedEBookAssignment'
+          description: The unique identifier of managedEBookAssignment
           required: true
           style: simple
           schema:
@@ -6846,7 +6846,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6854,7 +6854,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: managedEBookAssignment-id
           in: path
-          description: 'key: id of managedEBookAssignment'
+          description: The unique identifier of managedEBookAssignment
           required: true
           style: simple
           schema:
@@ -6882,7 +6882,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6955,7 +6955,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -6963,7 +6963,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: managedEBookCategory-id
           in: path
-          description: 'key: id of managedEBookCategory'
+          description: The unique identifier of managedEBookCategory
           required: true
           style: simple
           schema:
@@ -7015,7 +7015,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7104,7 +7104,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7137,7 +7137,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7145,7 +7145,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: deviceInstallState-id
           in: path
-          description: 'key: id of deviceInstallState'
+          description: The unique identifier of deviceInstallState
           required: true
           style: simple
           schema:
@@ -7201,7 +7201,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7209,7 +7209,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: deviceInstallState-id
           in: path
-          description: 'key: id of deviceInstallState'
+          description: The unique identifier of deviceInstallState
           required: true
           style: simple
           schema:
@@ -7236,7 +7236,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7244,7 +7244,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: deviceInstallState-id
           in: path
-          description: 'key: id of deviceInstallState'
+          description: The unique identifier of deviceInstallState
           required: true
           style: simple
           schema:
@@ -7272,7 +7272,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7326,7 +7326,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7353,7 +7353,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7380,7 +7380,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7416,7 +7416,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7495,7 +7495,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7528,7 +7528,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7536,7 +7536,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: id of userInstallStateSummary'
+          description: The unique identifier of userInstallStateSummary
           required: true
           style: simple
           schema:
@@ -7590,7 +7590,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7598,7 +7598,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: id of userInstallStateSummary'
+          description: The unique identifier of userInstallStateSummary
           required: true
           style: simple
           schema:
@@ -7625,7 +7625,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7633,7 +7633,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: id of userInstallStateSummary'
+          description: The unique identifier of userInstallStateSummary
           required: true
           style: simple
           schema:
@@ -7661,7 +7661,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7669,7 +7669,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: id of userInstallStateSummary'
+          description: The unique identifier of userInstallStateSummary
           required: true
           style: simple
           schema:
@@ -7758,7 +7758,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7766,7 +7766,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: id of userInstallStateSummary'
+          description: The unique identifier of userInstallStateSummary
           required: true
           style: simple
           schema:
@@ -7799,7 +7799,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7807,7 +7807,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: id of userInstallStateSummary'
+          description: The unique identifier of userInstallStateSummary
           required: true
           style: simple
           schema:
@@ -7815,7 +7815,7 @@ paths:
           x-ms-docs-key-type: userInstallStateSummary
         - name: deviceInstallState-id
           in: path
-          description: 'key: id of deviceInstallState'
+          description: The unique identifier of deviceInstallState
           required: true
           style: simple
           schema:
@@ -7871,7 +7871,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7879,7 +7879,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: id of userInstallStateSummary'
+          description: The unique identifier of userInstallStateSummary
           required: true
           style: simple
           schema:
@@ -7887,7 +7887,7 @@ paths:
           x-ms-docs-key-type: userInstallStateSummary
         - name: deviceInstallState-id
           in: path
-          description: 'key: id of deviceInstallState'
+          description: The unique identifier of deviceInstallState
           required: true
           style: simple
           schema:
@@ -7914,7 +7914,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: id of managedEBook'
+          description: The unique identifier of managedEBook
           required: true
           style: simple
           schema:
@@ -7922,7 +7922,7 @@ paths:
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: id of userInstallStateSummary'
+          description: The unique identifier of userInstallStateSummary
           required: true
           style: simple
           schema:
@@ -7930,7 +7930,7 @@ paths:
           x-ms-docs-key-type: userInstallStateSummary
         - name: deviceInstallState-id
           in: path
-          description: 'key: id of deviceInstallState'
+          description: The unique identifier of deviceInstallState
           required: true
           style: simple
           schema:
@@ -8129,7 +8129,7 @@ paths:
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
           in: path
-          description: 'key: id of mdmWindowsInformationProtectionPolicy'
+          description: The unique identifier of mdmWindowsInformationProtectionPolicy
           required: true
           style: simple
           schema:
@@ -8211,7 +8211,7 @@ paths:
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
           in: path
-          description: 'key: id of mdmWindowsInformationProtectionPolicy'
+          description: The unique identifier of mdmWindowsInformationProtectionPolicy
           required: true
           style: simple
           schema:
@@ -8238,7 +8238,7 @@ paths:
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
           in: path
-          description: 'key: id of mdmWindowsInformationProtectionPolicy'
+          description: The unique identifier of mdmWindowsInformationProtectionPolicy
           required: true
           style: simple
           schema:
@@ -8410,7 +8410,7 @@ paths:
       parameters:
         - name: mobileAppCategory-id
           in: path
-          description: 'key: id of mobileAppCategory'
+          description: The unique identifier of mobileAppCategory
           required: true
           style: simple
           schema:
@@ -8460,7 +8460,7 @@ paths:
       parameters:
         - name: mobileAppCategory-id
           in: path
-          description: 'key: id of mobileAppCategory'
+          description: The unique identifier of mobileAppCategory
           required: true
           style: simple
           schema:
@@ -8487,7 +8487,7 @@ paths:
       parameters:
         - name: mobileAppCategory-id
           in: path
-          description: 'key: id of mobileAppCategory'
+          description: The unique identifier of mobileAppCategory
           required: true
           style: simple
           schema:
@@ -8627,7 +8627,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -8692,7 +8692,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -8719,7 +8719,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -8747,7 +8747,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -8815,7 +8815,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -8848,7 +8848,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -8856,7 +8856,7 @@ paths:
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationAssignment-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationAssignment'
+          description: The unique identifier of managedDeviceMobileAppConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -8905,7 +8905,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -8913,7 +8913,7 @@ paths:
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationAssignment-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationAssignment'
+          description: The unique identifier of managedDeviceMobileAppConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -8940,7 +8940,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -8948,7 +8948,7 @@ paths:
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationAssignment-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationAssignment'
+          description: The unique identifier of managedDeviceMobileAppConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -8976,7 +8976,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9065,7 +9065,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9098,7 +9098,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9106,7 +9106,7 @@ paths:
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationDeviceStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationDeviceStatus
           required: true
           style: simple
           schema:
@@ -9162,7 +9162,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9170,7 +9170,7 @@ paths:
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationDeviceStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationDeviceStatus
           required: true
           style: simple
           schema:
@@ -9197,7 +9197,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9205,7 +9205,7 @@ paths:
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationDeviceStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationDeviceStatus
           required: true
           style: simple
           schema:
@@ -9233,7 +9233,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9290,7 +9290,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9317,7 +9317,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9344,7 +9344,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9380,7 +9380,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9460,7 +9460,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9493,7 +9493,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9501,7 +9501,7 @@ paths:
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationUserStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationUserStatus
           required: true
           style: simple
           schema:
@@ -9554,7 +9554,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9562,7 +9562,7 @@ paths:
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationUserStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationUserStatus
           required: true
           style: simple
           schema:
@@ -9589,7 +9589,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9597,7 +9597,7 @@ paths:
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationUserStatus-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
+          description: The unique identifier of managedDeviceMobileAppConfigurationUserStatus
           required: true
           style: simple
           schema:
@@ -9625,7 +9625,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9681,7 +9681,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9708,7 +9708,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfiguration'
+          description: The unique identifier of managedDeviceMobileAppConfiguration
           required: true
           style: simple
           schema:
@@ -9886,7 +9886,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -9965,7 +9965,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -9992,7 +9992,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10020,7 +10020,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10100,7 +10100,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10133,7 +10133,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10141,7 +10141,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppAssignment-id
           in: path
-          description: 'key: id of mobileAppAssignment'
+          description: The unique identifier of mobileAppAssignment
           required: true
           style: simple
           schema:
@@ -10194,7 +10194,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10202,7 +10202,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppAssignment-id
           in: path
-          description: 'key: id of mobileAppAssignment'
+          description: The unique identifier of mobileAppAssignment
           required: true
           style: simple
           schema:
@@ -10229,7 +10229,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10237,7 +10237,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppAssignment-id
           in: path
-          description: 'key: id of mobileAppAssignment'
+          description: The unique identifier of mobileAppAssignment
           required: true
           style: simple
           schema:
@@ -10265,7 +10265,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10338,7 +10338,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10346,7 +10346,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppCategory-id
           in: path
-          description: 'key: id of mobileAppCategory'
+          description: The unique identifier of mobileAppCategory
           required: true
           style: simple
           schema:
@@ -10398,7 +10398,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10501,7 +10501,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10534,7 +10534,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10542,7 +10542,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppInstallStatus-id
           in: path
-          description: 'key: id of mobileAppInstallStatus'
+          description: The unique identifier of mobileAppInstallStatus
           required: true
           style: simple
           schema:
@@ -10604,7 +10604,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10612,7 +10612,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppInstallStatus-id
           in: path
-          description: 'key: id of mobileAppInstallStatus'
+          description: The unique identifier of mobileAppInstallStatus
           required: true
           style: simple
           schema:
@@ -10639,7 +10639,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10647,7 +10647,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppInstallStatus-id
           in: path
-          description: 'key: id of mobileAppInstallStatus'
+          description: The unique identifier of mobileAppInstallStatus
           required: true
           style: simple
           schema:
@@ -10675,7 +10675,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10683,7 +10683,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppInstallStatus-id
           in: path
-          description: 'key: id of mobileAppInstallStatus'
+          description: The unique identifier of mobileAppInstallStatus
           required: true
           style: simple
           schema:
@@ -10764,7 +10764,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10822,7 +10822,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10849,7 +10849,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10876,7 +10876,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10911,7 +10911,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -10970,7 +10970,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11006,7 +11006,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11086,7 +11086,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11119,7 +11119,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11127,7 +11127,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppRelationship-id
           in: path
-          description: 'key: id of mobileAppRelationship'
+          description: The unique identifier of mobileAppRelationship
           required: true
           style: simple
           schema:
@@ -11180,7 +11180,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11188,7 +11188,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppRelationship-id
           in: path
-          description: 'key: id of mobileAppRelationship'
+          description: The unique identifier of mobileAppRelationship
           required: true
           style: simple
           schema:
@@ -11215,7 +11215,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11223,7 +11223,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: mobileAppRelationship-id
           in: path
-          description: 'key: id of mobileAppRelationship'
+          description: The unique identifier of mobileAppRelationship
           required: true
           style: simple
           schema:
@@ -11251,7 +11251,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11335,7 +11335,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11368,7 +11368,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11376,7 +11376,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11433,7 +11433,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11441,7 +11441,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11468,7 +11468,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11476,7 +11476,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11504,7 +11504,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11512,7 +11512,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11593,7 +11593,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11601,7 +11601,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11704,7 +11704,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11712,7 +11712,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11745,7 +11745,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11753,7 +11753,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11761,7 +11761,7 @@ paths:
           x-ms-docs-key-type: userAppInstallStatus
         - name: mobileAppInstallStatus-id
           in: path
-          description: 'key: id of mobileAppInstallStatus'
+          description: The unique identifier of mobileAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11823,7 +11823,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11831,7 +11831,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11839,7 +11839,7 @@ paths:
           x-ms-docs-key-type: userAppInstallStatus
         - name: mobileAppInstallStatus-id
           in: path
-          description: 'key: id of mobileAppInstallStatus'
+          description: The unique identifier of mobileAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11866,7 +11866,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11874,7 +11874,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11882,7 +11882,7 @@ paths:
           x-ms-docs-key-type: userAppInstallStatus
         - name: mobileAppInstallStatus-id
           in: path
-          description: 'key: id of mobileAppInstallStatus'
+          description: The unique identifier of mobileAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11910,7 +11910,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: id of mobileApp'
+          description: The unique identifier of mobileApp
           required: true
           style: simple
           schema:
@@ -11918,7 +11918,7 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: userAppInstallStatus-id
           in: path
-          description: 'key: id of userAppInstallStatus'
+          description: The unique identifier of userAppInstallStatus
           required: true
           style: simple
           schema:
@@ -11926,7 +11926,7 @@ paths:
           x-ms-docs-key-type: userAppInstallStatus
         - name: mobileAppInstallStatus-id
           in: path
-          description: 'key: id of mobileAppInstallStatus'
+          description: The unique identifier of mobileAppInstallStatus
           required: true
           style: simple
           schema:
@@ -12366,7 +12366,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12426,7 +12426,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12453,7 +12453,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12481,7 +12481,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12552,7 +12552,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12585,7 +12585,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12593,7 +12593,7 @@ paths:
           x-ms-docs-key-type: policySet
         - name: policySetAssignment-id
           in: path
-          description: 'key: id of policySetAssignment'
+          description: The unique identifier of policySetAssignment
           required: true
           style: simple
           schema:
@@ -12643,7 +12643,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12651,7 +12651,7 @@ paths:
           x-ms-docs-key-type: policySet
         - name: policySetAssignment-id
           in: path
-          description: 'key: id of policySetAssignment'
+          description: The unique identifier of policySetAssignment
           required: true
           style: simple
           schema:
@@ -12678,7 +12678,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12686,7 +12686,7 @@ paths:
           x-ms-docs-key-type: policySet
         - name: policySetAssignment-id
           in: path
-          description: 'key: id of policySetAssignment'
+          description: The unique identifier of policySetAssignment
           required: true
           style: simple
           schema:
@@ -12714,7 +12714,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12803,7 +12803,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12836,7 +12836,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12844,7 +12844,7 @@ paths:
           x-ms-docs-key-type: policySet
         - name: policySetItem-id
           in: path
-          description: 'key: id of policySetItem'
+          description: The unique identifier of policySetItem
           required: true
           style: simple
           schema:
@@ -12900,7 +12900,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12908,7 +12908,7 @@ paths:
           x-ms-docs-key-type: policySet
         - name: policySetItem-id
           in: path
-          description: 'key: id of policySetItem'
+          description: The unique identifier of policySetItem
           required: true
           style: simple
           schema:
@@ -12935,7 +12935,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -12943,7 +12943,7 @@ paths:
           x-ms-docs-key-type: policySet
         - name: policySetItem-id
           in: path
-          description: 'key: id of policySetItem'
+          description: The unique identifier of policySetItem
           required: true
           style: simple
           schema:
@@ -12970,7 +12970,7 @@ paths:
       parameters:
         - name: policySet-id
           in: path
-          description: 'key: id of policySet'
+          description: The unique identifier of policySet
           required: true
           style: simple
           schema:
@@ -13271,7 +13271,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13336,7 +13336,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13363,7 +13363,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13391,7 +13391,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13462,7 +13462,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13495,7 +13495,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13503,7 +13503,7 @@ paths:
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -13553,7 +13553,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13561,7 +13561,7 @@ paths:
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -13588,7 +13588,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13596,7 +13596,7 @@ paths:
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -13624,7 +13624,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13698,7 +13698,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13731,7 +13731,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13739,7 +13739,7 @@ paths:
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: targetedManagedAppPolicyAssignment-id
           in: path
-          description: 'key: id of targetedManagedAppPolicyAssignment'
+          description: The unique identifier of targetedManagedAppPolicyAssignment
           required: true
           style: simple
           schema:
@@ -13790,7 +13790,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13798,7 +13798,7 @@ paths:
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: targetedManagedAppPolicyAssignment-id
           in: path
-          description: 'key: id of targetedManagedAppPolicyAssignment'
+          description: The unique identifier of targetedManagedAppPolicyAssignment
           required: true
           style: simple
           schema:
@@ -13825,7 +13825,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13833,7 +13833,7 @@ paths:
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: targetedManagedAppPolicyAssignment-id
           in: path
-          description: 'key: id of targetedManagedAppPolicyAssignment'
+          description: The unique identifier of targetedManagedAppPolicyAssignment
           required: true
           style: simple
           schema:
@@ -13861,7 +13861,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13914,7 +13914,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13941,7 +13941,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -13968,7 +13968,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -14003,7 +14003,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: id of targetedManagedAppConfiguration'
+          description: The unique identifier of targetedManagedAppConfiguration
           required: true
           style: simple
           schema:
@@ -14217,7 +14217,7 @@ paths:
       parameters:
         - name: vppToken-id
           in: path
-          description: 'key: id of vppToken'
+          description: The unique identifier of vppToken
           required: true
           style: simple
           schema:
@@ -14282,7 +14282,7 @@ paths:
       parameters:
         - name: vppToken-id
           in: path
-          description: 'key: id of vppToken'
+          description: The unique identifier of vppToken
           required: true
           style: simple
           schema:
@@ -14309,7 +14309,7 @@ paths:
       parameters:
         - name: vppToken-id
           in: path
-          description: 'key: id of vppToken'
+          description: The unique identifier of vppToken
           required: true
           style: simple
           schema:
@@ -14337,7 +14337,7 @@ paths:
       parameters:
         - name: vppToken-id
           in: path
-          description: 'key: id of vppToken'
+          description: The unique identifier of vppToken
           required: true
           style: simple
           schema:
@@ -14376,7 +14376,7 @@ paths:
       parameters:
         - name: vppToken-id
           in: path
-          description: 'key: id of vppToken'
+          description: The unique identifier of vppToken
           required: true
           style: simple
           schema:
@@ -14568,7 +14568,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14630,7 +14630,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14657,7 +14657,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14685,7 +14685,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14753,7 +14753,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14786,7 +14786,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14794,7 +14794,7 @@ paths:
           x-ms-docs-key-type: windowsDefenderApplicationControlSupplementalPolicy
         - name: windowsDefenderApplicationControlSupplementalPolicyAssignment-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicyAssignment
           required: true
           style: simple
           schema:
@@ -14843,7 +14843,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14851,7 +14851,7 @@ paths:
           x-ms-docs-key-type: windowsDefenderApplicationControlSupplementalPolicy
         - name: windowsDefenderApplicationControlSupplementalPolicyAssignment-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicyAssignment
           required: true
           style: simple
           schema:
@@ -14878,7 +14878,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14886,7 +14886,7 @@ paths:
           x-ms-docs-key-type: windowsDefenderApplicationControlSupplementalPolicy
         - name: windowsDefenderApplicationControlSupplementalPolicyAssignment-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicyAssignment
           required: true
           style: simple
           schema:
@@ -14914,7 +14914,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14964,7 +14964,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -14991,7 +14991,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -15019,7 +15019,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -15113,7 +15113,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -15146,7 +15146,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -15154,7 +15154,7 @@ paths:
           x-ms-docs-key-type: windowsDefenderApplicationControlSupplementalPolicy
         - name: windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
           required: true
           style: simple
           schema:
@@ -15213,7 +15213,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -15221,7 +15221,7 @@ paths:
           x-ms-docs-key-type: windowsDefenderApplicationControlSupplementalPolicy
         - name: windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
           required: true
           style: simple
           schema:
@@ -15248,7 +15248,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -15256,7 +15256,7 @@ paths:
           x-ms-docs-key-type: windowsDefenderApplicationControlSupplementalPolicy
         - name: windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
           required: true
           style: simple
           schema:
@@ -15284,7 +15284,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -15292,7 +15292,7 @@ paths:
           x-ms-docs-key-type: windowsDefenderApplicationControlSupplementalPolicy
         - name: windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
           required: true
           style: simple
           schema:
@@ -15355,7 +15355,7 @@ paths:
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
-          description: 'key: id of windowsDefenderApplicationControlSupplementalPolicy'
+          description: The unique identifier of windowsDefenderApplicationControlSupplementalPolicy
           required: true
           style: simple
           schema:
@@ -15490,7 +15490,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionDeviceRegistration-id
           in: path
-          description: 'key: id of windowsInformationProtectionDeviceRegistration'
+          description: The unique identifier of windowsInformationProtectionDeviceRegistration
           required: true
           style: simple
           schema:
@@ -15544,7 +15544,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionDeviceRegistration-id
           in: path
-          description: 'key: id of windowsInformationProtectionDeviceRegistration'
+          description: The unique identifier of windowsInformationProtectionDeviceRegistration
           required: true
           style: simple
           schema:
@@ -15571,7 +15571,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionDeviceRegistration-id
           in: path
-          description: 'key: id of windowsInformationProtectionDeviceRegistration'
+          description: The unique identifier of windowsInformationProtectionDeviceRegistration
           required: true
           style: simple
           schema:
@@ -15598,7 +15598,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionDeviceRegistration-id
           in: path
-          description: 'key: id of windowsInformationProtectionDeviceRegistration'
+          description: The unique identifier of windowsInformationProtectionDeviceRegistration
           required: true
           style: simple
           schema:
@@ -15827,7 +15827,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionPolicy-id
           in: path
-          description: 'key: id of windowsInformationProtectionPolicy'
+          description: The unique identifier of windowsInformationProtectionPolicy
           required: true
           style: simple
           schema:
@@ -15921,7 +15921,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionPolicy-id
           in: path
-          description: 'key: id of windowsInformationProtectionPolicy'
+          description: The unique identifier of windowsInformationProtectionPolicy
           required: true
           style: simple
           schema:
@@ -15948,7 +15948,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionPolicy-id
           in: path
-          description: 'key: id of windowsInformationProtectionPolicy'
+          description: The unique identifier of windowsInformationProtectionPolicy
           required: true
           style: simple
           schema:
@@ -16075,7 +16075,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionWipeAction-id
           in: path
-          description: 'key: id of windowsInformationProtectionWipeAction'
+          description: The unique identifier of windowsInformationProtectionWipeAction
           required: true
           style: simple
           schema:
@@ -16129,7 +16129,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionWipeAction-id
           in: path
-          description: 'key: id of windowsInformationProtectionWipeAction'
+          description: The unique identifier of windowsInformationProtectionWipeAction
           required: true
           style: simple
           schema:
@@ -16156,7 +16156,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionWipeAction-id
           in: path
-          description: 'key: id of windowsInformationProtectionWipeAction'
+          description: The unique identifier of windowsInformationProtectionWipeAction
           required: true
           style: simple
           schema:
@@ -16353,7 +16353,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16433,7 +16433,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16460,7 +16460,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16488,7 +16488,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16559,7 +16559,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16592,7 +16592,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16600,7 +16600,7 @@ paths:
           x-ms-docs-key-type: windowsManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -16650,7 +16650,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16658,7 +16658,7 @@ paths:
           x-ms-docs-key-type: windowsManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -16685,7 +16685,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16693,7 +16693,7 @@ paths:
           x-ms-docs-key-type: windowsManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: id of managedMobileApp'
+          description: The unique identifier of managedMobileApp
           required: true
           style: simple
           schema:
@@ -16721,7 +16721,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16795,7 +16795,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16828,7 +16828,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16836,7 +16836,7 @@ paths:
           x-ms-docs-key-type: windowsManagedAppProtection
         - name: targetedManagedAppPolicyAssignment-id
           in: path
-          description: 'key: id of targetedManagedAppPolicyAssignment'
+          description: The unique identifier of targetedManagedAppPolicyAssignment
           required: true
           style: simple
           schema:
@@ -16887,7 +16887,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16895,7 +16895,7 @@ paths:
           x-ms-docs-key-type: windowsManagedAppProtection
         - name: targetedManagedAppPolicyAssignment-id
           in: path
-          description: 'key: id of targetedManagedAppPolicyAssignment'
+          description: The unique identifier of targetedManagedAppPolicyAssignment
           required: true
           style: simple
           schema:
@@ -16922,7 +16922,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16930,7 +16930,7 @@ paths:
           x-ms-docs-key-type: windowsManagedAppProtection
         - name: targetedManagedAppPolicyAssignment-id
           in: path
-          description: 'key: id of targetedManagedAppPolicyAssignment'
+          description: The unique identifier of targetedManagedAppPolicyAssignment
           required: true
           style: simple
           schema:
@@ -16957,7 +16957,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -16992,7 +16992,7 @@ paths:
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
-          description: 'key: id of windowsManagedAppProtection'
+          description: The unique identifier of windowsManagedAppProtection
           required: true
           style: simple
           schema:
@@ -17241,7 +17241,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17298,7 +17298,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17325,7 +17325,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17353,7 +17353,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17421,7 +17421,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17454,7 +17454,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17462,7 +17462,7 @@ paths:
           x-ms-docs-key-type: officeClientConfiguration
         - name: officeClientConfigurationAssignment-id
           in: path
-          description: 'key: id of officeClientConfigurationAssignment'
+          description: The unique identifier of officeClientConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -17511,7 +17511,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17519,7 +17519,7 @@ paths:
           x-ms-docs-key-type: officeClientConfiguration
         - name: officeClientConfigurationAssignment-id
           in: path
-          description: 'key: id of officeClientConfigurationAssignment'
+          description: The unique identifier of officeClientConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -17546,7 +17546,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17554,7 +17554,7 @@ paths:
           x-ms-docs-key-type: officeClientConfiguration
         - name: officeClientConfigurationAssignment-id
           in: path
-          description: 'key: id of officeClientConfigurationAssignment'
+          description: The unique identifier of officeClientConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -17581,7 +17581,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17635,7 +17635,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17661,7 +17661,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17691,7 +17691,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17717,7 +17717,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: id of officeClientConfiguration'
+          description: The unique identifier of officeClientConfiguration
           required: true
           style: simple
           schema:
@@ -17781,7 +17781,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17872,7 +17872,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17905,7 +17905,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17913,7 +17913,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -17971,7 +17971,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17979,7 +17979,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -18006,7 +18006,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18014,7 +18014,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -18042,7 +18042,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18050,7 +18050,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -18124,7 +18124,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18132,7 +18132,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -18165,7 +18165,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18173,7 +18173,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -18181,7 +18181,7 @@ paths:
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: enrollmentConfigurationAssignment-id
           in: path
-          description: 'key: id of enrollmentConfigurationAssignment'
+          description: The unique identifier of enrollmentConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -18232,7 +18232,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18240,7 +18240,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -18248,7 +18248,7 @@ paths:
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: enrollmentConfigurationAssignment-id
           in: path
-          description: 'key: id of enrollmentConfigurationAssignment'
+          description: The unique identifier of enrollmentConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -18275,7 +18275,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18283,7 +18283,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -18291,7 +18291,7 @@ paths:
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: enrollmentConfigurationAssignment-id
           in: path
-          description: 'key: id of enrollmentConfigurationAssignment'
+          description: The unique identifier of enrollmentConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -18319,7 +18319,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18399,7 +18399,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18432,7 +18432,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18440,7 +18440,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceManagementTroubleshootingEvent-id
           in: path
-          description: 'key: id of deviceManagementTroubleshootingEvent'
+          description: The unique identifier of deviceManagementTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -18493,7 +18493,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18501,7 +18501,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceManagementTroubleshootingEvent-id
           in: path
-          description: 'key: id of deviceManagementTroubleshootingEvent'
+          description: The unique identifier of deviceManagementTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -18528,7 +18528,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18536,7 +18536,7 @@ paths:
           x-ms-docs-key-type: user
         - name: deviceManagementTroubleshootingEvent-id
           in: path
-          description: 'key: id of deviceManagementTroubleshootingEvent'
+          description: The unique identifier of deviceManagementTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -18564,7 +18564,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18685,7 +18685,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -18693,7 +18693,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedAppRegistration-id
           in: path
-          description: 'key: id of managedAppRegistration'
+          description: The unique identifier of managedAppRegistration
           required: true
           style: simple
           schema:
@@ -18765,7 +18765,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19095,7 +19095,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19128,7 +19128,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19136,7 +19136,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19287,7 +19287,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19295,7 +19295,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19322,7 +19322,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19330,7 +19330,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19358,7 +19358,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19366,7 +19366,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19434,7 +19434,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19442,7 +19442,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19475,7 +19475,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19483,7 +19483,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19491,7 +19491,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: assignmentFilterEvaluationStatusDetails-id
           in: path
-          description: 'key: id of assignmentFilterEvaluationStatusDetails'
+          description: The unique identifier of assignmentFilterEvaluationStatusDetails
           required: true
           style: simple
           schema:
@@ -19540,7 +19540,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19548,7 +19548,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19556,7 +19556,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: assignmentFilterEvaluationStatusDetails-id
           in: path
-          description: 'key: id of assignmentFilterEvaluationStatusDetails'
+          description: The unique identifier of assignmentFilterEvaluationStatusDetails
           required: true
           style: simple
           schema:
@@ -19583,7 +19583,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19591,7 +19591,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19599,7 +19599,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: assignmentFilterEvaluationStatusDetails-id
           in: path
-          description: 'key: id of assignmentFilterEvaluationStatusDetails'
+          description: The unique identifier of assignmentFilterEvaluationStatusDetails
           required: true
           style: simple
           schema:
@@ -19627,7 +19627,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19635,7 +19635,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19722,7 +19722,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19730,7 +19730,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19738,7 +19738,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: detectedApp-id
           in: path
-          description: 'key: id of detectedApp'
+          description: The unique identifier of detectedApp
           required: true
           style: simple
           schema:
@@ -19796,7 +19796,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19804,7 +19804,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19855,7 +19855,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19863,7 +19863,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19890,7 +19890,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19898,7 +19898,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -19926,7 +19926,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -19934,7 +19934,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20023,7 +20023,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20031,7 +20031,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20064,7 +20064,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20072,7 +20072,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20080,7 +20080,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceCompliancePolicyState-id
           in: path
-          description: 'key: id of deviceCompliancePolicyState'
+          description: The unique identifier of deviceCompliancePolicyState
           required: true
           style: simple
           schema:
@@ -20136,7 +20136,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20144,7 +20144,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20152,7 +20152,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceCompliancePolicyState-id
           in: path
-          description: 'key: id of deviceCompliancePolicyState'
+          description: The unique identifier of deviceCompliancePolicyState
           required: true
           style: simple
           schema:
@@ -20179,7 +20179,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20187,7 +20187,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20195,7 +20195,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceCompliancePolicyState-id
           in: path
-          description: 'key: id of deviceCompliancePolicyState'
+          description: The unique identifier of deviceCompliancePolicyState
           required: true
           style: simple
           schema:
@@ -20223,7 +20223,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20231,7 +20231,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20320,7 +20320,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20328,7 +20328,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20361,7 +20361,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20369,7 +20369,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20377,7 +20377,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceConfigurationState-id
           in: path
-          description: 'key: id of deviceConfigurationState'
+          description: The unique identifier of deviceConfigurationState
           required: true
           style: simple
           schema:
@@ -20433,7 +20433,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20441,7 +20441,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20449,7 +20449,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceConfigurationState-id
           in: path
-          description: 'key: id of deviceConfigurationState'
+          description: The unique identifier of deviceConfigurationState
           required: true
           style: simple
           schema:
@@ -20476,7 +20476,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20484,7 +20484,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20492,7 +20492,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceConfigurationState-id
           in: path
-          description: 'key: id of deviceConfigurationState'
+          description: The unique identifier of deviceConfigurationState
           required: true
           style: simple
           schema:
@@ -20520,7 +20520,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20528,7 +20528,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20646,7 +20646,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20654,7 +20654,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20662,7 +20662,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: id
           in: path
-          description: 'key: id of deviceHealthScriptPolicyState'
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
           required: true
           style: simple
           schema:
@@ -20670,7 +20670,7 @@ paths:
           x-ms-docs-key-type: deviceHealthScriptPolicyState
         - name: policyId
           in: path
-          description: 'key: policyId of deviceHealthScriptPolicyState'
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
           required: true
           style: simple
           schema:
@@ -20678,7 +20678,7 @@ paths:
           x-ms-docs-key-type: deviceHealthScriptPolicyState
         - name: deviceId
           in: path
-          description: 'key: deviceId of deviceHealthScriptPolicyState'
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
           required: true
           style: simple
           schema:
@@ -20745,7 +20745,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20753,7 +20753,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20845,7 +20845,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20853,7 +20853,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20886,7 +20886,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20894,7 +20894,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20902,7 +20902,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceLogCollectionResponse-id
           in: path
-          description: 'key: id of deviceLogCollectionResponse'
+          description: The unique identifier of deviceLogCollectionResponse
           required: true
           style: simple
           schema:
@@ -20959,7 +20959,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -20967,7 +20967,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -20975,7 +20975,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceLogCollectionResponse-id
           in: path
-          description: 'key: id of deviceLogCollectionResponse'
+          description: The unique identifier of deviceLogCollectionResponse
           required: true
           style: simple
           schema:
@@ -21002,7 +21002,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21010,7 +21010,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21018,7 +21018,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceLogCollectionResponse-id
           in: path
-          description: 'key: id of deviceLogCollectionResponse'
+          description: The unique identifier of deviceLogCollectionResponse
           required: true
           style: simple
           schema:
@@ -21046,7 +21046,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21054,7 +21054,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21143,7 +21143,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21151,7 +21151,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21184,7 +21184,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21192,7 +21192,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21200,7 +21200,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: managedDeviceMobileAppConfigurationState-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationState'
+          description: The unique identifier of managedDeviceMobileAppConfigurationState
           required: true
           style: simple
           schema:
@@ -21256,7 +21256,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21264,7 +21264,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21272,7 +21272,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: managedDeviceMobileAppConfigurationState-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationState'
+          description: The unique identifier of managedDeviceMobileAppConfigurationState
           required: true
           style: simple
           schema:
@@ -21299,7 +21299,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21307,7 +21307,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21315,7 +21315,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: managedDeviceMobileAppConfigurationState-id
           in: path
-          description: 'key: id of managedDeviceMobileAppConfigurationState'
+          description: The unique identifier of managedDeviceMobileAppConfigurationState
           required: true
           style: simple
           schema:
@@ -21343,7 +21343,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21351,7 +21351,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21430,7 +21430,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21438,7 +21438,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21471,7 +21471,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21479,7 +21479,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21487,7 +21487,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: securityBaselineState-id
           in: path
-          description: 'key: id of securityBaselineState'
+          description: The unique identifier of securityBaselineState
           required: true
           style: simple
           schema:
@@ -21541,7 +21541,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21549,7 +21549,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21557,7 +21557,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: securityBaselineState-id
           in: path
-          description: 'key: id of securityBaselineState'
+          description: The unique identifier of securityBaselineState
           required: true
           style: simple
           schema:
@@ -21584,7 +21584,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21592,7 +21592,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21600,7 +21600,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: securityBaselineState-id
           in: path
-          description: 'key: id of securityBaselineState'
+          description: The unique identifier of securityBaselineState
           required: true
           style: simple
           schema:
@@ -21628,7 +21628,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21636,7 +21636,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21644,7 +21644,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: securityBaselineState-id
           in: path
-          description: 'key: id of securityBaselineState'
+          description: The unique identifier of securityBaselineState
           required: true
           style: simple
           schema:
@@ -21733,7 +21733,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21741,7 +21741,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21749,7 +21749,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: securityBaselineState-id
           in: path
-          description: 'key: id of securityBaselineState'
+          description: The unique identifier of securityBaselineState
           required: true
           style: simple
           schema:
@@ -21782,7 +21782,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21790,7 +21790,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21798,7 +21798,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: securityBaselineState-id
           in: path
-          description: 'key: id of securityBaselineState'
+          description: The unique identifier of securityBaselineState
           required: true
           style: simple
           schema:
@@ -21806,7 +21806,7 @@ paths:
           x-ms-docs-key-type: securityBaselineState
         - name: securityBaselineSettingState-id
           in: path
-          description: 'key: id of securityBaselineSettingState'
+          description: The unique identifier of securityBaselineSettingState
           required: true
           style: simple
           schema:
@@ -21862,7 +21862,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21870,7 +21870,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21878,7 +21878,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: securityBaselineState-id
           in: path
-          description: 'key: id of securityBaselineState'
+          description: The unique identifier of securityBaselineState
           required: true
           style: simple
           schema:
@@ -21886,7 +21886,7 @@ paths:
           x-ms-docs-key-type: securityBaselineState
         - name: securityBaselineSettingState-id
           in: path
-          description: 'key: id of securityBaselineSettingState'
+          description: The unique identifier of securityBaselineSettingState
           required: true
           style: simple
           schema:
@@ -21913,7 +21913,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21921,7 +21921,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -21929,7 +21929,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: securityBaselineState-id
           in: path
-          description: 'key: id of securityBaselineState'
+          description: The unique identifier of securityBaselineState
           required: true
           style: simple
           schema:
@@ -21937,7 +21937,7 @@ paths:
           x-ms-docs-key-type: securityBaselineState
         - name: securityBaselineSettingState-id
           in: path
-          description: 'key: id of securityBaselineSettingState'
+          description: The unique identifier of securityBaselineSettingState
           required: true
           style: simple
           schema:
@@ -21965,7 +21965,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -21973,7 +21973,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -22411,7 +22411,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22419,7 +22419,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -22489,7 +22489,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22497,7 +22497,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -22524,7 +22524,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22532,7 +22532,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -22560,7 +22560,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22568,7 +22568,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -22663,7 +22663,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22671,7 +22671,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -22704,7 +22704,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22712,7 +22712,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -22720,7 +22720,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: windowsDeviceMalwareState-id
           in: path
-          description: 'key: id of windowsDeviceMalwareState'
+          description: The unique identifier of windowsDeviceMalwareState
           required: true
           style: simple
           schema:
@@ -22778,7 +22778,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22786,7 +22786,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -22794,7 +22794,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: windowsDeviceMalwareState-id
           in: path
-          description: 'key: id of windowsDeviceMalwareState'
+          description: The unique identifier of windowsDeviceMalwareState
           required: true
           style: simple
           schema:
@@ -22821,7 +22821,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22829,7 +22829,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -22837,7 +22837,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: windowsDeviceMalwareState-id
           in: path
-          description: 'key: id of windowsDeviceMalwareState'
+          description: The unique identifier of windowsDeviceMalwareState
           required: true
           style: simple
           schema:
@@ -22865,7 +22865,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22939,7 +22939,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22972,7 +22972,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -22980,7 +22980,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppIntentAndState-id
           in: path
-          description: 'key: id of mobileAppIntentAndState'
+          description: The unique identifier of mobileAppIntentAndState
           required: true
           style: simple
           schema:
@@ -23031,7 +23031,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23039,7 +23039,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppIntentAndState-id
           in: path
-          description: 'key: id of mobileAppIntentAndState'
+          description: The unique identifier of mobileAppIntentAndState
           required: true
           style: simple
           schema:
@@ -23066,7 +23066,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23074,7 +23074,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppIntentAndState-id
           in: path
-          description: 'key: id of mobileAppIntentAndState'
+          description: The unique identifier of mobileAppIntentAndState
           required: true
           style: simple
           schema:
@@ -23102,7 +23102,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23196,7 +23196,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23229,7 +23229,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23237,7 +23237,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: id of mobileAppTroubleshootingEvent'
+          description: The unique identifier of mobileAppTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -23296,7 +23296,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23304,7 +23304,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: id of mobileAppTroubleshootingEvent'
+          description: The unique identifier of mobileAppTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -23331,7 +23331,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23339,7 +23339,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: id of mobileAppTroubleshootingEvent'
+          description: The unique identifier of mobileAppTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -23367,7 +23367,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23375,7 +23375,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: id of mobileAppTroubleshootingEvent'
+          description: The unique identifier of mobileAppTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -23452,7 +23452,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23460,7 +23460,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: id of mobileAppTroubleshootingEvent'
+          description: The unique identifier of mobileAppTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -23493,7 +23493,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23501,7 +23501,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: id of mobileAppTroubleshootingEvent'
+          description: The unique identifier of mobileAppTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -23509,7 +23509,7 @@ paths:
           x-ms-docs-key-type: mobileAppTroubleshootingEvent
         - name: appLogCollectionRequest-id
           in: path
-          description: 'key: id of appLogCollectionRequest'
+          description: The unique identifier of appLogCollectionRequest
           required: true
           style: simple
           schema:
@@ -23561,7 +23561,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23569,7 +23569,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: id of mobileAppTroubleshootingEvent'
+          description: The unique identifier of mobileAppTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -23577,7 +23577,7 @@ paths:
           x-ms-docs-key-type: mobileAppTroubleshootingEvent
         - name: appLogCollectionRequest-id
           in: path
-          description: 'key: id of appLogCollectionRequest'
+          description: The unique identifier of appLogCollectionRequest
           required: true
           style: simple
           schema:
@@ -23604,7 +23604,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23612,7 +23612,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: id of mobileAppTroubleshootingEvent'
+          description: The unique identifier of mobileAppTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -23620,7 +23620,7 @@ paths:
           x-ms-docs-key-type: mobileAppTroubleshootingEvent
         - name: appLogCollectionRequest-id
           in: path
-          description: 'key: id of appLogCollectionRequest'
+          description: The unique identifier of appLogCollectionRequest
           required: true
           style: simple
           schema:
@@ -23648,7 +23648,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23733,7 +23733,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23741,7 +23741,7 @@ paths:
           x-ms-docs-key-type: user
         - name: windowsInformationProtectionDeviceRegistration-id
           in: path
-          description: 'key: id of windowsInformationProtectionDeviceRegistration'
+          description: The unique identifier of windowsInformationProtectionDeviceRegistration
           required: true
           style: simple
           schema:

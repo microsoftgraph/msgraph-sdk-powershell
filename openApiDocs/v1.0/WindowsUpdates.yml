@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -23,7 +23,7 @@ paths:
           x-ms-docs-key-type: serviceHealth
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -55,7 +55,7 @@ paths:
       parameters:
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:

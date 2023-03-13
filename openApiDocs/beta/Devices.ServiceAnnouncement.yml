@@ -19,7 +19,7 @@ paths:
       parameters:
         - name: browserSiteList-id
           in: path
-          description: 'key: id of browserSiteList'
+          description: The unique identifier of browserSiteList
           required: true
           style: simple
           schema:
@@ -241,7 +241,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -293,7 +293,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -320,7 +320,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -348,7 +348,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -455,7 +455,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -488,7 +488,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -496,7 +496,7 @@ paths:
           x-ms-docs-key-type: serviceHealth
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -558,7 +558,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -566,7 +566,7 @@ paths:
           x-ms-docs-key-type: serviceHealth
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -593,7 +593,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -601,7 +601,7 @@ paths:
           x-ms-docs-key-type: serviceHealth
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -628,7 +628,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -636,7 +636,7 @@ paths:
           x-ms-docs-key-type: serviceHealth
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -795,7 +795,7 @@ paths:
       parameters:
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -857,7 +857,7 @@ paths:
       parameters:
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -884,7 +884,7 @@ paths:
       parameters:
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -911,7 +911,7 @@ paths:
       parameters:
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -1075,7 +1075,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1140,7 +1140,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1167,7 +1167,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1198,7 +1198,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1278,7 +1278,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1311,7 +1311,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1319,7 +1319,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1372,7 +1372,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1380,7 +1380,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1407,7 +1407,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1415,7 +1415,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1446,7 +1446,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1454,7 +1454,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1480,7 +1480,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1488,7 +1488,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1521,7 +1521,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1547,7 +1547,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1832,7 +1832,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -1840,7 +1840,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -1879,7 +1879,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -1887,7 +1887,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -1930,7 +1930,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -1938,7 +1938,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -1977,7 +1977,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -1985,7 +1985,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2024,7 +2024,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2061,7 +2061,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2102,7 +2102,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2139,7 +2139,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2184,7 +2184,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2192,7 +2192,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2231,7 +2231,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2239,7 +2239,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2282,7 +2282,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2290,7 +2290,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2329,7 +2329,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2337,7 +2337,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2376,7 +2376,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2413,7 +2413,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2454,7 +2454,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2491,7 +2491,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2536,7 +2536,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2587,7 +2587,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2645,7 +2645,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2653,7 +2653,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2692,7 +2692,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2700,7 +2700,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2743,7 +2743,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2751,7 +2751,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2790,7 +2790,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2798,7 +2798,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2837,7 +2837,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2874,7 +2874,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2915,7 +2915,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2952,7 +2952,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2997,7 +2997,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3005,7 +3005,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3044,7 +3044,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3052,7 +3052,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3095,7 +3095,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3103,7 +3103,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3142,7 +3142,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3150,7 +3150,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3189,7 +3189,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3226,7 +3226,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3267,7 +3267,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3304,7 +3304,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3349,7 +3349,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3400,7 +3400,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3458,7 +3458,7 @@ paths:
       parameters:
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3497,7 +3497,7 @@ paths:
       parameters:
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3540,7 +3540,7 @@ paths:
       parameters:
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3579,7 +3579,7 @@ paths:
       parameters:
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:

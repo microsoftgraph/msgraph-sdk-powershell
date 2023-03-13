@@ -183,7 +183,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -243,7 +243,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -270,7 +270,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -297,7 +297,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -374,7 +374,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -406,7 +406,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -414,7 +414,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalGroup-id
           in: path
-          description: 'key: id of externalGroup'
+          description: The unique identifier of externalGroup
           required: true
           style: simple
           schema:
@@ -466,7 +466,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -474,7 +474,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalGroup-id
           in: path
-          description: 'key: id of externalGroup'
+          description: The unique identifier of externalGroup
           required: true
           style: simple
           schema:
@@ -501,7 +501,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -509,7 +509,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalGroup-id
           in: path
-          description: 'key: id of externalGroup'
+          description: The unique identifier of externalGroup
           required: true
           style: simple
           schema:
@@ -537,7 +537,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -545,7 +545,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalGroup-id
           in: path
-          description: 'key: id of externalGroup'
+          description: The unique identifier of externalGroup
           required: true
           style: simple
           schema:
@@ -617,7 +617,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -625,7 +625,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalGroup-id
           in: path
-          description: 'key: id of externalGroup'
+          description: The unique identifier of externalGroup
           required: true
           style: simple
           schema:
@@ -658,7 +658,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -666,7 +666,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalGroup-id
           in: path
-          description: 'key: id of externalGroup'
+          description: The unique identifier of externalGroup
           required: true
           style: simple
           schema:
@@ -674,7 +674,7 @@ paths:
           x-ms-docs-key-type: externalGroup
         - name: identity-id
           in: path
-          description: 'key: id of identity'
+          description: The unique identifier of identity
           required: true
           style: simple
           schema:
@@ -723,7 +723,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -731,7 +731,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalGroup-id
           in: path
-          description: 'key: id of externalGroup'
+          description: The unique identifier of externalGroup
           required: true
           style: simple
           schema:
@@ -739,7 +739,7 @@ paths:
           x-ms-docs-key-type: externalGroup
         - name: identity-id
           in: path
-          description: 'key: id of identity'
+          description: The unique identifier of identity
           required: true
           style: simple
           schema:
@@ -766,7 +766,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -774,7 +774,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalGroup-id
           in: path
-          description: 'key: id of externalGroup'
+          description: The unique identifier of externalGroup
           required: true
           style: simple
           schema:
@@ -782,7 +782,7 @@ paths:
           x-ms-docs-key-type: externalGroup
         - name: identity-id
           in: path
-          description: 'key: id of identity'
+          description: The unique identifier of identity
           required: true
           style: simple
           schema:
@@ -809,7 +809,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -883,7 +883,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -915,7 +915,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -923,7 +923,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalItem-id
           in: path
-          description: 'key: id of externalItem'
+          description: The unique identifier of externalItem
           required: true
           style: simple
           schema:
@@ -974,7 +974,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -982,7 +982,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalItem-id
           in: path
-          description: 'key: id of externalItem'
+          description: The unique identifier of externalItem
           required: true
           style: simple
           schema:
@@ -1009,7 +1009,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -1017,7 +1017,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: externalItem-id
           in: path
-          description: 'key: id of externalItem'
+          description: The unique identifier of externalItem
           required: true
           style: simple
           schema:
@@ -1044,7 +1044,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -1115,7 +1115,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -1147,7 +1147,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -1155,7 +1155,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: connectionOperation-id
           in: path
-          description: 'key: id of connectionOperation'
+          description: The unique identifier of connectionOperation
           required: true
           style: simple
           schema:
@@ -1205,7 +1205,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -1213,7 +1213,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: connectionOperation-id
           in: path
-          description: 'key: id of connectionOperation'
+          description: The unique identifier of connectionOperation
           required: true
           style: simple
           schema:
@@ -1240,7 +1240,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -1248,7 +1248,7 @@ paths:
           x-ms-docs-key-type: externalConnection
         - name: connectionOperation-id
           in: path
-          description: 'key: id of connectionOperation'
+          description: The unique identifier of connectionOperation
           required: true
           style: simple
           schema:
@@ -1279,7 +1279,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -1329,7 +1329,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:
@@ -1356,7 +1356,7 @@ paths:
       parameters:
         - name: externalConnection-id
           in: path
-          description: 'key: id of externalConnection'
+          description: The unique identifier of externalConnection
           required: true
           style: simple
           schema:

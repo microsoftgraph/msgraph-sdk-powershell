@@ -93,7 +93,7 @@ paths:
       parameters:
         - name: subscription-id
           in: path
-          description: 'key: id of subscription'
+          description: The unique identifier of subscription
           required: true
           style: simple
           schema:
@@ -148,7 +148,7 @@ paths:
       parameters:
         - name: subscription-id
           in: path
-          description: 'key: id of subscription'
+          description: The unique identifier of subscription
           required: true
           style: simple
           schema:
@@ -179,7 +179,7 @@ paths:
       parameters:
         - name: subscription-id
           in: path
-          description: 'key: id of subscription'
+          description: The unique identifier of subscription
           required: true
           style: simple
           schema:
@@ -206,7 +206,7 @@ paths:
       parameters:
         - name: subscription-id
           in: path
-          description: 'key: id of subscription'
+          description: The unique identifier of subscription
           required: true
           style: simple
           schema:

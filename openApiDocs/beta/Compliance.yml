@@ -315,7 +315,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -394,7 +394,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -427,7 +427,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -464,7 +464,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -574,7 +574,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -613,7 +613,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -621,7 +621,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -692,7 +692,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -700,7 +700,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -733,7 +733,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -741,7 +741,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -778,7 +778,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -786,7 +786,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -813,7 +813,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -821,7 +821,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -852,7 +852,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -860,7 +860,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -887,7 +887,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -895,7 +895,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -922,7 +922,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -930,7 +930,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -961,7 +961,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -969,7 +969,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1058,7 +1058,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1066,7 +1066,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1105,7 +1105,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1113,7 +1113,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1121,7 +1121,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -1181,7 +1181,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1189,7 +1189,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1197,7 +1197,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -1230,7 +1230,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1238,7 +1238,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1246,7 +1246,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -1280,7 +1280,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1288,7 +1288,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1296,7 +1296,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -1404,7 +1404,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1412,7 +1412,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1504,7 +1504,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1512,7 +1512,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1551,7 +1551,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1559,7 +1559,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1567,7 +1567,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -1628,7 +1628,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1636,7 +1636,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1644,7 +1644,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -1677,7 +1677,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1685,7 +1685,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1693,7 +1693,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -1727,7 +1727,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1735,7 +1735,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -1743,7 +1743,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -1909,7 +1909,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -1917,7 +1917,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -2013,7 +2013,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2021,7 +2021,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -2060,7 +2060,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2068,7 +2068,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -2076,7 +2076,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -2137,7 +2137,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2145,7 +2145,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -2153,7 +2153,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -2186,7 +2186,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2194,7 +2194,7 @@ paths:
           x-ms-docs-key-type: case
         - name: custodian-id
           in: path
-          description: 'key: id of custodian'
+          description: The unique identifier of custodian
           required: true
           style: simple
           schema:
@@ -2202,7 +2202,7 @@ paths:
           x-ms-docs-key-type: custodian
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -2235,7 +2235,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2277,7 +2277,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2320,7 +2320,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2427,7 +2427,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2466,7 +2466,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2474,7 +2474,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -2544,7 +2544,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2552,7 +2552,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -2585,7 +2585,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2593,7 +2593,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -2630,7 +2630,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2638,7 +2638,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -2727,7 +2727,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2735,7 +2735,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -2774,7 +2774,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2782,7 +2782,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -2790,7 +2790,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -2850,7 +2850,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2858,7 +2858,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -2866,7 +2866,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -2899,7 +2899,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2907,7 +2907,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -2915,7 +2915,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -2949,7 +2949,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -2957,7 +2957,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -2965,7 +2965,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -3069,7 +3069,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3077,7 +3077,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3165,7 +3165,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3173,7 +3173,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3211,7 +3211,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3219,7 +3219,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3227,7 +3227,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -3288,7 +3288,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3296,7 +3296,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3304,7 +3304,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -3337,7 +3337,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3345,7 +3345,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3353,7 +3353,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -3387,7 +3387,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3395,7 +3395,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3403,7 +3403,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -3569,7 +3569,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3577,7 +3577,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3673,7 +3673,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3681,7 +3681,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3720,7 +3720,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3728,7 +3728,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3736,7 +3736,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -3797,7 +3797,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3805,7 +3805,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3813,7 +3813,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -3846,7 +3846,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3854,7 +3854,7 @@ paths:
           x-ms-docs-key-type: case
         - name: legalHold-id
           in: path
-          description: 'key: id of legalHold'
+          description: The unique identifier of legalHold
           required: true
           style: simple
           schema:
@@ -3862,7 +3862,7 @@ paths:
           x-ms-docs-key-type: legalHold
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -3899,7 +3899,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3930,7 +3930,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -3961,7 +3961,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4061,7 +4061,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4100,7 +4100,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4108,7 +4108,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4173,7 +4173,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4181,7 +4181,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4214,7 +4214,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4222,7 +4222,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4256,7 +4256,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4264,7 +4264,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4322,7 +4322,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4330,7 +4330,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4363,7 +4363,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4371,7 +4371,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4404,7 +4404,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4412,7 +4412,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4443,7 +4443,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4451,7 +4451,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4478,7 +4478,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4486,7 +4486,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4513,7 +4513,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4521,7 +4521,7 @@ paths:
           x-ms-docs-key-type: case
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -4548,7 +4548,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4590,7 +4590,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4633,7 +4633,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4725,7 +4725,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4764,7 +4764,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4772,7 +4772,7 @@ paths:
           x-ms-docs-key-type: case
         - name: caseOperation-id
           in: path
-          description: 'key: id of caseOperation'
+          description: The unique identifier of caseOperation
           required: true
           style: simple
           schema:
@@ -4833,7 +4833,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4841,7 +4841,7 @@ paths:
           x-ms-docs-key-type: case
         - name: caseOperation-id
           in: path
-          description: 'key: id of caseOperation'
+          description: The unique identifier of caseOperation
           required: true
           style: simple
           schema:
@@ -4874,7 +4874,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -4882,7 +4882,7 @@ paths:
           x-ms-docs-key-type: case
         - name: caseOperation-id
           in: path
-          description: 'key: id of caseOperation'
+          description: The unique identifier of caseOperation
           required: true
           style: simple
           schema:
@@ -4916,7 +4916,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5002,7 +5002,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5041,7 +5041,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5049,7 +5049,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5108,7 +5108,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5116,7 +5116,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5149,7 +5149,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5157,7 +5157,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5194,7 +5194,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5202,7 +5202,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5247,7 +5247,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5255,7 +5255,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5312,7 +5312,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5320,7 +5320,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5413,7 +5413,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5421,7 +5421,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5459,7 +5459,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5467,7 +5467,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5475,7 +5475,7 @@ paths:
           x-ms-docs-key-type: reviewSet
         - name: reviewSetQuery-id
           in: path
-          description: 'key: id of reviewSetQuery'
+          description: The unique identifier of reviewSetQuery
           required: true
           style: simple
           schema:
@@ -5535,7 +5535,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5543,7 +5543,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5551,7 +5551,7 @@ paths:
           x-ms-docs-key-type: reviewSet
         - name: reviewSetQuery-id
           in: path
-          description: 'key: id of reviewSetQuery'
+          description: The unique identifier of reviewSetQuery
           required: true
           style: simple
           schema:
@@ -5584,7 +5584,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5592,7 +5592,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5600,7 +5600,7 @@ paths:
           x-ms-docs-key-type: reviewSet
         - name: reviewSetQuery-id
           in: path
-          description: 'key: id of reviewSetQuery'
+          description: The unique identifier of reviewSetQuery
           required: true
           style: simple
           schema:
@@ -5637,7 +5637,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5645,7 +5645,7 @@ paths:
           x-ms-docs-key-type: case
         - name: reviewSet-id
           in: path
-          description: 'key: id of reviewSet'
+          description: The unique identifier of reviewSet
           required: true
           style: simple
           schema:
@@ -5653,7 +5653,7 @@ paths:
           x-ms-docs-key-type: reviewSet
         - name: reviewSetQuery-id
           in: path
-          description: 'key: id of reviewSetQuery'
+          description: The unique identifier of reviewSetQuery
           required: true
           style: simple
           schema:
@@ -5702,7 +5702,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5763,7 +5763,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5796,7 +5796,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5833,7 +5833,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5864,7 +5864,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -5973,7 +5973,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6012,7 +6012,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6020,7 +6020,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6092,7 +6092,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6100,7 +6100,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6133,7 +6133,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6141,7 +6141,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6178,7 +6178,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6186,7 +6186,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6269,7 +6269,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6277,7 +6277,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6316,7 +6316,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6324,7 +6324,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6332,7 +6332,7 @@ paths:
           x-ms-docs-key-type: sourceCollection
         - name: dataSource-id
           in: path
-          description: 'key: id of dataSource'
+          description: The unique identifier of dataSource
           required: true
           style: simple
           schema:
@@ -6390,7 +6390,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6398,7 +6398,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6406,7 +6406,7 @@ paths:
           x-ms-docs-key-type: sourceCollection
         - name: dataSource-id
           in: path
-          description: 'key: id of dataSource'
+          description: The unique identifier of dataSource
           required: true
           style: simple
           schema:
@@ -6439,7 +6439,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6447,7 +6447,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6455,7 +6455,7 @@ paths:
           x-ms-docs-key-type: sourceCollection
         - name: dataSource-id
           in: path
-          description: 'key: id of dataSource'
+          description: The unique identifier of dataSource
           required: true
           style: simple
           schema:
@@ -6492,7 +6492,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6500,7 +6500,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6570,7 +6570,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6578,7 +6578,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6663,7 +6663,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6671,7 +6671,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6679,7 +6679,7 @@ paths:
           x-ms-docs-key-type: sourceCollection
         - name: dataSource-id
           in: path
-          description: 'key: id of dataSource'
+          description: The unique identifier of dataSource
           required: true
           style: simple
           schema:
@@ -6742,7 +6742,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6750,7 +6750,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6824,7 +6824,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6832,7 +6832,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6863,7 +6863,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6871,7 +6871,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -6902,7 +6902,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -6910,7 +6910,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -7008,7 +7008,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -7016,7 +7016,7 @@ paths:
           x-ms-docs-key-type: case
         - name: sourceCollection-id
           in: path
-          description: 'key: id of sourceCollection'
+          description: The unique identifier of sourceCollection
           required: true
           style: simple
           schema:
@@ -7024,7 +7024,7 @@ paths:
           x-ms-docs-key-type: sourceCollection
         - name: noncustodialDataSource-id
           in: path
-          description: 'key: id of noncustodialDataSource'
+          description: The unique identifier of noncustodialDataSource
           required: true
           style: simple
           schema:
@@ -7094,7 +7094,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -7188,7 +7188,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -7227,7 +7227,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -7235,7 +7235,7 @@ paths:
           x-ms-docs-key-type: case
         - name: tag-id
           in: path
-          description: 'key: id of tag'
+          description: The unique identifier of tag
           required: true
           style: simple
           schema:
@@ -7298,7 +7298,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -7306,7 +7306,7 @@ paths:
           x-ms-docs-key-type: case
         - name: tag-id
           in: path
-          description: 'key: id of tag'
+          description: The unique identifier of tag
           required: true
           style: simple
           schema:
@@ -7339,7 +7339,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -7347,7 +7347,7 @@ paths:
           x-ms-docs-key-type: case
         - name: tag-id
           in: path
-          description: 'key: id of tag'
+          description: The unique identifier of tag
           required: true
           style: simple
           schema:
@@ -7384,7 +7384,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -7392,7 +7392,7 @@ paths:
           x-ms-docs-key-type: case
         - name: tag-id
           in: path
-          description: 'key: id of tag'
+          description: The unique identifier of tag
           required: true
           style: simple
           schema:
@@ -7484,7 +7484,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -7492,7 +7492,7 @@ paths:
           x-ms-docs-key-type: case
         - name: tag-id
           in: path
-          description: 'key: id of tag'
+          description: The unique identifier of tag
           required: true
           style: simple
           schema:
@@ -7500,7 +7500,7 @@ paths:
           x-ms-docs-key-type: tag
         - name: tag-id1
           in: path
-          description: 'key: id of tag'
+          description: The unique identifier of tag
           required: true
           style: simple
           schema:
@@ -7565,7 +7565,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:
@@ -7573,7 +7573,7 @@ paths:
           x-ms-docs-key-type: case
         - name: tag-id
           in: path
-          description: 'key: id of tag'
+          description: The unique identifier of tag
           required: true
           style: simple
           schema:
@@ -7637,7 +7637,7 @@ paths:
       parameters:
         - name: case-id
           in: path
-          description: 'key: id of case'
+          description: The unique identifier of case
           required: true
           style: simple
           schema:

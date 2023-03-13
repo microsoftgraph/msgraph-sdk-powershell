@@ -239,7 +239,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -341,7 +341,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -372,7 +372,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -400,7 +400,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -454,7 +454,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -541,7 +541,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -574,7 +574,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -582,7 +582,7 @@ paths:
           x-ms-docs-key-type: application
         - name: extensionProperty-id
           in: path
-          description: 'key: id of extensionProperty'
+          description: The unique identifier of extensionProperty
           required: true
           style: simple
           schema:
@@ -636,7 +636,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -644,7 +644,7 @@ paths:
           x-ms-docs-key-type: application
         - name: extensionProperty-id
           in: path
-          description: 'key: id of extensionProperty'
+          description: The unique identifier of extensionProperty
           required: true
           style: simple
           schema:
@@ -671,7 +671,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -679,7 +679,7 @@ paths:
           x-ms-docs-key-type: application
         - name: extensionProperty-id
           in: path
-          description: 'key: id of extensionProperty'
+          description: The unique identifier of extensionProperty
           required: true
           style: simple
           schema:
@@ -710,7 +710,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -794,7 +794,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -827,7 +827,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -835,7 +835,7 @@ paths:
           x-ms-docs-key-type: application
         - name: federatedIdentityCredential-id
           in: path
-          description: 'key: id of federatedIdentityCredential'
+          description: The unique identifier of federatedIdentityCredential
           required: true
           style: simple
           schema:
@@ -888,7 +888,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -896,7 +896,7 @@ paths:
           x-ms-docs-key-type: application
         - name: federatedIdentityCredential-id
           in: path
-          description: 'key: id of federatedIdentityCredential'
+          description: The unique identifier of federatedIdentityCredential
           required: true
           style: simple
           schema:
@@ -923,7 +923,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -931,7 +931,7 @@ paths:
           x-ms-docs-key-type: application
         - name: federatedIdentityCredential-id
           in: path
-          description: 'key: id of federatedIdentityCredential'
+          description: The unique identifier of federatedIdentityCredential
           required: true
           style: simple
           schema:
@@ -958,7 +958,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1041,7 +1041,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1049,7 +1049,7 @@ paths:
           x-ms-docs-key-type: application
         - name: homeRealmDiscoveryPolicy-id
           in: path
-          description: 'key: id of homeRealmDiscoveryPolicy'
+          description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
           style: simple
           schema:
@@ -1106,7 +1106,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1132,7 +1132,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1165,7 +1165,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1210,7 +1210,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1251,7 +1251,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1303,7 +1303,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1359,7 +1359,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1415,7 +1415,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1471,7 +1471,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1512,7 +1512,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1551,7 +1551,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1580,7 +1580,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1617,7 +1617,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1642,7 +1642,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1721,7 +1721,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1729,7 +1729,7 @@ paths:
           x-ms-docs-key-type: application
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -1767,7 +1767,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1820,7 +1820,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1847,7 +1847,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1930,7 +1930,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -1938,7 +1938,7 @@ paths:
           x-ms-docs-key-type: application
         - name: tokenIssuancePolicy-id
           in: path
-          description: 'key: id of tokenIssuancePolicy'
+          description: The unique identifier of tokenIssuancePolicy
           required: true
           style: simple
           schema:
@@ -1976,7 +1976,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -2027,7 +2027,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -2054,7 +2054,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -2137,7 +2137,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -2145,7 +2145,7 @@ paths:
           x-ms-docs-key-type: application
         - name: tokenLifetimePolicy-id
           in: path
-          description: 'key: id of tokenLifetimePolicy'
+          description: The unique identifier of tokenLifetimePolicy
           required: true
           style: simple
           schema:
@@ -2183,7 +2183,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -2234,7 +2234,7 @@ paths:
       parameters:
         - name: application-id
           in: path
-          description: 'key: id of application'
+          description: The unique identifier of application
           required: true
           style: simple
           schema:
@@ -2667,7 +2667,7 @@ paths:
       parameters:
         - name: applicationTemplate-id
           in: path
-          description: 'key: id of applicationTemplate'
+          description: The unique identifier of applicationTemplate
           required: true
           style: simple
           schema:
@@ -2728,7 +2728,7 @@ paths:
       parameters:
         - name: applicationTemplate-id
           in: path
-          description: 'key: id of applicationTemplate'
+          description: The unique identifier of applicationTemplate
           required: true
           style: simple
           schema:
@@ -2770,7 +2770,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2873,7 +2873,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2906,7 +2906,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2914,7 +2914,7 @@ paths:
           x-ms-docs-key-type: group
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -2980,7 +2980,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2988,7 +2988,7 @@ paths:
           x-ms-docs-key-type: group
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -3015,7 +3015,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -3023,7 +3023,7 @@ paths:
           x-ms-docs-key-type: group
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -3284,7 +3284,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3396,7 +3396,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3427,7 +3427,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3458,7 +3458,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3551,7 +3551,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3584,7 +3584,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3592,7 +3592,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -3648,7 +3648,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3656,7 +3656,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -3683,7 +3683,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3691,7 +3691,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -3722,7 +3722,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3825,7 +3825,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3858,7 +3858,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3866,7 +3866,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -3932,7 +3932,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3940,7 +3940,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -3967,7 +3967,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -3975,7 +3975,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -4006,7 +4006,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4089,7 +4089,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4097,7 +4097,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: claimsMappingPolicy-id
           in: path
-          description: 'key: id of claimsMappingPolicy'
+          description: The unique identifier of claimsMappingPolicy
           required: true
           style: simple
           schema:
@@ -4135,7 +4135,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4186,7 +4186,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4210,7 +4210,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4280,7 +4280,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4288,7 +4288,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -4342,7 +4342,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4420,7 +4420,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4452,7 +4452,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4460,7 +4460,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: delegatedPermissionClassification-id
           in: path
-          description: 'key: id of delegatedPermissionClassification'
+          description: The unique identifier of delegatedPermissionClassification
           required: true
           style: simple
           schema:
@@ -4511,7 +4511,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4519,7 +4519,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: delegatedPermissionClassification-id
           in: path
-          description: 'key: id of delegatedPermissionClassification'
+          description: The unique identifier of delegatedPermissionClassification
           required: true
           style: simple
           schema:
@@ -4546,7 +4546,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4554,7 +4554,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: delegatedPermissionClassification-id
           in: path
-          description: 'key: id of delegatedPermissionClassification'
+          description: The unique identifier of delegatedPermissionClassification
           required: true
           style: simple
           schema:
@@ -4581,7 +4581,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4664,7 +4664,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4696,7 +4696,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4704,7 +4704,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: endpoint-id
           in: path
-          description: 'key: id of endpoint'
+          description: The unique identifier of endpoint
           required: true
           style: simple
           schema:
@@ -4758,7 +4758,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4766,7 +4766,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: endpoint-id
           in: path
-          description: 'key: id of endpoint'
+          description: The unique identifier of endpoint
           required: true
           style: simple
           schema:
@@ -4793,7 +4793,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4801,7 +4801,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: endpoint-id
           in: path
-          description: 'key: id of endpoint'
+          description: The unique identifier of endpoint
           required: true
           style: simple
           schema:
@@ -4829,7 +4829,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4909,7 +4909,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4942,7 +4942,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -4950,7 +4950,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: federatedIdentityCredential-id
           in: path
-          description: 'key: id of federatedIdentityCredential'
+          description: The unique identifier of federatedIdentityCredential
           required: true
           style: simple
           schema:
@@ -5003,7 +5003,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5011,7 +5011,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: federatedIdentityCredential-id
           in: path
-          description: 'key: id of federatedIdentityCredential'
+          description: The unique identifier of federatedIdentityCredential
           required: true
           style: simple
           schema:
@@ -5038,7 +5038,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5046,7 +5046,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: federatedIdentityCredential-id
           in: path
-          description: 'key: id of federatedIdentityCredential'
+          description: The unique identifier of federatedIdentityCredential
           required: true
           style: simple
           schema:
@@ -5077,7 +5077,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5160,7 +5160,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5168,7 +5168,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: homeRealmDiscoveryPolicy-id
           in: path
-          description: 'key: id of homeRealmDiscoveryPolicy'
+          description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
           style: simple
           schema:
@@ -5206,7 +5206,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5257,7 +5257,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5284,7 +5284,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5364,7 +5364,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5372,7 +5372,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -5436,7 +5436,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5481,7 +5481,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5522,7 +5522,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5569,7 +5569,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5621,7 +5621,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5677,7 +5677,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5733,7 +5733,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5789,7 +5789,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5830,7 +5830,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5869,7 +5869,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5898,7 +5898,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5980,7 +5980,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -5988,7 +5988,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: oAuth2PermissionGrant-id
           in: path
-          description: 'key: id of oAuth2PermissionGrant'
+          description: The unique identifier of oAuth2PermissionGrant
           required: true
           style: simple
           schema:
@@ -6043,7 +6043,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6113,7 +6113,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6121,7 +6121,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -6175,7 +6175,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6254,7 +6254,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6262,7 +6262,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -6300,7 +6300,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6353,7 +6353,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6377,7 +6377,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6461,7 +6461,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6469,7 +6469,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: tokenIssuancePolicy-id
           in: path
-          description: 'key: id of tokenIssuancePolicy'
+          description: The unique identifier of tokenIssuancePolicy
           required: true
           style: simple
           schema:
@@ -6526,7 +6526,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6610,7 +6610,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6618,7 +6618,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: tokenLifetimePolicy-id
           in: path
-          description: 'key: id of tokenLifetimePolicy'
+          description: The unique identifier of tokenLifetimePolicy
           required: true
           style: simple
           schema:
@@ -6677,7 +6677,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6756,7 +6756,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: id of servicePrincipal'
+          description: The unique identifier of servicePrincipal
           required: true
           style: simple
           schema:
@@ -6764,7 +6764,7 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -7150,7 +7150,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7253,7 +7253,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7286,7 +7286,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7294,7 +7294,7 @@ paths:
           x-ms-docs-key-type: user
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -7360,7 +7360,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7368,7 +7368,7 @@ paths:
           x-ms-docs-key-type: user
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
@@ -7395,7 +7395,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7403,7 +7403,7 @@ paths:
           x-ms-docs-key-type: user
         - name: appRoleAssignment-id
           in: path
-          description: 'key: id of appRoleAssignment'
+          description: The unique identifier of appRoleAssignment
           required: true
           style: simple
           schema:
