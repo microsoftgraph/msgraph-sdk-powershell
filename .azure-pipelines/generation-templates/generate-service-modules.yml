@@ -25,9 +25,14 @@ parameters:
   - name: GenerateHelpDocs
     type: boolean
     default: false
+  - name: GeneratePullRequest
+    type: boolean
+    default: false
   - name: DOCSBRANCH
     type: string
     default: "DocsGeneration"
+  - name: BaseBranch
+    type: string
 
 jobs:
   - job: GenerateServiceModules
@@ -44,7 +49,9 @@ jobs:
       PublishToFeed: ${{ parameters.PublishToFeed }}
       GenerateCommandMetadata: ${{ parameters.GenerateCommandMetadata }}
       GenerateHelpDocs: ${{ parameters.GenerateHelpDocs }}
+      GeneratePullRequest: ${{ parameters.GeneratePullRequest }}
       DocsBranch: ${{ parameters.DocsBranch }}
+      BaseBranch: ${{ parameters.BaseBranch }}
     steps:
       - template: ../common-templates/checkout.yml
         parameters:
@@ -154,6 +161,15 @@ jobs:
 
       - ${{ if eq(parameters.GenerateCommandMetadata, true) }}:
         - template: ./generate-command-metadata-template.yml
+
+      - ${{ if eq(parameters.GeneratePullRequest, true) }}:
+        - pwsh: '$(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1'
+          displayName: 'Create Pull Request for generated build'
+          env:
+            GITHUB_TOKEN: $(GITHUB_TOKEN)
+            BaseBranch: $(BaseBranch)
+            Title: '[v1] Weekly OpenApiDocs Refresh'
+            Body: 'This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR.'
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP DLL strong name (Service Modules)
@@ -290,8 +306,9 @@ jobs:
       - ${{ if eq(parameters.GenerateHelpDocs, true) }}:
         - template: ./generate-helpdocs-template.yml
           parameters:
-              DOCSBRANCH: $(DocsBranch)
-              ModulesToGenerate: $(ModulesToGenerate)
+            BaseBranch: $(BaseBranch)
+            DOCSBRANCH: $(DocsBranch)
+            ModulesToGenerate: $(ModulesToGenerate)
 
       - task: PowerShell@2
         displayName: Find Duplicate Commands
