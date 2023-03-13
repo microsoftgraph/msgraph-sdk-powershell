@@ -58,3 +58,11 @@ jobs:
         git commit -m "Updating examples "+$date
         git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
         git status
+
+  - pwsh: '$(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1'
+    displayName: 'Create examples update'
+    env:
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+      BaseBranch: 'dev'
+      Title: '[v1] Examples Update'
+      Body: 'This pull request was automatically created by Azure Pipelines. Contains examples update.'
