@@ -17,44 +17,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         private static readonly AssemblyLoadContextProxy Proxy = AssemblyLoadContextProxy.CreateLoadContext("msgraph-load-context");
 
         // Catalog our dependencies here to ensure we don't load anything else.
-        private static readonly HashSet<string> Dependencies = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        {
-            "Azure.Core",
-            "Azure.Identity",
-            "Microsoft.Bcl.AsyncInterfaces",
-            "Microsoft.Graph.Core",
-            "Microsoft.Identity.Client",
-            "Microsoft.Identity.Client.Extensions.Msal",
-            "Microsoft.IdentityModel.Abstractions",
-            "Microsoft.IdentityModel.JsonWebTokens",
-            "Microsoft.IdentityModel.Logging",
-            "Microsoft.IdentityModel.Tokens",
-            "System.IdentityModel.Tokens.Jwt",
-            "System.Security.Cryptography.ProtectedData",
-            "Newtonsoft.Json",
-            "System.Text.Json",
-            "System.Text.Encodings.Web",
-            "System.Threading.Tasks.Extensions",
-            "System.Diagnostics.DiagnosticSource",
-            "System.Runtime.CompilerServices.Unsafe",
-            "System.Memory",
-            "System.Buffers",
-            "System.Numerics.Vectors",
-            "System.Net.Http.WinHttpHandler"
-        };
+        private static readonly HashSet<string> Dependencies = new HashSet<string>(StringComparer.Ordinal);
 
-        /// <summary>
-        /// Dependencies that need to be loaded per framework.
-        /// </summary>
-        private static readonly IList<string> MultiFrameworkDependencies = new List<string> {
-            "Azure.Core",
-            "Azure.Identity",
-            "Microsoft.Identity.Client",
-            "Microsoft.Identity.Client.Extensions.Msal",
-            "System.Security.Cryptography.ProtectedData",
-            "Microsoft.Graph.Core",
-            "System.Net.Http.WinHttpHandler"
-        };
+        // Dependencies that need to be loaded per framework.
+        private static readonly HashSet<string> MultiFrameworkDependencies = new HashSet<string>(StringComparer.Ordinal);
 
         // Set up the path to our dependency directory within the module.
         private static readonly string DependencyFolder = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Self.Location), "Dependencies"));
@@ -71,6 +37,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         public static void Initialize(bool isDesktopEdition = false)
         {
             PSEdition = isDesktopEdition ? "Desktop" : "Core";
+
+            foreach (string filePath in Directory.EnumerateFiles(DependencyFolder, "*.dll", SearchOption.TopDirectoryOnly))
+            {
+                Dependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
+            }
+
+            foreach (string filePath in Directory.EnumerateFiles(Path.Combine(DependencyFolder, PSEdition), "*.dll", SearchOption.TopDirectoryOnly))
+            {
+                MultiFrameworkDependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
+            }
+
             // Set up our event handler when the module is loaded.
             AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler;
         }
@@ -85,15 +62,23 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler;
         }
 
+        private static bool IsRequiredAssembly(AssemblyName assemblyName, Assembly requestingAssembly)
+        {
+            return requestingAssembly != null
+                ? (requestingAssembly == Self || requestingAssembly == Core)
+                && ((Dependencies.Contains(assemblyName.FullName) || MultiFrameworkDependencies.Contains(assemblyName.FullName)))
+                : (Dependencies.Contains(assemblyName.FullName) || MultiFrameworkDependencies.Contains(assemblyName.FullName));
+        }
+
         private static Assembly ResolvingHandler(object sender, ResolveEventArgs args)
         {
             try
             {
                 AssemblyName assemblyName = new AssemblyName(args.Name);
                 // We try to resolve our dependencies on our own.
-                if (Dependencies.Contains(assemblyName.Name))
+                if (IsRequiredAssembly(assemblyName, args.RequestingAssembly))
                 {
-                    string requiredAssemblyPath = MultiFrameworkDependencies.Contains(assemblyName.Name)
+                    string requiredAssemblyPath = MultiFrameworkDependencies.Contains(assemblyName.FullName)
                         ? requiredAssemblyPath = Path.Combine(DependencyFolder, PSEdition, $"{assemblyName.Name}.dll")
                         : requiredAssemblyPath = Path.Combine(DependencyFolder, $"{assemblyName.Name}.dll");
                     if (File.Exists(requiredAssemblyPath))
