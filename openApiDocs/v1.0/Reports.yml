@@ -201,7 +201,7 @@ paths:
       parameters:
         - name: directoryAudit-id
           in: path
-          description: 'key: id of directoryAudit'
+          description: The unique identifier of directoryAudit
           required: true
           style: simple
           schema:
@@ -260,7 +260,7 @@ paths:
       parameters:
         - name: directoryAudit-id
           in: path
-          description: 'key: id of directoryAudit'
+          description: The unique identifier of directoryAudit
           required: true
           style: simple
           schema:
@@ -291,7 +291,7 @@ paths:
       parameters:
         - name: directoryAudit-id
           in: path
-          description: 'key: id of directoryAudit'
+          description: The unique identifier of directoryAudit
           required: true
           style: simple
           schema:
@@ -450,7 +450,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: id of provisioningObjectSummary'
+          description: The unique identifier of provisioningObjectSummary
           required: true
           style: simple
           schema:
@@ -514,7 +514,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: id of provisioningObjectSummary'
+          description: The unique identifier of provisioningObjectSummary
           required: true
           style: simple
           schema:
@@ -545,7 +545,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: id of provisioningObjectSummary'
+          description: The unique identifier of provisioningObjectSummary
           required: true
           style: simple
           schema:
@@ -725,7 +725,7 @@ paths:
       parameters:
         - name: signIn-id
           in: path
-          description: 'key: id of signIn'
+          description: The unique identifier of signIn
           required: true
           style: simple
           schema:
@@ -796,7 +796,7 @@ paths:
       parameters:
         - name: signIn-id
           in: path
-          description: 'key: id of signIn'
+          description: The unique identifier of signIn
           required: true
           style: simple
           schema:
@@ -827,7 +827,7 @@ paths:
       parameters:
         - name: signIn-id
           in: path
-          description: 'key: id of signIn'
+          description: The unique identifier of signIn
           required: true
           style: simple
           schema:
@@ -1050,7 +1050,7 @@ paths:
       parameters:
         - name: deviceManagementExportJob-id
           in: path
-          description: 'key: id of deviceManagementExportJob'
+          description: The unique identifier of deviceManagementExportJob
           required: true
           style: simple
           schema:
@@ -1108,7 +1108,7 @@ paths:
       parameters:
         - name: deviceManagementExportJob-id
           in: path
-          description: 'key: id of deviceManagementExportJob'
+          description: The unique identifier of deviceManagementExportJob
           required: true
           style: simple
           schema:
@@ -1139,7 +1139,7 @@ paths:
       parameters:
         - name: deviceManagementExportJob-id
           in: path
-          description: 'key: id of deviceManagementExportJob'
+          description: The unique identifier of deviceManagementExportJob
           required: true
           style: simple
           schema:
@@ -1337,7 +1337,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -1390,7 +1390,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -1421,7 +1421,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -1547,7 +1547,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -1600,7 +1600,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -1631,7 +1631,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -4707,7 +4707,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -4760,7 +4760,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -4791,7 +4791,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -4917,7 +4917,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -4970,7 +4970,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -5001,7 +5001,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:

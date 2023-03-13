@@ -122,7 +122,7 @@ paths:
       parameters:
         - name: schemaExtension-id
           in: path
-          description: 'key: id of schemaExtension'
+          description: The unique identifier of schemaExtension
           required: true
           style: simple
           schema:
@@ -179,7 +179,7 @@ paths:
       parameters:
         - name: schemaExtension-id
           in: path
-          description: 'key: id of schemaExtension'
+          description: The unique identifier of schemaExtension
           required: true
           style: simple
           schema:
@@ -214,7 +214,7 @@ paths:
       parameters:
         - name: schemaExtension-id
           in: path
-          description: 'key: id of schemaExtension'
+          description: The unique identifier of schemaExtension
           required: true
           style: simple
           schema:

@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -121,7 +121,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -153,7 +153,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -161,7 +161,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -224,7 +224,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -232,7 +232,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -263,7 +263,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -271,7 +271,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -298,7 +298,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -306,7 +306,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -397,7 +397,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -405,7 +405,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -437,7 +437,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -445,7 +445,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -453,7 +453,7 @@ paths:
           x-ms-docs-key-type: userActivity
         - name: activityHistoryItem-id
           in: path
-          description: 'key: id of activityHistoryItem'
+          description: The unique identifier of activityHistoryItem
           required: true
           style: simple
           schema:
@@ -511,7 +511,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -519,7 +519,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -527,7 +527,7 @@ paths:
           x-ms-docs-key-type: userActivity
         - name: activityHistoryItem-id
           in: path
-          description: 'key: id of activityHistoryItem'
+          description: The unique identifier of activityHistoryItem
           required: true
           style: simple
           schema:
@@ -558,7 +558,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -566,7 +566,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -574,7 +574,7 @@ paths:
           x-ms-docs-key-type: userActivity
         - name: activityHistoryItem-id
           in: path
-          description: 'key: id of activityHistoryItem'
+          description: The unique identifier of activityHistoryItem
           required: true
           style: simple
           schema:
@@ -601,7 +601,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -609,7 +609,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -617,7 +617,7 @@ paths:
           x-ms-docs-key-type: userActivity
         - name: activityHistoryItem-id
           in: path
-          description: 'key: id of activityHistoryItem'
+          description: The unique identifier of activityHistoryItem
           required: true
           style: simple
           schema:
@@ -681,7 +681,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -871,7 +871,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -903,7 +903,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -911,7 +911,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1010,7 +1010,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1018,7 +1018,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1049,7 +1049,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1057,7 +1057,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1085,7 +1085,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1093,7 +1093,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1184,7 +1184,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1192,7 +1192,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1225,7 +1225,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1233,7 +1233,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1241,7 +1241,7 @@ paths:
           x-ms-docs-key-type: device
         - name: command-id
           in: path
-          description: 'key: id of command'
+          description: The unique identifier of command
           required: true
           style: simple
           schema:
@@ -1299,7 +1299,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1307,7 +1307,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1315,7 +1315,7 @@ paths:
           x-ms-docs-key-type: device
         - name: command-id
           in: path
-          description: 'key: id of command'
+          description: The unique identifier of command
           required: true
           style: simple
           schema:
@@ -1346,7 +1346,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1354,7 +1354,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1362,7 +1362,7 @@ paths:
           x-ms-docs-key-type: device
         - name: command-id
           in: path
-          description: 'key: id of command'
+          description: The unique identifier of command
           required: true
           style: simple
           schema:
@@ -1389,7 +1389,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1397,7 +1397,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1405,7 +1405,7 @@ paths:
           x-ms-docs-key-type: device
         - name: command-id
           in: path
-          description: 'key: id of command'
+          description: The unique identifier of command
           required: true
           style: simple
           schema:
@@ -1455,7 +1455,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1463,7 +1463,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1528,7 +1528,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1536,7 +1536,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1569,7 +1569,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1577,7 +1577,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1585,7 +1585,7 @@ paths:
           x-ms-docs-key-type: device
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -1633,7 +1633,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1641,7 +1641,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1649,7 +1649,7 @@ paths:
           x-ms-docs-key-type: device
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -1680,7 +1680,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1688,7 +1688,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1696,7 +1696,7 @@ paths:
           x-ms-docs-key-type: device
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -1727,7 +1727,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1735,7 +1735,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1815,7 +1815,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1823,7 +1823,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1831,7 +1831,7 @@ paths:
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -1895,7 +1895,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1903,7 +1903,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1982,7 +1982,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1990,7 +1990,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -1998,7 +1998,7 @@ paths:
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -2036,7 +2036,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2044,7 +2044,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2097,7 +2097,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2105,7 +2105,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2132,7 +2132,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2140,7 +2140,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2220,7 +2220,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2228,7 +2228,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2236,7 +2236,7 @@ paths:
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -2300,7 +2300,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2308,7 +2308,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2388,7 +2388,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2396,7 +2396,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2404,7 +2404,7 @@ paths:
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -2468,7 +2468,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2476,7 +2476,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2550,7 +2550,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2558,7 +2558,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2591,7 +2591,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2599,7 +2599,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2607,7 +2607,7 @@ paths:
           x-ms-docs-key-type: device
         - name: usageRight-id
           in: path
-          description: 'key: id of usageRight'
+          description: The unique identifier of usageRight
           required: true
           style: simple
           schema:
@@ -2658,7 +2658,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2666,7 +2666,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2674,7 +2674,7 @@ paths:
           x-ms-docs-key-type: device
         - name: usageRight-id
           in: path
-          description: 'key: id of usageRight'
+          description: The unique identifier of usageRight
           required: true
           style: simple
           schema:
@@ -2705,7 +2705,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2713,7 +2713,7 @@ paths:
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2721,7 +2721,7 @@ paths:
           x-ms-docs-key-type: device
         - name: usageRight-id
           in: path
-          description: 'key: id of usageRight'
+          description: The unique identifier of usageRight
           required: true
           style: simple
           schema:
