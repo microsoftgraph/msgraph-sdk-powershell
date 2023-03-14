@@ -244,7 +244,7 @@ paths:
       parameters:
         - name: detectedApp-id
           in: path
-          description: 'key: id of detectedApp'
+          description: The unique identifier of detectedApp
           required: true
           style: simple
           schema:
@@ -300,7 +300,7 @@ paths:
       parameters:
         - name: detectedApp-id
           in: path
-          description: 'key: id of detectedApp'
+          description: The unique identifier of detectedApp
           required: true
           style: simple
           schema:
@@ -327,7 +327,7 @@ paths:
       parameters:
         - name: detectedApp-id
           in: path
-          description: 'key: id of detectedApp'
+          description: The unique identifier of detectedApp
           required: true
           style: simple
           schema:
@@ -355,7 +355,7 @@ paths:
       parameters:
         - name: detectedApp-id
           in: path
-          description: 'key: id of detectedApp'
+          description: The unique identifier of detectedApp
           required: true
           style: simple
           schema:
@@ -589,7 +589,7 @@ paths:
       parameters:
         - name: detectedApp-id
           in: path
-          description: 'key: id of detectedApp'
+          description: The unique identifier of detectedApp
           required: true
           style: simple
           schema:
@@ -597,7 +597,7 @@ paths:
           x-ms-docs-key-type: detectedApp
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -795,7 +795,7 @@ paths:
       parameters:
         - name: deviceCategory-id
           in: path
-          description: 'key: id of deviceCategory'
+          description: The unique identifier of deviceCategory
           required: true
           style: simple
           schema:
@@ -845,7 +845,7 @@ paths:
       parameters:
         - name: deviceCategory-id
           in: path
-          description: 'key: id of deviceCategory'
+          description: The unique identifier of deviceCategory
           required: true
           style: simple
           schema:
@@ -872,7 +872,7 @@ paths:
       parameters:
         - name: deviceCategory-id
           in: path
-          description: 'key: id of deviceCategory'
+          description: The unique identifier of deviceCategory
           required: true
           style: simple
           schema:
@@ -1010,7 +1010,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1077,7 +1077,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1104,7 +1104,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1132,7 +1132,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1200,7 +1200,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1233,7 +1233,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1241,7 +1241,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceCompliancePolicyAssignment-id
           in: path
-          description: 'key: id of deviceCompliancePolicyAssignment'
+          description: The unique identifier of deviceCompliancePolicyAssignment
           required: true
           style: simple
           schema:
@@ -1290,7 +1290,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1298,7 +1298,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceCompliancePolicyAssignment-id
           in: path
-          description: 'key: id of deviceCompliancePolicyAssignment'
+          description: The unique identifier of deviceCompliancePolicyAssignment
           required: true
           style: simple
           schema:
@@ -1325,7 +1325,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1333,7 +1333,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceCompliancePolicyAssignment-id
           in: path
-          description: 'key: id of deviceCompliancePolicyAssignment'
+          description: The unique identifier of deviceCompliancePolicyAssignment
           required: true
           style: simple
           schema:
@@ -1361,7 +1361,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1453,7 +1453,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1486,7 +1486,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1494,7 +1494,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: settingStateDeviceSummary-id
           in: path
-          description: 'key: id of settingStateDeviceSummary'
+          description: The unique identifier of settingStateDeviceSummary
           required: true
           style: simple
           schema:
@@ -1551,7 +1551,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1559,7 +1559,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: settingStateDeviceSummary-id
           in: path
-          description: 'key: id of settingStateDeviceSummary'
+          description: The unique identifier of settingStateDeviceSummary
           required: true
           style: simple
           schema:
@@ -1586,7 +1586,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1594,7 +1594,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: settingStateDeviceSummary-id
           in: path
-          description: 'key: id of settingStateDeviceSummary'
+          description: The unique identifier of settingStateDeviceSummary
           required: true
           style: simple
           schema:
@@ -1622,7 +1622,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1708,7 +1708,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1741,7 +1741,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1749,7 +1749,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceDeviceStatus-id
           in: path
-          description: 'key: id of deviceComplianceDeviceStatus'
+          description: The unique identifier of deviceComplianceDeviceStatus
           required: true
           style: simple
           schema:
@@ -1804,7 +1804,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1812,7 +1812,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceDeviceStatus-id
           in: path
-          description: 'key: id of deviceComplianceDeviceStatus'
+          description: The unique identifier of deviceComplianceDeviceStatus
           required: true
           style: simple
           schema:
@@ -1839,7 +1839,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1847,7 +1847,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceDeviceStatus-id
           in: path
-          description: 'key: id of deviceComplianceDeviceStatus'
+          description: The unique identifier of deviceComplianceDeviceStatus
           required: true
           style: simple
           schema:
@@ -1875,7 +1875,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1930,7 +1930,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1957,7 +1957,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -1985,7 +1985,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2055,7 +2055,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2088,7 +2088,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2096,7 +2096,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceScheduledActionForRule-id
           in: path
-          description: 'key: id of deviceComplianceScheduledActionForRule'
+          description: The unique identifier of deviceComplianceScheduledActionForRule
           required: true
           style: simple
           schema:
@@ -2147,7 +2147,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2155,7 +2155,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceScheduledActionForRule-id
           in: path
-          description: 'key: id of deviceComplianceScheduledActionForRule'
+          description: The unique identifier of deviceComplianceScheduledActionForRule
           required: true
           style: simple
           schema:
@@ -2182,7 +2182,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2190,7 +2190,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceScheduledActionForRule-id
           in: path
-          description: 'key: id of deviceComplianceScheduledActionForRule'
+          description: The unique identifier of deviceComplianceScheduledActionForRule
           required: true
           style: simple
           schema:
@@ -2218,7 +2218,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2226,7 +2226,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceScheduledActionForRule-id
           in: path
-          description: 'key: id of deviceComplianceScheduledActionForRule'
+          description: The unique identifier of deviceComplianceScheduledActionForRule
           required: true
           style: simple
           schema:
@@ -2303,7 +2303,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2311,7 +2311,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceScheduledActionForRule-id
           in: path
-          description: 'key: id of deviceComplianceScheduledActionForRule'
+          description: The unique identifier of deviceComplianceScheduledActionForRule
           required: true
           style: simple
           schema:
@@ -2344,7 +2344,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2352,7 +2352,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceScheduledActionForRule-id
           in: path
-          description: 'key: id of deviceComplianceScheduledActionForRule'
+          description: The unique identifier of deviceComplianceScheduledActionForRule
           required: true
           style: simple
           schema:
@@ -2360,7 +2360,7 @@ paths:
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
         - name: deviceComplianceActionItem-id
           in: path
-          description: 'key: id of deviceComplianceActionItem'
+          description: The unique identifier of deviceComplianceActionItem
           required: true
           style: simple
           schema:
@@ -2412,7 +2412,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2420,7 +2420,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceScheduledActionForRule-id
           in: path
-          description: 'key: id of deviceComplianceScheduledActionForRule'
+          description: The unique identifier of deviceComplianceScheduledActionForRule
           required: true
           style: simple
           schema:
@@ -2428,7 +2428,7 @@ paths:
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
         - name: deviceComplianceActionItem-id
           in: path
-          description: 'key: id of deviceComplianceActionItem'
+          description: The unique identifier of deviceComplianceActionItem
           required: true
           style: simple
           schema:
@@ -2455,7 +2455,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2463,7 +2463,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceScheduledActionForRule-id
           in: path
-          description: 'key: id of deviceComplianceScheduledActionForRule'
+          description: The unique identifier of deviceComplianceScheduledActionForRule
           required: true
           style: simple
           schema:
@@ -2471,7 +2471,7 @@ paths:
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
         - name: deviceComplianceActionItem-id
           in: path
-          description: 'key: id of deviceComplianceActionItem'
+          description: The unique identifier of deviceComplianceActionItem
           required: true
           style: simple
           schema:
@@ -2499,7 +2499,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2579,7 +2579,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2612,7 +2612,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2620,7 +2620,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceUserStatus-id
           in: path
-          description: 'key: id of deviceComplianceUserStatus'
+          description: The unique identifier of deviceComplianceUserStatus
           required: true
           style: simple
           schema:
@@ -2673,7 +2673,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2681,7 +2681,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceUserStatus-id
           in: path
-          description: 'key: id of deviceComplianceUserStatus'
+          description: The unique identifier of deviceComplianceUserStatus
           required: true
           style: simple
           schema:
@@ -2708,7 +2708,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2716,7 +2716,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: deviceComplianceUserStatus-id
           in: path
-          description: 'key: id of deviceComplianceUserStatus'
+          description: The unique identifier of deviceComplianceUserStatus
           required: true
           style: simple
           schema:
@@ -2744,7 +2744,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2799,7 +2799,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -2826,7 +2826,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
-          description: 'key: id of deviceCompliancePolicy'
+          description: The unique identifier of deviceCompliancePolicy
           required: true
           style: simple
           schema:
@@ -3054,7 +3054,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -3114,7 +3114,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -3141,7 +3141,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -3169,7 +3169,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -3267,7 +3267,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -3300,7 +3300,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -3308,7 +3308,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
         - name: deviceComplianceSettingState-id
           in: path
-          description: 'key: id of deviceComplianceSettingState'
+          description: The unique identifier of deviceComplianceSettingState
           required: true
           style: simple
           schema:
@@ -3367,7 +3367,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -3375,7 +3375,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
         - name: deviceComplianceSettingState-id
           in: path
-          description: 'key: id of deviceComplianceSettingState'
+          description: The unique identifier of deviceComplianceSettingState
           required: true
           style: simple
           schema:
@@ -3402,7 +3402,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -3410,7 +3410,7 @@ paths:
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
         - name: deviceComplianceSettingState-id
           in: path
-          description: 'key: id of deviceComplianceSettingState'
+          description: The unique identifier of deviceComplianceSettingState
           required: true
           style: simple
           schema:
@@ -3631,7 +3631,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -3696,7 +3696,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -3723,7 +3723,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -3751,7 +3751,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -3819,7 +3819,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -3852,7 +3852,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -3860,7 +3860,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: deviceConfigurationAssignment-id
           in: path
-          description: 'key: id of deviceConfigurationAssignment'
+          description: The unique identifier of deviceConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -3909,7 +3909,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -3917,7 +3917,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: deviceConfigurationAssignment-id
           in: path
-          description: 'key: id of deviceConfigurationAssignment'
+          description: The unique identifier of deviceConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -3944,7 +3944,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -3952,7 +3952,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: deviceConfigurationAssignment-id
           in: path
-          description: 'key: id of deviceConfigurationAssignment'
+          description: The unique identifier of deviceConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -3980,7 +3980,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4072,7 +4072,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4105,7 +4105,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4113,7 +4113,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: settingStateDeviceSummary-id
           in: path
-          description: 'key: id of settingStateDeviceSummary'
+          description: The unique identifier of settingStateDeviceSummary
           required: true
           style: simple
           schema:
@@ -4170,7 +4170,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4178,7 +4178,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: settingStateDeviceSummary-id
           in: path
-          description: 'key: id of settingStateDeviceSummary'
+          description: The unique identifier of settingStateDeviceSummary
           required: true
           style: simple
           schema:
@@ -4205,7 +4205,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4213,7 +4213,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: settingStateDeviceSummary-id
           in: path
-          description: 'key: id of settingStateDeviceSummary'
+          description: The unique identifier of settingStateDeviceSummary
           required: true
           style: simple
           schema:
@@ -4241,7 +4241,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4327,7 +4327,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4360,7 +4360,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4368,7 +4368,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: deviceConfigurationDeviceStatus-id
           in: path
-          description: 'key: id of deviceConfigurationDeviceStatus'
+          description: The unique identifier of deviceConfigurationDeviceStatus
           required: true
           style: simple
           schema:
@@ -4423,7 +4423,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4431,7 +4431,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: deviceConfigurationDeviceStatus-id
           in: path
-          description: 'key: id of deviceConfigurationDeviceStatus'
+          description: The unique identifier of deviceConfigurationDeviceStatus
           required: true
           style: simple
           schema:
@@ -4458,7 +4458,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4466,7 +4466,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: deviceConfigurationDeviceStatus-id
           in: path
-          description: 'key: id of deviceConfigurationDeviceStatus'
+          description: The unique identifier of deviceConfigurationDeviceStatus
           required: true
           style: simple
           schema:
@@ -4494,7 +4494,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4549,7 +4549,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4576,7 +4576,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4604,7 +4604,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4684,7 +4684,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4717,7 +4717,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4725,7 +4725,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: deviceConfigurationUserStatus-id
           in: path
-          description: 'key: id of deviceConfigurationUserStatus'
+          description: The unique identifier of deviceConfigurationUserStatus
           required: true
           style: simple
           schema:
@@ -4778,7 +4778,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4786,7 +4786,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: deviceConfigurationUserStatus-id
           in: path
-          description: 'key: id of deviceConfigurationUserStatus'
+          description: The unique identifier of deviceConfigurationUserStatus
           required: true
           style: simple
           schema:
@@ -4813,7 +4813,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4821,7 +4821,7 @@ paths:
           x-ms-docs-key-type: deviceConfiguration
         - name: deviceConfigurationUserStatus-id
           in: path
-          description: 'key: id of deviceConfigurationUserStatus'
+          description: The unique identifier of deviceConfigurationUserStatus
           required: true
           style: simple
           schema:
@@ -4849,7 +4849,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4904,7 +4904,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -4931,7 +4931,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -5254,7 +5254,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5363,7 +5363,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5390,7 +5390,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5418,7 +5418,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5468,7 +5468,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5495,7 +5495,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5523,7 +5523,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5606,7 +5606,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5639,7 +5639,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5647,7 +5647,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceCompliancePolicyState-id
           in: path
-          description: 'key: id of deviceCompliancePolicyState'
+          description: The unique identifier of deviceCompliancePolicyState
           required: true
           style: simple
           schema:
@@ -5701,7 +5701,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5709,7 +5709,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceCompliancePolicyState-id
           in: path
-          description: 'key: id of deviceCompliancePolicyState'
+          description: The unique identifier of deviceCompliancePolicyState
           required: true
           style: simple
           schema:
@@ -5736,7 +5736,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5744,7 +5744,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceCompliancePolicyState-id
           in: path
-          description: 'key: id of deviceCompliancePolicyState'
+          description: The unique identifier of deviceCompliancePolicyState
           required: true
           style: simple
           schema:
@@ -5772,7 +5772,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5855,7 +5855,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5888,7 +5888,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5896,7 +5896,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceConfigurationState-id
           in: path
-          description: 'key: id of deviceConfigurationState'
+          description: The unique identifier of deviceConfigurationState
           required: true
           style: simple
           schema:
@@ -5950,7 +5950,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5958,7 +5958,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceConfigurationState-id
           in: path
-          description: 'key: id of deviceConfigurationState'
+          description: The unique identifier of deviceConfigurationState
           required: true
           style: simple
           schema:
@@ -5985,7 +5985,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -5993,7 +5993,7 @@ paths:
           x-ms-docs-key-type: managedDevice
         - name: deviceConfigurationState-id
           in: path
-          description: 'key: id of deviceConfigurationState'
+          description: The unique identifier of deviceConfigurationState
           required: true
           style: simple
           schema:
@@ -6021,7 +6021,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -6500,7 +6500,7 @@ paths:
       parameters:
         - name: notificationMessageTemplate-id
           in: path
-          description: 'key: id of notificationMessageTemplate'
+          description: The unique identifier of notificationMessageTemplate
           required: true
           style: simple
           schema:
@@ -6555,7 +6555,7 @@ paths:
       parameters:
         - name: notificationMessageTemplate-id
           in: path
-          description: 'key: id of notificationMessageTemplate'
+          description: The unique identifier of notificationMessageTemplate
           required: true
           style: simple
           schema:
@@ -6582,7 +6582,7 @@ paths:
       parameters:
         - name: notificationMessageTemplate-id
           in: path
-          description: 'key: id of notificationMessageTemplate'
+          description: The unique identifier of notificationMessageTemplate
           required: true
           style: simple
           schema:
@@ -6610,7 +6610,7 @@ paths:
       parameters:
         - name: notificationMessageTemplate-id
           in: path
-          description: 'key: id of notificationMessageTemplate'
+          description: The unique identifier of notificationMessageTemplate
           required: true
           style: simple
           schema:
@@ -6690,7 +6690,7 @@ paths:
       parameters:
         - name: notificationMessageTemplate-id
           in: path
-          description: 'key: id of notificationMessageTemplate'
+          description: The unique identifier of notificationMessageTemplate
           required: true
           style: simple
           schema:
@@ -6723,7 +6723,7 @@ paths:
       parameters:
         - name: notificationMessageTemplate-id
           in: path
-          description: 'key: id of notificationMessageTemplate'
+          description: The unique identifier of notificationMessageTemplate
           required: true
           style: simple
           schema:
@@ -6731,7 +6731,7 @@ paths:
           x-ms-docs-key-type: notificationMessageTemplate
         - name: localizedNotificationMessage-id
           in: path
-          description: 'key: id of localizedNotificationMessage'
+          description: The unique identifier of localizedNotificationMessage
           required: true
           style: simple
           schema:
@@ -6784,7 +6784,7 @@ paths:
       parameters:
         - name: notificationMessageTemplate-id
           in: path
-          description: 'key: id of notificationMessageTemplate'
+          description: The unique identifier of notificationMessageTemplate
           required: true
           style: simple
           schema:
@@ -6792,7 +6792,7 @@ paths:
           x-ms-docs-key-type: notificationMessageTemplate
         - name: localizedNotificationMessage-id
           in: path
-          description: 'key: id of localizedNotificationMessage'
+          description: The unique identifier of localizedNotificationMessage
           required: true
           style: simple
           schema:
@@ -6819,7 +6819,7 @@ paths:
       parameters:
         - name: notificationMessageTemplate-id
           in: path
-          description: 'key: id of notificationMessageTemplate'
+          description: The unique identifier of notificationMessageTemplate
           required: true
           style: simple
           schema:
@@ -6827,7 +6827,7 @@ paths:
           x-ms-docs-key-type: notificationMessageTemplate
         - name: localizedNotificationMessage-id
           in: path
-          description: 'key: id of localizedNotificationMessage'
+          description: The unique identifier of localizedNotificationMessage
           required: true
           style: simple
           schema:
@@ -6999,7 +6999,7 @@ paths:
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
           in: path
-          description: 'key: id of deviceManagementTroubleshootingEvent'
+          description: The unique identifier of deviceManagementTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -7049,7 +7049,7 @@ paths:
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
           in: path
-          description: 'key: id of deviceManagementTroubleshootingEvent'
+          description: The unique identifier of deviceManagementTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -7076,7 +7076,7 @@ paths:
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
           in: path
-          description: 'key: id of deviceManagementTroubleshootingEvent'
+          description: The unique identifier of deviceManagementTroubleshootingEvent
           required: true
           style: simple
           schema:
@@ -7194,7 +7194,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
           in: path
-          description: 'key: id of windowsInformationProtectionAppLearningSummary'
+          description: The unique identifier of windowsInformationProtectionAppLearningSummary
           required: true
           style: simple
           schema:
@@ -7245,7 +7245,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
           in: path
-          description: 'key: id of windowsInformationProtectionAppLearningSummary'
+          description: The unique identifier of windowsInformationProtectionAppLearningSummary
           required: true
           style: simple
           schema:
@@ -7272,7 +7272,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
           in: path
-          description: 'key: id of windowsInformationProtectionAppLearningSummary'
+          description: The unique identifier of windowsInformationProtectionAppLearningSummary
           required: true
           style: simple
           schema:
@@ -7387,7 +7387,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
           in: path
-          description: 'key: id of windowsInformationProtectionNetworkLearningSummary'
+          description: The unique identifier of windowsInformationProtectionNetworkLearningSummary
           required: true
           style: simple
           schema:
@@ -7437,7 +7437,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
           in: path
-          description: 'key: id of windowsInformationProtectionNetworkLearningSummary'
+          description: The unique identifier of windowsInformationProtectionNetworkLearningSummary
           required: true
           style: simple
           schema:
@@ -7464,7 +7464,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
           in: path
-          description: 'key: id of windowsInformationProtectionNetworkLearningSummary'
+          description: The unique identifier of windowsInformationProtectionNetworkLearningSummary
           required: true
           style: simple
           schema:

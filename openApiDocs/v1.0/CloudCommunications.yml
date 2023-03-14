@@ -191,7 +191,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -250,7 +250,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -277,7 +277,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -308,7 +308,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -393,7 +393,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -426,7 +426,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -434,7 +434,7 @@ paths:
           x-ms-docs-key-type: callRecord
         - name: session-id
           in: path
-          description: 'key: id of session'
+          description: The unique identifier of session
           required: true
           style: simple
           schema:
@@ -490,7 +490,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -498,7 +498,7 @@ paths:
           x-ms-docs-key-type: callRecord
         - name: session-id
           in: path
-          description: 'key: id of session'
+          description: The unique identifier of session
           required: true
           style: simple
           schema:
@@ -525,7 +525,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -533,7 +533,7 @@ paths:
           x-ms-docs-key-type: callRecord
         - name: session-id
           in: path
-          description: 'key: id of session'
+          description: The unique identifier of session
           required: true
           style: simple
           schema:
@@ -561,7 +561,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -569,7 +569,7 @@ paths:
           x-ms-docs-key-type: callRecord
         - name: session-id
           in: path
-          description: 'key: id of session'
+          description: The unique identifier of session
           required: true
           style: simple
           schema:
@@ -652,7 +652,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -660,7 +660,7 @@ paths:
           x-ms-docs-key-type: callRecord
         - name: session-id
           in: path
-          description: 'key: id of session'
+          description: The unique identifier of session
           required: true
           style: simple
           schema:
@@ -693,7 +693,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -701,7 +701,7 @@ paths:
           x-ms-docs-key-type: callRecord
         - name: session-id
           in: path
-          description: 'key: id of session'
+          description: The unique identifier of session
           required: true
           style: simple
           schema:
@@ -709,7 +709,7 @@ paths:
           x-ms-docs-key-type: session
         - name: segment-id
           in: path
-          description: 'key: id of segment'
+          description: The unique identifier of segment
           required: true
           style: simple
           schema:
@@ -763,7 +763,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -771,7 +771,7 @@ paths:
           x-ms-docs-key-type: callRecord
         - name: session-id
           in: path
-          description: 'key: id of session'
+          description: The unique identifier of session
           required: true
           style: simple
           schema:
@@ -779,7 +779,7 @@ paths:
           x-ms-docs-key-type: session
         - name: segment-id
           in: path
-          description: 'key: id of segment'
+          description: The unique identifier of segment
           required: true
           style: simple
           schema:
@@ -806,7 +806,7 @@ paths:
       parameters:
         - name: callRecord-id
           in: path
-          description: 'key: id of callRecord'
+          description: The unique identifier of callRecord
           required: true
           style: simple
           schema:
@@ -814,7 +814,7 @@ paths:
           x-ms-docs-key-type: callRecord
         - name: session-id
           in: path
-          description: 'key: id of session'
+          description: The unique identifier of session
           required: true
           style: simple
           schema:
@@ -822,7 +822,7 @@ paths:
           x-ms-docs-key-type: session
         - name: segment-id
           in: path
-          description: 'key: id of segment'
+          description: The unique identifier of segment
           required: true
           style: simple
           schema:
@@ -1001,7 +1001,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1077,7 +1077,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1104,7 +1104,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1131,7 +1131,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1205,7 +1205,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1237,7 +1237,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1245,7 +1245,7 @@ paths:
           x-ms-docs-key-type: call
         - name: audioRoutingGroup-id
           in: path
-          description: 'key: id of audioRoutingGroup'
+          description: The unique identifier of audioRoutingGroup
           required: true
           style: simple
           schema:
@@ -1296,7 +1296,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1304,7 +1304,7 @@ paths:
           x-ms-docs-key-type: call
         - name: audioRoutingGroup-id
           in: path
-          description: 'key: id of audioRoutingGroup'
+          description: The unique identifier of audioRoutingGroup
           required: true
           style: simple
           schema:
@@ -1331,7 +1331,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1339,7 +1339,7 @@ paths:
           x-ms-docs-key-type: call
         - name: audioRoutingGroup-id
           in: path
-          description: 'key: id of audioRoutingGroup'
+          description: The unique identifier of audioRoutingGroup
           required: true
           style: simple
           schema:
@@ -1370,7 +1370,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1435,7 +1435,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1467,7 +1467,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1475,7 +1475,7 @@ paths:
           x-ms-docs-key-type: call
         - name: contentSharingSession-id
           in: path
-          description: 'key: id of contentSharingSession'
+          description: The unique identifier of contentSharingSession
           required: true
           style: simple
           schema:
@@ -1523,7 +1523,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1531,7 +1531,7 @@ paths:
           x-ms-docs-key-type: call
         - name: contentSharingSession-id
           in: path
-          description: 'key: id of contentSharingSession'
+          description: The unique identifier of contentSharingSession
           required: true
           style: simple
           schema:
@@ -1558,7 +1558,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1566,7 +1566,7 @@ paths:
           x-ms-docs-key-type: call
         - name: contentSharingSession-id
           in: path
-          description: 'key: id of contentSharingSession'
+          description: The unique identifier of contentSharingSession
           required: true
           style: simple
           schema:
@@ -1597,7 +1597,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1639,7 +1639,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1690,7 +1690,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1732,7 +1732,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1769,7 +1769,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1794,7 +1794,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1836,7 +1836,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1882,7 +1882,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -1959,7 +1959,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2007,7 +2007,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2047,7 +2047,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2089,7 +2089,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2128,7 +2128,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2170,7 +2170,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2210,7 +2210,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2284,7 +2284,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2316,7 +2316,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2324,7 +2324,7 @@ paths:
           x-ms-docs-key-type: call
         - name: commsOperation-id
           in: path
-          description: 'key: id of commsOperation'
+          description: The unique identifier of commsOperation
           required: true
           style: simple
           schema:
@@ -2375,7 +2375,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2383,7 +2383,7 @@ paths:
           x-ms-docs-key-type: call
         - name: commsOperation-id
           in: path
-          description: 'key: id of commsOperation'
+          description: The unique identifier of commsOperation
           required: true
           style: simple
           schema:
@@ -2410,7 +2410,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2418,7 +2418,7 @@ paths:
           x-ms-docs-key-type: call
         - name: commsOperation-id
           in: path
-          description: 'key: id of commsOperation'
+          description: The unique identifier of commsOperation
           required: true
           style: simple
           schema:
@@ -2449,7 +2449,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2532,7 +2532,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2564,7 +2564,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2572,7 +2572,7 @@ paths:
           x-ms-docs-key-type: call
         - name: participant-id
           in: path
-          description: 'key: id of participant'
+          description: The unique identifier of participant
           required: true
           style: simple
           schema:
@@ -2626,7 +2626,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2634,7 +2634,7 @@ paths:
           x-ms-docs-key-type: call
         - name: participant-id
           in: path
-          description: 'key: id of participant'
+          description: The unique identifier of participant
           required: true
           style: simple
           schema:
@@ -2661,7 +2661,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2669,7 +2669,7 @@ paths:
           x-ms-docs-key-type: call
         - name: participant-id
           in: path
-          description: 'key: id of participant'
+          description: The unique identifier of participant
           required: true
           style: simple
           schema:
@@ -2700,7 +2700,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2708,7 +2708,7 @@ paths:
           x-ms-docs-key-type: call
         - name: participant-id
           in: path
-          description: 'key: id of participant'
+          description: The unique identifier of participant
           required: true
           style: simple
           schema:
@@ -2750,7 +2750,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2758,7 +2758,7 @@ paths:
           x-ms-docs-key-type: call
         - name: participant-id
           in: path
-          description: 'key: id of participant'
+          description: The unique identifier of participant
           required: true
           style: simple
           schema:
@@ -2802,7 +2802,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -2810,7 +2810,7 @@ paths:
           x-ms-docs-key-type: call
         - name: participant-id
           in: path
-          description: 'key: id of participant'
+          description: The unique identifier of participant
           required: true
           style: simple
           schema:
@@ -2852,7 +2852,7 @@ paths:
       parameters:
         - name: call-id
           in: path
-          description: 'key: id of call'
+          description: The unique identifier of call
           required: true
           style: simple
           schema:
@@ -3125,7 +3125,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3198,7 +3198,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3225,7 +3225,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3256,7 +3256,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3332,7 +3332,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3365,7 +3365,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3373,7 +3373,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -3426,7 +3426,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3434,7 +3434,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -3461,7 +3461,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3469,7 +3469,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -3500,7 +3500,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3508,7 +3508,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -3588,7 +3588,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3596,7 +3596,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -3629,7 +3629,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3637,7 +3637,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -3645,7 +3645,7 @@ paths:
           x-ms-docs-key-type: meetingAttendanceReport
         - name: attendanceRecord-id
           in: path
-          description: 'key: id of attendanceRecord'
+          description: The unique identifier of attendanceRecord
           required: true
           style: simple
           schema:
@@ -3698,7 +3698,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3706,7 +3706,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -3714,7 +3714,7 @@ paths:
           x-ms-docs-key-type: meetingAttendanceReport
         - name: attendanceRecord-id
           in: path
-          description: 'key: id of attendanceRecord'
+          description: The unique identifier of attendanceRecord
           required: true
           style: simple
           schema:
@@ -3741,7 +3741,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3749,7 +3749,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -3757,7 +3757,7 @@ paths:
           x-ms-docs-key-type: meetingAttendanceReport
         - name: attendanceRecord-id
           in: path
-          description: 'key: id of attendanceRecord'
+          description: The unique identifier of attendanceRecord
           required: true
           style: simple
           schema:
@@ -3788,7 +3788,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3814,7 +3814,7 @@ paths:
       parameters:
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -3978,7 +3978,7 @@ paths:
       parameters:
         - name: presence-id
           in: path
-          description: 'key: id of presence'
+          description: The unique identifier of presence
           required: true
           style: simple
           schema:
@@ -4028,7 +4028,7 @@ paths:
       parameters:
         - name: presence-id
           in: path
-          description: 'key: id of presence'
+          description: The unique identifier of presence
           required: true
           style: simple
           schema:
@@ -4055,7 +4055,7 @@ paths:
       parameters:
         - name: presence-id
           in: path
-          description: 'key: id of presence'
+          description: The unique identifier of presence
           required: true
           style: simple
           schema:
@@ -4086,7 +4086,7 @@ paths:
       parameters:
         - name: presence-id
           in: path
-          description: 'key: id of presence'
+          description: The unique identifier of presence
           required: true
           style: simple
           schema:
@@ -4124,7 +4124,7 @@ paths:
       parameters:
         - name: presence-id
           in: path
-          description: 'key: id of presence'
+          description: The unique identifier of presence
           required: true
           style: simple
           schema:
@@ -4149,7 +4149,7 @@ paths:
       parameters:
         - name: presence-id
           in: path
-          description: 'key: id of presence'
+          description: The unique identifier of presence
           required: true
           style: simple
           schema:
@@ -4196,7 +4196,7 @@ paths:
       parameters:
         - name: presence-id
           in: path
-          description: 'key: id of presence'
+          description: The unique identifier of presence
           required: true
           style: simple
           schema:
@@ -4240,7 +4240,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4380,7 +4380,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4412,7 +4412,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4420,7 +4420,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4493,7 +4493,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4501,7 +4501,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4528,7 +4528,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4536,7 +4536,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4567,7 +4567,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4575,7 +4575,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4651,7 +4651,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4659,7 +4659,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4692,7 +4692,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4700,7 +4700,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4708,7 +4708,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -4761,7 +4761,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4769,7 +4769,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4777,7 +4777,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -4804,7 +4804,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4812,7 +4812,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4820,7 +4820,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -4851,7 +4851,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4859,7 +4859,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4867,7 +4867,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -4947,7 +4947,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4955,7 +4955,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -4963,7 +4963,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -4996,7 +4996,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5004,7 +5004,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -5012,7 +5012,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -5020,7 +5020,7 @@ paths:
           x-ms-docs-key-type: meetingAttendanceReport
         - name: attendanceRecord-id
           in: path
-          description: 'key: id of attendanceRecord'
+          description: The unique identifier of attendanceRecord
           required: true
           style: simple
           schema:
@@ -5073,7 +5073,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5081,7 +5081,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -5089,7 +5089,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -5097,7 +5097,7 @@ paths:
           x-ms-docs-key-type: meetingAttendanceReport
         - name: attendanceRecord-id
           in: path
-          description: 'key: id of attendanceRecord'
+          description: The unique identifier of attendanceRecord
           required: true
           style: simple
           schema:
@@ -5124,7 +5124,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5132,7 +5132,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -5140,7 +5140,7 @@ paths:
           x-ms-docs-key-type: onlineMeeting
         - name: meetingAttendanceReport-id
           in: path
-          description: 'key: id of meetingAttendanceReport'
+          description: The unique identifier of meetingAttendanceReport
           required: true
           style: simple
           schema:
@@ -5148,7 +5148,7 @@ paths:
           x-ms-docs-key-type: meetingAttendanceReport
         - name: attendanceRecord-id
           in: path
-          description: 'key: id of attendanceRecord'
+          description: The unique identifier of attendanceRecord
           required: true
           style: simple
           schema:
@@ -5179,7 +5179,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5187,7 +5187,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -5213,7 +5213,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5221,7 +5221,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: id of onlineMeeting'
+          description: The unique identifier of onlineMeeting
           required: true
           style: simple
           schema:
@@ -5254,7 +5254,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5304,7 +5304,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5331,7 +5331,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:

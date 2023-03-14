@@ -488,7 +488,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -749,7 +749,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -780,7 +780,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -811,7 +811,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -881,7 +881,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -889,7 +889,7 @@ paths:
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -943,7 +943,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1023,7 +1023,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1031,7 +1031,7 @@ paths:
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -1092,7 +1092,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1157,7 +1157,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1190,7 +1190,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1198,7 +1198,7 @@ paths:
           x-ms-docs-key-type: user
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -1246,7 +1246,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1254,7 +1254,7 @@ paths:
           x-ms-docs-key-type: user
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -1281,7 +1281,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1289,7 +1289,7 @@ paths:
           x-ms-docs-key-type: user
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -1320,7 +1320,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1394,7 +1394,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1426,7 +1426,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1434,7 +1434,7 @@ paths:
           x-ms-docs-key-type: user
         - name: licenseDetails-id
           in: path
-          description: 'key: id of licenseDetails'
+          description: The unique identifier of licenseDetails
           required: true
           style: simple
           schema:
@@ -1485,7 +1485,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1493,7 +1493,7 @@ paths:
           x-ms-docs-key-type: user
         - name: licenseDetails-id
           in: path
-          description: 'key: id of licenseDetails'
+          description: The unique identifier of licenseDetails
           required: true
           style: simple
           schema:
@@ -1520,7 +1520,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1528,7 +1528,7 @@ paths:
           x-ms-docs-key-type: user
         - name: licenseDetails-id
           in: path
-          description: 'key: id of licenseDetails'
+          description: The unique identifier of licenseDetails
           required: true
           style: simple
           schema:
@@ -1559,7 +1559,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1613,7 +1613,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1637,7 +1637,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1659,7 +1659,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1690,7 +1690,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1770,7 +1770,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1778,7 +1778,7 @@ paths:
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -1838,7 +1838,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1924,7 +1924,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1956,7 +1956,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1964,7 +1964,7 @@ paths:
           x-ms-docs-key-type: user
         - name: notification-id
           in: path
-          description: 'key: id of notification'
+          description: The unique identifier of notification
           required: true
           style: simple
           schema:
@@ -2019,7 +2019,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2027,7 +2027,7 @@ paths:
           x-ms-docs-key-type: user
         - name: notification-id
           in: path
-          description: 'key: id of notification'
+          description: The unique identifier of notification
           required: true
           style: simple
           schema:
@@ -2054,7 +2054,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2062,7 +2062,7 @@ paths:
           x-ms-docs-key-type: user
         - name: notification-id
           in: path
-          description: 'key: id of notification'
+          description: The unique identifier of notification
           required: true
           style: simple
           schema:
@@ -2093,7 +2093,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2180,7 +2180,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2188,7 +2188,7 @@ paths:
           x-ms-docs-key-type: user
         - name: oAuth2PermissionGrant-id
           in: path
-          description: 'key: id of oAuth2PermissionGrant'
+          description: The unique identifier of oAuth2PermissionGrant
           required: true
           style: simple
           schema:
@@ -2245,7 +2245,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2290,7 +2290,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2352,7 +2352,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2385,7 +2385,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2393,7 +2393,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookCategory-id
           in: path
-          description: 'key: id of outlookCategory'
+          description: The unique identifier of outlookCategory
           required: true
           style: simple
           schema:
@@ -2431,7 +2431,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2439,7 +2439,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookCategory-id
           in: path
-          description: 'key: id of outlookCategory'
+          description: The unique identifier of outlookCategory
           required: true
           style: simple
           schema:
@@ -2466,7 +2466,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2474,7 +2474,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookCategory-id
           in: path
-          description: 'key: id of outlookCategory'
+          description: The unique identifier of outlookCategory
           required: true
           style: simple
           schema:
@@ -2505,7 +2505,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2578,7 +2578,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2616,7 +2616,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2624,7 +2624,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -2673,7 +2673,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2681,7 +2681,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -2714,7 +2714,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2722,7 +2722,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -2756,7 +2756,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2764,7 +2764,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -2838,7 +2838,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2846,7 +2846,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -2885,7 +2885,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2893,7 +2893,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -2901,7 +2901,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2956,7 +2956,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2964,7 +2964,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -2972,7 +2972,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3005,7 +3005,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3013,7 +3013,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3021,7 +3021,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3055,7 +3055,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3063,7 +3063,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3137,7 +3137,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3145,7 +3145,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3184,7 +3184,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3192,7 +3192,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3200,7 +3200,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3255,7 +3255,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3263,7 +3263,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3271,7 +3271,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3304,7 +3304,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3312,7 +3312,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3320,7 +3320,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3357,7 +3357,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3365,7 +3365,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3483,7 +3483,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3491,7 +3491,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3530,7 +3530,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3538,7 +3538,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3546,7 +3546,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -3610,7 +3610,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3618,7 +3618,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3626,7 +3626,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -3659,7 +3659,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3667,7 +3667,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3675,7 +3675,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -3712,7 +3712,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3720,7 +3720,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3728,7 +3728,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -3817,7 +3817,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3825,7 +3825,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3833,7 +3833,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -3872,7 +3872,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3880,7 +3880,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3888,7 +3888,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -3896,7 +3896,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -3955,7 +3955,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3963,7 +3963,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -3971,7 +3971,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -3979,7 +3979,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -4013,7 +4013,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4021,7 +4021,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4029,7 +4029,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4103,7 +4103,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4111,7 +4111,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4119,7 +4119,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4158,7 +4158,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4166,7 +4166,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4174,7 +4174,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4182,7 +4182,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4237,7 +4237,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4245,7 +4245,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4253,7 +4253,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4261,7 +4261,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4294,7 +4294,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4302,7 +4302,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4310,7 +4310,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4318,7 +4318,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4352,7 +4352,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4360,7 +4360,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4368,7 +4368,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4442,7 +4442,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4450,7 +4450,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4458,7 +4458,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4497,7 +4497,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4505,7 +4505,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4513,7 +4513,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4521,7 +4521,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4576,7 +4576,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4584,7 +4584,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4592,7 +4592,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4600,7 +4600,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4633,7 +4633,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4641,7 +4641,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -4649,7 +4649,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -4657,7 +4657,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4694,7 +4694,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4769,7 +4769,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4807,7 +4807,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4815,7 +4815,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -4862,7 +4862,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4870,7 +4870,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -4903,7 +4903,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4911,7 +4911,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -4948,7 +4948,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4956,7 +4956,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5029,7 +5029,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5037,7 +5037,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5076,7 +5076,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5084,7 +5084,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5092,7 +5092,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5141,7 +5141,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5149,7 +5149,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5157,7 +5157,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5190,7 +5190,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5198,7 +5198,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5206,7 +5206,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5240,7 +5240,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5248,7 +5248,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5256,7 +5256,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5330,7 +5330,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5338,7 +5338,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5346,7 +5346,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5385,7 +5385,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5393,7 +5393,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5401,7 +5401,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5409,7 +5409,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5464,7 +5464,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5472,7 +5472,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5480,7 +5480,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5488,7 +5488,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5521,7 +5521,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5529,7 +5529,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5537,7 +5537,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5545,7 +5545,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5579,7 +5579,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5587,7 +5587,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5595,7 +5595,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5669,7 +5669,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5677,7 +5677,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5685,7 +5685,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5724,7 +5724,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5732,7 +5732,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5740,7 +5740,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5748,7 +5748,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5803,7 +5803,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5811,7 +5811,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5819,7 +5819,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5827,7 +5827,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5860,7 +5860,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5868,7 +5868,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5876,7 +5876,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -5884,7 +5884,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5921,7 +5921,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5929,7 +5929,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -5937,7 +5937,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6055,7 +6055,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6063,7 +6063,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6071,7 +6071,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6110,7 +6110,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6118,7 +6118,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6126,7 +6126,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6134,7 +6134,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6198,7 +6198,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6206,7 +6206,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6214,7 +6214,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6222,7 +6222,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6255,7 +6255,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6263,7 +6263,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6271,7 +6271,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6279,7 +6279,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6316,7 +6316,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6324,7 +6324,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6332,7 +6332,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6340,7 +6340,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6429,7 +6429,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6437,7 +6437,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6445,7 +6445,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6453,7 +6453,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6492,7 +6492,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6500,7 +6500,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6508,7 +6508,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6516,7 +6516,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6524,7 +6524,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -6583,7 +6583,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6591,7 +6591,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6599,7 +6599,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6607,7 +6607,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6615,7 +6615,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -6649,7 +6649,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6657,7 +6657,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6665,7 +6665,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6673,7 +6673,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6747,7 +6747,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6755,7 +6755,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6763,7 +6763,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6771,7 +6771,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6810,7 +6810,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6818,7 +6818,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6826,7 +6826,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6834,7 +6834,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6842,7 +6842,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -6897,7 +6897,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6905,7 +6905,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6913,7 +6913,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6921,7 +6921,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6929,7 +6929,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -6962,7 +6962,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6970,7 +6970,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -6978,7 +6978,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -6986,7 +6986,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -6994,7 +6994,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -7028,7 +7028,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7036,7 +7036,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -7044,7 +7044,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -7052,7 +7052,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7126,7 +7126,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7134,7 +7134,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -7142,7 +7142,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -7150,7 +7150,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7189,7 +7189,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7197,7 +7197,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -7205,7 +7205,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -7213,7 +7213,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7221,7 +7221,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -7276,7 +7276,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7284,7 +7284,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -7292,7 +7292,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -7300,7 +7300,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7308,7 +7308,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -7341,7 +7341,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7349,7 +7349,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: id of outlookTaskGroup'
+          description: The unique identifier of outlookTaskGroup
           required: true
           style: simple
           schema:
@@ -7357,7 +7357,7 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: id of outlookTaskFolder'
+          description: The unique identifier of outlookTaskFolder
           required: true
           style: simple
           schema:
@@ -7365,7 +7365,7 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7373,7 +7373,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -7410,7 +7410,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7532,7 +7532,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7570,7 +7570,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7578,7 +7578,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7642,7 +7642,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7650,7 +7650,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7683,7 +7683,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7691,7 +7691,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7728,7 +7728,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7736,7 +7736,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7825,7 +7825,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7833,7 +7833,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7872,7 +7872,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7880,7 +7880,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7888,7 +7888,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -7947,7 +7947,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7955,7 +7955,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -7963,7 +7963,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -7997,7 +7997,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8005,7 +8005,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8079,7 +8079,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8087,7 +8087,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8126,7 +8126,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8134,7 +8134,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8142,7 +8142,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -8197,7 +8197,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8205,7 +8205,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8213,7 +8213,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -8246,7 +8246,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8254,7 +8254,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8262,7 +8262,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -8296,7 +8296,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8304,7 +8304,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8378,7 +8378,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8386,7 +8386,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8425,7 +8425,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8433,7 +8433,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8441,7 +8441,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -8496,7 +8496,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8504,7 +8504,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8512,7 +8512,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -8545,7 +8545,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8553,7 +8553,7 @@ paths:
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: id of outlookTask'
+          description: The unique identifier of outlookTask
           required: true
           style: simple
           schema:
@@ -8561,7 +8561,7 @@ paths:
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -8598,7 +8598,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8678,7 +8678,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8686,7 +8686,7 @@ paths:
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -8750,7 +8750,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8830,7 +8830,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8838,7 +8838,7 @@ paths:
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -8899,7 +8899,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8937,7 +8937,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8965,7 +8965,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8990,7 +8990,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9019,7 +9019,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9078,7 +9078,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9086,7 +9086,7 @@ paths:
           x-ms-docs-key-type: user
         - name: profilePhoto-id
           in: path
-          description: 'key: id of profilePhoto'
+          description: The unique identifier of profilePhoto
           required: true
           style: simple
           schema:
@@ -9125,7 +9125,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9133,7 +9133,7 @@ paths:
           x-ms-docs-key-type: user
         - name: profilePhoto-id
           in: path
-          description: 'key: id of profilePhoto'
+          description: The unique identifier of profilePhoto
           required: true
           style: simple
           schema:
@@ -9158,7 +9158,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9166,7 +9166,7 @@ paths:
           x-ms-docs-key-type: user
         - name: profilePhoto-id
           in: path
-          description: 'key: id of profilePhoto'
+          description: The unique identifier of profilePhoto
           required: true
           style: simple
           schema:
@@ -9199,7 +9199,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9279,7 +9279,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9287,7 +9287,7 @@ paths:
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -9347,7 +9347,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9405,7 +9405,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9432,7 +9432,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9463,7 +9463,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9516,7 +9516,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9543,7 +9543,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9574,7 +9574,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9627,7 +9627,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9654,7 +9654,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9685,7 +9685,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9740,7 +9740,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9767,7 +9767,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9798,7 +9798,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9855,7 +9855,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9882,7 +9882,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9910,7 +9910,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9960,7 +9960,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9987,7 +9987,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10018,7 +10018,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10103,7 +10103,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10136,7 +10136,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10144,7 +10144,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10200,7 +10200,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10208,7 +10208,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10235,7 +10235,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10243,7 +10243,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10271,7 +10271,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10279,7 +10279,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10344,7 +10344,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10352,7 +10352,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10385,7 +10385,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10393,7 +10393,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10401,7 +10401,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -10449,7 +10449,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10457,7 +10457,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10465,7 +10465,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -10492,7 +10492,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10500,7 +10500,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10508,7 +10508,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -10539,7 +10539,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10547,7 +10547,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10671,7 +10671,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10679,7 +10679,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10712,7 +10712,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10720,7 +10720,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10728,7 +10728,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -10801,7 +10801,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10809,7 +10809,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10817,7 +10817,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -10844,7 +10844,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10852,7 +10852,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10860,7 +10860,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -10891,7 +10891,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10899,7 +10899,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10907,7 +10907,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -10975,7 +10975,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10983,7 +10983,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -10991,7 +10991,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11024,7 +11024,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11032,7 +11032,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11040,7 +11040,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11048,7 +11048,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: attachmentBase-id
           in: path
-          description: 'key: id of attachmentBase'
+          description: The unique identifier of attachmentBase
           required: true
           style: simple
           schema:
@@ -11088,7 +11088,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11096,7 +11096,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11104,7 +11104,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11112,7 +11112,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: attachmentBase-id
           in: path
-          description: 'key: id of attachmentBase'
+          description: The unique identifier of attachmentBase
           required: true
           style: simple
           schema:
@@ -11142,7 +11142,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11150,7 +11150,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11158,7 +11158,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11166,7 +11166,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: attachmentBase-id
           in: path
-          description: 'key: id of attachmentBase'
+          description: The unique identifier of attachmentBase
           required: true
           style: simple
           schema:
@@ -11191,7 +11191,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11199,7 +11199,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11207,7 +11207,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11215,7 +11215,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: attachmentBase-id
           in: path
-          description: 'key: id of attachmentBase'
+          description: The unique identifier of attachmentBase
           required: true
           style: simple
           schema:
@@ -11244,7 +11244,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11252,7 +11252,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11260,7 +11260,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11322,7 +11322,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11330,7 +11330,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11338,7 +11338,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11346,7 +11346,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: attachmentSession-id
           in: path
-          description: 'key: id of attachmentSession'
+          description: The unique identifier of attachmentSession
           required: true
           style: simple
           schema:
@@ -11385,7 +11385,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11393,7 +11393,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11401,7 +11401,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11409,7 +11409,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: attachmentSession-id
           in: path
-          description: 'key: id of attachmentSession'
+          description: The unique identifier of attachmentSession
           required: true
           style: simple
           schema:
@@ -11436,7 +11436,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11444,7 +11444,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11452,7 +11452,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11460,7 +11460,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: attachmentSession-id
           in: path
-          description: 'key: id of attachmentSession'
+          description: The unique identifier of attachmentSession
           required: true
           style: simple
           schema:
@@ -11488,7 +11488,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11496,7 +11496,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11504,7 +11504,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11512,7 +11512,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: attachmentSession-id
           in: path
-          description: 'key: id of attachmentSession'
+          description: The unique identifier of attachmentSession
           required: true
           style: simple
           schema:
@@ -11538,7 +11538,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11546,7 +11546,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11554,7 +11554,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11562,7 +11562,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: attachmentSession-id
           in: path
-          description: 'key: id of attachmentSession'
+          description: The unique identifier of attachmentSession
           required: true
           style: simple
           schema:
@@ -11592,7 +11592,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11600,7 +11600,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11608,7 +11608,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11685,7 +11685,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11693,7 +11693,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11701,7 +11701,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11734,7 +11734,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11742,7 +11742,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11750,7 +11750,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11758,7 +11758,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: checklistItem-id
           in: path
-          description: 'key: id of checklistItem'
+          description: The unique identifier of checklistItem
           required: true
           style: simple
           schema:
@@ -11810,7 +11810,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11818,7 +11818,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11826,7 +11826,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11834,7 +11834,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: checklistItem-id
           in: path
-          description: 'key: id of checklistItem'
+          description: The unique identifier of checklistItem
           required: true
           style: simple
           schema:
@@ -11861,7 +11861,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11869,7 +11869,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11877,7 +11877,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11885,7 +11885,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: checklistItem-id
           in: path
-          description: 'key: id of checklistItem'
+          description: The unique identifier of checklistItem
           required: true
           style: simple
           schema:
@@ -11913,7 +11913,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11921,7 +11921,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -11929,7 +11929,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -11994,7 +11994,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12002,7 +12002,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -12010,7 +12010,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -12043,7 +12043,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12051,7 +12051,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -12059,7 +12059,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -12067,7 +12067,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -12115,7 +12115,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12123,7 +12123,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -12131,7 +12131,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -12139,7 +12139,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -12166,7 +12166,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12174,7 +12174,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -12182,7 +12182,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -12190,7 +12190,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -12221,7 +12221,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12229,7 +12229,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -12237,7 +12237,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -12318,7 +12318,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12326,7 +12326,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -12334,7 +12334,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -12367,7 +12367,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12375,7 +12375,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -12383,7 +12383,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -12391,7 +12391,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: linkedResource-id
           in: path
-          description: 'key: id of linkedResource'
+          description: The unique identifier of linkedResource
           required: true
           style: simple
           schema:
@@ -12443,7 +12443,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12451,7 +12451,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -12459,7 +12459,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -12467,7 +12467,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: linkedResource-id
           in: path
-          description: 'key: id of linkedResource'
+          description: The unique identifier of linkedResource
           required: true
           style: simple
           schema:
@@ -12494,7 +12494,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12502,7 +12502,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -12510,7 +12510,7 @@ paths:
           x-ms-docs-key-type: todoTaskList
         - name: todoTask-id
           in: path
-          description: 'key: id of todoTask'
+          description: The unique identifier of todoTask
           required: true
           style: simple
           schema:
@@ -12518,7 +12518,7 @@ paths:
           x-ms-docs-key-type: todoTask
         - name: linkedResource-id
           in: path
-          description: 'key: id of linkedResource'
+          description: The unique identifier of linkedResource
           required: true
           style: simple
           schema:
@@ -12549,7 +12549,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12629,7 +12629,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12637,7 +12637,7 @@ paths:
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -12698,7 +12698,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12778,7 +12778,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12786,7 +12786,7 @@ paths:
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
