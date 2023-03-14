@@ -728,11 +728,11 @@ paths:
     patch:
       tags:
         - groups.group
-      summary: Update group
-      description: Update the properties of a group object.
+      summary: Add members
+      description: Add a member to a security or Microsoft 365 group through the **members** navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
       operationId: groups.group_UpdateGroup
       parameters:
         - name: group-id
@@ -5279,10 +5279,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: groups.conversations.threads_reply
       parameters:
         - name: group-id
@@ -26016,10 +26016,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: groups.threads_reply
       parameters:
         - name: group-id

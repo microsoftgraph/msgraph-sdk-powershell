@@ -1842,11 +1842,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -5278,11 +5278,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: groups.team.channels_CreateMembers
       parameters:
         - name: group-id
@@ -9499,11 +9499,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: groups.team.primaryChannel_CreateMembers
       parameters:
         - name: group-id
@@ -14756,133 +14756,6 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /teams:
-    get:
-      tags:
-        - teams.team
-      summary: Get team
-      description: Retrieve the properties and relationships of the specified team.
-      operationId: teams.team_ListTeam
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - classification
-                - classification desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - funSettings
-                - funSettings desc
-                - guestSettings
-                - guestSettings desc
-                - internalId
-                - internalId desc
-                - isArchived
-                - isArchived desc
-                - memberSettings
-                - memberSettings desc
-                - messagingSettings
-                - messagingSettings desc
-                - specialization
-                - specialization desc
-                - summary
-                - summary desc
-                - tenantId
-                - tenantId desc
-                - visibility
-                - visibility desc
-                - webUrl
-                - webUrl desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - classification
-                - createdDateTime
-                - description
-                - displayName
-                - funSettings
-                - guestSettings
-                - internalId
-                - isArchived
-                - memberSettings
-                - messagingSettings
-                - specialization
-                - summary
-                - tenantId
-                - visibility
-                - webUrl
-                - allChannels
-                - channels
-                - group
-                - incomingChannels
-                - installedApps
-                - members
-                - operations
-                - photo
-                - primaryChannel
-                - tags
-                - template
-                - schedule
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - allChannels
-                - channels
-                - group
-                - incomingChannels
-                - installedApps
-                - members
-                - operations
-                - photo
-                - primaryChannel
-                - tags
-                - template
-                - schedule
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.teamCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - teams.team
@@ -14913,8 +14786,7 @@ paths:
     get:
       tags:
         - teams.team
-      summary: Get team
-      description: Retrieve the properties and relationships of the specified team.
+      summary: Get entity from teams by key
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-get?view=graph-rest-1.0
@@ -15809,11 +15681,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: teams.channels_CreateMembers
       parameters:
         - name: team-id
@@ -21137,11 +21009,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: teams.primaryChannel_CreateMembers
       parameters:
         - name: team-id
@@ -27987,11 +27859,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: teamwork.deletedTeams.channels_CreateMembers
       parameters:
         - name: deletedTeam-id
@@ -32981,11 +32853,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: users.chats_CreateMessages
       parameters:
         - name: user-id
@@ -36197,11 +36069,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_CreateMembers
       parameters:
         - name: user-id
@@ -40970,11 +40842,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_CreateMembers
       parameters:
         - name: user-id
@@ -51667,19 +51539,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.teamCollectionResponse:
-      title: Collection of team
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.team'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.deletedTeamCollectionResponse:
       title: Collection of deletedTeam
       type: object
@@ -51701,6 +51560,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamCollectionResponse:
+      title: Collection of team
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.team'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -60537,12 +60409,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.teamworkTagMemberCollectionResponse'
-    microsoft.graph.teamCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.teamCollectionResponse'
     microsoft.graph.deletedTeamCollectionResponse:
       description: Retrieved collection
       content:
@@ -60555,6 +60421,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.workforceIntegrationCollectionResponse'
+    microsoft.graph.teamCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.teamCollectionResponse'
     microsoft.graph.associatedTeamInfoCollectionResponse:
       description: Retrieved collection
       content:

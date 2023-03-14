@@ -474,6 +474,40 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - drives.driveItem
+      summary: Create new navigation property to bundles for drives
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/drive-post-bundles?view=graph-rest-1.0
+      operationId: drives_CreateBundles
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.driveItem'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/drives/{drive-id}/bundles/{driveItem-id}':
     get:
       tags:
@@ -19606,6 +19640,48 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.drive
+      summary: Create new navigation property to bundles for groups
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/drive-post-bundles?view=graph-rest-1.0
+      operationId: groups.drives_CreateBundles
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.driveItem'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/groups/{group-id}/drives/{drive-id}/bundles/{driveItem-id}':
     get:
@@ -43487,6 +43563,48 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.drive
+      summary: Create new navigation property to bundles for users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/drive-post-bundles?view=graph-rest-1.0
+      operationId: users.drives_CreateBundles
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.driveItem'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/drives/{drive-id}/bundles/{driveItem-id}':
     get:
