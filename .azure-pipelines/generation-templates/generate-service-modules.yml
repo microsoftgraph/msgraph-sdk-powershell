@@ -33,6 +33,7 @@ parameters:
     default: "DocsGeneration"
   - name: BaseBranch
     type: string
+    default: "dev"
 
 jobs:
   - job: GenerateServiceModules
