@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         public async Task ShouldUseDelegateAuthProviderWhenUserAccessTokenIsProvidedAsync()
         {
             // Arrange
-            string accessToken = "ACCESS_TOKEN_VIA_DELEGATE_PROVIDER";
+            string accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiVGVzdCIsIklzc3VlciI6Iklzc3VlciIsIlVzZXJuYW1lIjoiVGVzdCIsImV4cCI6MTY3ODQ4ODgxNiwiaWF0IjoxNjc4NDg4ODE2fQ.hpYypwHAV8H3jb4KuTiLpgLWy9A8H2d9HG7SxJ8Kpn0";
             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(accessToken));
             AuthContext userProvidedAuthContext = new AuthContext
             {
