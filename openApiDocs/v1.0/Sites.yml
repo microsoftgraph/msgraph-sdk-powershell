@@ -17638,7 +17638,7 @@ paths:
       tags:
         - groups.site
       summary: Create permission
-      description: Create a new permission object on a site.
+      description: 'Create a new permission object on a site. '
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
@@ -67525,7 +67525,7 @@ paths:
       tags:
         - sites.permission
       summary: Create permission
-      description: Create a new permission object on a site.
+      description: 'Create a new permission object on a site. '
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
