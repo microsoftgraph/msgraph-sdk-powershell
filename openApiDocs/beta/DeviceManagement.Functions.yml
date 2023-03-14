@@ -38,7 +38,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementAssignmentFilter-id
           in: path
-          description: 'key: id of deviceAndAppManagementAssignmentFilter'
+          description: The unique identifier of deviceAndAppManagementAssignmentFilter
           required: true
           style: simple
           schema:
@@ -219,7 +219,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -262,7 +262,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -287,7 +287,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -318,7 +318,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -361,7 +361,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -386,7 +386,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -488,7 +488,7 @@ paths:
       parameters:
         - name: depOnboardingSetting-id
           in: path
-          description: 'key: id of depOnboardingSetting'
+          description: The unique identifier of depOnboardingSetting
           required: true
           style: simple
           schema:
@@ -496,7 +496,7 @@ paths:
           x-ms-docs-key-type: depOnboardingSetting
         - name: enrollmentProfile-id
           in: path
-          description: 'key: id of enrollmentProfile'
+          description: The unique identifier of enrollmentProfile
           required: true
           style: simple
           schema:
@@ -528,7 +528,7 @@ paths:
       parameters:
         - name: depOnboardingSetting-id
           in: path
-          description: 'key: id of depOnboardingSetting'
+          description: The unique identifier of depOnboardingSetting
           required: true
           style: simple
           schema:
@@ -627,7 +627,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -702,7 +702,7 @@ paths:
       parameters:
         - name: deviceHealthScript-id
           in: path
-          description: 'key: id of deviceHealthScript'
+          description: The unique identifier of deviceHealthScript
           required: true
           style: simple
           schema:
@@ -759,7 +759,7 @@ paths:
       parameters:
         - name: deviceManagementIntent-id
           in: path
-          description: 'key: id of deviceManagementIntent'
+          description: The unique identifier of deviceManagementIntent
           required: true
           style: simple
           schema:
@@ -801,6 +801,49 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/deviceManagement/intents/{deviceManagementIntent-id}/microsoft.graph.getCustomizedSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getCustomizedSettings
+      operationId: deviceManagement.intents_getCustomizedSettings
+      parameters:
+        - name: deviceManagementIntent-id
+          in: path
+          description: The unique identifier of deviceManagementIntent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementIntent
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentCustomizedSetting'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getCloudPcRemoteActionResults()':
     get:
       tags:
@@ -810,7 +853,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -853,7 +896,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -878,7 +921,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -909,7 +952,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -952,7 +995,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -977,7 +1020,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -1494,7 +1537,7 @@ paths:
       parameters:
         - name: resourceOperation-id
           in: path
-          description: 'key: id of resourceOperation'
+          description: The unique identifier of resourceOperation
           required: true
           style: simple
           schema:
@@ -1568,7 +1611,7 @@ paths:
       parameters:
         - name: deviceManagementTemplate-id
           in: path
-          description: 'key: id of deviceManagementTemplate'
+          description: The unique identifier of deviceManagementTemplate
           required: true
           style: simple
           schema:
@@ -1619,7 +1662,7 @@ paths:
       parameters:
         - name: deviceManagementTemplate-id
           in: path
-          description: 'key: id of deviceManagementTemplate'
+          description: The unique identifier of deviceManagementTemplate
           required: true
           style: simple
           schema:
@@ -1627,7 +1670,7 @@ paths:
           x-ms-docs-key-type: deviceManagementTemplate
         - name: deviceManagementTemplate-id1
           in: path
-          description: 'key: id of deviceManagementTemplate'
+          description: The unique identifier of deviceManagementTemplate
           required: true
           style: simple
           schema:
@@ -2072,7 +2115,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -2115,7 +2158,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -2140,7 +2183,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -2165,7 +2208,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -2950,6 +2993,25 @@ components:
       additionalProperties:
         type: object
       description: Entity representing setting comparison result
+    microsoft.graph.deviceManagementIntentCustomizedSetting:
+      title: deviceManagementIntentCustomizedSetting
+      type: object
+      properties:
+        customizedJson:
+          type: string
+          description: 'JSON representation of the customized value, if different from default'
+          nullable: true
+        defaultJson:
+          type: string
+          description: JSON representation of the default value from the template
+          nullable: true
+        definitionId:
+          type: string
+          description: The ID of the setting definition for this setting
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Default and customized value of a setting in a Security Baseline
     microsoft.graph.deviceAndAppManagementAssignedRoleDetails:
       title: deviceAndAppManagementAssignedRoleDetails
       type: object
@@ -3568,6 +3630,14 @@ components:
         cloudPcLaunchUrl:
           type: string
           description: The connect URL of the Cloud PC.
+          nullable: true
+        windows365SwitchCompatible:
+          type: boolean
+          description: 'Indicates whether the Cloud PC supports switch functionality. If the value is true, it supports switch functionality; otherwise,  false.'
+          nullable: true
+        windows365SwitchNotCompatibleReason:
+          type: string
+          description: Indicates the reason the Cloud PC doesn't support switch. CPCOsVersionNotMeetRequirement indicates that the user needs to update their Cloud PC operation system version. CPCHardwareNotMeetRequirement indicates that the Cloud PC needs more CPU or RAM to support the functionality.
           nullable: true
       additionalProperties:
         type: object

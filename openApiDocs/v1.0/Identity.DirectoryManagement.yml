@@ -166,7 +166,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -237,7 +237,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -268,7 +268,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -298,7 +298,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -377,7 +377,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -385,7 +385,7 @@ paths:
           x-ms-docs-key-type: orgContact
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -449,7 +449,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -502,7 +502,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -581,7 +581,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -589,7 +589,7 @@ paths:
           x-ms-docs-key-type: orgContact
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -653,7 +653,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -705,7 +705,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -761,7 +761,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -817,7 +817,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -873,7 +873,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -901,7 +901,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -980,7 +980,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: id of orgContact'
+          description: The unique identifier of orgContact
           required: true
           style: simple
           schema:
@@ -988,7 +988,7 @@ paths:
           x-ms-docs-key-type: orgContact
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -1405,7 +1405,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: id of contract'
+          description: The unique identifier of contract
           required: true
           style: simple
           schema:
@@ -1458,7 +1458,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: id of contract'
+          description: The unique identifier of contract
           required: true
           style: simple
           schema:
@@ -1489,7 +1489,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: id of contract'
+          description: The unique identifier of contract
           required: true
           style: simple
           schema:
@@ -1520,7 +1520,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: id of contract'
+          description: The unique identifier of contract
           required: true
           style: simple
           schema:
@@ -1572,7 +1572,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: id of contract'
+          description: The unique identifier of contract
           required: true
           style: simple
           schema:
@@ -1628,7 +1628,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: id of contract'
+          description: The unique identifier of contract
           required: true
           style: simple
           schema:
@@ -1684,7 +1684,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: id of contract'
+          description: The unique identifier of contract
           required: true
           style: simple
           schema:
@@ -1740,7 +1740,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: id of contract'
+          description: The unique identifier of contract
           required: true
           style: simple
           schema:
@@ -1756,6 +1756,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /contracts/microsoft.graph.delta():
+    get:
+      tags:
+        - contracts.Functions
+      summary: Invoke function delta
+      operationId: contracts_delta
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /contracts/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
@@ -2078,7 +2145,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2160,7 +2227,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2195,7 +2262,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2223,7 +2290,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2288,7 +2355,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2321,7 +2388,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2329,7 +2396,7 @@ paths:
           x-ms-docs-key-type: device
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -2377,7 +2444,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2385,7 +2452,7 @@ paths:
           x-ms-docs-key-type: device
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -2416,7 +2483,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2424,7 +2491,7 @@ paths:
           x-ms-docs-key-type: device
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -2455,7 +2522,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2535,7 +2602,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2543,7 +2610,7 @@ paths:
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -2607,7 +2674,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2659,7 +2726,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2715,7 +2782,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2771,7 +2838,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2827,7 +2894,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2856,7 +2923,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2935,7 +3002,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -2943,7 +3010,7 @@ paths:
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -2981,7 +3048,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -3034,7 +3101,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -3061,7 +3128,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -3141,7 +3208,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -3149,7 +3216,7 @@ paths:
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -3213,7 +3280,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -3293,7 +3360,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: id of device'
+          description: The unique identifier of device
           required: true
           style: simple
           schema:
@@ -3301,7 +3368,7 @@ paths:
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -3643,6 +3710,7 @@ paths:
                 - administrativeUnits
                 - deletedItems
                 - federationConfigurations
+                - onPremisesSynchronization
               type: string
         - name: $expand
           in: query
@@ -3658,6 +3726,7 @@ paths:
                 - administrativeUnits
                 - deletedItems
                 - federationConfigurations
+                - onPremisesSynchronization
               type: string
       responses:
         2XX:
@@ -3807,7 +3876,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -3865,7 +3934,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -3896,7 +3965,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -3924,7 +3993,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -3989,7 +4058,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4022,7 +4091,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4030,7 +4099,7 @@ paths:
           x-ms-docs-key-type: administrativeUnit
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -4078,7 +4147,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4086,7 +4155,7 @@ paths:
           x-ms-docs-key-type: administrativeUnit
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -4117,7 +4186,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4125,7 +4194,7 @@ paths:
           x-ms-docs-key-type: administrativeUnit
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -4156,7 +4225,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4235,7 +4304,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4243,7 +4312,7 @@ paths:
           x-ms-docs-key-type: administrativeUnit
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -4281,7 +4350,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4338,7 +4407,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4365,7 +4434,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4443,7 +4512,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4476,7 +4545,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4484,7 +4553,7 @@ paths:
           x-ms-docs-key-type: administrativeUnit
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: id of scopedRoleMembership'
+          description: The unique identifier of scopedRoleMembership
           required: true
           style: simple
           schema:
@@ -4535,7 +4604,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4543,7 +4612,7 @@ paths:
           x-ms-docs-key-type: administrativeUnit
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: id of scopedRoleMembership'
+          description: The unique identifier of scopedRoleMembership
           required: true
           style: simple
           schema:
@@ -4574,7 +4643,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: id of administrativeUnit'
+          description: The unique identifier of administrativeUnit
           required: true
           style: simple
           schema:
@@ -4582,7 +4651,7 @@ paths:
           x-ms-docs-key-type: administrativeUnit
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: id of scopedRoleMembership'
+          description: The unique identifier of scopedRoleMembership
           required: true
           style: simple
           schema:
@@ -4773,7 +4842,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -4822,7 +4891,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -4853,7 +4922,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -4884,7 +4953,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -4936,7 +5005,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -4992,7 +5061,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -5048,7 +5117,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -5104,7 +5173,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -5120,6 +5189,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directory/deletedItems/microsoft.graph.delta():
+    get:
+      tags:
+        - directory.Functions
+      summary: Invoke function delta
+      operationId: directory.deletedItems_delta
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /directory/deletedItems/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
@@ -5355,7 +5491,7 @@ paths:
       parameters:
         - name: identityProviderBase-id
           in: path
-          description: 'key: id of identityProviderBase'
+          description: The unique identifier of identityProviderBase
           required: true
           style: simple
           schema:
@@ -5404,7 +5540,7 @@ paths:
       parameters:
         - name: identityProviderBase-id
           in: path
-          description: 'key: id of identityProviderBase'
+          description: The unique identifier of identityProviderBase
           required: true
           style: simple
           schema:
@@ -5435,7 +5571,7 @@ paths:
       parameters:
         - name: identityProviderBase-id
           in: path
-          description: 'key: id of identityProviderBase'
+          description: The unique identifier of identityProviderBase
           required: true
           style: simple
           schema:
@@ -5489,6 +5625,202 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /directory/onPremisesSynchronization:
+    get:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Get onPremisesSynchronization from directory
+      description: A container for on-premises directory synchronization functionalities that are available for the organization.
+      operationId: directory_ListOnPremisesSynchronization
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - configuration
+                - configuration desc
+                - features
+                - features desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - features
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.onPremisesDirectorySynchronizationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Create new navigation property to onPremisesSynchronization for directory
+      operationId: directory_CreateOnPremisesSynchronization
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/onPremisesSynchronization/{onPremisesDirectorySynchronization-id}':
+    get:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Get onPremisesSynchronization from directory
+      description: A container for on-premises directory synchronization functionalities that are available for the organization.
+      operationId: directory_GetOnPremisesSynchronization
+      parameters:
+        - name: onPremisesDirectorySynchronization-id
+          in: path
+          description: The unique identifier of onPremisesDirectorySynchronization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesDirectorySynchronization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - features
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Update the navigation property onPremisesSynchronization in directory
+      operationId: directory_UpdateOnPremisesSynchronization
+      parameters:
+        - name: onPremisesDirectorySynchronization-id
+          in: path
+          description: The unique identifier of onPremisesDirectorySynchronization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesDirectorySynchronization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        required: true
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Delete navigation property onPremisesSynchronization for directory
+      operationId: directory_DeleteOnPremisesSynchronization
+      parameters:
+        - name: onPremisesDirectorySynchronization-id
+          in: path
+          description: The unique identifier of onPremisesDirectorySynchronization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesDirectorySynchronization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /directoryRoles:
     get:
       tags:
@@ -5605,7 +5937,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -5661,7 +5993,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -5692,7 +6024,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -5723,7 +6055,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -5802,7 +6134,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -5810,7 +6142,7 @@ paths:
           x-ms-docs-key-type: directoryRole
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -5848,7 +6180,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -5901,7 +6233,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -5928,7 +6260,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -5980,7 +6312,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -6036,7 +6368,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -6092,7 +6424,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -6148,7 +6480,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -6177,7 +6509,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -6251,7 +6583,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -6284,7 +6616,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -6292,7 +6624,7 @@ paths:
           x-ms-docs-key-type: directoryRole
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: id of scopedRoleMembership'
+          description: The unique identifier of scopedRoleMembership
           required: true
           style: simple
           schema:
@@ -6343,7 +6675,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -6351,7 +6683,7 @@ paths:
           x-ms-docs-key-type: directoryRole
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: id of scopedRoleMembership'
+          description: The unique identifier of scopedRoleMembership
           required: true
           style: simple
           schema:
@@ -6382,7 +6714,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: id of directoryRole'
+          description: The unique identifier of directoryRole
           required: true
           style: simple
           schema:
@@ -6390,7 +6722,7 @@ paths:
           x-ms-docs-key-type: directoryRole
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: id of scopedRoleMembership'
+          description: The unique identifier of scopedRoleMembership
           required: true
           style: simple
           schema:
@@ -6732,7 +7064,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: id of directoryRoleTemplate'
+          description: The unique identifier of directoryRoleTemplate
           required: true
           style: simple
           schema:
@@ -6783,7 +7115,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: id of directoryRoleTemplate'
+          description: The unique identifier of directoryRoleTemplate
           required: true
           style: simple
           schema:
@@ -6814,7 +7146,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: id of directoryRoleTemplate'
+          description: The unique identifier of directoryRoleTemplate
           required: true
           style: simple
           schema:
@@ -6845,7 +7177,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: id of directoryRoleTemplate'
+          description: The unique identifier of directoryRoleTemplate
           required: true
           style: simple
           schema:
@@ -6897,7 +7229,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: id of directoryRoleTemplate'
+          description: The unique identifier of directoryRoleTemplate
           required: true
           style: simple
           schema:
@@ -6953,7 +7285,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: id of directoryRoleTemplate'
+          description: The unique identifier of directoryRoleTemplate
           required: true
           style: simple
           schema:
@@ -7009,7 +7341,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: id of directoryRoleTemplate'
+          description: The unique identifier of directoryRoleTemplate
           required: true
           style: simple
           schema:
@@ -7065,7 +7397,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: id of directoryRoleTemplate'
+          description: The unique identifier of directoryRoleTemplate
           required: true
           style: simple
           schema:
@@ -7081,6 +7413,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directoryRoleTemplates/microsoft.graph.delta():
+    get:
+      tags:
+        - directoryRoleTemplates.Functions
+      summary: Invoke function delta
+      operationId: directoryRoleTemplates_delta
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /directoryRoleTemplates/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
@@ -7370,7 +7769,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7443,7 +7842,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7478,7 +7877,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7509,7 +7908,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7579,7 +7978,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7587,7 +7986,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -7638,7 +8037,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7746,7 +8145,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7779,7 +8178,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7787,7 +8186,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: internalDomainFederation-id
           in: path
-          description: 'key: id of internalDomainFederation'
+          description: The unique identifier of internalDomainFederation
           required: true
           style: simple
           schema:
@@ -7848,7 +8247,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7856,7 +8255,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: internalDomainFederation-id
           in: path
-          description: 'key: id of internalDomainFederation'
+          description: The unique identifier of internalDomainFederation
           required: true
           style: simple
           schema:
@@ -7887,7 +8286,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7895,7 +8294,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: internalDomainFederation-id
           in: path
-          description: 'key: id of internalDomainFederation'
+          description: The unique identifier of internalDomainFederation
           required: true
           style: simple
           schema:
@@ -7926,7 +8325,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7961,7 +8360,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -7997,7 +8396,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8026,7 +8425,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8106,7 +8505,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8139,7 +8538,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8147,7 +8546,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: id of domainDnsRecord'
+          description: The unique identifier of domainDnsRecord
           required: true
           style: simple
           schema:
@@ -8200,7 +8599,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8208,7 +8607,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: id of domainDnsRecord'
+          description: The unique identifier of domainDnsRecord
           required: true
           style: simple
           schema:
@@ -8239,7 +8638,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8247,7 +8646,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: id of domainDnsRecord'
+          description: The unique identifier of domainDnsRecord
           required: true
           style: simple
           schema:
@@ -8278,7 +8677,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8358,7 +8757,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8391,7 +8790,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8399,7 +8798,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: id of domainDnsRecord'
+          description: The unique identifier of domainDnsRecord
           required: true
           style: simple
           schema:
@@ -8452,7 +8851,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8460,7 +8859,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: id of domainDnsRecord'
+          description: The unique identifier of domainDnsRecord
           required: true
           style: simple
           schema:
@@ -8491,7 +8890,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: id of domain'
+          description: The unique identifier of domain
           required: true
           style: simple
           schema:
@@ -8499,7 +8898,7 @@ paths:
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: id of domainDnsRecord'
+          description: The unique identifier of domainDnsRecord
           required: true
           style: simple
           schema:
@@ -8695,7 +9094,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -8778,7 +9177,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -8809,7 +9208,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -8840,7 +9239,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -8904,7 +9303,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -8939,7 +9338,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -8970,7 +9369,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -8996,7 +9395,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9029,7 +9428,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9055,7 +9454,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9088,7 +9487,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9187,7 +9586,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9220,7 +9619,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9228,7 +9627,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: organizationalBrandingLocalization-id
           in: path
-          description: 'key: id of organizationalBrandingLocalization'
+          description: The unique identifier of organizationalBrandingLocalization
           required: true
           style: simple
           schema:
@@ -9286,7 +9685,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9294,7 +9693,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: organizationalBrandingLocalization-id
           in: path
-          description: 'key: id of organizationalBrandingLocalization'
+          description: The unique identifier of organizationalBrandingLocalization
           required: true
           style: simple
           schema:
@@ -9325,7 +9724,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9333,7 +9732,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: organizationalBrandingLocalization-id
           in: path
-          description: 'key: id of organizationalBrandingLocalization'
+          description: The unique identifier of organizationalBrandingLocalization
           required: true
           style: simple
           schema:
@@ -9364,7 +9763,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9372,7 +9771,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: organizationalBrandingLocalization-id
           in: path
-          description: 'key: id of organizationalBrandingLocalization'
+          description: The unique identifier of organizationalBrandingLocalization
           required: true
           style: simple
           schema:
@@ -9398,7 +9797,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9406,7 +9805,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: organizationalBrandingLocalization-id
           in: path
-          description: 'key: id of organizationalBrandingLocalization'
+          description: The unique identifier of organizationalBrandingLocalization
           required: true
           style: simple
           schema:
@@ -9439,7 +9838,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9447,7 +9846,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: organizationalBrandingLocalization-id
           in: path
-          description: 'key: id of organizationalBrandingLocalization'
+          description: The unique identifier of organizationalBrandingLocalization
           required: true
           style: simple
           schema:
@@ -9473,7 +9872,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9481,7 +9880,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: organizationalBrandingLocalization-id
           in: path
-          description: 'key: id of organizationalBrandingLocalization'
+          description: The unique identifier of organizationalBrandingLocalization
           required: true
           style: simple
           schema:
@@ -9514,7 +9913,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9522,7 +9921,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: organizationalBrandingLocalization-id
           in: path
-          description: 'key: id of organizationalBrandingLocalization'
+          description: The unique identifier of organizationalBrandingLocalization
           required: true
           style: simple
           schema:
@@ -9548,7 +9947,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9556,7 +9955,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: organizationalBrandingLocalization-id
           in: path
-          description: 'key: id of organizationalBrandingLocalization'
+          description: The unique identifier of organizationalBrandingLocalization
           required: true
           style: simple
           schema:
@@ -9589,7 +9988,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9615,7 +10014,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9645,7 +10044,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9710,7 +10109,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9743,7 +10142,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9751,7 +10150,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -9799,7 +10198,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9807,7 +10206,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -9838,7 +10237,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9846,7 +10245,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -9877,7 +10276,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9929,7 +10328,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -9985,7 +10384,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -10041,7 +10440,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -10097,7 +10496,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -10123,7 +10522,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -10390,7 +10789,7 @@ paths:
       parameters:
         - name: subscribedSku-id
           in: path
-          description: 'key: id of subscribedSku'
+          description: The unique identifier of subscribedSku
           required: true
           style: simple
           schema:
@@ -10433,7 +10832,7 @@ paths:
       parameters:
         - name: subscribedSku-id
           in: path
-          description: 'key: id of subscribedSku'
+          description: The unique identifier of subscribedSku
           required: true
           style: simple
           schema:
@@ -10464,7 +10863,7 @@ paths:
       parameters:
         - name: subscribedSku-id
           in: path
-          description: 'key: id of subscribedSku'
+          description: The unique identifier of subscribedSku
           required: true
           style: simple
           schema:
@@ -10491,7 +10890,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10565,7 +10964,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10597,7 +10996,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10605,7 +11004,7 @@ paths:
           x-ms-docs-key-type: user
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: id of scopedRoleMembership'
+          description: The unique identifier of scopedRoleMembership
           required: true
           style: simple
           schema:
@@ -10656,7 +11055,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10664,7 +11063,7 @@ paths:
           x-ms-docs-key-type: user
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: id of scopedRoleMembership'
+          description: The unique identifier of scopedRoleMembership
           required: true
           style: simple
           schema:
@@ -10695,7 +11094,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10703,7 +11102,7 @@ paths:
           x-ms-docs-key-type: user
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: id of scopedRoleMembership'
+          description: The unique identifier of scopedRoleMembership
           required: true
           style: simple
           schema:
@@ -11020,6 +11419,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
               description: Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
               x-ms-navigationProperty: true
+            onPremisesSynchronization:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+              description: A container for on-premises directory synchronization functionalities that are available for the organization.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.administrativeUnit:
@@ -11086,6 +11491,18 @@ components:
               type: string
               description: The display name of the identity provider.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.onPremisesDirectorySynchronization:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesDirectorySynchronization
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationConfiguration'
+            features:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationFeature'
           additionalProperties:
             type: object
     microsoft.graph.directoryRole:
@@ -11574,6 +11991,96 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesDirectorySynchronizationConfiguration:
+      title: onPremisesDirectorySynchronizationConfiguration
+      type: object
+      properties:
+        accidentalDeletionPrevention:
+          $ref: '#/components/schemas/microsoft.graph.onPremisesAccidentalDeletionPrevention'
+      additionalProperties:
+        type: object
+    microsoft.graph.onPremisesDirectorySynchronizationFeature:
+      title: onPremisesDirectorySynchronizationFeature
+      type: object
+      properties:
+        blockCloudObjectTakeoverThroughHardMatchEnabled:
+          type: boolean
+          description: Used to block cloud object takeover via source anchor hard match if enabled.
+          nullable: true
+        blockSoftMatchEnabled:
+          type: boolean
+          description: Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
+          nullable: true
+        bypassDirSyncOverridesEnabled:
+          type: boolean
+          description: 'When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.'
+          nullable: true
+        cloudPasswordPolicyForPasswordSyncedUsersEnabled:
+          type: boolean
+          description: Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
+          nullable: true
+        concurrentCredentialUpdateEnabled:
+          type: boolean
+          description: Used to enable concurrent user credentials update in OrgId.
+          nullable: true
+        concurrentOrgIdProvisioningEnabled:
+          type: boolean
+          description: Used to enable concurrent user creation in OrgId.
+          nullable: true
+        deviceWritebackEnabled:
+          type: boolean
+          description: Used to indicate that device write-back is enabled.
+          nullable: true
+        directoryExtensionsEnabled:
+          type: boolean
+          description: Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
+          nullable: true
+        fopeConflictResolutionEnabled:
+          type: boolean
+          description: 'Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.'
+          nullable: true
+        groupWriteBackEnabled:
+          type: boolean
+          description: Used to enable object-level group writeback feature for additional group types.
+          nullable: true
+        passwordSyncEnabled:
+          type: boolean
+          description: Used to indicate on-premise password synchronization is enabled.
+          nullable: true
+        passwordWritebackEnabled:
+          type: boolean
+          description: Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
+          nullable: true
+        quarantineUponProxyAddressesConflictEnabled:
+          type: boolean
+          description: Used to indicate that we should quarantine objects with conflicting proxy address.
+          nullable: true
+        quarantineUponUpnConflictEnabled:
+          type: boolean
+          description: Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
+          nullable: true
+        softMatchOnUpnEnabled:
+          type: boolean
+          description: Used to indicate that we should soft match objects based on userPrincipalName.
+          nullable: true
+        synchronizeUpnForManagedUsersEnabled:
+          type: boolean
+          description: Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
+          nullable: true
+        unifiedGroupWritebackEnabled:
+          type: boolean
+          description: Used to indicate that Microsoft 365 Group write-back is enabled.
+          nullable: true
+        userForcePasswordChangeOnLogonEnabled:
+          type: boolean
+          description: Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
+          nullable: true
+        userWritebackEnabled:
+          type: boolean
+          description: Used to indicate that user writeback is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.domainState:
       title: domainState
       type: object
@@ -12022,6 +12529,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesDirectorySynchronizationCollectionResponse:
+      title: Collection of onPremisesDirectorySynchronization
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.directoryRoleCollectionResponse:
       title: Collection of directoryRole
       type: object
@@ -12140,6 +12660,21 @@ components:
         - pager
         - radio
       type: string
+    microsoft.graph.onPremisesAccidentalDeletionPrevention:
+      title: onPremisesAccidentalDeletionPrevention
+      type: object
+      properties:
+        alertThreshold:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
+          format: int32
+          nullable: true
+        synchronizationPreventionType:
+          $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationDeletionPreventionType'
+      additionalProperties:
+        type: object
     microsoft.graph.authenticationProtocol:
       title: authenticationProtocol
       enum:
@@ -12195,6 +12730,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesDirectorySynchronizationDeletionPreventionType:
+      title: onPremisesDirectorySynchronizationDeletionPreventionType
+      enum:
+        - disabled
+        - enabledForCount
+        - enabledForPercentage
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -12276,6 +12819,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.identityProviderBaseCollectionResponse'
+    microsoft.graph.onPremisesDirectorySynchronizationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationCollectionResponse'
     microsoft.graph.directoryRoleCollectionResponse:
       description: Retrieved collection
       content:

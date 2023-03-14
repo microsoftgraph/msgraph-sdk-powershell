@@ -19,7 +19,7 @@ paths:
       parameters:
         - name: browserSiteList-id
           in: path
-          description: 'key: id of browserSiteList'
+          description: The unique identifier of browserSiteList
           required: true
           style: simple
           schema:
@@ -245,7 +245,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -297,7 +297,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -328,7 +328,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -356,7 +356,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -463,7 +463,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -496,7 +496,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -504,7 +504,7 @@ paths:
           x-ms-docs-key-type: serviceHealth
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -566,7 +566,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -574,7 +574,7 @@ paths:
           x-ms-docs-key-type: serviceHealth
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -605,7 +605,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -613,7 +613,7 @@ paths:
           x-ms-docs-key-type: serviceHealth
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -640,7 +640,7 @@ paths:
       parameters:
         - name: serviceHealth-id
           in: path
-          description: 'key: id of serviceHealth'
+          description: The unique identifier of serviceHealth
           required: true
           style: simple
           schema:
@@ -648,7 +648,7 @@ paths:
           x-ms-docs-key-type: serviceHealth
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -807,7 +807,7 @@ paths:
       parameters:
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -869,7 +869,7 @@ paths:
       parameters:
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -900,7 +900,7 @@ paths:
       parameters:
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -927,7 +927,7 @@ paths:
       parameters:
         - name: serviceHealthIssue-id
           in: path
-          description: 'key: id of serviceHealthIssue'
+          description: The unique identifier of serviceHealthIssue
           required: true
           style: simple
           schema:
@@ -1091,7 +1091,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1156,7 +1156,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1187,7 +1187,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1218,7 +1218,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1298,7 +1298,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1331,7 +1331,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1339,7 +1339,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1392,7 +1392,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1400,7 +1400,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1431,7 +1431,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1439,7 +1439,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1470,7 +1470,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1478,7 +1478,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1504,7 +1504,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1512,7 +1512,7 @@ paths:
           x-ms-docs-key-type: serviceUpdateMessage
         - name: serviceAnnouncementAttachment-id
           in: path
-          description: 'key: id of serviceAnnouncementAttachment'
+          description: The unique identifier of serviceAnnouncementAttachment
           required: true
           style: simple
           schema:
@@ -1545,7 +1545,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1571,7 +1571,7 @@ paths:
       parameters:
         - name: serviceUpdateMessage-id
           in: path
-          description: 'key: id of serviceUpdateMessage'
+          description: The unique identifier of serviceUpdateMessage
           required: true
           style: simple
           schema:
@@ -1856,7 +1856,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -1864,7 +1864,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -1903,7 +1903,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -1911,7 +1911,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -1954,7 +1954,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -1962,7 +1962,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2001,7 +2001,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2009,7 +2009,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2048,7 +2048,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2085,7 +2085,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2126,7 +2126,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2163,7 +2163,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2208,7 +2208,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2216,7 +2216,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2255,7 +2255,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2263,7 +2263,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2306,7 +2306,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2314,7 +2314,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2353,7 +2353,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2361,7 +2361,7 @@ paths:
           x-ms-docs-key-type: deploymentAudience
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2400,7 +2400,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2437,7 +2437,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2478,7 +2478,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2515,7 +2515,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2560,7 +2560,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2611,7 +2611,7 @@ paths:
       parameters:
         - name: deploymentAudience-id
           in: path
-          description: 'key: id of deploymentAudience'
+          description: The unique identifier of deploymentAudience
           required: true
           style: simple
           schema:
@@ -2669,7 +2669,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2677,7 +2677,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2716,7 +2716,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2724,7 +2724,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2767,7 +2767,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2775,7 +2775,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2814,7 +2814,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2822,7 +2822,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -2861,7 +2861,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2898,7 +2898,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2939,7 +2939,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -2976,7 +2976,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3021,7 +3021,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3029,7 +3029,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3068,7 +3068,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3076,7 +3076,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3119,7 +3119,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3127,7 +3127,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3166,7 +3166,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3174,7 +3174,7 @@ paths:
           x-ms-docs-key-type: deployment
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3213,7 +3213,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3250,7 +3250,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3291,7 +3291,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3328,7 +3328,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3373,7 +3373,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3424,7 +3424,7 @@ paths:
       parameters:
         - name: deployment-id
           in: path
-          description: 'key: id of deployment'
+          description: The unique identifier of deployment
           required: true
           style: simple
           schema:
@@ -3482,7 +3482,7 @@ paths:
       parameters:
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3521,7 +3521,7 @@ paths:
       parameters:
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3564,7 +3564,7 @@ paths:
       parameters:
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3603,7 +3603,7 @@ paths:
       parameters:
         - name: updatableAsset-id
           in: path
-          description: 'key: id of updatableAsset'
+          description: The unique identifier of updatableAsset
           required: true
           style: simple
           schema:
@@ -3740,6 +3740,819 @@ paths:
                   type: string
                   nullable: true
                 ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembers
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members. Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist. You can also use the method addMembersById to add members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience.exclusions_addMembers
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: updatableAsset-id
+          in: path
+          description: The unique identifier of updatableAsset
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembersById
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience.exclusions_addMembersGraphBPreId
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: updatableAsset-id
+          in: path
+          description: The unique identifier of updatableAsset
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembers
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience.exclusions_removeMembers
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: updatableAsset-id
+          in: path
+          description: The unique identifier of updatableAsset
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembersById
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience.exclusions_removeMembersGraphBPreId
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: updatableAsset-id
+          in: path
+          description: The unique identifier of updatableAsset
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssets
+      operationId: admin.windows.updates.updatePolicies.audience.exclusions_enrollAssets
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssetsById
+      operationId: admin.windows.updates.updatePolicies.audience.exclusions_enrollAssetsGraphBPreId
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssets
+      operationId: admin.windows.updates.updatePolicies.audience.exclusions_unenrollAssets
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssetsById
+      operationId: admin.windows.updates.updatePolicies.audience.exclusions_unenrollAssetsGraphBPreId
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembers
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members. Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist. You can also use the method addMembersById to add members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience.members_addMembers
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: updatableAsset-id
+          in: path
+          description: The unique identifier of updatableAsset
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action addMembersById
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience.members_addMembersGraphBPreId
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: updatableAsset-id
+          in: path
+          description: The unique identifier of updatableAsset
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembers
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience.members_removeMembers
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: updatableAsset-id
+          in: path
+          description: The unique identifier of updatableAsset
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action removeMembersById
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience.members_removeMembersGraphBPreId
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: updatableAsset-id
+          in: path
+          description: The unique identifier of updatableAsset
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatableAsset
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                memberEntityType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssets
+      operationId: admin.windows.updates.updatePolicies.audience.members_enrollAssets
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action enrollAssetsById
+      operationId: admin.windows.updates.updatePolicies.audience.members_enrollAssetsGraphBPreId
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssets':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssets
+      operationId: admin.windows.updates.updatePolicies.audience.members_unenrollAssets
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                assets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssetsById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unenrollAssetsById
+      operationId: admin.windows.updates.updatePolicies.audience.members_unenrollAssetsGraphBPreId
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateCategory:
+                  $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updateCategory'
+                memberEntityType:
+                  type: string
+                  nullable: true
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/microsoft.graph.windowsUpdates.updateAudience':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action updateAudience
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object, if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. If all **updatableAsset** objects are the same type, you can also use the method updateAudienceById to update the **deploymentAudience**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience_updateAudience
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                addMembers:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+                removeMembers:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+                addExclusions:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+                removeExclusions:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/microsoft.graph.windowsUpdates.updateAudienceById':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action updateAudienceById
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. You can also use the method updateAudience to update the **deploymentAudience**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
+      operationId: admin.windows.updates.updatePolicies.audience_updateAudienceGraphBPreId
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                memberEntityType:
+                  type: string
+                  nullable: true
+                addMembers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                removeMembers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                addExclusions:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                removeExclusions:
                   type: array
                   items:
                     type: string
@@ -4560,11 +5373,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

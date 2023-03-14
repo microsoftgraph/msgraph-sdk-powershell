@@ -16,7 +16,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -122,7 +122,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -155,7 +155,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -163,7 +163,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -226,7 +226,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -234,7 +234,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -265,7 +265,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -273,7 +273,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -301,7 +301,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -309,7 +309,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -400,7 +400,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -408,7 +408,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -441,7 +441,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -449,7 +449,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -457,7 +457,7 @@ paths:
           x-ms-docs-key-type: userActivity
         - name: activityHistoryItem-id
           in: path
-          description: 'key: id of activityHistoryItem'
+          description: The unique identifier of activityHistoryItem
           required: true
           style: simple
           schema:
@@ -515,7 +515,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -523,7 +523,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -531,7 +531,7 @@ paths:
           x-ms-docs-key-type: userActivity
         - name: activityHistoryItem-id
           in: path
-          description: 'key: id of activityHistoryItem'
+          description: The unique identifier of activityHistoryItem
           required: true
           style: simple
           schema:
@@ -562,7 +562,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -570,7 +570,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -578,7 +578,7 @@ paths:
           x-ms-docs-key-type: userActivity
         - name: activityHistoryItem-id
           in: path
-          description: 'key: id of activityHistoryItem'
+          description: The unique identifier of activityHistoryItem
           required: true
           style: simple
           schema:
@@ -606,7 +606,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -614,7 +614,7 @@ paths:
           x-ms-docs-key-type: user
         - name: userActivity-id
           in: path
-          description: 'key: id of userActivity'
+          description: The unique identifier of userActivity
           required: true
           style: simple
           schema:
@@ -622,7 +622,7 @@ paths:
           x-ms-docs-key-type: userActivity
         - name: activityHistoryItem-id
           in: path
-          description: 'key: id of activityHistoryItem'
+          description: The unique identifier of activityHistoryItem
           required: true
           style: simple
           schema:

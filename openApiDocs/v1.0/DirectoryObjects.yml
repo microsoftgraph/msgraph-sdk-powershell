@@ -112,7 +112,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -161,7 +161,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -196,7 +196,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -227,7 +227,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -279,7 +279,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -335,7 +335,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -391,7 +391,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -447,7 +447,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -463,6 +463,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directoryObjects/microsoft.graph.delta():
+    get:
+      tags:
+        - directoryObjects.Functions
+      summary: Invoke function delta
+      operationId: directoryObjects_delta
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /directoryObjects/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:

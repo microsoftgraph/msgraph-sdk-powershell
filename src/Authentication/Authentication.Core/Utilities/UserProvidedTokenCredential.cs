@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 
 using Azure.Core;
+using Microsoft.Graph.PowerShell.Authentication.Models;
 using System;
 using System.Text;
 using System.Threading;
@@ -16,7 +17,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             cancellationToken.ThrowIfCancellationRequested();
             var token = Encoding.UTF8.GetString(GraphSession.Instance.InMemoryTokenCache.ReadTokenData());
-            var jwtPayload = JwtHelpers.DecodeToObject<Models.JwtPayload>(token);
+            var jwtPayload = JwtHelpers.DecodeToObject<JwtPayload>(token);
             var exp = jwtPayload?.Exp == null ? DateTimeOffset.Now.AddMinutes(55) : DateTimeOffset.FromUnixTimeSeconds(jwtPayload.Exp);
             return new AccessToken(token, exp);
         }

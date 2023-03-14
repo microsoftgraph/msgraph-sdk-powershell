@@ -205,7 +205,7 @@ paths:
       parameters:
         - name: directoryAudit-id
           in: path
-          description: 'key: id of directoryAudit'
+          description: The unique identifier of directoryAudit
           required: true
           style: simple
           schema:
@@ -265,7 +265,7 @@ paths:
       parameters:
         - name: directoryAudit-id
           in: path
-          description: 'key: id of directoryAudit'
+          description: The unique identifier of directoryAudit
           required: true
           style: simple
           schema:
@@ -296,7 +296,7 @@ paths:
       parameters:
         - name: directoryAudit-id
           in: path
-          description: 'key: id of directoryAudit'
+          description: The unique identifier of directoryAudit
           required: true
           style: simple
           schema:
@@ -457,7 +457,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: id of provisioningObjectSummary'
+          description: The unique identifier of provisioningObjectSummary
           required: true
           style: simple
           schema:
@@ -523,7 +523,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: id of provisioningObjectSummary'
+          description: The unique identifier of provisioningObjectSummary
           required: true
           style: simple
           schema:
@@ -554,7 +554,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: id of provisioningObjectSummary'
+          description: The unique identifier of provisioningObjectSummary
           required: true
           style: simple
           schema:
@@ -719,7 +719,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: id of provisioningObjectSummary'
+          description: The unique identifier of provisioningObjectSummary
           required: true
           style: simple
           schema:
@@ -785,7 +785,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: id of provisioningObjectSummary'
+          description: The unique identifier of provisioningObjectSummary
           required: true
           style: simple
           schema:
@@ -816,7 +816,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: id of provisioningObjectSummary'
+          description: The unique identifier of provisioningObjectSummary
           required: true
           style: simple
           schema:
@@ -1116,7 +1116,7 @@ paths:
       parameters:
         - name: signIn-id
           in: path
-          description: 'key: id of signIn'
+          description: The unique identifier of signIn
           required: true
           style: simple
           schema:
@@ -1227,7 +1227,7 @@ paths:
       parameters:
         - name: signIn-id
           in: path
-          description: 'key: id of signIn'
+          description: The unique identifier of signIn
           required: true
           style: simple
           schema:
@@ -1258,7 +1258,7 @@ paths:
       parameters:
         - name: signIn-id
           in: path
-          description: 'key: id of signIn'
+          description: The unique identifier of signIn
           required: true
           style: simple
           schema:
@@ -1539,7 +1539,7 @@ paths:
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
           in: path
-          description: 'key: id of deviceManagementCachedReportConfiguration'
+          description: The unique identifier of deviceManagementCachedReportConfiguration
           required: true
           style: simple
           schema:
@@ -1595,7 +1595,7 @@ paths:
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
           in: path
-          description: 'key: id of deviceManagementCachedReportConfiguration'
+          description: The unique identifier of deviceManagementCachedReportConfiguration
           required: true
           style: simple
           schema:
@@ -1626,7 +1626,7 @@ paths:
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
           in: path
-          description: 'key: id of deviceManagementCachedReportConfiguration'
+          description: The unique identifier of deviceManagementCachedReportConfiguration
           required: true
           style: simple
           schema:
@@ -1765,7 +1765,7 @@ paths:
       parameters:
         - name: deviceManagementExportJob-id
           in: path
-          description: 'key: id of deviceManagementExportJob'
+          description: The unique identifier of deviceManagementExportJob
           required: true
           style: simple
           schema:
@@ -1823,7 +1823,7 @@ paths:
       parameters:
         - name: deviceManagementExportJob-id
           in: path
-          description: 'key: id of deviceManagementExportJob'
+          description: The unique identifier of deviceManagementExportJob
           required: true
           style: simple
           schema:
@@ -1854,7 +1854,7 @@ paths:
       parameters:
         - name: deviceManagementExportJob-id
           in: path
-          description: 'key: id of deviceManagementExportJob'
+          description: The unique identifier of deviceManagementExportJob
           required: true
           style: simple
           schema:
@@ -2072,7 +2072,7 @@ paths:
       parameters:
         - name: applicationSignInDetailedSummary-id
           in: path
-          description: 'key: id of applicationSignInDetailedSummary'
+          description: The unique identifier of applicationSignInDetailedSummary
           required: true
           style: simple
           schema:
@@ -2125,7 +2125,7 @@ paths:
       parameters:
         - name: applicationSignInDetailedSummary-id
           in: path
-          description: 'key: id of applicationSignInDetailedSummary'
+          description: The unique identifier of applicationSignInDetailedSummary
           required: true
           style: simple
           schema:
@@ -2156,7 +2156,7 @@ paths:
       parameters:
         - name: applicationSignInDetailedSummary-id
           in: path
-          description: 'key: id of applicationSignInDetailedSummary'
+          description: The unique identifier of applicationSignInDetailedSummary
           required: true
           style: simple
           schema:
@@ -2482,7 +2482,7 @@ paths:
       parameters:
         - name: userRegistrationDetails-id
           in: path
-          description: 'key: id of userRegistrationDetails'
+          description: The unique identifier of userRegistrationDetails
           required: true
           style: simple
           schema:
@@ -2542,7 +2542,7 @@ paths:
       parameters:
         - name: userRegistrationDetails-id
           in: path
-          description: 'key: id of userRegistrationDetails'
+          description: The unique identifier of userRegistrationDetails
           required: true
           style: simple
           schema:
@@ -2573,7 +2573,7 @@ paths:
       parameters:
         - name: userRegistrationDetails-id
           in: path
-          description: 'key: id of userRegistrationDetails'
+          description: The unique identifier of userRegistrationDetails
           required: true
           style: simple
           schema:
@@ -2706,7 +2706,7 @@ paths:
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
-          description: 'key: id of credentialUserRegistrationDetails'
+          description: The unique identifier of credentialUserRegistrationDetails
           required: true
           style: simple
           schema:
@@ -2761,7 +2761,7 @@ paths:
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
-          description: 'key: id of credentialUserRegistrationDetails'
+          description: The unique identifier of credentialUserRegistrationDetails
           required: true
           style: simple
           schema:
@@ -2792,7 +2792,7 @@ paths:
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
-          description: 'key: id of credentialUserRegistrationDetails'
+          description: The unique identifier of credentialUserRegistrationDetails
           required: true
           style: simple
           schema:
@@ -2932,7 +2932,7 @@ paths:
       parameters:
         - name: printUsage-id
           in: path
-          description: 'key: id of printUsage'
+          description: The unique identifier of printUsage
           required: true
           style: simple
           schema:
@@ -2991,7 +2991,7 @@ paths:
       parameters:
         - name: printUsage-id
           in: path
-          description: 'key: id of printUsage'
+          description: The unique identifier of printUsage
           required: true
           style: simple
           schema:
@@ -3022,7 +3022,7 @@ paths:
       parameters:
         - name: printUsage-id
           in: path
-          description: 'key: id of printUsage'
+          description: The unique identifier of printUsage
           required: true
           style: simple
           schema:
@@ -3169,7 +3169,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -3229,7 +3229,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -3260,7 +3260,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -3407,7 +3407,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -3467,7 +3467,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -3498,7 +3498,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -3641,7 +3641,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -3701,7 +3701,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -3732,7 +3732,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -3875,7 +3875,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -3935,7 +3935,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -3966,7 +3966,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -9024,7 +9024,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -9084,7 +9084,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -9115,7 +9115,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -9262,7 +9262,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -9322,7 +9322,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -9353,7 +9353,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -9496,7 +9496,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -9556,7 +9556,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -9587,7 +9587,7 @@ paths:
       parameters:
         - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of printUsageByPrinter'
+          description: The unique identifier of printUsageByPrinter
           required: true
           style: simple
           schema:
@@ -9730,7 +9730,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -9790,7 +9790,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -9821,7 +9821,7 @@ paths:
       parameters:
         - name: printUsageByUser-id
           in: path
-          description: 'key: id of printUsageByUser'
+          description: The unique identifier of printUsageByUser
           required: true
           style: simple
           schema:
@@ -10141,7 +10141,7 @@ paths:
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
-          description: 'key: id of userCredentialUsageDetails'
+          description: The unique identifier of userCredentialUsageDetails
           required: true
           style: simple
           schema:
@@ -10196,7 +10196,7 @@ paths:
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
-          description: 'key: id of userCredentialUsageDetails'
+          description: The unique identifier of userCredentialUsageDetails
           required: true
           style: simple
           schema:
@@ -10227,7 +10227,7 @@ paths:
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
-          description: 'key: id of userCredentialUsageDetails'
+          description: The unique identifier of userCredentialUsageDetails
           required: true
           style: simple
           schema:
@@ -11502,10 +11502,12 @@ components:
               nullable: true
             teamsChannelMessages:
               type: integer
+              description: The number of channel messages in Teams team.
               format: int64
               nullable: true
             teamsMeetingsOrganized:
               type: integer
+              description: The number of meetings organized in Teams team.
               format: int64
               nullable: true
             yammerMessagesLiked:
@@ -11609,10 +11611,12 @@ components:
               nullable: true
             teamsChannelMessagesCount:
               type: integer
+              description: The number of channel messages in Teams team.
               format: int64
               nullable: true
             teamsMeetingsOrganizedCount:
               type: integer
+              description: The number of meetings organized in Teams team.
               format: int64
               nullable: true
             yammerLikedMessageCount:
@@ -12967,11 +12971,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -13040,6 +13044,8 @@ components:
           type: string
           description: Identifier of the authentication strength.
           nullable: true
+        authenticationStrengthResult:
+          $ref: '#/components/schemas/microsoft.graph.authenticationStrengthResult'
         displayName:
           type: string
           description: The name of the authentication strength.
@@ -13271,6 +13277,20 @@ components:
         - success
         - unknownFutureValue
       type: string
+    microsoft.graph.authenticationStrengthResult:
+      title: authenticationStrengthResult
+      enum:
+        - notSet
+        - skippedForProofUp
+        - satisfied
+        - singleChallengeRequired
+        - multipleChallengesRequired
+        - singleRegistrationRequired
+        - multipleRegistrationsRequired
+        - cannotSatisfyDueToCombinationConfiguration
+        - cannotSatisfy
+        - unknownFutureValue
+      type: string
     microsoft.graph.conditionalAccessRule:
       title: conditionalAccessRule
       enum:
@@ -13297,6 +13317,17 @@ components:
         - unknownFutureValue
         - deviceFilterIncludeRuleNotMatched
         - allDeviceStates
+        - anonymizedIPAddress
+        - unfamiliarFeatures
+        - nationStateIPAddress
+        - realTimeThreatIntelligence
+        - internalGuest
+        - b2bCollaborationGuest
+        - b2bCollaborationMember
+        - b2bDirectConnectUser
+        - otherExternalUser
+        - serviceProvider
+        - microsoftAdminPortals
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
