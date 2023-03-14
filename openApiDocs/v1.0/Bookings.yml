@@ -213,7 +213,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -285,7 +285,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -312,7 +312,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -343,7 +343,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -484,7 +484,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -517,7 +517,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -525,7 +525,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: id of bookingAppointment'
+          description: The unique identifier of bookingAppointment
           required: true
           style: simple
           schema:
@@ -597,7 +597,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -605,7 +605,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: id of bookingAppointment'
+          description: The unique identifier of bookingAppointment
           required: true
           style: simple
           schema:
@@ -632,7 +632,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -640,7 +640,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: id of bookingAppointment'
+          description: The unique identifier of bookingAppointment
           required: true
           style: simple
           schema:
@@ -671,7 +671,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -679,7 +679,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: id of bookingAppointment'
+          description: The unique identifier of bookingAppointment
           required: true
           style: simple
           schema:
@@ -717,7 +717,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -854,7 +854,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -887,7 +887,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -895,7 +895,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: id of bookingAppointment'
+          description: The unique identifier of bookingAppointment
           required: true
           style: simple
           schema:
@@ -967,7 +967,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -975,7 +975,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: id of bookingAppointment'
+          description: The unique identifier of bookingAppointment
           required: true
           style: simple
           schema:
@@ -1002,7 +1002,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1010,7 +1010,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: id of bookingAppointment'
+          description: The unique identifier of bookingAppointment
           required: true
           style: simple
           schema:
@@ -1041,7 +1041,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1049,7 +1049,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: id of bookingAppointment'
+          description: The unique identifier of bookingAppointment
           required: true
           style: simple
           schema:
@@ -1087,7 +1087,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1156,7 +1156,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1189,7 +1189,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1197,7 +1197,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingCustomerBase-id
           in: path
-          description: 'key: id of bookingCustomerBase'
+          description: The unique identifier of bookingCustomerBase
           required: true
           style: simple
           schema:
@@ -1245,7 +1245,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1253,7 +1253,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingCustomerBase-id
           in: path
-          description: 'key: id of bookingCustomerBase'
+          description: The unique identifier of bookingCustomerBase
           required: true
           style: simple
           schema:
@@ -1280,7 +1280,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1288,7 +1288,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingCustomerBase-id
           in: path
-          description: 'key: id of bookingCustomerBase'
+          description: The unique identifier of bookingCustomerBase
           required: true
           style: simple
           schema:
@@ -1319,7 +1319,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1397,7 +1397,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1430,7 +1430,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1438,7 +1438,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingCustomQuestion-id
           in: path
-          description: 'key: id of bookingCustomQuestion'
+          description: The unique identifier of bookingCustomQuestion
           required: true
           style: simple
           schema:
@@ -1489,7 +1489,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1497,7 +1497,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingCustomQuestion-id
           in: path
-          description: 'key: id of bookingCustomQuestion'
+          description: The unique identifier of bookingCustomQuestion
           required: true
           style: simple
           schema:
@@ -1524,7 +1524,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1532,7 +1532,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingCustomQuestion-id
           in: path
-          description: 'key: id of bookingCustomQuestion'
+          description: The unique identifier of bookingCustomQuestion
           required: true
           style: simple
           schema:
@@ -1563,7 +1563,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1623,7 +1623,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1648,7 +1648,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1673,7 +1673,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1805,7 +1805,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1838,7 +1838,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1846,7 +1846,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingService-id
           in: path
-          description: 'key: id of bookingService'
+          description: The unique identifier of bookingService
           required: true
           style: simple
           schema:
@@ -1915,7 +1915,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1923,7 +1923,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingService-id
           in: path
-          description: 'key: id of bookingService'
+          description: The unique identifier of bookingService
           required: true
           style: simple
           schema:
@@ -1950,7 +1950,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -1958,7 +1958,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingService-id
           in: path
-          description: 'key: id of bookingService'
+          description: The unique identifier of bookingService
           required: true
           style: simple
           schema:
@@ -1989,7 +1989,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -2058,7 +2058,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -2091,7 +2091,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -2099,7 +2099,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingStaffMemberBase-id
           in: path
-          description: 'key: id of bookingStaffMemberBase'
+          description: The unique identifier of bookingStaffMemberBase
           required: true
           style: simple
           schema:
@@ -2147,7 +2147,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -2155,7 +2155,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingStaffMemberBase-id
           in: path
-          description: 'key: id of bookingStaffMemberBase'
+          description: The unique identifier of bookingStaffMemberBase
           required: true
           style: simple
           schema:
@@ -2182,7 +2182,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: id of bookingBusiness'
+          description: The unique identifier of bookingBusiness
           required: true
           style: simple
           schema:
@@ -2190,7 +2190,7 @@ paths:
           x-ms-docs-key-type: bookingBusiness
         - name: bookingStaffMemberBase-id
           in: path
-          description: 'key: id of bookingStaffMemberBase'
+          description: The unique identifier of bookingStaffMemberBase
           required: true
           style: simple
           schema:
@@ -2304,7 +2304,7 @@ paths:
       parameters:
         - name: bookingCurrency-id
           in: path
-          description: 'key: id of bookingCurrency'
+          description: The unique identifier of bookingCurrency
           required: true
           style: simple
           schema:
@@ -2353,7 +2353,7 @@ paths:
       parameters:
         - name: bookingCurrency-id
           in: path
-          description: 'key: id of bookingCurrency'
+          description: The unique identifier of bookingCurrency
           required: true
           style: simple
           schema:
@@ -2380,7 +2380,7 @@ paths:
       parameters:
         - name: bookingCurrency-id
           in: path
-          description: 'key: id of bookingCurrency'
+          description: The unique identifier of bookingCurrency
           required: true
           style: simple
           schema:

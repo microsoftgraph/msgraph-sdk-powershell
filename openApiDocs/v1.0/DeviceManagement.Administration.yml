@@ -216,7 +216,7 @@ paths:
       parameters:
         - name: auditEvent-id
           in: path
-          description: 'key: id of auditEvent'
+          description: The unique identifier of auditEvent
           required: true
           style: simple
           schema:
@@ -275,7 +275,7 @@ paths:
       parameters:
         - name: auditEvent-id
           in: path
-          description: 'key: id of auditEvent'
+          description: The unique identifier of auditEvent
           required: true
           style: simple
           schema:
@@ -302,7 +302,7 @@ paths:
       parameters:
         - name: auditEvent-id
           in: path
-          description: 'key: id of auditEvent'
+          description: The unique identifier of auditEvent
           required: true
           style: simple
           schema:
@@ -438,7 +438,7 @@ paths:
       parameters:
         - name: complianceManagementPartner-id
           in: path
-          description: 'key: id of complianceManagementPartner'
+          description: The unique identifier of complianceManagementPartner
           required: true
           style: simple
           schema:
@@ -495,7 +495,7 @@ paths:
       parameters:
         - name: complianceManagementPartner-id
           in: path
-          description: 'key: id of complianceManagementPartner'
+          description: The unique identifier of complianceManagementPartner
           required: true
           style: simple
           schema:
@@ -522,7 +522,7 @@ paths:
       parameters:
         - name: complianceManagementPartner-id
           in: path
-          description: 'key: id of complianceManagementPartner'
+          description: The unique identifier of complianceManagementPartner
           required: true
           style: simple
           schema:
@@ -658,7 +658,7 @@ paths:
       parameters:
         - name: deviceManagementPartner-id
           in: path
-          description: 'key: id of deviceManagementPartner'
+          description: The unique identifier of deviceManagementPartner
           required: true
           style: simple
           schema:
@@ -715,7 +715,7 @@ paths:
       parameters:
         - name: deviceManagementPartner-id
           in: path
-          description: 'key: id of deviceManagementPartner'
+          description: The unique identifier of deviceManagementPartner
           required: true
           style: simple
           schema:
@@ -742,7 +742,7 @@ paths:
       parameters:
         - name: deviceManagementPartner-id
           in: path
-          description: 'key: id of deviceManagementPartner'
+          description: The unique identifier of deviceManagementPartner
           required: true
           style: simple
           schema:
@@ -878,7 +878,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
-          description: 'key: id of deviceManagementExchangeConnector'
+          description: The unique identifier of deviceManagementExchangeConnector
           required: true
           style: simple
           schema:
@@ -935,7 +935,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
-          description: 'key: id of deviceManagementExchangeConnector'
+          description: The unique identifier of deviceManagementExchangeConnector
           required: true
           style: simple
           schema:
@@ -962,7 +962,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
-          description: 'key: id of deviceManagementExchangeConnector'
+          description: The unique identifier of deviceManagementExchangeConnector
           required: true
           style: simple
           schema:
@@ -1104,7 +1104,7 @@ paths:
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
-          description: 'key: id of iosUpdateDeviceStatus'
+          description: The unique identifier of iosUpdateDeviceStatus
           required: true
           style: simple
           schema:
@@ -1163,7 +1163,7 @@ paths:
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
-          description: 'key: id of iosUpdateDeviceStatus'
+          description: The unique identifier of iosUpdateDeviceStatus
           required: true
           style: simple
           schema:
@@ -1190,7 +1190,7 @@ paths:
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
-          description: 'key: id of iosUpdateDeviceStatus'
+          description: The unique identifier of iosUpdateDeviceStatus
           required: true
           style: simple
           schema:
@@ -1344,7 +1344,7 @@ paths:
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
-          description: 'key: id of mobileThreatDefenseConnector'
+          description: The unique identifier of mobileThreatDefenseConnector
           required: true
           style: simple
           schema:
@@ -1407,7 +1407,7 @@ paths:
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
-          description: 'key: id of mobileThreatDefenseConnector'
+          description: The unique identifier of mobileThreatDefenseConnector
           required: true
           style: simple
           schema:
@@ -1434,7 +1434,7 @@ paths:
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
-          description: 'key: id of mobileThreatDefenseConnector'
+          description: The unique identifier of mobileThreatDefenseConnector
           required: true
           style: simple
           schema:
@@ -1555,7 +1555,7 @@ paths:
       parameters:
         - name: remoteAssistancePartner-id
           in: path
-          description: 'key: id of remoteAssistancePartner'
+          description: The unique identifier of remoteAssistancePartner
           required: true
           style: simple
           schema:
@@ -1607,7 +1607,7 @@ paths:
       parameters:
         - name: remoteAssistancePartner-id
           in: path
-          description: 'key: id of remoteAssistancePartner'
+          description: The unique identifier of remoteAssistancePartner
           required: true
           style: simple
           schema:
@@ -1634,7 +1634,7 @@ paths:
       parameters:
         - name: remoteAssistancePartner-id
           in: path
-          description: 'key: id of remoteAssistancePartner'
+          description: The unique identifier of remoteAssistancePartner
           required: true
           style: simple
           schema:
@@ -1752,7 +1752,7 @@ paths:
       parameters:
         - name: resourceOperation-id
           in: path
-          description: 'key: id of resourceOperation'
+          description: The unique identifier of resourceOperation
           required: true
           style: simple
           schema:
@@ -1803,7 +1803,7 @@ paths:
       parameters:
         - name: resourceOperation-id
           in: path
-          description: 'key: id of resourceOperation'
+          description: The unique identifier of resourceOperation
           required: true
           style: simple
           schema:
@@ -1830,7 +1830,7 @@ paths:
       parameters:
         - name: resourceOperation-id
           in: path
-          description: 'key: id of resourceOperation'
+          description: The unique identifier of resourceOperation
           required: true
           style: simple
           schema:
@@ -1953,7 +1953,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
-          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
           required: true
           style: simple
           schema:
@@ -2007,7 +2007,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
-          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
           required: true
           style: simple
           schema:
@@ -2034,7 +2034,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
-          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
           required: true
           style: simple
           schema:
@@ -2157,7 +2157,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -2211,7 +2211,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -2238,7 +2238,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -2266,7 +2266,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -2342,7 +2342,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -2375,7 +2375,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -2383,7 +2383,7 @@ paths:
           x-ms-docs-key-type: roleDefinition
         - name: roleAssignment-id
           in: path
-          description: 'key: id of roleAssignment'
+          description: The unique identifier of roleAssignment
           required: true
           style: simple
           schema:
@@ -2436,7 +2436,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -2444,7 +2444,7 @@ paths:
           x-ms-docs-key-type: roleDefinition
         - name: roleAssignment-id
           in: path
-          description: 'key: id of roleAssignment'
+          description: The unique identifier of roleAssignment
           required: true
           style: simple
           schema:
@@ -2471,7 +2471,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -2479,7 +2479,7 @@ paths:
           x-ms-docs-key-type: roleDefinition
         - name: roleAssignment-id
           in: path
-          description: 'key: id of roleAssignment'
+          description: The unique identifier of roleAssignment
           required: true
           style: simple
           schema:
@@ -2507,7 +2507,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -2515,7 +2515,7 @@ paths:
           x-ms-docs-key-type: roleDefinition
         - name: roleAssignment-id
           in: path
-          description: 'key: id of roleAssignment'
+          description: The unique identifier of roleAssignment
           required: true
           style: simple
           schema:
@@ -2667,7 +2667,7 @@ paths:
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
-          description: 'key: id of telecomExpenseManagementPartner'
+          description: The unique identifier of telecomExpenseManagementPartner
           required: true
           style: simple
           schema:
@@ -2720,7 +2720,7 @@ paths:
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
-          description: 'key: id of telecomExpenseManagementPartner'
+          description: The unique identifier of telecomExpenseManagementPartner
           required: true
           style: simple
           schema:
@@ -2747,7 +2747,7 @@ paths:
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
-          description: 'key: id of telecomExpenseManagementPartner'
+          description: The unique identifier of telecomExpenseManagementPartner
           required: true
           style: simple
           schema:
@@ -2884,7 +2884,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -2944,7 +2944,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -2971,7 +2971,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -2999,7 +2999,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3078,7 +3078,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3111,7 +3111,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3119,7 +3119,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAcceptanceStatus-id
           in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          description: The unique identifier of termsAndConditionsAcceptanceStatus
           required: true
           style: simple
           schema:
@@ -3173,7 +3173,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3181,7 +3181,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAcceptanceStatus-id
           in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          description: The unique identifier of termsAndConditionsAcceptanceStatus
           required: true
           style: simple
           schema:
@@ -3208,7 +3208,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3216,7 +3216,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAcceptanceStatus-id
           in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          description: The unique identifier of termsAndConditionsAcceptanceStatus
           required: true
           style: simple
           schema:
@@ -3244,7 +3244,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3252,7 +3252,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAcceptanceStatus-id
           in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          description: The unique identifier of termsAndConditionsAcceptanceStatus
           required: true
           style: simple
           schema:
@@ -3314,7 +3314,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3382,7 +3382,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3415,7 +3415,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3423,7 +3423,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsAssignment'
+          description: The unique identifier of termsAndConditionsAssignment
           required: true
           style: simple
           schema:
@@ -3472,7 +3472,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3480,7 +3480,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsAssignment'
+          description: The unique identifier of termsAndConditionsAssignment
           required: true
           style: simple
           schema:
@@ -3507,7 +3507,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -3515,7 +3515,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsAssignment'
+          description: The unique identifier of termsAndConditionsAssignment
           required: true
           style: simple
           schema:

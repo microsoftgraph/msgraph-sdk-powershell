@@ -279,7 +279,7 @@ paths:
       parameters:
         - name: aggregatedPolicyCompliance-id
           in: path
-          description: 'key: id of aggregatedPolicyCompliance'
+          description: The unique identifier of aggregatedPolicyCompliance
           required: true
           style: simple
           schema:
@@ -338,7 +338,7 @@ paths:
       parameters:
         - name: aggregatedPolicyCompliance-id
           in: path
-          description: 'key: id of aggregatedPolicyCompliance'
+          description: The unique identifier of aggregatedPolicyCompliance
           required: true
           style: simple
           schema:
@@ -365,7 +365,7 @@ paths:
       parameters:
         - name: aggregatedPolicyCompliance-id
           in: path
-          description: 'key: id of aggregatedPolicyCompliance'
+          description: The unique identifier of aggregatedPolicyCompliance
           required: true
           style: simple
           schema:
@@ -513,7 +513,7 @@ paths:
       parameters:
         - name: auditEvent-id
           in: path
-          description: 'key: id of auditEvent'
+          description: The unique identifier of auditEvent
           required: true
           style: simple
           schema:
@@ -574,7 +574,7 @@ paths:
       parameters:
         - name: auditEvent-id
           in: path
-          description: 'key: id of auditEvent'
+          description: The unique identifier of auditEvent
           required: true
           style: simple
           schema:
@@ -601,7 +601,7 @@ paths:
       parameters:
         - name: auditEvent-id
           in: path
-          description: 'key: id of auditEvent'
+          description: The unique identifier of auditEvent
           required: true
           style: simple
           schema:
@@ -728,7 +728,7 @@ paths:
       parameters:
         - name: cloudPcConnection-id
           in: path
-          description: 'key: id of cloudPcConnection'
+          description: The unique identifier of cloudPcConnection
           required: true
           style: simple
           schema:
@@ -781,7 +781,7 @@ paths:
       parameters:
         - name: cloudPcConnection-id
           in: path
-          description: 'key: id of cloudPcConnection'
+          description: The unique identifier of cloudPcConnection
           required: true
           style: simple
           schema:
@@ -808,7 +808,7 @@ paths:
       parameters:
         - name: cloudPcConnection-id
           in: path
-          description: 'key: id of cloudPcConnection'
+          description: The unique identifier of cloudPcConnection
           required: true
           style: simple
           schema:
@@ -956,7 +956,7 @@ paths:
       parameters:
         - name: cloudPcDevice-id
           in: path
-          description: 'key: id of cloudPcDevice'
+          description: The unique identifier of cloudPcDevice
           required: true
           style: simple
           schema:
@@ -1016,7 +1016,7 @@ paths:
       parameters:
         - name: cloudPcDevice-id
           in: path
-          description: 'key: id of cloudPcDevice'
+          description: The unique identifier of cloudPcDevice
           required: true
           style: simple
           schema:
@@ -1043,7 +1043,7 @@ paths:
       parameters:
         - name: cloudPcDevice-id
           in: path
-          description: 'key: id of cloudPcDevice'
+          description: The unique identifier of cloudPcDevice
           required: true
           style: simple
           schema:
@@ -1215,7 +1215,7 @@ paths:
       parameters:
         - name: cloudPcOverview-tenantId
           in: path
-          description: 'key: tenantId of cloudPcOverview'
+          description: The unique identifier of cloudPcOverview
           required: true
           style: simple
           schema:
@@ -1283,7 +1283,7 @@ paths:
       parameters:
         - name: cloudPcOverview-tenantId
           in: path
-          description: 'key: tenantId of cloudPcOverview'
+          description: The unique identifier of cloudPcOverview
           required: true
           style: simple
           schema:
@@ -1310,7 +1310,7 @@ paths:
       parameters:
         - name: cloudPcOverview-tenantId
           in: path
-          description: 'key: tenantId of cloudPcOverview'
+          description: The unique identifier of cloudPcOverview
           required: true
           style: simple
           schema:
@@ -1434,7 +1434,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicyCoverage-id
           in: path
-          description: 'key: id of conditionalAccessPolicyCoverage'
+          description: The unique identifier of conditionalAccessPolicyCoverage
           required: true
           style: simple
           schema:
@@ -1486,7 +1486,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicyCoverage-id
           in: path
-          description: 'key: id of conditionalAccessPolicyCoverage'
+          description: The unique identifier of conditionalAccessPolicyCoverage
           required: true
           style: simple
           schema:
@@ -1513,7 +1513,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicyCoverage-id
           in: path
-          description: 'key: id of conditionalAccessPolicyCoverage'
+          description: The unique identifier of conditionalAccessPolicyCoverage
           required: true
           style: simple
           schema:
@@ -1658,7 +1658,7 @@ paths:
       parameters:
         - name: credentialUserRegistrationsSummary-id
           in: path
-          description: 'key: id of credentialUserRegistrationsSummary'
+          description: The unique identifier of credentialUserRegistrationsSummary
           required: true
           style: simple
           schema:
@@ -1717,7 +1717,7 @@ paths:
       parameters:
         - name: credentialUserRegistrationsSummary-id
           in: path
-          description: 'key: id of credentialUserRegistrationsSummary'
+          description: The unique identifier of credentialUserRegistrationsSummary
           required: true
           style: simple
           schema:
@@ -1744,7 +1744,7 @@ paths:
       parameters:
         - name: credentialUserRegistrationsSummary-id
           in: path
-          description: 'key: id of credentialUserRegistrationsSummary'
+          description: The unique identifier of credentialUserRegistrationsSummary
           required: true
           style: simple
           schema:
@@ -1895,7 +1895,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -1956,7 +1956,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -1983,7 +1983,7 @@ paths:
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
-          description: 'key: id of deviceCompliancePolicySettingStateSummary'
+          description: The unique identifier of deviceCompliancePolicySettingStateSummary
           required: true
           style: simple
           schema:
@@ -2137,7 +2137,7 @@ paths:
       parameters:
         - name: managedDeviceCompliance-id
           in: path
-          description: 'key: id of managedDeviceCompliance'
+          description: The unique identifier of managedDeviceCompliance
           required: true
           style: simple
           schema:
@@ -2199,7 +2199,7 @@ paths:
       parameters:
         - name: managedDeviceCompliance-id
           in: path
-          description: 'key: id of managedDeviceCompliance'
+          description: The unique identifier of managedDeviceCompliance
           required: true
           style: simple
           schema:
@@ -2226,7 +2226,7 @@ paths:
       parameters:
         - name: managedDeviceCompliance-id
           in: path
-          description: 'key: id of managedDeviceCompliance'
+          description: The unique identifier of managedDeviceCompliance
           required: true
           style: simple
           schema:
@@ -2365,7 +2365,7 @@ paths:
       parameters:
         - name: managedDeviceComplianceTrend-id
           in: path
-          description: 'key: id of managedDeviceComplianceTrend'
+          description: The unique identifier of managedDeviceComplianceTrend
           required: true
           style: simple
           schema:
@@ -2422,7 +2422,7 @@ paths:
       parameters:
         - name: managedDeviceComplianceTrend-id
           in: path
-          description: 'key: id of managedDeviceComplianceTrend'
+          description: The unique identifier of managedDeviceComplianceTrend
           required: true
           style: simple
           schema:
@@ -2449,7 +2449,7 @@ paths:
       parameters:
         - name: managedDeviceComplianceTrend-id
           in: path
-          description: 'key: id of managedDeviceComplianceTrend'
+          description: The unique identifier of managedDeviceComplianceTrend
           required: true
           style: simple
           schema:
@@ -2573,7 +2573,7 @@ paths:
       parameters:
         - name: managedTenantAlertLog-id
           in: path
-          description: 'key: id of managedTenantAlertLog'
+          description: The unique identifier of managedTenantAlertLog
           required: true
           style: simple
           schema:
@@ -2628,7 +2628,7 @@ paths:
       parameters:
         - name: managedTenantAlertLog-id
           in: path
-          description: 'key: id of managedTenantAlertLog'
+          description: The unique identifier of managedTenantAlertLog
           required: true
           style: simple
           schema:
@@ -2655,7 +2655,7 @@ paths:
       parameters:
         - name: managedTenantAlertLog-id
           in: path
-          description: 'key: id of managedTenantAlertLog'
+          description: The unique identifier of managedTenantAlertLog
           required: true
           style: simple
           schema:
@@ -2682,7 +2682,7 @@ paths:
       parameters:
         - name: managedTenantAlertLog-id
           in: path
-          description: 'key: id of managedTenantAlertLog'
+          description: The unique identifier of managedTenantAlertLog
           required: true
           style: simple
           schema:
@@ -2854,7 +2854,7 @@ paths:
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
-          description: 'key: id of managedTenantAlertRuleDefinition'
+          description: The unique identifier of managedTenantAlertRuleDefinition
           required: true
           style: simple
           schema:
@@ -2910,7 +2910,7 @@ paths:
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
-          description: 'key: id of managedTenantAlertRuleDefinition'
+          description: The unique identifier of managedTenantAlertRuleDefinition
           required: true
           style: simple
           schema:
@@ -2937,7 +2937,7 @@ paths:
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
-          description: 'key: id of managedTenantAlertRuleDefinition'
+          description: The unique identifier of managedTenantAlertRuleDefinition
           required: true
           style: simple
           schema:
@@ -2964,7 +2964,7 @@ paths:
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
-          description: 'key: id of managedTenantAlertRuleDefinition'
+          description: The unique identifier of managedTenantAlertRuleDefinition
           required: true
           style: simple
           schema:
@@ -3073,7 +3073,7 @@ paths:
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
-          description: 'key: id of managedTenantAlertRuleDefinition'
+          description: The unique identifier of managedTenantAlertRuleDefinition
           required: true
           style: simple
           schema:
@@ -3081,7 +3081,7 @@ paths:
           x-ms-docs-key-type: managedTenantAlertRuleDefinition
         - name: managedTenantAlertRule-id
           in: path
-          description: 'key: id of managedTenantAlertRule'
+          description: The unique identifier of managedTenantAlertRule
           required: true
           style: simple
           schema:
@@ -3270,7 +3270,7 @@ paths:
       parameters:
         - name: managedTenantAlertRule-id
           in: path
-          description: 'key: id of managedTenantAlertRule'
+          description: The unique identifier of managedTenantAlertRule
           required: true
           style: simple
           schema:
@@ -3335,7 +3335,7 @@ paths:
       parameters:
         - name: managedTenantAlertRule-id
           in: path
-          description: 'key: id of managedTenantAlertRule'
+          description: The unique identifier of managedTenantAlertRule
           required: true
           style: simple
           schema:
@@ -3362,7 +3362,7 @@ paths:
       parameters:
         - name: managedTenantAlertRule-id
           in: path
-          description: 'key: id of managedTenantAlertRule'
+          description: The unique identifier of managedTenantAlertRule
           required: true
           style: simple
           schema:
@@ -3389,7 +3389,7 @@ paths:
       parameters:
         - name: managedTenantAlertRule-id
           in: path
-          description: 'key: id of managedTenantAlertRule'
+          description: The unique identifier of managedTenantAlertRule
           required: true
           style: simple
           schema:
@@ -3508,7 +3508,7 @@ paths:
       parameters:
         - name: managedTenantAlertRule-id
           in: path
-          description: 'key: id of managedTenantAlertRule'
+          description: The unique identifier of managedTenantAlertRule
           required: true
           style: simple
           schema:
@@ -3516,7 +3516,7 @@ paths:
           x-ms-docs-key-type: managedTenantAlertRule
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -3588,7 +3588,7 @@ paths:
       parameters:
         - name: managedTenantAlertRule-id
           in: path
-          description: 'key: id of managedTenantAlertRule'
+          description: The unique identifier of managedTenantAlertRule
           required: true
           style: simple
           schema:
@@ -3778,7 +3778,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -3849,7 +3849,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -3876,7 +3876,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -3903,7 +3903,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -3986,7 +3986,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -3994,7 +3994,7 @@ paths:
           x-ms-docs-key-type: managedTenantAlert
         - name: managedTenantAlertLog-id
           in: path
-          description: 'key: id of managedTenantAlertLog'
+          description: The unique identifier of managedTenantAlertLog
           required: true
           style: simple
           schema:
@@ -4050,7 +4050,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -4116,7 +4116,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -4208,7 +4208,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -4216,7 +4216,7 @@ paths:
           x-ms-docs-key-type: managedTenantAlert
         - name: managedTenantApiNotification-id
           in: path
-          description: 'key: id of managedTenantApiNotification'
+          description: The unique identifier of managedTenantApiNotification
           required: true
           style: simple
           schema:
@@ -4275,7 +4275,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -4364,7 +4364,7 @@ paths:
       parameters:
         - name: managedTenantAlert-id
           in: path
-          description: 'key: id of managedTenantAlert'
+          description: The unique identifier of managedTenantAlert
           required: true
           style: simple
           schema:
@@ -4372,7 +4372,7 @@ paths:
           x-ms-docs-key-type: managedTenantAlert
         - name: managedTenantEmailNotification-id
           in: path
-          description: 'key: id of managedTenantEmailNotification'
+          description: The unique identifier of managedTenantEmailNotification
           required: true
           style: simple
           schema:
@@ -4536,7 +4536,7 @@ paths:
       parameters:
         - name: managedTenantApiNotification-id
           in: path
-          description: 'key: id of managedTenantApiNotification'
+          description: The unique identifier of managedTenantApiNotification
           required: true
           style: simple
           schema:
@@ -4594,7 +4594,7 @@ paths:
       parameters:
         - name: managedTenantApiNotification-id
           in: path
-          description: 'key: id of managedTenantApiNotification'
+          description: The unique identifier of managedTenantApiNotification
           required: true
           style: simple
           schema:
@@ -4621,7 +4621,7 @@ paths:
       parameters:
         - name: managedTenantApiNotification-id
           in: path
-          description: 'key: id of managedTenantApiNotification'
+          description: The unique identifier of managedTenantApiNotification
           required: true
           style: simple
           schema:
@@ -4648,7 +4648,7 @@ paths:
       parameters:
         - name: managedTenantApiNotification-id
           in: path
-          description: 'key: id of managedTenantApiNotification'
+          description: The unique identifier of managedTenantApiNotification
           required: true
           style: simple
           schema:
@@ -4823,7 +4823,7 @@ paths:
       parameters:
         - name: managedTenantEmailNotification-id
           in: path
-          description: 'key: id of managedTenantEmailNotification'
+          description: The unique identifier of managedTenantEmailNotification
           required: true
           style: simple
           schema:
@@ -4880,7 +4880,7 @@ paths:
       parameters:
         - name: managedTenantEmailNotification-id
           in: path
-          description: 'key: id of managedTenantEmailNotification'
+          description: The unique identifier of managedTenantEmailNotification
           required: true
           style: simple
           schema:
@@ -4907,7 +4907,7 @@ paths:
       parameters:
         - name: managedTenantEmailNotification-id
           in: path
-          description: 'key: id of managedTenantEmailNotification'
+          description: The unique identifier of managedTenantEmailNotification
           required: true
           style: simple
           schema:
@@ -4934,7 +4934,7 @@ paths:
       parameters:
         - name: managedTenantEmailNotification-id
           in: path
-          description: 'key: id of managedTenantEmailNotification'
+          description: The unique identifier of managedTenantEmailNotification
           required: true
           style: simple
           schema:
@@ -5107,7 +5107,7 @@ paths:
       parameters:
         - name: managedTenantTicketingEndpoint-id
           in: path
-          description: 'key: id of managedTenantTicketingEndpoint'
+          description: The unique identifier of managedTenantTicketingEndpoint
           required: true
           style: simple
           schema:
@@ -5162,7 +5162,7 @@ paths:
       parameters:
         - name: managedTenantTicketingEndpoint-id
           in: path
-          description: 'key: id of managedTenantTicketingEndpoint'
+          description: The unique identifier of managedTenantTicketingEndpoint
           required: true
           style: simple
           schema:
@@ -5189,7 +5189,7 @@ paths:
       parameters:
         - name: managedTenantTicketingEndpoint-id
           in: path
-          description: 'key: id of managedTenantTicketingEndpoint'
+          description: The unique identifier of managedTenantTicketingEndpoint
           required: true
           style: simple
           schema:
@@ -5319,7 +5319,7 @@ paths:
       parameters:
         - name: managementAction-id
           in: path
-          description: 'key: id of managementAction'
+          description: The unique identifier of managementAction
           required: true
           style: simple
           schema:
@@ -5373,7 +5373,7 @@ paths:
       parameters:
         - name: managementAction-id
           in: path
-          description: 'key: id of managementAction'
+          description: The unique identifier of managementAction
           required: true
           style: simple
           schema:
@@ -5400,7 +5400,7 @@ paths:
       parameters:
         - name: managementAction-id
           in: path
-          description: 'key: id of managementAction'
+          description: The unique identifier of managementAction
           required: true
           style: simple
           schema:
@@ -5521,7 +5521,7 @@ paths:
       parameters:
         - name: managementActionTenantDeploymentStatus-id
           in: path
-          description: 'key: id of managementActionTenantDeploymentStatus'
+          description: The unique identifier of managementActionTenantDeploymentStatus
           required: true
           style: simple
           schema:
@@ -5572,7 +5572,7 @@ paths:
       parameters:
         - name: managementActionTenantDeploymentStatus-id
           in: path
-          description: 'key: id of managementActionTenantDeploymentStatus'
+          description: The unique identifier of managementActionTenantDeploymentStatus
           required: true
           style: simple
           schema:
@@ -5599,7 +5599,7 @@ paths:
       parameters:
         - name: managementActionTenantDeploymentStatus-id
           in: path
-          description: 'key: id of managementActionTenantDeploymentStatus'
+          description: The unique identifier of managementActionTenantDeploymentStatus
           required: true
           style: simple
           schema:
@@ -5720,7 +5720,7 @@ paths:
       parameters:
         - name: managementIntent-id
           in: path
-          description: 'key: id of managementIntent'
+          description: The unique identifier of managementIntent
           required: true
           style: simple
           schema:
@@ -5771,7 +5771,7 @@ paths:
       parameters:
         - name: managementIntent-id
           in: path
-          description: 'key: id of managementIntent'
+          description: The unique identifier of managementIntent
           required: true
           style: simple
           schema:
@@ -5798,7 +5798,7 @@ paths:
       parameters:
         - name: managementIntent-id
           in: path
-          description: 'key: id of managementIntent'
+          description: The unique identifier of managementIntent
           required: true
           style: simple
           schema:
@@ -5925,7 +5925,7 @@ paths:
       parameters:
         - name: managementTemplateCollection-id
           in: path
-          description: 'key: id of managementTemplateCollection'
+          description: The unique identifier of managementTemplateCollection
           required: true
           style: simple
           schema:
@@ -5981,7 +5981,7 @@ paths:
       parameters:
         - name: managementTemplateCollection-id
           in: path
-          description: 'key: id of managementTemplateCollection'
+          description: The unique identifier of managementTemplateCollection
           required: true
           style: simple
           schema:
@@ -6008,7 +6008,7 @@ paths:
       parameters:
         - name: managementTemplateCollection-id
           in: path
-          description: 'key: id of managementTemplateCollection'
+          description: The unique identifier of managementTemplateCollection
           required: true
           style: simple
           schema:
@@ -6035,7 +6035,7 @@ paths:
       parameters:
         - name: managementTemplateCollection-id
           in: path
-          description: 'key: id of managementTemplateCollection'
+          description: The unique identifier of managementTemplateCollection
           required: true
           style: simple
           schema:
@@ -6147,7 +6147,7 @@ paths:
       parameters:
         - name: managementTemplateCollection-id
           in: path
-          description: 'key: id of managementTemplateCollection'
+          description: The unique identifier of managementTemplateCollection
           required: true
           style: simple
           schema:
@@ -6155,7 +6155,7 @@ paths:
           x-ms-docs-key-type: managementTemplateCollection
         - name: managementTemplate-id
           in: path
-          description: 'key: id of managementTemplate'
+          description: The unique identifier of managementTemplate
           required: true
           style: simple
           schema:
@@ -6350,7 +6350,7 @@ paths:
       parameters:
         - name: managementTemplateCollectionTenantSummary-id
           in: path
-          description: 'key: id of managementTemplateCollectionTenantSummary'
+          description: The unique identifier of managementTemplateCollectionTenantSummary
           required: true
           style: simple
           schema:
@@ -6414,7 +6414,7 @@ paths:
       parameters:
         - name: managementTemplateCollectionTenantSummary-id
           in: path
-          description: 'key: id of managementTemplateCollectionTenantSummary'
+          description: The unique identifier of managementTemplateCollectionTenantSummary
           required: true
           style: simple
           schema:
@@ -6441,7 +6441,7 @@ paths:
       parameters:
         - name: managementTemplateCollectionTenantSummary-id
           in: path
-          description: 'key: id of managementTemplateCollectionTenantSummary'
+          description: The unique identifier of managementTemplateCollectionTenantSummary
           required: true
           style: simple
           schema:
@@ -6599,7 +6599,7 @@ paths:
       parameters:
         - name: managementTemplate-id
           in: path
-          description: 'key: id of managementTemplate'
+          description: The unique identifier of managementTemplate
           required: true
           style: simple
           schema:
@@ -6665,7 +6665,7 @@ paths:
       parameters:
         - name: managementTemplate-id
           in: path
-          description: 'key: id of managementTemplate'
+          description: The unique identifier of managementTemplate
           required: true
           style: simple
           schema:
@@ -6692,7 +6692,7 @@ paths:
       parameters:
         - name: managementTemplate-id
           in: path
-          description: 'key: id of managementTemplate'
+          description: The unique identifier of managementTemplate
           required: true
           style: simple
           schema:
@@ -6719,7 +6719,7 @@ paths:
       parameters:
         - name: managementTemplate-id
           in: path
-          description: 'key: id of managementTemplate'
+          description: The unique identifier of managementTemplate
           required: true
           style: simple
           schema:
@@ -6805,7 +6805,7 @@ paths:
       parameters:
         - name: managementTemplate-id
           in: path
-          description: 'key: id of managementTemplate'
+          description: The unique identifier of managementTemplate
           required: true
           style: simple
           schema:
@@ -6813,7 +6813,7 @@ paths:
           x-ms-docs-key-type: managementTemplate
         - name: managementTemplateCollection-id
           in: path
-          description: 'key: id of managementTemplateCollection'
+          description: The unique identifier of managementTemplateCollection
           required: true
           style: simple
           schema:
@@ -6870,7 +6870,7 @@ paths:
       parameters:
         - name: managementTemplate-id
           in: path
-          description: 'key: id of managementTemplate'
+          description: The unique identifier of managementTemplate
           required: true
           style: simple
           schema:
@@ -6969,7 +6969,7 @@ paths:
       parameters:
         - name: managementTemplate-id
           in: path
-          description: 'key: id of managementTemplate'
+          description: The unique identifier of managementTemplate
           required: true
           style: simple
           schema:
@@ -6977,7 +6977,7 @@ paths:
           x-ms-docs-key-type: managementTemplate
         - name: managementTemplateStep-id
           in: path
-          description: 'key: id of managementTemplateStep'
+          description: The unique identifier of managementTemplateStep
           required: true
           style: simple
           schema:
@@ -7154,7 +7154,7 @@ paths:
       parameters:
         - name: managementTemplateStep-id
           in: path
-          description: 'key: id of managementTemplateStep'
+          description: The unique identifier of managementTemplateStep
           required: true
           style: simple
           schema:
@@ -7217,7 +7217,7 @@ paths:
       parameters:
         - name: managementTemplateStep-id
           in: path
-          description: 'key: id of managementTemplateStep'
+          description: The unique identifier of managementTemplateStep
           required: true
           style: simple
           schema:
@@ -7244,7 +7244,7 @@ paths:
       parameters:
         - name: managementTemplateStep-id
           in: path
-          description: 'key: id of managementTemplateStep'
+          description: The unique identifier of managementTemplateStep
           required: true
           style: simple
           schema:
@@ -7271,7 +7271,7 @@ paths:
       parameters:
         - name: managementTemplateStep-id
           in: path
-          description: 'key: id of managementTemplateStep'
+          description: The unique identifier of managementTemplateStep
           required: true
           style: simple
           schema:
@@ -7334,7 +7334,7 @@ paths:
       parameters:
         - name: managementTemplateStep-id
           in: path
-          description: 'key: id of managementTemplateStep'
+          description: The unique identifier of managementTemplateStep
           required: true
           style: simple
           schema:
@@ -7401,7 +7401,7 @@ paths:
       parameters:
         - name: managementTemplateStep-id
           in: path
-          description: 'key: id of managementTemplateStep'
+          description: The unique identifier of managementTemplateStep
           required: true
           style: simple
           schema:
@@ -7497,7 +7497,7 @@ paths:
       parameters:
         - name: managementTemplateStep-id
           in: path
-          description: 'key: id of managementTemplateStep'
+          description: The unique identifier of managementTemplateStep
           required: true
           style: simple
           schema:
@@ -7505,7 +7505,7 @@ paths:
           x-ms-docs-key-type: managementTemplateStep
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -7693,7 +7693,7 @@ paths:
       parameters:
         - name: managementTemplateStepTenantSummary-id
           in: path
-          description: 'key: id of managementTemplateStepTenantSummary'
+          description: The unique identifier of managementTemplateStepTenantSummary
           required: true
           style: simple
           schema:
@@ -7756,7 +7756,7 @@ paths:
       parameters:
         - name: managementTemplateStepTenantSummary-id
           in: path
-          description: 'key: id of managementTemplateStepTenantSummary'
+          description: The unique identifier of managementTemplateStepTenantSummary
           required: true
           style: simple
           schema:
@@ -7783,7 +7783,7 @@ paths:
       parameters:
         - name: managementTemplateStepTenantSummary-id
           in: path
-          description: 'key: id of managementTemplateStepTenantSummary'
+          description: The unique identifier of managementTemplateStepTenantSummary
           required: true
           style: simple
           schema:
@@ -7920,7 +7920,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -7982,7 +7982,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8009,7 +8009,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8036,7 +8036,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8100,7 +8100,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8188,7 +8188,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8220,7 +8220,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8228,7 +8228,7 @@ paths:
           x-ms-docs-key-type: managementTemplateStepVersion
         - name: managementTemplateStepDeployment-id
           in: path
-          description: 'key: id of managementTemplateStepDeployment'
+          description: The unique identifier of managementTemplateStepDeployment
           required: true
           style: simple
           schema:
@@ -8285,7 +8285,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8293,7 +8293,7 @@ paths:
           x-ms-docs-key-type: managementTemplateStepVersion
         - name: managementTemplateStepDeployment-id
           in: path
-          description: 'key: id of managementTemplateStepDeployment'
+          description: The unique identifier of managementTemplateStepDeployment
           required: true
           style: simple
           schema:
@@ -8320,7 +8320,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8328,7 +8328,7 @@ paths:
           x-ms-docs-key-type: managementTemplateStepVersion
         - name: managementTemplateStepDeployment-id
           in: path
-          description: 'key: id of managementTemplateStepDeployment'
+          description: The unique identifier of managementTemplateStepDeployment
           required: true
           style: simple
           schema:
@@ -8355,7 +8355,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8363,7 +8363,7 @@ paths:
           x-ms-docs-key-type: managementTemplateStepVersion
         - name: managementTemplateStepDeployment-id
           in: path
-          description: 'key: id of managementTemplateStepDeployment'
+          description: The unique identifier of managementTemplateStepDeployment
           required: true
           style: simple
           schema:
@@ -8426,7 +8426,7 @@ paths:
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
-          description: 'key: id of managementTemplateStepVersion'
+          description: The unique identifier of managementTemplateStepVersion
           required: true
           style: simple
           schema:
@@ -8578,7 +8578,7 @@ paths:
       parameters:
         - name: myRole-tenantId
           in: path
-          description: 'key: tenantId of myRole'
+          description: The unique identifier of myRole
           required: true
           style: simple
           schema:
@@ -8627,7 +8627,7 @@ paths:
       parameters:
         - name: myRole-tenantId
           in: path
-          description: 'key: tenantId of myRole'
+          description: The unique identifier of myRole
           required: true
           style: simple
           schema:
@@ -8654,7 +8654,7 @@ paths:
       parameters:
         - name: myRole-tenantId
           in: path
-          description: 'key: tenantId of myRole'
+          description: The unique identifier of myRole
           required: true
           style: simple
           schema:
@@ -8781,7 +8781,7 @@ paths:
       parameters:
         - name: tenantGroup-id
           in: path
-          description: 'key: id of tenantGroup'
+          description: The unique identifier of tenantGroup
           required: true
           style: simple
           schema:
@@ -8834,7 +8834,7 @@ paths:
       parameters:
         - name: tenantGroup-id
           in: path
-          description: 'key: id of tenantGroup'
+          description: The unique identifier of tenantGroup
           required: true
           style: simple
           schema:
@@ -8861,7 +8861,7 @@ paths:
       parameters:
         - name: tenantGroup-id
           in: path
-          description: 'key: id of tenantGroup'
+          description: The unique identifier of tenantGroup
           required: true
           style: simple
           schema:
@@ -8991,7 +8991,7 @@ paths:
       parameters:
         - name: tenant-id
           in: path
-          description: 'key: id of tenant'
+          description: The unique identifier of tenant
           required: true
           style: simple
           schema:
@@ -9045,7 +9045,7 @@ paths:
       parameters:
         - name: tenant-id
           in: path
-          description: 'key: id of tenant'
+          description: The unique identifier of tenant
           required: true
           style: simple
           schema:
@@ -9072,7 +9072,7 @@ paths:
       parameters:
         - name: tenant-id
           in: path
-          description: 'key: id of tenant'
+          description: The unique identifier of tenant
           required: true
           style: simple
           schema:
@@ -9196,7 +9196,7 @@ paths:
       parameters:
         - name: tenantCustomizedInformation-id
           in: path
-          description: 'key: id of tenantCustomizedInformation'
+          description: The unique identifier of tenantCustomizedInformation
           required: true
           style: simple
           schema:
@@ -9248,7 +9248,7 @@ paths:
       parameters:
         - name: tenantCustomizedInformation-id
           in: path
-          description: 'key: id of tenantCustomizedInformation'
+          description: The unique identifier of tenantCustomizedInformation
           required: true
           style: simple
           schema:
@@ -9275,7 +9275,7 @@ paths:
       parameters:
         - name: tenantCustomizedInformation-id
           in: path
-          description: 'key: id of tenantCustomizedInformation'
+          description: The unique identifier of tenantCustomizedInformation
           required: true
           style: simple
           schema:
@@ -9417,7 +9417,7 @@ paths:
       parameters:
         - name: tenantDetailedInformation-id
           in: path
-          description: 'key: id of tenantDetailedInformation'
+          description: The unique identifier of tenantDetailedInformation
           required: true
           style: simple
           schema:
@@ -9475,7 +9475,7 @@ paths:
       parameters:
         - name: tenantDetailedInformation-id
           in: path
-          description: 'key: id of tenantDetailedInformation'
+          description: The unique identifier of tenantDetailedInformation
           required: true
           style: simple
           schema:
@@ -9502,7 +9502,7 @@ paths:
       parameters:
         - name: tenantDetailedInformation-id
           in: path
-          description: 'key: id of tenantDetailedInformation'
+          description: The unique identifier of tenantDetailedInformation
           required: true
           style: simple
           schema:
@@ -9642,7 +9642,7 @@ paths:
       parameters:
         - name: tenantTag-id
           in: path
-          description: 'key: id of tenantTag'
+          description: The unique identifier of tenantTag
           required: true
           style: simple
           schema:
@@ -9698,7 +9698,7 @@ paths:
       parameters:
         - name: tenantTag-id
           in: path
-          description: 'key: id of tenantTag'
+          description: The unique identifier of tenantTag
           required: true
           style: simple
           schema:
@@ -9725,7 +9725,7 @@ paths:
       parameters:
         - name: tenantTag-id
           in: path
-          description: 'key: id of tenantTag'
+          description: The unique identifier of tenantTag
           required: true
           style: simple
           schema:
@@ -9885,7 +9885,7 @@ paths:
       parameters:
         - name: windowsDeviceMalwareState-id
           in: path
-          description: 'key: id of windowsDeviceMalwareState'
+          description: The unique identifier of windowsDeviceMalwareState
           required: true
           style: simple
           schema:
@@ -9949,7 +9949,7 @@ paths:
       parameters:
         - name: windowsDeviceMalwareState-id
           in: path
-          description: 'key: id of windowsDeviceMalwareState'
+          description: The unique identifier of windowsDeviceMalwareState
           required: true
           style: simple
           schema:
@@ -9976,7 +9976,7 @@ paths:
       parameters:
         - name: windowsDeviceMalwareState-id
           in: path
-          description: 'key: id of windowsDeviceMalwareState'
+          description: The unique identifier of windowsDeviceMalwareState
           required: true
           style: simple
           schema:
@@ -10163,7 +10163,7 @@ paths:
       parameters:
         - name: windowsProtectionState-id
           in: path
-          description: 'key: id of windowsProtectionState'
+          description: The unique identifier of windowsProtectionState
           required: true
           style: simple
           schema:
@@ -10236,7 +10236,7 @@ paths:
       parameters:
         - name: windowsProtectionState-id
           in: path
-          description: 'key: id of windowsProtectionState'
+          description: The unique identifier of windowsProtectionState
           required: true
           style: simple
           schema:
@@ -10263,7 +10263,7 @@ paths:
       parameters:
         - name: windowsProtectionState-id
           in: path
-          description: 'key: id of windowsProtectionState'
+          description: The unique identifier of windowsProtectionState
           required: true
           style: simple
           schema:

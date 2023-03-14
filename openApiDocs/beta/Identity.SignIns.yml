@@ -118,7 +118,7 @@ paths:
       parameters:
         - name: dataPolicyOperation-id
           in: path
-          description: 'key: id of dataPolicyOperation'
+          description: The unique identifier of dataPolicyOperation
           required: true
           style: simple
           schema:
@@ -172,7 +172,7 @@ paths:
       parameters:
         - name: dataPolicyOperation-id
           in: path
-          description: 'key: id of dataPolicyOperation'
+          description: The unique identifier of dataPolicyOperation
           required: true
           style: simple
           schema:
@@ -199,7 +199,7 @@ paths:
       parameters:
         - name: dataPolicyOperation-id
           in: path
-          description: 'key: id of dataPolicyOperation'
+          description: The unique identifier of dataPolicyOperation
           required: true
           style: simple
           schema:
@@ -402,7 +402,7 @@ paths:
       parameters:
         - name: identityApiConnector-id
           in: path
-          description: 'key: id of identityApiConnector'
+          description: The unique identifier of identityApiConnector
           required: true
           style: simple
           schema:
@@ -453,7 +453,7 @@ paths:
       parameters:
         - name: identityApiConnector-id
           in: path
-          description: 'key: id of identityApiConnector'
+          description: The unique identifier of identityApiConnector
           required: true
           style: simple
           schema:
@@ -480,7 +480,7 @@ paths:
       parameters:
         - name: identityApiConnector-id
           in: path
-          description: 'key: id of identityApiConnector'
+          description: The unique identifier of identityApiConnector
           required: true
           style: simple
           schema:
@@ -511,7 +511,7 @@ paths:
       parameters:
         - name: identityApiConnector-id
           in: path
-          description: 'key: id of identityApiConnector'
+          description: The unique identifier of identityApiConnector
           required: true
           style: simple
           schema:
@@ -641,7 +641,7 @@ paths:
       parameters:
         - name: authenticationEventListener-id
           in: path
-          description: 'key: id of authenticationEventListener'
+          description: The unique identifier of authenticationEventListener
           required: true
           style: simple
           schema:
@@ -692,7 +692,7 @@ paths:
       parameters:
         - name: authenticationEventListener-id
           in: path
-          description: 'key: id of authenticationEventListener'
+          description: The unique identifier of authenticationEventListener
           required: true
           style: simple
           schema:
@@ -719,7 +719,7 @@ paths:
       parameters:
         - name: authenticationEventListener-id
           in: path
-          description: 'key: id of authenticationEventListener'
+          description: The unique identifier of authenticationEventListener
           required: true
           style: simple
           schema:
@@ -858,7 +858,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -919,7 +919,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -946,7 +946,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -977,7 +977,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1061,7 +1061,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1069,7 +1069,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: identityProvider-id
           in: path
-          description: 'key: id of identityProvider'
+          description: The unique identifier of identityProvider
           required: true
           style: simple
           schema:
@@ -1113,7 +1113,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1168,7 +1168,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1201,7 +1201,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1276,7 +1276,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1309,7 +1309,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1317,7 +1317,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1371,7 +1371,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1379,7 +1379,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1406,7 +1406,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1414,7 +1414,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1445,7 +1445,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1453,7 +1453,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1518,7 +1518,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1526,7 +1526,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1559,7 +1559,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1567,7 +1567,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1575,7 +1575,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -1623,7 +1623,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1631,7 +1631,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1639,7 +1639,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -1666,7 +1666,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1674,7 +1674,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1682,7 +1682,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -1712,7 +1712,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1720,7 +1720,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1728,7 +1728,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -1753,7 +1753,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1761,7 +1761,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1769,7 +1769,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -1802,7 +1802,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1810,7 +1810,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1875,7 +1875,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1883,7 +1883,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1916,7 +1916,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1924,7 +1924,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1932,7 +1932,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -1980,7 +1980,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -1988,7 +1988,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -1996,7 +1996,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -2023,7 +2023,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2031,7 +2031,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -2039,7 +2039,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -2069,7 +2069,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2077,7 +2077,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -2085,7 +2085,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -2110,7 +2110,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2118,7 +2118,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -2126,7 +2126,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -2159,7 +2159,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2245,7 +2245,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2278,7 +2278,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2286,7 +2286,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: identityUserFlowAttributeAssignment-id
           in: path
-          description: 'key: id of identityUserFlowAttributeAssignment'
+          description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
           style: simple
           schema:
@@ -2341,7 +2341,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2349,7 +2349,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: identityUserFlowAttributeAssignment-id
           in: path
-          description: 'key: id of identityUserFlowAttributeAssignment'
+          description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
           style: simple
           schema:
@@ -2376,7 +2376,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2384,7 +2384,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: identityUserFlowAttributeAssignment-id
           in: path
-          description: 'key: id of identityUserFlowAttributeAssignment'
+          description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
           style: simple
           schema:
@@ -2412,7 +2412,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2420,7 +2420,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: identityUserFlowAttributeAssignment-id
           in: path
-          description: 'key: id of identityUserFlowAttributeAssignment'
+          description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
           style: simple
           schema:
@@ -2473,7 +2473,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2502,7 +2502,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2535,7 +2535,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2604,7 +2604,7 @@ paths:
       parameters:
         - name: b2cIdentityUserFlow-id
           in: path
-          description: 'key: id of b2cIdentityUserFlow'
+          description: The unique identifier of b2cIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2612,7 +2612,7 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
         - name: identityProviderBase-id
           in: path
-          description: 'key: id of identityProviderBase'
+          description: The unique identifier of identityProviderBase
           required: true
           style: simple
           schema:
@@ -2768,7 +2768,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2827,7 +2827,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2854,7 +2854,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2885,7 +2885,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2969,7 +2969,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -2977,7 +2977,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: identityProvider-id
           in: path
-          description: 'key: id of identityProvider'
+          description: The unique identifier of identityProvider
           required: true
           style: simple
           schema:
@@ -3040,7 +3040,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3115,7 +3115,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3148,7 +3148,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3156,7 +3156,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3210,7 +3210,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3218,7 +3218,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3245,7 +3245,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3253,7 +3253,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3284,7 +3284,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3292,7 +3292,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3357,7 +3357,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3365,7 +3365,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3398,7 +3398,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3406,7 +3406,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3414,7 +3414,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3462,7 +3462,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3470,7 +3470,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3478,7 +3478,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3505,7 +3505,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3513,7 +3513,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3521,7 +3521,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3551,7 +3551,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3559,7 +3559,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3567,7 +3567,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3592,7 +3592,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3600,7 +3600,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3608,7 +3608,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3641,7 +3641,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3649,7 +3649,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3714,7 +3714,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3722,7 +3722,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3755,7 +3755,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3763,7 +3763,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3771,7 +3771,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3819,7 +3819,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3827,7 +3827,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3835,7 +3835,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3862,7 +3862,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3870,7 +3870,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3878,7 +3878,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3908,7 +3908,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3916,7 +3916,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3924,7 +3924,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3949,7 +3949,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -3957,7 +3957,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: userFlowLanguageConfiguration-id
           in: path
-          description: 'key: id of userFlowLanguageConfiguration'
+          description: The unique identifier of userFlowLanguageConfiguration
           required: true
           style: simple
           schema:
@@ -3965,7 +3965,7 @@ paths:
           x-ms-docs-key-type: userFlowLanguageConfiguration
         - name: userFlowLanguagePage-id
           in: path
-          description: 'key: id of userFlowLanguagePage'
+          description: The unique identifier of userFlowLanguagePage
           required: true
           style: simple
           schema:
@@ -3998,7 +3998,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4084,7 +4084,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4117,7 +4117,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4125,7 +4125,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: identityUserFlowAttributeAssignment-id
           in: path
-          description: 'key: id of identityUserFlowAttributeAssignment'
+          description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
           style: simple
           schema:
@@ -4180,7 +4180,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4188,7 +4188,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: identityUserFlowAttributeAssignment-id
           in: path
-          description: 'key: id of identityUserFlowAttributeAssignment'
+          description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
           style: simple
           schema:
@@ -4215,7 +4215,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4223,7 +4223,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: identityUserFlowAttributeAssignment-id
           in: path
-          description: 'key: id of identityUserFlowAttributeAssignment'
+          description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
           style: simple
           schema:
@@ -4251,7 +4251,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4259,7 +4259,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: identityUserFlowAttributeAssignment-id
           in: path
-          description: 'key: id of identityUserFlowAttributeAssignment'
+          description: The unique identifier of identityUserFlowAttributeAssignment
           required: true
           style: simple
           schema:
@@ -4312,7 +4312,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4341,7 +4341,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4374,7 +4374,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4443,7 +4443,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4451,7 +4451,7 @@ paths:
           x-ms-docs-key-type: b2xIdentityUserFlow
         - name: identityProviderBase-id
           in: path
-          description: 'key: id of identityProviderBase'
+          description: The unique identifier of identityProviderBase
           required: true
           style: simple
           schema:
@@ -4485,7 +4485,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4528,7 +4528,7 @@ paths:
       parameters:
         - name: b2xIdentityUserFlow-id
           in: path
-          description: 'key: id of b2xIdentityUserFlow'
+          description: The unique identifier of b2xIdentityUserFlow
           required: true
           style: simple
           schema:
@@ -4739,7 +4739,7 @@ paths:
       parameters:
         - name: authenticationContextClassReference-id
           in: path
-          description: 'key: id of authenticationContextClassReference'
+          description: The unique identifier of authenticationContextClassReference
           required: true
           style: simple
           schema:
@@ -4790,7 +4790,7 @@ paths:
       parameters:
         - name: authenticationContextClassReference-id
           in: path
-          description: 'key: id of authenticationContextClassReference'
+          description: The unique identifier of authenticationContextClassReference
           required: true
           style: simple
           schema:
@@ -4817,7 +4817,7 @@ paths:
       parameters:
         - name: authenticationContextClassReference-id
           in: path
-          description: 'key: id of authenticationContextClassReference'
+          description: The unique identifier of authenticationContextClassReference
           required: true
           style: simple
           schema:
@@ -5018,7 +5018,7 @@ paths:
       parameters:
         - name: authenticationMethodModeDetail-id
           in: path
-          description: 'key: id of authenticationMethodModeDetail'
+          description: The unique identifier of authenticationMethodModeDetail
           required: true
           style: simple
           schema:
@@ -5068,7 +5068,7 @@ paths:
       parameters:
         - name: authenticationMethodModeDetail-id
           in: path
-          description: 'key: id of authenticationMethodModeDetail'
+          description: The unique identifier of authenticationMethodModeDetail
           required: true
           style: simple
           schema:
@@ -5095,7 +5095,7 @@ paths:
       parameters:
         - name: authenticationMethodModeDetail-id
           in: path
-          description: 'key: id of authenticationMethodModeDetail'
+          description: The unique identifier of authenticationMethodModeDetail
           required: true
           style: simple
           schema:
@@ -5227,7 +5227,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5284,7 +5284,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5311,7 +5311,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5342,7 +5342,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5414,7 +5414,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5447,7 +5447,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5455,7 +5455,7 @@ paths:
           x-ms-docs-key-type: authenticationStrengthPolicy
         - name: authenticationCombinationConfiguration-id
           in: path
-          description: 'key: id of authenticationCombinationConfiguration'
+          description: The unique identifier of authenticationCombinationConfiguration
           required: true
           style: simple
           schema:
@@ -5504,7 +5504,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5512,7 +5512,7 @@ paths:
           x-ms-docs-key-type: authenticationStrengthPolicy
         - name: authenticationCombinationConfiguration-id
           in: path
-          description: 'key: id of authenticationCombinationConfiguration'
+          description: The unique identifier of authenticationCombinationConfiguration
           required: true
           style: simple
           schema:
@@ -5539,7 +5539,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5547,7 +5547,7 @@ paths:
           x-ms-docs-key-type: authenticationStrengthPolicy
         - name: authenticationCombinationConfiguration-id
           in: path
-          description: 'key: id of authenticationCombinationConfiguration'
+          description: The unique identifier of authenticationCombinationConfiguration
           required: true
           style: simple
           schema:
@@ -5578,7 +5578,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5617,7 +5617,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -5945,7 +5945,7 @@ paths:
       parameters:
         - name: authenticationMethodModeDetail-id
           in: path
-          description: 'key: id of authenticationMethodModeDetail'
+          description: The unique identifier of authenticationMethodModeDetail
           required: true
           style: simple
           schema:
@@ -6001,7 +6001,7 @@ paths:
       parameters:
         - name: authenticationMethodModeDetail-id
           in: path
-          description: 'key: id of authenticationMethodModeDetail'
+          description: The unique identifier of authenticationMethodModeDetail
           required: true
           style: simple
           schema:
@@ -6034,7 +6034,7 @@ paths:
       parameters:
         - name: authenticationMethodModeDetail-id
           in: path
-          description: 'key: id of authenticationMethodModeDetail'
+          description: The unique identifier of authenticationMethodModeDetail
           required: true
           style: simple
           schema:
@@ -6184,7 +6184,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6247,7 +6247,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6280,7 +6280,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6317,7 +6317,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6395,7 +6395,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6434,7 +6434,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6442,7 +6442,7 @@ paths:
           x-ms-docs-key-type: authenticationStrengthPolicy
         - name: authenticationCombinationConfiguration-id
           in: path
-          description: 'key: id of authenticationCombinationConfiguration'
+          description: The unique identifier of authenticationCombinationConfiguration
           required: true
           style: simple
           schema:
@@ -6497,7 +6497,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6505,7 +6505,7 @@ paths:
           x-ms-docs-key-type: authenticationStrengthPolicy
         - name: authenticationCombinationConfiguration-id
           in: path
-          description: 'key: id of authenticationCombinationConfiguration'
+          description: The unique identifier of authenticationCombinationConfiguration
           required: true
           style: simple
           schema:
@@ -6538,7 +6538,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6546,7 +6546,7 @@ paths:
           x-ms-docs-key-type: authenticationStrengthPolicy
         - name: authenticationCombinationConfiguration-id
           in: path
-          description: 'key: id of authenticationCombinationConfiguration'
+          description: The unique identifier of authenticationCombinationConfiguration
           required: true
           style: simple
           schema:
@@ -6583,7 +6583,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6628,7 +6628,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -6855,7 +6855,7 @@ paths:
       parameters:
         - name: namedLocation-id
           in: path
-          description: 'key: id of namedLocation'
+          description: The unique identifier of namedLocation
           required: true
           style: simple
           schema:
@@ -6906,7 +6906,7 @@ paths:
       parameters:
         - name: namedLocation-id
           in: path
-          description: 'key: id of namedLocation'
+          description: The unique identifier of namedLocation
           required: true
           style: simple
           schema:
@@ -6933,7 +6933,7 @@ paths:
       parameters:
         - name: namedLocation-id
           in: path
-          description: 'key: id of namedLocation'
+          description: The unique identifier of namedLocation
           required: true
           style: simple
           schema:
@@ -7073,7 +7073,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: id of conditionalAccessPolicy'
+          description: The unique identifier of conditionalAccessPolicy
           required: true
           style: simple
           schema:
@@ -7129,7 +7129,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: id of conditionalAccessPolicy'
+          description: The unique identifier of conditionalAccessPolicy
           required: true
           style: simple
           schema:
@@ -7156,7 +7156,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: id of conditionalAccessPolicy'
+          description: The unique identifier of conditionalAccessPolicy
           required: true
           style: simple
           schema:
@@ -7258,7 +7258,7 @@ paths:
       parameters:
         - name: conditionalAccessTemplate-id
           in: path
-          description: 'key: id of conditionalAccessTemplate'
+          description: The unique identifier of conditionalAccessTemplate
           required: true
           style: simple
           schema:
@@ -7497,7 +7497,7 @@ paths:
       parameters:
         - name: customAuthenticationExtension-id
           in: path
-          description: 'key: id of customAuthenticationExtension'
+          description: The unique identifier of customAuthenticationExtension
           required: true
           style: simple
           schema:
@@ -7550,7 +7550,7 @@ paths:
       parameters:
         - name: customAuthenticationExtension-id
           in: path
-          description: 'key: id of customAuthenticationExtension'
+          description: The unique identifier of customAuthenticationExtension
           required: true
           style: simple
           schema:
@@ -7577,7 +7577,7 @@ paths:
       parameters:
         - name: customAuthenticationExtension-id
           in: path
-          description: 'key: id of customAuthenticationExtension'
+          description: The unique identifier of customAuthenticationExtension
           required: true
           style: simple
           schema:
@@ -7604,7 +7604,7 @@ paths:
       parameters:
         - name: customAuthenticationExtension-id
           in: path
-          description: 'key: id of customAuthenticationExtension'
+          description: The unique identifier of customAuthenticationExtension
           required: true
           style: simple
           schema:
@@ -7751,7 +7751,7 @@ paths:
       parameters:
         - name: identityProviderBase-id
           in: path
-          description: 'key: id of identityProviderBase'
+          description: The unique identifier of identityProviderBase
           required: true
           style: simple
           schema:
@@ -7800,7 +7800,7 @@ paths:
       parameters:
         - name: identityProviderBase-id
           in: path
-          description: 'key: id of identityProviderBase'
+          description: The unique identifier of identityProviderBase
           required: true
           style: simple
           schema:
@@ -7827,7 +7827,7 @@ paths:
       parameters:
         - name: identityProviderBase-id
           in: path
-          description: 'key: id of identityProviderBase'
+          description: The unique identifier of identityProviderBase
           required: true
           style: simple
           schema:
@@ -7991,7 +7991,7 @@ paths:
       parameters:
         - name: identityUserFlowAttribute-id
           in: path
-          description: 'key: id of identityUserFlowAttribute'
+          description: The unique identifier of identityUserFlowAttribute
           required: true
           style: simple
           schema:
@@ -8043,7 +8043,7 @@ paths:
       parameters:
         - name: identityUserFlowAttribute-id
           in: path
-          description: 'key: id of identityUserFlowAttribute'
+          description: The unique identifier of identityUserFlowAttribute
           required: true
           style: simple
           schema:
@@ -8070,7 +8070,7 @@ paths:
       parameters:
         - name: identityUserFlowAttribute-id
           in: path
-          description: 'key: id of identityUserFlowAttribute'
+          description: The unique identifier of identityUserFlowAttribute
           required: true
           style: simple
           schema:
@@ -8203,7 +8203,7 @@ paths:
       parameters:
         - name: identityUserFlow-id
           in: path
-          description: 'key: id of identityUserFlow'
+          description: The unique identifier of identityUserFlow
           required: true
           style: simple
           schema:
@@ -8259,7 +8259,7 @@ paths:
       parameters:
         - name: identityUserFlow-id
           in: path
-          description: 'key: id of identityUserFlow'
+          description: The unique identifier of identityUserFlow
           required: true
           style: simple
           schema:
@@ -8292,7 +8292,7 @@ paths:
       parameters:
         - name: identityUserFlow-id
           in: path
-          description: 'key: id of identityUserFlow'
+          description: The unique identifier of identityUserFlow
           required: true
           style: simple
           schema:
@@ -8536,7 +8536,7 @@ paths:
       parameters:
         - name: riskDetection-id
           in: path
-          description: 'key: id of riskDetection'
+          description: The unique identifier of riskDetection
           required: true
           style: simple
           schema:
@@ -8604,7 +8604,7 @@ paths:
       parameters:
         - name: riskDetection-id
           in: path
-          description: 'key: id of riskDetection'
+          description: The unique identifier of riskDetection
           required: true
           style: simple
           schema:
@@ -8631,7 +8631,7 @@ paths:
       parameters:
         - name: riskDetection-id
           in: path
-          description: 'key: id of riskDetection'
+          description: The unique identifier of riskDetection
           required: true
           style: simple
           schema:
@@ -8772,7 +8772,7 @@ paths:
       parameters:
         - name: riskyServicePrincipal-id
           in: path
-          description: 'key: id of riskyServicePrincipal'
+          description: The unique identifier of riskyServicePrincipal
           required: true
           style: simple
           schema:
@@ -8831,7 +8831,7 @@ paths:
       parameters:
         - name: riskyServicePrincipal-id
           in: path
-          description: 'key: id of riskyServicePrincipal'
+          description: The unique identifier of riskyServicePrincipal
           required: true
           style: simple
           schema:
@@ -8858,7 +8858,7 @@ paths:
       parameters:
         - name: riskyServicePrincipal-id
           in: path
-          description: 'key: id of riskyServicePrincipal'
+          description: The unique identifier of riskyServicePrincipal
           required: true
           style: simple
           schema:
@@ -8889,7 +8889,7 @@ paths:
       parameters:
         - name: riskyServicePrincipal-id
           in: path
-          description: 'key: id of riskyServicePrincipal'
+          description: The unique identifier of riskyServicePrincipal
           required: true
           style: simple
           schema:
@@ -8992,7 +8992,7 @@ paths:
       parameters:
         - name: riskyServicePrincipal-id
           in: path
-          description: 'key: id of riskyServicePrincipal'
+          description: The unique identifier of riskyServicePrincipal
           required: true
           style: simple
           schema:
@@ -9025,7 +9025,7 @@ paths:
       parameters:
         - name: riskyServicePrincipal-id
           in: path
-          description: 'key: id of riskyServicePrincipal'
+          description: The unique identifier of riskyServicePrincipal
           required: true
           style: simple
           schema:
@@ -9033,7 +9033,7 @@ paths:
           x-ms-docs-key-type: riskyServicePrincipal
         - name: riskyServicePrincipalHistoryItem-id
           in: path
-          description: 'key: id of riskyServicePrincipalHistoryItem'
+          description: The unique identifier of riskyServicePrincipalHistoryItem
           required: true
           style: simple
           schema:
@@ -9095,7 +9095,7 @@ paths:
       parameters:
         - name: riskyServicePrincipal-id
           in: path
-          description: 'key: id of riskyServicePrincipal'
+          description: The unique identifier of riskyServicePrincipal
           required: true
           style: simple
           schema:
@@ -9103,7 +9103,7 @@ paths:
           x-ms-docs-key-type: riskyServicePrincipal
         - name: riskyServicePrincipalHistoryItem-id
           in: path
-          description: 'key: id of riskyServicePrincipalHistoryItem'
+          description: The unique identifier of riskyServicePrincipalHistoryItem
           required: true
           style: simple
           schema:
@@ -9130,7 +9130,7 @@ paths:
       parameters:
         - name: riskyServicePrincipal-id
           in: path
-          description: 'key: id of riskyServicePrincipal'
+          description: The unique identifier of riskyServicePrincipal
           required: true
           style: simple
           schema:
@@ -9138,7 +9138,7 @@ paths:
           x-ms-docs-key-type: riskyServicePrincipal
         - name: riskyServicePrincipalHistoryItem-id
           in: path
-          description: 'key: id of riskyServicePrincipalHistoryItem'
+          description: The unique identifier of riskyServicePrincipalHistoryItem
           required: true
           style: simple
           schema:
@@ -9338,7 +9338,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: id of riskyUser'
+          description: The unique identifier of riskyUser
           required: true
           style: simple
           schema:
@@ -9396,7 +9396,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: id of riskyUser'
+          description: The unique identifier of riskyUser
           required: true
           style: simple
           schema:
@@ -9423,7 +9423,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: id of riskyUser'
+          description: The unique identifier of riskyUser
           required: true
           style: simple
           schema:
@@ -9454,7 +9454,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: id of riskyUser'
+          description: The unique identifier of riskyUser
           required: true
           style: simple
           schema:
@@ -9554,7 +9554,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: id of riskyUser'
+          description: The unique identifier of riskyUser
           required: true
           style: simple
           schema:
@@ -9586,7 +9586,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: id of riskyUser'
+          description: The unique identifier of riskyUser
           required: true
           style: simple
           schema:
@@ -9594,7 +9594,7 @@ paths:
           x-ms-docs-key-type: riskyUser
         - name: riskyUserHistoryItem-id
           in: path
-          description: 'key: id of riskyUserHistoryItem'
+          description: The unique identifier of riskyUserHistoryItem
           required: true
           style: simple
           schema:
@@ -9655,7 +9655,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: id of riskyUser'
+          description: The unique identifier of riskyUser
           required: true
           style: simple
           schema:
@@ -9663,7 +9663,7 @@ paths:
           x-ms-docs-key-type: riskyUser
         - name: riskyUserHistoryItem-id
           in: path
-          description: 'key: id of riskyUserHistoryItem'
+          description: The unique identifier of riskyUserHistoryItem
           required: true
           style: simple
           schema:
@@ -9690,7 +9690,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: id of riskyUser'
+          description: The unique identifier of riskyUser
           required: true
           style: simple
           schema:
@@ -9698,7 +9698,7 @@ paths:
           x-ms-docs-key-type: riskyUser
         - name: riskyUserHistoryItem-id
           in: path
-          description: 'key: id of riskyUserHistoryItem'
+          description: The unique identifier of riskyUserHistoryItem
           required: true
           style: simple
           schema:
@@ -9932,7 +9932,7 @@ paths:
       parameters:
         - name: servicePrincipalRiskDetection-id
           in: path
-          description: 'key: id of servicePrincipalRiskDetection'
+          description: The unique identifier of servicePrincipalRiskDetection
           required: true
           style: simple
           schema:
@@ -10000,7 +10000,7 @@ paths:
       parameters:
         - name: servicePrincipalRiskDetection-id
           in: path
-          description: 'key: id of servicePrincipalRiskDetection'
+          description: The unique identifier of servicePrincipalRiskDetection
           required: true
           style: simple
           schema:
@@ -10027,7 +10027,7 @@ paths:
       parameters:
         - name: servicePrincipalRiskDetection-id
           in: path
-          description: 'key: id of servicePrincipalRiskDetection'
+          description: The unique identifier of servicePrincipalRiskDetection
           required: true
           style: simple
           schema:
@@ -10170,7 +10170,7 @@ paths:
       parameters:
         - name: identityProvider-id
           in: path
-          description: 'key: id of identityProvider'
+          description: The unique identifier of identityProvider
           required: true
           style: simple
           schema:
@@ -10232,7 +10232,7 @@ paths:
       parameters:
         - name: identityProvider-id
           in: path
-          description: 'key: id of identityProvider'
+          description: The unique identifier of identityProvider
           required: true
           style: simple
           schema:
@@ -10269,7 +10269,7 @@ paths:
       parameters:
         - name: identityProvider-id
           in: path
-          description: 'key: id of identityProvider'
+          description: The unique identifier of identityProvider
           required: true
           style: simple
           schema:
@@ -10533,7 +10533,7 @@ paths:
       parameters:
         - name: bitlockerRecoveryKey-id
           in: path
-          description: 'key: id of bitlockerRecoveryKey'
+          description: The unique identifier of bitlockerRecoveryKey
           required: true
           style: simple
           schema:
@@ -10669,7 +10669,7 @@ paths:
       parameters:
         - name: dataLossPreventionPolicy-id
           in: path
-          description: 'key: id of dataLossPreventionPolicy'
+          description: The unique identifier of dataLossPreventionPolicy
           required: true
           style: simple
           schema:
@@ -10718,7 +10718,7 @@ paths:
       parameters:
         - name: dataLossPreventionPolicy-id
           in: path
-          description: 'key: id of dataLossPreventionPolicy'
+          description: The unique identifier of dataLossPreventionPolicy
           required: true
           style: simple
           schema:
@@ -10745,7 +10745,7 @@ paths:
       parameters:
         - name: dataLossPreventionPolicy-id
           in: path
-          description: 'key: id of dataLossPreventionPolicy'
+          description: The unique identifier of dataLossPreventionPolicy
           required: true
           style: simple
           schema:
@@ -11171,7 +11171,7 @@ paths:
       parameters:
         - name: informationProtectionLabel-id
           in: path
-          description: 'key: id of informationProtectionLabel'
+          description: The unique identifier of informationProtectionLabel
           required: true
           style: simple
           schema:
@@ -11232,7 +11232,7 @@ paths:
       parameters:
         - name: informationProtectionLabel-id
           in: path
-          description: 'key: id of informationProtectionLabel'
+          description: The unique identifier of informationProtectionLabel
           required: true
           style: simple
           schema:
@@ -11265,7 +11265,7 @@ paths:
       parameters:
         - name: informationProtectionLabel-id
           in: path
-          description: 'key: id of informationProtectionLabel'
+          description: The unique identifier of informationProtectionLabel
           required: true
           style: simple
           schema:
@@ -11615,7 +11615,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11677,7 +11677,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11704,7 +11704,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11731,7 +11731,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11834,7 +11834,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11866,7 +11866,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11874,7 +11874,7 @@ paths:
           x-ms-docs-key-type: sensitivityLabel
         - name: sensitivityLabel-id1
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11936,7 +11936,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11944,7 +11944,7 @@ paths:
           x-ms-docs-key-type: sensitivityLabel
         - name: sensitivityLabel-id1
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11971,7 +11971,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11979,7 +11979,7 @@ paths:
           x-ms-docs-key-type: sensitivityLabel
         - name: sensitivityLabel-id1
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -12006,7 +12006,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -12271,7 +12271,7 @@ paths:
       parameters:
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -12328,7 +12328,7 @@ paths:
       parameters:
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -12355,7 +12355,7 @@ paths:
       parameters:
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -12383,7 +12383,7 @@ paths:
       parameters:
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -12457,7 +12457,7 @@ paths:
       parameters:
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -12490,7 +12490,7 @@ paths:
       parameters:
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -12498,7 +12498,7 @@ paths:
           x-ms-docs-key-type: threatAssessmentRequest
         - name: threatAssessmentResult-id
           in: path
-          description: 'key: id of threatAssessmentResult'
+          description: The unique identifier of threatAssessmentResult
           required: true
           style: simple
           schema:
@@ -12549,7 +12549,7 @@ paths:
       parameters:
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -12557,7 +12557,7 @@ paths:
           x-ms-docs-key-type: threatAssessmentRequest
         - name: threatAssessmentResult-id
           in: path
-          description: 'key: id of threatAssessmentResult'
+          description: The unique identifier of threatAssessmentResult
           required: true
           style: simple
           schema:
@@ -12584,7 +12584,7 @@ paths:
       parameters:
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -12592,7 +12592,7 @@ paths:
           x-ms-docs-key-type: threatAssessmentRequest
         - name: threatAssessmentResult-id
           in: path
-          description: 'key: id of threatAssessmentResult'
+          description: The unique identifier of threatAssessmentResult
           required: true
           style: simple
           schema:
@@ -12732,7 +12732,7 @@ paths:
       parameters:
         - name: invitation-id
           in: path
-          description: 'key: id of invitation'
+          description: The unique identifier of invitation
           required: true
           style: simple
           schema:
@@ -12791,7 +12791,7 @@ paths:
       parameters:
         - name: invitation-id
           in: path
-          description: 'key: id of invitation'
+          description: The unique identifier of invitation
           required: true
           style: simple
           schema:
@@ -12818,7 +12818,7 @@ paths:
       parameters:
         - name: invitation-id
           in: path
-          description: 'key: id of invitation'
+          description: The unique identifier of invitation
           required: true
           style: simple
           schema:
@@ -12846,7 +12846,7 @@ paths:
       parameters:
         - name: invitation-id
           in: path
-          description: 'key: id of invitation'
+          description: The unique identifier of invitation
           required: true
           style: simple
           schema:
@@ -13217,7 +13217,7 @@ paths:
       parameters:
         - name: oAuth2PermissionGrant-id
           in: path
-          description: 'key: id of oAuth2PermissionGrant'
+          description: The unique identifier of oAuth2PermissionGrant
           required: true
           style: simple
           schema:
@@ -13276,7 +13276,7 @@ paths:
       parameters:
         - name: oAuth2PermissionGrant-id
           in: path
-          description: 'key: id of oAuth2PermissionGrant'
+          description: The unique identifier of oAuth2PermissionGrant
           required: true
           style: simple
           schema:
@@ -13307,7 +13307,7 @@ paths:
       parameters:
         - name: oAuth2PermissionGrant-id
           in: path
-          description: 'key: id of oAuth2PermissionGrant'
+          description: The unique identifier of oAuth2PermissionGrant
           required: true
           style: simple
           schema:
@@ -13423,7 +13423,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -13493,7 +13493,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: id of organization'
+          description: The unique identifier of organization
           required: true
           style: simple
           schema:
@@ -13501,7 +13501,7 @@ paths:
           x-ms-docs-key-type: organization
         - name: certificateBasedAuthConfiguration-id
           in: path
-          description: 'key: id of certificateBasedAuthConfiguration'
+          description: The unique identifier of certificateBasedAuthConfiguration
           required: true
           style: simple
           schema:
@@ -13857,7 +13857,7 @@ paths:
       parameters:
         - name: activityBasedTimeoutPolicy-id
           in: path
-          description: 'key: id of activityBasedTimeoutPolicy'
+          description: The unique identifier of activityBasedTimeoutPolicy
           required: true
           style: simple
           schema:
@@ -13912,7 +13912,7 @@ paths:
       parameters:
         - name: activityBasedTimeoutPolicy-id
           in: path
-          description: 'key: id of activityBasedTimeoutPolicy'
+          description: The unique identifier of activityBasedTimeoutPolicy
           required: true
           style: simple
           schema:
@@ -13939,7 +13939,7 @@ paths:
       parameters:
         - name: activityBasedTimeoutPolicy-id
           in: path
-          description: 'key: id of activityBasedTimeoutPolicy'
+          description: The unique identifier of activityBasedTimeoutPolicy
           required: true
           style: simple
           schema:
@@ -14163,7 +14163,7 @@ paths:
       parameters:
         - name: appManagementPolicy-id
           in: path
-          description: 'key: id of appManagementPolicy'
+          description: The unique identifier of appManagementPolicy
           required: true
           style: simple
           schema:
@@ -14218,7 +14218,7 @@ paths:
       parameters:
         - name: appManagementPolicy-id
           in: path
-          description: 'key: id of appManagementPolicy'
+          description: The unique identifier of appManagementPolicy
           required: true
           style: simple
           schema:
@@ -14245,7 +14245,7 @@ paths:
       parameters:
         - name: appManagementPolicy-id
           in: path
-          description: 'key: id of appManagementPolicy'
+          description: The unique identifier of appManagementPolicy
           required: true
           style: simple
           schema:
@@ -14276,7 +14276,7 @@ paths:
       parameters:
         - name: appManagementPolicy-id
           in: path
-          description: 'key: id of appManagementPolicy'
+          description: The unique identifier of appManagementPolicy
           required: true
           style: simple
           schema:
@@ -14345,7 +14345,7 @@ paths:
       parameters:
         - name: appManagementPolicy-id
           in: path
-          description: 'key: id of appManagementPolicy'
+          description: The unique identifier of appManagementPolicy
           required: true
           style: simple
           schema:
@@ -14353,7 +14353,7 @@ paths:
           x-ms-docs-key-type: appManagementPolicy
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -14673,7 +14673,7 @@ paths:
       parameters:
         - name: authenticationMethodConfiguration-id
           in: path
-          description: 'key: id of authenticationMethodConfiguration'
+          description: The unique identifier of authenticationMethodConfiguration
           required: true
           style: simple
           schema:
@@ -14723,7 +14723,7 @@ paths:
       parameters:
         - name: authenticationMethodConfiguration-id
           in: path
-          description: 'key: id of authenticationMethodConfiguration'
+          description: The unique identifier of authenticationMethodConfiguration
           required: true
           style: simple
           schema:
@@ -14750,7 +14750,7 @@ paths:
       parameters:
         - name: authenticationMethodConfiguration-id
           in: path
-          description: 'key: id of authenticationMethodConfiguration'
+          description: The unique identifier of authenticationMethodConfiguration
           required: true
           style: simple
           schema:
@@ -14889,7 +14889,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -14946,7 +14946,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -14973,7 +14973,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -15004,7 +15004,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -15076,7 +15076,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -15109,7 +15109,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -15117,7 +15117,7 @@ paths:
           x-ms-docs-key-type: authenticationStrengthPolicy
         - name: authenticationCombinationConfiguration-id
           in: path
-          description: 'key: id of authenticationCombinationConfiguration'
+          description: The unique identifier of authenticationCombinationConfiguration
           required: true
           style: simple
           schema:
@@ -15166,7 +15166,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -15174,7 +15174,7 @@ paths:
           x-ms-docs-key-type: authenticationStrengthPolicy
         - name: authenticationCombinationConfiguration-id
           in: path
-          description: 'key: id of authenticationCombinationConfiguration'
+          description: The unique identifier of authenticationCombinationConfiguration
           required: true
           style: simple
           schema:
@@ -15201,7 +15201,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -15209,7 +15209,7 @@ paths:
           x-ms-docs-key-type: authenticationStrengthPolicy
         - name: authenticationCombinationConfiguration-id
           in: path
-          description: 'key: id of authenticationCombinationConfiguration'
+          description: The unique identifier of authenticationCombinationConfiguration
           required: true
           style: simple
           schema:
@@ -15240,7 +15240,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -15279,7 +15279,7 @@ paths:
       parameters:
         - name: authenticationStrengthPolicy-id
           in: path
-          description: 'key: id of authenticationStrengthPolicy'
+          description: The unique identifier of authenticationStrengthPolicy
           required: true
           style: simple
           schema:
@@ -15525,7 +15525,7 @@ paths:
       parameters:
         - name: authorizationPolicy-id
           in: path
-          description: 'key: id of authorizationPolicy'
+          description: The unique identifier of authorizationPolicy
           required: true
           style: simple
           schema:
@@ -15588,7 +15588,7 @@ paths:
       parameters:
         - name: authorizationPolicy-id
           in: path
-          description: 'key: id of authorizationPolicy'
+          description: The unique identifier of authorizationPolicy
           required: true
           style: simple
           schema:
@@ -15615,7 +15615,7 @@ paths:
       parameters:
         - name: authorizationPolicy-id
           in: path
-          description: 'key: id of authorizationPolicy'
+          description: The unique identifier of authorizationPolicy
           required: true
           style: simple
           schema:
@@ -15642,7 +15642,7 @@ paths:
       parameters:
         - name: authorizationPolicy-id
           in: path
-          description: 'key: id of authorizationPolicy'
+          description: The unique identifier of authorizationPolicy
           required: true
           style: simple
           schema:
@@ -15713,7 +15713,7 @@ paths:
       parameters:
         - name: authorizationPolicy-id
           in: path
-          description: 'key: id of authorizationPolicy'
+          description: The unique identifier of authorizationPolicy
           required: true
           style: simple
           schema:
@@ -15745,7 +15745,7 @@ paths:
       parameters:
         - name: authorizationPolicy-id
           in: path
-          description: 'key: id of authorizationPolicy'
+          description: The unique identifier of authorizationPolicy
           required: true
           style: simple
           schema:
@@ -15753,7 +15753,7 @@ paths:
           x-ms-docs-key-type: authorizationPolicy
         - name: defaultUserRoleOverride-id
           in: path
-          description: 'key: id of defaultUserRoleOverride'
+          description: The unique identifier of defaultUserRoleOverride
           required: true
           style: simple
           schema:
@@ -15803,7 +15803,7 @@ paths:
       parameters:
         - name: authorizationPolicy-id
           in: path
-          description: 'key: id of authorizationPolicy'
+          description: The unique identifier of authorizationPolicy
           required: true
           style: simple
           schema:
@@ -15811,7 +15811,7 @@ paths:
           x-ms-docs-key-type: authorizationPolicy
         - name: defaultUserRoleOverride-id
           in: path
-          description: 'key: id of defaultUserRoleOverride'
+          description: The unique identifier of defaultUserRoleOverride
           required: true
           style: simple
           schema:
@@ -15838,7 +15838,7 @@ paths:
       parameters:
         - name: authorizationPolicy-id
           in: path
-          description: 'key: id of authorizationPolicy'
+          description: The unique identifier of authorizationPolicy
           required: true
           style: simple
           schema:
@@ -15846,7 +15846,7 @@ paths:
           x-ms-docs-key-type: authorizationPolicy
         - name: defaultUserRoleOverride-id
           in: path
-          description: 'key: id of defaultUserRoleOverride'
+          description: The unique identifier of defaultUserRoleOverride
           required: true
           style: simple
           schema:
@@ -16067,7 +16067,7 @@ paths:
       parameters:
         - name: claimsMappingPolicy-id
           in: path
-          description: 'key: id of claimsMappingPolicy'
+          description: The unique identifier of claimsMappingPolicy
           required: true
           style: simple
           schema:
@@ -16122,7 +16122,7 @@ paths:
       parameters:
         - name: claimsMappingPolicy-id
           in: path
-          description: 'key: id of claimsMappingPolicy'
+          description: The unique identifier of claimsMappingPolicy
           required: true
           style: simple
           schema:
@@ -16149,7 +16149,7 @@ paths:
       parameters:
         - name: claimsMappingPolicy-id
           in: path
-          description: 'key: id of claimsMappingPolicy'
+          description: The unique identifier of claimsMappingPolicy
           required: true
           style: simple
           schema:
@@ -16282,7 +16282,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: id of conditionalAccessPolicy'
+          description: The unique identifier of conditionalAccessPolicy
           required: true
           style: simple
           schema:
@@ -16338,7 +16338,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: id of conditionalAccessPolicy'
+          description: The unique identifier of conditionalAccessPolicy
           required: true
           style: simple
           schema:
@@ -16365,7 +16365,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: id of conditionalAccessPolicy'
+          description: The unique identifier of conditionalAccessPolicy
           required: true
           style: simple
           schema:
@@ -16710,7 +16710,7 @@ paths:
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
           in: path
-          description: 'key: tenantId of crossTenantAccessPolicyConfigurationPartner'
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
           style: simple
           schema:
@@ -16768,7 +16768,7 @@ paths:
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
           in: path
-          description: 'key: tenantId of crossTenantAccessPolicyConfigurationPartner'
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
           style: simple
           schema:
@@ -16795,7 +16795,7 @@ paths:
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
           in: path
-          description: 'key: tenantId of crossTenantAccessPolicyConfigurationPartner'
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
           style: simple
           schema:
@@ -16826,7 +16826,7 @@ paths:
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
           in: path
-          description: 'key: tenantId of crossTenantAccessPolicyConfigurationPartner'
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
           style: simple
           schema:
@@ -16885,7 +16885,7 @@ paths:
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
           in: path
-          description: 'key: tenantId of crossTenantAccessPolicyConfigurationPartner'
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
           style: simple
           schema:
@@ -16921,7 +16921,7 @@ paths:
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
           in: path
-          description: 'key: tenantId of crossTenantAccessPolicyConfigurationPartner'
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
           required: true
           style: simple
           schema:
@@ -17369,7 +17369,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17424,7 +17424,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17451,7 +17451,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17479,7 +17479,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17547,7 +17547,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17579,7 +17579,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17587,7 +17587,7 @@ paths:
           x-ms-docs-key-type: featureRolloutPolicy
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -17622,7 +17622,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17665,7 +17665,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17692,7 +17692,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17750,7 +17750,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17795,7 +17795,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: id of featureRolloutPolicy'
+          description: The unique identifier of featureRolloutPolicy
           required: true
           style: simple
           schema:
@@ -17946,7 +17946,7 @@ paths:
       parameters:
         - name: homeRealmDiscoveryPolicy-id
           in: path
-          description: 'key: id of homeRealmDiscoveryPolicy'
+          description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
           style: simple
           schema:
@@ -18001,7 +18001,7 @@ paths:
       parameters:
         - name: homeRealmDiscoveryPolicy-id
           in: path
-          description: 'key: id of homeRealmDiscoveryPolicy'
+          description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
           style: simple
           schema:
@@ -18028,7 +18028,7 @@ paths:
       parameters:
         - name: homeRealmDiscoveryPolicy-id
           in: path
-          description: 'key: id of homeRealmDiscoveryPolicy'
+          description: The unique identifier of homeRealmDiscoveryPolicy
           required: true
           style: simple
           schema:
@@ -18252,7 +18252,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -18309,7 +18309,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -18336,7 +18336,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -18367,7 +18367,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -18642,7 +18642,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -18650,7 +18650,7 @@ paths:
           x-ms-docs-key-type: mobilityManagementPolicy
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -18688,7 +18688,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -18831,7 +18831,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -18961,7 +18961,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -19018,7 +19018,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -19045,7 +19045,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -19076,7 +19076,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -19351,7 +19351,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -19359,7 +19359,7 @@ paths:
           x-ms-docs-key-type: mobilityManagementPolicy
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -19397,7 +19397,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -19540,7 +19540,7 @@ paths:
       parameters:
         - name: mobilityManagementPolicy-id
           in: path
-          description: 'key: id of mobilityManagementPolicy'
+          description: The unique identifier of mobilityManagementPolicy
           required: true
           style: simple
           schema:
@@ -19665,7 +19665,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -19720,7 +19720,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -19747,7 +19747,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -19778,7 +19778,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -19874,7 +19874,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -19907,7 +19907,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -19915,7 +19915,7 @@ paths:
           x-ms-docs-key-type: permissionGrantPolicy
         - name: permissionGrantConditionSet-id
           in: path
-          description: 'key: id of permissionGrantConditionSet'
+          description: The unique identifier of permissionGrantConditionSet
           required: true
           style: simple
           schema:
@@ -19972,7 +19972,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -19980,7 +19980,7 @@ paths:
           x-ms-docs-key-type: permissionGrantPolicy
         - name: permissionGrantConditionSet-id
           in: path
-          description: 'key: id of permissionGrantConditionSet'
+          description: The unique identifier of permissionGrantConditionSet
           required: true
           style: simple
           schema:
@@ -20007,7 +20007,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -20015,7 +20015,7 @@ paths:
           x-ms-docs-key-type: permissionGrantPolicy
         - name: permissionGrantConditionSet-id
           in: path
-          description: 'key: id of permissionGrantConditionSet'
+          description: The unique identifier of permissionGrantConditionSet
           required: true
           style: simple
           schema:
@@ -20046,7 +20046,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -20142,7 +20142,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -20175,7 +20175,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -20183,7 +20183,7 @@ paths:
           x-ms-docs-key-type: permissionGrantPolicy
         - name: permissionGrantConditionSet-id
           in: path
-          description: 'key: id of permissionGrantConditionSet'
+          description: The unique identifier of permissionGrantConditionSet
           required: true
           style: simple
           schema:
@@ -20240,7 +20240,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -20248,7 +20248,7 @@ paths:
           x-ms-docs-key-type: permissionGrantPolicy
         - name: permissionGrantConditionSet-id
           in: path
-          description: 'key: id of permissionGrantConditionSet'
+          description: The unique identifier of permissionGrantConditionSet
           required: true
           style: simple
           schema:
@@ -20275,7 +20275,7 @@ paths:
       parameters:
         - name: permissionGrantPolicy-id
           in: path
-          description: 'key: id of permissionGrantPolicy'
+          description: The unique identifier of permissionGrantPolicy
           required: true
           style: simple
           schema:
@@ -20283,7 +20283,7 @@ paths:
           x-ms-docs-key-type: permissionGrantPolicy
         - name: permissionGrantConditionSet-id
           in: path
-          description: 'key: id of permissionGrantConditionSet'
+          description: The unique identifier of permissionGrantConditionSet
           required: true
           style: simple
           schema:
@@ -20420,7 +20420,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20479,7 +20479,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20506,7 +20506,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20537,7 +20537,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20605,7 +20605,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20638,7 +20638,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20646,7 +20646,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleManagementPolicy
         - name: unifiedRoleManagementPolicyRule-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyRule'
+          description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
           style: simple
           schema:
@@ -20695,7 +20695,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20703,7 +20703,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleManagementPolicy
         - name: unifiedRoleManagementPolicyRule-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyRule'
+          description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
           style: simple
           schema:
@@ -20730,7 +20730,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20738,7 +20738,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleManagementPolicy
         - name: unifiedRoleManagementPolicyRule-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyRule'
+          description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
           style: simple
           schema:
@@ -20769,7 +20769,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20837,7 +20837,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20870,7 +20870,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20878,7 +20878,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleManagementPolicy
         - name: unifiedRoleManagementPolicyRule-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyRule'
+          description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
           style: simple
           schema:
@@ -20927,7 +20927,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20935,7 +20935,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleManagementPolicy
         - name: unifiedRoleManagementPolicyRule-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyRule'
+          description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
           style: simple
           schema:
@@ -20962,7 +20962,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicy-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicy'
+          description: The unique identifier of unifiedRoleManagementPolicy
           required: true
           style: simple
           schema:
@@ -20970,7 +20970,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleManagementPolicy
         - name: unifiedRoleManagementPolicyRule-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyRule'
+          description: The unique identifier of unifiedRoleManagementPolicyRule
           required: true
           style: simple
           schema:
@@ -21096,7 +21096,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyAssignment'
+          description: The unique identifier of unifiedRoleManagementPolicyAssignment
           required: true
           style: simple
           schema:
@@ -21150,7 +21150,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyAssignment'
+          description: The unique identifier of unifiedRoleManagementPolicyAssignment
           required: true
           style: simple
           schema:
@@ -21177,7 +21177,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyAssignment'
+          description: The unique identifier of unifiedRoleManagementPolicyAssignment
           required: true
           style: simple
           schema:
@@ -21205,7 +21205,7 @@ paths:
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
           in: path
-          description: 'key: id of unifiedRoleManagementPolicyAssignment'
+          description: The unique identifier of unifiedRoleManagementPolicyAssignment
           required: true
           style: simple
           schema:
@@ -21361,7 +21361,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21417,7 +21417,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21444,7 +21444,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21471,7 +21471,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21551,7 +21551,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21583,7 +21583,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21591,7 +21591,7 @@ paths:
           x-ms-docs-key-type: servicePrincipalCreationPolicy
         - name: servicePrincipalCreationConditionSet-id
           in: path
-          description: 'key: id of servicePrincipalCreationConditionSet'
+          description: The unique identifier of servicePrincipalCreationConditionSet
           required: true
           style: simple
           schema:
@@ -21644,7 +21644,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21652,7 +21652,7 @@ paths:
           x-ms-docs-key-type: servicePrincipalCreationPolicy
         - name: servicePrincipalCreationConditionSet-id
           in: path
-          description: 'key: id of servicePrincipalCreationConditionSet'
+          description: The unique identifier of servicePrincipalCreationConditionSet
           required: true
           style: simple
           schema:
@@ -21679,7 +21679,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21687,7 +21687,7 @@ paths:
           x-ms-docs-key-type: servicePrincipalCreationPolicy
         - name: servicePrincipalCreationConditionSet-id
           in: path
-          description: 'key: id of servicePrincipalCreationConditionSet'
+          description: The unique identifier of servicePrincipalCreationConditionSet
           required: true
           style: simple
           schema:
@@ -21714,7 +21714,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21794,7 +21794,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21826,7 +21826,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21834,7 +21834,7 @@ paths:
           x-ms-docs-key-type: servicePrincipalCreationPolicy
         - name: servicePrincipalCreationConditionSet-id
           in: path
-          description: 'key: id of servicePrincipalCreationConditionSet'
+          description: The unique identifier of servicePrincipalCreationConditionSet
           required: true
           style: simple
           schema:
@@ -21887,7 +21887,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21895,7 +21895,7 @@ paths:
           x-ms-docs-key-type: servicePrincipalCreationPolicy
         - name: servicePrincipalCreationConditionSet-id
           in: path
-          description: 'key: id of servicePrincipalCreationConditionSet'
+          description: The unique identifier of servicePrincipalCreationConditionSet
           required: true
           style: simple
           schema:
@@ -21922,7 +21922,7 @@ paths:
       parameters:
         - name: servicePrincipalCreationPolicy-id
           in: path
-          description: 'key: id of servicePrincipalCreationPolicy'
+          description: The unique identifier of servicePrincipalCreationPolicy
           required: true
           style: simple
           schema:
@@ -21930,7 +21930,7 @@ paths:
           x-ms-docs-key-type: servicePrincipalCreationPolicy
         - name: servicePrincipalCreationConditionSet-id
           in: path
-          description: 'key: id of servicePrincipalCreationConditionSet'
+          description: The unique identifier of servicePrincipalCreationConditionSet
           required: true
           style: simple
           schema:
@@ -22063,7 +22063,7 @@ paths:
       parameters:
         - name: tokenIssuancePolicy-id
           in: path
-          description: 'key: id of tokenIssuancePolicy'
+          description: The unique identifier of tokenIssuancePolicy
           required: true
           style: simple
           schema:
@@ -22118,7 +22118,7 @@ paths:
       parameters:
         - name: tokenIssuancePolicy-id
           in: path
-          description: 'key: id of tokenIssuancePolicy'
+          description: The unique identifier of tokenIssuancePolicy
           required: true
           style: simple
           schema:
@@ -22145,7 +22145,7 @@ paths:
       parameters:
         - name: tokenIssuancePolicy-id
           in: path
-          description: 'key: id of tokenIssuancePolicy'
+          description: The unique identifier of tokenIssuancePolicy
           required: true
           style: simple
           schema:
@@ -22278,7 +22278,7 @@ paths:
       parameters:
         - name: tokenLifetimePolicy-id
           in: path
-          description: 'key: id of tokenLifetimePolicy'
+          description: The unique identifier of tokenLifetimePolicy
           required: true
           style: simple
           schema:
@@ -22333,7 +22333,7 @@ paths:
       parameters:
         - name: tokenLifetimePolicy-id
           in: path
-          description: 'key: id of tokenLifetimePolicy'
+          description: The unique identifier of tokenLifetimePolicy
           required: true
           style: simple
           schema:
@@ -22360,7 +22360,7 @@ paths:
       parameters:
         - name: tokenLifetimePolicy-id
           in: path
-          description: 'key: id of tokenLifetimePolicy'
+          description: The unique identifier of tokenLifetimePolicy
           required: true
           style: simple
           schema:
@@ -22540,7 +22540,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: id of trustFrameworkKeySet'
+          description: The unique identifier of trustFrameworkKeySet
           required: true
           style: simple
           schema:
@@ -22589,7 +22589,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: id of trustFrameworkKeySet'
+          description: The unique identifier of trustFrameworkKeySet
           required: true
           style: simple
           schema:
@@ -22616,7 +22616,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: id of trustFrameworkKeySet'
+          description: The unique identifier of trustFrameworkKeySet
           required: true
           style: simple
           schema:
@@ -22647,7 +22647,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: id of trustFrameworkKeySet'
+          description: The unique identifier of trustFrameworkKeySet
           required: true
           style: simple
           schema:
@@ -22696,7 +22696,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: id of trustFrameworkKeySet'
+          description: The unique identifier of trustFrameworkKeySet
           required: true
           style: simple
           schema:
@@ -22725,7 +22725,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: id of trustFrameworkKeySet'
+          description: The unique identifier of trustFrameworkKeySet
           required: true
           style: simple
           schema:
@@ -22767,7 +22767,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: id of trustFrameworkKeySet'
+          description: The unique identifier of trustFrameworkKeySet
           required: true
           style: simple
           schema:
@@ -22812,7 +22812,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: id of trustFrameworkKeySet'
+          description: The unique identifier of trustFrameworkKeySet
           required: true
           style: simple
           schema:
@@ -22945,7 +22945,7 @@ paths:
       parameters:
         - name: trustFrameworkPolicy-id
           in: path
-          description: 'key: id of trustFrameworkPolicy'
+          description: The unique identifier of trustFrameworkPolicy
           required: true
           style: simple
           schema:
@@ -22993,7 +22993,7 @@ paths:
       parameters:
         - name: trustFrameworkPolicy-id
           in: path
-          description: 'key: id of trustFrameworkPolicy'
+          description: The unique identifier of trustFrameworkPolicy
           required: true
           style: simple
           schema:
@@ -23020,7 +23020,7 @@ paths:
       parameters:
         - name: trustFrameworkPolicy-id
           in: path
-          description: 'key: id of trustFrameworkPolicy'
+          description: The unique identifier of trustFrameworkPolicy
           required: true
           style: simple
           schema:
@@ -23050,7 +23050,7 @@ paths:
       parameters:
         - name: trustFrameworkPolicy-id
           in: path
-          description: 'key: id of trustFrameworkPolicy'
+          description: The unique identifier of trustFrameworkPolicy
           required: true
           style: simple
           schema:
@@ -23075,7 +23075,7 @@ paths:
       parameters:
         - name: trustFrameworkPolicy-id
           in: path
-          description: 'key: id of trustFrameworkPolicy'
+          description: The unique identifier of trustFrameworkPolicy
           required: true
           style: simple
           schema:
@@ -23104,7 +23104,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23174,7 +23174,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23201,7 +23201,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23232,7 +23232,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23304,7 +23304,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23337,7 +23337,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23345,7 +23345,7 @@ paths:
           x-ms-docs-key-type: user
         - name: emailAuthenticationMethod-id
           in: path
-          description: 'key: id of emailAuthenticationMethod'
+          description: The unique identifier of emailAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -23394,7 +23394,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23402,7 +23402,7 @@ paths:
           x-ms-docs-key-type: user
         - name: emailAuthenticationMethod-id
           in: path
-          description: 'key: id of emailAuthenticationMethod'
+          description: The unique identifier of emailAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -23429,7 +23429,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23437,7 +23437,7 @@ paths:
           x-ms-docs-key-type: user
         - name: emailAuthenticationMethod-id
           in: path
-          description: 'key: id of emailAuthenticationMethod'
+          description: The unique identifier of emailAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -23468,7 +23468,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23553,7 +23553,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23561,7 +23561,7 @@ paths:
           x-ms-docs-key-type: user
         - name: fido2AuthenticationMethod-id
           in: path
-          description: 'key: id of fido2AuthenticationMethod'
+          description: The unique identifier of fido2AuthenticationMethod
           required: true
           style: simple
           schema:
@@ -23615,7 +23615,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23623,7 +23623,7 @@ paths:
           x-ms-docs-key-type: user
         - name: fido2AuthenticationMethod-id
           in: path
-          description: 'key: id of fido2AuthenticationMethod'
+          description: The unique identifier of fido2AuthenticationMethod
           required: true
           style: simple
           schema:
@@ -23654,7 +23654,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23719,7 +23719,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23752,7 +23752,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23760,7 +23760,7 @@ paths:
           x-ms-docs-key-type: user
         - name: authenticationMethod-id
           in: path
-          description: 'key: id of authenticationMethod'
+          description: The unique identifier of authenticationMethod
           required: true
           style: simple
           schema:
@@ -23808,7 +23808,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23816,7 +23816,7 @@ paths:
           x-ms-docs-key-type: user
         - name: authenticationMethod-id
           in: path
-          description: 'key: id of authenticationMethod'
+          description: The unique identifier of authenticationMethod
           required: true
           style: simple
           schema:
@@ -23848,7 +23848,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23929,7 +23929,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23937,7 +23937,7 @@ paths:
           x-ms-docs-key-type: user
         - name: microsoftAuthenticatorAuthenticationMethod-id
           in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          description: The unique identifier of microsoftAuthenticatorAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -23991,7 +23991,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -23999,7 +23999,7 @@ paths:
           x-ms-docs-key-type: user
         - name: microsoftAuthenticatorAuthenticationMethod-id
           in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          description: The unique identifier of microsoftAuthenticatorAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -24027,7 +24027,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24035,7 +24035,7 @@ paths:
           x-ms-docs-key-type: user
         - name: microsoftAuthenticatorAuthenticationMethod-id
           in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
+          description: The unique identifier of microsoftAuthenticatorAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -24135,7 +24135,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24215,7 +24215,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24247,7 +24247,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24255,7 +24255,7 @@ paths:
           x-ms-docs-key-type: user
         - name: longRunningOperation-id
           in: path
-          description: 'key: id of longRunningOperation'
+          description: The unique identifier of longRunningOperation
           required: true
           style: simple
           schema:
@@ -24308,7 +24308,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24316,7 +24316,7 @@ paths:
           x-ms-docs-key-type: user
         - name: longRunningOperation-id
           in: path
-          description: 'key: id of longRunningOperation'
+          description: The unique identifier of longRunningOperation
           required: true
           style: simple
           schema:
@@ -24343,7 +24343,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24351,7 +24351,7 @@ paths:
           x-ms-docs-key-type: user
         - name: longRunningOperation-id
           in: path
-          description: 'key: id of longRunningOperation'
+          description: The unique identifier of longRunningOperation
           required: true
           style: simple
           schema:
@@ -24382,7 +24382,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24460,7 +24460,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24468,7 +24468,7 @@ paths:
           x-ms-docs-key-type: user
         - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
           in: path
-          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+          description: The unique identifier of passwordlessMicrosoftAuthenticatorAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -24521,7 +24521,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24529,7 +24529,7 @@ paths:
           x-ms-docs-key-type: user
         - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
           in: path
-          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+          description: The unique identifier of passwordlessMicrosoftAuthenticatorAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -24556,7 +24556,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24564,7 +24564,7 @@ paths:
           x-ms-docs-key-type: user
         - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
           in: path
-          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+          description: The unique identifier of passwordlessMicrosoftAuthenticatorAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -24668,7 +24668,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24742,7 +24742,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24775,7 +24775,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24783,7 +24783,7 @@ paths:
           x-ms-docs-key-type: user
         - name: passwordAuthenticationMethod-id
           in: path
-          description: 'key: id of passwordAuthenticationMethod'
+          description: The unique identifier of passwordAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -24839,7 +24839,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24917,7 +24917,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24950,7 +24950,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -24958,7 +24958,7 @@ paths:
           x-ms-docs-key-type: user
         - name: phoneAuthenticationMethod-id
           in: path
-          description: 'key: id of phoneAuthenticationMethod'
+          description: The unique identifier of phoneAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25009,7 +25009,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25017,7 +25017,7 @@ paths:
           x-ms-docs-key-type: user
         - name: phoneAuthenticationMethod-id
           in: path
-          description: 'key: id of phoneAuthenticationMethod'
+          description: The unique identifier of phoneAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25044,7 +25044,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25052,7 +25052,7 @@ paths:
           x-ms-docs-key-type: user
         - name: phoneAuthenticationMethod-id
           in: path
-          description: 'key: id of phoneAuthenticationMethod'
+          description: The unique identifier of phoneAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25083,7 +25083,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25152,7 +25152,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25160,7 +25160,7 @@ paths:
           x-ms-docs-key-type: user
         - name: softwareOathAuthenticationMethod-id
           in: path
-          description: 'key: id of softwareOathAuthenticationMethod'
+          description: The unique identifier of softwareOathAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25209,7 +25209,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25217,7 +25217,7 @@ paths:
           x-ms-docs-key-type: user
         - name: softwareOathAuthenticationMethod-id
           in: path
-          description: 'key: id of softwareOathAuthenticationMethod'
+          description: The unique identifier of softwareOathAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25248,7 +25248,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25332,7 +25332,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25365,7 +25365,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25373,7 +25373,7 @@ paths:
           x-ms-docs-key-type: user
         - name: temporaryAccessPassAuthenticationMethod-id
           in: path
-          description: 'key: id of temporaryAccessPassAuthenticationMethod'
+          description: The unique identifier of temporaryAccessPassAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25426,7 +25426,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25434,7 +25434,7 @@ paths:
           x-ms-docs-key-type: user
         - name: temporaryAccessPassAuthenticationMethod-id
           in: path
-          description: 'key: id of temporaryAccessPassAuthenticationMethod'
+          description: The unique identifier of temporaryAccessPassAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25465,7 +25465,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25543,7 +25543,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25551,7 +25551,7 @@ paths:
           x-ms-docs-key-type: user
         - name: windowsHelloForBusinessAuthenticationMethod-id
           in: path
-          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          description: The unique identifier of windowsHelloForBusinessAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25604,7 +25604,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25612,7 +25612,7 @@ paths:
           x-ms-docs-key-type: user
         - name: windowsHelloForBusinessAuthenticationMethod-id
           in: path
-          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          description: The unique identifier of windowsHelloForBusinessAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25640,7 +25640,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25648,7 +25648,7 @@ paths:
           x-ms-docs-key-type: user
         - name: windowsHelloForBusinessAuthenticationMethod-id
           in: path
-          description: 'key: id of windowsHelloForBusinessAuthenticationMethod'
+          description: The unique identifier of windowsHelloForBusinessAuthenticationMethod
           required: true
           style: simple
           schema:
@@ -25748,7 +25748,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25808,7 +25808,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25835,7 +25835,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25862,7 +25862,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25917,7 +25917,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -25996,7 +25996,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26004,7 +26004,7 @@ paths:
           x-ms-docs-key-type: user
         - name: bitlockerRecoveryKey-id
           in: path
-          description: 'key: id of bitlockerRecoveryKey'
+          description: The unique identifier of bitlockerRecoveryKey
           required: true
           style: simple
           schema:
@@ -26057,7 +26057,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26125,7 +26125,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26157,7 +26157,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26165,7 +26165,7 @@ paths:
           x-ms-docs-key-type: user
         - name: dataLossPreventionPolicy-id
           in: path
-          description: 'key: id of dataLossPreventionPolicy'
+          description: The unique identifier of dataLossPreventionPolicy
           required: true
           style: simple
           schema:
@@ -26214,7 +26214,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26222,7 +26222,7 @@ paths:
           x-ms-docs-key-type: user
         - name: dataLossPreventionPolicy-id
           in: path
-          description: 'key: id of dataLossPreventionPolicy'
+          description: The unique identifier of dataLossPreventionPolicy
           required: true
           style: simple
           schema:
@@ -26249,7 +26249,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26257,7 +26257,7 @@ paths:
           x-ms-docs-key-type: user
         - name: dataLossPreventionPolicy-id
           in: path
-          description: 'key: id of dataLossPreventionPolicy'
+          description: The unique identifier of dataLossPreventionPolicy
           required: true
           style: simple
           schema:
@@ -26284,7 +26284,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26340,7 +26340,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26373,7 +26373,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26410,7 +26410,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26502,7 +26502,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26540,7 +26540,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26548,7 +26548,7 @@ paths:
           x-ms-docs-key-type: user
         - name: informationProtectionLabel-id
           in: path
-          description: 'key: id of informationProtectionLabel'
+          description: The unique identifier of informationProtectionLabel
           required: true
           style: simple
           schema:
@@ -26609,7 +26609,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26617,7 +26617,7 @@ paths:
           x-ms-docs-key-type: user
         - name: informationProtectionLabel-id
           in: path
-          description: 'key: id of informationProtectionLabel'
+          description: The unique identifier of informationProtectionLabel
           required: true
           style: simple
           schema:
@@ -26650,7 +26650,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26658,7 +26658,7 @@ paths:
           x-ms-docs-key-type: user
         - name: informationProtectionLabel-id
           in: path
-          description: 'key: id of informationProtectionLabel'
+          description: The unique identifier of informationProtectionLabel
           required: true
           style: simple
           schema:
@@ -26691,7 +26691,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26794,7 +26794,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26826,7 +26826,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26834,7 +26834,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -26896,7 +26896,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26904,7 +26904,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -26931,7 +26931,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26939,7 +26939,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -26966,7 +26966,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -26974,7 +26974,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -27077,7 +27077,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27085,7 +27085,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -27117,7 +27117,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27125,7 +27125,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -27133,7 +27133,7 @@ paths:
           x-ms-docs-key-type: sensitivityLabel
         - name: sensitivityLabel-id1
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -27195,7 +27195,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27203,7 +27203,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -27211,7 +27211,7 @@ paths:
           x-ms-docs-key-type: sensitivityLabel
         - name: sensitivityLabel-id1
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -27238,7 +27238,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27246,7 +27246,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -27254,7 +27254,7 @@ paths:
           x-ms-docs-key-type: sensitivityLabel
         - name: sensitivityLabel-id1
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -27281,7 +27281,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27333,7 +27333,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27360,7 +27360,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27391,7 +27391,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27483,7 +27483,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27515,7 +27515,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27523,7 +27523,7 @@ paths:
           x-ms-docs-key-type: user
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -27580,7 +27580,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27588,7 +27588,7 @@ paths:
           x-ms-docs-key-type: user
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -27615,7 +27615,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27623,7 +27623,7 @@ paths:
           x-ms-docs-key-type: user
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -27651,7 +27651,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27659,7 +27659,7 @@ paths:
           x-ms-docs-key-type: user
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -27733,7 +27733,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27741,7 +27741,7 @@ paths:
           x-ms-docs-key-type: user
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -27774,7 +27774,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27782,7 +27782,7 @@ paths:
           x-ms-docs-key-type: user
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -27790,7 +27790,7 @@ paths:
           x-ms-docs-key-type: threatAssessmentRequest
         - name: threatAssessmentResult-id
           in: path
-          description: 'key: id of threatAssessmentResult'
+          description: The unique identifier of threatAssessmentResult
           required: true
           style: simple
           schema:
@@ -27841,7 +27841,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27849,7 +27849,7 @@ paths:
           x-ms-docs-key-type: user
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -27857,7 +27857,7 @@ paths:
           x-ms-docs-key-type: threatAssessmentRequest
         - name: threatAssessmentResult-id
           in: path
-          description: 'key: id of threatAssessmentResult'
+          description: The unique identifier of threatAssessmentResult
           required: true
           style: simple
           schema:
@@ -27884,7 +27884,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -27892,7 +27892,7 @@ paths:
           x-ms-docs-key-type: user
         - name: threatAssessmentRequest-id
           in: path
-          description: 'key: id of threatAssessmentRequest'
+          description: The unique identifier of threatAssessmentRequest
           required: true
           style: simple
           schema:
@@ -27900,7 +27900,7 @@ paths:
           x-ms-docs-key-type: threatAssessmentRequest
         - name: threatAssessmentResult-id
           in: path
-          description: 'key: id of threatAssessmentResult'
+          description: The unique identifier of threatAssessmentResult
           required: true
           style: simple
           schema:
