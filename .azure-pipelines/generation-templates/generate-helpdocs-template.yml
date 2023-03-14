@@ -4,6 +4,7 @@
 parameters:
   - name: BaseBranch
     type: string
+    default: "dev"
   - name: DOCSBRANCH
     type: string
     default: "DocsGeneration"
