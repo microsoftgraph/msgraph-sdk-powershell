@@ -2,7 +2,6 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +12,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
     public static class DependencyAssemblyResolver
     {
         private static readonly Assembly Self = typeof(DependencyAssemblyResolver).Assembly;
-        private static readonly Assembly Core = typeof(AuthenticationHelpers).Assembly;
         private static readonly AssemblyLoadContextProxy Proxy = AssemblyLoadContextProxy.CreateLoadContext("msgraph-load-context");
 
         // Catalog our dependencies here to ensure we don't load anything else.
@@ -40,12 +38,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
 
             foreach (string filePath in Directory.EnumerateFiles(DependencyFolder, "*.dll", SearchOption.TopDirectoryOnly))
             {
-                Dependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
+                Dependencies.Add(AssemblyName.GetAssemblyName(filePath).Name);
             }
 
             foreach (string filePath in Directory.EnumerateFiles(Path.Combine(DependencyFolder, PSEdition), "*.dll", SearchOption.TopDirectoryOnly))
             {
-                MultiFrameworkDependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
+                MultiFrameworkDependencies.Add(AssemblyName.GetAssemblyName(filePath).Name);
             }
 
             // Set up our event handler when the module is loaded.
@@ -62,12 +60,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler;
         }
 
-        private static bool IsRequiredAssembly(AssemblyName assemblyName, Assembly requestingAssembly)
+        private static bool IsRequiredAssembly(AssemblyName assemblyName)
         {
-            return requestingAssembly != null
-                ? (requestingAssembly == Self || requestingAssembly == Core)
-                && ((Dependencies.Contains(assemblyName.FullName) || MultiFrameworkDependencies.Contains(assemblyName.FullName)))
-                : (Dependencies.Contains(assemblyName.FullName) || MultiFrameworkDependencies.Contains(assemblyName.FullName));
+            return Dependencies.Contains(assemblyName.Name) || MultiFrameworkDependencies.Contains(assemblyName.Name);
         }
 
         private static Assembly ResolvingHandler(object sender, ResolveEventArgs args)
@@ -76,9 +71,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             {
                 AssemblyName assemblyName = new AssemblyName(args.Name);
                 // We try to resolve our dependencies on our own.
-                if (IsRequiredAssembly(assemblyName, args.RequestingAssembly))
+                if (IsRequiredAssembly(assemblyName))
                 {
-                    string requiredAssemblyPath = MultiFrameworkDependencies.Contains(assemblyName.FullName)
+                    string requiredAssemblyPath = MultiFrameworkDependencies.Contains(assemblyName.Name)
                         ? requiredAssemblyPath = Path.Combine(DependencyFolder, PSEdition, $"{assemblyName.Name}.dll")
                         : requiredAssemblyPath = Path.Combine(DependencyFolder, $"{assemblyName.Name}.dll");
                     if (File.Exists(requiredAssemblyPath))
