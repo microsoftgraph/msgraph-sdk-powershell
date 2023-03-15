@@ -74,7 +74,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -118,7 +118,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -145,7 +145,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -176,7 +176,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -280,7 +280,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -313,7 +313,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -321,7 +321,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:
@@ -382,7 +382,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -390,7 +390,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:
@@ -417,7 +417,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -425,7 +425,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:
@@ -456,7 +456,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -513,7 +513,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -540,7 +540,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -568,7 +568,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -656,7 +656,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -689,7 +689,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -697,7 +697,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -754,7 +754,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -762,7 +762,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -789,7 +789,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -797,7 +797,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -825,7 +825,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -833,7 +833,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -919,7 +919,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -927,7 +927,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -960,7 +960,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -968,7 +968,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -976,7 +976,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -1031,7 +1031,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1039,7 +1039,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1047,7 +1047,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -1074,7 +1074,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1082,7 +1082,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1090,7 +1090,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -1118,7 +1118,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1210,7 +1210,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1243,7 +1243,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1251,7 +1251,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1308,7 +1308,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1316,7 +1316,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1343,7 +1343,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1351,7 +1351,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1379,7 +1379,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1387,7 +1387,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1473,7 +1473,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1481,7 +1481,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1514,7 +1514,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1522,7 +1522,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1530,7 +1530,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -1585,7 +1585,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1593,7 +1593,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1601,7 +1601,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -1628,7 +1628,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -1636,7 +1636,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -1644,7 +1644,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -1951,7 +1951,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2015,7 +2015,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2042,7 +2042,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2073,7 +2073,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2162,7 +2162,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2195,7 +2195,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2203,7 +2203,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2263,7 +2263,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2271,7 +2271,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2298,7 +2298,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2306,7 +2306,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2337,7 +2337,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2345,7 +2345,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2419,7 +2419,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2427,7 +2427,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2460,7 +2460,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2468,7 +2468,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2476,7 +2476,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewReviewer-id
           in: path
-          description: 'key: id of accessReviewReviewer'
+          description: The unique identifier of accessReviewReviewer
           required: true
           style: simple
           schema:
@@ -2527,7 +2527,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2535,7 +2535,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2543,7 +2543,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewReviewer-id
           in: path
-          description: 'key: id of accessReviewReviewer'
+          description: The unique identifier of accessReviewReviewer
           required: true
           style: simple
           schema:
@@ -2570,7 +2570,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2578,7 +2578,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2586,7 +2586,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewReviewer-id
           in: path
-          description: 'key: id of accessReviewReviewer'
+          description: The unique identifier of accessReviewReviewer
           required: true
           style: simple
           schema:
@@ -2617,7 +2617,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2625,7 +2625,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2729,7 +2729,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2737,7 +2737,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2770,7 +2770,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2778,7 +2778,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2786,7 +2786,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewInstanceDecisionItem-id
           in: path
-          description: 'key: id of accessReviewInstanceDecisionItem'
+          description: The unique identifier of accessReviewInstanceDecisionItem
           required: true
           style: simple
           schema:
@@ -2847,7 +2847,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2855,7 +2855,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2863,7 +2863,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewInstanceDecisionItem-id
           in: path
-          description: 'key: id of accessReviewInstanceDecisionItem'
+          description: The unique identifier of accessReviewInstanceDecisionItem
           required: true
           style: simple
           schema:
@@ -2890,7 +2890,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2898,7 +2898,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -2906,7 +2906,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewInstanceDecisionItem-id
           in: path
-          description: 'key: id of accessReviewInstanceDecisionItem'
+          description: The unique identifier of accessReviewInstanceDecisionItem
           required: true
           style: simple
           schema:
@@ -2933,7 +2933,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -2941,7 +2941,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3060,7 +3060,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3068,7 +3068,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3093,7 +3093,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3101,7 +3101,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3126,7 +3126,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3134,7 +3134,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3181,7 +3181,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3189,7 +3189,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3214,7 +3214,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3222,7 +3222,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3247,7 +3247,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3255,7 +3255,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3280,7 +3280,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3288,7 +3288,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3370,7 +3370,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3378,7 +3378,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3411,7 +3411,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3419,7 +3419,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3427,7 +3427,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -3482,7 +3482,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3490,7 +3490,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3498,7 +3498,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -3525,7 +3525,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3533,7 +3533,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3541,7 +3541,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -3572,7 +3572,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3580,7 +3580,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3588,7 +3588,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -3692,7 +3692,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3700,7 +3700,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3708,7 +3708,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -3741,7 +3741,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3749,7 +3749,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3757,7 +3757,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -3765,7 +3765,7 @@ paths:
           x-ms-docs-key-type: accessReviewStage
         - name: accessReviewInstanceDecisionItem-id
           in: path
-          description: 'key: id of accessReviewInstanceDecisionItem'
+          description: The unique identifier of accessReviewInstanceDecisionItem
           required: true
           style: simple
           schema:
@@ -3826,7 +3826,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3834,7 +3834,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3842,7 +3842,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -3850,7 +3850,7 @@ paths:
           x-ms-docs-key-type: accessReviewStage
         - name: accessReviewInstanceDecisionItem-id
           in: path
-          description: 'key: id of accessReviewInstanceDecisionItem'
+          description: The unique identifier of accessReviewInstanceDecisionItem
           required: true
           style: simple
           schema:
@@ -3877,7 +3877,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3885,7 +3885,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3893,7 +3893,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -3901,7 +3901,7 @@ paths:
           x-ms-docs-key-type: accessReviewStage
         - name: accessReviewInstanceDecisionItem-id
           in: path
-          description: 'key: id of accessReviewInstanceDecisionItem'
+          description: The unique identifier of accessReviewInstanceDecisionItem
           required: true
           style: simple
           schema:
@@ -3928,7 +3928,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -3936,7 +3936,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -3944,7 +3944,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -4063,7 +4063,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -4071,7 +4071,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -4079,7 +4079,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -4100,7 +4100,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -4108,7 +4108,7 @@ paths:
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -4200,7 +4200,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -4297,7 +4297,7 @@ paths:
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
-          description: 'key: id of accessReviewScheduleDefinition'
+          description: The unique identifier of accessReviewScheduleDefinition
           required: true
           style: simple
           schema:
@@ -4547,7 +4547,7 @@ paths:
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
-          description: 'key: id of accessReviewHistoryDefinition'
+          description: The unique identifier of accessReviewHistoryDefinition
           required: true
           style: simple
           schema:
@@ -4606,7 +4606,7 @@ paths:
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
-          description: 'key: id of accessReviewHistoryDefinition'
+          description: The unique identifier of accessReviewHistoryDefinition
           required: true
           style: simple
           schema:
@@ -4633,7 +4633,7 @@ paths:
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
-          description: 'key: id of accessReviewHistoryDefinition'
+          description: The unique identifier of accessReviewHistoryDefinition
           required: true
           style: simple
           schema:
@@ -4664,7 +4664,7 @@ paths:
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
-          description: 'key: id of accessReviewHistoryDefinition'
+          description: The unique identifier of accessReviewHistoryDefinition
           required: true
           style: simple
           schema:
@@ -4750,7 +4750,7 @@ paths:
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
-          description: 'key: id of accessReviewHistoryDefinition'
+          description: The unique identifier of accessReviewHistoryDefinition
           required: true
           style: simple
           schema:
@@ -4783,7 +4783,7 @@ paths:
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
-          description: 'key: id of accessReviewHistoryDefinition'
+          description: The unique identifier of accessReviewHistoryDefinition
           required: true
           style: simple
           schema:
@@ -4791,7 +4791,7 @@ paths:
           x-ms-docs-key-type: accessReviewHistoryDefinition
         - name: accessReviewHistoryInstance-id
           in: path
-          description: 'key: id of accessReviewHistoryInstance'
+          description: The unique identifier of accessReviewHistoryInstance
           required: true
           style: simple
           schema:
@@ -4846,7 +4846,7 @@ paths:
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
-          description: 'key: id of accessReviewHistoryDefinition'
+          description: The unique identifier of accessReviewHistoryDefinition
           required: true
           style: simple
           schema:
@@ -4854,7 +4854,7 @@ paths:
           x-ms-docs-key-type: accessReviewHistoryDefinition
         - name: accessReviewHistoryInstance-id
           in: path
-          description: 'key: id of accessReviewHistoryInstance'
+          description: The unique identifier of accessReviewHistoryInstance
           required: true
           style: simple
           schema:
@@ -4881,7 +4881,7 @@ paths:
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
-          description: 'key: id of accessReviewHistoryDefinition'
+          description: The unique identifier of accessReviewHistoryDefinition
           required: true
           style: simple
           schema:
@@ -4889,7 +4889,7 @@ paths:
           x-ms-docs-key-type: accessReviewHistoryDefinition
         - name: accessReviewHistoryInstance-id
           in: path
-          description: 'key: id of accessReviewHistoryInstance'
+          description: The unique identifier of accessReviewHistoryInstance
           required: true
           style: simple
           schema:
@@ -4920,7 +4920,7 @@ paths:
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
-          description: 'key: id of accessReviewHistoryDefinition'
+          description: The unique identifier of accessReviewHistoryDefinition
           required: true
           style: simple
           schema:
@@ -4928,7 +4928,7 @@ paths:
           x-ms-docs-key-type: accessReviewHistoryDefinition
         - name: accessReviewHistoryInstance-id
           in: path
-          description: 'key: id of accessReviewHistoryInstance'
+          description: The unique identifier of accessReviewHistoryInstance
           required: true
           style: simple
           schema:
@@ -5128,7 +5128,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5181,7 +5181,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5208,7 +5208,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5239,7 +5239,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5327,7 +5327,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5360,7 +5360,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5368,7 +5368,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5425,7 +5425,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5433,7 +5433,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5460,7 +5460,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5468,7 +5468,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5496,7 +5496,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5504,7 +5504,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5554,7 +5554,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5562,7 +5562,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5589,7 +5589,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5597,7 +5597,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5628,7 +5628,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5636,7 +5636,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5722,7 +5722,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5730,7 +5730,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5763,7 +5763,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5771,7 +5771,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5779,7 +5779,7 @@ paths:
           x-ms-docs-key-type: userConsentRequest
         - name: approvalStage-id
           in: path
-          description: 'key: id of approvalStage'
+          description: The unique identifier of approvalStage
           required: true
           style: simple
           schema:
@@ -5834,7 +5834,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5842,7 +5842,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5850,7 +5850,7 @@ paths:
           x-ms-docs-key-type: userConsentRequest
         - name: approvalStage-id
           in: path
-          description: 'key: id of approvalStage'
+          description: The unique identifier of approvalStage
           required: true
           style: simple
           schema:
@@ -5877,7 +5877,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -5885,7 +5885,7 @@ paths:
           x-ms-docs-key-type: appConsentRequest
         - name: userConsentRequest-id
           in: path
-          description: 'key: id of userConsentRequest'
+          description: The unique identifier of userConsentRequest
           required: true
           style: simple
           schema:
@@ -5893,7 +5893,7 @@ paths:
           x-ms-docs-key-type: userConsentRequest
         - name: approvalStage-id
           in: path
-          description: 'key: id of approvalStage'
+          description: The unique identifier of approvalStage
           required: true
           style: simple
           schema:
@@ -5920,7 +5920,7 @@ paths:
       parameters:
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -6273,7 +6273,7 @@ paths:
       parameters:
         - name: approval-id
           in: path
-          description: 'key: id of approval'
+          description: The unique identifier of approval
           required: true
           style: simple
           schema:
@@ -6323,7 +6323,7 @@ paths:
       parameters:
         - name: approval-id
           in: path
-          description: 'key: id of approval'
+          description: The unique identifier of approval
           required: true
           style: simple
           schema:
@@ -6350,7 +6350,7 @@ paths:
       parameters:
         - name: approval-id
           in: path
-          description: 'key: id of approval'
+          description: The unique identifier of approval
           required: true
           style: simple
           schema:
@@ -6381,7 +6381,7 @@ paths:
       parameters:
         - name: approval-id
           in: path
-          description: 'key: id of approval'
+          description: The unique identifier of approval
           required: true
           style: simple
           schema:
@@ -6467,7 +6467,7 @@ paths:
       parameters:
         - name: approval-id
           in: path
-          description: 'key: id of approval'
+          description: The unique identifier of approval
           required: true
           style: simple
           schema:
@@ -6500,7 +6500,7 @@ paths:
       parameters:
         - name: approval-id
           in: path
-          description: 'key: id of approval'
+          description: The unique identifier of approval
           required: true
           style: simple
           schema:
@@ -6508,7 +6508,7 @@ paths:
           x-ms-docs-key-type: approval
         - name: approvalStage-id
           in: path
-          description: 'key: id of approvalStage'
+          description: The unique identifier of approvalStage
           required: true
           style: simple
           schema:
@@ -6563,7 +6563,7 @@ paths:
       parameters:
         - name: approval-id
           in: path
-          description: 'key: id of approval'
+          description: The unique identifier of approval
           required: true
           style: simple
           schema:
@@ -6571,7 +6571,7 @@ paths:
           x-ms-docs-key-type: approval
         - name: approvalStage-id
           in: path
-          description: 'key: id of approvalStage'
+          description: The unique identifier of approvalStage
           required: true
           style: simple
           schema:
@@ -6598,7 +6598,7 @@ paths:
       parameters:
         - name: approval-id
           in: path
-          description: 'key: id of approval'
+          description: The unique identifier of approval
           required: true
           style: simple
           schema:
@@ -6606,7 +6606,7 @@ paths:
           x-ms-docs-key-type: approval
         - name: approvalStage-id
           in: path
-          description: 'key: id of approvalStage'
+          description: The unique identifier of approvalStage
           required: true
           style: simple
           schema:
@@ -6816,7 +6816,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -6879,7 +6879,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -6906,7 +6906,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -6937,7 +6937,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7029,7 +7029,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7037,7 +7037,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackage-id1
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7101,7 +7101,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7205,7 +7205,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7237,7 +7237,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7245,7 +7245,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7310,7 +7310,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7318,7 +7318,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7345,7 +7345,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7353,7 +7353,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7381,7 +7381,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7389,7 +7389,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7454,7 +7454,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7462,7 +7462,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7520,7 +7520,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7528,7 +7528,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7608,7 +7608,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7616,7 +7616,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7648,7 +7648,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7656,7 +7656,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7664,7 +7664,7 @@ paths:
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: accessPackageQuestion-id
           in: path
-          description: 'key: id of accessPackageQuestion'
+          description: The unique identifier of accessPackageQuestion
           required: true
           style: simple
           schema:
@@ -7717,7 +7717,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7725,7 +7725,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7733,7 +7733,7 @@ paths:
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: accessPackageQuestion-id
           in: path
-          description: 'key: id of accessPackageQuestion'
+          description: The unique identifier of accessPackageQuestion
           required: true
           style: simple
           schema:
@@ -7760,7 +7760,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7768,7 +7768,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -7776,7 +7776,7 @@ paths:
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: accessPackageQuestion-id
           in: path
-          description: 'key: id of accessPackageQuestion'
+          description: The unique identifier of accessPackageQuestion
           required: true
           style: simple
           schema:
@@ -7803,7 +7803,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7865,7 +7865,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7956,7 +7956,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -7964,7 +7964,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackage-id1
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -8002,7 +8002,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -8053,7 +8053,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -8080,7 +8080,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -8317,7 +8317,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -8325,7 +8325,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -8363,7 +8363,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -8482,7 +8482,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -8509,7 +8509,7 @@ paths:
       parameters:
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -8763,7 +8763,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -8828,7 +8828,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -8855,7 +8855,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -8883,7 +8883,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -8948,7 +8948,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -9006,7 +9006,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -9086,7 +9086,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -9118,7 +9118,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -9126,7 +9126,7 @@ paths:
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: accessPackageQuestion-id
           in: path
-          description: 'key: id of accessPackageQuestion'
+          description: The unique identifier of accessPackageQuestion
           required: true
           style: simple
           schema:
@@ -9179,7 +9179,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -9187,7 +9187,7 @@ paths:
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: accessPackageQuestion-id
           in: path
-          description: 'key: id of accessPackageQuestion'
+          description: The unique identifier of accessPackageQuestion
           required: true
           style: simple
           schema:
@@ -9214,7 +9214,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -9222,7 +9222,7 @@ paths:
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: accessPackageQuestion-id
           in: path
-          description: 'key: id of accessPackageQuestion'
+          description: The unique identifier of accessPackageQuestion
           required: true
           style: simple
           schema:
@@ -9365,7 +9365,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
-          description: 'key: id of accessPackageAssignmentRequest'
+          description: The unique identifier of accessPackageAssignmentRequest
           required: true
           style: simple
           schema:
@@ -9426,7 +9426,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
-          description: 'key: id of accessPackageAssignmentRequest'
+          description: The unique identifier of accessPackageAssignmentRequest
           required: true
           style: simple
           schema:
@@ -9453,7 +9453,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
-          description: 'key: id of accessPackageAssignmentRequest'
+          description: The unique identifier of accessPackageAssignmentRequest
           required: true
           style: simple
           schema:
@@ -9481,7 +9481,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
-          description: 'key: id of accessPackageAssignmentRequest'
+          description: The unique identifier of accessPackageAssignmentRequest
           required: true
           style: simple
           schema:
@@ -9546,7 +9546,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
-          description: 'key: id of accessPackageAssignmentRequest'
+          description: The unique identifier of accessPackageAssignmentRequest
           required: true
           style: simple
           schema:
@@ -9609,7 +9609,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
-          description: 'key: id of accessPackageAssignmentRequest'
+          description: The unique identifier of accessPackageAssignmentRequest
           required: true
           style: simple
           schema:
@@ -9630,7 +9630,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
-          description: 'key: id of accessPackageAssignmentRequest'
+          description: The unique identifier of accessPackageAssignmentRequest
           required: true
           style: simple
           schema:
@@ -9652,7 +9652,7 @@ paths:
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
-          description: 'key: id of accessPackageAssignmentRequest'
+          description: The unique identifier of accessPackageAssignmentRequest
           required: true
           style: simple
           schema:
@@ -9904,7 +9904,7 @@ paths:
       parameters:
         - name: accessPackageAssignment-id
           in: path
-          description: 'key: id of accessPackageAssignment'
+          description: The unique identifier of accessPackageAssignment
           required: true
           style: simple
           schema:
@@ -9962,7 +9962,7 @@ paths:
       parameters:
         - name: accessPackageAssignment-id
           in: path
-          description: 'key: id of accessPackageAssignment'
+          description: The unique identifier of accessPackageAssignment
           required: true
           style: simple
           schema:
@@ -9989,7 +9989,7 @@ paths:
       parameters:
         - name: accessPackageAssignment-id
           in: path
-          description: 'key: id of accessPackageAssignment'
+          description: The unique identifier of accessPackageAssignment
           required: true
           style: simple
           schema:
@@ -10017,7 +10017,7 @@ paths:
       parameters:
         - name: accessPackageAssignment-id
           in: path
-          description: 'key: id of accessPackageAssignment'
+          description: The unique identifier of accessPackageAssignment
           required: true
           style: simple
           schema:
@@ -10082,7 +10082,7 @@ paths:
       parameters:
         - name: accessPackageAssignment-id
           in: path
-          description: 'key: id of accessPackageAssignment'
+          description: The unique identifier of accessPackageAssignment
           required: true
           style: simple
           schema:
@@ -10148,7 +10148,7 @@ paths:
       parameters:
         - name: accessPackageAssignment-id
           in: path
-          description: 'key: id of accessPackageAssignment'
+          description: The unique identifier of accessPackageAssignment
           required: true
           style: simple
           schema:
@@ -10170,7 +10170,7 @@ paths:
       parameters:
         - name: accessPackageAssignment-id
           in: path
-          description: 'key: id of accessPackageAssignment'
+          description: The unique identifier of accessPackageAssignment
           required: true
           style: simple
           schema:
@@ -10590,7 +10590,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -10647,7 +10647,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -10674,7 +10674,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -10702,7 +10702,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -10792,7 +10792,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -10825,7 +10825,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -10833,7 +10833,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -10896,7 +10896,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -10904,7 +10904,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -10931,7 +10931,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -10939,7 +10939,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -10970,7 +10970,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -10978,7 +10978,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11070,7 +11070,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11078,7 +11078,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11086,7 +11086,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackage-id1
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11150,7 +11150,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11158,7 +11158,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11262,7 +11262,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11270,7 +11270,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11302,7 +11302,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11310,7 +11310,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11318,7 +11318,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11383,7 +11383,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11391,7 +11391,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11399,7 +11399,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11426,7 +11426,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11434,7 +11434,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11442,7 +11442,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11470,7 +11470,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11478,7 +11478,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11486,7 +11486,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11551,7 +11551,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11559,7 +11559,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11567,7 +11567,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11625,7 +11625,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11633,7 +11633,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11641,7 +11641,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11721,7 +11721,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11729,7 +11729,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11737,7 +11737,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11769,7 +11769,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11777,7 +11777,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11785,7 +11785,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11793,7 +11793,7 @@ paths:
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: accessPackageQuestion-id
           in: path
-          description: 'key: id of accessPackageQuestion'
+          description: The unique identifier of accessPackageQuestion
           required: true
           style: simple
           schema:
@@ -11846,7 +11846,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11854,7 +11854,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11862,7 +11862,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11870,7 +11870,7 @@ paths:
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: accessPackageQuestion-id
           in: path
-          description: 'key: id of accessPackageQuestion'
+          description: The unique identifier of accessPackageQuestion
           required: true
           style: simple
           schema:
@@ -11897,7 +11897,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11905,7 +11905,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -11913,7 +11913,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackageAssignmentPolicy-id
           in: path
-          description: 'key: id of accessPackageAssignmentPolicy'
+          description: The unique identifier of accessPackageAssignmentPolicy
           required: true
           style: simple
           schema:
@@ -11921,7 +11921,7 @@ paths:
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: accessPackageQuestion-id
           in: path
-          description: 'key: id of accessPackageQuestion'
+          description: The unique identifier of accessPackageQuestion
           required: true
           style: simple
           schema:
@@ -11948,7 +11948,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -11956,7 +11956,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12018,7 +12018,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12026,7 +12026,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12117,7 +12117,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12125,7 +12125,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12133,7 +12133,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: accessPackage-id1
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12171,7 +12171,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12179,7 +12179,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12230,7 +12230,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12238,7 +12238,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12265,7 +12265,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12273,7 +12273,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12510,7 +12510,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12518,7 +12518,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12526,7 +12526,7 @@ paths:
           x-ms-docs-key-type: accessPackage
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -12564,7 +12564,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12572,7 +12572,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12691,7 +12691,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12699,7 +12699,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12726,7 +12726,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12734,7 +12734,7 @@ paths:
           x-ms-docs-key-type: accessPackageCatalog
         - name: accessPackage-id
           in: path
-          description: 'key: id of accessPackage'
+          description: The unique identifier of accessPackage
           required: true
           style: simple
           schema:
@@ -12772,7 +12772,7 @@ paths:
       parameters:
         - name: accessPackageCatalog-id
           in: path
-          description: 'key: id of accessPackageCatalog'
+          description: The unique identifier of accessPackageCatalog
           required: true
           style: simple
           schema:
@@ -12975,7 +12975,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13033,7 +13033,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13060,7 +13060,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13091,7 +13091,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13159,7 +13159,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13191,7 +13191,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13199,7 +13199,7 @@ paths:
           x-ms-docs-key-type: connectedOrganization
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -13237,7 +13237,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13280,7 +13280,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13307,7 +13307,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13364,7 +13364,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13426,7 +13426,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13475,7 +13475,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13543,7 +13543,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13575,7 +13575,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13583,7 +13583,7 @@ paths:
           x-ms-docs-key-type: connectedOrganization
         - name: directoryObject-id
           in: path
-          description: 'key: id of directoryObject'
+          description: The unique identifier of directoryObject
           required: true
           style: simple
           schema:
@@ -13621,7 +13621,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13664,7 +13664,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13691,7 +13691,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13748,7 +13748,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -13810,7 +13810,7 @@ paths:
       parameters:
         - name: connectedOrganization-id
           in: path
-          description: 'key: id of connectedOrganization'
+          description: The unique identifier of connectedOrganization
           required: true
           style: simple
           schema:
@@ -14144,7 +14144,7 @@ paths:
       parameters:
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:
@@ -14205,7 +14205,7 @@ paths:
       parameters:
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:
@@ -14232,7 +14232,7 @@ paths:
       parameters:
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:
@@ -14369,7 +14369,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14428,7 +14428,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14455,7 +14455,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14486,7 +14486,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14590,7 +14590,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14623,7 +14623,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14631,7 +14631,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:
@@ -14692,7 +14692,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14700,7 +14700,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:
@@ -14727,7 +14727,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14735,7 +14735,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:
@@ -14766,7 +14766,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14823,7 +14823,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14850,7 +14850,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14878,7 +14878,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14966,7 +14966,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -14999,7 +14999,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15007,7 +15007,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15064,7 +15064,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15072,7 +15072,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15099,7 +15099,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15107,7 +15107,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15135,7 +15135,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15143,7 +15143,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15229,7 +15229,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15237,7 +15237,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15270,7 +15270,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15278,7 +15278,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15286,7 +15286,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -15341,7 +15341,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15349,7 +15349,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15357,7 +15357,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -15384,7 +15384,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15392,7 +15392,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15400,7 +15400,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -15428,7 +15428,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15520,7 +15520,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15553,7 +15553,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15561,7 +15561,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15618,7 +15618,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15626,7 +15626,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15653,7 +15653,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15661,7 +15661,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15689,7 +15689,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15697,7 +15697,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15783,7 +15783,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15791,7 +15791,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15824,7 +15824,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15832,7 +15832,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15840,7 +15840,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -15895,7 +15895,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15903,7 +15903,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15911,7 +15911,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -15938,7 +15938,7 @@ paths:
       parameters:
         - name: agreement-id
           in: path
-          description: 'key: id of agreement'
+          description: The unique identifier of agreement
           required: true
           style: simple
           schema:
@@ -15946,7 +15946,7 @@ paths:
           x-ms-docs-key-type: agreement
         - name: agreementFileLocalization-id
           in: path
-          description: 'key: id of agreementFileLocalization'
+          description: The unique identifier of agreementFileLocalization
           required: true
           style: simple
           schema:
@@ -15954,7 +15954,7 @@ paths:
           x-ms-docs-key-type: agreementFileLocalization
         - name: agreementFileVersion-id
           in: path
-          description: 'key: id of agreementFileVersion'
+          description: The unique identifier of agreementFileVersion
           required: true
           style: simple
           schema:
@@ -15985,7 +15985,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16091,7 +16091,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16099,7 +16099,7 @@ paths:
           x-ms-docs-key-type: user
         - name: agreementAcceptance-id
           in: path
-          description: 'key: id of agreementAcceptance'
+          description: The unique identifier of agreementAcceptance
           required: true
           style: simple
           schema:

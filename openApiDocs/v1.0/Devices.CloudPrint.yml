@@ -189,7 +189,7 @@ paths:
       parameters:
         - name: printConnector-id
           in: path
-          description: 'key: id of printConnector'
+          description: The unique identifier of printConnector
           required: true
           style: simple
           schema:
@@ -243,7 +243,7 @@ paths:
       parameters:
         - name: printConnector-id
           in: path
-          description: 'key: id of printConnector'
+          description: The unique identifier of printConnector
           required: true
           style: simple
           schema:
@@ -270,7 +270,7 @@ paths:
       parameters:
         - name: printConnector-id
           in: path
-          description: 'key: id of printConnector'
+          description: The unique identifier of printConnector
           required: true
           style: simple
           schema:
@@ -385,7 +385,7 @@ paths:
       parameters:
         - name: printOperation-id
           in: path
-          description: 'key: id of printOperation'
+          description: The unique identifier of printOperation
           required: true
           style: simple
           schema:
@@ -435,7 +435,7 @@ paths:
       parameters:
         - name: printOperation-id
           in: path
-          description: 'key: id of printOperation'
+          description: The unique identifier of printOperation
           required: true
           style: simple
           schema:
@@ -462,7 +462,7 @@ paths:
       parameters:
         - name: printOperation-id
           in: path
-          description: 'key: id of printOperation'
+          description: The unique identifier of printOperation
           required: true
           style: simple
           schema:
@@ -618,7 +618,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -686,7 +686,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -713,7 +713,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -744,7 +744,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -829,7 +829,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -837,7 +837,7 @@ paths:
           x-ms-docs-key-type: printer
         - name: printConnector-id
           in: path
-          description: 'key: id of printConnector'
+          description: The unique identifier of printConnector
           required: true
           style: simple
           schema:
@@ -896,7 +896,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -921,7 +921,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -1026,7 +1026,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -1034,7 +1034,7 @@ paths:
           x-ms-docs-key-type: printer
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -1105,7 +1105,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -1179,7 +1179,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -1212,7 +1212,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -1220,7 +1220,7 @@ paths:
           x-ms-docs-key-type: printer
         - name: printTaskTrigger-id
           in: path
-          description: 'key: id of printTaskTrigger'
+          description: The unique identifier of printTaskTrigger
           required: true
           style: simple
           schema:
@@ -1271,7 +1271,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -1279,7 +1279,7 @@ paths:
           x-ms-docs-key-type: printer
         - name: printTaskTrigger-id
           in: path
-          description: 'key: id of printTaskTrigger'
+          description: The unique identifier of printTaskTrigger
           required: true
           style: simple
           schema:
@@ -1306,7 +1306,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -1314,7 +1314,7 @@ paths:
           x-ms-docs-key-type: printer
         - name: printTaskTrigger-id
           in: path
-          description: 'key: id of printTaskTrigger'
+          description: The unique identifier of printTaskTrigger
           required: true
           style: simple
           schema:
@@ -1342,7 +1342,7 @@ paths:
       parameters:
         - name: printer-id
           in: path
-          description: 'key: id of printer'
+          description: The unique identifier of printer
           required: true
           style: simple
           schema:
@@ -1350,7 +1350,7 @@ paths:
           x-ms-docs-key-type: printer
         - name: printTaskTrigger-id
           in: path
-          description: 'key: id of printTaskTrigger'
+          description: The unique identifier of printTaskTrigger
           required: true
           style: simple
           schema:
@@ -1534,7 +1534,7 @@ paths:
       parameters:
         - name: printService-id
           in: path
-          description: 'key: id of printService'
+          description: The unique identifier of printService
           required: true
           style: simple
           schema:
@@ -1584,7 +1584,7 @@ paths:
       parameters:
         - name: printService-id
           in: path
-          description: 'key: id of printService'
+          description: The unique identifier of printService
           required: true
           style: simple
           schema:
@@ -1611,7 +1611,7 @@ paths:
       parameters:
         - name: printService-id
           in: path
-          description: 'key: id of printService'
+          description: The unique identifier of printService
           required: true
           style: simple
           schema:
@@ -1642,7 +1642,7 @@ paths:
       parameters:
         - name: printService-id
           in: path
-          description: 'key: id of printService'
+          description: The unique identifier of printService
           required: true
           style: simple
           schema:
@@ -1713,7 +1713,7 @@ paths:
       parameters:
         - name: printService-id
           in: path
-          description: 'key: id of printService'
+          description: The unique identifier of printService
           required: true
           style: simple
           schema:
@@ -1746,7 +1746,7 @@ paths:
       parameters:
         - name: printService-id
           in: path
-          description: 'key: id of printService'
+          description: The unique identifier of printService
           required: true
           style: simple
           schema:
@@ -1754,7 +1754,7 @@ paths:
           x-ms-docs-key-type: printService
         - name: printServiceEndpoint-id
           in: path
-          description: 'key: id of printServiceEndpoint'
+          description: The unique identifier of printServiceEndpoint
           required: true
           style: simple
           schema:
@@ -1804,7 +1804,7 @@ paths:
       parameters:
         - name: printService-id
           in: path
-          description: 'key: id of printService'
+          description: The unique identifier of printService
           required: true
           style: simple
           schema:
@@ -1812,7 +1812,7 @@ paths:
           x-ms-docs-key-type: printService
         - name: printServiceEndpoint-id
           in: path
-          description: 'key: id of printServiceEndpoint'
+          description: The unique identifier of printServiceEndpoint
           required: true
           style: simple
           schema:
@@ -1839,7 +1839,7 @@ paths:
       parameters:
         - name: printService-id
           in: path
-          description: 'key: id of printService'
+          description: The unique identifier of printService
           required: true
           style: simple
           schema:
@@ -1847,7 +1847,7 @@ paths:
           x-ms-docs-key-type: printService
         - name: printServiceEndpoint-id
           in: path
-          description: 'key: id of printServiceEndpoint'
+          description: The unique identifier of printServiceEndpoint
           required: true
           style: simple
           schema:
@@ -2001,7 +2001,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -2067,7 +2067,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -2094,7 +2094,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -2125,7 +2125,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -2362,7 +2362,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -2370,7 +2370,7 @@ paths:
           x-ms-docs-key-type: printerShare
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2408,7 +2408,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -2527,7 +2527,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -2554,7 +2554,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -2934,7 +2934,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -2942,7 +2942,7 @@ paths:
           x-ms-docs-key-type: printerShare
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2980,7 +2980,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -3169,7 +3169,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -3193,7 +3193,7 @@ paths:
       parameters:
         - name: printerShare-id
           in: path
-          description: 'key: id of printerShare'
+          description: The unique identifier of printerShare
           required: true
           style: simple
           schema:
@@ -3359,7 +3359,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3411,7 +3411,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3438,7 +3438,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3469,7 +3469,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3544,7 +3544,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3577,7 +3577,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3585,7 +3585,7 @@ paths:
           x-ms-docs-key-type: printTaskDefinition
         - name: printTask-id
           in: path
-          description: 'key: id of printTask'
+          description: The unique identifier of printTask
           required: true
           style: simple
           schema:
@@ -3639,7 +3639,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3647,7 +3647,7 @@ paths:
           x-ms-docs-key-type: printTaskDefinition
         - name: printTask-id
           in: path
-          description: 'key: id of printTask'
+          description: The unique identifier of printTask
           required: true
           style: simple
           schema:
@@ -3674,7 +3674,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3682,7 +3682,7 @@ paths:
           x-ms-docs-key-type: printTaskDefinition
         - name: printTask-id
           in: path
-          description: 'key: id of printTask'
+          description: The unique identifier of printTask
           required: true
           style: simple
           schema:
@@ -3710,7 +3710,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3718,7 +3718,7 @@ paths:
           x-ms-docs-key-type: printTaskDefinition
         - name: printTask-id
           in: path
-          description: 'key: id of printTask'
+          description: The unique identifier of printTask
           required: true
           style: simple
           schema:
@@ -3772,7 +3772,7 @@ paths:
       parameters:
         - name: printTaskDefinition-id
           in: path
-          description: 'key: id of printTaskDefinition'
+          description: The unique identifier of printTaskDefinition
           required: true
           style: simple
           schema:
@@ -3780,7 +3780,7 @@ paths:
           x-ms-docs-key-type: printTaskDefinition
         - name: printTask-id
           in: path
-          description: 'key: id of printTask'
+          description: The unique identifier of printTask
           required: true
           style: simple
           schema:

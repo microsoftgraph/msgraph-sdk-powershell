@@ -16,7 +16,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -53,7 +53,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -85,7 +85,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -147,7 +147,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -180,7 +180,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -188,7 +188,7 @@ paths:
           x-ms-docs-key-type: user
         - name: inferenceClassificationOverride-id
           in: path
-          description: 'key: id of inferenceClassificationOverride'
+          description: The unique identifier of inferenceClassificationOverride
           required: true
           style: simple
           schema:
@@ -226,7 +226,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -234,7 +234,7 @@ paths:
           x-ms-docs-key-type: user
         - name: inferenceClassificationOverride-id
           in: path
-          description: 'key: id of inferenceClassificationOverride'
+          description: The unique identifier of inferenceClassificationOverride
           required: true
           style: simple
           schema:
@@ -261,7 +261,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -269,7 +269,7 @@ paths:
           x-ms-docs-key-type: user
         - name: inferenceClassificationOverride-id
           in: path
-          description: 'key: id of inferenceClassificationOverride'
+          description: The unique identifier of inferenceClassificationOverride
           required: true
           style: simple
           schema:
@@ -300,7 +300,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -379,7 +379,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -412,7 +412,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -420,7 +420,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -467,7 +467,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -475,7 +475,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -502,7 +502,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -510,7 +510,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -541,7 +541,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -549,7 +549,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -645,7 +645,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -653,7 +653,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -686,7 +686,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -694,7 +694,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -702,7 +702,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -766,7 +766,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -774,7 +774,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -782,7 +782,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -809,7 +809,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -817,7 +817,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -825,7 +825,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -856,7 +856,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -864,7 +864,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -872,7 +872,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -952,7 +952,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -960,7 +960,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -968,7 +968,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1001,7 +1001,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1009,7 +1009,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1017,7 +1017,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1025,7 +1025,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: messageRule-id
           in: path
-          description: 'key: id of messageRule'
+          description: The unique identifier of messageRule
           required: true
           style: simple
           schema:
@@ -1069,7 +1069,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1077,7 +1077,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1085,7 +1085,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1093,7 +1093,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: messageRule-id
           in: path
-          description: 'key: id of messageRule'
+          description: The unique identifier of messageRule
           required: true
           style: simple
           schema:
@@ -1120,7 +1120,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1128,7 +1128,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1136,7 +1136,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1144,7 +1144,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: messageRule-id
           in: path
-          description: 'key: id of messageRule'
+          description: The unique identifier of messageRule
           required: true
           style: simple
           schema:
@@ -1175,7 +1175,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1183,7 +1183,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1191,7 +1191,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1358,7 +1358,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1366,7 +1366,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1374,7 +1374,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1407,7 +1407,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1415,7 +1415,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1423,7 +1423,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1431,7 +1431,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -1517,7 +1517,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1525,7 +1525,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1533,7 +1533,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1541,7 +1541,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -1568,7 +1568,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1576,7 +1576,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1584,7 +1584,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1592,7 +1592,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -1622,7 +1622,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1630,7 +1630,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1638,7 +1638,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1646,7 +1646,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -1671,7 +1671,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1679,7 +1679,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1687,7 +1687,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1695,7 +1695,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -1728,7 +1728,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1736,7 +1736,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1744,7 +1744,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1752,7 +1752,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -1835,7 +1835,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1843,7 +1843,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1851,7 +1851,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1859,7 +1859,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -1892,7 +1892,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1900,7 +1900,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1908,7 +1908,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1916,7 +1916,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -1924,7 +1924,7 @@ paths:
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -1977,7 +1977,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1985,7 +1985,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -1993,7 +1993,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2001,7 +2001,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2009,7 +2009,7 @@ paths:
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -2037,7 +2037,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2045,7 +2045,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2053,7 +2053,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2061,7 +2061,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2129,7 +2129,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2137,7 +2137,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2145,7 +2145,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2153,7 +2153,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2186,7 +2186,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2194,7 +2194,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2202,7 +2202,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2210,7 +2210,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2218,7 +2218,7 @@ paths:
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -2266,7 +2266,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2274,7 +2274,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2282,7 +2282,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2290,7 +2290,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2298,7 +2298,7 @@ paths:
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -2325,7 +2325,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2333,7 +2333,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2341,7 +2341,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2349,7 +2349,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2357,7 +2357,7 @@ paths:
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -2385,7 +2385,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2393,7 +2393,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2401,7 +2401,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2409,7 +2409,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2477,7 +2477,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2485,7 +2485,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2493,7 +2493,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2501,7 +2501,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2534,7 +2534,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2542,7 +2542,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2550,7 +2550,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2558,7 +2558,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2566,7 +2566,7 @@ paths:
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2615,7 +2615,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2623,7 +2623,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2631,7 +2631,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2639,7 +2639,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2647,7 +2647,7 @@ paths:
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2674,7 +2674,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2682,7 +2682,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2690,7 +2690,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2698,7 +2698,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2706,7 +2706,7 @@ paths:
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2734,7 +2734,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2742,7 +2742,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2750,7 +2750,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2758,7 +2758,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2826,7 +2826,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2834,7 +2834,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2842,7 +2842,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2850,7 +2850,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2883,7 +2883,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2891,7 +2891,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2899,7 +2899,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2907,7 +2907,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2915,7 +2915,7 @@ paths:
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2964,7 +2964,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2972,7 +2972,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2980,7 +2980,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -2988,7 +2988,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -2996,7 +2996,7 @@ paths:
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3023,7 +3023,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3031,7 +3031,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3039,7 +3039,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3047,7 +3047,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -3055,7 +3055,7 @@ paths:
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3083,7 +3083,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3091,7 +3091,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3099,7 +3099,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3167,7 +3167,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3175,7 +3175,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3183,7 +3183,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3216,7 +3216,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3224,7 +3224,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3232,7 +3232,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3240,7 +3240,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3289,7 +3289,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3297,7 +3297,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3305,7 +3305,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3313,7 +3313,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3340,7 +3340,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3348,7 +3348,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3356,7 +3356,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3364,7 +3364,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3392,7 +3392,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3400,7 +3400,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3408,7 +3408,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3476,7 +3476,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3484,7 +3484,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3492,7 +3492,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3525,7 +3525,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3533,7 +3533,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3541,7 +3541,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3549,7 +3549,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3598,7 +3598,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3606,7 +3606,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3614,7 +3614,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3622,7 +3622,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3649,7 +3649,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3657,7 +3657,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3665,7 +3665,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3673,7 +3673,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3704,7 +3704,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3712,7 +3712,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3792,7 +3792,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3800,7 +3800,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3833,7 +3833,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3841,7 +3841,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3849,7 +3849,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: messageRule-id
           in: path
-          description: 'key: id of messageRule'
+          description: The unique identifier of messageRule
           required: true
           style: simple
           schema:
@@ -3893,7 +3893,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3901,7 +3901,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3909,7 +3909,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: messageRule-id
           in: path
-          description: 'key: id of messageRule'
+          description: The unique identifier of messageRule
           required: true
           style: simple
           schema:
@@ -3936,7 +3936,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3944,7 +3944,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -3952,7 +3952,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: messageRule-id
           in: path
-          description: 'key: id of messageRule'
+          description: The unique identifier of messageRule
           required: true
           style: simple
           schema:
@@ -3983,7 +3983,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3991,7 +3991,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4158,7 +4158,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4166,7 +4166,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4199,7 +4199,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4207,7 +4207,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4215,7 +4215,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4301,7 +4301,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4309,7 +4309,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4317,7 +4317,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4344,7 +4344,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4352,7 +4352,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4360,7 +4360,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4390,7 +4390,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4398,7 +4398,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4406,7 +4406,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4431,7 +4431,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4439,7 +4439,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4447,7 +4447,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4480,7 +4480,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4488,7 +4488,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4496,7 +4496,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4579,7 +4579,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4587,7 +4587,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4595,7 +4595,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4628,7 +4628,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4636,7 +4636,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4644,7 +4644,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4652,7 +4652,7 @@ paths:
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -4705,7 +4705,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4713,7 +4713,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4721,7 +4721,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4729,7 +4729,7 @@ paths:
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -4757,7 +4757,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4765,7 +4765,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4773,7 +4773,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4841,7 +4841,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4849,7 +4849,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4857,7 +4857,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4890,7 +4890,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4898,7 +4898,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4906,7 +4906,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4914,7 +4914,7 @@ paths:
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -4962,7 +4962,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4970,7 +4970,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -4978,7 +4978,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -4986,7 +4986,7 @@ paths:
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -5013,7 +5013,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5021,7 +5021,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5029,7 +5029,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5037,7 +5037,7 @@ paths:
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -5065,7 +5065,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5073,7 +5073,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5081,7 +5081,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5149,7 +5149,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5157,7 +5157,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5165,7 +5165,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5198,7 +5198,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5206,7 +5206,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5214,7 +5214,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5222,7 +5222,7 @@ paths:
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5271,7 +5271,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5279,7 +5279,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5287,7 +5287,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5295,7 +5295,7 @@ paths:
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5322,7 +5322,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5330,7 +5330,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5338,7 +5338,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5346,7 +5346,7 @@ paths:
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5374,7 +5374,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5382,7 +5382,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5390,7 +5390,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5458,7 +5458,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5466,7 +5466,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5474,7 +5474,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5507,7 +5507,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5515,7 +5515,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5523,7 +5523,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5531,7 +5531,7 @@ paths:
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5580,7 +5580,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5588,7 +5588,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5596,7 +5596,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5604,7 +5604,7 @@ paths:
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5631,7 +5631,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5639,7 +5639,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5647,7 +5647,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -5655,7 +5655,7 @@ paths:
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5683,7 +5683,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5691,7 +5691,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5759,7 +5759,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5767,7 +5767,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5800,7 +5800,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5808,7 +5808,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5816,7 +5816,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5865,7 +5865,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5873,7 +5873,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5881,7 +5881,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5908,7 +5908,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5916,7 +5916,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -5924,7 +5924,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5952,7 +5952,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5960,7 +5960,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -6028,7 +6028,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6036,7 +6036,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -6069,7 +6069,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6077,7 +6077,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -6085,7 +6085,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -6134,7 +6134,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6142,7 +6142,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -6150,7 +6150,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -6177,7 +6177,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6185,7 +6185,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -6193,7 +6193,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -6224,7 +6224,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6375,7 +6375,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6408,7 +6408,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6416,7 +6416,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6486,7 +6486,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6494,7 +6494,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6521,7 +6521,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6529,7 +6529,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6559,7 +6559,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6567,7 +6567,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6592,7 +6592,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6600,7 +6600,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6633,7 +6633,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6641,7 +6641,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6724,7 +6724,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6732,7 +6732,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6765,7 +6765,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6773,7 +6773,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6781,7 +6781,7 @@ paths:
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -6834,7 +6834,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6842,7 +6842,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6850,7 +6850,7 @@ paths:
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: id of attachment'
+          description: The unique identifier of attachment
           required: true
           style: simple
           schema:
@@ -6878,7 +6878,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6886,7 +6886,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6954,7 +6954,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6962,7 +6962,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -6995,7 +6995,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7003,7 +7003,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7011,7 +7011,7 @@ paths:
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -7059,7 +7059,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7067,7 +7067,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7075,7 +7075,7 @@ paths:
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -7102,7 +7102,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7110,7 +7110,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7118,7 +7118,7 @@ paths:
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -7146,7 +7146,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7154,7 +7154,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7222,7 +7222,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7230,7 +7230,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7263,7 +7263,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7271,7 +7271,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7279,7 +7279,7 @@ paths:
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -7328,7 +7328,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7336,7 +7336,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7344,7 +7344,7 @@ paths:
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -7371,7 +7371,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7379,7 +7379,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7387,7 +7387,7 @@ paths:
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -7415,7 +7415,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7423,7 +7423,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7491,7 +7491,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7499,7 +7499,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7532,7 +7532,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7540,7 +7540,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7548,7 +7548,7 @@ paths:
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -7597,7 +7597,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7605,7 +7605,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7613,7 +7613,7 @@ paths:
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -7640,7 +7640,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7648,7 +7648,7 @@ paths:
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: id of message'
+          description: The unique identifier of message
           required: true
           style: simple
           schema:
@@ -7656,7 +7656,7 @@ paths:
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:

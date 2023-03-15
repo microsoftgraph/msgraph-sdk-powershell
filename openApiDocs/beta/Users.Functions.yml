@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -124,7 +124,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -132,7 +132,7 @@ paths:
           x-ms-docs-key-type: user
         - name: appConsentRequest-id
           in: path
-          description: 'key: id of appConsentRequest'
+          description: The unique identifier of appConsentRequest
           required: true
           style: simple
           schema:
@@ -230,7 +230,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -319,7 +319,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -400,7 +400,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -408,7 +408,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -416,7 +416,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -625,7 +625,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -633,7 +633,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -842,7 +842,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -850,7 +850,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -858,7 +858,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -1067,7 +1067,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1075,7 +1075,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -1284,7 +1284,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1493,7 +1493,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1501,7 +1501,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -1509,7 +1509,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -1718,7 +1718,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1726,7 +1726,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -1935,7 +1935,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1943,7 +1943,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -1951,7 +1951,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -2160,7 +2160,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2168,7 +2168,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -2377,7 +2377,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2582,7 +2582,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2636,7 +2636,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2644,7 +2644,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -2652,7 +2652,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -2660,7 +2660,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -2668,7 +2668,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -2877,7 +2877,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2885,7 +2885,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -2893,7 +2893,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -2901,7 +2901,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -3110,7 +3110,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3118,7 +3118,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -3126,7 +3126,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -3134,7 +3134,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -3142,7 +3142,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -3351,7 +3351,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3359,7 +3359,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -3367,7 +3367,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -3375,7 +3375,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -3584,7 +3584,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3592,7 +3592,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -3600,7 +3600,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -3809,7 +3809,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3817,7 +3817,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -3825,7 +3825,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -3833,7 +3833,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -3841,7 +3841,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -4050,7 +4050,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4058,7 +4058,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -4066,7 +4066,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -4074,7 +4074,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -4283,7 +4283,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4291,7 +4291,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -4299,7 +4299,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -4307,7 +4307,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -4315,7 +4315,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -4524,7 +4524,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4532,7 +4532,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -4540,7 +4540,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -4548,7 +4548,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -4757,7 +4757,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4765,7 +4765,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -4773,7 +4773,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -4978,7 +4978,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4986,7 +4986,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendarGroup-id
           in: path
-          description: 'key: id of calendarGroup'
+          description: The unique identifier of calendarGroup
           required: true
           style: simple
           schema:
@@ -4994,7 +4994,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -5048,7 +5048,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5056,7 +5056,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -5064,7 +5064,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -5072,7 +5072,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -5281,7 +5281,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5289,7 +5289,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -5297,7 +5297,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -5506,7 +5506,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5514,7 +5514,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -5522,7 +5522,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -5530,7 +5530,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -5739,7 +5739,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5747,7 +5747,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -5755,7 +5755,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -5964,7 +5964,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5972,7 +5972,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -6181,7 +6181,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6189,7 +6189,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -6197,7 +6197,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -6205,7 +6205,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -6414,7 +6414,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6422,7 +6422,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -6430,7 +6430,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -6639,7 +6639,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6647,7 +6647,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -6655,7 +6655,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -6663,7 +6663,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -6872,7 +6872,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6880,7 +6880,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -6888,7 +6888,7 @@ paths:
           x-ms-docs-key-type: calendar
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -7097,7 +7097,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7105,7 +7105,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -7310,7 +7310,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7318,7 +7318,7 @@ paths:
           x-ms-docs-key-type: user
         - name: calendar-id
           in: path
-          description: 'key: id of calendar'
+          description: The unique identifier of calendar
           required: true
           style: simple
           schema:
@@ -7372,7 +7372,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7380,7 +7380,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -7388,7 +7388,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -7597,7 +7597,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7605,7 +7605,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -7814,7 +7814,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7822,7 +7822,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -7830,7 +7830,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -8039,7 +8039,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8047,7 +8047,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -8256,7 +8256,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8461,7 +8461,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8469,7 +8469,7 @@ paths:
           x-ms-docs-key-type: user
         - name: chat-id
           in: path
-          description: 'key: id of chat'
+          description: The unique identifier of chat
           required: true
           style: simple
           schema:
@@ -8477,7 +8477,7 @@ paths:
           x-ms-docs-key-type: chat
         - name: chatMessage-id
           in: path
-          description: 'key: id of chatMessage'
+          description: The unique identifier of chatMessage
           required: true
           style: simple
           schema:
@@ -8620,7 +8620,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8628,7 +8628,7 @@ paths:
           x-ms-docs-key-type: user
         - name: chat-id
           in: path
-          description: 'key: id of chat'
+          description: The unique identifier of chat
           required: true
           style: simple
           schema:
@@ -8771,7 +8771,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8911,7 +8911,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9051,7 +9051,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9059,7 +9059,7 @@ paths:
           x-ms-docs-key-type: user
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -9102,7 +9102,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9110,7 +9110,7 @@ paths:
           x-ms-docs-key-type: user
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -9135,7 +9135,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9143,7 +9143,7 @@ paths:
           x-ms-docs-key-type: user
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -9168,7 +9168,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9176,7 +9176,7 @@ paths:
           x-ms-docs-key-type: user
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -9223,7 +9223,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9231,7 +9231,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -9239,7 +9239,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -9430,7 +9430,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9438,7 +9438,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -9527,7 +9527,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9535,7 +9535,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -9726,7 +9726,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9815,7 +9815,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10002,7 +10002,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10192,7 +10192,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10200,7 +10200,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -10208,7 +10208,7 @@ paths:
           x-ms-docs-key-type: drive
         - name: driveItem-id
           in: path
-          description: 'key: id of driveItem'
+          description: The unique identifier of driveItem
           required: true
           style: simple
           schema:
@@ -10329,7 +10329,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10337,7 +10337,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -10345,7 +10345,7 @@ paths:
           x-ms-docs-key-type: drive
         - name: driveItem-id
           in: path
-          description: 'key: id of driveItem'
+          description: The unique identifier of driveItem
           required: true
           style: simple
           schema:
@@ -10533,7 +10533,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10541,7 +10541,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -10549,7 +10549,7 @@ paths:
           x-ms-docs-key-type: drive
         - name: driveItem-id
           in: path
-          description: 'key: id of driveItem'
+          description: The unique identifier of driveItem
           required: true
           style: simple
           schema:
@@ -10745,7 +10745,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10753,7 +10753,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -10761,7 +10761,7 @@ paths:
           x-ms-docs-key-type: drive
         - name: driveItem-id
           in: path
-          description: 'key: id of driveItem'
+          description: The unique identifier of driveItem
           required: true
           style: simple
           schema:
@@ -10882,7 +10882,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10890,7 +10890,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -10898,7 +10898,7 @@ paths:
           x-ms-docs-key-type: drive
         - name: driveItem-id
           in: path
-          description: 'key: id of driveItem'
+          description: The unique identifier of driveItem
           required: true
           style: simple
           schema:
@@ -11091,7 +11091,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11099,7 +11099,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -11107,7 +11107,7 @@ paths:
           x-ms-docs-key-type: drive
         - name: contentType-id
           in: path
-          description: 'key: id of contentType'
+          description: The unique identifier of contentType
           required: true
           style: simple
           schema:
@@ -11138,7 +11138,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11146,7 +11146,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -11262,7 +11262,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11270,7 +11270,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -11278,7 +11278,7 @@ paths:
           x-ms-docs-key-type: drive
         - name: listItem-id
           in: path
-          description: 'key: id of listItem'
+          description: The unique identifier of listItem
           required: true
           style: simple
           schema:
@@ -11399,7 +11399,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11407,7 +11407,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -11523,7 +11523,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11531,7 +11531,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -11655,7 +11655,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11663,7 +11663,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -11833,7 +11833,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11841,7 +11841,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -12019,7 +12019,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12027,7 +12027,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -12197,7 +12197,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12205,7 +12205,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -12326,7 +12326,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12334,7 +12334,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -12522,7 +12522,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12530,7 +12530,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -12726,7 +12726,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12734,7 +12734,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -12855,7 +12855,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -12863,7 +12863,7 @@ paths:
           x-ms-docs-key-type: user
         - name: drive-id
           in: path
-          description: 'key: id of drive'
+          description: The unique identifier of drive
           required: true
           style: simple
           schema:
@@ -13060,7 +13060,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -13068,7 +13068,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -13076,7 +13076,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -13285,7 +13285,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -13293,7 +13293,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -13502,7 +13502,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -13510,7 +13510,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -13518,7 +13518,7 @@ paths:
           x-ms-docs-key-type: event
         - name: event-id1
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -13727,7 +13727,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -13735,7 +13735,7 @@ paths:
           x-ms-docs-key-type: user
         - name: event-id
           in: path
-          description: 'key: id of event'
+          description: The unique identifier of event
           required: true
           style: simple
           schema:
@@ -13944,7 +13944,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -14149,7 +14149,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -14406,7 +14406,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -14414,7 +14414,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -14422,7 +14422,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -14602,7 +14602,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -14610,7 +14610,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -14713,7 +14713,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -14721,7 +14721,7 @@ paths:
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: id of mailFolder'
+          description: The unique identifier of mailFolder
           required: true
           style: simple
           schema:
@@ -14901,7 +14901,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15000,7 +15000,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15008,7 +15008,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -15051,7 +15051,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15059,7 +15059,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -15084,7 +15084,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15092,7 +15092,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -15123,7 +15123,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15131,7 +15131,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -15174,7 +15174,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15182,7 +15182,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -15207,7 +15207,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15215,7 +15215,7 @@ paths:
           x-ms-docs-key-type: user
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -15248,7 +15248,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15303,7 +15303,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15479,7 +15479,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15500,7 +15500,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15545,7 +15545,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15574,7 +15574,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15603,7 +15603,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15639,7 +15639,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -15718,7 +15718,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16027,7 +16027,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16057,7 +16057,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16130,7 +16130,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16160,7 +16160,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16190,7 +16190,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16211,7 +16211,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16255,7 +16255,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16263,7 +16263,7 @@ paths:
           x-ms-docs-key-type: user
         - name: notebook-id
           in: path
-          description: 'key: id of notebook'
+          description: The unique identifier of notebook
           required: true
           style: simple
           schema:
@@ -16271,7 +16271,7 @@ paths:
           x-ms-docs-key-type: notebook
         - name: sectionGroup-id
           in: path
-          description: 'key: id of sectionGroup'
+          description: The unique identifier of sectionGroup
           required: true
           style: simple
           schema:
@@ -16279,7 +16279,7 @@ paths:
           x-ms-docs-key-type: sectionGroup
         - name: onenoteSection-id
           in: path
-          description: 'key: id of onenoteSection'
+          description: The unique identifier of onenoteSection
           required: true
           style: simple
           schema:
@@ -16287,7 +16287,7 @@ paths:
           x-ms-docs-key-type: onenoteSection
         - name: onenotePage-id
           in: path
-          description: 'key: id of onenotePage'
+          description: The unique identifier of onenotePage
           required: true
           style: simple
           schema:
@@ -16312,7 +16312,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16320,7 +16320,7 @@ paths:
           x-ms-docs-key-type: user
         - name: notebook-id
           in: path
-          description: 'key: id of notebook'
+          description: The unique identifier of notebook
           required: true
           style: simple
           schema:
@@ -16328,7 +16328,7 @@ paths:
           x-ms-docs-key-type: notebook
         - name: onenoteSection-id
           in: path
-          description: 'key: id of onenoteSection'
+          description: The unique identifier of onenoteSection
           required: true
           style: simple
           schema:
@@ -16336,7 +16336,7 @@ paths:
           x-ms-docs-key-type: onenoteSection
         - name: onenotePage-id
           in: path
-          description: 'key: id of onenotePage'
+          description: The unique identifier of onenotePage
           required: true
           style: simple
           schema:
@@ -16361,7 +16361,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16412,7 +16412,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16420,7 +16420,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onenotePage-id
           in: path
-          description: 'key: id of onenotePage'
+          description: The unique identifier of onenotePage
           required: true
           style: simple
           schema:
@@ -16445,7 +16445,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16453,7 +16453,7 @@ paths:
           x-ms-docs-key-type: user
         - name: sectionGroup-id
           in: path
-          description: 'key: id of sectionGroup'
+          description: The unique identifier of sectionGroup
           required: true
           style: simple
           schema:
@@ -16461,7 +16461,7 @@ paths:
           x-ms-docs-key-type: sectionGroup
         - name: onenoteSection-id
           in: path
-          description: 'key: id of onenoteSection'
+          description: The unique identifier of onenoteSection
           required: true
           style: simple
           schema:
@@ -16469,7 +16469,7 @@ paths:
           x-ms-docs-key-type: onenoteSection
         - name: onenotePage-id
           in: path
-          description: 'key: id of onenotePage'
+          description: The unique identifier of onenotePage
           required: true
           style: simple
           schema:
@@ -16494,7 +16494,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16502,7 +16502,7 @@ paths:
           x-ms-docs-key-type: user
         - name: onenoteSection-id
           in: path
-          description: 'key: id of onenoteSection'
+          description: The unique identifier of onenoteSection
           required: true
           style: simple
           schema:
@@ -16510,7 +16510,7 @@ paths:
           x-ms-docs-key-type: onenoteSection
         - name: onenotePage-id
           in: path
-          description: 'key: id of onenotePage'
+          description: The unique identifier of onenotePage
           required: true
           style: simple
           schema:
@@ -16539,7 +16539,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16582,7 +16582,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16625,7 +16625,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16675,7 +16675,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16683,7 +16683,7 @@ paths:
           x-ms-docs-key-type: user
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -16691,7 +16691,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewInstanceDecisionItem-id
           in: path
-          description: 'key: id of accessReviewInstanceDecisionItem'
+          description: The unique identifier of accessReviewInstanceDecisionItem
           required: true
           style: simple
           schema:
@@ -16699,7 +16699,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstanceDecisionItem
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -16822,7 +16822,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16830,7 +16830,7 @@ paths:
           x-ms-docs-key-type: user
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -16838,7 +16838,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewInstanceDecisionItem-id
           in: path
-          description: 'key: id of accessReviewInstanceDecisionItem'
+          description: The unique identifier of accessReviewInstanceDecisionItem
           required: true
           style: simple
           schema:
@@ -16930,7 +16930,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -16938,7 +16938,7 @@ paths:
           x-ms-docs-key-type: user
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -17061,7 +17061,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17069,7 +17069,7 @@ paths:
           x-ms-docs-key-type: user
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -17077,7 +17077,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -17085,7 +17085,7 @@ paths:
           x-ms-docs-key-type: accessReviewStage
         - name: accessReviewInstanceDecisionItem-id
           in: path
-          description: 'key: id of accessReviewInstanceDecisionItem'
+          description: The unique identifier of accessReviewInstanceDecisionItem
           required: true
           style: simple
           schema:
@@ -17208,7 +17208,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17216,7 +17216,7 @@ paths:
           x-ms-docs-key-type: user
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -17224,7 +17224,7 @@ paths:
           x-ms-docs-key-type: accessReviewInstance
         - name: accessReviewStage-id
           in: path
-          description: 'key: id of accessReviewStage'
+          description: The unique identifier of accessReviewStage
           required: true
           style: simple
           schema:
@@ -17347,7 +17347,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17355,7 +17355,7 @@ paths:
           x-ms-docs-key-type: user
         - name: accessReviewInstance-id
           in: path
-          description: 'key: id of accessReviewInstance'
+          description: The unique identifier of accessReviewInstance
           required: true
           style: simple
           schema:
@@ -17447,7 +17447,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17548,7 +17548,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17620,7 +17620,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -17628,7 +17628,7 @@ paths:
           x-ms-docs-key-type: user
         - name: todoTaskList-id
           in: path
-          description: 'key: id of todoTaskList'
+          description: The unique identifier of todoTaskList
           required: true
           style: simple
           schema:
@@ -17750,7 +17750,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:

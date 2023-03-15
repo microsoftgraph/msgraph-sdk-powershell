@@ -321,7 +321,7 @@ paths:
       parameters:
         - name: alert-id
           in: path
-          description: 'key: id of alert'
+          description: The unique identifier of alert
           required: true
           style: simple
           schema:
@@ -408,7 +408,7 @@ paths:
       parameters:
         - name: alert-id
           in: path
-          description: 'key: id of alert'
+          description: The unique identifier of alert
           required: true
           style: simple
           schema:
@@ -653,7 +653,7 @@ paths:
       parameters:
         - name: alert-id
           in: path
-          description: 'key: id of alert'
+          description: The unique identifier of alert
           required: true
           style: simple
           schema:
@@ -729,7 +729,7 @@ paths:
       parameters:
         - name: alert-id
           in: path
-          description: 'key: id of alert'
+          description: The unique identifier of alert
           required: true
           style: simple
           schema:
@@ -756,7 +756,7 @@ paths:
       parameters:
         - name: alert-id
           in: path
-          description: 'key: id of alert'
+          description: The unique identifier of alert
           required: true
           style: simple
           schema:
@@ -975,7 +975,7 @@ paths:
       parameters:
         - name: attackSimulationOperation-id
           in: path
-          description: 'key: id of attackSimulationOperation'
+          description: The unique identifier of attackSimulationOperation
           required: true
           style: simple
           schema:
@@ -1031,7 +1031,7 @@ paths:
       parameters:
         - name: attackSimulationOperation-id
           in: path
-          description: 'key: id of attackSimulationOperation'
+          description: The unique identifier of attackSimulationOperation
           required: true
           style: simple
           schema:
@@ -1058,7 +1058,7 @@ paths:
       parameters:
         - name: attackSimulationOperation-id
           in: path
-          description: 'key: id of attackSimulationOperation'
+          description: The unique identifier of attackSimulationOperation
           required: true
           style: simple
           schema:
@@ -1236,7 +1236,7 @@ paths:
       parameters:
         - name: payload-id
           in: path
-          description: 'key: id of payload'
+          description: The unique identifier of payload
           required: true
           style: simple
           schema:
@@ -1306,7 +1306,7 @@ paths:
       parameters:
         - name: payload-id
           in: path
-          description: 'key: id of payload'
+          description: The unique identifier of payload
           required: true
           style: simple
           schema:
@@ -1333,7 +1333,7 @@ paths:
       parameters:
         - name: payload-id
           in: path
-          description: 'key: id of payload'
+          description: The unique identifier of payload
           required: true
           style: simple
           schema:
@@ -1474,7 +1474,7 @@ paths:
       parameters:
         - name: simulationAutomation-id
           in: path
-          description: 'key: id of simulationAutomation'
+          description: The unique identifier of simulationAutomation
           required: true
           style: simple
           schema:
@@ -1533,7 +1533,7 @@ paths:
       parameters:
         - name: simulationAutomation-id
           in: path
-          description: 'key: id of simulationAutomation'
+          description: The unique identifier of simulationAutomation
           required: true
           style: simple
           schema:
@@ -1560,7 +1560,7 @@ paths:
       parameters:
         - name: simulationAutomation-id
           in: path
-          description: 'key: id of simulationAutomation'
+          description: The unique identifier of simulationAutomation
           required: true
           style: simple
           schema:
@@ -1591,7 +1591,7 @@ paths:
       parameters:
         - name: simulationAutomation-id
           in: path
-          description: 'key: id of simulationAutomation'
+          description: The unique identifier of simulationAutomation
           required: true
           style: simple
           schema:
@@ -1668,7 +1668,7 @@ paths:
       parameters:
         - name: simulationAutomation-id
           in: path
-          description: 'key: id of simulationAutomation'
+          description: The unique identifier of simulationAutomation
           required: true
           style: simple
           schema:
@@ -1701,7 +1701,7 @@ paths:
       parameters:
         - name: simulationAutomation-id
           in: path
-          description: 'key: id of simulationAutomation'
+          description: The unique identifier of simulationAutomation
           required: true
           style: simple
           schema:
@@ -1709,7 +1709,7 @@ paths:
           x-ms-docs-key-type: simulationAutomation
         - name: simulationAutomationRun-id
           in: path
-          description: 'key: id of simulationAutomationRun'
+          description: The unique identifier of simulationAutomationRun
           required: true
           style: simple
           schema:
@@ -1761,7 +1761,7 @@ paths:
       parameters:
         - name: simulationAutomation-id
           in: path
-          description: 'key: id of simulationAutomation'
+          description: The unique identifier of simulationAutomation
           required: true
           style: simple
           schema:
@@ -1769,7 +1769,7 @@ paths:
           x-ms-docs-key-type: simulationAutomation
         - name: simulationAutomationRun-id
           in: path
-          description: 'key: id of simulationAutomationRun'
+          description: The unique identifier of simulationAutomationRun
           required: true
           style: simple
           schema:
@@ -1796,7 +1796,7 @@ paths:
       parameters:
         - name: simulationAutomation-id
           in: path
-          description: 'key: id of simulationAutomation'
+          description: The unique identifier of simulationAutomation
           required: true
           style: simple
           schema:
@@ -1804,7 +1804,7 @@ paths:
           x-ms-docs-key-type: simulationAutomation
         - name: simulationAutomationRun-id
           in: path
-          description: 'key: id of simulationAutomationRun'
+          description: The unique identifier of simulationAutomationRun
           required: true
           style: simple
           schema:
@@ -1976,7 +1976,7 @@ paths:
       parameters:
         - name: simulation-id
           in: path
-          description: 'key: id of simulation'
+          description: The unique identifier of simulation
           required: true
           style: simple
           schema:
@@ -2044,7 +2044,7 @@ paths:
       parameters:
         - name: simulation-id
           in: path
-          description: 'key: id of simulation'
+          description: The unique identifier of simulation
           required: true
           style: simple
           schema:
@@ -2071,7 +2071,7 @@ paths:
       parameters:
         - name: simulation-id
           in: path
-          description: 'key: id of simulation'
+          description: The unique identifier of simulation
           required: true
           style: simple
           schema:
@@ -2099,7 +2099,7 @@ paths:
       parameters:
         - name: simulation-id
           in: path
-          description: 'key: id of simulation'
+          description: The unique identifier of simulation
           required: true
           style: simple
           schema:
@@ -2380,7 +2380,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2453,7 +2453,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2480,7 +2480,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2511,7 +2511,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2612,7 +2612,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2645,7 +2645,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2653,7 +2653,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -2717,7 +2717,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2725,7 +2725,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -2752,7 +2752,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2760,7 +2760,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -2791,7 +2791,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2799,7 +2799,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -2859,7 +2859,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2867,7 +2867,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -2892,7 +2892,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2900,7 +2900,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -2925,7 +2925,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2933,7 +2933,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -2958,7 +2958,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2966,7 +2966,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -2991,7 +2991,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -2999,7 +2999,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3024,7 +3024,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3032,7 +3032,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3115,7 +3115,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3123,7 +3123,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3156,7 +3156,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3164,7 +3164,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3172,7 +3172,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -3226,7 +3226,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3234,7 +3234,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3242,7 +3242,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -3269,7 +3269,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3277,7 +3277,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3285,7 +3285,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -3313,7 +3313,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3321,7 +3321,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3329,7 +3329,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -3431,7 +3431,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3439,7 +3439,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3525,7 +3525,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3533,7 +3533,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3566,7 +3566,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3574,7 +3574,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3582,7 +3582,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -3637,7 +3637,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3645,7 +3645,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3653,7 +3653,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -3680,7 +3680,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3688,7 +3688,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3696,7 +3696,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -3724,7 +3724,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3732,7 +3732,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3740,7 +3740,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: unifiedGroupSource-id
           in: path
-          description: 'key: id of unifiedGroupSource'
+          description: The unique identifier of unifiedGroupSource
           required: true
           style: simple
           schema:
@@ -3900,7 +3900,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -3908,7 +3908,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -3998,7 +3998,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4006,7 +4006,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -4039,7 +4039,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4047,7 +4047,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -4055,7 +4055,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -4110,7 +4110,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4118,7 +4118,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -4126,7 +4126,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -4153,7 +4153,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4161,7 +4161,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryCustodian-id
           in: path
-          description: 'key: id of ediscoveryCustodian'
+          description: The unique identifier of ediscoveryCustodian
           required: true
           style: simple
           schema:
@@ -4169,7 +4169,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCustodian
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -4200,7 +4200,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4240,7 +4240,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4280,7 +4280,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4383,7 +4383,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4416,7 +4416,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4424,7 +4424,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -4486,7 +4486,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4494,7 +4494,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -4521,7 +4521,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4529,7 +4529,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -4557,7 +4557,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4565,7 +4565,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -4648,7 +4648,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4656,7 +4656,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -4689,7 +4689,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4697,7 +4697,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -4705,7 +4705,7 @@ paths:
           x-ms-docs-key-type: ediscoveryHoldPolicy
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -4759,7 +4759,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4767,7 +4767,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -4775,7 +4775,7 @@ paths:
           x-ms-docs-key-type: ediscoveryHoldPolicy
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -4802,7 +4802,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4810,7 +4810,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -4818,7 +4818,7 @@ paths:
           x-ms-docs-key-type: ediscoveryHoldPolicy
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -4846,7 +4846,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4854,7 +4854,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -4862,7 +4862,7 @@ paths:
           x-ms-docs-key-type: ediscoveryHoldPolicy
         - name: siteSource-id
           in: path
-          description: 'key: id of siteSource'
+          description: The unique identifier of siteSource
           required: true
           style: simple
           schema:
@@ -4961,7 +4961,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -4969,7 +4969,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -5059,7 +5059,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5067,7 +5067,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -5100,7 +5100,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5108,7 +5108,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -5116,7 +5116,7 @@ paths:
           x-ms-docs-key-type: ediscoveryHoldPolicy
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -5171,7 +5171,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5179,7 +5179,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -5187,7 +5187,7 @@ paths:
           x-ms-docs-key-type: ediscoveryHoldPolicy
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -5214,7 +5214,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5222,7 +5222,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryHoldPolicy-id
           in: path
-          description: 'key: id of ediscoveryHoldPolicy'
+          description: The unique identifier of ediscoveryHoldPolicy
           required: true
           style: simple
           schema:
@@ -5230,7 +5230,7 @@ paths:
           x-ms-docs-key-type: ediscoveryHoldPolicy
         - name: userSource-id
           in: path
-          description: 'key: id of userSource'
+          description: The unique identifier of userSource
           required: true
           style: simple
           schema:
@@ -5261,7 +5261,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5286,7 +5286,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5308,7 +5308,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5399,7 +5399,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5432,7 +5432,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5440,7 +5440,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5498,7 +5498,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5506,7 +5506,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5533,7 +5533,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5541,7 +5541,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5569,7 +5569,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5577,7 +5577,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5629,7 +5629,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5637,7 +5637,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5664,7 +5664,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5672,7 +5672,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5700,7 +5700,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5708,7 +5708,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5768,7 +5768,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5776,7 +5776,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5801,7 +5801,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5809,7 +5809,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5834,7 +5834,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5842,7 +5842,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5867,7 +5867,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5875,7 +5875,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -5900,7 +5900,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5940,7 +5940,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -5980,7 +5980,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6066,7 +6066,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6099,7 +6099,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6107,7 +6107,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: caseOperation-id
           in: path
-          description: 'key: id of caseOperation'
+          description: The unique identifier of caseOperation
           required: true
           style: simple
           schema:
@@ -6162,7 +6162,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6170,7 +6170,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: caseOperation-id
           in: path
-          description: 'key: id of caseOperation'
+          description: The unique identifier of caseOperation
           required: true
           style: simple
           schema:
@@ -6197,7 +6197,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6205,7 +6205,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: caseOperation-id
           in: path
-          description: 'key: id of caseOperation'
+          description: The unique identifier of caseOperation
           required: true
           style: simple
           schema:
@@ -6236,7 +6236,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6318,7 +6318,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6351,7 +6351,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6359,7 +6359,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6414,7 +6414,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6422,7 +6422,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6449,7 +6449,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6457,7 +6457,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6488,7 +6488,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6496,7 +6496,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6601,7 +6601,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6609,7 +6609,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6642,7 +6642,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6650,7 +6650,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6658,7 +6658,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -6722,7 +6722,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6730,7 +6730,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6738,7 +6738,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -6765,7 +6765,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6773,7 +6773,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6781,7 +6781,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -6811,7 +6811,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6819,7 +6819,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6827,7 +6827,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -6852,7 +6852,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6860,7 +6860,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6868,7 +6868,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -6898,7 +6898,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6906,7 +6906,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6914,7 +6914,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -6982,7 +6982,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -6990,7 +6990,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -6998,7 +6998,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -7023,7 +7023,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7031,7 +7031,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7039,7 +7039,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -7069,7 +7069,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7077,7 +7077,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7085,7 +7085,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -7171,7 +7171,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7179,7 +7179,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7187,7 +7187,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryFile-id
           in: path
-          description: 'key: id of ediscoveryFile'
+          description: The unique identifier of ediscoveryFile
           required: true
           style: simple
           schema:
@@ -7195,7 +7195,7 @@ paths:
           x-ms-docs-key-type: ediscoveryFile
         - name: ediscoveryReviewTag-id
           in: path
-          description: 'key: id of ediscoveryReviewTag'
+          description: The unique identifier of ediscoveryReviewTag
           required: true
           style: simple
           schema:
@@ -7257,7 +7257,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7265,7 +7265,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7304,7 +7304,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7312,7 +7312,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7363,7 +7363,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7371,7 +7371,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7461,7 +7461,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7469,7 +7469,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7502,7 +7502,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7510,7 +7510,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7518,7 +7518,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryReviewSetQuery-id
           in: path
-          description: 'key: id of ediscoveryReviewSetQuery'
+          description: The unique identifier of ediscoveryReviewSetQuery
           required: true
           style: simple
           schema:
@@ -7573,7 +7573,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7581,7 +7581,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7589,7 +7589,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryReviewSetQuery-id
           in: path
-          description: 'key: id of ediscoveryReviewSetQuery'
+          description: The unique identifier of ediscoveryReviewSetQuery
           required: true
           style: simple
           schema:
@@ -7616,7 +7616,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7624,7 +7624,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7632,7 +7632,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryReviewSetQuery-id
           in: path
-          description: 'key: id of ediscoveryReviewSetQuery'
+          description: The unique identifier of ediscoveryReviewSetQuery
           required: true
           style: simple
           schema:
@@ -7663,7 +7663,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7671,7 +7671,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7679,7 +7679,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryReviewSetQuery-id
           in: path
-          description: 'key: id of ediscoveryReviewSetQuery'
+          description: The unique identifier of ediscoveryReviewSetQuery
           required: true
           style: simple
           schema:
@@ -7722,7 +7722,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7730,7 +7730,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7738,7 +7738,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryReviewSetQuery-id
           in: path
-          description: 'key: id of ediscoveryReviewSetQuery'
+          description: The unique identifier of ediscoveryReviewSetQuery
           required: true
           style: simple
           schema:
@@ -7785,7 +7785,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -7793,7 +7793,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewSet-id
           in: path
-          description: 'key: id of ediscoveryReviewSet'
+          description: The unique identifier of ediscoveryReviewSet
           required: true
           style: simple
           schema:
@@ -7801,7 +7801,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: ediscoveryReviewSetQuery-id
           in: path
-          description: 'key: id of ediscoveryReviewSetQuery'
+          description: The unique identifier of ediscoveryReviewSetQuery
           required: true
           style: simple
           schema:
@@ -7912,7 +7912,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8015,7 +8015,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8048,7 +8048,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8056,7 +8056,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8122,7 +8122,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8130,7 +8130,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8157,7 +8157,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8165,7 +8165,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8196,7 +8196,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8204,7 +8204,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8285,7 +8285,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8293,7 +8293,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8326,7 +8326,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8334,7 +8334,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8342,7 +8342,7 @@ paths:
           x-ms-docs-key-type: ediscoverySearch
         - name: dataSource-id
           in: path
-          description: 'key: id of dataSource'
+          description: The unique identifier of dataSource
           required: true
           style: simple
           schema:
@@ -8394,7 +8394,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8402,7 +8402,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8410,7 +8410,7 @@ paths:
           x-ms-docs-key-type: ediscoverySearch
         - name: dataSource-id
           in: path
-          description: 'key: id of dataSource'
+          description: The unique identifier of dataSource
           required: true
           style: simple
           schema:
@@ -8437,7 +8437,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8445,7 +8445,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8453,7 +8453,7 @@ paths:
           x-ms-docs-key-type: ediscoverySearch
         - name: dataSource-id
           in: path
-          description: 'key: id of dataSource'
+          description: The unique identifier of dataSource
           required: true
           style: simple
           schema:
@@ -8481,7 +8481,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8489,7 +8489,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8553,7 +8553,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8561,7 +8561,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8640,7 +8640,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8648,7 +8648,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8656,7 +8656,7 @@ paths:
           x-ms-docs-key-type: ediscoverySearch
         - name: dataSource-id
           in: path
-          description: 'key: id of dataSource'
+          description: The unique identifier of dataSource
           required: true
           style: simple
           schema:
@@ -8713,7 +8713,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8721,7 +8721,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8789,7 +8789,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8797,7 +8797,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8822,7 +8822,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8830,7 +8830,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8866,7 +8866,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8874,7 +8874,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8963,7 +8963,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -8971,7 +8971,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoverySearch-id
           in: path
-          description: 'key: id of ediscoverySearch'
+          description: The unique identifier of ediscoverySearch
           required: true
           style: simple
           schema:
@@ -8979,7 +8979,7 @@ paths:
           x-ms-docs-key-type: ediscoverySearch
         - name: ediscoveryNoncustodialDataSource-id
           in: path
-          description: 'key: id of ediscoveryNoncustodialDataSource'
+          description: The unique identifier of ediscoveryNoncustodialDataSource
           required: true
           style: simple
           schema:
@@ -9042,7 +9042,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9097,7 +9097,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9124,7 +9124,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9155,7 +9155,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9180,7 +9180,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9268,7 +9268,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9301,7 +9301,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9309,7 +9309,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewTag-id
           in: path
-          description: 'key: id of ediscoveryReviewTag'
+          description: The unique identifier of ediscoveryReviewTag
           required: true
           style: simple
           schema:
@@ -9366,7 +9366,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9374,7 +9374,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewTag-id
           in: path
-          description: 'key: id of ediscoveryReviewTag'
+          description: The unique identifier of ediscoveryReviewTag
           required: true
           style: simple
           schema:
@@ -9401,7 +9401,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9409,7 +9409,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewTag-id
           in: path
-          description: 'key: id of ediscoveryReviewTag'
+          description: The unique identifier of ediscoveryReviewTag
           required: true
           style: simple
           schema:
@@ -9437,7 +9437,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9445,7 +9445,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewTag-id
           in: path
-          description: 'key: id of ediscoveryReviewTag'
+          description: The unique identifier of ediscoveryReviewTag
           required: true
           style: simple
           schema:
@@ -9531,7 +9531,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9539,7 +9539,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewTag-id
           in: path
-          description: 'key: id of ediscoveryReviewTag'
+          description: The unique identifier of ediscoveryReviewTag
           required: true
           style: simple
           schema:
@@ -9547,7 +9547,7 @@ paths:
           x-ms-docs-key-type: ediscoveryReviewTag
         - name: ediscoveryReviewTag-id1
           in: path
-          description: 'key: id of ediscoveryReviewTag'
+          description: The unique identifier of ediscoveryReviewTag
           required: true
           style: simple
           schema:
@@ -9606,7 +9606,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9614,7 +9614,7 @@ paths:
           x-ms-docs-key-type: ediscoveryCase
         - name: ediscoveryReviewTag-id
           in: path
-          description: 'key: id of ediscoveryReviewTag'
+          description: The unique identifier of ediscoveryReviewTag
           required: true
           style: simple
           schema:
@@ -9672,7 +9672,7 @@ paths:
       parameters:
         - name: ediscoveryCase-id
           in: path
-          description: 'key: id of ediscoveryCase'
+          description: The unique identifier of ediscoveryCase
           required: true
           style: simple
           schema:
@@ -9889,7 +9889,7 @@ paths:
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
-          description: 'key: id of cloudAppSecurityProfile'
+          description: The unique identifier of cloudAppSecurityProfile
           required: true
           style: simple
           schema:
@@ -9954,7 +9954,7 @@ paths:
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
-          description: 'key: id of cloudAppSecurityProfile'
+          description: The unique identifier of cloudAppSecurityProfile
           required: true
           style: simple
           schema:
@@ -9981,7 +9981,7 @@ paths:
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
-          description: 'key: id of cloudAppSecurityProfile'
+          description: The unique identifier of cloudAppSecurityProfile
           required: true
           style: simple
           schema:
@@ -10130,7 +10130,7 @@ paths:
       parameters:
         - name: domainSecurityProfile-id
           in: path
-          description: 'key: id of domainSecurityProfile'
+          description: The unique identifier of domainSecurityProfile
           required: true
           style: simple
           schema:
@@ -10192,7 +10192,7 @@ paths:
       parameters:
         - name: domainSecurityProfile-id
           in: path
-          description: 'key: id of domainSecurityProfile'
+          description: The unique identifier of domainSecurityProfile
           required: true
           style: simple
           schema:
@@ -10219,7 +10219,7 @@ paths:
       parameters:
         - name: domainSecurityProfile-id
           in: path
-          description: 'key: id of domainSecurityProfile'
+          description: The unique identifier of domainSecurityProfile
           required: true
           style: simple
           schema:
@@ -10374,7 +10374,7 @@ paths:
       parameters:
         - name: fileSecurityProfile-id
           in: path
-          description: 'key: id of fileSecurityProfile'
+          description: The unique identifier of fileSecurityProfile
           required: true
           style: simple
           schema:
@@ -10438,7 +10438,7 @@ paths:
       parameters:
         - name: fileSecurityProfile-id
           in: path
-          description: 'key: id of fileSecurityProfile'
+          description: The unique identifier of fileSecurityProfile
           required: true
           style: simple
           schema:
@@ -10465,7 +10465,7 @@ paths:
       parameters:
         - name: fileSecurityProfile-id
           in: path
-          description: 'key: id of fileSecurityProfile'
+          description: The unique identifier of fileSecurityProfile
           required: true
           style: simple
           schema:
@@ -10626,7 +10626,7 @@ paths:
       parameters:
         - name: hostSecurityProfile-id
           in: path
-          description: 'key: id of hostSecurityProfile'
+          description: The unique identifier of hostSecurityProfile
           required: true
           style: simple
           schema:
@@ -10692,7 +10692,7 @@ paths:
       parameters:
         - name: hostSecurityProfile-id
           in: path
-          description: 'key: id of hostSecurityProfile'
+          description: The unique identifier of hostSecurityProfile
           required: true
           style: simple
           schema:
@@ -10719,7 +10719,7 @@ paths:
       parameters:
         - name: hostSecurityProfile-id
           in: path
-          description: 'key: id of hostSecurityProfile'
+          description: The unique identifier of hostSecurityProfile
           required: true
           style: simple
           schema:
@@ -10872,7 +10872,7 @@ paths:
       parameters:
         - name: incident-id
           in: path
-          description: 'key: id of incident'
+          description: The unique identifier of incident
           required: true
           style: simple
           schema:
@@ -10935,7 +10935,7 @@ paths:
       parameters:
         - name: incident-id
           in: path
-          description: 'key: id of incident'
+          description: The unique identifier of incident
           required: true
           style: simple
           schema:
@@ -10962,7 +10962,7 @@ paths:
       parameters:
         - name: incident-id
           in: path
-          description: 'key: id of incident'
+          description: The unique identifier of incident
           required: true
           style: simple
           schema:
@@ -10990,7 +10990,7 @@ paths:
       parameters:
         - name: incident-id
           in: path
-          description: 'key: id of incident'
+          description: The unique identifier of incident
           required: true
           style: simple
           schema:
@@ -11141,7 +11141,7 @@ paths:
       parameters:
         - name: incident-id
           in: path
-          description: 'key: id of incident'
+          description: The unique identifier of incident
           required: true
           style: simple
           schema:
@@ -11149,7 +11149,7 @@ paths:
           x-ms-docs-key-type: incident
         - name: alert-id
           in: path
-          description: 'key: id of alert'
+          description: The unique identifier of alert
           required: true
           style: simple
           schema:
@@ -11506,7 +11506,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11565,7 +11565,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11592,7 +11592,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11620,7 +11620,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11679,7 +11679,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -11706,7 +11706,7 @@ paths:
       parameters:
         - name: sensitivityLabel-id
           in: path
-          description: 'key: id of sensitivityLabel'
+          description: The unique identifier of sensitivityLabel
           required: true
           style: simple
           schema:
@@ -12027,7 +12027,7 @@ paths:
       parameters:
         - name: ipSecurityProfile-id
           in: path
-          description: 'key: id of ipSecurityProfile'
+          description: The unique identifier of ipSecurityProfile
           required: true
           style: simple
           schema:
@@ -12088,7 +12088,7 @@ paths:
       parameters:
         - name: ipSecurityProfile-id
           in: path
-          description: 'key: id of ipSecurityProfile'
+          description: The unique identifier of ipSecurityProfile
           required: true
           style: simple
           schema:
@@ -12115,7 +12115,7 @@ paths:
       parameters:
         - name: ipSecurityProfile-id
           in: path
-          description: 'key: id of ipSecurityProfile'
+          description: The unique identifier of ipSecurityProfile
           required: true
           style: simple
           schema:
@@ -12355,7 +12355,7 @@ paths:
       parameters:
         - name: retentionLabel-id
           in: path
-          description: 'key: id of retentionLabel'
+          description: The unique identifier of retentionLabel
           required: true
           style: simple
           schema:
@@ -12421,7 +12421,7 @@ paths:
       parameters:
         - name: retentionLabel-id
           in: path
-          description: 'key: id of retentionLabel'
+          description: The unique identifier of retentionLabel
           required: true
           style: simple
           schema:
@@ -12448,7 +12448,7 @@ paths:
       parameters:
         - name: retentionLabel-id
           in: path
-          description: 'key: id of retentionLabel'
+          description: The unique identifier of retentionLabel
           required: true
           style: simple
           schema:
@@ -12476,7 +12476,7 @@ paths:
       parameters:
         - name: retentionLabel-id
           in: path
-          description: 'key: id of retentionLabel'
+          description: The unique identifier of retentionLabel
           required: true
           style: simple
           schema:
@@ -12550,7 +12550,7 @@ paths:
       parameters:
         - name: retentionLabel-id
           in: path
-          description: 'key: id of retentionLabel'
+          description: The unique identifier of retentionLabel
           required: true
           style: simple
           schema:
@@ -12583,7 +12583,7 @@ paths:
       parameters:
         - name: retentionLabel-id
           in: path
-          description: 'key: id of retentionLabel'
+          description: The unique identifier of retentionLabel
           required: true
           style: simple
           schema:
@@ -12591,7 +12591,7 @@ paths:
           x-ms-docs-key-type: retentionLabel
         - name: dispositionReviewStage-id
           in: path
-          description: 'key: id of dispositionReviewStage'
+          description: The unique identifier of dispositionReviewStage
           required: true
           style: simple
           schema:
@@ -12642,7 +12642,7 @@ paths:
       parameters:
         - name: retentionLabel-id
           in: path
-          description: 'key: id of retentionLabel'
+          description: The unique identifier of retentionLabel
           required: true
           style: simple
           schema:
@@ -12650,7 +12650,7 @@ paths:
           x-ms-docs-key-type: retentionLabel
         - name: dispositionReviewStage-id
           in: path
-          description: 'key: id of dispositionReviewStage'
+          description: The unique identifier of dispositionReviewStage
           required: true
           style: simple
           schema:
@@ -12677,7 +12677,7 @@ paths:
       parameters:
         - name: retentionLabel-id
           in: path
-          description: 'key: id of retentionLabel'
+          description: The unique identifier of retentionLabel
           required: true
           style: simple
           schema:
@@ -12685,7 +12685,7 @@ paths:
           x-ms-docs-key-type: retentionLabel
         - name: dispositionReviewStage-id
           in: path
-          description: 'key: id of dispositionReviewStage'
+          description: The unique identifier of dispositionReviewStage
           required: true
           style: simple
           schema:
@@ -12712,7 +12712,7 @@ paths:
       parameters:
         - name: retentionLabel-id
           in: path
-          description: 'key: id of retentionLabel'
+          description: The unique identifier of retentionLabel
           required: true
           style: simple
           schema:
@@ -12891,7 +12891,7 @@ paths:
       parameters:
         - name: providerTenantSetting-id
           in: path
-          description: 'key: id of providerTenantSetting'
+          description: The unique identifier of providerTenantSetting
           required: true
           style: simple
           schema:
@@ -12944,7 +12944,7 @@ paths:
       parameters:
         - name: providerTenantSetting-id
           in: path
-          description: 'key: id of providerTenantSetting'
+          description: The unique identifier of providerTenantSetting
           required: true
           style: simple
           schema:
@@ -12971,7 +12971,7 @@ paths:
       parameters:
         - name: providerTenantSetting-id
           in: path
-          description: 'key: id of providerTenantSetting'
+          description: The unique identifier of providerTenantSetting
           required: true
           style: simple
           schema:
@@ -13139,7 +13139,7 @@ paths:
       parameters:
         - name: secureScoreControlProfile-id
           in: path
-          description: 'key: id of secureScoreControlProfile'
+          description: The unique identifier of secureScoreControlProfile
           required: true
           style: simple
           schema:
@@ -13206,7 +13206,7 @@ paths:
       parameters:
         - name: secureScoreControlProfile-id
           in: path
-          description: 'key: id of secureScoreControlProfile'
+          description: The unique identifier of secureScoreControlProfile
           required: true
           style: simple
           schema:
@@ -13233,7 +13233,7 @@ paths:
       parameters:
         - name: secureScoreControlProfile-id
           in: path
-          description: 'key: id of secureScoreControlProfile'
+          description: The unique identifier of secureScoreControlProfile
           required: true
           style: simple
           schema:
@@ -13375,7 +13375,7 @@ paths:
       parameters:
         - name: secureScore-id
           in: path
-          description: 'key: id of secureScore'
+          description: The unique identifier of secureScore
           required: true
           style: simple
           schema:
@@ -13433,7 +13433,7 @@ paths:
       parameters:
         - name: secureScore-id
           in: path
-          description: 'key: id of secureScore'
+          description: The unique identifier of secureScore
           required: true
           style: simple
           schema:
@@ -13460,7 +13460,7 @@ paths:
       parameters:
         - name: secureScore-id
           in: path
-          description: 'key: id of secureScore'
+          description: The unique identifier of secureScore
           required: true
           style: simple
           schema:
@@ -13617,7 +13617,7 @@ paths:
       parameters:
         - name: securityAction-id
           in: path
-          description: 'key: id of securityAction'
+          description: The unique identifier of securityAction
           required: true
           style: simple
           schema:
@@ -13679,7 +13679,7 @@ paths:
       parameters:
         - name: securityAction-id
           in: path
-          description: 'key: id of securityAction'
+          description: The unique identifier of securityAction
           required: true
           style: simple
           schema:
@@ -13706,7 +13706,7 @@ paths:
       parameters:
         - name: securityAction-id
           in: path
-          description: 'key: id of securityAction'
+          description: The unique identifier of securityAction
           required: true
           style: simple
           schema:
@@ -13737,7 +13737,7 @@ paths:
       parameters:
         - name: securityAction-id
           in: path
-          description: 'key: id of securityAction'
+          description: The unique identifier of securityAction
           required: true
           style: simple
           schema:
@@ -13914,7 +13914,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -13990,7 +13990,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14017,7 +14017,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14044,7 +14044,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14076,7 +14076,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14112,7 +14112,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14190,7 +14190,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14223,7 +14223,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14231,7 +14231,7 @@ paths:
           x-ms-docs-key-type: subjectRightsRequest
         - name: authoredNote-id
           in: path
-          description: 'key: id of authoredNote'
+          description: The unique identifier of authoredNote
           required: true
           style: simple
           schema:
@@ -14282,7 +14282,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14290,7 +14290,7 @@ paths:
           x-ms-docs-key-type: subjectRightsRequest
         - name: authoredNote-id
           in: path
-          description: 'key: id of authoredNote'
+          description: The unique identifier of authoredNote
           required: true
           style: simple
           schema:
@@ -14317,7 +14317,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14325,7 +14325,7 @@ paths:
           x-ms-docs-key-type: subjectRightsRequest
         - name: authoredNote-id
           in: path
-          description: 'key: id of authoredNote'
+          description: The unique identifier of authoredNote
           required: true
           style: simple
           schema:
@@ -14353,7 +14353,7 @@ paths:
       parameters:
         - name: subjectRightsRequest-id
           in: path
-          description: 'key: id of subjectRightsRequest'
+          description: The unique identifier of subjectRightsRequest
           required: true
           style: simple
           schema:
@@ -14680,7 +14680,7 @@ paths:
       parameters:
         - name: emailThreatSubmission-id
           in: path
-          description: 'key: id of emailThreatSubmission'
+          description: The unique identifier of emailThreatSubmission
           required: true
           style: simple
           schema:
@@ -14747,7 +14747,7 @@ paths:
       parameters:
         - name: emailThreatSubmission-id
           in: path
-          description: 'key: id of emailThreatSubmission'
+          description: The unique identifier of emailThreatSubmission
           required: true
           style: simple
           schema:
@@ -14774,7 +14774,7 @@ paths:
       parameters:
         - name: emailThreatSubmission-id
           in: path
-          description: 'key: id of emailThreatSubmission'
+          description: The unique identifier of emailThreatSubmission
           required: true
           style: simple
           schema:
@@ -14924,7 +14924,7 @@ paths:
       parameters:
         - name: emailThreatSubmissionPolicy-id
           in: path
-          description: 'key: id of emailThreatSubmissionPolicy'
+          description: The unique identifier of emailThreatSubmissionPolicy
           required: true
           style: simple
           schema:
@@ -14985,7 +14985,7 @@ paths:
       parameters:
         - name: emailThreatSubmissionPolicy-id
           in: path
-          description: 'key: id of emailThreatSubmissionPolicy'
+          description: The unique identifier of emailThreatSubmissionPolicy
           required: true
           style: simple
           schema:
@@ -15012,7 +15012,7 @@ paths:
       parameters:
         - name: emailThreatSubmissionPolicy-id
           in: path
-          description: 'key: id of emailThreatSubmissionPolicy'
+          description: The unique identifier of emailThreatSubmissionPolicy
           required: true
           style: simple
           schema:
@@ -15156,7 +15156,7 @@ paths:
       parameters:
         - name: fileThreatSubmission-id
           in: path
-          description: 'key: id of fileThreatSubmission'
+          description: The unique identifier of fileThreatSubmission
           required: true
           style: simple
           schema:
@@ -15215,7 +15215,7 @@ paths:
       parameters:
         - name: fileThreatSubmission-id
           in: path
-          description: 'key: id of fileThreatSubmission'
+          description: The unique identifier of fileThreatSubmission
           required: true
           style: simple
           schema:
@@ -15242,7 +15242,7 @@ paths:
       parameters:
         - name: fileThreatSubmission-id
           in: path
-          description: 'key: id of fileThreatSubmission'
+          description: The unique identifier of fileThreatSubmission
           required: true
           style: simple
           schema:
@@ -15390,7 +15390,7 @@ paths:
       parameters:
         - name: urlThreatSubmission-id
           in: path
-          description: 'key: id of urlThreatSubmission'
+          description: The unique identifier of urlThreatSubmission
           required: true
           style: simple
           schema:
@@ -15449,7 +15449,7 @@ paths:
       parameters:
         - name: urlThreatSubmission-id
           in: path
-          description: 'key: id of urlThreatSubmission'
+          description: The unique identifier of urlThreatSubmission
           required: true
           style: simple
           schema:
@@ -15476,7 +15476,7 @@ paths:
       parameters:
         - name: urlThreatSubmission-id
           in: path
-          description: 'key: id of urlThreatSubmission'
+          description: The unique identifier of urlThreatSubmission
           required: true
           style: simple
           schema:
@@ -15765,7 +15765,7 @@ paths:
       parameters:
         - name: tiIndicator-id
           in: path
-          description: 'key: id of tiIndicator'
+          description: The unique identifier of tiIndicator
           required: true
           style: simple
           schema:
@@ -15871,7 +15871,7 @@ paths:
       parameters:
         - name: tiIndicator-id
           in: path
-          description: 'key: id of tiIndicator'
+          description: The unique identifier of tiIndicator
           required: true
           style: simple
           schema:
@@ -15898,7 +15898,7 @@ paths:
       parameters:
         - name: tiIndicator-id
           in: path
-          description: 'key: id of tiIndicator'
+          description: The unique identifier of tiIndicator
           required: true
           style: simple
           schema:
@@ -16319,7 +16319,7 @@ paths:
       parameters:
         - name: retentionEvent-id
           in: path
-          description: 'key: id of retentionEvent'
+          description: The unique identifier of retentionEvent
           required: true
           style: simple
           schema:
@@ -16380,7 +16380,7 @@ paths:
       parameters:
         - name: retentionEvent-id
           in: path
-          description: 'key: id of retentionEvent'
+          description: The unique identifier of retentionEvent
           required: true
           style: simple
           schema:
@@ -16407,7 +16407,7 @@ paths:
       parameters:
         - name: retentionEvent-id
           in: path
-          description: 'key: id of retentionEvent'
+          description: The unique identifier of retentionEvent
           required: true
           style: simple
           schema:
@@ -16435,7 +16435,7 @@ paths:
       parameters:
         - name: retentionEvent-id
           in: path
-          description: 'key: id of retentionEvent'
+          description: The unique identifier of retentionEvent
           required: true
           style: simple
           schema:
@@ -16675,7 +16675,7 @@ paths:
       parameters:
         - name: retentionEventType-id
           in: path
-          description: 'key: id of retentionEventType'
+          description: The unique identifier of retentionEventType
           required: true
           style: simple
           schema:
@@ -16729,7 +16729,7 @@ paths:
       parameters:
         - name: retentionEventType-id
           in: path
-          description: 'key: id of retentionEventType'
+          description: The unique identifier of retentionEventType
           required: true
           style: simple
           schema:
@@ -16756,7 +16756,7 @@ paths:
       parameters:
         - name: retentionEventType-id
           in: path
-          description: 'key: id of retentionEventType'
+          description: The unique identifier of retentionEventType
           required: true
           style: simple
           schema:
@@ -16893,7 +16893,7 @@ paths:
       parameters:
         - name: userSecurityProfile-id
           in: path
-          description: 'key: id of userSecurityProfile'
+          description: The unique identifier of userSecurityProfile
           required: true
           style: simple
           schema:
@@ -16951,7 +16951,7 @@ paths:
       parameters:
         - name: userSecurityProfile-id
           in: path
-          description: 'key: id of userSecurityProfile'
+          description: The unique identifier of userSecurityProfile
           required: true
           style: simple
           schema:
@@ -16978,7 +16978,7 @@ paths:
       parameters:
         - name: userSecurityProfile-id
           in: path
-          description: 'key: id of userSecurityProfile'
+          description: The unique identifier of userSecurityProfile
           required: true
           style: simple
           schema:
