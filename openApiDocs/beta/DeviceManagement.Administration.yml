@@ -216,7 +216,7 @@ paths:
       parameters:
         - name: auditEvent-id
           in: path
-          description: 'key: id of auditEvent'
+          description: The unique identifier of auditEvent
           required: true
           style: simple
           schema:
@@ -275,7 +275,7 @@ paths:
       parameters:
         - name: auditEvent-id
           in: path
-          description: 'key: id of auditEvent'
+          description: The unique identifier of auditEvent
           required: true
           style: simple
           schema:
@@ -302,7 +302,7 @@ paths:
       parameters:
         - name: auditEvent-id
           in: path
-          description: 'key: id of auditEvent'
+          description: The unique identifier of auditEvent
           required: true
           style: simple
           schema:
@@ -432,7 +432,7 @@ paths:
       parameters:
         - name: cartToClassAssociation-id
           in: path
-          description: 'key: id of cartToClassAssociation'
+          description: The unique identifier of cartToClassAssociation
           required: true
           style: simple
           schema:
@@ -487,7 +487,7 @@ paths:
       parameters:
         - name: cartToClassAssociation-id
           in: path
-          description: 'key: id of cartToClassAssociation'
+          description: The unique identifier of cartToClassAssociation
           required: true
           style: simple
           schema:
@@ -514,7 +514,7 @@ paths:
       parameters:
         - name: cartToClassAssociation-id
           in: path
-          description: 'key: id of cartToClassAssociation'
+          description: The unique identifier of cartToClassAssociation
           required: true
           style: simple
           schema:
@@ -680,7 +680,7 @@ paths:
       parameters:
         - name: comanagementEligibleDevice-id
           in: path
-          description: 'key: id of comanagementEligibleDevice'
+          description: The unique identifier of comanagementEligibleDevice
           required: true
           style: simple
           schema:
@@ -747,7 +747,7 @@ paths:
       parameters:
         - name: comanagementEligibleDevice-id
           in: path
-          description: 'key: id of comanagementEligibleDevice'
+          description: The unique identifier of comanagementEligibleDevice
           required: true
           style: simple
           schema:
@@ -774,7 +774,7 @@ paths:
       parameters:
         - name: comanagementEligibleDevice-id
           in: path
-          description: 'key: id of comanagementEligibleDevice'
+          description: The unique identifier of comanagementEligibleDevice
           required: true
           style: simple
           schema:
@@ -916,7 +916,7 @@ paths:
       parameters:
         - name: complianceManagementPartner-id
           in: path
-          description: 'key: id of complianceManagementPartner'
+          description: The unique identifier of complianceManagementPartner
           required: true
           style: simple
           schema:
@@ -975,7 +975,7 @@ paths:
       parameters:
         - name: complianceManagementPartner-id
           in: path
-          description: 'key: id of complianceManagementPartner'
+          description: The unique identifier of complianceManagementPartner
           required: true
           style: simple
           schema:
@@ -1002,7 +1002,7 @@ paths:
       parameters:
         - name: complianceManagementPartner-id
           in: path
-          description: 'key: id of complianceManagementPartner'
+          description: The unique identifier of complianceManagementPartner
           required: true
           style: simple
           schema:
@@ -1138,7 +1138,7 @@ paths:
       parameters:
         - name: restrictedAppsViolation-id
           in: path
-          description: 'key: id of restrictedAppsViolation'
+          description: The unique identifier of restrictedAppsViolation
           required: true
           style: simple
           schema:
@@ -1195,7 +1195,7 @@ paths:
       parameters:
         - name: restrictedAppsViolation-id
           in: path
-          description: 'key: id of restrictedAppsViolation'
+          description: The unique identifier of restrictedAppsViolation
           required: true
           style: simple
           schema:
@@ -1222,7 +1222,7 @@ paths:
       parameters:
         - name: restrictedAppsViolation-id
           in: path
-          description: 'key: id of restrictedAppsViolation'
+          description: The unique identifier of restrictedAppsViolation
           required: true
           style: simple
           schema:
@@ -1367,7 +1367,7 @@ paths:
       parameters:
         - name: managedAllDeviceCertificateState-id
           in: path
-          description: 'key: id of managedAllDeviceCertificateState'
+          description: The unique identifier of managedAllDeviceCertificateState
           required: true
           style: simple
           schema:
@@ -1427,7 +1427,7 @@ paths:
       parameters:
         - name: managedAllDeviceCertificateState-id
           in: path
-          description: 'key: id of managedAllDeviceCertificateState'
+          description: The unique identifier of managedAllDeviceCertificateState
           required: true
           style: simple
           schema:
@@ -1454,7 +1454,7 @@ paths:
       parameters:
         - name: managedAllDeviceCertificateState-id
           in: path
-          description: 'key: id of managedAllDeviceCertificateState'
+          description: The unique identifier of managedAllDeviceCertificateState
           required: true
           style: simple
           schema:
@@ -1590,7 +1590,7 @@ paths:
       parameters:
         - name: deviceManagementPartner-id
           in: path
-          description: 'key: id of deviceManagementPartner'
+          description: The unique identifier of deviceManagementPartner
           required: true
           style: simple
           schema:
@@ -1647,7 +1647,7 @@ paths:
       parameters:
         - name: deviceManagementPartner-id
           in: path
-          description: 'key: id of deviceManagementPartner'
+          description: The unique identifier of deviceManagementPartner
           required: true
           style: simple
           schema:
@@ -1674,7 +1674,7 @@ paths:
       parameters:
         - name: deviceManagementPartner-id
           in: path
-          description: 'key: id of deviceManagementPartner'
+          description: The unique identifier of deviceManagementPartner
           required: true
           style: simple
           schema:
@@ -1795,7 +1795,7 @@ paths:
       parameters:
         - name: deviceManagementDomainJoinConnector-id
           in: path
-          description: 'key: id of deviceManagementDomainJoinConnector'
+          description: The unique identifier of deviceManagementDomainJoinConnector
           required: true
           style: simple
           schema:
@@ -1847,7 +1847,7 @@ paths:
       parameters:
         - name: deviceManagementDomainJoinConnector-id
           in: path
-          description: 'key: id of deviceManagementDomainJoinConnector'
+          description: The unique identifier of deviceManagementDomainJoinConnector
           required: true
           style: simple
           schema:
@@ -1874,7 +1874,7 @@ paths:
       parameters:
         - name: deviceManagementDomainJoinConnector-id
           in: path
-          description: 'key: id of deviceManagementDomainJoinConnector'
+          description: The unique identifier of deviceManagementDomainJoinConnector
           required: true
           style: simple
           schema:
@@ -2010,7 +2010,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
-          description: 'key: id of deviceManagementExchangeConnector'
+          description: The unique identifier of deviceManagementExchangeConnector
           required: true
           style: simple
           schema:
@@ -2067,7 +2067,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
-          description: 'key: id of deviceManagementExchangeConnector'
+          description: The unique identifier of deviceManagementExchangeConnector
           required: true
           style: simple
           schema:
@@ -2094,7 +2094,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
-          description: 'key: id of deviceManagementExchangeConnector'
+          description: The unique identifier of deviceManagementExchangeConnector
           required: true
           style: simple
           schema:
@@ -2217,7 +2217,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
-          description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
+          description: The unique identifier of deviceManagementExchangeOnPremisesPolicy
           required: true
           style: simple
           schema:
@@ -2271,7 +2271,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
-          description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
+          description: The unique identifier of deviceManagementExchangeOnPremisesPolicy
           required: true
           style: simple
           schema:
@@ -2298,7 +2298,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
-          description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
+          description: The unique identifier of deviceManagementExchangeOnPremisesPolicy
           required: true
           style: simple
           schema:
@@ -2326,7 +2326,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
-          description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
+          description: The unique identifier of deviceManagementExchangeOnPremisesPolicy
           required: true
           style: simple
           schema:
@@ -2378,7 +2378,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
-          description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
+          description: The unique identifier of deviceManagementExchangeOnPremisesPolicy
           required: true
           style: simple
           schema:
@@ -2405,7 +2405,7 @@ paths:
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
-          description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
+          description: The unique identifier of deviceManagementExchangeOnPremisesPolicy
           required: true
           style: simple
           schema:
@@ -2700,7 +2700,7 @@ paths:
       parameters:
         - name: groupPolicyCategory-id
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -2760,7 +2760,7 @@ paths:
       parameters:
         - name: groupPolicyCategory-id
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -2787,7 +2787,7 @@ paths:
       parameters:
         - name: groupPolicyCategory-id
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -2815,7 +2815,7 @@ paths:
       parameters:
         - name: groupPolicyCategory-id
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -2902,7 +2902,7 @@ paths:
       parameters:
         - name: groupPolicyCategory-id
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -2910,7 +2910,7 @@ paths:
           x-ms-docs-key-type: groupPolicyCategory
         - name: groupPolicyCategory-id1
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -2972,7 +2972,7 @@ paths:
       parameters:
         - name: groupPolicyCategory-id
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -3033,7 +3033,7 @@ paths:
       parameters:
         - name: groupPolicyCategory-id
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -3146,7 +3146,7 @@ paths:
       parameters:
         - name: groupPolicyCategory-id
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -3154,7 +3154,7 @@ paths:
           x-ms-docs-key-type: groupPolicyCategory
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -3226,7 +3226,7 @@ paths:
       parameters:
         - name: groupPolicyCategory-id
           in: path
-          description: 'key: id of groupPolicyCategory'
+          description: The unique identifier of groupPolicyCategory
           required: true
           style: simple
           schema:
@@ -3398,7 +3398,7 @@ paths:
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyDefinitionFile'
+          description: The unique identifier of groupPolicyDefinitionFile
           required: true
           style: simple
           schema:
@@ -3457,7 +3457,7 @@ paths:
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyDefinitionFile'
+          description: The unique identifier of groupPolicyDefinitionFile
           required: true
           style: simple
           schema:
@@ -3484,7 +3484,7 @@ paths:
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyDefinitionFile'
+          description: The unique identifier of groupPolicyDefinitionFile
           required: true
           style: simple
           schema:
@@ -3512,7 +3512,7 @@ paths:
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyDefinitionFile'
+          description: The unique identifier of groupPolicyDefinitionFile
           required: true
           style: simple
           schema:
@@ -3625,7 +3625,7 @@ paths:
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyDefinitionFile'
+          description: The unique identifier of groupPolicyDefinitionFile
           required: true
           style: simple
           schema:
@@ -3633,7 +3633,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinitionFile
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -3832,7 +3832,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -3902,7 +3902,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -3929,7 +3929,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -3957,7 +3957,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4019,7 +4019,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4080,7 +4080,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4150,7 +4150,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4177,7 +4177,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4205,7 +4205,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4267,7 +4267,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4328,7 +4328,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4401,7 +4401,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4434,7 +4434,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4442,7 +4442,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -4494,7 +4494,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4502,7 +4502,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -4529,7 +4529,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4537,7 +4537,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -4565,7 +4565,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4573,7 +4573,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -4645,7 +4645,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4715,7 +4715,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4742,7 +4742,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4770,7 +4770,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4832,7 +4832,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4893,7 +4893,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4966,7 +4966,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -4999,7 +4999,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5007,7 +5007,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -5059,7 +5059,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5067,7 +5067,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -5094,7 +5094,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5102,7 +5102,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -5130,7 +5130,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5138,7 +5138,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -5210,7 +5210,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5283,7 +5283,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5316,7 +5316,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5324,7 +5324,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -5376,7 +5376,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5384,7 +5384,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -5411,7 +5411,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5419,7 +5419,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -5447,7 +5447,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5455,7 +5455,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -5527,7 +5527,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5597,7 +5597,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5624,7 +5624,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5652,7 +5652,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5714,7 +5714,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5775,7 +5775,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5845,7 +5845,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5872,7 +5872,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5900,7 +5900,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -5962,7 +5962,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6023,7 +6023,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6096,7 +6096,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6129,7 +6129,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6137,7 +6137,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -6189,7 +6189,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6197,7 +6197,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -6224,7 +6224,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6232,7 +6232,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -6260,7 +6260,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6268,7 +6268,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -6340,7 +6340,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6413,7 +6413,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6446,7 +6446,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6454,7 +6454,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -6506,7 +6506,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6514,7 +6514,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -6541,7 +6541,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6549,7 +6549,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -6577,7 +6577,7 @@ paths:
       parameters:
         - name: groupPolicyDefinition-id
           in: path
-          description: 'key: id of groupPolicyDefinition'
+          description: The unique identifier of groupPolicyDefinition
           required: true
           style: simple
           schema:
@@ -6585,7 +6585,7 @@ paths:
           x-ms-docs-key-type: groupPolicyDefinition
         - name: groupPolicyPresentation-id
           in: path
-          description: 'key: id of groupPolicyPresentation'
+          description: The unique identifier of groupPolicyPresentation
           required: true
           style: simple
           schema:
@@ -6781,7 +6781,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -6846,7 +6846,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -6873,7 +6873,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -6901,7 +6901,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7026,7 +7026,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7059,7 +7059,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7067,7 +7067,7 @@ paths:
           x-ms-docs-key-type: groupPolicyMigrationReport
         - name: groupPolicySettingMapping-id
           in: path
-          description: 'key: id of groupPolicySettingMapping'
+          description: The unique identifier of groupPolicySettingMapping
           required: true
           style: simple
           schema:
@@ -7135,7 +7135,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7143,7 +7143,7 @@ paths:
           x-ms-docs-key-type: groupPolicyMigrationReport
         - name: groupPolicySettingMapping-id
           in: path
-          description: 'key: id of groupPolicySettingMapping'
+          description: The unique identifier of groupPolicySettingMapping
           required: true
           style: simple
           schema:
@@ -7170,7 +7170,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7178,7 +7178,7 @@ paths:
           x-ms-docs-key-type: groupPolicyMigrationReport
         - name: groupPolicySettingMapping-id
           in: path
-          description: 'key: id of groupPolicySettingMapping'
+          description: The unique identifier of groupPolicySettingMapping
           required: true
           style: simple
           schema:
@@ -7206,7 +7206,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7283,7 +7283,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7316,7 +7316,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7324,7 +7324,7 @@ paths:
           x-ms-docs-key-type: groupPolicyMigrationReport
         - name: unsupportedGroupPolicyExtension-id
           in: path
-          description: 'key: id of unsupportedGroupPolicyExtension'
+          description: The unique identifier of unsupportedGroupPolicyExtension
           required: true
           style: simple
           schema:
@@ -7376,7 +7376,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7384,7 +7384,7 @@ paths:
           x-ms-docs-key-type: groupPolicyMigrationReport
         - name: unsupportedGroupPolicyExtension-id
           in: path
-          description: 'key: id of unsupportedGroupPolicyExtension'
+          description: The unique identifier of unsupportedGroupPolicyExtension
           required: true
           style: simple
           schema:
@@ -7411,7 +7411,7 @@ paths:
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
-          description: 'key: id of groupPolicyMigrationReport'
+          description: The unique identifier of groupPolicyMigrationReport
           required: true
           style: simple
           schema:
@@ -7419,7 +7419,7 @@ paths:
           x-ms-docs-key-type: groupPolicyMigrationReport
         - name: unsupportedGroupPolicyExtension-id
           in: path
-          description: 'key: id of unsupportedGroupPolicyExtension'
+          description: The unique identifier of unsupportedGroupPolicyExtension
           required: true
           style: simple
           schema:
@@ -7546,7 +7546,7 @@ paths:
       parameters:
         - name: groupPolicyObjectFile-id
           in: path
-          description: 'key: id of groupPolicyObjectFile'
+          description: The unique identifier of groupPolicyObjectFile
           required: true
           style: simple
           schema:
@@ -7600,7 +7600,7 @@ paths:
       parameters:
         - name: groupPolicyObjectFile-id
           in: path
-          description: 'key: id of groupPolicyObjectFile'
+          description: The unique identifier of groupPolicyObjectFile
           required: true
           style: simple
           schema:
@@ -7627,7 +7627,7 @@ paths:
       parameters:
         - name: groupPolicyObjectFile-id
           in: path
-          description: 'key: id of groupPolicyObjectFile'
+          description: The unique identifier of groupPolicyObjectFile
           required: true
           style: simple
           schema:
@@ -7782,7 +7782,7 @@ paths:
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyUploadedDefinitionFile'
+          description: The unique identifier of groupPolicyUploadedDefinitionFile
           required: true
           style: simple
           schema:
@@ -7848,7 +7848,7 @@ paths:
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyUploadedDefinitionFile'
+          description: The unique identifier of groupPolicyUploadedDefinitionFile
           required: true
           style: simple
           schema:
@@ -7875,7 +7875,7 @@ paths:
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyUploadedDefinitionFile'
+          description: The unique identifier of groupPolicyUploadedDefinitionFile
           required: true
           style: simple
           schema:
@@ -7903,7 +7903,7 @@ paths:
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyUploadedDefinitionFile'
+          description: The unique identifier of groupPolicyUploadedDefinitionFile
           required: true
           style: simple
           schema:
@@ -7980,7 +7980,7 @@ paths:
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyUploadedDefinitionFile'
+          description: The unique identifier of groupPolicyUploadedDefinitionFile
           required: true
           style: simple
           schema:
@@ -8013,7 +8013,7 @@ paths:
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyUploadedDefinitionFile'
+          description: The unique identifier of groupPolicyUploadedDefinitionFile
           required: true
           style: simple
           schema:
@@ -8021,7 +8021,7 @@ paths:
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
         - name: groupPolicyOperation-id
           in: path
-          description: 'key: id of groupPolicyOperation'
+          description: The unique identifier of groupPolicyOperation
           required: true
           style: simple
           schema:
@@ -8073,7 +8073,7 @@ paths:
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyUploadedDefinitionFile'
+          description: The unique identifier of groupPolicyUploadedDefinitionFile
           required: true
           style: simple
           schema:
@@ -8081,7 +8081,7 @@ paths:
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
         - name: groupPolicyOperation-id
           in: path
-          description: 'key: id of groupPolicyOperation'
+          description: The unique identifier of groupPolicyOperation
           required: true
           style: simple
           schema:
@@ -8108,7 +8108,7 @@ paths:
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
-          description: 'key: id of groupPolicyUploadedDefinitionFile'
+          description: The unique identifier of groupPolicyUploadedDefinitionFile
           required: true
           style: simple
           schema:
@@ -8116,7 +8116,7 @@ paths:
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
         - name: groupPolicyOperation-id
           in: path
-          description: 'key: id of groupPolicyOperation'
+          description: The unique identifier of groupPolicyOperation
           required: true
           style: simple
           schema:
@@ -8326,7 +8326,7 @@ paths:
       parameters:
         - name: intuneBrandingProfile-id
           in: path
-          description: 'key: id of intuneBrandingProfile'
+          description: The unique identifier of intuneBrandingProfile
           required: true
           style: simple
           schema:
@@ -8409,7 +8409,7 @@ paths:
       parameters:
         - name: intuneBrandingProfile-id
           in: path
-          description: 'key: id of intuneBrandingProfile'
+          description: The unique identifier of intuneBrandingProfile
           required: true
           style: simple
           schema:
@@ -8436,7 +8436,7 @@ paths:
       parameters:
         - name: intuneBrandingProfile-id
           in: path
-          description: 'key: id of intuneBrandingProfile'
+          description: The unique identifier of intuneBrandingProfile
           required: true
           style: simple
           schema:
@@ -8464,7 +8464,7 @@ paths:
       parameters:
         - name: intuneBrandingProfile-id
           in: path
-          description: 'key: id of intuneBrandingProfile'
+          description: The unique identifier of intuneBrandingProfile
           required: true
           style: simple
           schema:
@@ -8532,7 +8532,7 @@ paths:
       parameters:
         - name: intuneBrandingProfile-id
           in: path
-          description: 'key: id of intuneBrandingProfile'
+          description: The unique identifier of intuneBrandingProfile
           required: true
           style: simple
           schema:
@@ -8565,7 +8565,7 @@ paths:
       parameters:
         - name: intuneBrandingProfile-id
           in: path
-          description: 'key: id of intuneBrandingProfile'
+          description: The unique identifier of intuneBrandingProfile
           required: true
           style: simple
           schema:
@@ -8573,7 +8573,7 @@ paths:
           x-ms-docs-key-type: intuneBrandingProfile
         - name: intuneBrandingProfileAssignment-id
           in: path
-          description: 'key: id of intuneBrandingProfileAssignment'
+          description: The unique identifier of intuneBrandingProfileAssignment
           required: true
           style: simple
           schema:
@@ -8622,7 +8622,7 @@ paths:
       parameters:
         - name: intuneBrandingProfile-id
           in: path
-          description: 'key: id of intuneBrandingProfile'
+          description: The unique identifier of intuneBrandingProfile
           required: true
           style: simple
           schema:
@@ -8630,7 +8630,7 @@ paths:
           x-ms-docs-key-type: intuneBrandingProfile
         - name: intuneBrandingProfileAssignment-id
           in: path
-          description: 'key: id of intuneBrandingProfileAssignment'
+          description: The unique identifier of intuneBrandingProfileAssignment
           required: true
           style: simple
           schema:
@@ -8657,7 +8657,7 @@ paths:
       parameters:
         - name: intuneBrandingProfile-id
           in: path
-          description: 'key: id of intuneBrandingProfile'
+          description: The unique identifier of intuneBrandingProfile
           required: true
           style: simple
           schema:
@@ -8665,7 +8665,7 @@ paths:
           x-ms-docs-key-type: intuneBrandingProfile
         - name: intuneBrandingProfileAssignment-id
           in: path
-          description: 'key: id of intuneBrandingProfileAssignment'
+          description: The unique identifier of intuneBrandingProfileAssignment
           required: true
           style: simple
           schema:
@@ -8810,7 +8810,7 @@ paths:
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
-          description: 'key: id of iosUpdateDeviceStatus'
+          description: The unique identifier of iosUpdateDeviceStatus
           required: true
           style: simple
           schema:
@@ -8870,7 +8870,7 @@ paths:
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
-          description: 'key: id of iosUpdateDeviceStatus'
+          description: The unique identifier of iosUpdateDeviceStatus
           required: true
           style: simple
           schema:
@@ -8897,7 +8897,7 @@ paths:
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
-          description: 'key: id of iosUpdateDeviceStatus'
+          description: The unique identifier of iosUpdateDeviceStatus
           required: true
           style: simple
           schema:
@@ -9060,7 +9060,7 @@ paths:
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
-          description: 'key: id of mobileThreatDefenseConnector'
+          description: The unique identifier of mobileThreatDefenseConnector
           required: true
           style: simple
           schema:
@@ -9126,7 +9126,7 @@ paths:
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
-          description: 'key: id of mobileThreatDefenseConnector'
+          description: The unique identifier of mobileThreatDefenseConnector
           required: true
           style: simple
           schema:
@@ -9153,7 +9153,7 @@ paths:
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
-          description: 'key: id of mobileThreatDefenseConnector'
+          description: The unique identifier of mobileThreatDefenseConnector
           required: true
           style: simple
           schema:
@@ -9283,7 +9283,7 @@ paths:
       parameters:
         - name: ndesConnector-id
           in: path
-          description: 'key: id of ndesConnector'
+          description: The unique identifier of ndesConnector
           required: true
           style: simple
           schema:
@@ -9338,7 +9338,7 @@ paths:
       parameters:
         - name: ndesConnector-id
           in: path
-          description: 'key: id of ndesConnector'
+          description: The unique identifier of ndesConnector
           required: true
           style: simple
           schema:
@@ -9365,7 +9365,7 @@ paths:
       parameters:
         - name: ndesConnector-id
           in: path
-          description: 'key: id of ndesConnector'
+          description: The unique identifier of ndesConnector
           required: true
           style: simple
           schema:
@@ -9489,7 +9489,7 @@ paths:
       parameters:
         - name: remoteAssistancePartner-id
           in: path
-          description: 'key: id of remoteAssistancePartner'
+          description: The unique identifier of remoteAssistancePartner
           required: true
           style: simple
           schema:
@@ -9542,7 +9542,7 @@ paths:
       parameters:
         - name: remoteAssistancePartner-id
           in: path
-          description: 'key: id of remoteAssistancePartner'
+          description: The unique identifier of remoteAssistancePartner
           required: true
           style: simple
           schema:
@@ -9569,7 +9569,7 @@ paths:
       parameters:
         - name: remoteAssistancePartner-id
           in: path
-          description: 'key: id of remoteAssistancePartner'
+          description: The unique identifier of remoteAssistancePartner
           required: true
           style: simple
           schema:
@@ -9693,7 +9693,7 @@ paths:
       parameters:
         - name: resourceOperation-id
           in: path
-          description: 'key: id of resourceOperation'
+          description: The unique identifier of resourceOperation
           required: true
           style: simple
           schema:
@@ -9746,7 +9746,7 @@ paths:
       parameters:
         - name: resourceOperation-id
           in: path
-          description: 'key: id of resourceOperation'
+          description: The unique identifier of resourceOperation
           required: true
           style: simple
           schema:
@@ -9773,7 +9773,7 @@ paths:
       parameters:
         - name: resourceOperation-id
           in: path
-          description: 'key: id of resourceOperation'
+          description: The unique identifier of resourceOperation
           required: true
           style: simple
           schema:
@@ -9904,7 +9904,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
-          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
           required: true
           style: simple
           schema:
@@ -9962,7 +9962,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
-          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
           required: true
           style: simple
           schema:
@@ -9989,7 +9989,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
-          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
           required: true
           style: simple
           schema:
@@ -10017,7 +10017,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
-          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
           required: true
           style: simple
           schema:
@@ -10095,7 +10095,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
-          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
           required: true
           style: simple
           schema:
@@ -10103,7 +10103,7 @@ paths:
           x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
         - name: roleScopeTag-id
           in: path
-          description: 'key: id of roleScopeTag'
+          description: The unique identifier of roleScopeTag
           required: true
           style: simple
           schema:
@@ -10262,7 +10262,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -10319,7 +10319,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -10346,7 +10346,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -10374,7 +10374,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -10456,7 +10456,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -10489,7 +10489,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -10497,7 +10497,7 @@ paths:
           x-ms-docs-key-type: roleDefinition
         - name: roleAssignment-id
           in: path
-          description: 'key: id of roleAssignment'
+          description: The unique identifier of roleAssignment
           required: true
           style: simple
           schema:
@@ -10552,7 +10552,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -10560,7 +10560,7 @@ paths:
           x-ms-docs-key-type: roleDefinition
         - name: roleAssignment-id
           in: path
-          description: 'key: id of roleAssignment'
+          description: The unique identifier of roleAssignment
           required: true
           style: simple
           schema:
@@ -10587,7 +10587,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -10595,7 +10595,7 @@ paths:
           x-ms-docs-key-type: roleDefinition
         - name: roleAssignment-id
           in: path
-          description: 'key: id of roleAssignment'
+          description: The unique identifier of roleAssignment
           required: true
           style: simple
           schema:
@@ -10623,7 +10623,7 @@ paths:
       parameters:
         - name: roleDefinition-id
           in: path
-          description: 'key: id of roleDefinition'
+          description: The unique identifier of roleDefinition
           required: true
           style: simple
           schema:
@@ -10631,7 +10631,7 @@ paths:
           x-ms-docs-key-type: roleDefinition
         - name: roleAssignment-id
           in: path
-          description: 'key: id of roleAssignment'
+          description: The unique identifier of roleAssignment
           required: true
           style: simple
           schema:
@@ -10782,7 +10782,7 @@ paths:
       parameters:
         - name: roleScopeTag-id
           in: path
-          description: 'key: id of roleScopeTag'
+          description: The unique identifier of roleScopeTag
           required: true
           style: simple
           schema:
@@ -10835,7 +10835,7 @@ paths:
       parameters:
         - name: roleScopeTag-id
           in: path
-          description: 'key: id of roleScopeTag'
+          description: The unique identifier of roleScopeTag
           required: true
           style: simple
           schema:
@@ -10862,7 +10862,7 @@ paths:
       parameters:
         - name: roleScopeTag-id
           in: path
-          description: 'key: id of roleScopeTag'
+          description: The unique identifier of roleScopeTag
           required: true
           style: simple
           schema:
@@ -10890,7 +10890,7 @@ paths:
       parameters:
         - name: roleScopeTag-id
           in: path
-          description: 'key: id of roleScopeTag'
+          description: The unique identifier of roleScopeTag
           required: true
           style: simple
           schema:
@@ -10958,7 +10958,7 @@ paths:
       parameters:
         - name: roleScopeTag-id
           in: path
-          description: 'key: id of roleScopeTag'
+          description: The unique identifier of roleScopeTag
           required: true
           style: simple
           schema:
@@ -10991,7 +10991,7 @@ paths:
       parameters:
         - name: roleScopeTag-id
           in: path
-          description: 'key: id of roleScopeTag'
+          description: The unique identifier of roleScopeTag
           required: true
           style: simple
           schema:
@@ -10999,7 +10999,7 @@ paths:
           x-ms-docs-key-type: roleScopeTag
         - name: roleScopeTagAutoAssignment-id
           in: path
-          description: 'key: id of roleScopeTagAutoAssignment'
+          description: The unique identifier of roleScopeTagAutoAssignment
           required: true
           style: simple
           schema:
@@ -11048,7 +11048,7 @@ paths:
       parameters:
         - name: roleScopeTag-id
           in: path
-          description: 'key: id of roleScopeTag'
+          description: The unique identifier of roleScopeTag
           required: true
           style: simple
           schema:
@@ -11056,7 +11056,7 @@ paths:
           x-ms-docs-key-type: roleScopeTag
         - name: roleScopeTagAutoAssignment-id
           in: path
-          description: 'key: id of roleScopeTagAutoAssignment'
+          description: The unique identifier of roleScopeTagAutoAssignment
           required: true
           style: simple
           schema:
@@ -11083,7 +11083,7 @@ paths:
       parameters:
         - name: roleScopeTag-id
           in: path
-          description: 'key: id of roleScopeTag'
+          description: The unique identifier of roleScopeTag
           required: true
           style: simple
           schema:
@@ -11091,7 +11091,7 @@ paths:
           x-ms-docs-key-type: roleScopeTag
         - name: roleScopeTagAutoAssignment-id
           in: path
-          description: 'key: id of roleScopeTagAutoAssignment'
+          description: The unique identifier of roleScopeTagAutoAssignment
           required: true
           style: simple
           schema:
@@ -11215,7 +11215,7 @@ paths:
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
-          description: 'key: id of telecomExpenseManagementPartner'
+          description: The unique identifier of telecomExpenseManagementPartner
           required: true
           style: simple
           schema:
@@ -11268,7 +11268,7 @@ paths:
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
-          description: 'key: id of telecomExpenseManagementPartner'
+          description: The unique identifier of telecomExpenseManagementPartner
           required: true
           style: simple
           schema:
@@ -11295,7 +11295,7 @@ paths:
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
-          description: 'key: id of telecomExpenseManagementPartner'
+          description: The unique identifier of telecomExpenseManagementPartner
           required: true
           style: simple
           schema:
@@ -11440,7 +11440,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11504,7 +11504,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11531,7 +11531,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11559,7 +11559,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11638,7 +11638,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11671,7 +11671,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11679,7 +11679,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAcceptanceStatus-id
           in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          description: The unique identifier of termsAndConditionsAcceptanceStatus
           required: true
           style: simple
           schema:
@@ -11733,7 +11733,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11741,7 +11741,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAcceptanceStatus-id
           in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          description: The unique identifier of termsAndConditionsAcceptanceStatus
           required: true
           style: simple
           schema:
@@ -11768,7 +11768,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11776,7 +11776,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAcceptanceStatus-id
           in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          description: The unique identifier of termsAndConditionsAcceptanceStatus
           required: true
           style: simple
           schema:
@@ -11804,7 +11804,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11812,7 +11812,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAcceptanceStatus-id
           in: path
-          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          description: The unique identifier of termsAndConditionsAcceptanceStatus
           required: true
           style: simple
           schema:
@@ -11878,7 +11878,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11946,7 +11946,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11979,7 +11979,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -11987,7 +11987,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsAssignment'
+          description: The unique identifier of termsAndConditionsAssignment
           required: true
           style: simple
           schema:
@@ -12036,7 +12036,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -12044,7 +12044,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsAssignment'
+          description: The unique identifier of termsAndConditionsAssignment
           required: true
           style: simple
           schema:
@@ -12071,7 +12071,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -12079,7 +12079,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsAssignment'
+          description: The unique identifier of termsAndConditionsAssignment
           required: true
           style: simple
           schema:
@@ -12107,7 +12107,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -12177,7 +12177,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -12210,7 +12210,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -12218,7 +12218,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsGroupAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsGroupAssignment'
+          description: The unique identifier of termsAndConditionsGroupAssignment
           required: true
           style: simple
           schema:
@@ -12269,7 +12269,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -12277,7 +12277,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsGroupAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsGroupAssignment'
+          description: The unique identifier of termsAndConditionsGroupAssignment
           required: true
           style: simple
           schema:
@@ -12304,7 +12304,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -12312,7 +12312,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsGroupAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsGroupAssignment'
+          description: The unique identifier of termsAndConditionsGroupAssignment
           required: true
           style: simple
           schema:
@@ -12340,7 +12340,7 @@ paths:
       parameters:
         - name: termsAndConditions-id
           in: path
-          description: 'key: id of termsAndConditions'
+          description: The unique identifier of termsAndConditions
           required: true
           style: simple
           schema:
@@ -12348,7 +12348,7 @@ paths:
           x-ms-docs-key-type: termsAndConditions
         - name: termsAndConditionsGroupAssignment-id
           in: path
-          description: 'key: id of termsAndConditionsGroupAssignment'
+          description: The unique identifier of termsAndConditionsGroupAssignment
           required: true
           style: simple
           schema:
@@ -12531,7 +12531,7 @@ paths:
       parameters:
         - name: userPFXCertificate-id
           in: path
-          description: 'key: id of userPFXCertificate'
+          description: The unique identifier of userPFXCertificate
           required: true
           style: simple
           schema:
@@ -12591,7 +12591,7 @@ paths:
       parameters:
         - name: userPFXCertificate-id
           in: path
-          description: 'key: id of userPFXCertificate'
+          description: The unique identifier of userPFXCertificate
           required: true
           style: simple
           schema:
@@ -12618,7 +12618,7 @@ paths:
       parameters:
         - name: userPFXCertificate-id
           in: path
-          description: 'key: id of userPFXCertificate'
+          description: The unique identifier of userPFXCertificate
           required: true
           style: simple
           schema:
@@ -12870,7 +12870,7 @@ paths:
       parameters:
         - name: cloudPcAuditEvent-id
           in: path
-          description: 'key: id of cloudPcAuditEvent'
+          description: The unique identifier of cloudPcAuditEvent
           required: true
           style: simple
           schema:
@@ -12929,7 +12929,7 @@ paths:
       parameters:
         - name: cloudPcAuditEvent-id
           in: path
-          description: 'key: id of cloudPcAuditEvent'
+          description: The unique identifier of cloudPcAuditEvent
           required: true
           style: simple
           schema:
@@ -12956,7 +12956,7 @@ paths:
       parameters:
         - name: cloudPcAuditEvent-id
           in: path
-          description: 'key: id of cloudPcAuditEvent'
+          description: The unique identifier of cloudPcAuditEvent
           required: true
           style: simple
           schema:
@@ -13140,7 +13140,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -13212,7 +13212,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -13239,7 +13239,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -13467,7 +13467,7 @@ paths:
       parameters:
         - name: cloudPcDeviceImage-id
           in: path
-          description: 'key: id of cloudPcDeviceImage'
+          description: The unique identifier of cloudPcDeviceImage
           required: true
           style: simple
           schema:
@@ -13525,7 +13525,7 @@ paths:
       parameters:
         - name: cloudPcDeviceImage-id
           in: path
-          description: 'key: id of cloudPcDeviceImage'
+          description: The unique identifier of cloudPcDeviceImage
           required: true
           style: simple
           schema:
@@ -13552,7 +13552,7 @@ paths:
       parameters:
         - name: cloudPcDeviceImage-id
           in: path
-          description: 'key: id of cloudPcDeviceImage'
+          description: The unique identifier of cloudPcDeviceImage
           required: true
           style: simple
           schema:
@@ -13683,7 +13683,7 @@ paths:
       parameters:
         - name: cloudPcExternalPartnerSetting-id
           in: path
-          description: 'key: id of cloudPcExternalPartnerSetting'
+          description: The unique identifier of cloudPcExternalPartnerSetting
           required: true
           style: simple
           schema:
@@ -13736,7 +13736,7 @@ paths:
       parameters:
         - name: cloudPcExternalPartnerSetting-id
           in: path
-          description: 'key: id of cloudPcExternalPartnerSetting'
+          description: The unique identifier of cloudPcExternalPartnerSetting
           required: true
           style: simple
           schema:
@@ -13763,7 +13763,7 @@ paths:
       parameters:
         - name: cloudPcExternalPartnerSetting-id
           in: path
-          description: 'key: id of cloudPcExternalPartnerSetting'
+          description: The unique identifier of cloudPcExternalPartnerSetting
           required: true
           style: simple
           schema:
@@ -13911,7 +13911,7 @@ paths:
       parameters:
         - name: cloudPcGalleryImage-id
           in: path
-          description: 'key: id of cloudPcGalleryImage'
+          description: The unique identifier of cloudPcGalleryImage
           required: true
           style: simple
           schema:
@@ -13971,7 +13971,7 @@ paths:
       parameters:
         - name: cloudPcGalleryImage-id
           in: path
-          description: 'key: id of cloudPcGalleryImage'
+          description: The unique identifier of cloudPcGalleryImage
           required: true
           style: simple
           schema:
@@ -13998,7 +13998,7 @@ paths:
       parameters:
         - name: cloudPcGalleryImage-id
           in: path
-          description: 'key: id of cloudPcGalleryImage'
+          description: The unique identifier of cloudPcGalleryImage
           required: true
           style: simple
           schema:
@@ -14165,7 +14165,7 @@ paths:
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
-          description: 'key: id of cloudPcOnPremisesConnection'
+          description: The unique identifier of cloudPcOnPremisesConnection
           required: true
           style: simple
           schema:
@@ -14230,7 +14230,7 @@ paths:
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
-          description: 'key: id of cloudPcOnPremisesConnection'
+          description: The unique identifier of cloudPcOnPremisesConnection
           required: true
           style: simple
           schema:
@@ -14257,7 +14257,7 @@ paths:
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
-          description: 'key: id of cloudPcOnPremisesConnection'
+          description: The unique identifier of cloudPcOnPremisesConnection
           required: true
           style: simple
           schema:
@@ -14516,7 +14516,7 @@ paths:
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicy'
+          description: The unique identifier of cloudPcProvisioningPolicy
           required: true
           style: simple
           schema:
@@ -14583,7 +14583,7 @@ paths:
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicy'
+          description: The unique identifier of cloudPcProvisioningPolicy
           required: true
           style: simple
           schema:
@@ -14610,7 +14610,7 @@ paths:
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicy'
+          description: The unique identifier of cloudPcProvisioningPolicy
           required: true
           style: simple
           schema:
@@ -14638,7 +14638,7 @@ paths:
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicy'
+          description: The unique identifier of cloudPcProvisioningPolicy
           required: true
           style: simple
           schema:
@@ -14706,7 +14706,7 @@ paths:
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicy'
+          description: The unique identifier of cloudPcProvisioningPolicy
           required: true
           style: simple
           schema:
@@ -14739,7 +14739,7 @@ paths:
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicy'
+          description: The unique identifier of cloudPcProvisioningPolicy
           required: true
           style: simple
           schema:
@@ -14747,7 +14747,7 @@ paths:
           x-ms-docs-key-type: cloudPcProvisioningPolicy
         - name: cloudPcProvisioningPolicyAssignment-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicyAssignment'
+          description: The unique identifier of cloudPcProvisioningPolicyAssignment
           required: true
           style: simple
           schema:
@@ -14796,7 +14796,7 @@ paths:
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicy'
+          description: The unique identifier of cloudPcProvisioningPolicy
           required: true
           style: simple
           schema:
@@ -14804,7 +14804,7 @@ paths:
           x-ms-docs-key-type: cloudPcProvisioningPolicy
         - name: cloudPcProvisioningPolicyAssignment-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicyAssignment'
+          description: The unique identifier of cloudPcProvisioningPolicyAssignment
           required: true
           style: simple
           schema:
@@ -14831,7 +14831,7 @@ paths:
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicy'
+          description: The unique identifier of cloudPcProvisioningPolicy
           required: true
           style: simple
           schema:
@@ -14839,7 +14839,7 @@ paths:
           x-ms-docs-key-type: cloudPcProvisioningPolicy
         - name: cloudPcProvisioningPolicyAssignment-id
           in: path
-          description: 'key: id of cloudPcProvisioningPolicyAssignment'
+          description: The unique identifier of cloudPcProvisioningPolicyAssignment
           required: true
           style: simple
           schema:
@@ -15056,7 +15056,7 @@ paths:
       parameters:
         - name: cloudPcExportJob-id
           in: path
-          description: 'key: id of cloudPcExportJob'
+          description: The unique identifier of cloudPcExportJob
           required: true
           style: simple
           schema:
@@ -15112,7 +15112,7 @@ paths:
       parameters:
         - name: cloudPcExportJob-id
           in: path
-          description: 'key: id of cloudPcExportJob'
+          description: The unique identifier of cloudPcExportJob
           required: true
           style: simple
           schema:
@@ -15139,7 +15139,7 @@ paths:
       parameters:
         - name: cloudPcExportJob-id
           in: path
-          description: 'key: id of cloudPcExportJob'
+          description: The unique identifier of cloudPcExportJob
           required: true
           style: simple
           schema:
@@ -15272,7 +15272,7 @@ paths:
       parameters:
         - name: cloudPcServicePlan-id
           in: path
-          description: 'key: id of cloudPcServicePlan'
+          description: The unique identifier of cloudPcServicePlan
           required: true
           style: simple
           schema:
@@ -15327,7 +15327,7 @@ paths:
       parameters:
         - name: cloudPcServicePlan-id
           in: path
-          description: 'key: id of cloudPcServicePlan'
+          description: The unique identifier of cloudPcServicePlan
           required: true
           style: simple
           schema:
@@ -15354,7 +15354,7 @@ paths:
       parameters:
         - name: cloudPcServicePlan-id
           in: path
-          description: 'key: id of cloudPcServicePlan'
+          description: The unique identifier of cloudPcServicePlan
           required: true
           style: simple
           schema:
@@ -15470,7 +15470,7 @@ paths:
       parameters:
         - name: cloudPcSharedUseServicePlan-id
           in: path
-          description: 'key: id of cloudPcSharedUseServicePlan'
+          description: The unique identifier of cloudPcSharedUseServicePlan
           required: true
           style: simple
           schema:
@@ -15521,7 +15521,7 @@ paths:
       parameters:
         - name: cloudPcSharedUseServicePlan-id
           in: path
-          description: 'key: id of cloudPcSharedUseServicePlan'
+          description: The unique identifier of cloudPcSharedUseServicePlan
           required: true
           style: simple
           schema:
@@ -15548,7 +15548,7 @@ paths:
       parameters:
         - name: cloudPcSharedUseServicePlan-id
           in: path
-          description: 'key: id of cloudPcSharedUseServicePlan'
+          description: The unique identifier of cloudPcSharedUseServicePlan
           required: true
           style: simple
           schema:
@@ -15672,7 +15672,7 @@ paths:
       parameters:
         - name: cloudPcSnapshot-id
           in: path
-          description: 'key: id of cloudPcSnapshot'
+          description: The unique identifier of cloudPcSnapshot
           required: true
           style: simple
           schema:
@@ -15724,7 +15724,7 @@ paths:
       parameters:
         - name: cloudPcSnapshot-id
           in: path
-          description: 'key: id of cloudPcSnapshot'
+          description: The unique identifier of cloudPcSnapshot
           required: true
           style: simple
           schema:
@@ -15751,7 +15751,7 @@ paths:
       parameters:
         - name: cloudPcSnapshot-id
           in: path
-          description: 'key: id of cloudPcSnapshot'
+          description: The unique identifier of cloudPcSnapshot
           required: true
           style: simple
           schema:
@@ -15875,7 +15875,7 @@ paths:
       parameters:
         - name: cloudPcSupportedRegion-id
           in: path
-          description: 'key: id of cloudPcSupportedRegion'
+          description: The unique identifier of cloudPcSupportedRegion
           required: true
           style: simple
           schema:
@@ -15927,7 +15927,7 @@ paths:
       parameters:
         - name: cloudPcSupportedRegion-id
           in: path
-          description: 'key: id of cloudPcSupportedRegion'
+          description: The unique identifier of cloudPcSupportedRegion
           required: true
           style: simple
           schema:
@@ -15954,7 +15954,7 @@ paths:
       parameters:
         - name: cloudPcSupportedRegion-id
           in: path
-          description: 'key: id of cloudPcSupportedRegion'
+          description: The unique identifier of cloudPcSupportedRegion
           required: true
           style: simple
           schema:
@@ -16090,7 +16090,7 @@ paths:
       parameters:
         - name: cloudPcUserSetting-id
           in: path
-          description: 'key: id of cloudPcUserSetting'
+          description: The unique identifier of cloudPcUserSetting
           required: true
           style: simple
           schema:
@@ -16146,7 +16146,7 @@ paths:
       parameters:
         - name: cloudPcUserSetting-id
           in: path
-          description: 'key: id of cloudPcUserSetting'
+          description: The unique identifier of cloudPcUserSetting
           required: true
           style: simple
           schema:
@@ -16173,7 +16173,7 @@ paths:
       parameters:
         - name: cloudPcUserSetting-id
           in: path
-          description: 'key: id of cloudPcUserSetting'
+          description: The unique identifier of cloudPcUserSetting
           required: true
           style: simple
           schema:
@@ -16201,7 +16201,7 @@ paths:
       parameters:
         - name: cloudPcUserSetting-id
           in: path
-          description: 'key: id of cloudPcUserSetting'
+          description: The unique identifier of cloudPcUserSetting
           required: true
           style: simple
           schema:
@@ -16272,7 +16272,7 @@ paths:
       parameters:
         - name: cloudPcUserSetting-id
           in: path
-          description: 'key: id of cloudPcUserSetting'
+          description: The unique identifier of cloudPcUserSetting
           required: true
           style: simple
           schema:
@@ -16305,7 +16305,7 @@ paths:
       parameters:
         - name: cloudPcUserSetting-id
           in: path
-          description: 'key: id of cloudPcUserSetting'
+          description: The unique identifier of cloudPcUserSetting
           required: true
           style: simple
           schema:
@@ -16313,7 +16313,7 @@ paths:
           x-ms-docs-key-type: cloudPcUserSetting
         - name: cloudPcUserSettingAssignment-id
           in: path
-          description: 'key: id of cloudPcUserSettingAssignment'
+          description: The unique identifier of cloudPcUserSettingAssignment
           required: true
           style: simple
           schema:
@@ -16363,7 +16363,7 @@ paths:
       parameters:
         - name: cloudPcUserSetting-id
           in: path
-          description: 'key: id of cloudPcUserSetting'
+          description: The unique identifier of cloudPcUserSetting
           required: true
           style: simple
           schema:
@@ -16371,7 +16371,7 @@ paths:
           x-ms-docs-key-type: cloudPcUserSetting
         - name: cloudPcUserSettingAssignment-id
           in: path
-          description: 'key: id of cloudPcUserSettingAssignment'
+          description: The unique identifier of cloudPcUserSettingAssignment
           required: true
           style: simple
           schema:
@@ -16398,7 +16398,7 @@ paths:
       parameters:
         - name: cloudPcUserSetting-id
           in: path
-          description: 'key: id of cloudPcUserSetting'
+          description: The unique identifier of cloudPcUserSetting
           required: true
           style: simple
           schema:
@@ -16406,7 +16406,7 @@ paths:
           x-ms-docs-key-type: cloudPcUserSetting
         - name: cloudPcUserSettingAssignment-id
           in: path
-          description: 'key: id of cloudPcUserSettingAssignment'
+          description: The unique identifier of cloudPcUserSettingAssignment
           required: true
           style: simple
           schema:

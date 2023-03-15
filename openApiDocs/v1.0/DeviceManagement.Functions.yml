@@ -118,7 +118,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:

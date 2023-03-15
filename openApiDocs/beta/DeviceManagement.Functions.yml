@@ -38,7 +38,7 @@ paths:
       parameters:
         - name: deviceAndAppManagementAssignmentFilter-id
           in: path
-          description: 'key: id of deviceAndAppManagementAssignmentFilter'
+          description: The unique identifier of deviceAndAppManagementAssignmentFilter
           required: true
           style: simple
           schema:
@@ -219,7 +219,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -262,7 +262,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -287,7 +287,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -318,7 +318,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -361,7 +361,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -386,7 +386,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -488,7 +488,7 @@ paths:
       parameters:
         - name: depOnboardingSetting-id
           in: path
-          description: 'key: id of depOnboardingSetting'
+          description: The unique identifier of depOnboardingSetting
           required: true
           style: simple
           schema:
@@ -496,7 +496,7 @@ paths:
           x-ms-docs-key-type: depOnboardingSetting
         - name: enrollmentProfile-id
           in: path
-          description: 'key: id of enrollmentProfile'
+          description: The unique identifier of enrollmentProfile
           required: true
           style: simple
           schema:
@@ -528,7 +528,7 @@ paths:
       parameters:
         - name: depOnboardingSetting-id
           in: path
-          description: 'key: id of depOnboardingSetting'
+          description: The unique identifier of depOnboardingSetting
           required: true
           style: simple
           schema:
@@ -627,7 +627,7 @@ paths:
       parameters:
         - name: deviceConfiguration-id
           in: path
-          description: 'key: id of deviceConfiguration'
+          description: The unique identifier of deviceConfiguration
           required: true
           style: simple
           schema:
@@ -702,7 +702,7 @@ paths:
       parameters:
         - name: deviceHealthScript-id
           in: path
-          description: 'key: id of deviceHealthScript'
+          description: The unique identifier of deviceHealthScript
           required: true
           style: simple
           schema:
@@ -759,7 +759,7 @@ paths:
       parameters:
         - name: deviceManagementIntent-id
           in: path
-          description: 'key: id of deviceManagementIntent'
+          description: The unique identifier of deviceManagementIntent
           required: true
           style: simple
           schema:
@@ -810,7 +810,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -853,7 +853,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -878,7 +878,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -909,7 +909,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -952,7 +952,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -977,7 +977,7 @@ paths:
       parameters:
         - name: managedDevice-id
           in: path
-          description: 'key: id of managedDevice'
+          description: The unique identifier of managedDevice
           required: true
           style: simple
           schema:
@@ -1494,7 +1494,7 @@ paths:
       parameters:
         - name: resourceOperation-id
           in: path
-          description: 'key: id of resourceOperation'
+          description: The unique identifier of resourceOperation
           required: true
           style: simple
           schema:
@@ -1568,7 +1568,7 @@ paths:
       parameters:
         - name: deviceManagementTemplate-id
           in: path
-          description: 'key: id of deviceManagementTemplate'
+          description: The unique identifier of deviceManagementTemplate
           required: true
           style: simple
           schema:
@@ -1619,7 +1619,7 @@ paths:
       parameters:
         - name: deviceManagementTemplate-id
           in: path
-          description: 'key: id of deviceManagementTemplate'
+          description: The unique identifier of deviceManagementTemplate
           required: true
           style: simple
           schema:
@@ -1627,7 +1627,7 @@ paths:
           x-ms-docs-key-type: deviceManagementTemplate
         - name: deviceManagementTemplate-id1
           in: path
-          description: 'key: id of deviceManagementTemplate'
+          description: The unique identifier of deviceManagementTemplate
           required: true
           style: simple
           schema:
@@ -2072,7 +2072,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -2115,7 +2115,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -2140,7 +2140,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:
@@ -2165,7 +2165,7 @@ paths:
       parameters:
         - name: cloudPC-id
           in: path
-          description: 'key: id of cloudPC'
+          description: The unique identifier of cloudPC
           required: true
           style: simple
           schema:

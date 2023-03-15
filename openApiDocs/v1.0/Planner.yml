@@ -16,7 +16,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -66,7 +66,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -100,7 +100,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -131,7 +131,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -217,7 +217,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -250,7 +250,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -258,7 +258,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -317,7 +317,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -325,7 +325,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -352,7 +352,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -360,7 +360,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -391,7 +391,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -399,7 +399,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -475,7 +475,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -483,7 +483,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -516,7 +516,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -524,7 +524,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -532,7 +532,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -585,7 +585,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -593,7 +593,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -601,7 +601,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -628,7 +628,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -636,7 +636,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -644,7 +644,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -675,7 +675,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -683,7 +683,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -691,7 +691,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -827,7 +827,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -835,7 +835,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -843,7 +843,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -876,7 +876,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -884,7 +884,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -892,7 +892,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -900,7 +900,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -977,7 +977,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -985,7 +985,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -993,7 +993,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1001,7 +1001,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1028,7 +1028,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1036,7 +1036,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1044,7 +1044,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1052,7 +1052,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1083,7 +1083,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1091,7 +1091,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1099,7 +1099,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1107,7 +1107,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1160,7 +1160,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1168,7 +1168,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1176,7 +1176,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1184,7 +1184,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1218,7 +1218,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1226,7 +1226,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1234,7 +1234,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1242,7 +1242,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1273,7 +1273,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1281,7 +1281,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1289,7 +1289,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1297,7 +1297,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1349,7 +1349,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1357,7 +1357,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1365,7 +1365,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1373,7 +1373,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1407,7 +1407,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1415,7 +1415,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1423,7 +1423,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1431,7 +1431,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1462,7 +1462,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1470,7 +1470,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1478,7 +1478,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1486,7 +1486,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1541,7 +1541,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1549,7 +1549,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1557,7 +1557,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1565,7 +1565,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1599,7 +1599,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1607,7 +1607,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1615,7 +1615,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1623,7 +1623,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1654,7 +1654,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1662,7 +1662,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1670,7 +1670,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1678,7 +1678,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1730,7 +1730,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1738,7 +1738,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1746,7 +1746,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1754,7 +1754,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1788,7 +1788,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1796,7 +1796,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1804,7 +1804,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -1812,7 +1812,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -1843,7 +1843,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1851,7 +1851,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1904,7 +1904,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1912,7 +1912,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1946,7 +1946,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1954,7 +1954,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -1985,7 +1985,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -1993,7 +1993,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2129,7 +2129,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2137,7 +2137,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2170,7 +2170,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2178,7 +2178,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2186,7 +2186,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2263,7 +2263,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2271,7 +2271,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2279,7 +2279,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2306,7 +2306,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2314,7 +2314,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2322,7 +2322,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2353,7 +2353,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2361,7 +2361,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2369,7 +2369,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2422,7 +2422,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2430,7 +2430,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2438,7 +2438,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2472,7 +2472,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2480,7 +2480,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2488,7 +2488,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2519,7 +2519,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2527,7 +2527,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2535,7 +2535,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2587,7 +2587,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2595,7 +2595,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2603,7 +2603,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2637,7 +2637,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2645,7 +2645,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2653,7 +2653,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2684,7 +2684,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2692,7 +2692,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2700,7 +2700,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2755,7 +2755,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2763,7 +2763,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2771,7 +2771,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2805,7 +2805,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2813,7 +2813,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2821,7 +2821,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2852,7 +2852,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2860,7 +2860,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2868,7 +2868,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2920,7 +2920,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2928,7 +2928,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2936,7 +2936,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -2970,7 +2970,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: id of group'
+          description: The unique identifier of group
           required: true
           style: simple
           schema:
@@ -2978,7 +2978,7 @@ paths:
           x-ms-docs-key-type: group
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -2986,7 +2986,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3178,7 +3178,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3231,7 +3231,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3265,7 +3265,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3296,7 +3296,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3432,7 +3432,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3465,7 +3465,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3473,7 +3473,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3550,7 +3550,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3558,7 +3558,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3585,7 +3585,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3593,7 +3593,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3624,7 +3624,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3632,7 +3632,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3685,7 +3685,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3693,7 +3693,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3727,7 +3727,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3735,7 +3735,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3766,7 +3766,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3774,7 +3774,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3826,7 +3826,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3834,7 +3834,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3868,7 +3868,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3876,7 +3876,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3907,7 +3907,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3915,7 +3915,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -3970,7 +3970,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -3978,7 +3978,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -4012,7 +4012,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4020,7 +4020,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -4051,7 +4051,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4059,7 +4059,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -4111,7 +4111,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4119,7 +4119,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -4153,7 +4153,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4161,7 +4161,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -4298,7 +4298,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4357,7 +4357,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4384,7 +4384,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4415,7 +4415,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4491,7 +4491,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4524,7 +4524,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4532,7 +4532,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4585,7 +4585,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4593,7 +4593,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4620,7 +4620,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4628,7 +4628,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4659,7 +4659,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4667,7 +4667,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4803,7 +4803,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4811,7 +4811,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4844,7 +4844,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4852,7 +4852,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4860,7 +4860,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -4937,7 +4937,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4945,7 +4945,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4953,7 +4953,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -4980,7 +4980,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -4988,7 +4988,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -4996,7 +4996,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5027,7 +5027,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5035,7 +5035,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5043,7 +5043,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5096,7 +5096,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5104,7 +5104,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5112,7 +5112,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5146,7 +5146,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5154,7 +5154,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5162,7 +5162,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5193,7 +5193,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5201,7 +5201,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5209,7 +5209,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5261,7 +5261,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5269,7 +5269,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5277,7 +5277,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5311,7 +5311,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5319,7 +5319,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5327,7 +5327,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5358,7 +5358,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5366,7 +5366,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5374,7 +5374,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5429,7 +5429,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5437,7 +5437,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5445,7 +5445,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5479,7 +5479,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5487,7 +5487,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5495,7 +5495,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5526,7 +5526,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5534,7 +5534,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5542,7 +5542,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5594,7 +5594,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5602,7 +5602,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5610,7 +5610,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5644,7 +5644,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5652,7 +5652,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -5660,7 +5660,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -5691,7 +5691,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5744,7 +5744,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5778,7 +5778,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5809,7 +5809,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5945,7 +5945,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5978,7 +5978,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -5986,7 +5986,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6063,7 +6063,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6071,7 +6071,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6098,7 +6098,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6106,7 +6106,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6137,7 +6137,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6145,7 +6145,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6198,7 +6198,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6206,7 +6206,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6240,7 +6240,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6248,7 +6248,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6279,7 +6279,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6287,7 +6287,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6339,7 +6339,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6347,7 +6347,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6381,7 +6381,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6389,7 +6389,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6420,7 +6420,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6428,7 +6428,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6483,7 +6483,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6491,7 +6491,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6525,7 +6525,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6533,7 +6533,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6564,7 +6564,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6572,7 +6572,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6624,7 +6624,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6632,7 +6632,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6666,7 +6666,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -6674,7 +6674,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6861,7 +6861,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6938,7 +6938,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -6972,7 +6972,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7003,7 +7003,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7056,7 +7056,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7090,7 +7090,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7121,7 +7121,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7173,7 +7173,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7207,7 +7207,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7238,7 +7238,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7293,7 +7293,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7327,7 +7327,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7358,7 +7358,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7410,7 +7410,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7444,7 +7444,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -7472,7 +7472,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7524,7 +7524,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7558,7 +7558,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7589,7 +7589,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7675,7 +7675,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7708,7 +7708,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7716,7 +7716,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -7775,7 +7775,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7783,7 +7783,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -7810,7 +7810,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7818,7 +7818,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -7849,7 +7849,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7857,7 +7857,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -7933,7 +7933,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7941,7 +7941,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -7974,7 +7974,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -7982,7 +7982,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -7990,7 +7990,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8043,7 +8043,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8051,7 +8051,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8059,7 +8059,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8086,7 +8086,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8094,7 +8094,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8102,7 +8102,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8133,7 +8133,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8141,7 +8141,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8149,7 +8149,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8285,7 +8285,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8293,7 +8293,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8301,7 +8301,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8334,7 +8334,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8342,7 +8342,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8350,7 +8350,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8358,7 +8358,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8435,7 +8435,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8443,7 +8443,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8451,7 +8451,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8459,7 +8459,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8486,7 +8486,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8494,7 +8494,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8502,7 +8502,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8510,7 +8510,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8541,7 +8541,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8549,7 +8549,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8557,7 +8557,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8565,7 +8565,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8618,7 +8618,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8626,7 +8626,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8634,7 +8634,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8642,7 +8642,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8676,7 +8676,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8684,7 +8684,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8692,7 +8692,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8700,7 +8700,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8731,7 +8731,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8739,7 +8739,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8747,7 +8747,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8755,7 +8755,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8807,7 +8807,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8815,7 +8815,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8823,7 +8823,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8831,7 +8831,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8865,7 +8865,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8873,7 +8873,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8881,7 +8881,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8889,7 +8889,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8920,7 +8920,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -8928,7 +8928,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -8936,7 +8936,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -8944,7 +8944,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -8999,7 +8999,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9007,7 +9007,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9015,7 +9015,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -9023,7 +9023,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9057,7 +9057,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9065,7 +9065,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9073,7 +9073,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -9081,7 +9081,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9112,7 +9112,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9120,7 +9120,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9128,7 +9128,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -9136,7 +9136,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9188,7 +9188,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9196,7 +9196,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9204,7 +9204,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -9212,7 +9212,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9246,7 +9246,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9254,7 +9254,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9262,7 +9262,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: id of plannerBucket'
+          description: The unique identifier of plannerBucket
           required: true
           style: simple
           schema:
@@ -9270,7 +9270,7 @@ paths:
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9301,7 +9301,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9309,7 +9309,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9362,7 +9362,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9370,7 +9370,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9404,7 +9404,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9412,7 +9412,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9443,7 +9443,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9451,7 +9451,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9587,7 +9587,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9595,7 +9595,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9628,7 +9628,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9636,7 +9636,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9644,7 +9644,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9721,7 +9721,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9729,7 +9729,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9737,7 +9737,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9764,7 +9764,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9772,7 +9772,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9780,7 +9780,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9811,7 +9811,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9819,7 +9819,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9827,7 +9827,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9880,7 +9880,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9888,7 +9888,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9896,7 +9896,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9930,7 +9930,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9938,7 +9938,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9946,7 +9946,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -9977,7 +9977,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -9985,7 +9985,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -9993,7 +9993,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10045,7 +10045,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10053,7 +10053,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -10061,7 +10061,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10095,7 +10095,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10103,7 +10103,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -10111,7 +10111,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10142,7 +10142,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10150,7 +10150,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -10158,7 +10158,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10213,7 +10213,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10221,7 +10221,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -10229,7 +10229,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10263,7 +10263,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10271,7 +10271,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -10279,7 +10279,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10310,7 +10310,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10318,7 +10318,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -10326,7 +10326,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10378,7 +10378,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10386,7 +10386,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -10394,7 +10394,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10428,7 +10428,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10436,7 +10436,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerPlan-id
           in: path
-          description: 'key: id of plannerPlan'
+          description: The unique identifier of plannerPlan
           required: true
           style: simple
           schema:
@@ -10444,7 +10444,7 @@ paths:
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10475,7 +10475,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10611,7 +10611,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10644,7 +10644,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10652,7 +10652,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10729,7 +10729,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10737,7 +10737,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10764,7 +10764,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10772,7 +10772,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10803,7 +10803,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10811,7 +10811,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10864,7 +10864,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10872,7 +10872,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10906,7 +10906,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10914,7 +10914,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -10945,7 +10945,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -10953,7 +10953,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -11005,7 +11005,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11013,7 +11013,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -11047,7 +11047,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11055,7 +11055,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -11086,7 +11086,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11094,7 +11094,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -11149,7 +11149,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11157,7 +11157,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -11191,7 +11191,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11199,7 +11199,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -11230,7 +11230,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11238,7 +11238,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -11290,7 +11290,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11298,7 +11298,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:
@@ -11332,7 +11332,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -11340,7 +11340,7 @@ paths:
           x-ms-docs-key-type: user
         - name: plannerTask-id
           in: path
-          description: 'key: id of plannerTask'
+          description: The unique identifier of plannerTask
           required: true
           style: simple
           schema:

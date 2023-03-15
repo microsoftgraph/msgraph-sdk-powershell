@@ -19,7 +19,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -85,7 +85,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -118,7 +118,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -126,7 +126,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -168,7 +168,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -176,7 +176,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -203,7 +203,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -211,7 +211,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -242,7 +242,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -250,7 +250,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -332,7 +332,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -340,7 +340,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -373,7 +373,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -381,7 +381,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -389,7 +389,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -447,7 +447,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -455,7 +455,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -463,7 +463,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -490,7 +490,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -498,7 +498,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -506,7 +506,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -537,7 +537,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -545,7 +545,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -553,7 +553,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -740,7 +740,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -748,7 +748,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -756,7 +756,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -789,7 +789,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -797,7 +797,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -805,7 +805,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -813,7 +813,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -906,7 +906,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -914,7 +914,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -922,7 +922,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -930,7 +930,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -957,7 +957,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -965,7 +965,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -973,7 +973,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -981,7 +981,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1009,7 +1009,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1017,7 +1017,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1025,7 +1025,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1033,7 +1033,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1097,7 +1097,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1105,7 +1105,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1113,7 +1113,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1121,7 +1121,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1154,7 +1154,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1162,7 +1162,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1170,7 +1170,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1178,7 +1178,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1186,7 +1186,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -1234,7 +1234,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1242,7 +1242,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1250,7 +1250,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1258,7 +1258,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1266,7 +1266,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -1293,7 +1293,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1301,7 +1301,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1309,7 +1309,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1317,7 +1317,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1325,7 +1325,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -1353,7 +1353,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1361,7 +1361,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1369,7 +1369,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1377,7 +1377,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1445,7 +1445,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1453,7 +1453,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1461,7 +1461,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1469,7 +1469,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1502,7 +1502,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1510,7 +1510,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1518,7 +1518,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1526,7 +1526,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1534,7 +1534,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -1583,7 +1583,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1591,7 +1591,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1599,7 +1599,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1607,7 +1607,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1615,7 +1615,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -1642,7 +1642,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1650,7 +1650,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1658,7 +1658,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1666,7 +1666,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1674,7 +1674,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -1702,7 +1702,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1710,7 +1710,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1718,7 +1718,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1726,7 +1726,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1764,7 +1764,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1772,7 +1772,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1780,7 +1780,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1788,7 +1788,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1816,7 +1816,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1824,7 +1824,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1832,7 +1832,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1840,7 +1840,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1865,7 +1865,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1873,7 +1873,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1881,7 +1881,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1889,7 +1889,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -1919,7 +1919,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -1927,7 +1927,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1935,7 +1935,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -1943,7 +1943,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -2011,7 +2011,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2019,7 +2019,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2027,7 +2027,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2035,7 +2035,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -2068,7 +2068,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2076,7 +2076,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2084,7 +2084,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2092,7 +2092,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -2100,7 +2100,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2149,7 +2149,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2157,7 +2157,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2165,7 +2165,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2173,7 +2173,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -2181,7 +2181,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2208,7 +2208,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2216,7 +2216,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2224,7 +2224,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2232,7 +2232,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -2240,7 +2240,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2268,7 +2268,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2276,7 +2276,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2284,7 +2284,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2352,7 +2352,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2360,7 +2360,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2368,7 +2368,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2401,7 +2401,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2409,7 +2409,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2417,7 +2417,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2425,7 +2425,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2474,7 +2474,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2482,7 +2482,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2490,7 +2490,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2498,7 +2498,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2525,7 +2525,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2533,7 +2533,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2541,7 +2541,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2549,7 +2549,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2577,7 +2577,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2585,7 +2585,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2593,7 +2593,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2661,7 +2661,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2669,7 +2669,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2677,7 +2677,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2710,7 +2710,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2718,7 +2718,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2726,7 +2726,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2734,7 +2734,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2783,7 +2783,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2791,7 +2791,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2799,7 +2799,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2807,7 +2807,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2834,7 +2834,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2842,7 +2842,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2850,7 +2850,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -2858,7 +2858,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -2889,7 +2889,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -2897,7 +2897,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3084,7 +3084,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3092,7 +3092,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3125,7 +3125,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3133,7 +3133,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3141,7 +3141,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3234,7 +3234,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3242,7 +3242,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3250,7 +3250,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3277,7 +3277,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3285,7 +3285,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3293,7 +3293,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3321,7 +3321,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3329,7 +3329,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3337,7 +3337,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3401,7 +3401,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3409,7 +3409,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3417,7 +3417,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3450,7 +3450,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3458,7 +3458,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3466,7 +3466,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3474,7 +3474,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -3522,7 +3522,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3530,7 +3530,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3538,7 +3538,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3546,7 +3546,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -3573,7 +3573,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3581,7 +3581,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3589,7 +3589,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3597,7 +3597,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -3625,7 +3625,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3633,7 +3633,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3641,7 +3641,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3709,7 +3709,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3717,7 +3717,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3725,7 +3725,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3758,7 +3758,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3766,7 +3766,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3774,7 +3774,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3782,7 +3782,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3831,7 +3831,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3839,7 +3839,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3847,7 +3847,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3855,7 +3855,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3882,7 +3882,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3890,7 +3890,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3898,7 +3898,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3906,7 +3906,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -3934,7 +3934,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3942,7 +3942,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -3950,7 +3950,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -3988,7 +3988,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -3996,7 +3996,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4004,7 +4004,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -4032,7 +4032,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4040,7 +4040,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4048,7 +4048,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -4073,7 +4073,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4081,7 +4081,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4089,7 +4089,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -4119,7 +4119,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4127,7 +4127,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4135,7 +4135,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -4203,7 +4203,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4211,7 +4211,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4219,7 +4219,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -4252,7 +4252,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4260,7 +4260,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4268,7 +4268,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -4276,7 +4276,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4325,7 +4325,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4333,7 +4333,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4341,7 +4341,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -4349,7 +4349,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4376,7 +4376,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4384,7 +4384,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4392,7 +4392,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -4400,7 +4400,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4428,7 +4428,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4436,7 +4436,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4504,7 +4504,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4512,7 +4512,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4545,7 +4545,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4553,7 +4553,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4561,7 +4561,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4610,7 +4610,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4618,7 +4618,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4626,7 +4626,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4653,7 +4653,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4661,7 +4661,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4669,7 +4669,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4697,7 +4697,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4705,7 +4705,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4773,7 +4773,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4781,7 +4781,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4814,7 +4814,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4822,7 +4822,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4830,7 +4830,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4879,7 +4879,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4887,7 +4887,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4895,7 +4895,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4922,7 +4922,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -4930,7 +4930,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: id of contactFolder'
+          description: The unique identifier of contactFolder
           required: true
           style: simple
           schema:
@@ -4938,7 +4938,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -4969,7 +4969,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5141,7 +5141,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5174,7 +5174,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5182,7 +5182,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5259,7 +5259,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5267,7 +5267,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5294,7 +5294,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5302,7 +5302,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5330,7 +5330,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5338,7 +5338,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5402,7 +5402,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5410,7 +5410,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5443,7 +5443,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5451,7 +5451,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5459,7 +5459,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -5507,7 +5507,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5515,7 +5515,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5523,7 +5523,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -5550,7 +5550,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5558,7 +5558,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5566,7 +5566,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: id of extension'
+          description: The unique identifier of extension
           required: true
           style: simple
           schema:
@@ -5594,7 +5594,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5602,7 +5602,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5670,7 +5670,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5678,7 +5678,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5711,7 +5711,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5719,7 +5719,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5727,7 +5727,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5776,7 +5776,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5784,7 +5784,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5792,7 +5792,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5819,7 +5819,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5827,7 +5827,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5835,7 +5835,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
+          description: The unique identifier of multiValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -5863,7 +5863,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5871,7 +5871,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5909,7 +5909,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5917,7 +5917,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5945,7 +5945,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5953,7 +5953,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -5978,7 +5978,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -5986,7 +5986,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -6016,7 +6016,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6024,7 +6024,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -6092,7 +6092,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6100,7 +6100,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -6133,7 +6133,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6141,7 +6141,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -6149,7 +6149,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -6198,7 +6198,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6206,7 +6206,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -6214,7 +6214,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
@@ -6241,7 +6241,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: id of user'
+          description: The unique identifier of user
           required: true
           style: simple
           schema:
@@ -6249,7 +6249,7 @@ paths:
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: id of contact'
+          description: The unique identifier of contact
           required: true
           style: simple
           schema:
@@ -6257,7 +6257,7 @@ paths:
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
+          description: The unique identifier of singleValueLegacyExtendedProperty
           required: true
           style: simple
           schema:
