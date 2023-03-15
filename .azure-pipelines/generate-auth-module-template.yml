@@ -48,18 +48,12 @@ jobs:
       projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
       testRunTitle: 'Run Enabled Tests'
 
-  - task: RoslynAnalyzers@2
+  - task: RoslynAnalyzers@3
     inputs:
         userProvideBuildInfo: 'msBuildInfo'
         msBuildVersion: '16.0'
         msBuildArchitecture: 'DotNetCore'
         msBuildCommandline: '"C:\Program Files\dotnet\dotnet.exe" msbuild $(System.DefaultWorkingDirectory)//src//Authentication//Authentication.sln /nologo /nr:false'
-
-  - task: CodeMetrics@1
-    displayName: 'Run CodeMetrics'
-    inputs:
-        Files: '$(System.DefaultWorkingDirectory)//**//Microsoft.Graph.Authentication.dll;$(System.DefaultWorkingDirectory)//**//Microsoft.Graph.Authentication.exe'
-        continueOnError: true
 
   - task: PowerShell@2
     displayName: 'Generate and Build Auth Module'

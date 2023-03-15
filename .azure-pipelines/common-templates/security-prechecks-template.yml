@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 steps:
-- task: CredScan@2
+- task: CredScan@3
   displayName: 'Run CredScan'
   inputs:
     debugMode: false
@@ -9,7 +9,7 @@ steps:
     toolMajorVersion: 'V2'
     searchersFileType: 'Skype'
 
-- task: PoliCheck@1
+- task: PoliCheck@2
   displayName: 'Run PoliCheck'
   condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/main'), false))
   inputs:
