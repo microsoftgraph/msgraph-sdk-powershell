@@ -1,17 +1,20 @@
 ﻿# Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-$title = $env:Title
-$body = $env:Body
-$baseBranchParameter = ""
+Param(
+    [Parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [string] $Title,
 
-if (![string]::IsNullOrEmpty($env:BaseBranch))
-{
-    $baseBranchParameter = "-B $env:BaseBranch" # optionally pass the base branch if provided as the PR will target the default branch otherwise
-}
+    [Parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [string] $Body,
+
+    [string] $BaseBranchName = "dev"
+)
 
 # Code owners will be added automatically as reviewers.
 Invoke-Expression "gh auth login" # login to GitHub
-Invoke-Expression "gh pr create -t ""$title"" -b ""$body"" $baseBranchParameter | Write-Host"
+Invoke-Expression 'gh pr create -t "$Title" -b "$Body" -B $BaseBranchName | Write-Host'
 
 Write-Host "Pull Request Created successfully." -ForegroundColor Green

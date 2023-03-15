@@ -54,7 +54,7 @@ stages:
           AuthModulePath: "src/Authentication/Authentication"
           ServiceModulePath: "src/"
           ModulePrefix: "Microsoft.Graph"
-          BaseBranch: $(BaseBranch)
+          BaseBranchName: $(BaseBranch)
           EnableSigning: false
           PublishToFeed: false
           GenerateCommandMetadata: true
