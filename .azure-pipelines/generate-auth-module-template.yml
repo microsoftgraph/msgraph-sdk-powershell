@@ -48,13 +48,6 @@ jobs:
       projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
       testRunTitle: 'Run Enabled Tests'
 
-  - task: RoslynAnalyzers@3
-    inputs:
-        userProvideBuildInfo: 'msBuildInfo'
-        msBuildVersion: '16.0'
-        msBuildArchitecture: 'x64'
-        msBuildCommandline: '"C:\Program Files\dotnet\dotnet.exe" msbuild $(System.DefaultWorkingDirectory)//src//Authentication//Authentication.sln /nologo /nr:false'
-
   - task: PowerShell@2
     displayName: 'Generate and Build Auth Module'
     inputs:
