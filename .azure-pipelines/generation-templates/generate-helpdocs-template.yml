@@ -59,10 +59,15 @@ steps:
       git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.DocsBranch)
       git status
 
-- pwsh: '$(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1'
-  displayName: 'Create Pull Request for generated build'
+- task: PowerShell@2
+  displayName: Create Pull Request for Weekly Help Docs Generation
   env:
     GITHUB_TOKEN: $(GITHUB_TOKEN)
-    BaseBranch: ${{ parameters.BaseBranch }}
-    Title: '[v1] Weekly Help Docs Generation'
-    Body: 'This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR.'
+  inputs:
+    pwsh: true
+    targetType: inline
+    script: |
+      $Title = "[v1] Weekly Help Docs Generation"
+      $Body = "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+      $BaseBranch = "${{ parameters.BaseBranch }}"
+      . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch

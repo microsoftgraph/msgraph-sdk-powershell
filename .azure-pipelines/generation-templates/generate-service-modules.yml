@@ -31,7 +31,7 @@ parameters:
   - name: DOCSBRANCH
     type: string
     default: "DocsGeneration"
-  - name: BaseBranch
+  - name: BaseBranchName
     type: string
     default: "dev"
 
@@ -52,7 +52,7 @@ jobs:
       GenerateHelpDocs: ${{ parameters.GenerateHelpDocs }}
       GeneratePullRequest: ${{ parameters.GeneratePullRequest }}
       DocsBranch: ${{ parameters.DocsBranch }}
-      BaseBranch: ${{ parameters.BaseBranch }}
+      BaseBranchName: ${{ parameters.BaseBranchName }}
     steps:
       - template: ../common-templates/checkout.yml
         parameters:
@@ -164,13 +164,19 @@ jobs:
         - template: ./generate-command-metadata-template.yml
 
       - ${{ if eq(parameters.GeneratePullRequest, true) }}:
-        - pwsh: '$(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1'
-          displayName: 'Create Pull Request for generated build'
+        - task: PowerShell@2
+          displayName: Create Pull Request for generated build
           env:
             GITHUB_TOKEN: $(GITHUB_TOKEN)
-            BaseBranch: $(BaseBranch)
-            Title: '[v1] Weekly OpenApiDocs Refresh'
-            Body: 'This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR.'
+          inputs:
+            pwsh: true
+            targetType: inline
+            script: |
+              $Title = "[v1] Weekly OpenApiDocs Refresh"
+              $Body = "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+              $BaseBranch = "${{ parameters.BaseBranchName }}"
+              Write-Host "Executing . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch"
+              . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP DLL strong name (Service Modules)
@@ -307,7 +313,7 @@ jobs:
       - ${{ if eq(parameters.GenerateHelpDocs, true) }}:
         - template: ./generate-helpdocs-template.yml
           parameters:
-            BaseBranch: $(BaseBranch)
+            BaseBranch: $(BaseBranchName)
             DOCSBRANCH: $(DocsBranch)
             ModulesToGenerate: $(ModulesToGenerate)
 

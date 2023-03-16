@@ -21,14 +21,6 @@ parameters:
     displayName: 'Build Number'
     type: string
     default: $[format('{0:yyMMddHH}', pipeline.startTime)]
-  - name: AZURESUBSCRIPTION
-    default: "Microsoft Graph Build Agents (Win+Lin)"
-    displayName: Azure Subscription
-
-  - name: KEYVAULT
-    default: "msgraph-build-keyvault"
-    displayName: Build Key vault
-
 
 jobs:
 - job: MsGraphPSSDKAuthModuleGeneration
@@ -36,13 +28,6 @@ jobs:
 
   steps:
   - template: ./common-templates/install-tools-template.yml
-
-  - task: AzureKeyVault@1
-    inputs:
-     azureSubscription: $(AZURESUBSCRIPTION)
-     KeyVaultName: $(KEYVAULT)
-     SecretsFilter: '*'
-     RunAsPreJob: true
 
   - task: PowerShell@2
     displayName: 'Generate and Build Auth Module'
@@ -62,19 +47,6 @@ jobs:
       publishTestResults: true
       projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
       testRunTitle: 'Run Enabled Tests'
-
-  - task: RoslynAnalyzers@2
-    inputs:
-        userProvideBuildInfo: 'msBuildInfo'
-        msBuildVersion: '16.0'
-        msBuildArchitecture: 'DotNetCore'
-        msBuildCommandline: '"C:\Program Files\dotnet\dotnet.exe" msbuild $(System.DefaultWorkingDirectory)//src//Authentication//Authentication.sln /nologo /nr:false'
-
-  - task: CodeMetrics@1
-    displayName: 'Run CodeMetrics'
-    inputs:
-        Files: '$(System.DefaultWorkingDirectory)//**//Microsoft.Graph.Authentication.dll;$(System.DefaultWorkingDirectory)//**//Microsoft.Graph.Authentication.exe'
-        continueOnError: true
 
   - task: PowerShell@2
     displayName: 'Generate and Build Auth Module'
