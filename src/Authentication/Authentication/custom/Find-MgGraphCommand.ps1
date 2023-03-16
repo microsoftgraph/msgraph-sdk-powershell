@@ -127,8 +127,11 @@ Function Find-MgGraphCommand {
             }
 
             # Resolve legacy commands.
-            [array]$ResolvedCommands = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping | Where-Object LegacyMapping -Contains $Command | Select-Object -ExpandProperty Command
-            if (!$ResolvedCommands) {
+            [array]$ResolvedCommands = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping | Where-Object LegacyMapping -Contains $Command
+            if ($ResolvedCommands) {
+                $ResolvedCommands = $ResolvedCommands.Command
+            }
+            else {
                 $ResolvedCommands = $Command
             }
             Write-Debug "Resolved Command: $ResolvedCommands"
