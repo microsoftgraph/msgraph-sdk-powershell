@@ -17,7 +17,7 @@ Param(
 
 $HeadBranchOption = $null
 if (-not [string]::IsNullOrWhiteSpace($HeadBranchName)) {
-    $HeadBranchOption = "-H $HeadBranchName"
+    $HeadBranchOption = "-H microsoftgraph:$HeadBranchName"
 }
 # Code owners will be added automatically as reviewers.
 Invoke-Expression "gh auth login" # login to GitHub

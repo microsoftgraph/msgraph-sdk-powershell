@@ -90,4 +90,4 @@ jobs:
         $Title = "[v1] Examples Update"
         $Body = "This pull request was automatically created by Azure Pipelines. Contains examples update."
         $BaseBranch = "dev"
-        . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch -HeadBranchName "microsoftgraph:$(ComputeBranch.WeeklyExamplesBranch)"
+        . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch -HeadBranchName $(ComputeBranch.WeeklyExamplesBranch)
