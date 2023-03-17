@@ -33,6 +33,8 @@ jobs:
     name: ${{ parameters.BuildAgent }}
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
+  - template: ./common-templates/update-sdkversion.yml
+
   - task: PowerShell@2
     name: "ComputeBranch"
     displayName: "Compute weekly examples update branch name"
@@ -40,6 +42,7 @@ jobs:
       targetType: inline
       script: |
         $branch = "{0}/{1}" -f "WeeklyExamplesUpdate", (Get-Date -Format yyyyMMddHHmm)
+        Write-Host "Compute branch: $branch"
         Write-Host "##vso[task.setvariable variable=WeeklyExamplesBranch;isOutput=true]$branch"
 
   - task: Bash@3
@@ -51,8 +54,6 @@ jobs:
         git branch $(ComputeBranch.WeeklyExamplesBranch)
         git checkout $(ComputeBranch.WeeklyExamplesBranch)
         git status
-
-  - template: ./common-templates/update-sdkversion.yml
 
   - task: PowerShell@2
     displayName: 'Update Examples From Graph Reference'
