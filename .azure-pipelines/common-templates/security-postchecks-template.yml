@@ -1,9 +1,7 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 steps:
-- task: CodesignValidation@0
-
-- task: SdtReport@1
+- task: SdtReport@2
   displayName: "Security Analysis Report"
   continueOnError: true
   condition: succeededOrFailed()

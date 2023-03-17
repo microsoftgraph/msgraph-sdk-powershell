@@ -1,4 +1,5 @@
 # Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+
 trigger: none # disable triggers based on commits.
 pr: none # disable as a PR gate.
 name: 'PowerShellExamplesUpdate Check'
@@ -58,3 +59,16 @@ jobs:
         git commit -m "Updating examples "+$date
         git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
         git status
+
+  - task: PowerShell@2
+    displayName: Create examples update
+    env:
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+    inputs:
+      pwsh: true
+      targetType: inline
+      script: |
+        $Title = "[v1] Examples Update"
+        $Body = "This pull request was automatically created by Azure Pipelines. Contains examples update."
+        $BaseBranch = "dev"
+        . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch

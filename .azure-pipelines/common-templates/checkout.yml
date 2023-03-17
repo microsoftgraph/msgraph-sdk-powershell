@@ -33,8 +33,9 @@ steps:
         git pull
         git status
 
-
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: "Run CredScan"
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@3
+    displayName: 'Run CredScan - Src'
     inputs:
       debugMode: false
+      scanFolder: '$(Build.SourcesDirectory)\src'
+      toolMajorVersion: 'V2'

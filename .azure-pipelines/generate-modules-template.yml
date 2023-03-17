@@ -152,8 +152,6 @@ jobs:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/PostGeneration/FindDuplicateCommand.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/"
 
-  - template: ./generation-templates/generate-helpdocs-template.yml
-
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
     enabled: true

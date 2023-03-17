@@ -1,15 +1,14 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 steps:
-- task: CredScan@2
-  displayName: 'Run CredScan'
+- task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@3
+  displayName: 'Run CredScan - Src'
   inputs:
     debugMode: false
-    batchSize: 20
+    scanFolder: '$(Build.SourcesDirectory)\src'
     toolMajorVersion: 'V2'
-    searchersFileType: 'Skype'
 
-- task: PoliCheck@1
+- task: PoliCheck@2
   displayName: 'Run PoliCheck'
   condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/main'), false))
   inputs:

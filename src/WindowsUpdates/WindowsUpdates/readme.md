@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^(admin(_.*Windows|.windows_.*Updates|.windows.updates.deployments_.*Audience)|admin(?!\.windows).*|admin\.windows\.updates(\.deploymentAudiences(\.|\_).*)|.*DeploymentAudiences)$
+  - remove-path-by-operation: ^(admin(_.*Windows|.windows_.*Updates|.windows.updates.deployments_.*Audience)|admin(?!\.windows).*|admin\.windows\.updates(\.deploymentAudiences(\.|\_).*)|.*DeploymentAudiences)$|admin\.windows\.updates\.updatePolicies\.audience_updateAudience$
 # Pluralize.
   - where:
       subject: (.*)AdminWindowUpdate(.*)
@@ -77,6 +77,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.22.0
+module-version: 1.24.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

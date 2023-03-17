@@ -6,14 +6,6 @@ parameters:
     default: 1es-windows-ps-compute
     displayName: Build Agent
 
-  - name: AzureSubscription
-    default: "Microsoft Graph Build Agents (Win+Lin)"
-    displayName: Azure Subscription
-
-  - name: KeyVault
-    default: "msgraph-build-keyvault"
-    displayName: Build Key vault
-
 variables:
   AUTH_MODULE_NAME: 'Authentication'
   AUTH_MODULE_PATH: 'src\Authentication\Authentication'
@@ -29,8 +21,6 @@ variables:
   GitUserName: 'Microsoft Graph DevX Tooling'
   BUILDNUMBER: -1
   BUILDAGENT: ${{ parameters.BuildAgent }}
-  AZURESUBSCRIPTION: ${{ parameters.AzureSubscription }}
-  KEYVAULT: ${{ parameters.KeyVault }}
 
 pool: $(BUILDAGENT)
 
@@ -72,18 +62,6 @@ stages:
             Write-Host $(BUILDNUMBER)
             printenv
 
-- stage: GetSecrets
-  displayName: 'Get Secrets From Azure KeyVault'
-  jobs:
-  - job: GetSecrets
-    steps:
-    - task: AzureKeyVault@1
-      inputs:
-        azureSubscription: $(AZURESUBSCRIPTION)
-        KeyVaultName: $(KEYVAULT)
-        SecretsFilter: '*'
-        RunAsPreJob: true
-
 - stage: SecurityPreChecks
   displayName: 'Security Pre Checks'
   jobs:
@@ -102,8 +80,6 @@ stages:
       AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
       EnableSigning: true
       BUILDNUMBER: $(BUILDNUMBER)
-      KEYVAULT: $(KEYVAULT)
-      AZURESUBSCRIPTION: $(AZURESUBSCRIPTION)
 
 - stage: GenerateModules
   displayName: 'Generate Modules (Microsoft.Graph.*)'

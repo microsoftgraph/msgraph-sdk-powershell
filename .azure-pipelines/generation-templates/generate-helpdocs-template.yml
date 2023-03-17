@@ -2,6 +2,9 @@
 # Licensed under the MIT License.
 
 parameters:
+  - name: BaseBranch
+    type: string
+    default: "dev"
   - name: DOCSBRANCH
     type: string
     default: "DocsGeneration"
@@ -55,3 +58,16 @@ steps:
       git status
       git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.DocsBranch)
       git status
+
+- task: PowerShell@2
+  displayName: Create Pull Request for Weekly Help Docs Generation
+  env:
+    GITHUB_TOKEN: $(GITHUB_TOKEN)
+  inputs:
+    pwsh: true
+    targetType: inline
+    script: |
+      $Title = "[v1] Weekly Help Docs Generation"
+      $Body = "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+      $BaseBranch = "${{ parameters.BaseBranch }}"
+      . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch

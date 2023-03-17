@@ -199,7 +199,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -255,7 +255,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -282,7 +282,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -310,7 +310,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -378,7 +378,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -411,7 +411,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -419,7 +419,7 @@ paths:
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: enrollmentConfigurationAssignment-id
           in: path
-          description: 'key: id of enrollmentConfigurationAssignment'
+          description: The unique identifier of enrollmentConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -468,7 +468,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -476,7 +476,7 @@ paths:
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: enrollmentConfigurationAssignment-id
           in: path
-          description: 'key: id of enrollmentConfigurationAssignment'
+          description: The unique identifier of enrollmentConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -503,7 +503,7 @@ paths:
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
+          description: The unique identifier of deviceEnrollmentConfiguration
           required: true
           style: simple
           schema:
@@ -511,7 +511,7 @@ paths:
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: enrollmentConfigurationAssignment-id
           in: path
-          description: 'key: id of enrollmentConfigurationAssignment'
+          description: The unique identifier of enrollmentConfigurationAssignment
           required: true
           style: simple
           schema:
@@ -641,7 +641,7 @@ paths:
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          description: The unique identifier of importedWindowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -696,7 +696,7 @@ paths:
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          description: The unique identifier of importedWindowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -723,7 +723,7 @@ paths:
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          description: The unique identifier of importedWindowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -880,7 +880,7 @@ paths:
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of windowsAutopilotDeviceIdentity'
+          description: The unique identifier of windowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -944,7 +944,7 @@ paths:
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of windowsAutopilotDeviceIdentity'
+          description: The unique identifier of windowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -971,7 +971,7 @@ paths:
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
-          description: 'key: id of windowsAutopilotDeviceIdentity'
+          description: The unique identifier of windowsAutopilotDeviceIdentity
           required: true
           style: simple
           schema:
@@ -1265,7 +1265,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -1326,7 +1326,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -1353,7 +1353,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -1381,7 +1381,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -1431,7 +1431,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -1458,7 +1458,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -1486,7 +1486,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -1537,7 +1537,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -1588,7 +1588,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -1772,7 +1772,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleInstance'
+          description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
           style: simple
           schema:
@@ -1840,7 +1840,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleInstance'
+          description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
           style: simple
           schema:
@@ -1867,7 +1867,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleInstance'
+          description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
           style: simple
           schema:
@@ -1895,7 +1895,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleInstance'
+          description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
           style: simple
           schema:
@@ -2212,7 +2212,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2288,7 +2288,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2315,7 +2315,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2343,7 +2343,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2411,7 +2411,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2463,7 +2463,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2517,7 +2517,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2539,7 +2539,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2590,7 +2590,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2650,7 +2650,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -2970,7 +2970,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentSchedule'
+          description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
           style: simple
           schema:
@@ -3039,7 +3039,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentSchedule'
+          description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
           style: simple
           schema:
@@ -3066,7 +3066,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentSchedule'
+          description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
           style: simple
           schema:
@@ -3094,7 +3094,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentSchedule'
+          description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
           style: simple
           schema:
@@ -3382,7 +3382,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3440,7 +3440,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3467,7 +3467,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3495,7 +3495,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3586,7 +3586,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3619,7 +3619,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3627,7 +3627,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: unifiedRoleDefinition-id1
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3685,7 +3685,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3693,7 +3693,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: unifiedRoleDefinition-id1
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3720,7 +3720,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3728,7 +3728,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: unifiedRoleDefinition-id1
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -3872,7 +3872,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleInstance'
+          description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
           style: simple
           schema:
@@ -3936,7 +3936,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleInstance'
+          description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
           style: simple
           schema:
@@ -3963,7 +3963,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleInstance'
+          description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
           style: simple
           schema:
@@ -4233,7 +4233,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -4307,7 +4307,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -4334,7 +4334,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -4362,7 +4362,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -4414,7 +4414,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -4468,7 +4468,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -4490,7 +4490,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -4541,7 +4541,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -4601,7 +4601,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -4912,7 +4912,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
           in: path
-          description: 'key: id of unifiedRoleEligibilitySchedule'
+          description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
           style: simple
           schema:
@@ -4978,7 +4978,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
           in: path
-          description: 'key: id of unifiedRoleEligibilitySchedule'
+          description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
           style: simple
           schema:
@@ -5005,7 +5005,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
           in: path
-          description: 'key: id of unifiedRoleEligibilitySchedule'
+          description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
           style: simple
           schema:
@@ -5340,7 +5340,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -5401,7 +5401,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -5428,7 +5428,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -5456,7 +5456,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -5506,7 +5506,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -5533,7 +5533,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -5561,7 +5561,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -5612,7 +5612,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -5663,7 +5663,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
-          description: 'key: id of unifiedRoleAssignment'
+          description: The unique identifier of unifiedRoleAssignment
           required: true
           style: simple
           schema:
@@ -5847,7 +5847,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleInstance'
+          description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
           style: simple
           schema:
@@ -5915,7 +5915,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleInstance'
+          description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
           style: simple
           schema:
@@ -5942,7 +5942,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleInstance'
+          description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
           style: simple
           schema:
@@ -5970,7 +5970,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleInstance'
+          description: The unique identifier of unifiedRoleAssignmentScheduleInstance
           required: true
           style: simple
           schema:
@@ -6287,7 +6287,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -6363,7 +6363,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -6390,7 +6390,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -6418,7 +6418,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -6486,7 +6486,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -6538,7 +6538,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -6592,7 +6592,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -6614,7 +6614,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -6665,7 +6665,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -6725,7 +6725,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentScheduleRequest'
+          description: The unique identifier of unifiedRoleAssignmentScheduleRequest
           required: true
           style: simple
           schema:
@@ -7045,7 +7045,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentSchedule'
+          description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
           style: simple
           schema:
@@ -7114,7 +7114,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentSchedule'
+          description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
           style: simple
           schema:
@@ -7141,7 +7141,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentSchedule'
+          description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
           style: simple
           schema:
@@ -7169,7 +7169,7 @@ paths:
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
-          description: 'key: id of unifiedRoleAssignmentSchedule'
+          description: The unique identifier of unifiedRoleAssignmentSchedule
           required: true
           style: simple
           schema:
@@ -7457,7 +7457,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7515,7 +7515,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7542,7 +7542,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7570,7 +7570,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7661,7 +7661,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7694,7 +7694,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7702,7 +7702,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: unifiedRoleDefinition-id1
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7760,7 +7760,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7768,7 +7768,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: unifiedRoleDefinition-id1
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7795,7 +7795,7 @@ paths:
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7803,7 +7803,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: unifiedRoleDefinition-id1
           in: path
-          description: 'key: id of unifiedRoleDefinition'
+          description: The unique identifier of unifiedRoleDefinition
           required: true
           style: simple
           schema:
@@ -7947,7 +7947,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleInstance'
+          description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
           style: simple
           schema:
@@ -8011,7 +8011,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleInstance'
+          description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
           style: simple
           schema:
@@ -8038,7 +8038,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleInstance'
+          description: The unique identifier of unifiedRoleEligibilityScheduleInstance
           required: true
           style: simple
           schema:
@@ -8308,7 +8308,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -8382,7 +8382,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -8409,7 +8409,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -8437,7 +8437,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -8489,7 +8489,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -8543,7 +8543,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -8565,7 +8565,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -8616,7 +8616,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -8676,7 +8676,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
-          description: 'key: id of unifiedRoleEligibilityScheduleRequest'
+          description: The unique identifier of unifiedRoleEligibilityScheduleRequest
           required: true
           style: simple
           schema:
@@ -8987,7 +8987,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
           in: path
-          description: 'key: id of unifiedRoleEligibilitySchedule'
+          description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
           style: simple
           schema:
@@ -9053,7 +9053,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
           in: path
-          description: 'key: id of unifiedRoleEligibilitySchedule'
+          description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
           style: simple
           schema:
@@ -9080,7 +9080,7 @@ paths:
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
           in: path
-          description: 'key: id of unifiedRoleEligibilitySchedule'
+          description: The unique identifier of unifiedRoleEligibilitySchedule
           required: true
           style: simple
           schema:
