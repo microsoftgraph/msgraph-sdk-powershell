@@ -72,8 +72,6 @@ jobs:
       pwsh: true
       script: |
         git status
-        git config --global user.email "timwamalwa@gmail.com"
-        git config --global user.name "Timothy Wamalwa"
         git add .
         git commit -m "Updating examples"
         git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyExamplesBranch)
@@ -88,7 +86,8 @@ jobs:
       targetType: inline
       script: |
         git status
+        Start-Sleep 15s
         $Title = "[v1] Examples Update"
         $Body = "This pull request was automatically created by Azure Pipelines. Contains examples update."
         $BaseBranch = "dev"
-        . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch -HeadBranchName "timayabi2020:$(git branch --show-current)"
+        . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch -HeadBranchName "microsoftgraph:$(git branch --show-current)"
