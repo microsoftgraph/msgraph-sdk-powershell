@@ -33,6 +33,25 @@ jobs:
     name: ${{ parameters.BuildAgent }}
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
+  - task: PowerShell@2
+    name: "ComputeBranch"
+    displayName: "Compute weekly examples update branch name"
+    inputs:
+      targetType: inline
+      script: |
+        $branch = "{0}/{1}" -f "WeeklyExamplesUpdate", (Get-Date -Format yyyyMMddHHmm)
+        Write-Host "##vso[task.setvariable variable=WeeklyExamplesBranch;isOutput=true]$branch"
+
+  - task: Bash@3
+    displayName: "Create weekly examples branch"
+    inputs:
+      targetType: inline
+      script: |
+        git status
+        git branch $(ComputeBranch.WeeklyExamplesBranch)
+        git checkout $(ComputeBranch.WeeklyExamplesBranch)
+        git status
+
   - template: ./common-templates/update-sdkversion.yml
 
   - task: PowerShell@2
@@ -51,13 +70,12 @@ jobs:
       targetType: inline
       pwsh: true
       script: |
+        git status
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
-        $date = Get-Date -Format "dd-MM-yyyy"
-        $proposedBranch = "WeeklyExamplesUpdate/"+$date
         git add .
-        git commit -m "Updating examples "+$date
-        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
+        git commit -m "Updating examples"
+        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyExamplesBranch)
         git status
 
   - task: PowerShell@2
