@@ -10,11 +10,17 @@ Param(
     [ValidateNotNullOrEmpty()]
     [string] $Body,
 
+    [string] $HeadBranchName,
+
     [string] $BaseBranchName = "dev"
 )
 
+$HeadBranchOption = $null
+if (-not [string]::IsNullOrWhiteSpace($HeadBranchName)) {
+    $HeadBranchOption = "-H $HeadBranchName"
+}
 # Code owners will be added automatically as reviewers.
 Invoke-Expression "gh auth login" # login to GitHub
-Invoke-Expression 'gh pr create -t "$Title" -b "$Body" -B $BaseBranchName | Write-Host'
+Invoke-Expression 'gh pr create -t "$Title" -b "$Body" -B $BaseBranchName $HeadBranchOption| Write-Host'
 
 Write-Host "Pull Request Created successfully." -ForegroundColor Green

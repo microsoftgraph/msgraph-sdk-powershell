@@ -56,7 +56,7 @@ steps:
     targetType: inline
     script: |
       git status
-      git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.DocsBranch)
+      git push --set-upstream origin $(ComputeBranch.DocsBranch)
       git status
 
 - task: PowerShell@2
@@ -69,5 +69,5 @@ steps:
     script: |
       $Title = "[v1] Weekly Help Docs Generation"
       $Body = "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
-      $BaseBranch = "${{ parameters.BaseBranch }}"
+      $BaseBranch = "dev"
       . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch
