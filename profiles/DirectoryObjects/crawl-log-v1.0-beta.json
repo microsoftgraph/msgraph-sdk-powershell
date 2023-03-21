@@ -29,6 +29,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     },
+    "/directoryObjects/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
     "/directoryObjects/microsoft.graph.getByIds": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"

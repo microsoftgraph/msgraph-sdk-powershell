@@ -23,6 +23,7 @@ paths:
             type: array
             items:
               enum:
+                - industryData
                 - connections
               type: string
         - name: $expand
@@ -36,6 +37,7 @@ paths:
             items:
               enum:
                 - '*'
+                - industryData
                 - connections
               type: string
       responses:
@@ -1922,6 +1924,2071 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get industryData from external
+      operationId: external_GetIndustryData
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - dataConnectors
+                - inboundFlows
+                - operations
+                - referenceDefinitions
+                - roleGroups
+                - runs
+                - sourceSystems
+                - years
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - dataConnectors
+                - inboundFlows
+                - operations
+                - referenceDefinitions
+                - roleGroups
+                - runs
+                - sourceSystems
+                - years
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /external/industryData/dataConnectors:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: List azureDataLakeConnectors
+      description: Get a list of the azureDataLakeConnector objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
+      operationId: external.industryData_ListDataConnectors
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - sourceSystem
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sourceSystem
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.industryData.industryDataConnectorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Create industryDataConnector
+      description: Create a new industryDataConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateDataConnectors
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/dataConnectors/{industryDataConnector-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get dataConnectors from external
+      description: Set of connectors for importing data from source systems.
+      operationId: external.industryData_GetDataConnectors
+      parameters:
+        - name: industryDataConnector-id
+          in: path
+          description: The unique identifier of industryDataConnector
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataConnector
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - sourceSystem
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sourceSystem
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.industryDataRoot
+      summary: Update the navigation property dataConnectors in external
+      operationId: external.industryData_UpdateDataConnectors
+      parameters:
+        - name: industryDataConnector-id
+          in: path
+          description: The unique identifier of industryDataConnector
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataConnector
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.industryDataRoot
+      summary: Delete navigation property dataConnectors for external
+      operationId: external.industryData_DeleteDataConnectors
+      parameters:
+        - name: industryDataConnector-id
+          in: path
+          description: The unique identifier of industryDataConnector
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataConnector
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/dataConnectors/{industryDataConnector-id}/microsoft.graph.industryData.validate':
+    post:
+      tags:
+        - external.Actions
+      summary: Invoke action validate
+      description: Perform validations applicable for the specific instance of the data connector.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
+      operationId: external.industryData.dataConnectors_validate
+      parameters:
+        - name: industryDataConnector-id
+          in: path
+          description: The unique identifier of industryDataConnector
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataConnector
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/external/industryData/dataConnectors/{industryDataConnector-id}/sourceSystem':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get sourceSystem from external
+      description: The sourceSystemDefinition this connector is connected to.
+      operationId: external.industryData.dataConnectors_GetSourceSystem
+      parameters:
+        - name: industryDataConnector-id
+          in: path
+          description: The unique identifier of industryDataConnector
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataConnector
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - userMatchingSettings
+                - vendor
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /external/industryData/inboundFlows:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: List inboundFileFlows
+      description: Get a list of the inboundFileFlow objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
+      operationId: external.industryData_ListInboundFlows
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - readinessStatus
+                - readinessStatus desc
+                - dataDomain
+                - dataDomain desc
+                - effectiveDateTime
+                - effectiveDateTime desc
+                - expirationDateTime
+                - expirationDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - readinessStatus
+                - dataDomain
+                - effectiveDateTime
+                - expirationDateTime
+                - dataConnector
+                - year
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - dataConnector
+                - year
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.industryData.inboundFlowCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Create inboundFileFlow
+      description: 'Create a new inboundFileFlow object. The following prerequisite resources are required when you create an **inboundFileFlow**:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateInboundFlows
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/inboundFlows/{inboundFlow-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get inboundFlows from external
+      description: Set of data import flow activities to bring data into the canonical store via a connector.
+      operationId: external.industryData_GetInboundFlows
+      parameters:
+        - name: inboundFlow-id
+          in: path
+          description: The unique identifier of inboundFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - readinessStatus
+                - dataDomain
+                - effectiveDateTime
+                - expirationDateTime
+                - dataConnector
+                - year
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - dataConnector
+                - year
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.industryDataRoot
+      summary: Update the navigation property inboundFlows in external
+      operationId: external.industryData_UpdateInboundFlows
+      parameters:
+        - name: inboundFlow-id
+          in: path
+          description: The unique identifier of inboundFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundFlow
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.industryDataRoot
+      summary: Delete navigation property inboundFlows for external
+      operationId: external.industryData_DeleteInboundFlows
+      parameters:
+        - name: inboundFlow-id
+          in: path
+          description: The unique identifier of inboundFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundFlow
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/inboundFlows/{inboundFlow-id}/dataConnector':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get dataConnector from external
+      description: The data connector in the context of which this flow pulls in data from a source system.
+      operationId: external.industryData.inboundFlows_GetDataConnector
+      parameters:
+        - name: inboundFlow-id
+          in: path
+          description: The unique identifier of inboundFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - sourceSystem
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sourceSystem
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/inboundFlows/{inboundFlow-id}/year':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get year from external
+      description: The year that the data brought in via this flow applies to.
+      operationId: external.industryData.inboundFlows_GetYear
+      parameters:
+        - name: inboundFlow-id
+          in: path
+          description: The unique identifier of inboundFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - endDate
+                - startDate
+                - year
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /external/industryData/operations:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: List fileValidateOperations
+      description: Get a list of long-running file validation operations and their statuses.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0
+      operationId: external.industryData_ListOperations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - resourceLocation
+                - resourceLocation desc
+                - status
+                - status desc
+                - statusDetail
+                - statusDetail desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastActionDateTime
+                - resourceLocation
+                - status
+                - statusDetail
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.longRunningOperationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Create new navigation property to operations for external
+      operationId: external.industryData_CreateOperations
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/operations/{longRunningOperation-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get operations from external
+      description: Set of ephemeral operations that the system runs currently. Read-only.
+      operationId: external.industryData_GetOperations
+      parameters:
+        - name: longRunningOperation-id
+          in: path
+          description: The unique identifier of longRunningOperation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: longRunningOperation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastActionDateTime
+                - resourceLocation
+                - status
+                - statusDetail
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.industryDataRoot
+      summary: Update the navigation property operations in external
+      operationId: external.industryData_UpdateOperations
+      parameters:
+        - name: longRunningOperation-id
+          in: path
+          description: The unique identifier of longRunningOperation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: longRunningOperation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.industryDataRoot
+      summary: Delete navigation property operations for external
+      operationId: external.industryData_DeleteOperations
+      parameters:
+        - name: longRunningOperation-id
+          in: path
+          description: The unique identifier of longRunningOperation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: longRunningOperation
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /external/industryData/referenceDefinitions:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: List referenceDefinitions
+      description: Get a list of the referenceDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
+      operationId: external.industryData_ListReferenceDefinitions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - code
+                - code desc
+                - createdDateTime
+                - createdDateTime desc
+                - isDisabled
+                - isDisabled desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - referenceType
+                - referenceType desc
+                - sortIndex
+                - sortIndex desc
+                - source
+                - source desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - code
+                - createdDateTime
+                - isDisabled
+                - lastModifiedDateTime
+                - referenceType
+                - sortIndex
+                - source
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.industryData.referenceDefinitionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Create new navigation property to referenceDefinitions for external
+      operationId: external.industryData_CreateReferenceDefinitions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/referenceDefinitions/{referenceDefinition-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get referenceDefinitions from external
+      description: Set of user modifiable system picker types.
+      operationId: external.industryData_GetReferenceDefinitions
+      parameters:
+        - name: referenceDefinition-id
+          in: path
+          description: The unique identifier of referenceDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: referenceDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - code
+                - createdDateTime
+                - isDisabled
+                - lastModifiedDateTime
+                - referenceType
+                - sortIndex
+                - source
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.industryDataRoot
+      summary: Update the navigation property referenceDefinitions in external
+      operationId: external.industryData_UpdateReferenceDefinitions
+      parameters:
+        - name: referenceDefinition-id
+          in: path
+          description: The unique identifier of referenceDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: referenceDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.industryDataRoot
+      summary: Delete navigation property referenceDefinitions for external
+      operationId: external.industryData_DeleteReferenceDefinitions
+      parameters:
+        - name: referenceDefinition-id
+          in: path
+          description: The unique identifier of referenceDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: referenceDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /external/industryData/roleGroups:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: List roleGroups
+      description: Get a list of the roleGroup objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
+      operationId: external.industryData_ListRoleGroups
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - roles
+                - roles desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.industryData.roleGroupCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Create new navigation property to roleGroups for external
+      operationId: external.industryData_CreateRoleGroups
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/roleGroups/{roleGroup-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get roleGroups from external
+      description: Set of groups of individual roles that makes role-based admin simpler.
+      operationId: external.industryData_GetRoleGroups
+      parameters:
+        - name: roleGroup-id
+          in: path
+          description: The unique identifier of roleGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: roleGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - roles
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.industryDataRoot
+      summary: Update the navigation property roleGroups in external
+      operationId: external.industryData_UpdateRoleGroups
+      parameters:
+        - name: roleGroup-id
+          in: path
+          description: The unique identifier of roleGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: roleGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.industryDataRoot
+      summary: Delete navigation property roleGroups for external
+      operationId: external.industryData_DeleteRoleGroups
+      parameters:
+        - name: roleGroup-id
+          in: path
+          description: The unique identifier of roleGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: roleGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /external/industryData/runs:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: List industryDataRuns
+      description: Get a list of the industryDataRun objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
+      operationId: external.industryData_ListRuns
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - blockingError
+                - blockingError desc
+                - displayName
+                - displayName desc
+                - endDateTime
+                - endDateTime desc
+                - startDateTime
+                - startDateTime desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - blockingError
+                - displayName
+                - endDateTime
+                - startDateTime
+                - status
+                - activities
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activities
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.industryData.industryDataRunCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/external/industryData/runs/{industryDataRun-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get runs from external
+      description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+      operationId: external.industryData_GetRuns
+      parameters:
+        - name: industryDataRun-id
+          in: path
+          description: The unique identifier of industryDataRun
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRun
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - blockingError
+                - displayName
+                - endDateTime
+                - startDateTime
+                - status
+                - activities
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activities
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRun'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/runs/{industryDataRun-id}/activities':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get activities from external
+      description: The set of activities performed during the run.
+      operationId: external.industryData.runs_ListActivities
+      parameters:
+        - name: industryDataRun-id
+          in: path
+          description: The unique identifier of industryDataRun
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRun
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - blockingError
+                - blockingError desc
+                - displayName
+                - displayName desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - blockingError
+                - displayName
+                - status
+                - activity
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activity
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.industryData.industryDataRunActivityCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/external/industryData/runs/{industryDataRun-id}/activities/{industryDataRunActivity-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get activities from external
+      description: The set of activities performed during the run.
+      operationId: external.industryData.runs_GetActivities
+      parameters:
+        - name: industryDataRun-id
+          in: path
+          description: The unique identifier of industryDataRun
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRun
+        - name: industryDataRunActivity-id
+          in: path
+          description: The unique identifier of industryDataRunActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRunActivity
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - blockingError
+                - displayName
+                - status
+                - activity
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activity
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunActivity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/runs/{industryDataRun-id}/activities/{industryDataRunActivity-id}/activity':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get activity from external
+      description: The flow that was run by this activity.
+      operationId: external.industryData.runs.activities_GetActivity
+      parameters:
+        - name: industryDataRun-id
+          in: path
+          description: The unique identifier of industryDataRun
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRun
+        - name: industryDataRunActivity-id
+          in: path
+          description: The unique identifier of industryDataRunActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRunActivity
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - readinessStatus
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataActivity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/runs/{industryDataRun-id}/microsoft.graph.industryData.getStatistics()':
+    get:
+      tags:
+        - external.Functions
+      summary: Invoke function getStatistics
+      operationId: external.industryData.runs_getStatistics
+      parameters:
+        - name: industryDataRun-id
+          in: path
+          description: The unique identifier of industryDataRun
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRun
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunStatistics'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /external/industryData/runs/microsoft.graph.industryData.getStatistics():
+    get:
+      tags:
+        - external.Functions
+      summary: Invoke function getStatistics
+      operationId: external.industryData.runs_getStatistics
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunStatistics'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /external/industryData/sourceSystems:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: List sourceSystemDefinitions
+      description: Get a list of the sourceSystemDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-1.0
+      operationId: external.industryData_ListSourceSystems
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - userMatchingSettings
+                - userMatchingSettings desc
+                - vendor
+                - vendor desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - userMatchingSettings
+                - vendor
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.industryData.sourceSystemDefinitionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Create sourceSystemDefinition
+      description: Create a new sourceSystemDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateSourceSystems
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/sourceSystems/{sourceSystemDefinition-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get sourceSystems from external
+      description: Set of source definitions that represents real-world external systems.
+      operationId: external.industryData_GetSourceSystems
+      parameters:
+        - name: sourceSystemDefinition-id
+          in: path
+          description: The unique identifier of sourceSystemDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sourceSystemDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - userMatchingSettings
+                - vendor
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.industryDataRoot
+      summary: Update the navigation property sourceSystems in external
+      operationId: external.industryData_UpdateSourceSystems
+      parameters:
+        - name: sourceSystemDefinition-id
+          in: path
+          description: The unique identifier of sourceSystemDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sourceSystemDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.industryDataRoot
+      summary: Delete navigation property sourceSystems for external
+      operationId: external.industryData_DeleteSourceSystems
+      parameters:
+        - name: sourceSystemDefinition-id
+          in: path
+          description: The unique identifier of sourceSystemDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sourceSystemDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /external/industryData/years:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: List yearTimePeriodDefinitions
+      description: Get a list of the yearTimePeriodDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
+      operationId: external.industryData_ListYears
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - endDate
+                - endDate desc
+                - startDate
+                - startDate desc
+                - year
+                - year desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - endDate
+                - startDate
+                - year
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.industryData.yearTimePeriodDefinitionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Create yearTimePeriodDefinition
+      description: Create a new yearTimePeriodDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateYears
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/years/{yearTimePeriodDefinition-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get years from external
+      description: Set of years represented in the system.
+      operationId: external.industryData_GetYears
+      parameters:
+        - name: yearTimePeriodDefinition-id
+          in: path
+          description: The unique identifier of yearTimePeriodDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: yearTimePeriodDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - endDate
+                - startDate
+                - year
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.industryDataRoot
+      summary: Update the navigation property years in external
+      operationId: external.industryData_UpdateYears
+      parameters:
+        - name: yearTimePeriodDefinition-id
+          in: path
+          description: The unique identifier of yearTimePeriodDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: yearTimePeriodDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.industryDataRoot
+      summary: Delete navigation property years for external
+      operationId: external.industryData_DeleteYears
+      parameters:
+        - name: yearTimePeriodDefinition-id
+          in: path
+          description: The unique identifier of yearTimePeriodDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: yearTimePeriodDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /search:
     get:
       tags:
@@ -2761,6 +4828,8 @@ components:
       title: external
       type: object
       properties:
+        industryData:
+          $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRoot'
         connections:
           type: array
           items:
@@ -2947,6 +5016,314 @@ components:
               description: 'The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.'
           additionalProperties:
             type: object
+    microsoft.graph.industryData.industryDataRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: industryDataRoot
+          type: object
+          properties:
+            dataConnectors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
+              description: Set of connectors for importing data from source systems.
+              x-ms-navigationProperty: true
+            inboundFlows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
+              description: Set of data import flow activities to bring data into the canonical store via a connector.
+              x-ms-navigationProperty: true
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+              description: Set of ephemeral operations that the system runs currently. Read-only.
+              x-ms-navigationProperty: true
+            referenceDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
+              description: Set of user modifiable system picker types.
+              x-ms-navigationProperty: true
+            roleGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
+              description: Set of groups of individual roles that makes role-based admin simpler.
+              x-ms-navigationProperty: true
+            runs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRun'
+              description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+              x-ms-navigationProperty: true
+            sourceSystems:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
+              description: Set of source definitions that represents real-world external systems.
+              x-ms-navigationProperty: true
+            years:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
+              description: Set of years represented in the system.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.industryDataConnector:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: industryDataConnector
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the data connector. Maximum supported length is 100 characters.
+            sourceSystem:
+              $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.sourceSystemDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sourceSystemDefinition
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the source system. Maximum supported length is 100 characters.
+            userMatchingSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.userMatchingSetting'
+              description: A collection of user matching settings by roleGroup.
+            vendor:
+              type: string
+              description: The name of the vendor who supplies the source system. Maximum supported length is 100 characters.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.inboundFlow:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.industryData.industryDataActivity'
+        - title: inboundFlow
+          type: object
+          properties:
+            dataDomain:
+              $ref: '#/components/schemas/microsoft.graph.industryData.inboundDomain'
+            effectiveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The start of the time window when the flow is allowed to run. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The end of the time window when the flow is allowed to run. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            dataConnector:
+              $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
+            year:
+              $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.yearTimePeriodDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: yearTimePeriodDefinition
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the year. Maximum supported length is 100 characters.
+            endDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: The last day of the year using ISO 8601 format for date.
+              format: date
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: The first day of the year using ISO 8601 format for date.
+              format: date
+            year:
+              $ref: '#/components/schemas/microsoft.graph.industryData.yearReferenceValue'
+          additionalProperties:
+            type: object
+    microsoft.graph.longRunningOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: longRunningOperation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            resourceLocation:
+              type: string
+              description: URI of the resource that the operation is performed on.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
+            statusDetail:
+              type: string
+              description: Details about the status of the operation.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.referenceDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: referenceDefinition
+          type: object
+          properties:
+            code:
+              type: string
+              description: The code value for the definition that must be unique within the referenceType.
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the definition was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            isDisabled:
+              type: boolean
+              description: Indicates whether the definition has been disabled.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the definition was most recently changed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            referenceType:
+              type: string
+              description: The categorical type for a collection of enumerated values.
+            sortIndex:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The ordering index to present the definitions within a type consistently in user interfaces.
+              format: int32
+            source:
+              type: string
+              description: The standards body or organization source which defined the code.
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.roleGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: roleGroup
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the role group.
+            roles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.roleReferenceValue'
+              description: The set of roles included in the role group.
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.industryDataRun:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: industryDataRun
+          type: object
+          properties:
+            blockingError:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            displayName:
+              type: string
+              description: The name of the run for rendering in a user interface.
+              readOnly: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the run finished or null if the run is still in-progress. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+              readOnly: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the run started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunStatus'
+            activities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunActivity'
+              description: The set of activities performed during the run.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.industryDataRunActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: industryDataRunActivity
+          type: object
+          properties:
+            blockingError:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            displayName:
+              type: string
+              description: The name of the running flow.
+              readOnly: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.industryData.industryDataActivityStatus'
+            activity:
+              $ref: '#/components/schemas/microsoft.graph.industryData.industryDataActivity'
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.industryDataActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: industryDataActivity
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the activity. Maximum supported length is 100 characters.
+            readinessStatus:
+              $ref: '#/components/schemas/microsoft.graph.industryData.readinessStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.industryDataRunStatistics:
+      title: industryDataRunStatistics
+      type: object
+      properties:
+        activityStatistics:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.industryDataActivityStatistics'
+          description: The collection of statistics for each activity included in this run.
+          readOnly: true
+        inboundTotals:
+          $ref: '#/components/schemas/microsoft.graph.industryData.aggregatedInboundStatistics'
+        runId:
+          type: string
+          description: The ID of the underlying run for the statistics.
+          readOnly: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.searchEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3396,6 +5773,166 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.propertyType'
       additionalProperties:
         type: object
+    microsoft.graph.industryData.userMatchingSetting:
+      title: userMatchingSetting
+      type: object
+      properties:
+        matchTarget:
+          $ref: '#/components/schemas/microsoft.graph.industryData.userMatchTargetReferenceValue'
+        priorityOrder:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The priority order to apply when a user has multiple RefRole codes assigned.
+          format: int32
+        sourceIdentifier:
+          $ref: '#/components/schemas/microsoft.graph.industryData.identifierTypeReferenceValue'
+        roleGroup:
+          $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.inboundDomain:
+      title: inboundDomain
+      enum:
+        - educationRostering
+        - unknownFutureValue
+      type: string
+    microsoft.graph.industryData.yearReferenceValue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.industryData.referenceValue'
+        - title: yearReferenceValue
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.longRunningOperationStatus:
+      title: longRunningOperationStatus
+      enum:
+        - notStarted
+        - running
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.industryData.roleReferenceValue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.industryData.referenceValue'
+        - title: roleReferenceValue
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.industryDataRunStatus:
+      title: industryDataRunStatus
+      enum:
+        - running
+        - failed
+        - completed
+        - completedWithErrors
+        - completedWithWarnings
+        - unknownFutureValue
+      type: string
+    microsoft.graph.industryData.industryDataActivityStatus:
+      title: industryDataActivityStatus
+      enum:
+        - inProgress
+        - skipped
+        - failed
+        - completed
+        - completedWithErrors
+        - completedWithWarnings
+        - unknownFutureValue
+      type: string
+    microsoft.graph.industryData.readinessStatus:
+      title: readinessStatus
+      enum:
+        - notReady
+        - ready
+        - failed
+        - disabled
+        - expired
+        - unknownFutureValue
+      type: string
+    microsoft.graph.industryData.industryDataActivityStatistics:
+      title: industryDataActivityStatistics
+      type: object
+      properties:
+        activityId:
+          type: string
+          description: The identifier for the activity that is being reported on.
+          readOnly: true
+        displayName:
+          type: string
+          description: The display name of the underlying flow.
+          readOnly: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.industryData.industryDataActivityStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.aggregatedInboundStatistics:
+      title: aggregatedInboundStatistics
+      type: object
+      properties:
+        errors:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The aggregate count of errors encountered by activities during this run.
+          format: int32
+          nullable: true
+          readOnly: true
+        groups:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The aggregate count of active inbound groups processed during the run.
+          format: int32
+          nullable: true
+          readOnly: true
+        matchedPeopleByRole:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunRoleCountMetric'
+          description: 'The aggregate count of active people matched to an Azure Active Directory user, by role.'
+          readOnly: true
+        memberships:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The aggregate count of active inbound memberships processed during the run.
+          format: int32
+          nullable: true
+          readOnly: true
+        organizations:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The aggregate count of active inbound organizations processed during the run.
+          format: int32
+          nullable: true
+          readOnly: true
+        people:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The aggregate count of active inbound people processed during the run.
+          format: int32
+          nullable: true
+          readOnly: true
+        unmatchedPeopleByRole:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunRoleCountMetric'
+          description: 'The aggregate count of active people not matched to an Azure Active Directory user, by role.'
+          readOnly: true
+        warnings:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The aggregate count of warnings generated by activities during this run.
+          format: int32
+          nullable: true
+          readOnly: true
+      additionalProperties:
+        type: object
     microsoft.graph.search.searchAnswer:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3575,6 +6112,7 @@ components:
         - acronym
         - bookmark
         - chatMessage
+        - person
         - qna
       type: string
     microsoft.graph.searchQuery:
@@ -3771,6 +6309,123 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.industryData.industryDataConnectorCollectionResponse:
+      title: Collection of industryDataConnector
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.inboundFlowCollectionResponse:
+      title: Collection of inboundFlow
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.longRunningOperationCollectionResponse:
+      title: Collection of longRunningOperation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.referenceDefinitionCollectionResponse:
+      title: Collection of referenceDefinition
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.roleGroupCollectionResponse:
+      title: Collection of roleGroup
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.industryDataRunCollectionResponse:
+      title: Collection of industryDataRun
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRun'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.industryDataRunActivityCollectionResponse:
+      title: Collection of industryDataRunActivity
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunActivity'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.sourceSystemDefinitionCollectionResponse:
+      title: Collection of sourceSystemDefinition
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.yearTimePeriodDefinitionCollectionResponse:
+      title: Collection of yearTimePeriodDefinition
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.search.acronymCollectionResponse:
       title: Collection of acronym
       type: object
@@ -3948,6 +6603,50 @@ components:
         - dateTimeCollection
         - unknownFutureValue
       type: string
+    microsoft.graph.industryData.userMatchTargetReferenceValue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.industryData.referenceValue'
+        - title: userMatchTargetReferenceValue
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.identifierTypeReferenceValue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.industryData.referenceValue'
+        - title: identifierTypeReferenceValue
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.referenceValue:
+      title: referenceValue
+      type: object
+      properties:
+        code:
+          type: string
+          description: The code of the desired referenceDefinition entry.
+          nullable: true
+        value:
+          $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.industryDataRunRoleCountMetric:
+      title: industryDataRunRoleCountMetric
+      type: object
+      properties:
+        count:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of people in this role.
+          format: int32
+          nullable: true
+          readOnly: true
+        role:
+          type: string
+          description: The role that is being measured.
+          readOnly: true
+      additionalProperties:
+        type: object
     microsoft.graph.search.identitySet:
       title: identitySet
       type: object
@@ -4293,6 +6992,60 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperationCollectionResponse'
+    microsoft.graph.industryData.industryDataConnectorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnectorCollectionResponse'
+    microsoft.graph.industryData.inboundFlowCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlowCollectionResponse'
+    microsoft.graph.longRunningOperationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.longRunningOperationCollectionResponse'
+    microsoft.graph.industryData.referenceDefinitionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinitionCollectionResponse'
+    microsoft.graph.industryData.roleGroupCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.roleGroupCollectionResponse'
+    microsoft.graph.industryData.industryDataRunCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunCollectionResponse'
+    microsoft.graph.industryData.industryDataRunActivityCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunActivityCollectionResponse'
+    microsoft.graph.industryData.sourceSystemDefinitionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinitionCollectionResponse'
+    microsoft.graph.industryData.yearTimePeriodDefinitionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinitionCollectionResponse'
     microsoft.graph.search.acronymCollectionResponse:
       description: Retrieved collection
       content:

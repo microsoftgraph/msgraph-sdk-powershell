@@ -801,6 +801,49 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/deviceManagement/intents/{deviceManagementIntent-id}/microsoft.graph.getCustomizedSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getCustomizedSettings
+      operationId: deviceManagement.intents_getCustomizedSettings
+      parameters:
+        - name: deviceManagementIntent-id
+          in: path
+          description: The unique identifier of deviceManagementIntent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementIntent
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentCustomizedSetting'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getCloudPcRemoteActionResults()':
     get:
       tags:
@@ -2950,6 +2993,25 @@ components:
       additionalProperties:
         type: object
       description: Entity representing setting comparison result
+    microsoft.graph.deviceManagementIntentCustomizedSetting:
+      title: deviceManagementIntentCustomizedSetting
+      type: object
+      properties:
+        customizedJson:
+          type: string
+          description: 'JSON representation of the customized value, if different from default'
+          nullable: true
+        defaultJson:
+          type: string
+          description: JSON representation of the default value from the template
+          nullable: true
+        definitionId:
+          type: string
+          description: The ID of the setting definition for this setting
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Default and customized value of a setting in a Security Baseline
     microsoft.graph.deviceAndAppManagementAssignedRoleDetails:
       title: deviceAndAppManagementAssignedRoleDetails
       type: object
@@ -3568,6 +3630,14 @@ components:
         cloudPcLaunchUrl:
           type: string
           description: The connect URL of the Cloud PC.
+          nullable: true
+        windows365SwitchCompatible:
+          type: boolean
+          description: 'Indicates whether the Cloud PC supports switch functionality. If the value is true, it supports switch functionality; otherwise,  false.'
+          nullable: true
+        windows365SwitchNotCompatibleReason:
+          type: string
+          description: Indicates the reason the Cloud PC doesn't support switch. CPCOsVersionNotMeetRequirement indicates that the user needs to update their Cloud PC operation system version. CPCHardwareNotMeetRequirement indicates that the Cloud PC needs more CPU or RAM to support the functionality.
           nullable: true
       additionalProperties:
         type: object

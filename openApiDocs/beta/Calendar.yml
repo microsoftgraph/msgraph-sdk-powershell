@@ -702,10 +702,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.calendarView_CreateAttachments
       parameters:
         - name: group-id
@@ -1359,10 +1359,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.calendarView.exceptionOccurrences_CreateAttachments
       parameters:
         - name: group-id
@@ -2347,10 +2347,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.calendarView.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -4967,10 +4967,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.calendarView.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -5680,10 +5680,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.calendarView.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: group-id
@@ -8958,10 +8958,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.events_CreateAttachments
       parameters:
         - name: group-id
@@ -9615,10 +9615,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.events.exceptionOccurrences_CreateAttachments
       parameters:
         - name: group-id
@@ -10603,10 +10603,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.events.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -13223,10 +13223,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.events.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -13936,10 +13936,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.events.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: group-id
@@ -17600,10 +17600,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendarView_CreateAttachments
       parameters:
         - name: group-id
@@ -18257,10 +18257,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendarView.exceptionOccurrences_CreateAttachments
       parameters:
         - name: group-id
@@ -19245,10 +19245,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendarView.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -21865,10 +21865,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendarView.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -22578,10 +22578,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendarView.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: group-id
@@ -25856,10 +25856,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.events_CreateAttachments
       parameters:
         - name: group-id
@@ -26513,10 +26513,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.events.exceptionOccurrences_CreateAttachments
       parameters:
         - name: group-id
@@ -27501,10 +27501,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.events.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -30121,10 +30121,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.events.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -30834,10 +30834,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.events.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: group-id
@@ -33627,156 +33627,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /places:
-    get:
-      tags:
-        - places.place
-      summary: Get place
-      description: 'Get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.'
-      operationId: places.place_ListPlace
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - address
-                - address desc
-                - displayName
-                - displayName desc
-                - geoCoordinates
-                - geoCoordinates desc
-                - phone
-                - phone desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - address
-                - displayName
-                - geoCoordinates
-                - phone
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          $ref: '#/components/responses/microsoft.graph.placeCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - places.place
-      summary: Add new entity to places
-      operationId: places.place_CreatePlace
-      requestBody:
-        description: New entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.place'
-        required: true
-      responses:
-        '201':
-          description: Created entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.place'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/places/{place-id}':
-    get:
-      tags:
-        - places.place
-      summary: Get place
-      description: 'Get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/place-get?view=graph-rest-1.0
-      operationId: places.place_GetPlace
-      parameters:
-        - name: place-id
-          in: path
-          description: The unique identifier of place
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: place
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - address
-                - displayName
-                - geoCoordinates
-                - phone
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.place'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - places.place
@@ -34564,10 +34415,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -35221,10 +35072,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.calendarView.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -36209,10 +36060,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.calendarView.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -38829,10 +38680,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -39542,10 +39393,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -42820,10 +42671,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.events_CreateAttachments
       parameters:
         - name: user-id
@@ -43477,10 +43328,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.events.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -44465,10 +44316,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.events.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -47085,10 +46936,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -47798,10 +47649,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.events.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -52324,10 +52175,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -53093,10 +52944,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -54273,10 +54124,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -57485,10 +57336,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -58310,10 +58161,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -62388,10 +62239,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_CreateAttachments
       parameters:
         - name: user-id
@@ -63157,10 +63008,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -64337,10 +64188,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -67549,10 +67400,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -68374,10 +68225,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -73471,10 +73322,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -74184,10 +74035,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.calendarView.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -75268,10 +75119,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.calendarView.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -78184,10 +78035,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -78953,10 +78804,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -82631,10 +82482,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.events_CreateAttachments
       parameters:
         - name: user-id
@@ -83344,10 +83195,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.events.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -84428,10 +84279,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.events.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -87344,10 +87195,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -88113,10 +87964,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.events.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -92209,10 +92060,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -92866,10 +92717,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarView.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -93854,10 +93705,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarView.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -96474,10 +96325,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -97187,10 +97038,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarView.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -100465,10 +100316,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.events_CreateAttachments
       parameters:
         - name: user-id
@@ -101122,10 +100973,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.events.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -102110,10 +101961,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.events.exceptionOccurrences.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -104730,10 +104581,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -105443,10 +105294,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.events.instances.exceptionOccurrences_CreateAttachments
       parameters:
         - name: user-id
@@ -109033,19 +108884,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.placeCollectionResponse:
-      title: Collection of place
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.place'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.calendarGroupCollectionResponse:
       title: Collection of calendarGroup
       type: object
@@ -109363,12 +109201,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
-    microsoft.graph.placeCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.placeCollectionResponse'
     microsoft.graph.calendarGroupCollectionResponse:
       description: Retrieved collection
       content:

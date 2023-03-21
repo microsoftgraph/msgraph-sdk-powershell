@@ -4815,11 +4815,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List history
-      description: Get the riskyUserHistoryItems from the history navigation property.
+      summary: Get history
+      description: Read the properties and relationships of a riskyUserHistoryItem object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
       operationId: identityProtection.riskyUsers_ListHistory
       parameters:
         - name: riskyUser-id
@@ -7290,9 +7290,11 @@ paths:
                 - authenticationMethodsPolicy
                 - authenticationFlowsPolicy
                 - activityBasedTimeoutPolicies
+                - appManagementPolicies
                 - authorizationPolicy
                 - claimsMappingPolicies
                 - crossTenantAccessPolicy
+                - defaultAppManagementPolicy
                 - homeRealmDiscoveryPolicies
                 - permissionGrantPolicies
                 - tokenIssuancePolicies
@@ -7318,9 +7320,11 @@ paths:
                 - authenticationMethodsPolicy
                 - authenticationFlowsPolicy
                 - activityBasedTimeoutPolicies
+                - appManagementPolicies
                 - authorizationPolicy
                 - claimsMappingPolicies
                 - crossTenantAccessPolicy
+                - defaultAppManagementPolicy
                 - homeRealmDiscoveryPolicies
                 - permissionGrantPolicies
                 - tokenIssuancePolicies
@@ -7663,6 +7667,339 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/appManagementPolicies:
+    get:
+      tags:
+        - policies.appManagementPolicy
+      summary: Get appManagementPolicies from policies
+      operationId: policies_ListAppManagementPolicies
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isEnabled
+                - isEnabled desc
+                - restrictions
+                - restrictions desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - isEnabled
+                - restrictions
+                - appliesTo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliesTo
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.appManagementPolicyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.appManagementPolicy
+      summary: Create new navigation property to appManagementPolicies for policies
+      operationId: policies_CreateAppManagementPolicies
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/appManagementPolicies/{appManagementPolicy-id}':
+    get:
+      tags:
+        - policies.appManagementPolicy
+      summary: Get appManagementPolicies from policies
+      operationId: policies_GetAppManagementPolicies
+      parameters:
+        - name: appManagementPolicy-id
+          in: path
+          description: The unique identifier of appManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appManagementPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - isEnabled
+                - restrictions
+                - appliesTo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliesTo
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.appManagementPolicy
+      summary: Update the navigation property appManagementPolicies in policies
+      operationId: policies_UpdateAppManagementPolicies
+      parameters:
+        - name: appManagementPolicy-id
+          in: path
+          description: The unique identifier of appManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appManagementPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.appManagementPolicy
+      summary: Delete navigation property appManagementPolicies for policies
+      operationId: policies_DeleteAppManagementPolicies
+      parameters:
+        - name: appManagementPolicy-id
+          in: path
+          description: The unique identifier of appManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appManagementPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/appManagementPolicies/{appManagementPolicy-id}/appliesTo':
+    get:
+      tags:
+        - policies.appManagementPolicy
+      summary: Get appliesTo from policies
+      operationId: policies.appManagementPolicies_ListAppliesTo
+      parameters:
+        - name: appManagementPolicy-id
+          in: path
+          description: The unique identifier of appManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appManagementPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/policies/appManagementPolicies/{appManagementPolicy-id}/appliesTo/{directoryObject-id}':
+    get:
+      tags:
+        - policies.appManagementPolicy
+      summary: Get appliesTo from policies
+      operationId: policies.appManagementPolicies_GetAppliesTo
+      parameters:
+        - name: appManagementPolicy-id
+          in: path
+          description: The unique identifier of appManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appManagementPolicy
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8061,6 +8398,7 @@ paths:
                 - allowedToUseSSPR
                 - allowEmailVerifiedUsersToJoinOrganization
                 - allowInvitesFrom
+                - allowUserConsentForRiskyApps
                 - blockMsolPowerShell
                 - defaultUserRolePermissions
                 - guestUserRoleId
@@ -8973,6 +9311,89 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/defaultAppManagementPolicy:
+    get:
+      tags:
+        - policies.tenantAppManagementPolicy
+      summary: Get defaultAppManagementPolicy from policies
+      operationId: policies_GetDefaultAppManagementPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - applicationRestrictions
+                - isEnabled
+                - servicePrincipalRestrictions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.tenantAppManagementPolicy
+      summary: Update the navigation property defaultAppManagementPolicy in policies
+      operationId: policies_UpdateDefaultAppManagementPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.tenantAppManagementPolicy
+      summary: Delete navigation property defaultAppManagementPolicy for policies
+      operationId: policies_DeleteDefaultAppManagementPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /policies/featureRolloutPolicies:
     get:
       tags:
@@ -9398,6 +9819,81 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.delta()':
+    get:
+      tags:
+        - policies.Functions
+      summary: Invoke function delta
+      operationId: policies.featureRolloutPolicies.appliesTo_delta
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: The unique identifier of featureRolloutPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.getAvailableExtensionProperties':
     post:
       tags:
@@ -15185,7 +15681,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
@@ -15213,6 +15709,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -15731,6 +16228,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
               description: The policy that controls the idle time out for web sessions for applications.
               x-ms-navigationProperty: true
+            appManagementPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+              x-ms-navigationProperty: true
             authorizationPolicy:
               $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
             claimsMappingPolicies:
@@ -15741,6 +16243,8 @@ components:
               x-ms-navigationProperty: true
             crossTenantAccessPolicy:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+            defaultAppManagementPolicy:
+              $ref: '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -15836,6 +16340,37 @@ components:
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.appManagementPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyBase'
+        - title: appManagementPolicy
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+            restrictions:
+              $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
+            appliesTo:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.authenticationFlowsPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15921,6 +16456,9 @@ components:
               description: Indicates whether a user can join the tenant by email validation.
             allowInvitesFrom:
               $ref: '#/components/schemas/microsoft.graph.allowInvitesFrom'
+            allowUserConsentForRiskyApps:
+              type: boolean
+              nullable: true
             blockMsolPowerShell:
               type: boolean
               description: To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
@@ -15952,6 +16490,7 @@ components:
               type: array
               items:
                 type: string
+              description: 'Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.'
             default:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
             partners:
@@ -16007,6 +16546,20 @@ components:
           description: The tenant identifier for the partner Azure AD organization. Read-only. Key.
       additionalProperties:
         type: object
+    microsoft.graph.tenantAppManagementPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyBase'
+        - title: tenantAppManagementPolicy
+          type: object
+          properties:
+            applicationRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
+            isEnabled:
+              type: boolean
+            servicePrincipalRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
+          additionalProperties:
+            type: object
     microsoft.graph.featureRolloutPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16034,20 +16587,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
               x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.directoryObject:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: directoryObject
-          type: object
-          properties:
-            deletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-              format: date-time
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.extensionProperty:
@@ -19325,6 +19864,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.policyBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: policyBase
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description for this policy. Required.
+              nullable: true
+            displayName:
+              type: string
+              description: Display name for this policy. Required.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.appManagementConfiguration:
+      title: appManagementConfiguration
+      type: object
+      properties:
+        keyCredentials:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
+        passwordCredentials:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
+      additionalProperties:
+        type: object
     microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration:
       title: selfServiceSignUpAuthenticationFlowConfiguration
       type: object
@@ -19348,22 +19917,6 @@ components:
         - enabled
         - disabled
       type: string
-    microsoft.graph.policyBase:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: policyBase
-          type: object
-          properties:
-            description:
-              type: string
-              description: Description for this policy. Required.
-              nullable: true
-            displayName:
-              type: string
-              description: Display name for this policy. Required.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.allowInvitesFrom:
       title: allowInvitesFrom
       enum:
@@ -19921,6 +20474,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.appManagementPolicyCollectionResponse:
+      title: Collection of appManagementPolicy
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.directoryObjectCollectionResponse:
+      title: Collection of directoryObject
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.authenticationMethodConfigurationCollectionResponse:
       title: Collection of authenticationMethodConfiguration
       type: object
@@ -19968,19 +20547,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.directoryObjectCollectionResponse:
-      title: Collection of directoryObject
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.directoryObject'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -20332,6 +20898,8 @@ components:
           items:
             type: string
           description: Group IDs excluded from scope of policy.
+        excludeGuestsOrExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessGuestsOrExternalUsers'
         excludeRoles:
           type: array
           items:
@@ -20347,6 +20915,8 @@ components:
           items:
             type: string
           description: 'Group IDs in scope of policy unless explicitly excluded, or All.'
+        includeGuestsOrExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessGuestsOrExternalUsers'
         includeRoles:
           type: array
           items:
@@ -23511,7 +24081,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             description:
@@ -23840,7 +24410,7 @@ components:
           properties:
             description:
               type: string
-              description: The description of the tag as it will appear to the user in Microsoft Teams.
+              description: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
@@ -24020,6 +24590,42 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.keyCredentialConfiguration:
+      title: keyCredentialConfiguration
+      type: object
+      properties:
+        maxLifetime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          format: duration
+          nullable: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        restrictionType:
+          $ref: '#/components/schemas/microsoft.graph.appKeyCredentialRestrictionType'
+      additionalProperties:
+        type: object
+    microsoft.graph.passwordCredentialConfiguration:
+      title: passwordCredentialConfiguration
+      type: object
+      properties:
+        maxLifetime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          format: duration
+          nullable: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        restrictionType:
+          $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+      additionalProperties:
+        type: object
     microsoft.graph.authenticationMethodsRegistrationCampaign:
       title: authenticationMethodsRegistrationCampaign
       type: object
@@ -24114,6 +24720,16 @@ components:
         - unknownFutureValue
         - linux
       type: string
+    microsoft.graph.conditionalAccessGuestsOrExternalUsers:
+      title: conditionalAccessGuestsOrExternalUsers
+      type: object
+      properties:
+        externalTenants:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessExternalTenants'
+        guestOrExternalUserTypes:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessGuestOrExternalUserTypes'
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessSessionControl:
       title: conditionalAccessSessionControl
       type: object
@@ -25196,7 +25812,7 @@ components:
               description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
-              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+              description: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
@@ -27376,6 +27992,22 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.appKeyCredentialRestrictionType:
+      title: appKeyCredentialRestrictionType
+      enum:
+        - asymmetricKeyLifetime
+        - unknownFutureValue
+      type: string
+    microsoft.graph.appCredentialRestrictionType:
+      title: appCredentialRestrictionType
+      enum:
+        - passwordAddition
+        - passwordLifetime
+        - symmetricKeyAddition
+        - symmetricKeyLifetime
+        - customPasswordAddition
+        - unknownFutureValue
+      type: string
     microsoft.graph.excludeTarget:
       title: excludeTarget
       type: object
@@ -27454,6 +28086,26 @@ components:
       enum:
         - include
         - exclude
+      type: string
+    microsoft.graph.conditionalAccessExternalTenants:
+      title: conditionalAccessExternalTenants
+      type: object
+      properties:
+        membershipKind:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessExternalTenantsMembershipKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.conditionalAccessGuestOrExternalUserTypes:
+      title: conditionalAccessGuestOrExternalUserTypes
+      enum:
+        - none
+        - internalGuest
+        - b2bCollaborationGuest
+        - b2bCollaborationMember
+        - b2bDirectConnectUser
+        - otherExternalUser
+        - serviceProvider
+        - unknownFutureValue
       type: string
     microsoft.graph.attendeeType:
       title: attendeeType
@@ -28709,6 +29361,13 @@ components:
         - application
         - unknownFutureValue
       type: string
+    microsoft.graph.conditionalAccessExternalTenantsMembershipKind:
+      title: conditionalAccessExternalTenantsMembershipKind
+      enum:
+        - all
+        - enumerated
+        - unknownFutureValue
+      type: string
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -29671,6 +30330,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicyCollectionResponse'
+    microsoft.graph.appManagementPolicyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.appManagementPolicyCollectionResponse'
+    microsoft.graph.directoryObjectCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
     microsoft.graph.authenticationMethodConfigurationCollectionResponse:
       description: Retrieved collection
       content:
@@ -29695,12 +30366,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicyCollectionResponse'
-    microsoft.graph.directoryObjectCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
     microsoft.graph.homeRealmDiscoveryPolicyCollectionResponse:
       description: Retrieved collection
       content:
