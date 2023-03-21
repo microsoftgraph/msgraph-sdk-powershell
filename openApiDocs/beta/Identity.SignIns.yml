@@ -17141,7 +17141,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-12-10T00:00:00.0000000+00:00'
+        removalDate: '2023-06-06T00:00:00.0000000+00:00'
         date: '2022-03-24T00:00:00.0000000+00:00'
         version: 2022-04/PrivatePreview:CrossTenantSyncPolicy
       x-ms-docs-operation-type: operation
@@ -17181,7 +17181,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-12-10T00:00:00.0000000+00:00'
+        removalDate: '2023-06-06T00:00:00.0000000+00:00'
         date: '2022-03-24T00:00:00.0000000+00:00'
         version: 2022-04/PrivatePreview:CrossTenantSyncPolicy
       x-ms-docs-operation-type: operation
@@ -17216,7 +17216,7 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-12-10T00:00:00.0000000+00:00'
+        removalDate: '2023-06-06T00:00:00.0000000+00:00'
         date: '2022-03-24T00:00:00.0000000+00:00'
         version: 2022-04/PrivatePreview:CrossTenantSyncPolicy
       x-ms-docs-operation-type: operation
@@ -44865,7 +44865,7 @@ components:
           properties:
             description:
               type: string
-              description: Tag description as it will appear to the user in Microsoft Teams.
+              description: Tag description as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
@@ -45660,11 +45660,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

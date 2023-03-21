@@ -10,11 +10,11 @@ paths:
     get:
       tags:
         - users.user
-      summary: List users
-      description: Retrieve a list of user objects.
+      summary: Get user
+      description: Retrieve the properties and relationships of user object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0
       operationId: users.user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -12944,7 +12944,7 @@ components:
           properties:
             description:
               type: string
-              description: The description of the tag as it will appear to the user in Microsoft Teams.
+              description: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string

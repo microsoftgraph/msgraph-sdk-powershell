@@ -4891,11 +4891,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List history
-      description: Get the riskyUserHistoryItems from the history navigation property.
+      summary: Get history
+      description: Read the properties and relationships of a riskyUserHistoryItem object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
       operationId: identityProtection.riskyUsers_ListHistory
       parameters:
         - name: riskyUser-id
@@ -8534,6 +8534,7 @@ paths:
                 - allowedToUseSSPR
                 - allowEmailVerifiedUsersToJoinOrganization
                 - allowInvitesFrom
+                - allowUserConsentForRiskyApps
                 - blockMsolPowerShell
                 - defaultUserRolePermissions
                 - guestUserRoleId
@@ -16687,6 +16688,9 @@ components:
               description: Indicates whether a user can join the tenant by email validation.
             allowInvitesFrom:
               $ref: '#/components/schemas/microsoft.graph.allowInvitesFrom'
+            allowUserConsentForRiskyApps:
+              type: boolean
+              nullable: true
             blockMsolPowerShell:
               type: boolean
               description: To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
@@ -24638,7 +24642,7 @@ components:
           properties:
             description:
               type: string
-              description: The description of the tag as it will appear to the user in Microsoft Teams.
+              description: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
