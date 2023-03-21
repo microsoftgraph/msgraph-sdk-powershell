@@ -174,8 +174,7 @@ jobs:
             script: |
               $Title = "[v1] Weekly OpenApiDocs Refresh"
               $Body = "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
-              $BaseBranch = "${{ parameters.BaseBranchName }}"
-              Write-Host "Executing . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch"
+              $BaseBranch = "dev"
               . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1

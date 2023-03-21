@@ -14,4 +14,6 @@ steps:
           Import-Module Microsoft.Graph -Global -Force  
         } 
 
-- template: ../common-templates/checkout.yml
+- template: checkout.yml
+  parameters:
+    TargetBranch: "dev"
