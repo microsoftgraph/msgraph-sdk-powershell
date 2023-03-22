@@ -579,7 +579,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_List\d*.cs/gm) || !$documentPath.match(/generated%2Fcmdlets%2FGet\w*_delta\d*.cs/gm))
+      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_(List|Delta)\d*.cs/gm))
       {
         return $;
       } else {
