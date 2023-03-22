@@ -5,10 +5,10 @@
 using Microsoft.Graph.PowerShell.Authentication.Core.Models;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Identity.Client;
-using Newtonsoft.Json;
 using System;
 using System.Globalization;
 using System.Text;
+using System.Text.Json;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 var decodedJWT = DecodeJWT(jwtString);
                 if (string.IsNullOrWhiteSpace(decodedJWT?.Payload))
                     return default;
-                return JsonConvert.DeserializeObject<T>(decodedJWT.Payload);
+                return JsonSerializer.Deserialize<T>(decodedJWT.Payload);
             }
             catch (Exception ex)
             {
