@@ -6,6 +6,7 @@ using Microsoft.Graph.PowerShell.Authentication.Common;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+using Microsoft.Graph.PowerShell.Authentication.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
@@ -15,6 +16,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
+using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -177,8 +179,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
                             authContext.Scopes = !processedScopes.Any() ? new[] { "User.Read" } : processedScopes;
-                            // Default to CurrentUser but allow the customer to change this via `-ContextScope`.
-                            authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
+                            if (RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCulture))
+                            {
+                                // Use process scope when on WSL. WSL does not have secret service that's used to cache tokens on Linux, see https://github.com/microsoft/WSL/issues/4254.
+                                authContext.ContextScope = ContextScope.Process;
+                            }
+                            else
+                            {
+                                // Default to CurrentUser but allow the customer to change this via `-ContextScope`.
+                                authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
+                            }
                             authContext.TokenCredentialType = UseDeviceCode ? TokenCredentialType.DeviceCode : TokenCredentialType.InteractiveBrowser;
                         }
                         break;

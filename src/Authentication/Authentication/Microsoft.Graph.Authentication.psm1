@@ -17,7 +17,7 @@ if (Test-Path -Path "$PSScriptRoot\StartupScripts" -ErrorAction Ignore)
 Export-ModuleMember -Cmdlet (Get-ModuleCmdlet -ModulePath $ModulePath) -Alias (Get-ModuleCmdlet -ModulePath $ModulePath -AsAlias)
 
 $DependencyPath = (Join-Path $PSScriptRoot -ChildPath "Dependencies")
-if (Test-Path $DependencyPath -ErrorAction Ignore)
+if ((Test-Path $DependencyPath -ErrorAction Ignore) -and ($PSEdition -eq "Desktop"))
 {
     try
     {
