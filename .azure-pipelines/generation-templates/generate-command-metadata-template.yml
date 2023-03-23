@@ -21,5 +21,5 @@ steps:
       git status
       git add "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication/custom/common/MgCommandMetadata.json"
       git commit -m 'Add generated MgCommandMetadata.json. [run ci]'
-      git push
+      git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
       git status

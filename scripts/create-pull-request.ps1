@@ -14,6 +14,7 @@ Param(
 
     [string] $BaseBranchName = "dev"
 )
+$ErrorActionPreference = "Continue"
 
 $HeadBranchOption = $null
 if (-not [string]::IsNullOrWhiteSpace($HeadBranchName)) {
