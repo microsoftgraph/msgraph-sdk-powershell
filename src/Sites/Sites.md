@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: groups\.sites_.*Onenote$|groups\.sites\.onenote.*$|.*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$|^.*sites\.(.*_.*SourceColumn|contentTypes_.*(Base|BaseTypes|ColumnPositions)|.*_(Get|Create|Update|Delete)Activities|.*\.activities.*|termStore_ListSets|termStore\.groups\.sets(\.children.*|_.*ParentGroup|\.relations_.*|\.terms\.relations_.*|\.terms\.children.*|\.terms_.*Set)|termStore\.sets(\.children.*|_.*ParentGroup|\.parentGroup.*|\.relations.*|\.terms\.children.*|\.terms\.relations.*|\.terms_.*Set))$
+  - remove-path-by-operation: group\.site_.*Onenote$|group\.site\.onenote.*$|.*\.onenote\..*\.parent.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|site\..*_(Create|Get|Update|Delete)Activity$|site\..*\.activity.*|^site_(remove|add)$|^.*site\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\.activity.*|termStore_ListSet|termStore\.group\.set(\.child.*|_.*ParentGroup|\.relation_.*|\.term\.relation_.*|\.term\.child.*|\.term_.*Set)|termStore\.set(\.child.*|_.*ParentGroup|\.parentGroup.*|\.relation.*|\.term\.child.*|\.term\.relation.*|\.term_.*Set))$
 # Remove cmdlets
   - where:
       verb: Remove|New

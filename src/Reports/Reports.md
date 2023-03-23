@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: auditLogs\.auditLogRoot.*|reports.reportRoot.*|(auditLogs|reports)_(Create|Delete|Update).*
+  - remove-path-by-operation: auditLog\.auditLogRoot.*|report.reportRoot.*|(auditLog|report)_(Create|Delete|Update).*
 # Remove cmdlets
   - where:
       verb: Get

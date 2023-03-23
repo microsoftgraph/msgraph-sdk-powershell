@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^solutions.solutionsRoot.*$
+  - remove-path-by-operation: ^solution\.solutionsRoot.*$
 # Rename cmdlets
   - where:
       subject: ^Solution(.*)$

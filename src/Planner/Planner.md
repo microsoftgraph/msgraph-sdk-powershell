@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove paths that are not valid.
-  - remove-path-by-operation: ^users.planner_(Create|Update|Delete)All|planner.buckets_(Get|Create|Update|Delete)Tasks|planner.buckets.tasks.*|planner.plans_(Get|Create|Update|Delete)Buckets|planner.plans.buckets.*|planner.plans_(Get|Create|Update|Delete)Tasks|planner.plans.tasks.*$
+  - remove-path-by-operation: ^user.planner_(Create|Update|Delete)All|planner.bucket_(Get|Create|Update|Delete)Task|planner.bucket.task.*|planner.plan_(Get|Create|Update|Delete)Bucket|planner.plan.bucket.*|planner.plan_(Get|Create|Update|Delete)Task|planner.plan.task.*$
 # Remove cmdlets
   - where:
       verb: Remove

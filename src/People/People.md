@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove paths that are not valid.
-  - remove-path-by-operation: ^users_(Get|Create|Update|Delete)Analytics$|^users.analytics_(Create|Update|Delete)ActivityStatistics$|^users_.*Insights$|^users.insights_(Create|Update|Delete)(Shared|Trending|Used)$
+  - remove-path-by-operation: ^user_(Get|Create|Update|Delete)Analytic$|^user.analytic_(Create|Update|Delete)ActivityStatistic$|^user_.*Insight$|^user.insight_(Create|Update|Delete)(Shared|Trending|Used)$
 # Modify generated .cs cmdlets.
   - from: source-file-csharp
     where: $

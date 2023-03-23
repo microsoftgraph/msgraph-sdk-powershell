@@ -17,5 +17,5 @@ require:
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^tenantRelationships_.*ManagedTenants$
+  - remove-path-by-operation: ^tenantRelationship_.*ManagedTenant$
 ```

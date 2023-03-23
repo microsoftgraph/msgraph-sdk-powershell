@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: onPremisesPublishingProfiles\.(connectors\.memberOf_.*|connectors_GetMemberOf|connectorGroups\.members_.*|connectorGroups_(Get|Create|Update|Delete)Members)
+  - remove-path-by-operation: onPremisesPublishingProfile\.(connector\.memberOf_.*|connector_GetMemberOf|connectorGroup\.member_.*|connectorGroup_(Get|Create|Update|Delete)Member
   - where:
       verb: Test
       subject: (Application|ServicePrincipal)SynchronizationJobCredentials

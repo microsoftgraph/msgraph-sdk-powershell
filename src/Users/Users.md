@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid root paths e.g. users{id}/todo
-  - remove-path-by-operation: users_(Get|Create|Update|Delete|Set)(Todo|outlook)
+  - remove-path-by-operation: user_(Get|Create|Update|Delete|Set)(Todo|outlook)
 # Remove commands
   - where:
       verb: New
