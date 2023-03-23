@@ -1265,6 +1265,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
+    "/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.start": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.stop": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
     "/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
@@ -1977,6 +1985,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.rotateLocalAdminPassword": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
     "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.sendCustomNotificationToCompanyPortal": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
@@ -2082,10 +2094,6 @@
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/{user-id}/messages/{message-id}/microsoft.graph.unsubscribe": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
-    },
-    "/users/{user-id}/microsoft.graph.activateServicePlan": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },

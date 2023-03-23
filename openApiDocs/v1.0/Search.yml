@@ -1649,8 +1649,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.searchQuery'
         queryAlterationOptions:
           $ref: '#/components/schemas/microsoft.graph.searchAlterationOptions'
+        region:
+          type: string
+          nullable: true
         resultTemplateOptions:
           $ref: '#/components/schemas/microsoft.graph.resultTemplateOption'
+        sharePointOneDriveOptions:
+          $ref: '#/components/schemas/microsoft.graph.sharePointOneDriveOptions'
         size:
           maximum: 2147483647
           minimum: -2147483648
@@ -1853,6 +1858,8 @@ components:
         - listItem
         - drive
         - unknownFutureValue
+        - chatMessage
+        - person
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery
@@ -1885,6 +1892,14 @@ components:
           type: boolean
           description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.'
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharePointOneDriveOptions:
+      title: sharePointOneDriveOptions
+      type: object
+      properties:
+        includeContent:
+          $ref: '#/components/schemas/microsoft.graph.searchContent'
       additionalProperties:
         type: object
     microsoft.graph.sortProperty:
@@ -2142,6 +2157,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationSortProperty'
       additionalProperties:
         type: object
+    microsoft.graph.searchContent:
+      title: searchContent
+      enum:
+        - sharedContent
+        - privateContent
+        - unknownFutureValue
+      type: string
     microsoft.graph.searchAggregation:
       title: searchAggregation
       type: object

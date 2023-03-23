@@ -3285,7 +3285,7 @@ paths:
       tags:
         - groups.calendar
       summary: List events
-      description: "Retrieve a list of events in a calendar.  The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
+      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
@@ -3454,6 +3454,24 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
@@ -3573,6 +3591,24 @@ paths:
                 - transactionId
                 - type
                 - webLink
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - attachments
                 - calendar
                 - extensions
@@ -12864,156 +12900,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /places:
-    get:
-      tags:
-        - places.place
-      summary: Get place
-      description: 'Get the properties and relationships of a place object specified by either its ID or email address. The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.'
-      operationId: places.place_ListPlace
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - address
-                - address desc
-                - displayName
-                - displayName desc
-                - geoCoordinates
-                - geoCoordinates desc
-                - phone
-                - phone desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - address
-                - displayName
-                - geoCoordinates
-                - phone
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          $ref: '#/components/responses/microsoft.graph.placeCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - places.place
-      summary: Add new entity to places
-      operationId: places.place_CreatePlace
-      requestBody:
-        description: New entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.place'
-        required: true
-      responses:
-        '201':
-          description: Created entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.place'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/places/{place-id}':
-    get:
-      tags:
-        - places.place
-      summary: Get place
-      description: 'Get the properties and relationships of a place object specified by either its ID or email address. The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/place-get?view=graph-rest-1.0
-      operationId: places.place_GetPlace
-      parameters:
-        - name: place-id
-          in: path
-          description: The unique identifier of place
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: place
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - address
-                - displayName
-                - geoCoordinates
-                - phone
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.place'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - places.place
@@ -16384,7 +16271,7 @@ paths:
       tags:
         - users.calendar
       summary: List events
-      description: "Retrieve a list of events in a calendar.  The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
+      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
@@ -16553,6 +16440,24 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
@@ -16672,6 +16577,24 @@ paths:
                 - transactionId
                 - type
                 - webLink
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - attachments
                 - calendar
                 - extensions
@@ -24408,7 +24331,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List events
-      description: "Retrieve a list of events in a calendar.  The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
+      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
@@ -24593,6 +24516,24 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
@@ -24744,6 +24685,24 @@ paths:
                 - transactionId
                 - type
                 - webLink
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - attachments
                 - calendar
                 - extensions
@@ -32723,7 +32682,7 @@ paths:
       tags:
         - users.calendar
       summary: List events
-      description: "Retrieve a list of events in a calendar.  The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
+      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
@@ -32900,6 +32859,24 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
@@ -33035,6 +33012,24 @@ paths:
                 - transactionId
                 - type
                 - webLink
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - attachments
                 - calendar
                 - extensions
@@ -36888,6 +36883,24 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
@@ -36988,6 +37001,24 @@ paths:
                 - transactionId
                 - type
                 - webLink
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - attachments
                 - calendar
                 - extensions
@@ -39866,6 +39897,24 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
@@ -39985,6 +40034,24 @@ paths:
                 - transactionId
                 - type
                 - webLink
+                - attachments
+                - calendar
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - attachments
                 - calendar
                 - extensions
@@ -43526,19 +43593,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.placeCollectionResponse:
-      title: Collection of place
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.place'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.calendarGroupCollectionResponse:
       title: Collection of calendarGroup
       type: object
@@ -43854,12 +43908,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
-    microsoft.graph.placeCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.placeCollectionResponse'
     microsoft.graph.calendarGroupCollectionResponse:
       description: Retrieved collection
       content:

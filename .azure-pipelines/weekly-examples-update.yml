@@ -36,6 +36,26 @@ jobs:
   - template: ./common-templates/update-sdkversion.yml
 
   - task: PowerShell@2
+    name: "ComputeBranch"
+    displayName: "Compute weekly examples update branch name"
+    inputs:
+      targetType: inline
+      script: |
+        $branch = "{0}/{1}" -f "WeeklyExamplesUpdate", (Get-Date -Format yyyyMMddHHmm)
+        Write-Host "Compute branch: $branch"
+        Write-Host "##vso[task.setvariable variable=WeeklyExamplesBranch;isOutput=true]$branch"
+
+  - task: Bash@3
+    displayName: "Create weekly examples branch"
+    inputs:
+      targetType: inline
+      script: |
+        git status
+        git branch $(ComputeBranch.WeeklyExamplesBranch)
+        git checkout $(ComputeBranch.WeeklyExamplesBranch)
+        git status
+
+  - task: PowerShell@2
     displayName: 'Update Examples From Graph Reference'
     continueOnError: false
     inputs:
@@ -51,13 +71,10 @@ jobs:
       targetType: inline
       pwsh: true
       script: |
-        git config --global user.email "timwamalwa@gmail.com"
-        git config --global user.name "Timothy Wamalwa"
-        $date = Get-Date -Format "dd-MM-yyyy"
-        $proposedBranch = "WeeklyExamplesUpdate/"+$date
+        git status
         git add .
-        git commit -m "Updating examples "+$date
-        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
+        git commit -m "Updating examples"
+        git push --set-upstream origin $(ComputeBranch.WeeklyExamplesBranch)
         git status
 
   - task: PowerShell@2
@@ -68,6 +85,8 @@ jobs:
       pwsh: true
       targetType: inline
       script: |
+        git status
+        Start-Sleep 15s
         $Title = "[v1] Examples Update"
         $Body = "This pull request was automatically created by Azure Pipelines. Contains examples update."
         $BaseBranch = "dev"

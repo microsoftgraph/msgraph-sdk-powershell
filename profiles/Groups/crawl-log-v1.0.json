@@ -957,6 +957,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
+    "/groups/{group-id}/permissionGrants/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
     "/groups/{group-id}/permissionGrants/microsoft.graph.getAvailableExtensionProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"

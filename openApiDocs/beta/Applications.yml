@@ -2184,6 +2184,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get synchronization from applications
+      description: Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
       operationId: applications_GetSynchronization
       parameters:
         - name: application-id
@@ -2579,7 +2580,7 @@ paths:
       description: 'Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provision-on-demand?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
       operationId: applications.synchronization.jobs_provisionOnDemand
       parameters:
         - name: application-id
@@ -4929,11 +4930,7 @@ paths:
     post:
       tags:
         - applications.tokenLifetimePolicy
-      summary: Assign tokenLifetimePolicy
-      description: Assign a tokenLifetimePolicy to an application or servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
+      summary: Create new navigation property ref to tokenLifetimePolicies for applications
       operationId: applications_CreateTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
@@ -5195,6 +5192,10 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getUserOwnedObjects
+      description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: applications_getUserOwnedObjects
       requestBody:
         description: Action parameters
@@ -13435,6 +13436,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get synchronization from servicePrincipals
+      description: Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
       operationId: servicePrincipals_GetSynchronization
       parameters:
         - name: servicePrincipal-id
@@ -13830,7 +13832,7 @@ paths:
       description: 'Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provision-on-demand?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
       operationId: servicePrincipals.synchronization.jobs_provisionOnDemand
       parameters:
         - name: servicePrincipal-id
@@ -16490,6 +16492,10 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getUserOwnedObjects
+      description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: servicePrincipals_getUserOwnedObjects
       requestBody:
         description: Action parameters
@@ -17355,6 +17361,7 @@ components:
               description: Collection of objects supported by the directory.
             readOnly:
               type: boolean
+              description: Whether this object is read-only.
             version:
               type: string
               description: Read only value that indicates version discovered. null if discovery has not yet occurred.
@@ -20061,11 +20068,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -20192,12 +20199,15 @@ components:
       properties:
         code:
           type: string
+          description: The error code.
           nullable: true
         message:
           type: string
+          description: The error message.
           nullable: true
         tenantActionable:
           type: boolean
+          description: The action to take to resolve the error.
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:

@@ -517,6 +517,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
     "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.getAvailableExtensionProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
@@ -538,6 +542,10 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },

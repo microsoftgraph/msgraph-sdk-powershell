@@ -101,6 +101,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
+    "/contracts/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
     "/contracts/microsoft.graph.getAvailableExtensionProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
@@ -273,6 +277,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
+    "/directory/deletedItems/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
     "/directory/deletedItems/microsoft.graph.getAvailableExtensionProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
@@ -294,6 +302,14 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
     "/directory/federationConfigurations/microsoft.graph.availableProviderTypes()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
+    "/directory/onPremisesSynchronization": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
+    "/directory/onPremisesSynchronization/{onPremisesDirectorySynchronization-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
@@ -386,6 +402,10 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
     "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
