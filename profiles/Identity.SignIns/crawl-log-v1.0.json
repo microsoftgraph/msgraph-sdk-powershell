@@ -321,6 +321,22 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
+    "/policies/appManagementPolicies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/appManagementPolicies/{appManagementPolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/appManagementPolicies/{appManagementPolicy-id}/appliesTo": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/appManagementPolicies/{appManagementPolicy-id}/appliesTo/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
     "/policies/authenticationFlowsPolicy": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
@@ -377,6 +393,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
+    "/policies/defaultAppManagementPolicy": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
     "/policies/featureRolloutPolicies": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
@@ -394,6 +414,10 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
     "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },

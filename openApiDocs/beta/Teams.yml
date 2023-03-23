@@ -2526,11 +2526,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -5316,6 +5316,81 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/chats/{chat-id}/permissionGrants/microsoft.graph.delta()':
+    get:
+      tags:
+        - chats.Functions
+      summary: Invoke function delta
+      operationId: chats.permissionGrants_delta
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/chats/{chat-id}/permissionGrants/microsoft.graph.getByIds':
     post:
       tags:
@@ -5383,6 +5458,10 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action getUserOwnedObjects
+      description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: chats.permissionGrants_getUserOwnedObjects
       parameters:
         - name: chat-id
@@ -18024,6 +18103,7 @@ paths:
       tags:
         - groups.team
       summary: Get templateDefinition from groups
+      description: Generic representation of a team template definition for a team with a specific structure and configuration.
       operationId: groups.team_GetTemplateDefinition
       parameters:
         - name: group-id
@@ -18082,148 +18162,6 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /teams:
-    get:
-      tags:
-        - teams.team
-      summary: List teams
-      description: List all teams in an organization.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teams-list?view=graph-rest-1.0
-      operationId: teams.team_ListTeam
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - classification
-                - classification desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - discoverySettings
-                - discoverySettings desc
-                - displayName
-                - displayName desc
-                - funSettings
-                - funSettings desc
-                - guestSettings
-                - guestSettings desc
-                - internalId
-                - internalId desc
-                - isArchived
-                - isArchived desc
-                - isMembershipLimitedToOwners
-                - isMembershipLimitedToOwners desc
-                - memberSettings
-                - memberSettings desc
-                - messagingSettings
-                - messagingSettings desc
-                - specialization
-                - specialization desc
-                - summary
-                - summary desc
-                - tenantId
-                - tenantId desc
-                - visibility
-                - visibility desc
-                - webUrl
-                - webUrl desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - classification
-                - createdDateTime
-                - description
-                - discoverySettings
-                - displayName
-                - funSettings
-                - guestSettings
-                - internalId
-                - isArchived
-                - isMembershipLimitedToOwners
-                - memberSettings
-                - messagingSettings
-                - specialization
-                - summary
-                - tenantId
-                - visibility
-                - webUrl
-                - allChannels
-                - channels
-                - group
-                - incomingChannels
-                - installedApps
-                - members
-                - operations
-                - owners
-                - permissionGrants
-                - photo
-                - primaryChannel
-                - tags
-                - template
-                - templateDefinition
-                - schedule
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - allChannels
-                - channels
-                - group
-                - incomingChannels
-                - installedApps
-                - members
-                - operations
-                - owners
-                - permissionGrants
-                - photo
-                - primaryChannel
-                - tags
-                - template
-                - templateDefinition
-                - schedule
-              type: string
-      responses:
-        '200':
-          $ref: '#/components/responses/microsoft.graph.teamCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - teams.team
@@ -18254,8 +18192,7 @@ paths:
     get:
       tags:
         - teams.team
-      summary: Get team
-      description: Retrieve the properties and relationships of the specified team.
+      summary: Get entity from teams by key
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-get?view=graph-rest-1.0
@@ -25608,6 +25545,81 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/teams/{team-id}/permissionGrants/microsoft.graph.delta()':
+    get:
+      tags:
+        - teams.Functions
+      summary: Invoke function delta
+      operationId: teams.permissionGrants_delta
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/teams/{team-id}/permissionGrants/microsoft.graph.getByIds':
     post:
       tags:
@@ -25675,6 +25687,10 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action getUserOwnedObjects
+      description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: teams.permissionGrants_getUserOwnedObjects
       parameters:
         - name: team-id
@@ -32944,6 +32960,7 @@ paths:
       tags:
         - teams.teamTemplateDefinition
       summary: Get templateDefinition from teams
+      description: Generic representation of a team template definition for a team with a specific structure and configuration.
       operationId: teams_GetTemplateDefinition
       parameters:
         - name: team-id
@@ -39002,11 +39019,11 @@ paths:
     get:
       tags:
         - teamwork.teamTemplate
-      summary: List definitions
-      description: 'List the teamTemplateDefinition objects associated with a teamTemplate. '
+      summary: List teamTemplates
+      description: 'Get the list of teamTemplate objects that are available for a tenant. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0
       operationId: teamwork_ListTeamTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -47670,6 +47687,89 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/permissionGrants/microsoft.graph.delta()':
+    get:
+      tags:
+        - teamwork.Functions
+      summary: Invoke function delta
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.permissionGrants_delta
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/permissionGrants/microsoft.graph.getByIds':
     post:
       tags:
@@ -47745,6 +47845,10 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action getUserOwnedObjects
+      description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: teamwork.teamTemplates.definitions.teamDefinition.permissionGrants_getUserOwnedObjects
       parameters:
         - name: teamTemplate-id
@@ -56102,6 +56206,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get templateDefinition from teamwork
+      description: Generic representation of a team template definition for a team with a specific structure and configuration.
       operationId: teamwork.teamTemplates.definitions.teamDefinition_GetTemplateDefinition
       parameters:
         - name: teamTemplate-id
@@ -57701,11 +57806,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: users.chats_CreateMessages
       parameters:
         - name: user-id
@@ -62173,7 +62278,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             description:
@@ -62594,7 +62699,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -63495,7 +63600,7 @@ components:
           properties:
             description:
               type: string
-              description: Tag description as it will appear to the user in Microsoft Teams.
+              description: Tag description as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
@@ -63885,6 +63990,7 @@ components:
           properties:
             allowUserRequestsForAppAccess:
               type: boolean
+              description: Indicates whether Teams users are allowed to request admins access to certain Teams apps.
               nullable: true
             isChatResourceSpecificConsentEnabled:
               type: boolean
@@ -64237,11 +64343,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -65274,7 +65380,7 @@ components:
               description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
-              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+              description: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
@@ -66405,7 +66511,7 @@ components:
       properties:
         archiveFolder:
           type: string
-          description: Folder ID of an archive folder for the user. Read only.
+          description: Folder ID of an archive folder for the user. Read-only.
           nullable: true
         automaticRepliesSetting:
           $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
@@ -68866,8 +68972,11 @@ components:
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -70054,19 +70163,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.teamCollectionResponse:
-      title: Collection of team
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.team'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.deletedTeamCollectionResponse:
       title: Collection of deletedTeam
       type: object
@@ -70140,6 +70236,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamCollectionResponse:
+      title: Collection of team
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.team'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -75033,7 +75142,7 @@ components:
           properties:
             enrolledByUser:
               type: string
-              description: The User Principal Name (UPN) of the user that enrolled the device
+              description: The User Principal Name (UPN) of the user that enrolled the device.
               nullable: true
             errorCode:
               type: integer
@@ -75042,38 +75151,40 @@ components:
             expirationDateTimeUTC:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime of the expiration of the logs
+              description: The DateTime of the expiration of the logs.
               format: date-time
               nullable: true
             initiatedByUserPrincipalName:
               type: string
-              description: The UPN for who initiated the request
+              description: The UPN for who initiated the request.
               nullable: true
             managedDeviceId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: The device Id
+              description: Indicates Intune device unique identifier.
               format: uuid
             receivedDateTimeUTC:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime the request was received
+              description: The DateTime the request was received.
               format: date-time
               nullable: true
             requestedDateTimeUTC:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime of the request
+              description: The DateTime of the request.
               format: date-time
               nullable: true
             size:
               type: number
               description: The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+            sizeInKB:
+              type: number
+              description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
             status:
-              type: string
-              description: The status of the log collection request
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
             type: object
           description: Windows Log Collection request entity.
@@ -76314,6 +76425,14 @@ components:
         - organizer
         - unknownFutureValue
       type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
+        - unknownFutureValue
+      type: string
     microsoft.graph.onlineMeetingRole:
       title: onlineMeetingRole
       enum:
@@ -76469,9 +76588,11 @@ components:
       properties:
         isEnabledForContentSharing:
           type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
           nullable: true
         isEnabledForVideo:
           type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
           nullable: true
       additionalProperties:
         type: object
@@ -76593,13 +76714,13 @@ components:
           properties:
             content:
               type: string
-              description: A field representing the content of the transcript. Read-only.
+              description: A field that represents the content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time at which the transcript was created. Read-only.
+              description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -76693,6 +76814,8 @@ components:
         - title: microsoftAuthenticatorAuthenticationMethod
           type: object
           properties:
+            clientAppName:
+              $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethodClientAppName'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -76780,11 +76903,6 @@ components:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            creationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
               format: date-time
               nullable: true
             password:
@@ -78930,11 +79048,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -79797,8 +79915,8 @@ components:
         - deviceIsNotAzureActiveDirectoryJoined
         - verifyingMicrosoftDeviceIdentity
         - deviceIdentityVerificationFailed
-        - verifyingMirosoftAccountIdentity
-        - mirosoftAccountVerificationFailed
+        - verifyingMicrosoftAccountIdentity
+        - microsoftAccountVerificationFailed
         - acquiringDeviceLicense
         - refreshingDeviceLicense
         - deviceLicenseRefreshSucceed
@@ -79831,12 +79949,12 @@ components:
           - value: deviceIdentityVerificationFailed
             description: This status is set when the Microsoft device identity verification fails.
             name: deviceIdentityVerificationFailed
-          - value: verifyingMirosoftAccountIdentity
+          - value: verifyingMicrosoftAccountIdentity
             description: This status is set when the Microsoft account identity is being verified.
-            name: verifyingMirosoftAccountIdentity
-          - value: mirosoftAccountVerificationFailed
+            name: verifyingMicrosoftAccountIdentity
+          - value: microsoftAccountVerificationFailed
             description: This status is set when the Microsoft account identity verification fails.
-            name: mirosoftAccountVerificationFailed
+            name: microsoftAccountVerificationFailed
           - value: acquiringDeviceLicense
             description: This status is set when the device license is being acquired.
             name: acquiringDeviceLicense
@@ -80318,6 +80436,31 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+    microsoft.graph.appLogUploadState:
+      title: appLogUploadState
+      enum:
+        - pending
+        - completed
+        - failed
+        - unknownFutureValue
+      type: string
+      description: AppLogUploadStatus
+      x-ms-enum:
+        name: appLogUploadState
+        modelAsString: false
+        values:
+          - value: pending
+            description: Default. Indicates that request is waiting to be processed or under processing.
+            name: pending
+          - value: completed
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
+            name: completed
+          - value: failed
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
+            name: failed
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -80616,31 +80759,6 @@ components:
       additionalProperties:
         type: object
       description: Device properties
-    microsoft.graph.appLogUploadState:
-      title: appLogUploadState
-      enum:
-        - pending
-        - completed
-        - failed
-        - unknownFutureValue
-      type: string
-      description: AppLogUploadStatus
-      x-ms-enum:
-        name: appLogUploadState
-        modelAsString: false
-        values:
-          - value: pending
-            description: Default. Indicates that request is waiting to be processed or under processing.
-            name: pending
-          - value: completed
-            description: Indicates that request is completed with file uploaded to Azure blob for download.
-            name: completed
-          - value: failed
-            description: Indicates that request is completed with file uploaded to Azure blob for download.
-            name: failed
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
     microsoft.graph.visualProperties:
       title: visualProperties
       type: object
@@ -81344,6 +81462,13 @@ components:
       enum:
         - attested
         - notAttested
+        - unknownFutureValue
+      type: string
+    microsoft.graph.microsoftAuthenticatorAuthenticationMethodClientAppName:
+      title: microsoftAuthenticatorAuthenticationMethodClientAppName
+      enum:
+        - microsoftAuthenticator
+        - outlookMobile
         - unknownFutureValue
       type: string
     microsoft.graph.longRunningOperationStatus:
@@ -85541,6 +85666,7 @@ components:
               description: Collection of objects supported by the directory.
             readOnly:
               type: boolean
+              description: Whether this object is read-only.
             version:
               type: string
               description: Read only value that indicates version discovered. null if discovery has not yet occurred.
@@ -85807,12 +85933,15 @@ components:
       properties:
         code:
           type: string
+          description: The error code.
           nullable: true
         message:
           type: string
+          description: The error message.
           nullable: true
         tenantActionable:
           type: boolean
+          description: The action to take to resolve the error.
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:
@@ -86338,12 +86467,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.teamworkTagMemberCollectionResponse'
-    microsoft.graph.teamCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.teamCollectionResponse'
     microsoft.graph.deletedTeamCollectionResponse:
       description: Retrieved collection
       content:
@@ -86380,6 +86503,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.workforceIntegrationCollectionResponse'
+    microsoft.graph.teamCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.teamCollectionResponse'
     microsoft.graph.associatedTeamInfoCollectionResponse:
       description: Retrieved collection
       content:

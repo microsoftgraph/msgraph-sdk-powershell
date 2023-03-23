@@ -1977,17 +1977,22 @@ paths:
                 - termsAndConditionsDisabled
                 - touchIdDisabled
                 - accessibilityScreenDisabled
+                - adminAccountFullName
+                - adminAccountPassword
+                - adminAccountUserName
                 - autoUnlockWithWatchDisabled
                 - chooseYourLockScreenDisabled
                 - dontAutoPopulatePrimaryAccountInfo
                 - enableRestrictEditing
                 - fileVaultDisabled
+                - hideAdminAccount
                 - iCloudDiagnosticsDisabled
                 - iCloudStorageDisabled
                 - passCodeDisabled
                 - primaryAccountFullName
                 - primaryAccountUserName
                 - registrationDisabled
+                - requestRequiresNetworkTether
                 - setPrimarySetupAccountAsRegularUser
                 - skipPrimarySetupAccountCreation
                 - zoomDisabled
@@ -25186,6 +25191,18 @@ components:
             accessibilityScreenDisabled:
               type: boolean
               description: Indicates if Accessibility screen is disabled
+            adminAccountFullName:
+              type: string
+              description: Indicates what the full name for the admin account is
+              nullable: true
+            adminAccountPassword:
+              type: string
+              description: Indicates what the password for the admin account is
+              nullable: true
+            adminAccountUserName:
+              type: string
+              description: Indicates what the user name for the admin account is
+              nullable: true
             autoUnlockWithWatchDisabled:
               type: boolean
               description: Indicates if UnlockWithWatch screen is disabled
@@ -25201,6 +25218,9 @@ components:
             fileVaultDisabled:
               type: boolean
               description: Indicates if file vault is disabled
+            hideAdminAccount:
+              type: boolean
+              description: Indicates whether the admin account should be hidded or not
             iCloudDiagnosticsDisabled:
               type: boolean
               description: Indicates if iCloud Analytics screen is disabled
@@ -25221,6 +25241,9 @@ components:
             registrationDisabled:
               type: boolean
               description: Indicates if registration is disabled
+            requestRequiresNetworkTether:
+              type: boolean
+              description: Indicates if the device is network-tethered to run the command
             setPrimarySetupAccountAsRegularUser:
               type: boolean
               description: Indicates whether Setup Assistant will set the account as a regular user
@@ -26912,7 +26935,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -27401,11 +27424,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

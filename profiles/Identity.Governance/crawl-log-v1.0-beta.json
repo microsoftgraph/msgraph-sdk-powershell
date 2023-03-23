@@ -681,6 +681,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionStageSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionStageSettings/{customExtensionStageSetting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
@@ -702,6 +710,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.reprocess": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.resume": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -873,6 +885,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionStageSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionStageSettings/{customExtensionStageSetting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageCatalog": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
@@ -1037,6 +1057,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/customExtensionStageSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/customExtensionStageSettings/{customExtensionStageSetting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
@@ -1058,6 +1086,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.reprocess": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.resume": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -1218,6 +1250,14 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageCustomWorkflowExtensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageCustomWorkflowExtensions/{customCalloutExtension-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -1426,6 +1466,14 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}/customExtension": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionStageSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionStageSettings/{customExtensionStageSetting-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -1833,6 +1881,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionStageSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionStageSettings/{customExtensionStageSetting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageCatalog": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
@@ -2001,6 +2057,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
     "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/microsoft.graph.getByIds": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
@@ -2022,6 +2082,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/microsoft.graph.delta()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -2638,6 +2702,74 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/privilegedAccess/group/eligibilitySchedules/microsoft.graph.filterByCurrentUser(on='{on}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alertConfigurations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration-id}/alertDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alertDefinitions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alertDefinitions/{unifiedRoleManagementAlertDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alerts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/alertConfiguration": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/alertDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/alertIncidents": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/alertIncidents/{unifiedRoleManagementAlertIncident-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/alertIncidents/{unifiedRoleManagementAlertIncident-id}/microsoft.graph.remediate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/microsoft.graph.refresh": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/alerts/microsoft.graph.refresh": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/operations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/roleManagementAlerts/operations/{longRunningOperation-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
