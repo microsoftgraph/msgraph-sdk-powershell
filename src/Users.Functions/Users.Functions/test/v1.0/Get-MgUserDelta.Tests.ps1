@@ -15,4 +15,7 @@ Describe 'Get-MgUserDelta' {
     It 'Delta1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
+    It 'ShouldNotThrowExceptionWhenAllParameterIsSpecified' {
+        { Get-MgUserDelta -All } | Should -Not -Throw
+    }
 }
