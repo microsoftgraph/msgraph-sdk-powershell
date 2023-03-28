@@ -12,6 +12,7 @@ parameters:
     type: string
     default: ""
 
+steps:
   - task: PowerShell@2
     displayName: Create Pull Request for generated build
     env:
@@ -28,4 +29,3 @@ parameters:
         gh auth login
         gh pr create -t "$Title" -b "$Body" -B $BaseBranchName
         git status
-

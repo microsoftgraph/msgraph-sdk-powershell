@@ -110,8 +110,8 @@ jobs:
       - template: ./generation-templates/generate-command-metadata.yml
       - template: ./common-templates/security-post-checks.yml
       - ${{ if eq(parameters.CreatePullRequest, true) }}:
-        - template: common-templates/create-pr.yml
-          parameters:
-            BaseBranch: $(BaseBranch)
-            Title: "[v2] Weekly OpenApiDocs Refresh"
-            Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+          - template: common-templates/create-pr.yml
+            parameters:
+              BaseBranch: $(BaseBranch)
+              Title: "[v2] Weekly OpenApiDocs Refresh"
+              Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
