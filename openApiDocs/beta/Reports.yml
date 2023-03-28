@@ -11406,10 +11406,12 @@ components:
               nullable: true
             teamsChannelMessages:
               type: integer
+              description: The number of channel messages in Teams team.
               format: int64
               nullable: true
             teamsMeetingsOrganized:
               type: integer
+              description: The number of meetings organized in Teams team.
               format: int64
               nullable: true
             yammerMessagesLiked:
@@ -11513,10 +11515,12 @@ components:
               nullable: true
             teamsChannelMessagesCount:
               type: integer
+              description: The number of channel messages in Teams team.
               format: int64
               nullable: true
             teamsMeetingsOrganizedCount:
               type: integer
+              description: The number of meetings organized in Teams team.
               format: int64
               nullable: true
             yammerLikedMessageCount:
@@ -11826,11 +11830,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -12871,11 +12875,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -12944,6 +12948,8 @@ components:
           type: string
           description: Identifier of the authentication strength.
           nullable: true
+        authenticationStrengthResult:
+          $ref: '#/components/schemas/microsoft.graph.authenticationStrengthResult'
         displayName:
           type: string
           description: The name of the authentication strength.
@@ -13175,6 +13181,20 @@ components:
         - success
         - unknownFutureValue
       type: string
+    microsoft.graph.authenticationStrengthResult:
+      title: authenticationStrengthResult
+      enum:
+        - notSet
+        - skippedForProofUp
+        - satisfied
+        - singleChallengeRequired
+        - multipleChallengesRequired
+        - singleRegistrationRequired
+        - multipleRegistrationsRequired
+        - cannotSatisfyDueToCombinationConfiguration
+        - cannotSatisfy
+        - unknownFutureValue
+      type: string
     microsoft.graph.conditionalAccessRule:
       title: conditionalAccessRule
       enum:
@@ -13201,6 +13221,17 @@ components:
         - unknownFutureValue
         - deviceFilterIncludeRuleNotMatched
         - allDeviceStates
+        - anonymizedIPAddress
+        - unfamiliarFeatures
+        - nationStateIPAddress
+        - realTimeThreatIntelligence
+        - internalGuest
+        - b2bCollaborationGuest
+        - b2bCollaborationMember
+        - b2bDirectConnectUser
+        - otherExternalUser
+        - serviceProvider
+        - microsoftAdminPortals
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:

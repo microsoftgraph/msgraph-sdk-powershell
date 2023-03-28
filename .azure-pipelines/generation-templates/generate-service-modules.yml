@@ -172,6 +172,7 @@ jobs:
             pwsh: true
             targetType: inline
             script: |
+              git status
               $Title = "[v1] Weekly OpenApiDocs Refresh"
               $Body = "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
               $BaseBranch = "dev"

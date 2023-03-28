@@ -3640,6 +3640,37 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Create new navigation property to deviceHealthScriptStates for deviceManagement
+      operationId: deviceManagement.comanagedDevices_CreateDeviceHealthScriptStates
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptPolicyState'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptPolicyState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceManagement/comanagedDevices/{managedDevice-id}/deviceHealthScriptStates/id=''{id}'',policyId=''{policyId}'',deviceId=''{deviceId}''':
     get:
       tags:
@@ -3731,6 +3762,107 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Update the navigation property deviceHealthScriptStates in deviceManagement
+      operationId: deviceManagement.comanagedDevices_UpdateDeviceHealthScriptStates
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: id
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: policyId
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: deviceId
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptPolicyState'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Delete navigation property deviceHealthScriptStates for deviceManagement
+      operationId: deviceManagement.comanagedDevices_DeleteDeviceHealthScriptStates
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: id
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: policyId
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: deviceId
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceManagement/comanagedDevices/{managedDevice-id}/logCollectionRequests':
     get:
       tags:
@@ -3780,6 +3912,8 @@ paths:
                 - requestedDateTimeUTC desc
                 - size
                 - size desc
+                - sizeInKB
+                - sizeInKB desc
                 - status
                 - status desc
               type: string
@@ -3802,6 +3936,7 @@ paths:
                 - receivedDateTimeUTC
                 - requestedDateTimeUTC
                 - size
+                - sizeInKB
                 - status
               type: string
         - name: $expand
@@ -3899,6 +4034,7 @@ paths:
                 - receivedDateTimeUTC
                 - requestedDateTimeUTC
                 - size
+                - sizeInKB
                 - status
               type: string
         - name: $expand
@@ -6844,7 +6980,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Get settingDefinitions from deviceManagement
-      description: List of related Setting Definitions. This property is read-only.
+      description: List of related Setting Definitions
       operationId: deviceManagement.compliancePolicies.settings_ListSettingDefinitions
       parameters:
         - name: deviceManagementCompliancePolicy-id
@@ -6973,7 +7109,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Get settingDefinitions from deviceManagement
-      description: List of related Setting Definitions. This property is read-only.
+      description: List of related Setting Definitions
       operationId: deviceManagement.compliancePolicies.settings_GetSettingDefinitions
       parameters:
         - name: deviceManagementCompliancePolicy-id
@@ -8023,7 +8159,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementConfigurationPolicy
       summary: Get settingDefinitions from deviceManagement
-      description: List of related Setting Definitions. This property is read-only.
+      description: List of related Setting Definitions
       operationId: deviceManagement.configurationPolicies.settings_ListSettingDefinitions
       parameters:
         - name: deviceManagementConfigurationPolicy-id
@@ -8152,7 +8288,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementConfigurationPolicy
       summary: Get settingDefinitions from deviceManagement
-      description: List of related Setting Definitions. This property is read-only.
+      description: List of related Setting Definitions
       operationId: deviceManagement.configurationPolicies.settings_GetSettingDefinitions
       parameters:
         - name: deviceManagementConfigurationPolicy-id
@@ -26914,6 +27050,37 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Create new navigation property to deviceHealthScriptStates for deviceManagement
+      operationId: deviceManagement.managedDevices_CreateDeviceHealthScriptStates
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptPolicyState'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptPolicyState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceManagement/managedDevices/{managedDevice-id}/deviceHealthScriptStates/id=''{id}'',policyId=''{policyId}'',deviceId=''{deviceId}''':
     get:
       tags:
@@ -27005,6 +27172,107 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Update the navigation property deviceHealthScriptStates in deviceManagement
+      operationId: deviceManagement.managedDevices_UpdateDeviceHealthScriptStates
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: id
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: policyId
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: deviceId
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptPolicyState'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Delete navigation property deviceHealthScriptStates for deviceManagement
+      operationId: deviceManagement.managedDevices_DeleteDeviceHealthScriptStates
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: id
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: policyId
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: deviceId
+          in: path
+          description: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptPolicyState
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceManagement/managedDevices/{managedDevice-id}/logCollectionRequests':
     get:
       tags:
@@ -27054,6 +27322,8 @@ paths:
                 - requestedDateTimeUTC desc
                 - size
                 - size desc
+                - sizeInKB
+                - sizeInKB desc
                 - status
                 - status desc
               type: string
@@ -27076,6 +27346,7 @@ paths:
                 - receivedDateTimeUTC
                 - requestedDateTimeUTC
                 - size
+                - sizeInKB
                 - status
               type: string
         - name: $expand
@@ -27173,6 +27444,7 @@ paths:
                 - receivedDateTimeUTC
                 - requestedDateTimeUTC
                 - size
+                - sizeInKB
                 - status
               type: string
         - name: $expand
@@ -47035,7 +47307,7 @@ components:
           properties:
             enrolledByUser:
               type: string
-              description: The User Principal Name (UPN) of the user that enrolled the device
+              description: The User Principal Name (UPN) of the user that enrolled the device.
               nullable: true
             errorCode:
               type: integer
@@ -47044,38 +47316,40 @@ components:
             expirationDateTimeUTC:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime of the expiration of the logs
+              description: The DateTime of the expiration of the logs.
               format: date-time
               nullable: true
             initiatedByUserPrincipalName:
               type: string
-              description: The UPN for who initiated the request
+              description: The UPN for who initiated the request.
               nullable: true
             managedDeviceId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: The device Id
+              description: Indicates Intune device unique identifier.
               format: uuid
             receivedDateTimeUTC:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime the request was received
+              description: The DateTime the request was received.
               format: date-time
               nullable: true
             requestedDateTimeUTC:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime of the request
+              description: The DateTime of the request.
               format: date-time
               nullable: true
             size:
               type: number
               description: The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+            sizeInKB:
+              type: number
+              description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
             status:
-              type: string
-              description: The status of the log collection request
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
             type: object
           description: Windows Log Collection request entity.
@@ -47478,7 +47752,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
-              description: List of related Setting Definitions. This property is read-only.
+              description: List of related Setting Definitions
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -53301,6 +53575,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
+              description: Cloud PC shared-use service plans.
               x-ms-navigationProperty: true
             snapshots:
               type: array
@@ -54041,14 +54316,6 @@ components:
               description: Partner onboarded for Mac devices.
             partnerState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementPartnerTenantState'
-            windowsEnrollmentAssignments:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.complianceManagementPartnerAssignment'
-              description: User groups which enroll Windows devices through partner.
-            windowsOnboarded:
-              type: boolean
-              description: Partner onboarded for Windows devices.
           additionalProperties:
             type: object
           description: Compliance management partner for all platforms
@@ -54258,39 +54525,39 @@ components:
           properties:
             allowPartnerToCollectIOSApplicationMetadata:
               type: boolean
-              description: 'When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.'
+              description: 'When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.'
             allowPartnerToCollectIOSPersonalApplicationMetadata:
               type: boolean
-              description: 'When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.'
+              description: 'When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.'
             androidDeviceBlockedOnMissingPartnerData:
               type: boolean
-              description: 'For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
+              description: 'For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant'
             androidEnabled:
               type: boolean
-              description: 'For Android, set whether data from the data sync partner should be used during compliance evaluations'
+              description: 'For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations'
             androidMobileApplicationManagementEnabled:
               type: boolean
-              description: 'When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.'
+              description: 'When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.'
             iosDeviceBlockedOnMissingPartnerData:
               type: boolean
-              description: 'For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
+              description: 'For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant'
             iosEnabled:
               type: boolean
-              description: 'For IOS, get or set whether data from the data sync partner should be used during compliance evaluations'
+              description: 'For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations'
             iosMobileApplicationManagementEnabled:
               type: boolean
-              description: 'When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.'
+              description: 'When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.'
             lastHeartbeatDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: DateTime of last Heartbeat recieved from the Data Sync Partner
+              description: DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
               format: date-time
             macDeviceBlockedOnMissingPartnerData:
               type: boolean
-              description: 'For Mac, get or set whether Intune must receive data from the data sync partner prior to marking a device compliant'
+              description: 'For Mac, get or set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant'
             macEnabled:
               type: boolean
-              description: 'For Mac, get or set whether data from the data sync partner should be used during compliance evaluations'
+              description: 'For Mac, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations'
             microsoftDefenderForEndpointAttachEnabled:
               type: boolean
               description: 'When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.'
@@ -54304,19 +54571,19 @@ components:
               format: int32
             partnerUnsupportedOsVersionBlocked:
               type: boolean
-              description: Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+              description: Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
             windowsDeviceBlockedOnMissingPartnerData:
               type: boolean
-              description: 'When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.'
+              description: 'When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.'
             windowsEnabled:
               type: boolean
-              description: 'When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.'
+              description: 'When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.'
             windowsMobileApplicationManagementEnabled:
               type: boolean
               description: 'When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.'
           additionalProperties:
             type: object
-          description: Entity which represents a connection to Mobile threat defense partner.
+          description: Entity which represents a connection to Mobile Threat Defense partner.
     microsoft.graph.applePushNotificationCertificate:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -57769,7 +58036,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -58629,6 +58896,31 @@ components:
         - '-INF'
         - INF
         - NaN
+    microsoft.graph.appLogUploadState:
+      title: appLogUploadState
+      enum:
+        - pending
+        - completed
+        - failed
+        - unknownFutureValue
+      type: string
+      description: AppLogUploadStatus
+      x-ms-enum:
+        name: appLogUploadState
+        modelAsString: false
+        values:
+          - value: pending
+            description: Default. Indicates that request is waiting to be processed or under processing.
+            name: pending
+          - value: completed
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
+            name: completed
+          - value: failed
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
+            name: failed
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDeviceMobileAppConfigurationSettingState:
       title: managedDeviceMobileAppConfigurationSettingState
       type: object
@@ -59679,6 +59971,7 @@ components:
         - appQuietTime
         - baseline
         - unknownFutureValue
+        - deviceConfigurationScripts
       type: string
       description: Describes the TemplateFamily for the Template entity
       x-ms-enum:
@@ -59724,6 +60017,9 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+          - value: deviceConfigurationScripts
+            description: Template Family for device configuration scripts
+            name: deviceConfigurationScripts
     microsoft.graph.deviceManagementConfigurationSettingInstanceTemplate:
       title: deviceManagementConfigurationSettingInstanceTemplate
       type: object
@@ -60677,31 +60973,6 @@ components:
       additionalProperties:
         type: object
       description: History Item contained in the Mobile App Troubleshooting Event.
-    microsoft.graph.appLogUploadState:
-      title: appLogUploadState
-      enum:
-        - pending
-        - completed
-        - failed
-        - unknownFutureValue
-      type: string
-      description: AppLogUploadStatus
-      x-ms-enum:
-        name: appLogUploadState
-        modelAsString: false
-        values:
-          - value: pending
-            description: Default. Indicates that request is waiting to be processed or under processing.
-            name: pending
-          - value: completed
-            description: Indicates that request is completed with file uploaded to Azure blob for download.
-            name: completed
-          - value: failed
-            description: Indicates that request is completed with file uploaded to Azure blob for download.
-            name: failed
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
     microsoft.graph.notificationTemplateBrandingOptions:
       title: notificationTemplateBrandingOptions
       enum:
@@ -60772,6 +61043,7 @@ components:
         - moveDeviceToOrganizationalUnit
         - initiateMobileDeviceManagementKeyRecovery
         - initiateOnDemandProactiveRemediation
+        - rotateLocalAdminPassword
       type: string
       description: Remote actions Intune supports.
       x-ms-enum:
@@ -60868,6 +61140,9 @@ components:
           - value: initiateOnDemandProactiveRemediation
             description: Add device action of InitiateOnDemandProactiveRemediation
             name: initiateOnDemandProactiveRemediation
+          - value: rotateLocalAdminPassword
+            description: Add device action of RotateLocalAdminPassword
+            name: rotateLocalAdminPassword
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -63874,10 +64149,11 @@ components:
           properties:
             enableMEMAutoEnroll:
               type: boolean
-              description: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+              description: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM). The default value is false.
               nullable: true
             enableSingleSignOn:
               type: boolean
+              description: 'True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn''t support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
               nullable: true
             osVersion:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
@@ -63901,6 +64177,9 @@ components:
               type: string
               description: The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
               nullable: true
+            cloudPcNamingTemplate:
+              type: string
+              nullable: true
             description:
               type: string
               description: The provisioning policy description.
@@ -63917,6 +64196,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
             enableSingleSignOn:
               type: boolean
+              description: 'True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn''t support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
               nullable: true
             gracePeriodInHours:
               maximum: 2147483647
@@ -63955,7 +64235,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
-              description: A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
+              description: 'A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -64020,17 +64300,20 @@ components:
           properties:
             displayName:
               type: string
+              description: The display name of the shared-use service plan.
               nullable: true
             totalCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Total number of shared-use service plans purchased by the customer.
               format: int32
               nullable: true
             usedCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of service plans that the account uses.
               format: int32
               nullable: true
           additionalProperties:
@@ -64050,12 +64333,20 @@ components:
               description: 'The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as''2014-01-01T00:00:00Z''.'
+              format: date-time
+              nullable: true
             lastRestoredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            snapshotType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshotType'
             status:
               $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshotStatus'
           additionalProperties:
@@ -65075,6 +65366,18 @@ components:
             accessibilityScreenDisabled:
               type: boolean
               description: Indicates if Accessibility screen is disabled
+            adminAccountFullName:
+              type: string
+              description: Indicates what the full name for the admin account is
+              nullable: true
+            adminAccountPassword:
+              type: string
+              description: Indicates what the password for the admin account is
+              nullable: true
+            adminAccountUserName:
+              type: string
+              description: Indicates what the user name for the admin account is
+              nullable: true
             autoUnlockWithWatchDisabled:
               type: boolean
               description: Indicates if UnlockWithWatch screen is disabled
@@ -65090,6 +65393,9 @@ components:
             fileVaultDisabled:
               type: boolean
               description: Indicates if file vault is disabled
+            hideAdminAccount:
+              type: boolean
+              description: Indicates whether the admin account should be hidded or not
             iCloudDiagnosticsDisabled:
               type: boolean
               description: Indicates if iCloud Analytics screen is disabled
@@ -65110,6 +65416,9 @@ components:
             registrationDisabled:
               type: boolean
               description: Indicates if registration is disabled
+            requestRequiresNetworkTether:
+              type: boolean
+              description: Indicates if the device is network-tethered to run the command
             setPrimarySetupAccountAsRegularUser:
               type: boolean
               description: Indicates whether Setup Assistant will set the account as a regular user
@@ -66775,8 +67084,8 @@ components:
         - deviceIsNotAzureActiveDirectoryJoined
         - verifyingMicrosoftDeviceIdentity
         - deviceIdentityVerificationFailed
-        - verifyingMirosoftAccountIdentity
-        - mirosoftAccountVerificationFailed
+        - verifyingMicrosoftAccountIdentity
+        - microsoftAccountVerificationFailed
         - acquiringDeviceLicense
         - refreshingDeviceLicense
         - deviceLicenseRefreshSucceed
@@ -66809,12 +67118,12 @@ components:
           - value: deviceIdentityVerificationFailed
             description: This status is set when the Microsoft device identity verification fails.
             name: deviceIdentityVerificationFailed
-          - value: verifyingMirosoftAccountIdentity
+          - value: verifyingMicrosoftAccountIdentity
             description: This status is set when the Microsoft account identity is being verified.
-            name: verifyingMirosoftAccountIdentity
-          - value: mirosoftAccountVerificationFailed
+            name: verifyingMicrosoftAccountIdentity
+          - value: microsoftAccountVerificationFailed
             description: This status is set when the Microsoft account identity verification fails.
-            name: mirosoftAccountVerificationFailed
+            name: microsoftAccountVerificationFailed
           - value: acquiringDeviceLicense
             description: This status is set when the device license is being acquired.
             name: acquiringDeviceLicense
@@ -67183,7 +67492,7 @@ components:
       properties:
         archiveFolder:
           type: string
-          description: Folder ID of an archive folder for the user. Read only.
+          description: Folder ID of an archive folder for the user. Read-only.
           nullable: true
         automaticRepliesSetting:
           $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
@@ -68189,7 +68498,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             description:
@@ -69909,8 +70218,11 @@ components:
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -71006,6 +71318,11 @@ components:
           properties:
             target:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
+            assignedUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.user'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcExportJob:
@@ -71050,6 +71367,13 @@ components:
               description: The selected columns of the report.
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcSnapshotType:
+      title: cloudPcSnapshotType
+      enum:
+        - automatic
+        - manual
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcSnapshotStatus:
       title: cloudPcSnapshotStatus
       enum:
@@ -71230,7 +71554,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -72639,11 +72963,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -75908,6 +76232,14 @@ components:
         - organizer
         - unknownFutureValue
       type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
+        - unknownFutureValue
+      type: string
     microsoft.graph.onlineMeetingRole:
       title: onlineMeetingRole
       enum:
@@ -76063,9 +76395,11 @@ components:
       properties:
         isEnabledForContentSharing:
           type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
           nullable: true
         isEnabledForVideo:
           type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
           nullable: true
       additionalProperties:
         type: object
@@ -76187,13 +76521,13 @@ components:
           properties:
             content:
               type: string
-              description: A field representing the content of the transcript. Read-only.
+              description: A field that represents the content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time at which the transcript was created. Read-only.
+              description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -76287,6 +76621,8 @@ components:
         - title: microsoftAuthenticatorAuthenticationMethod
           type: object
           properties:
+            clientAppName:
+              $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethodClientAppName'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -76374,11 +76710,6 @@ components:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            creationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
               format: date-time
               nullable: true
             password:
@@ -76983,7 +77314,7 @@ components:
           properties:
             description:
               type: string
-              description: Tag description as it will appear to the user in Microsoft Teams.
+              description: Tag description as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
@@ -77763,11 +78094,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -79114,7 +79445,7 @@ components:
               description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
-              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+              description: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
@@ -81209,6 +81540,13 @@ components:
       enum:
         - attested
         - notAttested
+        - unknownFutureValue
+      type: string
+    microsoft.graph.microsoftAuthenticatorAuthenticationMethodClientAppName:
+      title: microsoftAuthenticatorAuthenticationMethodClientAppName
+      enum:
+        - microsoftAuthenticator
+        - outlookMobile
         - unknownFutureValue
       type: string
     microsoft.graph.longRunningOperationStatus:
@@ -86032,6 +86370,7 @@ components:
               description: Collection of objects supported by the directory.
             readOnly:
               type: boolean
+              description: Whether this object is read-only.
             version:
               type: string
               description: Read only value that indicates version discovered. null if discovery has not yet occurred.
@@ -86611,12 +86950,15 @@ components:
       properties:
         code:
           type: string
+          description: The error code.
           nullable: true
         message:
           type: string
+          description: The error message.
           nullable: true
         tenantActionable:
           type: boolean
+          description: The action to take to resolve the error.
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:
