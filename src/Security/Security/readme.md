@@ -40,7 +40,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^security(_.*Alerts_v2|.cases.ediscoveryCases.noncustodialDataSources_.*DataSource)$
+  - remove-path-by-operation: ^security(.cases.ediscoveryCases.noncustodialDataSources_.*DataSource)$
 # Remove cmdlets
   - where:
       verb: Get|Update
