@@ -66,8 +66,9 @@ steps:
       targetType: "inline"
       script: |
         Write-Host "SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}"
-        if (${{ parameters.SkipOpenAPIDocsDownload }}) {
+        if (${{ parameters.SkipOpenAPIDocsDownload }} -eq "True") {
           $ModuleNames = "Skipped"
+          Write-Warning "Skipped OpenAPI Docs Download."
         } else  {
           $diff = git diff --name-only
           $ModulesWithChanges = @{}
