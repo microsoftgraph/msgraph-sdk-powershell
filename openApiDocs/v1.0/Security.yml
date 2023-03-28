@@ -404,7 +404,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-list-alerts_v2?view=graph-rest-1.0
-      operationId: security_ListAlerts_v2
+      operationId: security_ListAlertsGraphVTwo
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -545,7 +545,7 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts_v2 for security
-      operationId: security_CreateAlerts_v2
+      operationId: security_CreateAlertsGraphVTwo
       requestBody:
         description: New navigation property
         content:
@@ -569,7 +569,7 @@ paths:
         - security.alert
       summary: Get alerts_v2 from security
       description: A collection of alerts in Microsoft 365 Defender.
-      operationId: security_GetAlerts_v2
+      operationId: security_GetAlertsGraphVTwo
       parameters:
         - name: alert-id
           in: path
@@ -645,7 +645,7 @@ paths:
       tags:
         - security.alert
       summary: Update the navigation property alerts_v2 in security
-      operationId: security_UpdateAlerts_v2
+      operationId: security_UpdateAlertsGraphVTwo
       parameters:
         - name: alert-id
           in: path
@@ -672,7 +672,7 @@ paths:
       tags:
         - security.alert
       summary: Delete navigation property alerts_v2 for security
-      operationId: security_DeleteAlerts_v2
+      operationId: security_DeleteAlertsGraphVTwo
       parameters:
         - name: alert-id
           in: path

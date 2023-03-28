@@ -13,6 +13,7 @@ $prepositionReplacements = @{
     At   = "GraphAPre"
     For  = "GraphFPre"
     Of   = "GraphOPre"
+    _v2   = "GraphVTwo"
 }
 $targetOperationIdRegex = [Regex]::new("([a-z*])($($prepositionReplacements.Keys -join "|"))([A-Z*]|$)", "Compiled")
 $stopwatch = [system.diagnostics.stopwatch]::StartNew()
