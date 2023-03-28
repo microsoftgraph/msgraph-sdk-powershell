@@ -42,7 +42,7 @@ steps:
 
   - task: PowerShell@2
     displayName: Download v1.0 OpenApi docs
-    condition: and(succeeded(), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false)
+    condition: and(succeeded(), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false))
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
@@ -51,7 +51,7 @@ steps:
 
   - task: PowerShell@2
     displayName: Download beta OpenApi docs
-    condition: and(succeeded(), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false)
+    condition: and(succeeded(), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false))
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
