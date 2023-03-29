@@ -21,11 +21,11 @@ steps:
       pwsh: true
       targetType: inline
       script: |
-        $BaseBranchName = ${{ parameters.BaseBranch }}
-        $Title = ${{ parameters.Title }}
-        $Body = ${{ parameters.Body }}
+        $BaseBranchName = "${{ parameters.BaseBranch }}"
+        $Title = "${{ parameters.Title }}"
+        $Body = "${{ parameters.Body }}"
 
         git status
         gh auth login
-        gh pr create -t "$Title" -b "$Body" -B $BaseBranchName
+        gh pr create -t $Title -b $Body -B $BaseBranchName
         git status
