@@ -3,52 +3,52 @@
 // ------------------------------------------------------------------------------
 
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Models
 {
     internal partial class JwtPayload
     {
-        [JsonProperty("exp")]
+        [JsonPropertyName("exp")]
         public long Exp { get; set; }
 
-        [JsonProperty("aud")]
+        [JsonPropertyName("aud")]
         public Uri Aud { get; set; }
 
-        [JsonProperty("iss")]
+        [JsonPropertyName("iss")]
         public Uri Iss { get; set; }
 
-        [JsonProperty("app_displayname")]
+        [JsonPropertyName("app_displayname")]
         public string AppDisplayname { get; set; }
 
-        [JsonProperty("appid")]
+        [JsonPropertyName("appid")]
         public string Appid { get; set; }
 
-        [JsonProperty("family_name")]
+        [JsonPropertyName("family_name")]
         public string FamilyName { get; set; }
 
-        [JsonProperty("given_name")]
+        [JsonPropertyName("given_name")]
         public string GivenName { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("oid")]
+        [JsonPropertyName("oid")]
         public string Oid { get; set; }
 
-        [JsonProperty("scp")]
+        [JsonPropertyName("scp")]
         public string Scp { get; set; }
 
-        [JsonProperty("roles")]
+        [JsonPropertyName("roles")]
         public string[] Roles { get; set; }
 
-        [JsonProperty("tid")]
+        [JsonPropertyName("tid")]
         public string Tid { get; set; }
 
-        [JsonProperty("unique_name")]
+        [JsonPropertyName("unique_name")]
         public string UniqueName { get; set; }
 
-        [JsonProperty("upn")]
+        [JsonPropertyName("upn")]
         public string Upn { get; set; }
     }
 }
