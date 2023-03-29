@@ -79,7 +79,7 @@ steps:
             }
           }
           $ModuleNames = $ModulesWithChanges.Keys
-        }        
+        }
         Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
 
   - task: PowerShell@2
