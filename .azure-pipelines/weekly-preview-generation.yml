@@ -113,5 +113,6 @@ jobs:
           - template: common-templates/create-pr.yml
             parameters:
               BaseBranch: $(BaseBranch)
+              TargetBranch: $(WeeklyBranch)
               Title: "[v2] Weekly OpenApiDocs Refresh"
               Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."

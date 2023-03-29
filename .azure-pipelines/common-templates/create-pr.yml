@@ -5,6 +5,9 @@ parameters:
   - name: BaseBranch
     type: string
     default: features/2.0
+  - name: TargetBranch
+    type: string
+    default: ""
   - name: Title
     type: string
     default: ""
@@ -22,10 +25,11 @@ steps:
       targetType: inline
       script: |
         $BaseBranchName = "${{ parameters.BaseBranch }}"
+        $Head = "microsoftgraph:${{ parameters.TargetBranch }}"
         $Title = "${{ parameters.Title }}"
         $Body = "${{ parameters.Body }}"
 
         git status
         gh auth login
         git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
-        gh pr create -t $Title -b $Body -B $BaseBranchName
+        gh pr create -t $Title -b $Body -B $BaseBranchName -H $Head
