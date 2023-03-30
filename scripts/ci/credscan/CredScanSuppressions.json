@@ -18,11 +18,17 @@
     },
     {
       "file": [
-        "src/Users.Actions/beta/examples/Test-MgBetaUserPassword.md",
-        "src/Users.Actions/beta/examples/Update-MgBetaUserPassword.md",
-        "src/Users.Actions/v1.0/examples/Update-MgUserPassword.md"
+        "src\\Users.Actions\\beta\\examples\\Test-MgBetaUserPassword.md",
+        "src\\Users.Actions\\beta\\examples\\Update-MgBetaUserPassword.md",
+        "src\\Users.Actions\\v1.0\\examples\\Update-MgUserPassword.md"
       ],
       "_justification": "[Users.Actions] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "src\\DeviceManagement.Actions\\beta\\examples\\Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword.md"
+      ],
+      "_justification": "[DeviceManagement.Actions] Examples contain random values recognized as secret"
     }
   ]
 }
