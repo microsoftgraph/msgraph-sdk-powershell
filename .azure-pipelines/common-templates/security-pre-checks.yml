@@ -4,10 +4,10 @@ steps:
   - task: CredScan@3
     displayName: "Run CredScan"
     inputs:
-      debugMode: true
-      toolMajorVersion: "V2"
+      debugMode: false
+      toolMajorVersion: V2
       scanFolder: '$(Build.SourcesDirectory)/src'
-      folderSuppression: '$(Build.SourcesDirectory)/src/**/**/examples'
+      suppressionsFile: './scripts/ci/credscan/CredScanSuppressions.json'
 
   - task: PoliCheck@2
     displayName: "Run PoliCheck"

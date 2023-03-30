@@ -1,0 +1,28 @@
+﻿{
+  "tool": "Credential Scanner",
+  "suppressions": [
+    {
+      "placeholder": "pa$$w0rd",
+      "_justification": "[Applications] hard code password in application password HTTP example"
+    },
+    {
+      "file": [
+        "src\\Applications\\beta\\examples\\New-MgBetaServicePrincipalPasswordSingleSignOnCredentials.md",
+        "src\\Applications\\beta\\examples\\Remove-MgBetaApplicationPassword.md",
+        "src\\Applications\\beta\\examples\\Update-MgBetaServicePrincipalPasswordSingleSignOnCredentials.md",
+        "src\\Applications\\v1.0\\examples\\Add-MgServicePrincipalPassword.md",
+        "src\\Applications\\v1.0\\examples\\Remove-MgApplicationPassword.md",
+        "src\\Applications\\v1.0\\examples\\Remove-MgServicePrincipalPassword.md"
+      ],
+      "_justification": "[Applications] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "src/Users.Actions/beta/examples/Test-MgBetaUserPassword.md",
+        "src/Users.Actions/beta/examples/Update-MgBetaUserPassword.md",
+        "src/Users.Actions/v1.0/examples/Update-MgUserPassword.md"
+      ],
+      "_justification": "[Users.Actions] Examples contain random values recognized as secret"
+    }
+  ]
+}
