@@ -261,7 +261,7 @@
                     {
                         ThrowTerminatingError(new System.Management.Automation.ErrorRecord(new System.Exception("InputObject has null value for InputObject.GroupId"), string.Empty, System.Management.Automation.ErrorCategory.InvalidArgument, InputObject));
                     }
-                    await this.Client.GroupsCreateOwnersGraphBPreRef(InputObject.GroupId, BodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateOwnersGraphBPreRef(InputObject.GroupId, BodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Runtime.UndeclaredResponseException urexception)
