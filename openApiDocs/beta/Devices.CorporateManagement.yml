@@ -11,7 +11,7 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagement
       summary: Get deviceAppManagement
-      operationId: deviceAppManagement.deviceAppManagement_GetDeviceAppManagement
+      operationId: deviceAppManagement_GetDeviceAppManagement
       parameters:
         - name: $select
           in: query
@@ -106,7 +106,7 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagement
       summary: Update deviceAppManagement
-      operationId: deviceAppManagement.deviceAppManagement_UpdateDeviceAppManagement
+      operationId: deviceAppManagement_UpdateDeviceAppManagement
       requestBody:
         description: New property values
         content:
@@ -116,11 +116,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceAppManagement'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -666,11 +662,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -706,7 +698,7 @@ paths:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.androidManagedAppProtections_ListApps
+      operationId: deviceAppManagement.androidManagedAppProtection_ListApps
       parameters:
         - name: androidManagedAppProtection-id
           in: path
@@ -777,7 +769,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Create new navigation property to apps for deviceAppManagement
-      operationId: deviceAppManagement.androidManagedAppProtections_CreateApps
+      operationId: deviceAppManagement.androidManagedAppProtection_CreateApps
       parameters:
         - name: androidManagedAppProtection-id
           in: path
@@ -810,7 +802,7 @@ paths:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.androidManagedAppProtections_GetApps
+      operationId: deviceAppManagement.androidManagedAppProtection_GetApps
       parameters:
         - name: androidManagedAppProtection-id
           in: path
@@ -868,7 +860,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Update the navigation property apps in deviceAppManagement
-      operationId: deviceAppManagement.androidManagedAppProtections_UpdateApps
+      operationId: deviceAppManagement.androidManagedAppProtection_UpdateApps
       parameters:
         - name: androidManagedAppProtection-id
           in: path
@@ -895,11 +887,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -907,7 +895,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Delete navigation property apps for deviceAppManagement
-      operationId: deviceAppManagement.androidManagedAppProtections_DeleteApps
+      operationId: deviceAppManagement.androidManagedAppProtection_DeleteApps
       parameters:
         - name: androidManagedAppProtection-id
           in: path
@@ -943,7 +931,7 @@ paths:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
       description: Navigation property to deployment summary of the configuration.
-      operationId: deviceAppManagement.androidManagedAppProtections_GetDeploymentSummary
+      operationId: deviceAppManagement.androidManagedAppProtection_GetDeploymentSummary
       parameters:
         - name: androidManagedAppProtection-id
           in: path
@@ -996,7 +984,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Update the navigation property deploymentSummary in deviceAppManagement
-      operationId: deviceAppManagement.androidManagedAppProtections_UpdateDeploymentSummary
+      operationId: deviceAppManagement.androidManagedAppProtection_UpdateDeploymentSummary
       parameters:
         - name: androidManagedAppProtection-id
           in: path
@@ -1015,11 +1003,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1027,7 +1011,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Delete navigation property deploymentSummary for deviceAppManagement
-      operationId: deviceAppManagement.androidManagedAppProtections_DeleteDeploymentSummary
+      operationId: deviceAppManagement.androidManagedAppProtection_DeleteDeploymentSummary
       parameters:
         - name: androidManagedAppProtection-id
           in: path
@@ -1054,7 +1038,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceAppManagement.androidManagedAppProtections_hasPayloadLinks
+      operationId: deviceAppManagement.androidManagedAppProtection_hasPayloadLinks
       requestBody:
         description: Action parameters
         content:
@@ -1671,11 +1655,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1711,7 +1691,7 @@ paths:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.defaultManagedAppProtections_ListApps
+      operationId: deviceAppManagement.defaultManagedAppProtection_ListApps
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
@@ -1782,7 +1762,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Create new navigation property to apps for deviceAppManagement
-      operationId: deviceAppManagement.defaultManagedAppProtections_CreateApps
+      operationId: deviceAppManagement.defaultManagedAppProtection_CreateApps
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
@@ -1815,7 +1795,7 @@ paths:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.defaultManagedAppProtections_GetApps
+      operationId: deviceAppManagement.defaultManagedAppProtection_GetApps
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
@@ -1873,7 +1853,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Update the navigation property apps in deviceAppManagement
-      operationId: deviceAppManagement.defaultManagedAppProtections_UpdateApps
+      operationId: deviceAppManagement.defaultManagedAppProtection_UpdateApps
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
@@ -1900,11 +1880,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1912,7 +1888,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Delete navigation property apps for deviceAppManagement
-      operationId: deviceAppManagement.defaultManagedAppProtections_DeleteApps
+      operationId: deviceAppManagement.defaultManagedAppProtection_DeleteApps
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
@@ -1948,7 +1924,7 @@ paths:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
       description: Navigation property to deployment summary of the configuration.
-      operationId: deviceAppManagement.defaultManagedAppProtections_GetDeploymentSummary
+      operationId: deviceAppManagement.defaultManagedAppProtection_GetDeploymentSummary
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
@@ -2001,7 +1977,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Update the navigation property deploymentSummary in deviceAppManagement
-      operationId: deviceAppManagement.defaultManagedAppProtections_UpdateDeploymentSummary
+      operationId: deviceAppManagement.defaultManagedAppProtection_UpdateDeploymentSummary
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
@@ -2020,11 +1996,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2032,7 +2004,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Delete navigation property deploymentSummary for deviceAppManagement
-      operationId: deviceAppManagement.defaultManagedAppProtections_DeleteDeploymentSummary
+      operationId: deviceAppManagement.defaultManagedAppProtection_DeleteDeploymentSummary
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
@@ -2248,11 +2220,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2288,7 +2256,7 @@ paths:
         - deviceAppManagement.Actions
       summary: Invoke action updateStatus
       description: Set the task's status and attach a note.
-      operationId: deviceAppManagement.deviceAppManagementTasks_updateStatus
+      operationId: deviceAppManagement.deviceAppManagementTask_updateStatus
       parameters:
         - name: deviceAppManagementTask-id
           in: path
@@ -2505,11 +2473,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.enterpriseCodeSigningCertificate'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2745,11 +2709,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfiguration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2785,7 +2745,7 @@ paths:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get assignments from deviceAppManagement
       description: The associated group assignments for IosLobAppProvisioningConfiguration.
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_ListAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -2853,7 +2813,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Create new navigation property to assignments for deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_CreateAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_CreateAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -2886,7 +2846,7 @@ paths:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get assignments from deviceAppManagement
       description: The associated group assignments for IosLobAppProvisioningConfiguration.
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_GetAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -2943,7 +2903,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Update the navigation property assignments in deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_UpdateAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_UpdateAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -2970,11 +2930,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfigurationAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2982,7 +2938,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Delete navigation property assignments for deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_DeleteAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_DeleteAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3018,7 +2974,7 @@ paths:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get deviceStatuses from deviceAppManagement
       description: The list of device installation states for this mobile app configuration.
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListDeviceStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_ListDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3107,7 +3063,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_CreateDeviceStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_CreateDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3140,7 +3096,7 @@ paths:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get deviceStatuses from deviceAppManagement
       description: The list of device installation states for this mobile app configuration.
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetDeviceStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_GetDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3204,7 +3160,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Update the navigation property deviceStatuses in deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_UpdateDeviceStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_UpdateDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3231,11 +3187,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3243,7 +3195,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Delete navigation property deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_DeleteDeviceStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_DeleteDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3279,7 +3231,7 @@ paths:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get groupAssignments from deviceAppManagement
       description: The associated group assignments.
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListGroupAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_ListGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3347,7 +3299,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Create new navigation property to groupAssignments for deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_CreateGroupAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_CreateGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3380,7 +3332,7 @@ paths:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get groupAssignments from deviceAppManagement
       description: The associated group assignments.
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetGroupAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_GetGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3437,7 +3389,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Update the navigation property groupAssignments in deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_UpdateGroupAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_UpdateGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3464,11 +3416,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppProvisioningConfigGroupAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3476,7 +3424,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Delete navigation property groupAssignments for deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_DeleteGroupAssignments
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_DeleteGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3511,7 +3459,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_assign
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_assign
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3551,7 +3499,7 @@ paths:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get userStatuses from deviceAppManagement
       description: The list of user installation states for this mobile app configuration.
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListUserStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_ListUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3631,7 +3579,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Create new navigation property to userStatuses for deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_CreateUserStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_CreateUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3664,7 +3612,7 @@ paths:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get userStatuses from deviceAppManagement
       description: The list of user installation states for this mobile app configuration.
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetUserStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_GetUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3725,7 +3673,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Update the navigation property userStatuses in deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_UpdateUserStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_UpdateUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3752,11 +3700,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3764,7 +3708,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Delete navigation property userStatuses for deviceAppManagement
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_DeleteUserStatuses
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_DeleteUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
           in: path
@@ -3799,7 +3743,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_hasPayloadLinks
+      operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_hasPayloadLinks
       requestBody:
         description: Action parameters
         content:
@@ -4292,11 +4236,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4332,7 +4272,7 @@ paths:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.iosManagedAppProtections_ListApps
+      operationId: deviceAppManagement.iosManagedAppProtection_ListApps
       parameters:
         - name: iosManagedAppProtection-id
           in: path
@@ -4403,7 +4343,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Create new navigation property to apps for deviceAppManagement
-      operationId: deviceAppManagement.iosManagedAppProtections_CreateApps
+      operationId: deviceAppManagement.iosManagedAppProtection_CreateApps
       parameters:
         - name: iosManagedAppProtection-id
           in: path
@@ -4436,7 +4376,7 @@ paths:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.iosManagedAppProtections_GetApps
+      operationId: deviceAppManagement.iosManagedAppProtection_GetApps
       parameters:
         - name: iosManagedAppProtection-id
           in: path
@@ -4494,7 +4434,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Update the navigation property apps in deviceAppManagement
-      operationId: deviceAppManagement.iosManagedAppProtections_UpdateApps
+      operationId: deviceAppManagement.iosManagedAppProtection_UpdateApps
       parameters:
         - name: iosManagedAppProtection-id
           in: path
@@ -4521,11 +4461,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4533,7 +4469,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Delete navigation property apps for deviceAppManagement
-      operationId: deviceAppManagement.iosManagedAppProtections_DeleteApps
+      operationId: deviceAppManagement.iosManagedAppProtection_DeleteApps
       parameters:
         - name: iosManagedAppProtection-id
           in: path
@@ -4569,7 +4505,7 @@ paths:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
       description: Navigation property to deployment summary of the configuration.
-      operationId: deviceAppManagement.iosManagedAppProtections_GetDeploymentSummary
+      operationId: deviceAppManagement.iosManagedAppProtection_GetDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
           in: path
@@ -4622,7 +4558,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Update the navigation property deploymentSummary in deviceAppManagement
-      operationId: deviceAppManagement.iosManagedAppProtections_UpdateDeploymentSummary
+      operationId: deviceAppManagement.iosManagedAppProtection_UpdateDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
           in: path
@@ -4641,11 +4577,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4653,7 +4585,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Delete navigation property deploymentSummary for deviceAppManagement
-      operationId: deviceAppManagement.iosManagedAppProtections_DeleteDeploymentSummary
+      operationId: deviceAppManagement.iosManagedAppProtection_DeleteDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
           in: path
@@ -4680,7 +4612,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceAppManagement.iosManagedAppProtections_hasPayloadLinks
+      operationId: deviceAppManagement.iosManagedAppProtection_hasPayloadLinks
       requestBody:
         description: Action parameters
         content:
@@ -4897,11 +4829,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4936,7 +4864,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.managedAppPolicies_targetApps
+      operationId: deviceAppManagement.managedAppPolicy_targetApps
       parameters:
         - name: managedAppPolicy-id
           in: path
@@ -5196,11 +5124,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5236,7 +5160,7 @@ paths:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
       description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
-      operationId: deviceAppManagement.managedAppRegistrations_ListAppliedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_ListAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5319,7 +5243,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Create new navigation property to appliedPolicies for deviceAppManagement
-      operationId: deviceAppManagement.managedAppRegistrations_CreateAppliedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_CreateAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5352,7 +5276,7 @@ paths:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
       description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
-      operationId: deviceAppManagement.managedAppRegistrations_GetAppliedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_GetAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5414,7 +5338,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Update the navigation property appliedPolicies in deviceAppManagement
-      operationId: deviceAppManagement.managedAppRegistrations_UpdateAppliedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_UpdateAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5441,11 +5365,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5453,7 +5373,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Delete navigation property appliedPolicies for deviceAppManagement
-      operationId: deviceAppManagement.managedAppRegistrations_DeleteAppliedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_DeleteAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5488,7 +5408,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.managedAppRegistrations.appliedPolicies_targetApps
+      operationId: deviceAppManagement.managedAppRegistration.appliedPolicy_targetApps
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5532,7 +5452,7 @@ paths:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
       description: Zero or more policies admin intended for the app as of now.
-      operationId: deviceAppManagement.managedAppRegistrations_ListIntendedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_ListIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5615,7 +5535,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Create new navigation property to intendedPolicies for deviceAppManagement
-      operationId: deviceAppManagement.managedAppRegistrations_CreateIntendedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_CreateIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5648,7 +5568,7 @@ paths:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
       description: Zero or more policies admin intended for the app as of now.
-      operationId: deviceAppManagement.managedAppRegistrations_GetIntendedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_GetIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5710,7 +5630,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Update the navigation property intendedPolicies in deviceAppManagement
-      operationId: deviceAppManagement.managedAppRegistrations_UpdateIntendedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_UpdateIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5737,11 +5657,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5749,7 +5665,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Delete navigation property intendedPolicies for deviceAppManagement
-      operationId: deviceAppManagement.managedAppRegistrations_DeleteIntendedPolicies
+      operationId: deviceAppManagement.managedAppRegistration_DeleteIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5784,7 +5700,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.managedAppRegistrations.intendedPolicies_targetApps
+      operationId: deviceAppManagement.managedAppRegistration.intendedPolicy_targetApps
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5828,7 +5744,7 @@ paths:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
       description: Zero or more long running operations triggered on the app registration.
-      operationId: deviceAppManagement.managedAppRegistrations_ListOperations
+      operationId: deviceAppManagement.managedAppRegistration_ListOperations
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5905,7 +5821,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Create new navigation property to operations for deviceAppManagement
-      operationId: deviceAppManagement.managedAppRegistrations_CreateOperations
+      operationId: deviceAppManagement.managedAppRegistration_CreateOperations
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5938,7 +5854,7 @@ paths:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
       description: Zero or more long running operations triggered on the app registration.
-      operationId: deviceAppManagement.managedAppRegistrations_GetOperations
+      operationId: deviceAppManagement.managedAppRegistration_GetOperations
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5998,7 +5914,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Update the navigation property operations in deviceAppManagement
-      operationId: deviceAppManagement.managedAppRegistrations_UpdateOperations
+      operationId: deviceAppManagement.managedAppRegistration_UpdateOperations
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -6025,11 +5941,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6037,7 +5949,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Delete navigation property operations for deviceAppManagement
-      operationId: deviceAppManagement.managedAppRegistrations_DeleteOperations
+      operationId: deviceAppManagement.managedAppRegistration_DeleteOperations
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -6072,7 +5984,7 @@ paths:
       tags:
         - deviceAppManagement.Functions
       summary: Invoke function getUserIdsWithFlaggedAppRegistration
-      operationId: deviceAppManagement.managedAppRegistrations_getUserIdsGraphWPreFlaggedAppRegistration
+      operationId: deviceAppManagement.managedAppRegistration_getUserIdsGraphWPreFlaggedAppRegistration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6265,11 +6177,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6461,11 +6369,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6705,11 +6609,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedEBook'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6745,7 +6645,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
       description: The list of assignments for this eBook.
-      operationId: deviceAppManagement.managedEBooks_ListAssignments
+      operationId: deviceAppManagement.managedEBook_ListAssignments
       parameters:
         - name: managedEBook-id
           in: path
@@ -6816,7 +6716,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property to assignments for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_CreateAssignments
+      operationId: deviceAppManagement.managedEBook_CreateAssignments
       parameters:
         - name: managedEBook-id
           in: path
@@ -6849,7 +6749,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
       description: The list of assignments for this eBook.
-      operationId: deviceAppManagement.managedEBooks_GetAssignments
+      operationId: deviceAppManagement.managedEBook_GetAssignments
       parameters:
         - name: managedEBook-id
           in: path
@@ -6907,7 +6807,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property assignments in deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_UpdateAssignments
+      operationId: deviceAppManagement.managedEBook_UpdateAssignments
       parameters:
         - name: managedEBook-id
           in: path
@@ -6934,11 +6834,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6946,7 +6842,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property assignments for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_DeleteAssignments
+      operationId: deviceAppManagement.managedEBook_DeleteAssignments
       parameters:
         - name: managedEBook-id
           in: path
@@ -6982,7 +6878,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get categories from deviceAppManagement
       description: The list of categories for this eBook.
-      operationId: deviceAppManagement.managedEBooks_ListCategories
+      operationId: deviceAppManagement.managedEBook_ListCategories
       parameters:
         - name: managedEBook-id
           in: path
@@ -7055,7 +6951,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get categories from deviceAppManagement
       description: The list of categories for this eBook.
-      operationId: deviceAppManagement.managedEBooks_GetCategories
+      operationId: deviceAppManagement.managedEBook_GetCategories
       parameters:
         - name: managedEBook-id
           in: path
@@ -7115,7 +7011,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
       description: The list of installation states for this eBook.
-      operationId: deviceAppManagement.managedEBooks_ListDeviceStates
+      operationId: deviceAppManagement.managedEBook_ListDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -7204,7 +7100,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property to deviceStates for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_CreateDeviceStates
+      operationId: deviceAppManagement.managedEBook_CreateDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -7237,7 +7133,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
       description: The list of installation states for this eBook.
-      operationId: deviceAppManagement.managedEBooks_GetDeviceStates
+      operationId: deviceAppManagement.managedEBook_GetDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -7301,7 +7197,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property deviceStates in deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_UpdateDeviceStates
+      operationId: deviceAppManagement.managedEBook_UpdateDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -7328,11 +7224,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7340,7 +7232,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property deviceStates for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_DeleteDeviceStates
+      operationId: deviceAppManagement.managedEBook_DeleteDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -7376,7 +7268,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get installSummary from deviceAppManagement
       description: Mobile App Install Summary.
-      operationId: deviceAppManagement.managedEBooks_GetInstallSummary
+      operationId: deviceAppManagement.managedEBook_GetInstallSummary
       parameters:
         - name: managedEBook-id
           in: path
@@ -7430,7 +7322,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property installSummary in deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_UpdateInstallSummary
+      operationId: deviceAppManagement.managedEBook_UpdateInstallSummary
       parameters:
         - name: managedEBook-id
           in: path
@@ -7449,11 +7341,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.eBookInstallSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7461,7 +7349,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property installSummary for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_DeleteInstallSummary
+      operationId: deviceAppManagement.managedEBook_DeleteInstallSummary
       parameters:
         - name: managedEBook-id
           in: path
@@ -7488,7 +7376,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.managedEBooks_assign
+      operationId: deviceAppManagement.managedEBook_assign
       parameters:
         - name: managedEBook-id
           in: path
@@ -7524,7 +7412,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
       description: The list of installation states for this eBook.
-      operationId: deviceAppManagement.managedEBooks_ListUserStateSummary
+      operationId: deviceAppManagement.managedEBook_ListUserStateSummary
       parameters:
         - name: managedEBook-id
           in: path
@@ -7603,7 +7491,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property to userStateSummary for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_CreateUserStateSummary
+      operationId: deviceAppManagement.managedEBook_CreateUserStateSummary
       parameters:
         - name: managedEBook-id
           in: path
@@ -7636,7 +7524,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
       description: The list of installation states for this eBook.
-      operationId: deviceAppManagement.managedEBooks_GetUserStateSummary
+      operationId: deviceAppManagement.managedEBook_GetUserStateSummary
       parameters:
         - name: managedEBook-id
           in: path
@@ -7698,7 +7586,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property userStateSummary in deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_UpdateUserStateSummary
+      operationId: deviceAppManagement.managedEBook_UpdateUserStateSummary
       parameters:
         - name: managedEBook-id
           in: path
@@ -7725,11 +7613,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7737,7 +7621,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property userStateSummary for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_DeleteUserStateSummary
+      operationId: deviceAppManagement.managedEBook_DeleteUserStateSummary
       parameters:
         - name: managedEBook-id
           in: path
@@ -7773,7 +7657,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
       description: The install state of the eBook.
-      operationId: deviceAppManagement.managedEBooks.userStateSummary_ListDeviceStates
+      operationId: deviceAppManagement.managedEBook.userStateSummary_ListDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -7870,7 +7754,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property to deviceStates for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks.userStateSummary_CreateDeviceStates
+      operationId: deviceAppManagement.managedEBook.userStateSummary_CreateDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -7911,7 +7795,7 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
       description: The install state of the eBook.
-      operationId: deviceAppManagement.managedEBooks.userStateSummary_GetDeviceStates
+      operationId: deviceAppManagement.managedEBook.userStateSummary_GetDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -7983,7 +7867,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property deviceStates in deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks.userStateSummary_UpdateDeviceStates
+      operationId: deviceAppManagement.managedEBook.userStateSummary_UpdateDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -8018,11 +7902,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8030,7 +7910,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property deviceStates for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks.userStateSummary_DeleteDeviceStates
+      operationId: deviceAppManagement.managedEBook.userStateSummary_DeleteDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
@@ -8346,11 +8226,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8385,7 +8261,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceAppManagement.mdmWindowsInformationProtectionPolicies_hasPayloadLinks
+      operationId: deviceAppManagement.mdmWindowsInformationProtectionPolicy_hasPayloadLinks
       requestBody:
         description: Action parameters
         content:
@@ -8599,11 +8475,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8835,11 +8707,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8875,7 +8743,7 @@ paths:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
       description: The list of group assignemenets for app configration.
-      operationId: deviceAppManagement.mobileAppConfigurations_ListAssignments
+      operationId: deviceAppManagement.mobileAppConfiguration_ListAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -8943,7 +8811,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Create new navigation property to assignments for deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_CreateAssignments
+      operationId: deviceAppManagement.mobileAppConfiguration_CreateAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -8976,7 +8844,7 @@ paths:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
       description: The list of group assignemenets for app configration.
-      operationId: deviceAppManagement.mobileAppConfigurations_GetAssignments
+      operationId: deviceAppManagement.mobileAppConfiguration_GetAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9033,7 +8901,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property assignments in deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_UpdateAssignments
+      operationId: deviceAppManagement.mobileAppConfiguration_UpdateAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9060,11 +8928,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9072,7 +8936,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property assignments for deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_DeleteAssignments
+      operationId: deviceAppManagement.mobileAppConfiguration_DeleteAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9108,7 +8972,7 @@ paths:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
       description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-      operationId: deviceAppManagement.mobileAppConfigurations_ListDeviceStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_ListDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9197,7 +9061,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_CreateDeviceStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_CreateDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9230,7 +9094,7 @@ paths:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
       description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-      operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_GetDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9294,7 +9158,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property deviceStatuses in deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_UpdateDeviceStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_UpdateDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9321,11 +9185,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9333,7 +9193,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_DeleteDeviceStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_DeleteDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9369,7 +9229,7 @@ paths:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatusSummary from deviceAppManagement
       description: App configuration device status summary.
-      operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatusSummary
+      operationId: deviceAppManagement.mobileAppConfiguration_GetDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9426,7 +9286,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property deviceStatusSummary in deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_UpdateDeviceStatusSummary
+      operationId: deviceAppManagement.mobileAppConfiguration_UpdateDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9445,11 +9305,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9457,7 +9313,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property deviceStatusSummary for deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_DeleteDeviceStatusSummary
+      operationId: deviceAppManagement.mobileAppConfiguration_DeleteDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9484,7 +9340,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.mobileAppConfigurations_assign
+      operationId: deviceAppManagement.mobileAppConfiguration_assign
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9520,7 +9376,7 @@ paths:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
       description: List of ManagedDeviceMobileAppConfigurationUserStatus.
-      operationId: deviceAppManagement.mobileAppConfigurations_ListUserStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_ListUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9600,7 +9456,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Create new navigation property to userStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_CreateUserStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_CreateUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9633,7 +9489,7 @@ paths:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
       description: List of ManagedDeviceMobileAppConfigurationUserStatus.
-      operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_GetUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9694,7 +9550,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property userStatuses in deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_UpdateUserStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_UpdateUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9721,11 +9577,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9733,7 +9585,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property userStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_DeleteUserStatuses
+      operationId: deviceAppManagement.mobileAppConfiguration_DeleteUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9769,7 +9621,7 @@ paths:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatusSummary from deviceAppManagement
       description: App configuration user status summary.
-      operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatusSummary
+      operationId: deviceAppManagement.mobileAppConfiguration_GetUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9825,7 +9677,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property userStatusSummary in deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_UpdateUserStatusSummary
+      operationId: deviceAppManagement.mobileAppConfiguration_UpdateUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -9844,11 +9696,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9856,7 +9704,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property userStatusSummary for deviceAppManagement
-      operationId: deviceAppManagement.mobileAppConfigurations_DeleteUserStatusSummary
+      operationId: deviceAppManagement.mobileAppConfiguration_DeleteUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -10132,11 +9980,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileApp'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10172,7 +10016,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
       description: The list of group assignments for this mobile app.
-      operationId: deviceAppManagement.mobileApps_ListAssignments
+      operationId: deviceAppManagement.mobileApp_ListAssignments
       parameters:
         - name: mobileApp-id
           in: path
@@ -10252,7 +10096,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to assignments for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_CreateAssignments
+      operationId: deviceAppManagement.mobileApp_CreateAssignments
       parameters:
         - name: mobileApp-id
           in: path
@@ -10285,7 +10129,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
       description: The list of group assignments for this mobile app.
-      operationId: deviceAppManagement.mobileApps_GetAssignments
+      operationId: deviceAppManagement.mobileApp_GetAssignments
       parameters:
         - name: mobileApp-id
           in: path
@@ -10346,7 +10190,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property assignments in deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_UpdateAssignments
+      operationId: deviceAppManagement.mobileApp_UpdateAssignments
       parameters:
         - name: mobileApp-id
           in: path
@@ -10373,11 +10217,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10385,7 +10225,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property assignments for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_DeleteAssignments
+      operationId: deviceAppManagement.mobileApp_DeleteAssignments
       parameters:
         - name: mobileApp-id
           in: path
@@ -10421,7 +10261,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get categories from deviceAppManagement
       description: The list of categories for this app.
-      operationId: deviceAppManagement.mobileApps_ListCategories
+      operationId: deviceAppManagement.mobileApp_ListCategories
       parameters:
         - name: mobileApp-id
           in: path
@@ -10494,7 +10334,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get categories from deviceAppManagement
       description: The list of categories for this app.
-      operationId: deviceAppManagement.mobileApps_GetCategories
+      operationId: deviceAppManagement.mobileApp_GetCategories
       parameters:
         - name: mobileApp-id
           in: path
@@ -10554,7 +10394,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
       description: The list of installation states for this mobile app.
-      operationId: deviceAppManagement.mobileApps_ListDeviceStatuses
+      operationId: deviceAppManagement.mobileApp_ListDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -10657,7 +10497,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_CreateDeviceStatuses
+      operationId: deviceAppManagement.mobileApp_CreateDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -10690,7 +10530,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
       description: The list of installation states for this mobile app.
-      operationId: deviceAppManagement.mobileApps_GetDeviceStatuses
+      operationId: deviceAppManagement.mobileApp_GetDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -10760,7 +10600,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property deviceStatuses in deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_UpdateDeviceStatuses
+      operationId: deviceAppManagement.mobileApp_UpdateDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -10787,11 +10627,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10799,7 +10635,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_DeleteDeviceStatuses
+      operationId: deviceAppManagement.mobileApp_DeleteDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -10835,7 +10671,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get app from deviceAppManagement
       description: The navigation link to the mobile app.
-      operationId: deviceAppManagement.mobileApps.deviceStatuses_GetApp
+      operationId: deviceAppManagement.mobileApp.deviceStatus_GetApp
       parameters:
         - name: mobileApp-id
           in: path
@@ -10924,7 +10760,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get installSummary from deviceAppManagement
       description: Mobile App Install Summary.
-      operationId: deviceAppManagement.mobileApps_GetInstallSummary
+      operationId: deviceAppManagement.mobileApp_GetInstallSummary
       parameters:
         - name: mobileApp-id
           in: path
@@ -10982,7 +10818,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property installSummary in deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_UpdateInstallSummary
+      operationId: deviceAppManagement.mobileApp_UpdateInstallSummary
       parameters:
         - name: mobileApp-id
           in: path
@@ -11001,11 +10837,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11013,7 +10845,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property installSummary for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_DeleteInstallSummary
+      operationId: deviceAppManagement.mobileApp_DeleteInstallSummary
       parameters:
         - name: mobileApp-id
           in: path
@@ -11040,7 +10872,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.mobileApps_assign
+      operationId: deviceAppManagement.mobileApp_assign
       parameters:
         - name: mobileApp-id
           in: path
@@ -11075,7 +10907,7 @@ paths:
       tags:
         - deviceAppManagement.Functions
       summary: Invoke function getRelatedAppStates
-      operationId: deviceAppManagement.mobileApps_getRelatedAppStates
+      operationId: deviceAppManagement.mobileApp_getRelatedAppStates
       parameters:
         - name: mobileApp-id
           in: path
@@ -11134,7 +10966,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action updateRelationships
-      operationId: deviceAppManagement.mobileApps_updateRelationships
+      operationId: deviceAppManagement.mobileApp_updateRelationships
       parameters:
         - name: mobileApp-id
           in: path
@@ -11170,7 +11002,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
       description: List of relationships for this mobile app.
-      operationId: deviceAppManagement.mobileApps_ListRelationships
+      operationId: deviceAppManagement.mobileApp_ListRelationships
       parameters:
         - name: mobileApp-id
           in: path
@@ -11250,7 +11082,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to relationships for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_CreateRelationships
+      operationId: deviceAppManagement.mobileApp_CreateRelationships
       parameters:
         - name: mobileApp-id
           in: path
@@ -11283,7 +11115,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
       description: List of relationships for this mobile app.
-      operationId: deviceAppManagement.mobileApps_GetRelationships
+      operationId: deviceAppManagement.mobileApp_GetRelationships
       parameters:
         - name: mobileApp-id
           in: path
@@ -11344,7 +11176,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property relationships in deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_UpdateRelationships
+      operationId: deviceAppManagement.mobileApp_UpdateRelationships
       parameters:
         - name: mobileApp-id
           in: path
@@ -11371,11 +11203,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11383,7 +11211,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property relationships for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_DeleteRelationships
+      operationId: deviceAppManagement.mobileApp_DeleteRelationships
       parameters:
         - name: mobileApp-id
           in: path
@@ -11419,7 +11247,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get userStatuses from deviceAppManagement
       description: The list of installation states for this mobile app.
-      operationId: deviceAppManagement.mobileApps_ListUserStatuses
+      operationId: deviceAppManagement.mobileApp_ListUserStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -11503,7 +11331,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to userStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_CreateUserStatuses
+      operationId: deviceAppManagement.mobileApp_CreateUserStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -11536,7 +11364,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get userStatuses from deviceAppManagement
       description: The list of installation states for this mobile app.
-      operationId: deviceAppManagement.mobileApps_GetUserStatuses
+      operationId: deviceAppManagement.mobileApp_GetUserStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -11601,7 +11429,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property userStatuses in deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_UpdateUserStatuses
+      operationId: deviceAppManagement.mobileApp_UpdateUserStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -11628,11 +11456,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11640,7 +11464,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property userStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_DeleteUserStatuses
+      operationId: deviceAppManagement.mobileApp_DeleteUserStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -11676,7 +11500,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get app from deviceAppManagement
       description: The navigation link to the mobile app.
-      operationId: deviceAppManagement.mobileApps.userStatuses_GetApp
+      operationId: deviceAppManagement.mobileApp.userStatus_GetApp
       parameters:
         - name: mobileApp-id
           in: path
@@ -11765,7 +11589,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
       description: The install state of the app on devices.
-      operationId: deviceAppManagement.mobileApps.userStatuses_ListDeviceStatuses
+      operationId: deviceAppManagement.mobileApp.userStatus_ListDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -11876,7 +11700,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps.userStatuses_CreateDeviceStatuses
+      operationId: deviceAppManagement.mobileApp.userStatus_CreateDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -11917,7 +11741,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
       description: The install state of the app on devices.
-      operationId: deviceAppManagement.mobileApps.userStatuses_GetDeviceStatuses
+      operationId: deviceAppManagement.mobileApp.userStatus_GetDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -11995,7 +11819,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property deviceStatuses in deviceAppManagement
-      operationId: deviceAppManagement.mobileApps.userStatuses_UpdateDeviceStatuses
+      operationId: deviceAppManagement.mobileApp.userStatus_UpdateDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -12030,11 +11854,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12042,7 +11862,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps.userStatuses_DeleteDeviceStatuses
+      operationId: deviceAppManagement.mobileApp.userStatus_DeleteDeviceStatuses
       parameters:
         - name: mobileApp-id
           in: path
@@ -12086,7 +11906,7 @@ paths:
         - deviceAppManagement.mobileApp
       summary: Get app from deviceAppManagement
       description: The navigation link to the mobile app.
-      operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses_GetApp
+      operationId: deviceAppManagement.mobileApp.userStatus.deviceStatus_GetApp
       parameters:
         - name: mobileApp-id
           in: path
@@ -12182,7 +12002,7 @@ paths:
       tags:
         - deviceAppManagement.Functions
       summary: Invoke function getMobileAppCount
-      operationId: deviceAppManagement.mobileApps_getMobileAppCount
+      operationId: deviceAppManagement.mobileApp_getMobileAppCount
       parameters:
         - name: status
           in: path
@@ -12213,7 +12033,7 @@ paths:
       tags:
         - deviceAppManagement.Functions
       summary: Invoke function getTopMobileApps
-      operationId: deviceAppManagement.mobileApps_getTopMobileApps
+      operationId: deviceAppManagement.mobileApp_getTopMobileApps
       parameters:
         - name: status
           in: path
@@ -12353,7 +12173,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceAppManagement.mobileApps_hasPayloadLinks
+      operationId: deviceAppManagement.mobileApp_hasPayloadLinks
       requestBody:
         description: Action parameters
         content:
@@ -12397,7 +12217,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action validateXml
-      operationId: deviceAppManagement.mobileApps_validateXml
+      operationId: deviceAppManagement.mobileApp_validateXml
       requestBody:
         description: Action parameters
         content:
@@ -12621,11 +12441,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.policySet'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12661,7 +12477,7 @@ paths:
         - deviceAppManagement.policySet
       summary: Get assignments from deviceAppManagement
       description: Assignments of the PolicySet.
-      operationId: deviceAppManagement.policySets_ListAssignments
+      operationId: deviceAppManagement.policySet_ListAssignments
       parameters:
         - name: policySet-id
           in: path
@@ -12732,7 +12548,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Create new navigation property to assignments for deviceAppManagement
-      operationId: deviceAppManagement.policySets_CreateAssignments
+      operationId: deviceAppManagement.policySet_CreateAssignments
       parameters:
         - name: policySet-id
           in: path
@@ -12765,7 +12581,7 @@ paths:
         - deviceAppManagement.policySet
       summary: Get assignments from deviceAppManagement
       description: Assignments of the PolicySet.
-      operationId: deviceAppManagement.policySets_GetAssignments
+      operationId: deviceAppManagement.policySet_GetAssignments
       parameters:
         - name: policySet-id
           in: path
@@ -12823,7 +12639,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Update the navigation property assignments in deviceAppManagement
-      operationId: deviceAppManagement.policySets_UpdateAssignments
+      operationId: deviceAppManagement.policySet_UpdateAssignments
       parameters:
         - name: policySet-id
           in: path
@@ -12850,11 +12666,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.policySetAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12862,7 +12674,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Delete navigation property assignments for deviceAppManagement
-      operationId: deviceAppManagement.policySets_DeleteAssignments
+      operationId: deviceAppManagement.policySet_DeleteAssignments
       parameters:
         - name: policySet-id
           in: path
@@ -12898,7 +12710,7 @@ paths:
         - deviceAppManagement.policySet
       summary: Get items from deviceAppManagement
       description: Items of the PolicySet with maximum count 100.
-      operationId: deviceAppManagement.policySets_ListItems
+      operationId: deviceAppManagement.policySet_ListItems
       parameters:
         - name: policySet-id
           in: path
@@ -12987,7 +12799,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Create new navigation property to items for deviceAppManagement
-      operationId: deviceAppManagement.policySets_CreateItems
+      operationId: deviceAppManagement.policySet_CreateItems
       parameters:
         - name: policySet-id
           in: path
@@ -13020,7 +12832,7 @@ paths:
         - deviceAppManagement.policySet
       summary: Get items from deviceAppManagement
       description: Items of the PolicySet with maximum count 100.
-      operationId: deviceAppManagement.policySets_GetItems
+      operationId: deviceAppManagement.policySet_GetItems
       parameters:
         - name: policySet-id
           in: path
@@ -13084,7 +12896,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Update the navigation property items in deviceAppManagement
-      operationId: deviceAppManagement.policySets_UpdateItems
+      operationId: deviceAppManagement.policySet_UpdateItems
       parameters:
         - name: policySet-id
           in: path
@@ -13111,11 +12923,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.policySetItem'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13123,7 +12931,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Delete navigation property items for deviceAppManagement
-      operationId: deviceAppManagement.policySets_DeleteItems
+      operationId: deviceAppManagement.policySet_DeleteItems
       parameters:
         - name: policySet-id
           in: path
@@ -13158,7 +12966,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action update
-      operationId: deviceAppManagement.policySets_update
+      operationId: deviceAppManagement.policySet_update
       parameters:
         - name: policySet-id
           in: path
@@ -13206,7 +13014,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action getPolicySets
-      operationId: deviceAppManagement.policySets_getPolicySets
+      operationId: deviceAppManagement.policySet_getPolicySets
       requestBody:
         description: Action parameters
         content:
@@ -13311,11 +13119,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.symantecCodeSigningCertificate'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13551,11 +13355,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13591,7 +13391,7 @@ paths:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_ListApps
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_ListApps
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -13662,7 +13462,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Create new navigation property to apps for deviceAppManagement
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_CreateApps
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_CreateApps
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -13695,7 +13495,7 @@ paths:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_GetApps
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_GetApps
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -13753,7 +13553,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Update the navigation property apps in deviceAppManagement
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_UpdateApps
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_UpdateApps
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -13780,11 +13580,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13792,7 +13588,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Delete navigation property apps for deviceAppManagement
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_DeleteApps
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_DeleteApps
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -13828,7 +13624,7 @@ paths:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
       description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_ListAssignments
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_ListAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -13902,7 +13698,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Create new navigation property to assignments for deviceAppManagement
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_CreateAssignments
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_CreateAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -13935,7 +13731,7 @@ paths:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
       description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_GetAssignments
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_GetAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -13994,7 +13790,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Update the navigation property assignments in deviceAppManagement
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_UpdateAssignments
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_UpdateAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -14021,11 +13817,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14033,7 +13825,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Delete navigation property assignments for deviceAppManagement
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_DeleteAssignments
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_DeleteAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -14069,7 +13861,7 @@ paths:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get deploymentSummary from deviceAppManagement
       description: Navigation property to deployment summary of the configuration.
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_GetDeploymentSummary
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_GetDeploymentSummary
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -14122,7 +13914,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Update the navigation property deploymentSummary in deviceAppManagement
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_UpdateDeploymentSummary
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_UpdateDeploymentSummary
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -14141,11 +13933,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14153,7 +13941,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Delete navigation property deploymentSummary for deviceAppManagement
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_DeleteDeploymentSummary
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_DeleteDeploymentSummary
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -14180,7 +13968,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_assign
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_assign
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -14215,7 +14003,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_targetApps
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_targetApps
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -14252,7 +14040,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_hasPayloadLinks
+      operationId: deviceAppManagement.targetedManagedAppConfiguration_hasPayloadLinks
       requestBody:
         description: Action parameters
         content:
@@ -14513,11 +14301,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.vppToken'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14553,7 +14337,7 @@ paths:
         - deviceAppManagement.Actions
       summary: Invoke action revokeLicenses
       description: Revoke licenses associated with a specific appleVolumePurchaseProgramToken
-      operationId: deviceAppManagement.vppTokens_revokeLicenses
+      operationId: deviceAppManagement.vppToken_revokeLicenses
       parameters:
         - name: vppToken-id
           in: path
@@ -14592,7 +14376,7 @@ paths:
         - deviceAppManagement.Actions
       summary: Invoke action syncLicenses
       description: Syncs licenses associated with a specific appleVolumePurchaseProgramToken
-      operationId: deviceAppManagement.vppTokens_syncLicenses
+      operationId: deviceAppManagement.vppToken_syncLicenses
       parameters:
         - name: vppToken-id
           in: path
@@ -14617,7 +14401,7 @@ paths:
       tags:
         - deviceAppManagement.Functions
       summary: Invoke function getLicensesForApp
-      operationId: deviceAppManagement.vppTokens_getLicensesGraphFPreApp
+      operationId: deviceAppManagement.vppToken_getLicensesGraphFPreApp
       parameters:
         - name: bundleId
           in: path
@@ -14660,7 +14444,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncLicenseCounts
-      operationId: deviceAppManagement.vppTokens_syncLicenseCounts
+      operationId: deviceAppManagement.vppToken_syncLicenseCounts
       responses:
         2XX:
           description: Success
@@ -14865,11 +14649,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14905,7 +14685,7 @@ paths:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get assignments from deviceAppManagement
       description: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
-      operationId: deviceAppManagement.wdacSupplementalPolicies_ListAssignments
+      operationId: deviceAppManagement.wdacSupplementalPolicy_ListAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -14973,7 +14753,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Create new navigation property to assignments for deviceAppManagement
-      operationId: deviceAppManagement.wdacSupplementalPolicies_CreateAssignments
+      operationId: deviceAppManagement.wdacSupplementalPolicy_CreateAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15006,7 +14786,7 @@ paths:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get assignments from deviceAppManagement
       description: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
-      operationId: deviceAppManagement.wdacSupplementalPolicies_GetAssignments
+      operationId: deviceAppManagement.wdacSupplementalPolicy_GetAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15063,7 +14843,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the navigation property assignments in deviceAppManagement
-      operationId: deviceAppManagement.wdacSupplementalPolicies_UpdateAssignments
+      operationId: deviceAppManagement.wdacSupplementalPolicy_UpdateAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15090,11 +14870,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15102,7 +14878,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Delete navigation property assignments for deviceAppManagement
-      operationId: deviceAppManagement.wdacSupplementalPolicies_DeleteAssignments
+      operationId: deviceAppManagement.wdacSupplementalPolicy_DeleteAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15138,7 +14914,7 @@ paths:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get deploySummary from deviceAppManagement
       description: WindowsDefenderApplicationControl supplemental policy deployment summary.
-      operationId: deviceAppManagement.wdacSupplementalPolicies_GetDeploySummary
+      operationId: deviceAppManagement.wdacSupplementalPolicy_GetDeploySummary
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15188,7 +14964,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the navigation property deploySummary in deviceAppManagement
-      operationId: deviceAppManagement.wdacSupplementalPolicies_UpdateDeploySummary
+      operationId: deviceAppManagement.wdacSupplementalPolicy_UpdateDeploySummary
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15207,11 +14983,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15219,7 +14991,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Delete navigation property deploySummary for deviceAppManagement
-      operationId: deviceAppManagement.wdacSupplementalPolicies_DeleteDeploySummary
+      operationId: deviceAppManagement.wdacSupplementalPolicy_DeleteDeploySummary
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15247,7 +15019,7 @@ paths:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get deviceStatuses from deviceAppManagement
       description: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-      operationId: deviceAppManagement.wdacSupplementalPolicies_ListDeviceStatuses
+      operationId: deviceAppManagement.wdacSupplementalPolicy_ListDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15341,7 +15113,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.wdacSupplementalPolicies_CreateDeviceStatuses
+      operationId: deviceAppManagement.wdacSupplementalPolicy_CreateDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15374,7 +15146,7 @@ paths:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get deviceStatuses from deviceAppManagement
       description: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-      operationId: deviceAppManagement.wdacSupplementalPolicies_GetDeviceStatuses
+      operationId: deviceAppManagement.wdacSupplementalPolicy_GetDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15441,7 +15213,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the navigation property deviceStatuses in deviceAppManagement
-      operationId: deviceAppManagement.wdacSupplementalPolicies_UpdateDeviceStatuses
+      operationId: deviceAppManagement.wdacSupplementalPolicy_UpdateDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15468,11 +15240,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15480,7 +15248,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Delete navigation property deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.wdacSupplementalPolicies_DeleteDeviceStatuses
+      operationId: deviceAppManagement.wdacSupplementalPolicy_DeleteDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15516,7 +15284,7 @@ paths:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get policy from deviceAppManagement
       description: The navigation link to the WindowsDefenderApplicationControl supplemental policy.
-      operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses_GetPolicy
+      operationId: deviceAppManagement.wdacSupplementalPolicy.deviceStatus_GetPolicy
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15587,7 +15355,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.wdacSupplementalPolicies_assign
+      operationId: deviceAppManagement.wdacSupplementalPolicy_assign
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -15795,11 +15563,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15834,7 +15598,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceAppManagement.windowsInformationProtectionDeviceRegistrations_wipe
+      operationId: deviceAppManagement.windowsInformationProtectionDeviceRegistration_wipe
       parameters:
         - name: windowsInformationProtectionDeviceRegistration-id
           in: path
@@ -16176,11 +15940,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16388,11 +16148,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionWipeAction'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16696,11 +16452,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsManagedAppProtection'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16736,7 +16488,7 @@ paths:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.windowsManagedAppProtections_ListApps
+      operationId: deviceAppManagement.windowsManagedAppProtection_ListApps
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -16807,7 +16559,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Create new navigation property to apps for deviceAppManagement
-      operationId: deviceAppManagement.windowsManagedAppProtections_CreateApps
+      operationId: deviceAppManagement.windowsManagedAppProtection_CreateApps
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -16840,7 +16592,7 @@ paths:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Get apps from deviceAppManagement
       description: List of apps to which the policy is deployed.
-      operationId: deviceAppManagement.windowsManagedAppProtections_GetApps
+      operationId: deviceAppManagement.windowsManagedAppProtection_GetApps
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -16898,7 +16650,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Update the navigation property apps in deviceAppManagement
-      operationId: deviceAppManagement.windowsManagedAppProtections_UpdateApps
+      operationId: deviceAppManagement.windowsManagedAppProtection_UpdateApps
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -16925,11 +16677,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16937,7 +16685,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Delete navigation property apps for deviceAppManagement
-      operationId: deviceAppManagement.windowsManagedAppProtections_DeleteApps
+      operationId: deviceAppManagement.windowsManagedAppProtection_DeleteApps
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -16973,7 +16721,7 @@ paths:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Get assignments from deviceAppManagement
       description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-      operationId: deviceAppManagement.windowsManagedAppProtections_ListAssignments
+      operationId: deviceAppManagement.windowsManagedAppProtection_ListAssignments
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -17047,7 +16795,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Create new navigation property to assignments for deviceAppManagement
-      operationId: deviceAppManagement.windowsManagedAppProtections_CreateAssignments
+      operationId: deviceAppManagement.windowsManagedAppProtection_CreateAssignments
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -17080,7 +16828,7 @@ paths:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Get assignments from deviceAppManagement
       description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-      operationId: deviceAppManagement.windowsManagedAppProtections_GetAssignments
+      operationId: deviceAppManagement.windowsManagedAppProtection_GetAssignments
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -17139,7 +16887,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Update the navigation property assignments in deviceAppManagement
-      operationId: deviceAppManagement.windowsManagedAppProtections_UpdateAssignments
+      operationId: deviceAppManagement.windowsManagedAppProtection_UpdateAssignments
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -17166,11 +16914,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17178,7 +16922,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagedAppProtection
       summary: Delete navigation property assignments for deviceAppManagement
-      operationId: deviceAppManagement.windowsManagedAppProtections_DeleteAssignments
+      operationId: deviceAppManagement.windowsManagedAppProtection_DeleteAssignments
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -17213,7 +16957,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.windowsManagedAppProtections_assign
+      operationId: deviceAppManagement.windowsManagedAppProtection_assign
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -17248,7 +16992,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.windowsManagedAppProtections_targetApps
+      operationId: deviceAppManagement.windowsManagedAppProtection_targetApps
       parameters:
         - name: windowsManagedAppProtection-id
           in: path
@@ -17330,7 +17074,7 @@ paths:
       tags:
         - officeConfiguration.officeConfiguration
       summary: Get officeConfiguration
-      operationId: officeConfiguration.officeConfiguration_GetOfficeConfiguration
+      operationId: officeConfiguration_GetOfficeConfiguration
       parameters:
         - name: $select
           in: query
@@ -17373,7 +17117,7 @@ paths:
       tags:
         - officeConfiguration.officeConfiguration
       summary: Update officeConfiguration
-      operationId: officeConfiguration.officeConfiguration_UpdateOfficeConfiguration
+      operationId: officeConfiguration_UpdateOfficeConfiguration
       requestBody:
         description: New property values
         content:
@@ -17383,11 +17127,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.officeConfiguration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17577,11 +17317,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.officeClientConfiguration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17617,7 +17353,7 @@ paths:
         - officeConfiguration.officeClientConfiguration
       summary: Get assignments from officeConfiguration
       description: The list of group assignments for the policy.
-      operationId: officeConfiguration.clientConfigurations_ListAssignments
+      operationId: officeConfiguration.clientConfiguration_ListAssignments
       parameters:
         - name: officeClientConfiguration-id
           in: path
@@ -17685,7 +17421,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Create new navigation property to assignments for officeConfiguration
-      operationId: officeConfiguration.clientConfigurations_CreateAssignments
+      operationId: officeConfiguration.clientConfiguration_CreateAssignments
       parameters:
         - name: officeClientConfiguration-id
           in: path
@@ -17718,7 +17454,7 @@ paths:
         - officeConfiguration.officeClientConfiguration
       summary: Get assignments from officeConfiguration
       description: The list of group assignments for the policy.
-      operationId: officeConfiguration.clientConfigurations_GetAssignments
+      operationId: officeConfiguration.clientConfiguration_GetAssignments
       parameters:
         - name: officeClientConfiguration-id
           in: path
@@ -17775,7 +17511,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Update the navigation property assignments in officeConfiguration
-      operationId: officeConfiguration.clientConfigurations_UpdateAssignments
+      operationId: officeConfiguration.clientConfiguration_UpdateAssignments
       parameters:
         - name: officeClientConfiguration-id
           in: path
@@ -17802,11 +17538,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17814,7 +17546,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Delete navigation property assignments for officeConfiguration
-      operationId: officeConfiguration.clientConfigurations_DeleteAssignments
+      operationId: officeConfiguration.clientConfiguration_DeleteAssignments
       parameters:
         - name: officeClientConfiguration-id
           in: path
@@ -17849,7 +17581,7 @@ paths:
       tags:
         - officeConfiguration.Actions
       summary: Invoke action assign
-      operationId: officeConfiguration.clientConfigurations_assign
+      operationId: officeConfiguration.clientConfiguration_assign
       parameters:
         - name: officeClientConfiguration-id
           in: path
@@ -18014,7 +17746,7 @@ paths:
       tags:
         - officeConfiguration.Actions
       summary: Invoke action updatePriorities
-      operationId: officeConfiguration.clientConfigurations_updatePriorities
+      operationId: officeConfiguration.clientConfiguration_updatePriorities
       requestBody:
         description: Action parameters
         content:
@@ -18049,7 +17781,7 @@ paths:
         - users.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from users
       description: Get enrollment configurations targeted to the user
-      operationId: users_ListDeviceEnrollmentConfigurations
+      operationId: user_ListDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
           in: path
@@ -18140,7 +17872,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Create new navigation property to deviceEnrollmentConfigurations for users
-      operationId: users_CreateDeviceEnrollmentConfigurations
+      operationId: user_CreateDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
           in: path
@@ -18173,7 +17905,7 @@ paths:
         - users.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from users
       description: Get enrollment configurations targeted to the user
-      operationId: users_GetDeviceEnrollmentConfigurations
+      operationId: user_GetDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
           in: path
@@ -18239,7 +17971,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Update the navigation property deviceEnrollmentConfigurations in users
-      operationId: users_UpdateDeviceEnrollmentConfigurations
+      operationId: user_UpdateDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
           in: path
@@ -18266,11 +17998,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18278,7 +18006,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Delete navigation property deviceEnrollmentConfigurations for users
-      operationId: users_DeleteDeviceEnrollmentConfigurations
+      operationId: user_DeleteDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
           in: path
@@ -18314,7 +18042,7 @@ paths:
         - users.deviceEnrollmentConfiguration
       summary: Get assignments from users
       description: The list of group assignments for the device configuration profile
-      operationId: users.deviceEnrollmentConfigurations_ListAssignments
+      operationId: user.deviceEnrollmentConfiguration_ListAssignments
       parameters:
         - name: user-id
           in: path
@@ -18396,7 +18124,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Create new navigation property to assignments for users
-      operationId: users.deviceEnrollmentConfigurations_CreateAssignments
+      operationId: user.deviceEnrollmentConfiguration_CreateAssignments
       parameters:
         - name: user-id
           in: path
@@ -18437,7 +18165,7 @@ paths:
         - users.deviceEnrollmentConfiguration
       summary: Get assignments from users
       description: The list of group assignments for the device configuration profile
-      operationId: users.deviceEnrollmentConfigurations_GetAssignments
+      operationId: user.deviceEnrollmentConfiguration_GetAssignments
       parameters:
         - name: user-id
           in: path
@@ -18504,7 +18232,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Update the navigation property assignments in users
-      operationId: users.deviceEnrollmentConfigurations_UpdateAssignments
+      operationId: user.deviceEnrollmentConfiguration_UpdateAssignments
       parameters:
         - name: user-id
           in: path
@@ -18539,11 +18267,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18551,7 +18275,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Delete navigation property assignments for users
-      operationId: users.deviceEnrollmentConfigurations_DeleteAssignments
+      operationId: user.deviceEnrollmentConfiguration_DeleteAssignments
       parameters:
         - name: user-id
           in: path
@@ -18595,7 +18319,7 @@ paths:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
       description: The list of troubleshooting events for this user.
-      operationId: users_ListDeviceManagementTroubleshootingEvents
+      operationId: user_ListDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -18675,7 +18399,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Create new navigation property to deviceManagementTroubleshootingEvents for users
-      operationId: users_CreateDeviceManagementTroubleshootingEvents
+      operationId: user_CreateDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -18708,7 +18432,7 @@ paths:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
       description: The list of troubleshooting events for this user.
-      operationId: users_GetDeviceManagementTroubleshootingEvents
+      operationId: user_GetDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -18769,7 +18493,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Update the navigation property deviceManagementTroubleshootingEvents in users
-      operationId: users_UpdateDeviceManagementTroubleshootingEvents
+      operationId: user_UpdateDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -18796,11 +18520,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18808,7 +18528,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Delete navigation property deviceManagementTroubleshootingEvents for users
-      operationId: users_DeleteDeviceManagementTroubleshootingEvents
+      operationId: user_DeleteDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -18844,7 +18564,7 @@ paths:
         - users.managedAppRegistration
       summary: Get managedAppRegistrations from users
       description: Zero or more managed app registrations that belong to the user.
-      operationId: users_ListManagedAppRegistrations
+      operationId: user_ListManagedAppRegistrations
       parameters:
         - name: user-id
           in: path
@@ -18965,7 +18685,7 @@ paths:
         - users.managedAppRegistration
       summary: Get managedAppRegistrations from users
       description: Zero or more managed app registrations that belong to the user.
-      operationId: users_GetManagedAppRegistrations
+      operationId: user_GetManagedAppRegistrations
       parameters:
         - name: user-id
           in: path
@@ -19045,7 +18765,7 @@ paths:
         - users.managedDevice
       summary: Get managedDevices from users
       description: The managed devices associated with the user.
-      operationId: users_ListManagedDevices
+      operationId: user_ListManagedDevices
       parameters:
         - name: user-id
           in: path
@@ -19375,7 +19095,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to managedDevices for users
-      operationId: users_CreateManagedDevices
+      operationId: user_CreateManagedDevices
       parameters:
         - name: user-id
           in: path
@@ -19408,7 +19128,7 @@ paths:
         - users.managedDevice
       summary: Get managedDevices from users
       description: The managed devices associated with the user.
-      operationId: users_GetManagedDevices
+      operationId: user_GetManagedDevices
       parameters:
         - name: user-id
           in: path
@@ -19567,7 +19287,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property managedDevices in users
-      operationId: users_UpdateManagedDevices
+      operationId: user_UpdateManagedDevices
       parameters:
         - name: user-id
           in: path
@@ -19594,11 +19314,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDevice'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19606,7 +19322,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property managedDevices for users
-      operationId: users_DeleteManagedDevices
+      operationId: user_DeleteManagedDevices
       parameters:
         - name: user-id
           in: path
@@ -19642,7 +19358,7 @@ paths:
         - users.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from users
       description: Managed device mobile app configuration states for this device.
-      operationId: users.managedDevices_ListAssignmentFilterEvaluationStatusDetails
+      operationId: user.managedDevice_ListAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
           in: path
@@ -19718,7 +19434,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to assignmentFilterEvaluationStatusDetails for users
-      operationId: users.managedDevices_CreateAssignmentFilterEvaluationStatusDetails
+      operationId: user.managedDevice_CreateAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
           in: path
@@ -19759,7 +19475,7 @@ paths:
         - users.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from users
       description: Managed device mobile app configuration states for this device.
-      operationId: users.managedDevices_GetAssignmentFilterEvaluationStatusDetails
+      operationId: user.managedDevice_GetAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
           in: path
@@ -19824,7 +19540,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property assignmentFilterEvaluationStatusDetails in users
-      operationId: users.managedDevices_UpdateAssignmentFilterEvaluationStatusDetails
+      operationId: user.managedDevice_UpdateAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
           in: path
@@ -19859,11 +19575,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationStatusDetails'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19871,7 +19583,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property assignmentFilterEvaluationStatusDetails for users
-      operationId: users.managedDevices_DeleteAssignmentFilterEvaluationStatusDetails
+      operationId: user.managedDevice_DeleteAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
           in: path
@@ -19915,7 +19627,7 @@ paths:
         - users.managedDevice
       summary: Get detectedApps from users
       description: All applications currently installed on the device
-      operationId: users.managedDevices_ListDetectedApps
+      operationId: user.managedDevice_ListDetectedApps
       parameters:
         - name: user-id
           in: path
@@ -20010,7 +19722,7 @@ paths:
         - users.managedDevice
       summary: Get detectedApps from users
       description: All applications currently installed on the device
-      operationId: users.managedDevices_GetDetectedApps
+      operationId: user.managedDevice_GetDetectedApps
       parameters:
         - name: user-id
           in: path
@@ -20084,7 +19796,7 @@ paths:
         - users.managedDevice
       summary: Get deviceCategory from users
       description: Device category
-      operationId: users.managedDevices_GetDeviceCategory
+      operationId: user.managedDevice_GetDeviceCategory
       parameters:
         - name: user-id
           in: path
@@ -20143,7 +19855,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property deviceCategory in users
-      operationId: users.managedDevices_UpdateDeviceCategory
+      operationId: user.managedDevice_UpdateDeviceCategory
       parameters:
         - name: user-id
           in: path
@@ -20170,11 +19882,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20182,7 +19890,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property deviceCategory for users
-      operationId: users.managedDevices_DeleteDeviceCategory
+      operationId: user.managedDevice_DeleteDeviceCategory
       parameters:
         - name: user-id
           in: path
@@ -20218,7 +19926,7 @@ paths:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
       description: Device compliance policy states for this device.
-      operationId: users.managedDevices_ListDeviceCompliancePolicyStates
+      operationId: user.managedDevice_ListDeviceCompliancePolicyStates
       parameters:
         - name: user-id
           in: path
@@ -20315,7 +20023,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to deviceCompliancePolicyStates for users
-      operationId: users.managedDevices_CreateDeviceCompliancePolicyStates
+      operationId: user.managedDevice_CreateDeviceCompliancePolicyStates
       parameters:
         - name: user-id
           in: path
@@ -20356,7 +20064,7 @@ paths:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
       description: Device compliance policy states for this device.
-      operationId: users.managedDevices_GetDeviceCompliancePolicyStates
+      operationId: user.managedDevice_GetDeviceCompliancePolicyStates
       parameters:
         - name: user-id
           in: path
@@ -20428,7 +20136,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property deviceCompliancePolicyStates in users
-      operationId: users.managedDevices_UpdateDeviceCompliancePolicyStates
+      operationId: user.managedDevice_UpdateDeviceCompliancePolicyStates
       parameters:
         - name: user-id
           in: path
@@ -20463,11 +20171,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20475,7 +20179,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property deviceCompliancePolicyStates for users
-      operationId: users.managedDevices_DeleteDeviceCompliancePolicyStates
+      operationId: user.managedDevice_DeleteDeviceCompliancePolicyStates
       parameters:
         - name: user-id
           in: path
@@ -20519,7 +20223,7 @@ paths:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
       description: Device configuration states for this device.
-      operationId: users.managedDevices_ListDeviceConfigurationStates
+      operationId: user.managedDevice_ListDeviceConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -20616,7 +20320,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to deviceConfigurationStates for users
-      operationId: users.managedDevices_CreateDeviceConfigurationStates
+      operationId: user.managedDevice_CreateDeviceConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -20657,7 +20361,7 @@ paths:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
       description: Device configuration states for this device.
-      operationId: users.managedDevices_GetDeviceConfigurationStates
+      operationId: user.managedDevice_GetDeviceConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -20729,7 +20433,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property deviceConfigurationStates in users
-      operationId: users.managedDevices_UpdateDeviceConfigurationStates
+      operationId: user.managedDevice_UpdateDeviceConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -20764,11 +20468,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20776,7 +20476,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property deviceConfigurationStates for users
-      operationId: users.managedDevices_DeleteDeviceConfigurationStates
+      operationId: user.managedDevice_DeleteDeviceConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -20820,7 +20520,7 @@ paths:
         - users.managedDevice
       summary: Get deviceHealthScriptStates from users
       description: Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
-      operationId: users.managedDevices_ListDeviceHealthScriptStates
+      operationId: user.managedDevice_ListDeviceHealthScriptStates
       parameters:
         - name: user-id
           in: path
@@ -20944,7 +20644,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to deviceHealthScriptStates for users
-      operationId: users.managedDevices_CreateDeviceHealthScriptStates
+      operationId: user.managedDevice_CreateDeviceHealthScriptStates
       parameters:
         - name: user-id
           in: path
@@ -20985,7 +20685,7 @@ paths:
         - users.managedDevice
       summary: Get deviceHealthScriptStates from users
       description: Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
-      operationId: users.managedDevices_GetDeviceHealthScriptStates
+      operationId: user.managedDevice_GetDeviceHealthScriptStates
       parameters:
         - name: user-id
           in: path
@@ -21082,7 +20782,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property deviceHealthScriptStates in users
-      operationId: users.managedDevices_UpdateDeviceHealthScriptStates
+      operationId: user.managedDevice_UpdateDeviceHealthScriptStates
       parameters:
         - name: user-id
           in: path
@@ -21133,11 +20833,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptPolicyState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21145,7 +20841,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property deviceHealthScriptStates for users
-      operationId: users.managedDevices_DeleteDeviceHealthScriptStates
+      operationId: user.managedDevice_DeleteDeviceHealthScriptStates
       parameters:
         - name: user-id
           in: path
@@ -21205,7 +20901,7 @@ paths:
         - users.managedDevice
       summary: Get logCollectionRequests from users
       description: List of log collection requests
-      operationId: users.managedDevices_ListLogCollectionRequests
+      operationId: user.managedDevice_ListLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -21308,7 +21004,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to logCollectionRequests for users
-      operationId: users.managedDevices_CreateLogCollectionRequests
+      operationId: user.managedDevice_CreateLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -21349,7 +21045,7 @@ paths:
         - users.managedDevice
       summary: Get logCollectionRequests from users
       description: List of log collection requests
-      operationId: users.managedDevices_GetLogCollectionRequests
+      operationId: user.managedDevice_GetLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -21423,7 +21119,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property logCollectionRequests in users
-      operationId: users.managedDevices_UpdateLogCollectionRequests
+      operationId: user.managedDevice_UpdateLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -21458,11 +21154,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21470,7 +21162,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property logCollectionRequests for users
-      operationId: users.managedDevices_DeleteLogCollectionRequests
+      operationId: user.managedDevice_DeleteLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -21514,7 +21206,7 @@ paths:
         - users.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from users
       description: Managed device mobile app configuration states for this device.
-      operationId: users.managedDevices_ListManagedDeviceMobileAppConfigurationStates
+      operationId: user.managedDevice_ListManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -21611,7 +21303,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to managedDeviceMobileAppConfigurationStates for users
-      operationId: users.managedDevices_CreateManagedDeviceMobileAppConfigurationStates
+      operationId: user.managedDevice_CreateManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -21652,7 +21344,7 @@ paths:
         - users.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from users
       description: Managed device mobile app configuration states for this device.
-      operationId: users.managedDevices_GetManagedDeviceMobileAppConfigurationStates
+      operationId: user.managedDevice_GetManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -21724,7 +21416,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property managedDeviceMobileAppConfigurationStates in users
-      operationId: users.managedDevices_UpdateManagedDeviceMobileAppConfigurationStates
+      operationId: user.managedDevice_UpdateManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -21759,11 +21451,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21771,7 +21459,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property managedDeviceMobileAppConfigurationStates for users
-      operationId: users.managedDevices_DeleteManagedDeviceMobileAppConfigurationStates
+      operationId: user.managedDevice_DeleteManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
           in: path
@@ -21815,7 +21503,7 @@ paths:
         - users.managedDevice
       summary: Get securityBaselineStates from users
       description: Security baseline states for this device.
-      operationId: users.managedDevices_ListSecurityBaselineStates
+      operationId: user.managedDevice_ListSecurityBaselineStates
       parameters:
         - name: user-id
           in: path
@@ -21902,7 +21590,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to securityBaselineStates for users
-      operationId: users.managedDevices_CreateSecurityBaselineStates
+      operationId: user.managedDevice_CreateSecurityBaselineStates
       parameters:
         - name: user-id
           in: path
@@ -21943,7 +21631,7 @@ paths:
         - users.managedDevice
       summary: Get securityBaselineStates from users
       description: Security baseline states for this device.
-      operationId: users.managedDevices_GetSecurityBaselineStates
+      operationId: user.managedDevice_GetSecurityBaselineStates
       parameters:
         - name: user-id
           in: path
@@ -22013,7 +21701,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property securityBaselineStates in users
-      operationId: users.managedDevices_UpdateSecurityBaselineStates
+      operationId: user.managedDevice_UpdateSecurityBaselineStates
       parameters:
         - name: user-id
           in: path
@@ -22048,11 +21736,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22060,7 +21744,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property securityBaselineStates for users
-      operationId: users.managedDevices_DeleteSecurityBaselineStates
+      operationId: user.managedDevice_DeleteSecurityBaselineStates
       parameters:
         - name: user-id
           in: path
@@ -22104,7 +21788,7 @@ paths:
         - users.managedDevice
       summary: Get settingStates from users
       description: The security baseline state for different settings for a device
-      operationId: users.managedDevices.securityBaselineStates_ListSettingStates
+      operationId: user.managedDevice.securityBaselineState_ListSettingStates
       parameters:
         - name: user-id
           in: path
@@ -22209,7 +21893,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to settingStates for users
-      operationId: users.managedDevices.securityBaselineStates_CreateSettingStates
+      operationId: user.managedDevice.securityBaselineState_CreateSettingStates
       parameters:
         - name: user-id
           in: path
@@ -22258,7 +21942,7 @@ paths:
         - users.managedDevice
       summary: Get settingStates from users
       description: The security baseline state for different settings for a device
-      operationId: users.managedDevices.securityBaselineStates_GetSettingStates
+      operationId: user.managedDevice.securityBaselineState_GetSettingStates
       parameters:
         - name: user-id
           in: path
@@ -22338,7 +22022,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property settingStates in users
-      operationId: users.managedDevices.securityBaselineStates_UpdateSettingStates
+      operationId: user.managedDevice.securityBaselineState_UpdateSettingStates
       parameters:
         - name: user-id
           in: path
@@ -22381,11 +22065,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22393,7 +22073,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property settingStates for users
-      operationId: users.managedDevices.securityBaselineStates_DeleteSettingStates
+      operationId: user.managedDevice.securityBaselineState_DeleteSettingStates
       parameters:
         - name: user-id
           in: path
@@ -22445,7 +22125,7 @@ paths:
         - users.managedDevice
       summary: Get users from users
       description: The primary users associated with the managed device.
-      operationId: users.managedDevices_ListUsers
+      operationId: user.managedDevice_ListUsers
       parameters:
         - name: user-id
           in: path
@@ -22891,7 +22571,7 @@ paths:
         - users.managedDevice
       summary: Get windowsProtectionState from users
       description: The device protection status. This property is read-only.
-      operationId: users.managedDevices_GetWindowsProtectionState
+      operationId: user.managedDevice_GetWindowsProtectionState
       parameters:
         - name: user-id
           in: path
@@ -22969,7 +22649,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property windowsProtectionState in users
-      operationId: users.managedDevices_UpdateWindowsProtectionState
+      operationId: user.managedDevice_UpdateWindowsProtectionState
       parameters:
         - name: user-id
           in: path
@@ -22996,11 +22676,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23008,7 +22684,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property windowsProtectionState for users
-      operationId: users.managedDevices_DeleteWindowsProtectionState
+      operationId: user.managedDevice_DeleteWindowsProtectionState
       parameters:
         - name: user-id
           in: path
@@ -23044,7 +22720,7 @@ paths:
         - users.managedDevice
       summary: Get detectedMalwareState from users
       description: Device malware list
-      operationId: users.managedDevices.windowsProtectionState_ListDetectedMalwareState
+      operationId: user.managedDevice.windowsProtectionState_ListDetectedMalwareState
       parameters:
         - name: user-id
           in: path
@@ -23147,7 +22823,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to detectedMalwareState for users
-      operationId: users.managedDevices.windowsProtectionState_CreateDetectedMalwareState
+      operationId: user.managedDevice.windowsProtectionState_CreateDetectedMalwareState
       parameters:
         - name: user-id
           in: path
@@ -23188,7 +22864,7 @@ paths:
         - users.managedDevice
       summary: Get detectedMalwareState from users
       description: Device malware list
-      operationId: users.managedDevices.windowsProtectionState_GetDetectedMalwareState
+      operationId: user.managedDevice.windowsProtectionState_GetDetectedMalwareState
       parameters:
         - name: user-id
           in: path
@@ -23262,7 +22938,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property detectedMalwareState in users
-      operationId: users.managedDevices.windowsProtectionState_UpdateDetectedMalwareState
+      operationId: user.managedDevice.windowsProtectionState_UpdateDetectedMalwareState
       parameters:
         - name: user-id
           in: path
@@ -23297,11 +22973,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsDeviceMalwareState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23309,7 +22981,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property detectedMalwareState for users
-      operationId: users.managedDevices.windowsProtectionState_DeleteDetectedMalwareState
+      operationId: user.managedDevice.windowsProtectionState_DeleteDetectedMalwareState
       parameters:
         - name: user-id
           in: path
@@ -23353,7 +23025,7 @@ paths:
         - users.mobileAppIntentAndState
       summary: Get mobileAppIntentAndStates from users
       description: The list of troubleshooting events for this user.
-      operationId: users_ListMobileAppIntentAndStates
+      operationId: user_ListMobileAppIntentAndStates
       parameters:
         - name: user-id
           in: path
@@ -23427,7 +23099,7 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Create new navigation property to mobileAppIntentAndStates for users
-      operationId: users_CreateMobileAppIntentAndStates
+      operationId: user_CreateMobileAppIntentAndStates
       parameters:
         - name: user-id
           in: path
@@ -23460,7 +23132,7 @@ paths:
         - users.mobileAppIntentAndState
       summary: Get mobileAppIntentAndStates from users
       description: The list of troubleshooting events for this user.
-      operationId: users_GetMobileAppIntentAndStates
+      operationId: user_GetMobileAppIntentAndStates
       parameters:
         - name: user-id
           in: path
@@ -23519,7 +23191,7 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Update the navigation property mobileAppIntentAndStates in users
-      operationId: users_UpdateMobileAppIntentAndStates
+      operationId: user_UpdateMobileAppIntentAndStates
       parameters:
         - name: user-id
           in: path
@@ -23546,11 +23218,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppIntentAndState'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23558,7 +23226,7 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Delete navigation property mobileAppIntentAndStates for users
-      operationId: users_DeleteMobileAppIntentAndStates
+      operationId: user_DeleteMobileAppIntentAndStates
       parameters:
         - name: user-id
           in: path
@@ -23594,7 +23262,7 @@ paths:
         - users.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from users
       description: The list of mobile app troubleshooting events for this user.
-      operationId: users_ListMobileAppTroubleshootingEvents
+      operationId: user_ListMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -23688,7 +23356,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Create new navigation property to mobileAppTroubleshootingEvents for users
-      operationId: users_CreateMobileAppTroubleshootingEvents
+      operationId: user_CreateMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -23721,7 +23389,7 @@ paths:
         - users.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from users
       description: The list of mobile app troubleshooting events for this user.
-      operationId: users_GetMobileAppTroubleshootingEvents
+      operationId: user_GetMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -23788,7 +23456,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Update the navigation property mobileAppTroubleshootingEvents in users
-      operationId: users_UpdateMobileAppTroubleshootingEvents
+      operationId: user_UpdateMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -23815,11 +23483,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23827,7 +23491,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Delete navigation property mobileAppTroubleshootingEvents for users
-      operationId: users_DeleteMobileAppTroubleshootingEvents
+      operationId: user_DeleteMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
@@ -23863,7 +23527,7 @@ paths:
         - users.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from users
       description: The collection property of AppLogUploadRequest.
-      operationId: users.mobileAppTroubleshootingEvents_ListAppLogCollectionRequests
+      operationId: user.mobileAppTroubleshootingEvent_ListAppLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -23948,7 +23612,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Create new navigation property to appLogCollectionRequests for users
-      operationId: users.mobileAppTroubleshootingEvents_CreateAppLogCollectionRequests
+      operationId: user.mobileAppTroubleshootingEvent_CreateAppLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -23989,7 +23653,7 @@ paths:
         - users.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from users
       description: The collection property of AppLogUploadRequest.
-      operationId: users.mobileAppTroubleshootingEvents_GetAppLogCollectionRequests
+      operationId: user.mobileAppTroubleshootingEvent_GetAppLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -24057,7 +23721,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Update the navigation property appLogCollectionRequests in users
-      operationId: users.mobileAppTroubleshootingEvents_UpdateAppLogCollectionRequests
+      operationId: user.mobileAppTroubleshootingEvent_UpdateAppLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -24092,11 +23756,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24104,7 +23764,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Delete navigation property appLogCollectionRequests for users
-      operationId: users.mobileAppTroubleshootingEvents_DeleteAppLogCollectionRequests
+      operationId: user.mobileAppTroubleshootingEvent_DeleteAppLogCollectionRequests
       parameters:
         - name: user-id
           in: path
@@ -24148,7 +23808,7 @@ paths:
         - users.windowsInformationProtectionDeviceRegistration
       summary: Get windowsInformationProtectionDeviceRegistrations from users
       description: Zero or more WIP device registrations that belong to the user.
-      operationId: users_ListWindowsInformationProtectionDeviceRegistrations
+      operationId: user_ListWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: user-id
           in: path
@@ -24233,7 +23893,7 @@ paths:
         - users.windowsInformationProtectionDeviceRegistration
       summary: Get windowsInformationProtectionDeviceRegistrations from users
       description: Zero or more WIP device registrations that belong to the user.
-      operationId: users_GetWindowsInformationProtectionDeviceRegistrations
+      operationId: user_GetWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: user-id
           in: path
@@ -33670,7 +33330,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
-              description: List of related Setting Definitions
+              description: List of related Setting Definitions. This property is read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -42183,6 +41843,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -46833,6 +46495,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -46865,6 +46537,8 @@ components:
           properties:
             allowedInstallationScopes:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             azureADAppId:
               type: string
               description: The WebApplicationInfo.Id from the Teams app manifest.
@@ -49782,6 +49456,17 @@ components:
         - emailUser
         - azureCommunicationServicesUser
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -49798,6 +49483,14 @@ components:
         - personal
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -50192,15 +49885,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -51986,6 +51679,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'

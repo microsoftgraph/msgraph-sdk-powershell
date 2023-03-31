@@ -34,7 +34,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSupportedProperties
-      operationId: deviceManagement.assignmentFilters_getSupportedProperties
+      operationId: deviceManagement.assignmentFilter_getSupportedProperties
       parameters:
         - name: deviceAndAppManagementAssignmentFilter-id
           in: path
@@ -77,7 +77,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getPlatformSupportedProperties
-      operationId: deviceManagement.assignmentFilters_getPlatformSupportedProperties
+      operationId: deviceManagement.assignmentFilter_getPlatformSupportedProperties
       parameters:
         - name: platform
           in: path
@@ -119,7 +119,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getState
-      operationId: deviceManagement.assignmentFilters_getState
+      operationId: deviceManagement.assignmentFilter_getState
       responses:
         2XX:
           description: Success
@@ -135,7 +135,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.auditEvents_getAuditActivityTypes
+      operationId: deviceManagement.auditEvent_getAuditActivityTypes
       parameters:
         - name: category
           in: path
@@ -179,7 +179,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditCategories
-      operationId: deviceManagement.auditEvents_getAuditCategories
+      operationId: deviceManagement.auditEvent_getAuditCategories
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -215,7 +215,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcRemoteActionResults
-      operationId: deviceManagement.comanagedDevices_getCloudPcRemoteActionResults
+      operationId: deviceManagement.comanagedDevice_getCloudPcRemoteActionResults
       parameters:
         - name: managedDevice-id
           in: path
@@ -258,7 +258,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcReviewStatus
-      operationId: deviceManagement.comanagedDevices_getCloudPcReviewStatus
+      operationId: deviceManagement.comanagedDevice_getCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
           in: path
@@ -283,7 +283,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.comanagedDevices_getFileVaultKey
+      operationId: deviceManagement.comanagedDevice_getFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -314,7 +314,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.comanagedDevices_getNonCompliantSettings
+      operationId: deviceManagement.comanagedDevice_getNonCompliantSettings
       parameters:
         - name: managedDevice-id
           in: path
@@ -357,7 +357,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getOemWarranty
-      operationId: deviceManagement.comanagedDevices_getOemWarranty
+      operationId: deviceManagement.comanagedDevice_getOemWarranty
       parameters:
         - name: managedDevice-id
           in: path
@@ -382,7 +382,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function retrieveRemoteHelpSession
-      operationId: deviceManagement.comanagedDevices_retrieveRemoteHelpSession
+      operationId: deviceManagement.comanagedDevice_retrieveRemoteHelpSession
       parameters:
         - name: managedDevice-id
           in: path
@@ -415,7 +415,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function appDiagnostics
-      operationId: deviceManagement.comanagedDevices_appDiagnostics
+      operationId: deviceManagement.comanagedDevice_appDiagnostics
       parameters:
         - name: upn
           in: path
@@ -458,7 +458,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getPolicySummary
-      operationId: deviceManagement.configManagerCollections_getPolicySummary
+      operationId: deviceManagement.configManagerCollection_getPolicySummary
       parameters:
         - name: policyId
           in: path
@@ -484,7 +484,7 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function exportMobileConfig
       description: Exports the mobile configuration
-      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_exportMobileConfig
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_exportMobileConfig
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -524,7 +524,7 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getEncryptionPublicKey
       description: Get a public key to use to encrypt the Apple device enrollment program token
-      operationId: deviceManagement.depOnboardingSettings_getEncryptionPublicKey
+      operationId: deviceManagement.depOnboardingSetting_getEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -555,7 +555,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getExpiringVppTokenCount
-      operationId: deviceManagement.depOnboardingSettings_getExpiringVppTokenCount
+      operationId: deviceManagement.depOnboardingSetting_getExpiringVppTokenCount
       parameters:
         - name: expiringBeforeDateTime
           in: path
@@ -588,7 +588,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getDevicesScheduledToRetire
-      operationId: deviceManagement.deviceCompliancePolicies_getDevicesScheduledToRetire
+      operationId: deviceManagement.deviceCompliancePolicy_getDevicesScheduledToRetire
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -623,7 +623,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getOmaSettingPlainTextValue
-      operationId: deviceManagement.deviceConfigurations_getOmaSettingPlainTextValue
+      operationId: deviceManagement.deviceConfiguration_getOmaSettingPlainTextValue
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -662,7 +662,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getIosAvailableUpdateVersions
-      operationId: deviceManagement.deviceConfigurations_getIosAvailableUpdateVersions
+      operationId: deviceManagement.deviceConfiguration_getIosAvailableUpdateVersions
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -698,7 +698,7 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getRemediationHistory
       description: Function to get the number of remediations by a device health scripts
-      operationId: deviceManagement.deviceHealthScripts_getRemediationHistory
+      operationId: deviceManagement.deviceHealthScript_getRemediationHistory
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -723,7 +723,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function areGlobalScriptsAvailable
-      operationId: deviceManagement.deviceHealthScripts_areGlobalScriptsAvailable
+      operationId: deviceManagement.deviceHealthScript_areGlobalScriptsAvailable
       responses:
         2XX:
           description: Success
@@ -739,7 +739,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRemediationSummary
-      operationId: deviceManagement.deviceHealthScripts_getRemediationSummary
+      operationId: deviceManagement.deviceHealthScript_getRemediationSummary
       responses:
         2XX:
           description: Success
@@ -755,7 +755,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function compare
-      operationId: deviceManagement.intents_compare
+      operationId: deviceManagement.intent_compare
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -806,7 +806,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCustomizedSettings
-      operationId: deviceManagement.intents_getCustomizedSettings
+      operationId: deviceManagement.intent_getCustomizedSettings
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -849,7 +849,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcRemoteActionResults
-      operationId: deviceManagement.managedDevices_getCloudPcRemoteActionResults
+      operationId: deviceManagement.managedDevice_getCloudPcRemoteActionResults
       parameters:
         - name: managedDevice-id
           in: path
@@ -892,7 +892,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcReviewStatus
-      operationId: deviceManagement.managedDevices_getCloudPcReviewStatus
+      operationId: deviceManagement.managedDevice_getCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
           in: path
@@ -917,7 +917,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.managedDevices_getFileVaultKey
+      operationId: deviceManagement.managedDevice_getFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -948,7 +948,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.managedDevices_getNonCompliantSettings
+      operationId: deviceManagement.managedDevice_getNonCompliantSettings
       parameters:
         - name: managedDevice-id
           in: path
@@ -991,7 +991,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getOemWarranty
-      operationId: deviceManagement.managedDevices_getOemWarranty
+      operationId: deviceManagement.managedDevice_getOemWarranty
       parameters:
         - name: managedDevice-id
           in: path
@@ -1016,7 +1016,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function retrieveRemoteHelpSession
-      operationId: deviceManagement.managedDevices_retrieveRemoteHelpSession
+      operationId: deviceManagement.managedDevice_retrieveRemoteHelpSession
       parameters:
         - name: managedDevice-id
           in: path
@@ -1049,7 +1049,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function appDiagnostics
-      operationId: deviceManagement.managedDevices_appDiagnostics
+      operationId: deviceManagement.managedDevice_appDiagnostics
       parameters:
         - name: upn
           in: path
@@ -1498,7 +1498,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getPortalNotifications
-      operationId: deviceManagement.monitoring.alertRecords_getPortalNotifications
+      operationId: deviceManagement.monitoring.alertRecord_getPortalNotifications
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1533,7 +1533,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getScopesForUser
-      operationId: deviceManagement.resourceOperations_getScopesGraphFPreUser
+      operationId: deviceManagement.resourceOperation_getScopesGraphFPreUser
       parameters:
         - name: resourceOperation-id
           in: path
@@ -1585,7 +1585,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function hasCustomRoleScopeTag
-      operationId: deviceManagement.roleScopeTags_hasCustomRoleScopeTag
+      operationId: deviceManagement.roleScopeTag_hasCustomRoleScopeTag
       responses:
         2XX:
           description: Success
@@ -1607,7 +1607,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function compare
-      operationId: deviceManagement.templates_compare
+      operationId: deviceManagement.template_compare
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -1658,7 +1658,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function compare
-      operationId: deviceManagement.templates.migratableTo_compare
+      operationId: deviceManagement.template.migratableTo_compare
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -2075,7 +2075,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.virtualEndpoint.auditEvents_getAuditActivityTypes
+      operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityTypes
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2111,7 +2111,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcConnectivityHistory
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_getCloudPcConnectivityHistory
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getCloudPcConnectivityHistory
       parameters:
         - name: cloudPC-id
           in: path
@@ -2154,7 +2154,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcLaunchInfo
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_getCloudPcLaunchInfo
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getCloudPcLaunchInfo
       parameters:
         - name: cloudPC-id
           in: path
@@ -2179,7 +2179,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getShiftWorkCloudPcAccessState
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_getShiftWorkCloudPcAccessState
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getShiftWorkCloudPcAccessState
       parameters:
         - name: cloudPC-id
           in: path
@@ -2204,7 +2204,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSupportedCloudPcRemoteActions
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_getSupportedCloudPcRemoteActions
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getSupportedCloudPcRemoteActions
       parameters:
         - name: cloudPC-id
           in: path
@@ -2247,7 +2247,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSourceImages
-      operationId: deviceManagement.virtualEndpoint.deviceImages_getSourceImages
+      operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImages
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2318,7 +2318,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRealTimeRemoteConnectionLatency
-      operationId: deviceManagement.virtualEndpoint.reports_getRealTimeRemoteConnectionLatency
+      operationId: deviceManagement.virtualEndpoint.report_getRealTimeRemoteConnectionLatency
       parameters:
         - name: cloudPcId
           in: path
@@ -2350,7 +2350,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRealTimeRemoteConnectionStatus
-      operationId: deviceManagement.virtualEndpoint.reports_getRealTimeRemoteConnectionStatus
+      operationId: deviceManagement.virtualEndpoint.report_getRealTimeRemoteConnectionStatus
       parameters:
         - name: cloudPcId
           in: path
@@ -2382,7 +2382,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getStorageAccounts
-      operationId: deviceManagement.virtualEndpoint.snapshots_getStorageAccounts
+      operationId: deviceManagement.virtualEndpoint.snapshot_getStorageAccounts
       parameters:
         - name: subscriptionId
           in: path
@@ -2425,7 +2425,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSubscriptions
-      operationId: deviceManagement.virtualEndpoint.snapshots_getSubscriptions
+      operationId: deviceManagement.virtualEndpoint.snapshot_getSubscriptions
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2503,6 +2503,9 @@ components:
         - androidWorkProfile
         - unknown
         - androidAOSP
+        - androidMobileApplicationManagement
+        - iOSMobileApplicationManagement
+        - unknownFutureValue
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -2539,6 +2542,15 @@ components:
           - value: androidAOSP
             description: Android AOSP.
             name: androidAOSP
+          - value: androidMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for android devices.
+            name: androidMobileApplicationManagement
+          - value: iOSMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for iOS devices
+            name: iOSMobileApplicationManagement
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use
+            name: unknownFutureValue
     microsoft.graph.assignmentFilterState:
       title: assignmentFilterState
       type: object

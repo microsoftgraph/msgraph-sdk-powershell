@@ -11,7 +11,7 @@ paths:
       tags:
         - compliance.compliance
       summary: Get compliance
-      operationId: compliance.compliance_GetCompliance
+      operationId: compliance_GetCompliance
       parameters:
         - name: $select
           in: query
@@ -49,7 +49,7 @@ paths:
       tags:
         - compliance.compliance
       summary: Update compliance
-      operationId: compliance.compliance_UpdateCompliance
+      operationId: compliance_UpdateCompliance
       requestBody:
         description: New property values
         content:
@@ -59,11 +59,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.compliance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

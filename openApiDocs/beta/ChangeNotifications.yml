@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-list?view=graph-rest-1.0
-      operationId: subscriptions.subscription_ListSubscription
+      operationId: subscription_ListSubscription
       parameters:
         - $ref: '#/components/parameters/search'
         - name: $select
@@ -62,7 +62,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-1.0
-      operationId: subscriptions.subscription_CreateSubscription
+      operationId: subscription_CreateSubscription
       requestBody:
         description: New entity
         content:
@@ -89,7 +89,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-get?view=graph-rest-1.0
-      operationId: subscriptions.subscription_GetSubscription
+      operationId: subscription_GetSubscription
       parameters:
         - name: subscription-id
           in: path
@@ -144,7 +144,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-update?view=graph-rest-1.0
-      operationId: subscriptions.subscription_UpdateSubscription
+      operationId: subscription_UpdateSubscription
       parameters:
         - name: subscription-id
           in: path
@@ -163,11 +163,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.subscription'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -179,7 +175,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-delete?view=graph-rest-1.0
-      operationId: subscriptions.subscription_DeleteSubscription
+      operationId: subscription_DeleteSubscription
       parameters:
         - name: subscription-id
           in: path
@@ -206,7 +202,7 @@ paths:
       tags:
         - subscriptions.Actions
       summary: Invoke action reauthorize
-      operationId: subscriptions_reauthorize
+      operationId: subscription_reauthorize
       parameters:
         - name: subscription-id
           in: path

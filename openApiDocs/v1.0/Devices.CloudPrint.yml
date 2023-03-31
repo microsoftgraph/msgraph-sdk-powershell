@@ -11,7 +11,7 @@ paths:
       tags:
         - print.print
       summary: Get print
-      operationId: print.print_GetPrint
+      operationId: print_GetPrint
       parameters:
         - name: $select
           in: query
@@ -63,7 +63,7 @@ paths:
       tags:
         - print.print
       summary: Update print
-      operationId: print.print_UpdatePrint
+      operationId: print_UpdatePrint
       requestBody:
         description: New property values
         content:
@@ -73,11 +73,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.print'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -262,11 +258,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printConnector'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -458,11 +450,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printOperation'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -713,11 +701,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printer'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -756,7 +740,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0
-      operationId: print.printers_ListConnectors
+      operationId: print.printer_ListConnectors
       parameters:
         - name: printer-id
           in: path
@@ -841,7 +825,7 @@ paths:
         - print.printer
       summary: Get connectors from print
       description: The connectors that are associated with the printer.
-      operationId: print.printers_GetConnectors
+      operationId: print.printer_GetConnectors
       parameters:
         - name: printer-id
           in: path
@@ -908,7 +892,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-1.0
-      operationId: print.printers_restoreFactoryDefaults
+      operationId: print.printer_restoreFactoryDefaults
       parameters:
         - name: printer-id
           in: path
@@ -933,7 +917,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-list-shares?view=graph-rest-1.0
-      operationId: print.printers_ListShares
+      operationId: print.printer_ListShares
       parameters:
         - name: printer-id
           in: path
@@ -1038,7 +1022,7 @@ paths:
         - print.printer
       summary: Get shares from print
       description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
-      operationId: print.printers_GetShares
+      operationId: print.printer_GetShares
       parameters:
         - name: printer-id
           in: path
@@ -1117,7 +1101,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-list-tasktriggers?view=graph-rest-1.0
-      operationId: print.printers_ListTaskTriggers
+      operationId: print.printer_ListTaskTriggers
       parameters:
         - name: printer-id
           in: path
@@ -1191,7 +1175,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-post-tasktriggers?view=graph-rest-1.0
-      operationId: print.printers_CreateTaskTriggers
+      operationId: print.printer_CreateTaskTriggers
       parameters:
         - name: printer-id
           in: path
@@ -1224,7 +1208,7 @@ paths:
         - print.printer
       summary: Get taskTriggers from print
       description: A list of task triggers that are associated with the printer.
-      operationId: print.printers_GetTaskTriggers
+      operationId: print.printer_GetTaskTriggers
       parameters:
         - name: printer-id
           in: path
@@ -1283,7 +1267,7 @@ paths:
       tags:
         - print.printer
       summary: Update the navigation property taskTriggers in print
-      operationId: print.printers_UpdateTaskTriggers
+      operationId: print.printer_UpdateTaskTriggers
       parameters:
         - name: printer-id
           in: path
@@ -1310,11 +1294,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1322,7 +1302,7 @@ paths:
       tags:
         - print.printer
       summary: Delete navigation property taskTriggers for print
-      operationId: print.printers_DeleteTaskTriggers
+      operationId: print.printer_DeleteTaskTriggers
       parameters:
         - name: printer-id
           in: path
@@ -1358,7 +1338,7 @@ paths:
         - print.printer
       summary: Get definition from print
       description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
-      operationId: print.printers.taskTriggers_GetDefinition
+      operationId: print.printer.taskTrigger_GetDefinition
       parameters:
         - name: printer-id
           in: path
@@ -1423,7 +1403,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-create?view=graph-rest-1.0
-      operationId: print.printers_create
+      operationId: print.printer_create
       requestBody:
         description: Action parameters
         content:
@@ -1619,11 +1599,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printService'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1662,7 +1638,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0
-      operationId: print.services_ListEndpoints
+      operationId: print.service_ListEndpoints
       parameters:
         - name: printService-id
           in: path
@@ -1733,7 +1709,7 @@ paths:
       tags:
         - print.printService
       summary: Create new navigation property to endpoints for print
-      operationId: print.services_CreateEndpoints
+      operationId: print.service_CreateEndpoints
       parameters:
         - name: printService-id
           in: path
@@ -1766,7 +1742,7 @@ paths:
         - print.printService
       summary: Get endpoints from print
       description: Endpoints that can be used to access the service. Read-only. Nullable.
-      operationId: print.services_GetEndpoints
+      operationId: print.service_GetEndpoints
       parameters:
         - name: printService-id
           in: path
@@ -1824,7 +1800,7 @@ paths:
       tags:
         - print.printService
       summary: Update the navigation property endpoints in print
-      operationId: print.services_UpdateEndpoints
+      operationId: print.service_UpdateEndpoints
       parameters:
         - name: printService-id
           in: path
@@ -1851,11 +1827,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printServiceEndpoint'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1863,7 +1835,7 @@ paths:
       tags:
         - print.printService
       summary: Delete navigation property endpoints for print
-      operationId: print.services_DeleteEndpoints
+      operationId: print.service_DeleteEndpoints
       parameters:
         - name: printService-id
           in: path
@@ -2110,11 +2082,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printerShare'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2153,7 +2121,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
-      operationId: print.shares_ListAllowedGroups
+      operationId: print.share_ListAllowedGroups
       parameters:
         - name: printerShare-id
           in: path
@@ -2390,7 +2358,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedGroups for print
-      operationId: print.shares_DeleteAllowedGroupsGraphBPreRef
+      operationId: print.share_DeleteAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2436,7 +2404,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
-      operationId: print.shares_ListAllowedGroupsGraphBPreRef
+      operationId: print.share_ListAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2555,7 +2523,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
-      operationId: print.shares_CreateAllowedGroupsGraphBPreRef
+      operationId: print.share_CreateAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2582,7 +2550,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
-      operationId: print.shares_ListAllowedUsers
+      operationId: print.share_ListAllowedUsers
       parameters:
         - name: printerShare-id
           in: path
@@ -2611,6 +2579,8 @@ paths:
                 - id desc
                 - deletedDateTime
                 - deletedDateTime desc
+                - signInActivity
+                - signInActivity desc
                 - accountEnabled
                 - accountEnabled desc
                 - ageGroup
@@ -2770,6 +2740,7 @@ paths:
               enum:
                 - id
                 - deletedDateTime
+                - signInActivity
                 - accountEnabled
                 - ageGroup
                 - assignedLicenses
@@ -2962,7 +2933,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedUsers for print
-      operationId: print.shares_DeleteAllowedUsersGraphBPreRef
+      operationId: print.share_DeleteAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3008,7 +2979,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
-      operationId: print.shares_ListAllowedUsersGraphBPreRef
+      operationId: print.share_ListAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3037,6 +3008,8 @@ paths:
                 - id desc
                 - deletedDateTime
                 - deletedDateTime desc
+                - signInActivity
+                - signInActivity desc
                 - accountEnabled
                 - accountEnabled desc
                 - ageGroup
@@ -3197,7 +3170,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
-      operationId: print.shares_CreateAllowedUsersGraphBPreRef
+      operationId: print.share_CreateAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3221,7 +3194,7 @@ paths:
         - print.printerShare
       summary: Get printer from print
       description: The printer that this printer share is related to.
-      operationId: print.shares_GetPrinter
+      operationId: print.share_GetPrinter
       parameters:
         - name: printerShare-id
           in: path
@@ -3458,11 +3431,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3501,7 +3470,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
-      operationId: print.taskDefinitions_ListTasks
+      operationId: print.taskDefinition_ListTasks
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -3576,7 +3545,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Create new navigation property to tasks for print
-      operationId: print.taskDefinitions_CreateTasks
+      operationId: print.taskDefinition_CreateTasks
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -3609,7 +3578,7 @@ paths:
         - print.printTaskDefinition
       summary: Get tasks from print
       description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-      operationId: print.taskDefinitions_GetTasks
+      operationId: print.taskDefinition_GetTasks
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -3671,7 +3640,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update the navigation property tasks in print
-      operationId: print.taskDefinitions_UpdateTasks
+      operationId: print.taskDefinition_UpdateTasks
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -3698,11 +3667,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printTask'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3710,7 +3675,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Delete navigation property tasks for print
-      operationId: print.taskDefinitions_DeleteTasks
+      operationId: print.taskDefinition_DeleteTasks
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -3746,7 +3711,7 @@ paths:
         - print.printTaskDefinition
       summary: Get definition from print
       description: The printTaskDefinition that was used to create this task. Read-only.
-      operationId: print.taskDefinitions.tasks_GetDefinition
+      operationId: print.taskDefinition_GetDefinition
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -3808,7 +3773,7 @@ paths:
         - print.printTaskDefinition
       summary: Get trigger from print
       description: The printTaskTrigger that triggered this task's execution. Read-only.
-      operationId: print.taskDefinitions.tasks_GetTrigger
+      operationId: print.taskDefinition_GetTrigger
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -4574,6 +4539,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -6454,6 +6421,28 @@ components:
               $ref: '#/components/schemas/microsoft.graph.schedule'
           additionalProperties:
             type: object
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.assignedPlan:
       title: assignedPlan
       type: object
@@ -17267,15 +17256,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string

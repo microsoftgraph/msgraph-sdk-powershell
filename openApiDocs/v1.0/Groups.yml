@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy_ListGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy.groupLifecyclePolicy_ListGroupLifecyclePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -85,7 +85,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy_CreateGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy.groupLifecyclePolicy_CreateGroupLifecyclePolicy
       requestBody:
         description: New entity
         content:
@@ -112,7 +112,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-get?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy_GetGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy.groupLifecyclePolicy_GetGroupLifecyclePolicy
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
@@ -167,7 +167,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-update?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy_UpdateGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy.groupLifecyclePolicy_UpdateGroupLifecyclePolicy
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
@@ -186,11 +186,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -202,7 +198,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-delete?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy_DeleteGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy.groupLifecyclePolicy_DeleteGroupLifecyclePolicy
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
@@ -229,7 +225,7 @@ paths:
       tags:
         - groupLifecyclePolicies.Actions
       summary: Invoke action addGroup
-      operationId: groupLifecyclePolicies_addGroup
+      operationId: groupLifecyclePolicy_addGroup
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
@@ -272,7 +268,7 @@ paths:
       tags:
         - groupLifecyclePolicies.Actions
       summary: Invoke action removeGroup
-      operationId: groupLifecyclePolicies_removeGroup
+      operationId: groupLifecyclePolicy_removeGroup
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
@@ -319,7 +315,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list?view=graph-rest-1.0
-      operationId: groups.group_ListGroup
+      operationId: group_ListGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -561,7 +557,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0
-      operationId: groups.group_CreateGroup
+      operationId: group_CreateGroup
       requestBody:
         description: New entity
         content:
@@ -588,7 +584,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-get?view=graph-rest-1.0
-      operationId: groups.group_GetGroup
+      operationId: group_GetGroup
       parameters:
         - name: group-id
           in: path
@@ -733,7 +729,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
-      operationId: groups.group_UpdateGroup
+      operationId: group_UpdateGroup
       parameters:
         - name: group-id
           in: path
@@ -752,11 +748,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.group'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -768,7 +760,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-delete?view=graph-rest-1.0
-      operationId: groups.group_DeleteGroup
+      operationId: group_DeleteGroup
       parameters:
         - name: group-id
           in: path
@@ -799,7 +791,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
-      operationId: groups_ListAcceptedSenders
+      operationId: group_ListAcceptedSenders
       parameters:
         - name: group-id
           in: path
@@ -855,7 +847,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property acceptedSenders for groups
-      operationId: groups_DeleteAcceptedSendersGraphBPreRef
+      operationId: group_DeleteAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -901,7 +893,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
-      operationId: groups_ListAcceptedSendersGraphBPreRef
+      operationId: group_ListAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -943,7 +935,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to acceptedSenders for groups
-      operationId: groups_CreateAcceptedSendersGraphBPreRef
+      operationId: group_CreateAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -970,7 +962,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.attachments_createUploadSession
+      operationId: group.calendar.calendarView.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -1019,7 +1011,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.instances.attachments_createUploadSession
+      operationId: group.calendar.calendarView.instance.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -1076,7 +1068,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.instances_accept
+      operationId: group.calendar.calendarView.instance_accept
       parameters:
         - name: group-id
           in: path
@@ -1134,7 +1126,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.instances_cancel
+      operationId: group.calendar.calendarView.instance_cancel
       parameters:
         - name: group-id
           in: path
@@ -1188,7 +1180,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.instances_decline
+      operationId: group.calendar.calendarView.instance_decline
       parameters:
         - name: group-id
           in: path
@@ -1248,7 +1240,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.instances_dismissReminder
+      operationId: group.calendar.calendarView.instance_dismissReminder
       parameters:
         - name: group-id
           in: path
@@ -1289,7 +1281,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.instances_forward
+      operationId: group.calendar.calendarView.instance_forward
       parameters:
         - name: group-id
           in: path
@@ -1347,7 +1339,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.instances_snoozeReminder
+      operationId: group.calendar.calendarView.instance_snoozeReminder
       parameters:
         - name: group-id
           in: path
@@ -1400,7 +1392,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.instances_tentativelyAccept
+      operationId: group.calendar.calendarView.instance_tentativelyAccept
       parameters:
         - name: group-id
           in: path
@@ -1460,7 +1452,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView.instances_delta
+      operationId: group.calendar.calendarView.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -1670,7 +1662,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView_accept
+      operationId: group.calendar.calendarView_accept
       parameters:
         - name: group-id
           in: path
@@ -1720,7 +1712,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView_cancel
+      operationId: group.calendar.calendarView_cancel
       parameters:
         - name: group-id
           in: path
@@ -1766,7 +1758,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView_decline
+      operationId: group.calendar.calendarView_decline
       parameters:
         - name: group-id
           in: path
@@ -1818,7 +1810,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView_dismissReminder
+      operationId: group.calendar.calendarView_dismissReminder
       parameters:
         - name: group-id
           in: path
@@ -1851,7 +1843,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView_forward
+      operationId: group.calendar.calendarView_forward
       parameters:
         - name: group-id
           in: path
@@ -1901,7 +1893,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView_snoozeReminder
+      operationId: group.calendar.calendarView_snoozeReminder
       parameters:
         - name: group-id
           in: path
@@ -1946,7 +1938,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView_tentativelyAccept
+      operationId: group.calendar.calendarView_tentativelyAccept
       parameters:
         - name: group-id
           in: path
@@ -1998,7 +1990,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: groups.calendar.calendarView_delta
+      operationId: group.calendar.calendarView_delta
       parameters:
         - name: group-id
           in: path
@@ -2200,7 +2192,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.calendar.events.attachments_createUploadSession
+      operationId: group.calendar.event.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -2249,7 +2241,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.calendar.events.instances.attachments_createUploadSession
+      operationId: group.calendar.event.instance.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -2306,7 +2298,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: groups.calendar.events.instances_accept
+      operationId: group.calendar.event.instance_accept
       parameters:
         - name: group-id
           in: path
@@ -2364,7 +2356,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: groups.calendar.events.instances_cancel
+      operationId: group.calendar.event.instance_cancel
       parameters:
         - name: group-id
           in: path
@@ -2418,7 +2410,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: groups.calendar.events.instances_decline
+      operationId: group.calendar.event.instance_decline
       parameters:
         - name: group-id
           in: path
@@ -2478,7 +2470,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: groups.calendar.events.instances_dismissReminder
+      operationId: group.calendar.event.instance_dismissReminder
       parameters:
         - name: group-id
           in: path
@@ -2519,7 +2511,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: groups.calendar.events.instances_forward
+      operationId: group.calendar.event.instance_forward
       parameters:
         - name: group-id
           in: path
@@ -2577,7 +2569,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: groups.calendar.events.instances_snoozeReminder
+      operationId: group.calendar.event.instance_snoozeReminder
       parameters:
         - name: group-id
           in: path
@@ -2630,7 +2622,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: groups.calendar.events.instances_tentativelyAccept
+      operationId: group.calendar.event.instance_tentativelyAccept
       parameters:
         - name: group-id
           in: path
@@ -2690,7 +2682,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: groups.calendar.events.instances_delta
+      operationId: group.calendar.event.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -2900,7 +2892,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: groups.calendar.events_accept
+      operationId: group.calendar.event_accept
       parameters:
         - name: group-id
           in: path
@@ -2950,7 +2942,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: groups.calendar.events_cancel
+      operationId: group.calendar.event_cancel
       parameters:
         - name: group-id
           in: path
@@ -2996,7 +2988,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: groups.calendar.events_decline
+      operationId: group.calendar.event_decline
       parameters:
         - name: group-id
           in: path
@@ -3048,7 +3040,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: groups.calendar.events_dismissReminder
+      operationId: group.calendar.event_dismissReminder
       parameters:
         - name: group-id
           in: path
@@ -3081,7 +3073,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: groups.calendar.events_forward
+      operationId: group.calendar.event_forward
       parameters:
         - name: group-id
           in: path
@@ -3131,7 +3123,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: groups.calendar.events_snoozeReminder
+      operationId: group.calendar.event_snoozeReminder
       parameters:
         - name: group-id
           in: path
@@ -3176,7 +3168,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: groups.calendar.events_tentativelyAccept
+      operationId: group.calendar.event_tentativelyAccept
       parameters:
         - name: group-id
           in: path
@@ -3228,7 +3220,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: groups.calendar.events_delta
+      operationId: group.calendar.event_delta
       parameters:
         - name: group-id
           in: path
@@ -3426,7 +3418,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: groups.calendar_allowedCalendarSharingRoles
+      operationId: group.calendar_allowedCalendarSharingRoles
       parameters:
         - name: group-id
           in: path
@@ -3480,7 +3472,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
-      operationId: groups.calendar_getSchedule
+      operationId: group.calendar_getSchedule
       parameters:
         - name: group-id
           in: path
@@ -3547,7 +3539,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.calendarView.attachments_createUploadSession
+      operationId: group.calendarView.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -3596,7 +3588,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.calendarView.instances.attachments_createUploadSession
+      operationId: group.calendarView.instance.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -3653,7 +3645,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: groups.calendarView.instances_accept
+      operationId: group.calendarView.instance_accept
       parameters:
         - name: group-id
           in: path
@@ -3711,7 +3703,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: groups.calendarView.instances_cancel
+      operationId: group.calendarView.instance_cancel
       parameters:
         - name: group-id
           in: path
@@ -3765,7 +3757,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: groups.calendarView.instances_decline
+      operationId: group.calendarView.instance_decline
       parameters:
         - name: group-id
           in: path
@@ -3825,7 +3817,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: groups.calendarView.instances_dismissReminder
+      operationId: group.calendarView.instance_dismissReminder
       parameters:
         - name: group-id
           in: path
@@ -3866,7 +3858,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: groups.calendarView.instances_forward
+      operationId: group.calendarView.instance_forward
       parameters:
         - name: group-id
           in: path
@@ -3924,7 +3916,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: groups.calendarView.instances_snoozeReminder
+      operationId: group.calendarView.instance_snoozeReminder
       parameters:
         - name: group-id
           in: path
@@ -3977,7 +3969,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: groups.calendarView.instances_tentativelyAccept
+      operationId: group.calendarView.instance_tentativelyAccept
       parameters:
         - name: group-id
           in: path
@@ -4037,7 +4029,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: groups.calendarView.instances_delta
+      operationId: group.calendarView.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -4247,7 +4239,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: groups.calendarView_accept
+      operationId: group.calendarView_accept
       parameters:
         - name: group-id
           in: path
@@ -4297,7 +4289,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: groups.calendarView_cancel
+      operationId: group.calendarView_cancel
       parameters:
         - name: group-id
           in: path
@@ -4343,7 +4335,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: groups.calendarView_decline
+      operationId: group.calendarView_decline
       parameters:
         - name: group-id
           in: path
@@ -4395,7 +4387,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: groups.calendarView_dismissReminder
+      operationId: group.calendarView_dismissReminder
       parameters:
         - name: group-id
           in: path
@@ -4428,7 +4420,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: groups.calendarView_forward
+      operationId: group.calendarView_forward
       parameters:
         - name: group-id
           in: path
@@ -4478,7 +4470,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: groups.calendarView_snoozeReminder
+      operationId: group.calendarView_snoozeReminder
       parameters:
         - name: group-id
           in: path
@@ -4523,7 +4515,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: groups.calendarView_tentativelyAccept
+      operationId: group.calendarView_tentativelyAccept
       parameters:
         - name: group-id
           in: path
@@ -4575,7 +4567,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: groups.calendarView_delta
+      operationId: group.calendarView_delta
       parameters:
         - name: group-id
           in: path
@@ -4777,7 +4769,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0
-      operationId: groups_ListConversations
+      operationId: group_ListConversations
       parameters:
         - name: group-id
           in: path
@@ -4845,12 +4837,12 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Use reply thread or reply post to further post to that conversation.
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
-      operationId: groups_CreateConversations
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      operationId: group_CreateConversations
       parameters:
         - name: group-id
           in: path
@@ -4883,7 +4875,7 @@ paths:
         - groups.conversation
       summary: Get conversations from groups
       description: The group's conversations.
-      operationId: groups_GetConversations
+      operationId: group_GetConversations
       parameters:
         - name: group-id
           in: path
@@ -4933,7 +4925,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property conversations for groups
-      operationId: groups_DeleteConversations
+      operationId: group_DeleteConversations
       parameters:
         - name: group-id
           in: path
@@ -4972,7 +4964,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0
-      operationId: groups.conversations_ListThreads
+      operationId: group.conversation_ListThreads
       parameters:
         - name: group-id
           in: path
@@ -5074,7 +5066,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0
-      operationId: groups.conversations_CreateThreads
+      operationId: group.conversation_CreateThreads
       parameters:
         - name: group-id
           in: path
@@ -5115,7 +5107,7 @@ paths:
         - groups.conversation
       summary: Get threads from groups
       description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-      operationId: groups.conversations_GetThreads
+      operationId: group.conversation_GetThreads
       parameters:
         - name: group-id
           in: path
@@ -5189,7 +5181,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property threads in groups
-      operationId: groups.conversations_UpdateThreads
+      operationId: group.conversation_UpdateThreads
       parameters:
         - name: group-id
           in: path
@@ -5224,11 +5216,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conversationThread'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5236,7 +5224,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property threads for groups
-      operationId: groups.conversations_DeleteThreads
+      operationId: group.conversation_DeleteThreads
       parameters:
         - name: group-id
           in: path
@@ -5283,7 +5271,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
-      operationId: groups.conversations.threads_reply
+      operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
           in: path
@@ -5331,12 +5319,12 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the **post** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **post** instance."
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-get?view=graph-rest-1.0
-      operationId: groups.conversations.threads_ListPosts
+        url: https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+      operationId: group.conversation.thread_ListPosts
       parameters:
         - name: group-id
           in: path
@@ -5463,7 +5451,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get posts from groups
-      operationId: groups.conversations.threads_GetPosts
+      operationId: group.conversation.thread_GetPosts
       parameters:
         - name: group-id
           in: path
@@ -5562,7 +5550,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
-      operationId: groups.conversations.threads.posts_ListAttachments
+      operationId: group.conversation.thread.post_ListAttachments
       parameters:
         - name: group-id
           in: path
@@ -5665,7 +5653,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to attachments for groups
-      operationId: groups.conversations.threads.posts_CreateAttachments
+      operationId: group.conversation.thread.post_CreateAttachments
       parameters:
         - name: group-id
           in: path
@@ -5722,7 +5710,7 @@ paths:
         - groups.conversation
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts_GetAttachments
+      operationId: group.conversation.thread.post_GetAttachments
       parameters:
         - name: group-id
           in: path
@@ -5807,7 +5795,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property attachments for groups
-      operationId: groups.conversations.threads.posts_DeleteAttachments
+      operationId: group.conversation.thread.post_DeleteAttachments
       parameters:
         - name: group-id
           in: path
@@ -5870,7 +5858,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.conversations.threads.posts.attachments_createUploadSession
+      operationId: group.conversation.thread.post.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -5932,7 +5920,7 @@ paths:
         - groups.conversation
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts_ListExtensions
+      operationId: group.conversation.thread.post_ListExtensions
       parameters:
         - name: group-id
           in: path
@@ -6020,7 +6008,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to extensions for groups
-      operationId: groups.conversations.threads.posts_CreateExtensions
+      operationId: group.conversation.thread.post_CreateExtensions
       parameters:
         - name: group-id
           in: path
@@ -6077,7 +6065,7 @@ paths:
         - groups.conversation
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts_GetExtensions
+      operationId: group.conversation.thread.post_GetExtensions
       parameters:
         - name: group-id
           in: path
@@ -6157,7 +6145,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property extensions in groups
-      operationId: groups.conversations.threads.posts_UpdateExtensions
+      operationId: group.conversation.thread.post_UpdateExtensions
       parameters:
         - name: group-id
           in: path
@@ -6208,11 +6196,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6220,7 +6204,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property extensions for groups
-      operationId: groups.conversations.threads.posts_DeleteExtensions
+      operationId: group.conversation.thread.post_DeleteExtensions
       parameters:
         - name: group-id
           in: path
@@ -6280,7 +6264,7 @@ paths:
         - groups.conversation
       summary: Get inReplyTo from groups
       description: Read-only. Supports $expand.
-      operationId: groups.conversations.threads.posts_GetInReplyTo
+      operationId: group.conversation.thread.post_GetInReplyTo
       parameters:
         - name: group-id
           in: path
@@ -6379,7 +6363,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
-      operationId: groups.conversations.threads.posts.inReplyTo_ListAttachments
+      operationId: group.conversation.thread.post.inReplyTo_ListAttachments
       parameters:
         - name: group-id
           in: path
@@ -6482,7 +6466,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to attachments for groups
-      operationId: groups.conversations.threads.posts.inReplyTo_CreateAttachments
+      operationId: group.conversation.thread.post.inReplyTo_CreateAttachments
       parameters:
         - name: group-id
           in: path
@@ -6539,7 +6523,7 @@ paths:
         - groups.conversation
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.inReplyTo_GetAttachments
+      operationId: group.conversation.thread.post.inReplyTo_GetAttachments
       parameters:
         - name: group-id
           in: path
@@ -6624,7 +6608,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property attachments for groups
-      operationId: groups.conversations.threads.posts.inReplyTo_DeleteAttachments
+      operationId: group.conversation.thread.post.inReplyTo_DeleteAttachments
       parameters:
         - name: group-id
           in: path
@@ -6687,7 +6671,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.conversations.threads.posts.inReplyTo.attachments_createUploadSession
+      operationId: group.conversation.thread.post.inReplyTo.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -6749,7 +6733,7 @@ paths:
         - groups.conversation
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.inReplyTo_ListExtensions
+      operationId: group.conversation.thread.post.inReplyTo_ListExtensions
       parameters:
         - name: group-id
           in: path
@@ -6837,7 +6821,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to extensions for groups
-      operationId: groups.conversations.threads.posts.inReplyTo_CreateExtensions
+      operationId: group.conversation.thread.post.inReplyTo_CreateExtensions
       parameters:
         - name: group-id
           in: path
@@ -6894,7 +6878,7 @@ paths:
         - groups.conversation
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.inReplyTo_GetExtensions
+      operationId: group.conversation.thread.post.inReplyTo_GetExtensions
       parameters:
         - name: group-id
           in: path
@@ -6974,7 +6958,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property extensions in groups
-      operationId: groups.conversations.threads.posts.inReplyTo_UpdateExtensions
+      operationId: group.conversation.thread.post.inReplyTo_UpdateExtensions
       parameters:
         - name: group-id
           in: path
@@ -7025,11 +7009,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7037,7 +7017,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property extensions for groups
-      operationId: groups.conversations.threads.posts.inReplyTo_DeleteExtensions
+      operationId: group.conversation.thread.post.inReplyTo_DeleteExtensions
       parameters:
         - name: group-id
           in: path
@@ -7100,7 +7080,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
-      operationId: groups.conversations.threads.posts.inReplyTo_forward
+      operationId: group.conversation.thread.post.inReplyTo_forward
       parameters:
         - name: group-id
           in: path
@@ -7166,7 +7146,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: groups.conversations.threads.posts.inReplyTo_reply
+      operationId: group.conversation.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
           in: path
@@ -7224,7 +7204,7 @@ paths:
         - groups.conversation
       summary: Get multiValueExtendedProperties from groups
       description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.conversations.threads.posts.inReplyTo_ListMultiValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7316,7 +7296,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to multiValueExtendedProperties for groups
-      operationId: groups.conversations.threads.posts.inReplyTo_CreateMultiValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_CreateMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7373,7 +7353,7 @@ paths:
         - groups.conversation
       summary: Get multiValueExtendedProperties from groups
       description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.conversations.threads.posts.inReplyTo_GetMultiValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7454,7 +7434,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property multiValueExtendedProperties in groups
-      operationId: groups.conversations.threads.posts.inReplyTo_UpdateMultiValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_UpdateMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7505,11 +7485,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7517,7 +7493,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property multiValueExtendedProperties for groups
-      operationId: groups.conversations.threads.posts.inReplyTo_DeleteMultiValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_DeleteMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7577,7 +7553,7 @@ paths:
         - groups.conversation
       summary: Get singleValueExtendedProperties from groups
       description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.conversations.threads.posts.inReplyTo_ListSingleValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7669,7 +7645,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to singleValueExtendedProperties for groups
-      operationId: groups.conversations.threads.posts.inReplyTo_CreateSingleValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_CreateSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7726,7 +7702,7 @@ paths:
         - groups.conversation
       summary: Get singleValueExtendedProperties from groups
       description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.conversations.threads.posts.inReplyTo_GetSingleValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7807,7 +7783,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property singleValueExtendedProperties in groups
-      operationId: groups.conversations.threads.posts.inReplyTo_UpdateSingleValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_UpdateSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7858,11 +7834,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7870,7 +7842,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property singleValueExtendedProperties for groups
-      operationId: groups.conversations.threads.posts.inReplyTo_DeleteSingleValueExtendedProperties
+      operationId: group.conversation.thread.post.inReplyTo_DeleteSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -7933,7 +7905,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
-      operationId: groups.conversations.threads.posts_forward
+      operationId: group.conversation.thread.post_forward
       parameters:
         - name: group-id
           in: path
@@ -7999,7 +7971,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: groups.conversations.threads.posts_reply
+      operationId: group.conversation.thread.post_reply
       parameters:
         - name: group-id
           in: path
@@ -8057,7 +8029,7 @@ paths:
         - groups.conversation
       summary: Get multiValueExtendedProperties from groups
       description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.conversations.threads.posts_ListMultiValueExtendedProperties
+      operationId: group.conversation.thread.post_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8149,7 +8121,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to multiValueExtendedProperties for groups
-      operationId: groups.conversations.threads.posts_CreateMultiValueExtendedProperties
+      operationId: group.conversation.thread.post_CreateMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8206,7 +8178,7 @@ paths:
         - groups.conversation
       summary: Get multiValueExtendedProperties from groups
       description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.conversations.threads.posts_GetMultiValueExtendedProperties
+      operationId: group.conversation.thread.post_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8287,7 +8259,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property multiValueExtendedProperties in groups
-      operationId: groups.conversations.threads.posts_UpdateMultiValueExtendedProperties
+      operationId: group.conversation.thread.post_UpdateMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8338,11 +8310,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8350,7 +8318,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property multiValueExtendedProperties for groups
-      operationId: groups.conversations.threads.posts_DeleteMultiValueExtendedProperties
+      operationId: group.conversation.thread.post_DeleteMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8410,7 +8378,7 @@ paths:
         - groups.conversation
       summary: Get singleValueExtendedProperties from groups
       description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.conversations.threads.posts_ListSingleValueExtendedProperties
+      operationId: group.conversation.thread.post_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8502,7 +8470,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to singleValueExtendedProperties for groups
-      operationId: groups.conversations.threads.posts_CreateSingleValueExtendedProperties
+      operationId: group.conversation.thread.post_CreateSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8559,7 +8527,7 @@ paths:
         - groups.conversation
       summary: Get singleValueExtendedProperties from groups
       description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.conversations.threads.posts_GetSingleValueExtendedProperties
+      operationId: group.conversation.thread.post_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8640,7 +8608,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property singleValueExtendedProperties in groups
-      operationId: groups.conversations.threads.posts_UpdateSingleValueExtendedProperties
+      operationId: group.conversation.thread.post_UpdateSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8691,11 +8659,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8703,7 +8667,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property singleValueExtendedProperties for groups
-      operationId: groups.conversations.threads.posts_DeleteSingleValueExtendedProperties
+      operationId: group.conversation.thread.post_DeleteSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -8763,7 +8727,7 @@ paths:
         - groups.directoryObject
       summary: Get createdOnBehalfOf from groups
       description: 'The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.'
-      operationId: groups_GetCreatedOnBehalfGraphOPre
+      operationId: group_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -8817,7 +8781,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
-      operationId: groups.drives.items.listItem.documentSetVersions_restore
+      operationId: group.drive.item.listItem.documentSetVersion_restore
       parameters:
         - name: group-id
           in: path
@@ -8862,7 +8826,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items.listItem_getActivitiesGraphBPreInterval
+      operationId: group.drive.item.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -8975,7 +8939,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items.listItem_getActivitiesGraphBPreInterval
+      operationId: group.drive.item.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -9116,7 +9080,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
-      operationId: groups.drives.items.listItem.versions_restoreVersion
+      operationId: group.drive.item.listItem.version_restoreVersion
       parameters:
         - name: group-id
           in: path
@@ -9165,7 +9129,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
-      operationId: groups.drives.items_checkin
+      operationId: group.drive.item_checkin
       parameters:
         - name: group-id
           in: path
@@ -9222,7 +9186,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
-      operationId: groups.drives.items_checkout
+      operationId: group.drive.item_checkout
       parameters:
         - name: group-id
           in: path
@@ -9263,7 +9227,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
-      operationId: groups.drives.items_copy
+      operationId: group.drive.item_copy
       parameters:
         - name: group-id
           in: path
@@ -9323,7 +9287,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
-      operationId: groups.drives.items_createLink
+      operationId: group.drive.item_createLink
       parameters:
         - name: group-id
           in: path
@@ -9398,7 +9362,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
-      operationId: groups.drives.items_createUploadSession
+      operationId: group.drive.item_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -9451,7 +9415,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups.drives.items_delta
+      operationId: group.drive.item_delta
       parameters:
         - name: group-id
           in: path
@@ -9648,7 +9612,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups.drives.items_delta
+      operationId: group.drive.item_delta
       parameters:
         - name: group-id
           in: path
@@ -9857,7 +9821,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
-      operationId: groups.drives.items_follow
+      operationId: group.drive.item_follow
       parameters:
         - name: group-id
           in: path
@@ -9898,7 +9862,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items_getActivitiesGraphBPreInterval
+      operationId: group.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -10011,7 +9975,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items_getActivitiesGraphBPreInterval
+      operationId: group.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -10152,7 +10116,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
-      operationId: groups.drives.items_invite
+      operationId: group.drive.item_invite
       parameters:
         - name: group-id
           in: path
@@ -10247,7 +10211,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action preview
-      operationId: groups.drives.items_preview
+      operationId: group.drive.item_preview
       parameters:
         - name: group-id
           in: path
@@ -10309,7 +10273,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
-      operationId: groups.drives.items_restore
+      operationId: group.drive.item_restore
       parameters:
         - name: group-id
           in: path
@@ -10365,7 +10329,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function search
-      operationId: groups.drives.items_search
+      operationId: group.drive.item_search
       parameters:
         - name: group-id
           in: path
@@ -10571,7 +10535,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
-      operationId: groups.drives.items_unfollow
+      operationId: group.drive.item_unfollow
       parameters:
         - name: group-id
           in: path
@@ -10608,7 +10572,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action validatePermission
-      operationId: groups.drives.items_validatePermission
+      operationId: group.drive.item_validatePermission
       parameters:
         - name: group-id
           in: path
@@ -10664,7 +10628,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
-      operationId: groups.drives.items.permissions_grant
+      operationId: group.drive.item.permission_grant
       parameters:
         - name: group-id
           in: path
@@ -10746,7 +10710,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reauthorize
-      operationId: groups.drives.items.subscriptions_reauthorize
+      operationId: group.drive.item.subscription_reauthorize
       parameters:
         - name: group-id
           in: path
@@ -10795,7 +10759,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
-      operationId: groups.drives.items.versions_restoreVersion
+      operationId: group.drive.item.version_restoreVersion
       parameters:
         - name: group-id
           in: path
@@ -10844,7 +10808,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: groups.drives.list.contentTypes_associateGraphWPreHubSites
+      operationId: group.drive.list.contentType_associateGraphWPreHubSites
       parameters:
         - name: group-id
           in: path
@@ -10903,7 +10867,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
-      operationId: groups.drives.list.contentTypes_copyToDefaultContentLocation
+      operationId: group.drive.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: group-id
           in: path
@@ -10955,7 +10919,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function isPublished
-      operationId: groups.drives.list.contentTypes_isPublished
+      operationId: group.drive.list.contentType_isPublished
       parameters:
         - name: group-id
           in: path
@@ -11006,7 +10970,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
-      operationId: groups.drives.list.contentTypes_publish
+      operationId: group.drive.list.contentType_publish
       parameters:
         - name: group-id
           in: path
@@ -11047,7 +11011,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
-      operationId: groups.drives.list.contentTypes_unpublish
+      operationId: group.drive.list.contentType_unpublish
       parameters:
         - name: group-id
           in: path
@@ -11088,7 +11052,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
-      operationId: groups.drives.list.contentTypes_addCopy
+      operationId: group.drive.list.contentType_addCopy
       parameters:
         - name: group-id
           in: path
@@ -11137,7 +11101,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
-      operationId: groups.drives.list.contentTypes_addCopyFromContentTypeHub
+      operationId: group.drive.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: group-id
           in: path
@@ -11182,7 +11146,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getCompatibleHubContentTypes
-      operationId: groups.drives.list.contentTypes_getCompatibleHubContentTypes
+      operationId: group.drive.list.contentType_getCompatibleHubContentTypes
       parameters:
         - name: group-id
           in: path
@@ -11310,7 +11274,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
-      operationId: groups.drives.list.items.documentSetVersions_restore
+      operationId: group.drive.list.item.documentSetVersion_restore
       parameters:
         - name: group-id
           in: path
@@ -11355,7 +11319,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.list.items_getActivitiesGraphBPreInterval
+      operationId: group.drive.list.item_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -11468,7 +11432,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.list.items_getActivitiesGraphBPreInterval
+      operationId: group.drive.list.item_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -11609,7 +11573,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
-      operationId: groups.drives.list.items.versions_restoreVersion
+      operationId: group.drive.list.item.version_restoreVersion
       parameters:
         - name: group-id
           in: path
@@ -11654,7 +11618,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reauthorize
-      operationId: groups.drives.list.subscriptions_reauthorize
+      operationId: group.drive.list.subscription_reauthorize
       parameters:
         - name: group-id
           in: path
@@ -11691,7 +11655,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function recent
-      operationId: groups.drives_recent
+      operationId: group.drive_recent
       parameters:
         - name: group-id
           in: path
@@ -11862,7 +11826,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function search
-      operationId: groups.drives_search
+      operationId: group.drive_search
       parameters:
         - name: group-id
           in: path
@@ -12041,7 +12005,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function sharedWithMe
-      operationId: groups.drives_sharedGraphWPreMe
+      operationId: group.drive_sharedGraphWPreMe
       parameters:
         - name: group-id
           in: path
@@ -12216,7 +12180,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
-      operationId: groups.drives.root.listItem.documentSetVersions_restore
+      operationId: group.drive.root.listItem.documentSetVersion_restore
       parameters:
         - name: group-id
           in: path
@@ -12253,7 +12217,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root.listItem_getActivitiesGraphBPreInterval
+      operationId: group.drive.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -12358,7 +12322,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root.listItem_getActivitiesGraphBPreInterval
+      operationId: group.drive.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -12491,7 +12455,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
-      operationId: groups.drives.root.listItem.versions_restoreVersion
+      operationId: group.drive.root.listItem.version_restoreVersion
       parameters:
         - name: group-id
           in: path
@@ -12532,7 +12496,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
-      operationId: groups.drives.root_checkin
+      operationId: group.drive.root_checkin
       parameters:
         - name: group-id
           in: path
@@ -12581,7 +12545,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
-      operationId: groups.drives.root_checkout
+      operationId: group.drive.root_checkout
       parameters:
         - name: group-id
           in: path
@@ -12614,7 +12578,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
-      operationId: groups.drives.root_copy
+      operationId: group.drive.root_copy
       parameters:
         - name: group-id
           in: path
@@ -12666,7 +12630,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
-      operationId: groups.drives.root_createLink
+      operationId: group.drive.root_createLink
       parameters:
         - name: group-id
           in: path
@@ -12733,7 +12697,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
-      operationId: groups.drives.root_createUploadSession
+      operationId: group.drive.root_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -12778,7 +12742,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups.drives.root_delta
+      operationId: group.drive.root_delta
       parameters:
         - name: group-id
           in: path
@@ -12967,7 +12931,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups.drives.root_delta
+      operationId: group.drive.root_delta
       parameters:
         - name: group-id
           in: path
@@ -13168,7 +13132,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
-      operationId: groups.drives.root_follow
+      operationId: group.drive.root_follow
       parameters:
         - name: group-id
           in: path
@@ -13201,7 +13165,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root_getActivitiesGraphBPreInterval
+      operationId: group.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -13306,7 +13270,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root_getActivitiesGraphBPreInterval
+      operationId: group.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -13439,7 +13403,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
-      operationId: groups.drives.root_invite
+      operationId: group.drive.root_invite
       parameters:
         - name: group-id
           in: path
@@ -13526,7 +13490,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action preview
-      operationId: groups.drives.root_preview
+      operationId: group.drive.root_preview
       parameters:
         - name: group-id
           in: path
@@ -13580,7 +13544,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
-      operationId: groups.drives.root_restore
+      operationId: group.drive.root_restore
       parameters:
         - name: group-id
           in: path
@@ -13628,7 +13592,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function search
-      operationId: groups.drives.root_search
+      operationId: group.drive.root_search
       parameters:
         - name: group-id
           in: path
@@ -13826,7 +13790,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
-      operationId: groups.drives.root_unfollow
+      operationId: group.drive.root_unfollow
       parameters:
         - name: group-id
           in: path
@@ -13855,7 +13819,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action validatePermission
-      operationId: groups.drives.root_validatePermission
+      operationId: group.drive.root_validatePermission
       parameters:
         - name: group-id
           in: path
@@ -13903,7 +13867,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
-      operationId: groups.drives.root.permissions_grant
+      operationId: group.drive.root.permission_grant
       parameters:
         - name: group-id
           in: path
@@ -13977,7 +13941,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reauthorize
-      operationId: groups.drives.root.subscriptions_reauthorize
+      operationId: group.drive.root.subscription_reauthorize
       parameters:
         - name: group-id
           in: path
@@ -14018,7 +13982,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
-      operationId: groups.drives.root.versions_restoreVersion
+      operationId: group.drive.root.version_restoreVersion
       parameters:
         - name: group-id
           in: path
@@ -14059,7 +14023,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.events.attachments_createUploadSession
+      operationId: group.event.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -14108,7 +14072,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.events.instances.attachments_createUploadSession
+      operationId: group.event.instance.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -14165,7 +14129,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: groups.events.instances_accept
+      operationId: group.event.instance_accept
       parameters:
         - name: group-id
           in: path
@@ -14223,7 +14187,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: groups.events.instances_cancel
+      operationId: group.event.instance_cancel
       parameters:
         - name: group-id
           in: path
@@ -14277,7 +14241,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: groups.events.instances_decline
+      operationId: group.event.instance_decline
       parameters:
         - name: group-id
           in: path
@@ -14337,7 +14301,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: groups.events.instances_dismissReminder
+      operationId: group.event.instance_dismissReminder
       parameters:
         - name: group-id
           in: path
@@ -14378,7 +14342,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: groups.events.instances_forward
+      operationId: group.event.instance_forward
       parameters:
         - name: group-id
           in: path
@@ -14436,7 +14400,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: groups.events.instances_snoozeReminder
+      operationId: group.event.instance_snoozeReminder
       parameters:
         - name: group-id
           in: path
@@ -14489,7 +14453,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: groups.events.instances_tentativelyAccept
+      operationId: group.event.instance_tentativelyAccept
       parameters:
         - name: group-id
           in: path
@@ -14549,7 +14513,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: groups.events.instances_delta
+      operationId: group.event.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -14759,7 +14723,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: groups.events_accept
+      operationId: group.event_accept
       parameters:
         - name: group-id
           in: path
@@ -14809,7 +14773,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: groups.events_cancel
+      operationId: group.event_cancel
       parameters:
         - name: group-id
           in: path
@@ -14855,7 +14819,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: groups.events_decline
+      operationId: group.event_decline
       parameters:
         - name: group-id
           in: path
@@ -14907,7 +14871,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: groups.events_dismissReminder
+      operationId: group.event_dismissReminder
       parameters:
         - name: group-id
           in: path
@@ -14940,7 +14904,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: groups.events_forward
+      operationId: group.event_forward
       parameters:
         - name: group-id
           in: path
@@ -14990,7 +14954,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: groups.events_snoozeReminder
+      operationId: group.event_snoozeReminder
       parameters:
         - name: group-id
           in: path
@@ -15035,7 +14999,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: groups.events_tentativelyAccept
+      operationId: group.event_tentativelyAccept
       parameters:
         - name: group-id
           in: path
@@ -15087,7 +15051,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: groups.events_delta
+      operationId: group.event_delta
       parameters:
         - name: group-id
           in: path
@@ -15286,7 +15250,7 @@ paths:
         - groups.extension
       summary: Get extensions from groups
       description: The collection of open extensions defined for the group. Read-only. Nullable.
-      operationId: groups_ListExtensions
+      operationId: group_ListExtensions
       parameters:
         - name: group-id
           in: path
@@ -15351,7 +15315,7 @@ paths:
       tags:
         - groups.extension
       summary: Create new navigation property to extensions for groups
-      operationId: groups_CreateExtensions
+      operationId: group_CreateExtensions
       parameters:
         - name: group-id
           in: path
@@ -15384,7 +15348,7 @@ paths:
         - groups.extension
       summary: Get extensions from groups
       description: The collection of open extensions defined for the group. Read-only. Nullable.
-      operationId: groups_GetExtensions
+      operationId: group_GetExtensions
       parameters:
         - name: group-id
           in: path
@@ -15440,7 +15404,7 @@ paths:
       tags:
         - groups.extension
       summary: Update the navigation property extensions in groups
-      operationId: groups_UpdateExtensions
+      operationId: group_UpdateExtensions
       parameters:
         - name: group-id
           in: path
@@ -15467,11 +15431,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15479,7 +15439,7 @@ paths:
       tags:
         - groups.extension
       summary: Delete navigation property extensions for groups
-      operationId: groups_DeleteExtensions
+      operationId: group_DeleteExtensions
       parameters:
         - name: group-id
           in: path
@@ -15518,7 +15478,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-1.0
-      operationId: groups_ListGroupLifecyclePolicies
+      operationId: group_ListGroupLifecyclePolicies
       parameters:
         - name: group-id
           in: path
@@ -15592,7 +15552,7 @@ paths:
       tags:
         - groups.groupLifecyclePolicy
       summary: Create new navigation property to groupLifecyclePolicies for groups
-      operationId: groups_CreateGroupLifecyclePolicies
+      operationId: group_CreateGroupLifecyclePolicies
       parameters:
         - name: group-id
           in: path
@@ -15625,7 +15585,7 @@ paths:
         - groups.groupLifecyclePolicy
       summary: Get groupLifecyclePolicies from groups
       description: The collection of lifecycle policies for this group. Read-only. Nullable.
-      operationId: groups_GetGroupLifecyclePolicies
+      operationId: group_GetGroupLifecyclePolicies
       parameters:
         - name: group-id
           in: path
@@ -15684,7 +15644,7 @@ paths:
       tags:
         - groups.groupLifecyclePolicy
       summary: Update the navigation property groupLifecyclePolicies in groups
-      operationId: groups_UpdateGroupLifecyclePolicies
+      operationId: group_UpdateGroupLifecyclePolicies
       parameters:
         - name: group-id
           in: path
@@ -15711,11 +15671,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15723,7 +15679,7 @@ paths:
       tags:
         - groups.groupLifecyclePolicy
       summary: Delete navigation property groupLifecyclePolicies for groups
-      operationId: groups_DeleteGroupLifecyclePolicies
+      operationId: group_DeleteGroupLifecyclePolicies
       parameters:
         - name: group-id
           in: path
@@ -15758,7 +15714,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addGroup
-      operationId: groups.groupLifecyclePolicies_addGroup
+      operationId: group.groupLifecyclePolicy_addGroup
       parameters:
         - name: group-id
           in: path
@@ -15809,7 +15765,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action removeGroup
-      operationId: groups.groupLifecyclePolicies_removeGroup
+      operationId: group.groupLifecyclePolicy_removeGroup
       parameters:
         - name: group-id
           in: path
@@ -15864,7 +15820,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
-      operationId: groups_ListMemberGraphOPre
+      operationId: group_ListMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -15944,7 +15900,7 @@ paths:
         - groups.directoryObject
       summary: Get memberOf from groups
       description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-      operationId: groups_GetMemberGraphOPre
+      operationId: group_GetMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -16016,7 +15972,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
-      operationId: groups_ListMembers
+      operationId: group_ListMembers
       parameters:
         - name: group-id
           in: path
@@ -16095,7 +16051,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property members for groups
-      operationId: groups_DeleteMembersGraphBPreRef
+      operationId: group_DeleteMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -16141,7 +16097,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
-      operationId: groups_ListMembersGraphBPreRef
+      operationId: group_ListMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -16194,7 +16150,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to members for groups
-      operationId: groups_CreateMembersGraphBPreRef
+      operationId: group_CreateMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -16218,7 +16174,7 @@ paths:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
       description: A list of group members with license errors from this group-based license assignment. Read-only.
-      operationId: groups_ListMembersGraphWPreLicenseErrors
+      operationId: group_ListMembersGraphWPreLicenseErrors
       parameters:
         - name: group-id
           in: path
@@ -16298,7 +16254,7 @@ paths:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
       description: A list of group members with license errors from this group-based license assignment. Read-only.
-      operationId: groups_GetMembersGraphWPreLicenseErrors
+      operationId: group_GetMembersGraphWPreLicenseErrors
       parameters:
         - name: group-id
           in: path
@@ -16370,7 +16326,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0
-      operationId: groups_addFavorite
+      operationId: group_addFavorite
       parameters:
         - name: group-id
           in: path
@@ -16395,7 +16351,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-assignlicense?view=graph-rest-1.0
-      operationId: groups_assignLicense
+      operationId: group_assignLicense
       parameters:
         - name: group-id
           in: path
@@ -16440,7 +16396,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkGrantedPermissionsForApp
-      operationId: groups_checkGrantedPermissionsGraphFPreApp
+      operationId: group_checkGrantedPermissionsGraphFPreApp
       parameters:
         - name: group-id
           in: path
@@ -16483,7 +16439,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: groups_checkMemberGroups
+      operationId: group_checkMemberGroups
       parameters:
         - name: group-id
           in: path
@@ -16535,7 +16491,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkMemberObjects
-      operationId: groups_checkMemberObjects
+      operationId: group_checkMemberObjects
       parameters:
         - name: group-id
           in: path
@@ -16591,7 +16547,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: groups_getMemberGroups
+      operationId: group_getMemberGroups
       parameters:
         - name: group-id
           in: path
@@ -16647,7 +16603,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: groups_getMemberObjects
+      operationId: group_getMemberObjects
       parameters:
         - name: group-id
           in: path
@@ -16703,7 +16659,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-removefavorite?view=graph-rest-1.0
-      operationId: groups_removeFavorite
+      operationId: group_removeFavorite
       parameters:
         - name: group-id
           in: path
@@ -16728,7 +16684,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-renew?view=graph-rest-1.0
-      operationId: groups_renew
+      operationId: group_renew
       parameters:
         - name: group-id
           in: path
@@ -16753,7 +16709,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-resetunseencount?view=graph-rest-1.0
-      operationId: groups_resetUnseenCount
+      operationId: group_resetUnseenCount
       parameters:
         - name: group-id
           in: path
@@ -16778,7 +16734,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: groups_restore
+      operationId: group_restore
       parameters:
         - name: group-id
           in: path
@@ -16807,7 +16763,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-subscribebymail?view=graph-rest-1.0
-      operationId: groups_subscribeGraphBPreMail
+      operationId: group_subscribeGraphBPreMail
       parameters:
         - name: group-id
           in: path
@@ -16832,7 +16788,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-unsubscribebymail?view=graph-rest-1.0
-      operationId: groups_unsubscribeGraphBPreMail
+      operationId: group_unsubscribeGraphBPreMail
       parameters:
         - name: group-id
           in: path
@@ -16857,7 +16813,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-validateproperties?view=graph-rest-1.0
-      operationId: groups_validateProperties
+      operationId: group_validateProperties
       parameters:
         - name: group-id
           in: path
@@ -16903,7 +16859,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
-      operationId: groups.onenote.notebooks_copyNotebook
+      operationId: group.onenote.notebook_copyNotebook
       parameters:
         - name: group-id
           in: path
@@ -16965,7 +16921,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: groups.onenote.notebooks.sectionGroups.sections_copyToNotebook
+      operationId: group.onenote.notebook.sectionGroup_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -17043,7 +16999,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: groups.onenote.notebooks.sectionGroups.sections_copyToSectionGroup
+      operationId: group.onenote.notebook.sectionGroup_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -17121,7 +17077,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_copyToSection
+      operationId: group.onenote.notebook.sectionGroup.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -17200,7 +17156,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_onenotePatchContent
+      operationId: group.onenote.notebook.sectionGroup.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -17267,7 +17223,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_preview
+      operationId: group.onenote.notebook.sectionGroup.page_preview
       parameters:
         - name: group-id
           in: path
@@ -17328,7 +17284,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: groups.onenote.notebooks.sections_copyToNotebook
+      operationId: group.onenote.notebook.section_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -17398,7 +17354,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: groups.onenote.notebooks.sections_copyToSectionGroup
+      operationId: group.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -17468,7 +17424,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.onenote.notebooks.sections.pages_copyToSection
+      operationId: group.onenote.notebook.section.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -17539,7 +17495,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.onenote.notebooks.sections.pages_onenotePatchContent
+      operationId: group.onenote.notebook.section.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -17598,7 +17554,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.onenote.notebooks.sections.pages_preview
+      operationId: group.onenote.notebook.section.page_preview
       parameters:
         - name: group-id
           in: path
@@ -17651,7 +17607,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
-      operationId: groups.onenote.notebooks_getNotebookFromWebUrl
+      operationId: group.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: group-id
           in: path
@@ -17689,7 +17645,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getRecentNotebooks
-      operationId: groups.onenote.notebooks_getRecentNotebooks
+      operationId: group.onenote.notebook_getRecentNotebooks
       parameters:
         - name: group-id
           in: path
@@ -17744,7 +17700,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.onenote.pages_copyToSection
+      operationId: group.onenote.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -17799,7 +17755,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.onenote.pages_onenotePatchContent
+      operationId: group.onenote.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -17842,7 +17798,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.onenote.pages_preview
+      operationId: group.onenote.page_preview
       parameters:
         - name: group-id
           in: path
@@ -17879,7 +17835,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: groups.onenote.sectionGroups.sections_copyToNotebook
+      operationId: group.onenote.sectionGroup_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -17949,7 +17905,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: groups.onenote.sectionGroups.sections_copyToSectionGroup
+      operationId: group.onenote.sectionGroup_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -18019,7 +17975,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.onenote.sectionGroups.sections.pages_copyToSection
+      operationId: group.onenote.sectionGroup.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -18090,7 +18046,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.onenote.sectionGroups.sections.pages_onenotePatchContent
+      operationId: group.onenote.sectionGroup.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -18149,7 +18105,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.onenote.sectionGroups.sections.pages_preview
+      operationId: group.onenote.sectionGroup.page_preview
       parameters:
         - name: group-id
           in: path
@@ -18202,7 +18158,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: groups.onenote.sections_copyToNotebook
+      operationId: group.onenote.section_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -18264,7 +18220,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: groups.onenote.sections_copyToSectionGroup
+      operationId: group.onenote.section_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -18326,7 +18282,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.onenote.sections.pages_copyToSection
+      operationId: group.onenote.section.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -18389,7 +18345,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.onenote.sections.pages_onenotePatchContent
+      operationId: group.onenote.section.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -18440,7 +18396,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.onenote.sections.pages_preview
+      operationId: group.onenote.section.page_preview
       parameters:
         - name: group-id
           in: path
@@ -18485,7 +18441,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
-      operationId: groups_ListOwners
+      operationId: group_ListOwners
       parameters:
         - name: group-id
           in: path
@@ -18564,7 +18520,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property owners for groups
-      operationId: groups_DeleteOwnersGraphBPreRef
+      operationId: group_DeleteOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -18610,7 +18566,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
-      operationId: groups_ListOwnersGraphBPreRef
+      operationId: group_ListOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -18663,7 +18619,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to owners for groups
-      operationId: groups_CreateOwnersGraphBPreRef
+      operationId: group_CreateOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -18690,7 +18646,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-permissiongrants?view=graph-rest-1.0
-      operationId: groups_ListPermissionGrants
+      operationId: group_ListPermissionGrants
       parameters:
         - name: group-id
           in: path
@@ -18773,7 +18729,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Create new navigation property to permissionGrants for groups
-      operationId: groups_CreatePermissionGrants
+      operationId: group_CreatePermissionGrants
       parameters:
         - name: group-id
           in: path
@@ -18806,7 +18762,7 @@ paths:
         - groups.resourceSpecificPermissionGrant
       summary: Get permissionGrants from groups
       description: The permission that has been granted for a group to a specific application. Supports $expand.
-      operationId: groups_GetPermissionGrants
+      operationId: group_GetPermissionGrants
       parameters:
         - name: group-id
           in: path
@@ -18868,7 +18824,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Update the navigation property permissionGrants in groups
-      operationId: groups_UpdatePermissionGrants
+      operationId: group_UpdatePermissionGrants
       parameters:
         - name: group-id
           in: path
@@ -18895,11 +18851,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18907,7 +18859,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Delete navigation property permissionGrants for groups
-      operationId: groups_DeletePermissionGrants
+      operationId: group_DeletePermissionGrants
       parameters:
         - name: group-id
           in: path
@@ -18946,7 +18898,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: groups.permissionGrants_checkMemberGroups
+      operationId: group.permissionGrant_checkMemberGroups
       parameters:
         - name: group-id
           in: path
@@ -19006,7 +18958,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkMemberObjects
-      operationId: groups.permissionGrants_checkMemberObjects
+      operationId: group.permissionGrant_checkMemberObjects
       parameters:
         - name: group-id
           in: path
@@ -19070,7 +19022,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: groups.permissionGrants_getMemberGroups
+      operationId: group.permissionGrant_getMemberGroups
       parameters:
         - name: group-id
           in: path
@@ -19134,7 +19086,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: groups.permissionGrants_getMemberObjects
+      operationId: group.permissionGrant_getMemberObjects
       parameters:
         - name: group-id
           in: path
@@ -19198,7 +19150,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: groups.permissionGrants_restore
+      operationId: group.permissionGrant_restore
       parameters:
         - name: group-id
           in: path
@@ -19231,7 +19183,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups.permissionGrants_delta
+      operationId: group.permissionGrant_delta
       parameters:
         - name: group-id
           in: path
@@ -19310,7 +19262,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: groups.permissionGrants_getAvailableExtensionProperties
+      operationId: group.permissionGrant_getAvailableExtensionProperties
       parameters:
         - name: group-id
           in: path
@@ -19367,7 +19319,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: groups.permissionGrants_getGraphBPreIds
+      operationId: group.permissionGrant_getGraphBPreIds
       parameters:
         - name: group-id
           in: path
@@ -19429,7 +19381,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: groups.permissionGrants_validateProperties
+      operationId: group.permissionGrant_validateProperties
       parameters:
         - name: group-id
           in: path
@@ -19475,7 +19427,7 @@ paths:
         - groups.profilePhoto
       summary: Get photo from groups
       description: The group's profile photo
-      operationId: groups_GetPhoto
+      operationId: group_GetPhoto
       parameters:
         - name: group-id
           in: path
@@ -19513,7 +19465,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Update the navigation property photo in groups
-      operationId: groups_UpdatePhoto
+      operationId: group_UpdatePhoto
       parameters:
         - name: group-id
           in: path
@@ -19532,11 +19484,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19545,7 +19493,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Get media content for the navigation property photo from groups
-      operationId: groups_GetPhotoContent
+      operationId: group_GetPhotoContent
       parameters:
         - name: group-id
           in: path
@@ -19570,7 +19518,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Update media content for the navigation property photo in groups
-      operationId: groups_SetPhotoContent
+      operationId: group_SetPhotoContent
       parameters:
         - name: group-id
           in: path
@@ -19603,7 +19551,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
-      operationId: groups_ListPhotos
+      operationId: group_ListPhotos
       parameters:
         - name: group-id
           in: path
@@ -19663,7 +19611,7 @@ paths:
         - groups.profilePhoto
       summary: Get photos from groups
       description: The profile photos owned by the group. Read-only. Nullable.
-      operationId: groups_GetPhotos
+      operationId: group_GetPhotos
       parameters:
         - name: group-id
           in: path
@@ -19713,7 +19661,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
-      operationId: groups_GetPhotosContent
+      operationId: group_GetPhotosContent
       parameters:
         - name: group-id
           in: path
@@ -19746,7 +19694,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Update media content for the navigation property photos in groups
-      operationId: groups_SetPhotosContent
+      operationId: group_SetPhotosContent
       parameters:
         - name: group-id
           in: path
@@ -19787,7 +19735,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
-      operationId: groups_ListRejectedSenders
+      operationId: group_ListRejectedSenders
       parameters:
         - name: group-id
           in: path
@@ -19843,7 +19791,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property rejectedSenders for groups
-      operationId: groups_DeleteRejectedSendersGraphBPreRef
+      operationId: group_DeleteRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -19889,7 +19837,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
-      operationId: groups_ListRejectedSendersGraphBPreRef
+      operationId: group_ListRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -19931,7 +19879,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to rejectedSenders for groups
-      operationId: groups_CreateRejectedSendersGraphBPreRef
+      operationId: group_CreateRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -19958,7 +19906,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
-      operationId: groups_ListSettings
+      operationId: group_ListSettings
       parameters:
         - name: group-id
           in: path
@@ -20036,7 +19984,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
-      operationId: groups_CreateSettings
+      operationId: group_CreateSettings
       parameters:
         - name: group-id
           in: path
@@ -20069,7 +20017,7 @@ paths:
         - groups.groupSetting
       summary: Get settings from groups
       description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
-      operationId: groups_GetSettings
+      operationId: group_GetSettings
       parameters:
         - name: group-id
           in: path
@@ -20128,7 +20076,7 @@ paths:
       tags:
         - groups.groupSetting
       summary: Update the navigation property settings in groups
-      operationId: groups_UpdateSettings
+      operationId: group_UpdateSettings
       parameters:
         - name: group-id
           in: path
@@ -20155,11 +20103,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.groupSetting'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20167,7 +20111,7 @@ paths:
       tags:
         - groups.groupSetting
       summary: Delete navigation property settings for groups
-      operationId: groups_DeleteSettings
+      operationId: group_DeleteSettings
       parameters:
         - name: group-id
           in: path
@@ -20206,7 +20150,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: groups.sites.contentTypes_associateGraphWPreHubSites
+      operationId: group.site.contentType_associateGraphWPreHubSites
       parameters:
         - name: group-id
           in: path
@@ -20265,7 +20209,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
-      operationId: groups.sites.contentTypes_copyToDefaultContentLocation
+      operationId: group.site.contentType_copyToDefaultContentLocation
       parameters:
         - name: group-id
           in: path
@@ -20317,7 +20261,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function isPublished
-      operationId: groups.sites.contentTypes_isPublished
+      operationId: group.site.contentType_isPublished
       parameters:
         - name: group-id
           in: path
@@ -20368,7 +20312,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
-      operationId: groups.sites.contentTypes_publish
+      operationId: group.site.contentType_publish
       parameters:
         - name: group-id
           in: path
@@ -20409,7 +20353,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
-      operationId: groups.sites.contentTypes_unpublish
+      operationId: group.site.contentType_unpublish
       parameters:
         - name: group-id
           in: path
@@ -20450,7 +20394,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
-      operationId: groups.sites.contentTypes_addCopy
+      operationId: group.site.contentType_addCopy
       parameters:
         - name: group-id
           in: path
@@ -20499,7 +20443,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
-      operationId: groups.sites.contentTypes_addCopyFromContentTypeHub
+      operationId: group.site.contentType_addCopyFromContentTypeHub
       parameters:
         - name: group-id
           in: path
@@ -20544,7 +20488,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getCompatibleHubContentTypes
-      operationId: groups.sites.contentTypes_getCompatibleHubContentTypes
+      operationId: group.site.contentType_getCompatibleHubContentTypes
       parameters:
         - name: group-id
           in: path
@@ -20672,7 +20616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: groups.sites.lists.contentTypes_associateGraphWPreHubSites
+      operationId: group.site.list.contentType_associateGraphWPreHubSites
       parameters:
         - name: group-id
           in: path
@@ -20739,7 +20683,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
-      operationId: groups.sites.lists.contentTypes_copyToDefaultContentLocation
+      operationId: group.site.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: group-id
           in: path
@@ -20799,7 +20743,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function isPublished
-      operationId: groups.sites.lists.contentTypes_isPublished
+      operationId: group.site.list.contentType_isPublished
       parameters:
         - name: group-id
           in: path
@@ -20858,7 +20802,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
-      operationId: groups.sites.lists.contentTypes_publish
+      operationId: group.site.list.contentType_publish
       parameters:
         - name: group-id
           in: path
@@ -20907,7 +20851,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
-      operationId: groups.sites.lists.contentTypes_unpublish
+      operationId: group.site.list.contentType_unpublish
       parameters:
         - name: group-id
           in: path
@@ -20956,7 +20900,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
-      operationId: groups.sites.lists.contentTypes_addCopy
+      operationId: group.site.list.contentType_addCopy
       parameters:
         - name: group-id
           in: path
@@ -21013,7 +20957,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
-      operationId: groups.sites.lists.contentTypes_addCopyFromContentTypeHub
+      operationId: group.site.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: group-id
           in: path
@@ -21066,7 +21010,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getCompatibleHubContentTypes
-      operationId: groups.sites.lists.contentTypes_getCompatibleHubContentTypes
+      operationId: group.site.list.contentType_getCompatibleHubContentTypes
       parameters:
         - name: group-id
           in: path
@@ -21202,7 +21146,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
-      operationId: groups.sites.lists.items.documentSetVersions_restore
+      operationId: group.site.list.item.documentSetVersion_restore
       parameters:
         - name: group-id
           in: path
@@ -21255,7 +21199,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites.lists.items_getActivitiesGraphBPreInterval
+      operationId: group.site.list.item_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -21376,7 +21320,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites.lists.items_getActivitiesGraphBPreInterval
+      operationId: group.site.list.item_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -21525,7 +21469,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
-      operationId: groups.sites.lists.items.versions_restoreVersion
+      operationId: group.site.list.item.version_restoreVersion
       parameters:
         - name: group-id
           in: path
@@ -21578,7 +21522,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reauthorize
-      operationId: groups.sites.lists.subscriptions_reauthorize
+      operationId: group.site.list.subscription_reauthorize
       parameters:
         - name: group-id
           in: path
@@ -21623,7 +21567,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites_getActivitiesGraphBPreInterval
+      operationId: group.site_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -21728,7 +21672,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites_getActivitiesGraphBPreInterval
+      operationId: group.site_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -21857,7 +21801,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getApplicableContentTypesForList
-      operationId: groups.sites_getApplicableContentTypesGraphFPreList
+      operationId: group.site_getApplicableContentTypesGraphFPreList
       parameters:
         - name: group-id
           in: path
@@ -21988,7 +21932,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getByPath
-      operationId: groups.sites_getGraphBPrePath
+      operationId: group.site_getGraphBPrePath
       parameters:
         - name: group-id
           in: path
@@ -22033,7 +21977,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
-      operationId: groups.sites.onenote.notebooks_copyNotebook
+      operationId: group.site.onenote.notebook_copyNotebook
       parameters:
         - name: group-id
           in: path
@@ -22103,7 +22047,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: groups.sites.onenote.notebooks.sectionGroups.sections_copyToNotebook
+      operationId: group.site.onenote.notebook.sectionGroup_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -22189,7 +22133,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: groups.sites.onenote.notebooks.sectionGroups.sections_copyToSectionGroup
+      operationId: group.site.onenote.notebook.sectionGroup_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -22275,7 +22219,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.sites.onenote.notebooks.sectionGroups.sections.pages_copyToSection
+      operationId: group.site.onenote.notebook.sectionGroup.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -22362,7 +22306,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.sites.onenote.notebooks.sectionGroups.sections.pages_onenotePatchContent
+      operationId: group.site.onenote.notebook.sectionGroup.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -22437,7 +22381,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.sites.onenote.notebooks.sectionGroups.sections.pages_preview
+      operationId: group.site.onenote.notebook.sectionGroup.page_preview
       parameters:
         - name: group-id
           in: path
@@ -22506,7 +22450,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: groups.sites.onenote.notebooks.sections_copyToNotebook
+      operationId: group.site.onenote.notebook.section_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -22584,7 +22528,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: groups.sites.onenote.notebooks.sections_copyToSectionGroup
+      operationId: group.site.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -22662,7 +22606,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.sites.onenote.notebooks.sections.pages_copyToSection
+      operationId: group.site.onenote.notebook.section.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -22741,7 +22685,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.sites.onenote.notebooks.sections.pages_onenotePatchContent
+      operationId: group.site.onenote.notebook.section.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -22808,7 +22752,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.sites.onenote.notebooks.sections.pages_preview
+      operationId: group.site.onenote.notebook.section.page_preview
       parameters:
         - name: group-id
           in: path
@@ -22869,7 +22813,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
-      operationId: groups.sites.onenote.notebooks_getNotebookFromWebUrl
+      operationId: group.site.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: group-id
           in: path
@@ -22915,7 +22859,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getRecentNotebooks
-      operationId: groups.sites.onenote.notebooks_getRecentNotebooks
+      operationId: group.site.onenote.notebook_getRecentNotebooks
       parameters:
         - name: group-id
           in: path
@@ -22978,7 +22922,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.sites.onenote.pages_copyToSection
+      operationId: group.site.onenote.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -23041,7 +22985,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.sites.onenote.pages_onenotePatchContent
+      operationId: group.site.onenote.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -23092,7 +23036,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.sites.onenote.pages_preview
+      operationId: group.site.onenote.page_preview
       parameters:
         - name: group-id
           in: path
@@ -23137,7 +23081,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: groups.sites.onenote.sectionGroups.sections_copyToNotebook
+      operationId: group.site.onenote.sectionGroup_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -23215,7 +23159,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: groups.sites.onenote.sectionGroups.sections_copyToSectionGroup
+      operationId: group.site.onenote.sectionGroup_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -23293,7 +23237,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.sites.onenote.sectionGroups.sections.pages_copyToSection
+      operationId: group.site.onenote.sectionGroup.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -23372,7 +23316,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.sites.onenote.sectionGroups.sections.pages_onenotePatchContent
+      operationId: group.site.onenote.sectionGroup.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -23439,7 +23383,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.sites.onenote.sectionGroups.sections.pages_preview
+      operationId: group.site.onenote.sectionGroup.page_preview
       parameters:
         - name: group-id
           in: path
@@ -23500,7 +23444,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: groups.sites.onenote.sections_copyToNotebook
+      operationId: group.site.onenote.section_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -23570,7 +23514,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: groups.sites.onenote.sections_copyToSectionGroup
+      operationId: group.site.onenote.section_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -23640,7 +23584,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: groups.sites.onenote.sections.pages_copyToSection
+      operationId: group.site.onenote.section.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -23711,7 +23655,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: groups.sites.onenote.sections.pages_onenotePatchContent
+      operationId: group.site.onenote.section.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -23770,7 +23714,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: groups.sites.onenote.sections.pages_preview
+      operationId: group.site.onenote.section.page_preview
       parameters:
         - name: group-id
           in: path
@@ -23823,7 +23767,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
-      operationId: groups.sites.permissions_grant
+      operationId: group.site.permission_grant
       parameters:
         - name: group-id
           in: path
@@ -23901,7 +23845,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
-      operationId: groups.sites_add
+      operationId: group.site_add
       parameters:
         - name: group-id
           in: path
@@ -23958,7 +23902,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
-      operationId: groups.sites_remove
+      operationId: group.site_remove
       parameters:
         - name: group-id
           in: path
@@ -24015,7 +23959,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
-      operationId: groups.team.channels.members_add
+      operationId: group.team.channel.member_add
       parameters:
         - name: group-id
           in: path
@@ -24075,7 +24019,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action softDelete
-      operationId: groups.team.channels.messages_softDelete
+      operationId: group.team.channel.message_softDelete
       parameters:
         - name: group-id
           in: path
@@ -24112,7 +24056,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action undoSoftDelete
-      operationId: groups.team.channels.messages_undoSoftDelete
+      operationId: group.team.channel.message_undoSoftDelete
       parameters:
         - name: group-id
           in: path
@@ -24149,7 +24093,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action softDelete
-      operationId: groups.team.channels.messages.replies_softDelete
+      operationId: group.team.channel.message.reply_softDelete
       parameters:
         - name: group-id
           in: path
@@ -24194,7 +24138,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action undoSoftDelete
-      operationId: groups.team.channels.messages.replies_undoSoftDelete
+      operationId: group.team.channel.message.reply_undoSoftDelete
       parameters:
         - name: group-id
           in: path
@@ -24239,7 +24183,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups.team.channels.messages.replies_delta
+      operationId: group.team.channel.message.reply_delta
       parameters:
         - name: group-id
           in: path
@@ -24392,7 +24336,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups.team.channels.messages_delta
+      operationId: group.team.channel.message_delta
       parameters:
         - name: group-id
           in: path
@@ -24541,7 +24485,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
-      operationId: groups.team.channels_completeMigration
+      operationId: group.team.channel_completeMigration
       parameters:
         - name: group-id
           in: path
@@ -24570,7 +24514,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function doesUserHaveAccess
-      operationId: groups.team.channels_doesUserHaveAccess
+      operationId: group.team.channel_doesUserHaveAccess
       parameters:
         - name: group-id
           in: path
@@ -24637,7 +24581,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
-      operationId: groups.team.channels_provisionEmail
+      operationId: group.team.channel_provisionEmail
       parameters:
         - name: group-id
           in: path
@@ -24674,7 +24618,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
-      operationId: groups.team.channels_removeEmail
+      operationId: group.team.channel_removeEmail
       parameters:
         - name: group-id
           in: path
@@ -24703,7 +24647,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getAllMessages
-      operationId: groups.team.channels_getAllMessages
+      operationId: group.team.channel_getAllMessages
       parameters:
         - name: group-id
           in: path
@@ -24841,7 +24785,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
-      operationId: groups.team.installedApps_upgrade
+      operationId: group.team.installedApp_upgrade
       parameters:
         - name: group-id
           in: path
@@ -24874,7 +24818,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
-      operationId: groups.team.members_add
+      operationId: group.team.member_add
       parameters:
         - name: group-id
           in: path
@@ -24930,7 +24874,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
-      operationId: groups.team_archive
+      operationId: group.team_archive
       parameters:
         - name: group-id
           in: path
@@ -24969,7 +24913,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
-      operationId: groups.team_clone
+      operationId: group.team_clone
       parameters:
         - name: group-id
           in: path
@@ -25020,7 +24964,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
-      operationId: groups.team_completeMigration
+      operationId: group.team_completeMigration
       parameters:
         - name: group-id
           in: path
@@ -25045,7 +24989,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
-      operationId: groups.team_sendActivityNotification
+      operationId: group.team_sendActivityNotification
       parameters:
         - name: group-id
           in: path
@@ -25097,7 +25041,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
-      operationId: groups.team_unarchive
+      operationId: group.team_unarchive
       parameters:
         - name: group-id
           in: path
@@ -25122,7 +25066,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
-      operationId: groups.team.primaryChannel.members_add
+      operationId: group.team.primaryChannel.member_add
       parameters:
         - name: group-id
           in: path
@@ -25174,7 +25118,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action softDelete
-      operationId: groups.team.primaryChannel.messages_softDelete
+      operationId: group.team.primaryChannel.message_softDelete
       parameters:
         - name: group-id
           in: path
@@ -25203,7 +25147,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action undoSoftDelete
-      operationId: groups.team.primaryChannel.messages_undoSoftDelete
+      operationId: group.team.primaryChannel.message_undoSoftDelete
       parameters:
         - name: group-id
           in: path
@@ -25232,7 +25176,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action softDelete
-      operationId: groups.team.primaryChannel.messages.replies_softDelete
+      operationId: group.team.primaryChannel.message.reply_softDelete
       parameters:
         - name: group-id
           in: path
@@ -25269,7 +25213,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action undoSoftDelete
-      operationId: groups.team.primaryChannel.messages.replies_undoSoftDelete
+      operationId: group.team.primaryChannel.message.reply_undoSoftDelete
       parameters:
         - name: group-id
           in: path
@@ -25306,7 +25250,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups.team.primaryChannel.messages.replies_delta
+      operationId: group.team.primaryChannel.message.reply_delta
       parameters:
         - name: group-id
           in: path
@@ -25451,7 +25395,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups.team.primaryChannel.messages_delta
+      operationId: group.team.primaryChannel.message_delta
       parameters:
         - name: group-id
           in: path
@@ -25592,7 +25536,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
-      operationId: groups.team.primaryChannel_completeMigration
+      operationId: group.team.primaryChannel_completeMigration
       parameters:
         - name: group-id
           in: path
@@ -25613,7 +25557,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function doesUserHaveAccess
-      operationId: groups.team.primaryChannel_doesUserHaveAccess
+      operationId: group.team.primaryChannel_doesUserHaveAccess
       parameters:
         - name: group-id
           in: path
@@ -25672,7 +25616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
-      operationId: groups.team.primaryChannel_provisionEmail
+      operationId: group.team.primaryChannel_provisionEmail
       parameters:
         - name: group-id
           in: path
@@ -25701,7 +25645,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
-      operationId: groups.team.primaryChannel_removeEmail
+      operationId: group.team.primaryChannel_removeEmail
       parameters:
         - name: group-id
           in: path
@@ -25726,7 +25670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
-      operationId: groups.team.schedule_share
+      operationId: group.team.schedule_share
       parameters:
         - name: group-id
           in: path
@@ -25775,7 +25719,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-threads?view=graph-rest-1.0
-      operationId: groups_ListThreads
+      operationId: group_ListThreads
       parameters:
         - name: group-id
           in: path
@@ -25856,7 +25800,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-post-threads?view=graph-rest-1.0
-      operationId: groups_CreateThreads
+      operationId: group_CreateThreads
       parameters:
         - name: group-id
           in: path
@@ -25889,7 +25833,7 @@ paths:
         - groups.conversationThread
       summary: Get threads from groups
       description: The group's conversation threads. Nullable.
-      operationId: groups_GetThreads
+      operationId: group_GetThreads
       parameters:
         - name: group-id
           in: path
@@ -25942,7 +25886,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property threads in groups
-      operationId: groups_UpdateThreads
+      operationId: group_UpdateThreads
       parameters:
         - name: group-id
           in: path
@@ -25969,11 +25913,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conversationThread'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25981,7 +25921,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property threads for groups
-      operationId: groups_DeleteThreads
+      operationId: group_DeleteThreads
       parameters:
         - name: group-id
           in: path
@@ -26020,7 +25960,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
-      operationId: groups.threads_reply
+      operationId: group.thread_reply
       parameters:
         - name: group-id
           in: path
@@ -26060,12 +26000,12 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the **post** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **post** instance."
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-get?view=graph-rest-1.0
-      operationId: groups.threads_ListPosts
+        url: https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+      operationId: group.thread_ListPosts
       parameters:
         - name: group-id
           in: path
@@ -26184,7 +26124,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get posts from groups
-      operationId: groups.threads_GetPosts
+      operationId: group.thread_GetPosts
       parameters:
         - name: group-id
           in: path
@@ -26275,7 +26215,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
-      operationId: groups.threads.posts_ListAttachments
+      operationId: group.thread.post_ListAttachments
       parameters:
         - name: group-id
           in: path
@@ -26370,7 +26310,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to attachments for groups
-      operationId: groups.threads.posts_CreateAttachments
+      operationId: group.thread.post_CreateAttachments
       parameters:
         - name: group-id
           in: path
@@ -26419,7 +26359,7 @@ paths:
         - groups.conversationThread
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts_GetAttachments
+      operationId: group.thread.post_GetAttachments
       parameters:
         - name: group-id
           in: path
@@ -26496,7 +26436,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property attachments for groups
-      operationId: groups.threads.posts_DeleteAttachments
+      operationId: group.thread.post_DeleteAttachments
       parameters:
         - name: group-id
           in: path
@@ -26551,7 +26491,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.threads.posts.attachments_createUploadSession
+      operationId: group.thread.post.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -26605,7 +26545,7 @@ paths:
         - groups.conversationThread
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts_ListExtensions
+      operationId: group.thread.post_ListExtensions
       parameters:
         - name: group-id
           in: path
@@ -26685,7 +26625,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to extensions for groups
-      operationId: groups.threads.posts_CreateExtensions
+      operationId: group.thread.post_CreateExtensions
       parameters:
         - name: group-id
           in: path
@@ -26734,7 +26674,7 @@ paths:
         - groups.conversationThread
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts_GetExtensions
+      operationId: group.thread.post_GetExtensions
       parameters:
         - name: group-id
           in: path
@@ -26806,7 +26746,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property extensions in groups
-      operationId: groups.threads.posts_UpdateExtensions
+      operationId: group.thread.post_UpdateExtensions
       parameters:
         - name: group-id
           in: path
@@ -26849,11 +26789,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26861,7 +26797,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property extensions for groups
-      operationId: groups.threads.posts_DeleteExtensions
+      operationId: group.thread.post_DeleteExtensions
       parameters:
         - name: group-id
           in: path
@@ -26913,7 +26849,7 @@ paths:
         - groups.conversationThread
       summary: Get inReplyTo from groups
       description: Read-only. Supports $expand.
-      operationId: groups.threads.posts_GetInReplyTo
+      operationId: group.thread.post_GetInReplyTo
       parameters:
         - name: group-id
           in: path
@@ -27004,7 +26940,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
-      operationId: groups.threads.posts.inReplyTo_ListAttachments
+      operationId: group.thread.post.inReplyTo_ListAttachments
       parameters:
         - name: group-id
           in: path
@@ -27099,7 +27035,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to attachments for groups
-      operationId: groups.threads.posts.inReplyTo_CreateAttachments
+      operationId: group.thread.post.inReplyTo_CreateAttachments
       parameters:
         - name: group-id
           in: path
@@ -27148,7 +27084,7 @@ paths:
         - groups.conversationThread
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts.inReplyTo_GetAttachments
+      operationId: group.thread.post.inReplyTo_GetAttachments
       parameters:
         - name: group-id
           in: path
@@ -27225,7 +27161,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property attachments for groups
-      operationId: groups.threads.posts.inReplyTo_DeleteAttachments
+      operationId: group.thread.post.inReplyTo_DeleteAttachments
       parameters:
         - name: group-id
           in: path
@@ -27280,7 +27216,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.threads.posts.inReplyTo.attachments_createUploadSession
+      operationId: group.thread.post.inReplyTo.attachment_createUploadSession
       parameters:
         - name: group-id
           in: path
@@ -27334,7 +27270,7 @@ paths:
         - groups.conversationThread
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts.inReplyTo_ListExtensions
+      operationId: group.thread.post.inReplyTo_ListExtensions
       parameters:
         - name: group-id
           in: path
@@ -27414,7 +27350,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to extensions for groups
-      operationId: groups.threads.posts.inReplyTo_CreateExtensions
+      operationId: group.thread.post.inReplyTo_CreateExtensions
       parameters:
         - name: group-id
           in: path
@@ -27463,7 +27399,7 @@ paths:
         - groups.conversationThread
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts.inReplyTo_GetExtensions
+      operationId: group.thread.post.inReplyTo_GetExtensions
       parameters:
         - name: group-id
           in: path
@@ -27535,7 +27471,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property extensions in groups
-      operationId: groups.threads.posts.inReplyTo_UpdateExtensions
+      operationId: group.thread.post.inReplyTo_UpdateExtensions
       parameters:
         - name: group-id
           in: path
@@ -27578,11 +27514,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27590,7 +27522,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property extensions for groups
-      operationId: groups.threads.posts.inReplyTo_DeleteExtensions
+      operationId: group.thread.post.inReplyTo_DeleteExtensions
       parameters:
         - name: group-id
           in: path
@@ -27645,7 +27577,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
-      operationId: groups.threads.posts.inReplyTo_forward
+      operationId: group.thread.post.inReplyTo_forward
       parameters:
         - name: group-id
           in: path
@@ -27703,7 +27635,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: groups.threads.posts.inReplyTo_reply
+      operationId: group.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
           in: path
@@ -27753,7 +27685,7 @@ paths:
         - groups.conversationThread
       summary: Get multiValueExtendedProperties from groups
       description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.threads.posts.inReplyTo_ListMultiValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -27837,7 +27769,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to multiValueExtendedProperties for groups
-      operationId: groups.threads.posts.inReplyTo_CreateMultiValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_CreateMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -27886,7 +27818,7 @@ paths:
         - groups.conversationThread
       summary: Get multiValueExtendedProperties from groups
       description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.threads.posts.inReplyTo_GetMultiValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -27959,7 +27891,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property multiValueExtendedProperties in groups
-      operationId: groups.threads.posts.inReplyTo_UpdateMultiValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_UpdateMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28002,11 +27934,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28014,7 +27942,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property multiValueExtendedProperties for groups
-      operationId: groups.threads.posts.inReplyTo_DeleteMultiValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_DeleteMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28066,7 +27994,7 @@ paths:
         - groups.conversationThread
       summary: Get singleValueExtendedProperties from groups
       description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.threads.posts.inReplyTo_ListSingleValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28150,7 +28078,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to singleValueExtendedProperties for groups
-      operationId: groups.threads.posts.inReplyTo_CreateSingleValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_CreateSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28199,7 +28127,7 @@ paths:
         - groups.conversationThread
       summary: Get singleValueExtendedProperties from groups
       description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.threads.posts.inReplyTo_GetSingleValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28272,7 +28200,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property singleValueExtendedProperties in groups
-      operationId: groups.threads.posts.inReplyTo_UpdateSingleValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_UpdateSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28315,11 +28243,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28327,7 +28251,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property singleValueExtendedProperties for groups
-      operationId: groups.threads.posts.inReplyTo_DeleteSingleValueExtendedProperties
+      operationId: group.thread.post.inReplyTo_DeleteSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28382,7 +28306,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
-      operationId: groups.threads.posts_forward
+      operationId: group.thread.post_forward
       parameters:
         - name: group-id
           in: path
@@ -28440,7 +28364,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: groups.threads.posts_reply
+      operationId: group.thread.post_reply
       parameters:
         - name: group-id
           in: path
@@ -28490,7 +28414,7 @@ paths:
         - groups.conversationThread
       summary: Get multiValueExtendedProperties from groups
       description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.threads.posts_ListMultiValueExtendedProperties
+      operationId: group.thread.post_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28574,7 +28498,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to multiValueExtendedProperties for groups
-      operationId: groups.threads.posts_CreateMultiValueExtendedProperties
+      operationId: group.thread.post_CreateMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28623,7 +28547,7 @@ paths:
         - groups.conversationThread
       summary: Get multiValueExtendedProperties from groups
       description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.threads.posts_GetMultiValueExtendedProperties
+      operationId: group.thread.post_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28696,7 +28620,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property multiValueExtendedProperties in groups
-      operationId: groups.threads.posts_UpdateMultiValueExtendedProperties
+      operationId: group.thread.post_UpdateMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28739,11 +28663,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28751,7 +28671,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property multiValueExtendedProperties for groups
-      operationId: groups.threads.posts_DeleteMultiValueExtendedProperties
+      operationId: group.thread.post_DeleteMultiValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28803,7 +28723,7 @@ paths:
         - groups.conversationThread
       summary: Get singleValueExtendedProperties from groups
       description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.threads.posts_ListSingleValueExtendedProperties
+      operationId: group.thread.post_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28887,7 +28807,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to singleValueExtendedProperties for groups
-      operationId: groups.threads.posts_CreateSingleValueExtendedProperties
+      operationId: group.thread.post_CreateSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -28936,7 +28856,7 @@ paths:
         - groups.conversationThread
       summary: Get singleValueExtendedProperties from groups
       description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-      operationId: groups.threads.posts_GetSingleValueExtendedProperties
+      operationId: group.thread.post_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -29009,7 +28929,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property singleValueExtendedProperties in groups
-      operationId: groups.threads.posts_UpdateSingleValueExtendedProperties
+      operationId: group.thread.post_UpdateSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -29052,11 +28972,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29064,7 +28980,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property singleValueExtendedProperties for groups
-      operationId: groups.threads.posts_DeleteSingleValueExtendedProperties
+      operationId: group.thread.post_DeleteSingleValueExtendedProperties
       parameters:
         - name: group-id
           in: path
@@ -29119,7 +29035,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0
-      operationId: groups_ListTransitiveMemberGraphOPre
+      operationId: group_ListTransitiveMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -29199,7 +29115,7 @@ paths:
         - groups.directoryObject
       summary: Get transitiveMemberOf from groups
       description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
-      operationId: groups_GetTransitiveMemberGraphOPre
+      operationId: group_GetTransitiveMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -29271,7 +29187,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
-      operationId: groups_ListTransitiveMembers
+      operationId: group_ListTransitiveMembers
       parameters:
         - name: group-id
           in: path
@@ -29351,7 +29267,7 @@ paths:
         - groups.directoryObject
       summary: Get transitiveMembers from groups
       description: The direct and transitive members of a group. Nullable.
-      operationId: groups_GetTransitiveMembers
+      operationId: group_GetTransitiveMembers
       parameters:
         - name: group-id
           in: path
@@ -29419,7 +29335,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: groups_delta
+      operationId: group_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -29631,7 +29547,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: groups_getAvailableExtensionProperties
+      operationId: group_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
         content:
@@ -29679,7 +29595,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: groups_getGraphBPreIds
+      operationId: group_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -29732,7 +29648,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: groups_validateProperties
+      operationId: group_validateProperties
       requestBody:
         description: Action parameters
         content:
@@ -29772,7 +29688,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting_ListGroupSetting
+      operationId: groupSetting_ListGroupSetting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -29842,7 +29758,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting_CreateGroupSetting
+      operationId: groupSetting_CreateGroupSetting
       requestBody:
         description: New entity
         content:
@@ -29869,7 +29785,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting_GetGroupSetting
+      operationId: groupSetting_GetGroupSetting
       parameters:
         - name: groupSetting-id
           in: path
@@ -29924,7 +29840,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting_UpdateGroupSetting
+      operationId: groupSetting_UpdateGroupSetting
       parameters:
         - name: groupSetting-id
           in: path
@@ -29943,11 +29859,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.groupSetting'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29959,7 +29871,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/groupsetting-delete?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting_DeleteGroupSetting
+      operationId: groupSetting_DeleteGroupSetting
       parameters:
         - name: groupSetting-id
           in: path
@@ -34880,6 +34792,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -36992,6 +36906,28 @@ components:
         - noEnd
         - numbered
       type: string
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.assignedPlan:
       title: assignedPlan
       type: object
@@ -42663,15 +42599,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string

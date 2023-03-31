@@ -11,7 +11,7 @@ paths:
       tags:
         - external.external
       summary: Get external
-      operationId: external.external_GetExternal
+      operationId: external_GetExternal
       parameters:
         - name: $select
           in: query
@@ -52,7 +52,7 @@ paths:
       tags:
         - external.external
       summary: Update external
-      operationId: external.external_UpdateExternal
+      operationId: external_UpdateExternal
       requestBody:
         description: New property values
         content:
@@ -62,11 +62,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.external'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -262,11 +258,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -301,7 +293,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      operationId: external.connections_ListGroups
+      operationId: external.connection_ListGroups
       parameters:
         - name: externalConnection-id
           in: path
@@ -378,7 +370,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
-      operationId: external.connections_CreateGroups
+      operationId: external.connection_CreateGroups
       parameters:
         - name: externalConnection-id
           in: path
@@ -410,7 +402,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      operationId: external.connections_GetGroups
+      operationId: external.connection_GetGroups
       parameters:
         - name: externalConnection-id
           in: path
@@ -470,7 +462,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property groups in external
-      operationId: external.connections_UpdateGroups
+      operationId: external.connection_UpdateGroups
       parameters:
         - name: externalConnection-id
           in: path
@@ -497,11 +489,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -509,7 +497,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property groups for external
-      operationId: external.connections_DeleteGroups
+      operationId: external.connection_DeleteGroups
       parameters:
         - name: externalConnection-id
           in: path
@@ -545,7 +533,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
-      operationId: external.connections.groups_ListMembers
+      operationId: external.connection.group_ListMembers
       parameters:
         - name: externalConnection-id
           in: path
@@ -625,7 +613,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
-      operationId: external.connections.groups_CreateMembers
+      operationId: external.connection.group_CreateMembers
       parameters:
         - name: externalConnection-id
           in: path
@@ -666,7 +654,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
-      operationId: external.connections.groups_GetMembers
+      operationId: external.connection.group_GetMembers
       parameters:
         - name: externalConnection-id
           in: path
@@ -731,7 +719,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property members in external
-      operationId: external.connections.groups_UpdateMembers
+      operationId: external.connection.group_UpdateMembers
       parameters:
         - name: externalConnection-id
           in: path
@@ -766,11 +754,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -778,7 +762,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property members for external
-      operationId: external.connections.groups_DeleteMembers
+      operationId: external.connection.group_DeleteMembers
       parameters:
         - name: externalConnection-id
           in: path
@@ -821,7 +805,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get items from external
-      operationId: external.connections_ListItems
+      operationId: external.connection_ListItems
       parameters:
         - name: externalConnection-id
           in: path
@@ -895,7 +879,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to items for external
-      operationId: external.connections_CreateItems
+      operationId: external.connection_CreateItems
       parameters:
         - name: externalConnection-id
           in: path
@@ -927,7 +911,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get items from external
-      operationId: external.connections_GetItems
+      operationId: external.connection_GetItems
       parameters:
         - name: externalConnection-id
           in: path
@@ -982,11 +966,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - external.externalConnection
       summary: Update the navigation property items in external
-      operationId: external.connections_UpdateItems
+      operationId: external.connection_SetItems
       parameters:
         - name: externalConnection-id
           in: path
@@ -1013,11 +997,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1025,7 +1005,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property items for external
-      operationId: external.connections_DeleteItems
+      operationId: external.connection_DeleteItems
       parameters:
         - name: externalConnection-id
           in: path
@@ -1060,7 +1040,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      operationId: external.connections_ListOperations
+      operationId: external.connection_ListOperations
       parameters:
         - name: externalConnection-id
           in: path
@@ -1131,7 +1111,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to operations for external
-      operationId: external.connections_CreateOperations
+      operationId: external.connection_CreateOperations
       parameters:
         - name: externalConnection-id
           in: path
@@ -1163,7 +1143,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      operationId: external.connections_GetOperations
+      operationId: external.connection_GetOperations
       parameters:
         - name: externalConnection-id
           in: path
@@ -1221,7 +1201,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property operations in external
-      operationId: external.connections_UpdateOperations
+      operationId: external.connection_UpdateOperations
       parameters:
         - name: externalConnection-id
           in: path
@@ -1248,11 +1228,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1260,7 +1236,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property operations for external
-      operationId: external.connections_DeleteOperations
+      operationId: external.connection_DeleteOperations
       parameters:
         - name: externalConnection-id
           in: path
@@ -1299,7 +1275,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
-      operationId: external.connections_GetSchema
+      operationId: external.connection_GetSchema
       parameters:
         - name: externalConnection-id
           in: path
@@ -1349,7 +1325,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property schema in external
-      operationId: external.connections_UpdateSchema
+      operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
           in: path
@@ -1368,11 +1344,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1380,7 +1352,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property schema for external
-      operationId: external.connections_DeleteSchema
+      operationId: external.connection_DeleteSchema
       parameters:
         - name: externalConnection-id
           in: path
@@ -1457,11 +1429,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.searchEntity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

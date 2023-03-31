@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list?view=graph-rest-1.0
-      operationId: applications.application_ListApplication
+      operationId: application_ListApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -217,7 +217,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
-      operationId: applications.application_CreateApplication
+      operationId: application_CreateApplication
       requestBody:
         description: New entity
         content:
@@ -244,7 +244,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0
-      operationId: applications.application_GetApplication
+      operationId: application_GetApplication
       parameters:
         - name: application-id
           in: path
@@ -353,7 +353,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0
-      operationId: applications.application_UpdateApplication
+      operationId: application_UpdateApplication
       parameters:
         - name: application-id
           in: path
@@ -372,11 +372,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.application'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -388,7 +384,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
-      operationId: applications.application_DeleteApplication
+      operationId: application_DeleteApplication
       parameters:
         - name: application-id
           in: path
@@ -416,7 +412,7 @@ paths:
         - applications.appManagementPolicy
       summary: Get appManagementPolicies from applications
       description: The appManagementPolicy applied to this application.
-      operationId: applications_ListAppManagementPolicies
+      operationId: application_ListAppManagementPolicies
       parameters:
         - name: application-id
           in: path
@@ -499,7 +495,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Delete ref of navigation property appManagementPolicies for applications
-      operationId: applications_DeleteAppManagementPoliciesGraphBPreRef
+      operationId: application_DeleteAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -542,7 +538,7 @@ paths:
         - applications.appManagementPolicy
       summary: Get ref of appManagementPolicies from applications
       description: The appManagementPolicy applied to this application.
-      operationId: applications_ListAppManagementPoliciesGraphBPreRef
+      operationId: application_ListAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -593,7 +589,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Create new navigation property ref to appManagementPolicies for applications
-      operationId: applications_CreateAppManagementPoliciesGraphBPreRef
+      operationId: application_CreateAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -617,7 +613,7 @@ paths:
         - applications.connectorGroup
       summary: Get connectorGroup from applications
       description: The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-      operationId: applications_GetConnectorGroup
+      operationId: application_GetConnectorGroup
       parameters:
         - name: application-id
           in: path
@@ -675,7 +671,7 @@ paths:
         - applications.connectorGroup
       summary: Get ref of connectorGroup from applications
       description: The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-      operationId: applications_GetConnectorGroupGraphBPreRef
+      operationId: application_GetConnectorGroupGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -699,7 +695,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Update the ref of navigation property connectorGroup in applications
-      operationId: applications_SetConnectorGroupGraphBPreRef
+      operationId: application_SetConnectorGroupGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -721,7 +717,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Delete ref of navigation property connectorGroup for applications
-      operationId: applications_DeleteConnectorGroupGraphBPreRef
+      operationId: application_DeleteConnectorGroupGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -749,7 +745,7 @@ paths:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
       description: 'Supports $filter (/$count eq 0, /$count ne 0). Read-only.'
-      operationId: applications_GetCreatedOnBehalfGraphOPre
+      operationId: application_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: application-id
           in: path
@@ -803,7 +799,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
-      operationId: applications_ListExtensionProperties
+      operationId: application_ListExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -890,7 +886,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
-      operationId: applications_CreateExtensionProperties
+      operationId: application_CreateExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -923,7 +919,7 @@ paths:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
       description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-      operationId: applications_GetExtensionProperties
+      operationId: application_GetExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -985,7 +981,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Update the navigation property extensionProperties in applications
-      operationId: applications_UpdateExtensionProperties
+      operationId: application_UpdateExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -1012,11 +1008,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1024,7 +1016,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Delete navigation property extensionProperties for applications
-      operationId: applications_DeleteExtensionProperties
+      operationId: application_DeleteExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -1063,7 +1055,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0
-      operationId: applications_ListFederatedIdentityCredentials
+      operationId: application_ListFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1147,7 +1139,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0
-      operationId: applications_CreateFederatedIdentityCredentials
+      operationId: application_CreateFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1180,7 +1172,7 @@ paths:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
       description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
-      operationId: applications_GetFederatedIdentityCredentials
+      operationId: application_GetFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1241,7 +1233,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Update the navigation property federatedIdentityCredentials in applications
-      operationId: applications_UpdateFederatedIdentityCredentials
+      operationId: application_UpdateFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1268,11 +1260,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1280,7 +1268,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Delete navigation property federatedIdentityCredentials for applications
-      operationId: applications_DeleteFederatedIdentityCredentials
+      operationId: application_DeleteFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1315,7 +1303,7 @@ paths:
       tags:
         - applications.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from applications
-      operationId: applications_ListHomeRealmDiscoveryPolicies
+      operationId: application_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: application-id
           in: path
@@ -1398,7 +1386,7 @@ paths:
       tags:
         - applications.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from applications
-      operationId: applications_GetHomeRealmDiscoveryPolicies
+      operationId: application_GetHomeRealmDiscoveryPolicies
       parameters:
         - name: application-id
           in: path
@@ -1463,7 +1451,7 @@ paths:
         - applications.application
       summary: Get logo for application from applications
       description: The main logo for the application. Not nullable.
-      operationId: applications.application_GetLogo
+      operationId: application_GetLogo
       parameters:
         - name: application-id
           in: path
@@ -1489,7 +1477,7 @@ paths:
         - applications.application
       summary: Update logo for application in applications
       description: The main logo for the application. Not nullable.
-      operationId: applications.application_SetLogo
+      operationId: application_SetLogo
       parameters:
         - name: application-id
           in: path
@@ -1522,7 +1510,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
-      operationId: applications_addKey
+      operationId: application_addKey
       parameters:
         - name: application-id
           in: path
@@ -1567,7 +1555,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0
-      operationId: applications_addPassword
+      operationId: application_addPassword
       parameters:
         - name: application-id
           in: path
@@ -1608,7 +1596,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: applications_checkMemberGroups
+      operationId: application_checkMemberGroups
       parameters:
         - name: application-id
           in: path
@@ -1660,7 +1648,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action checkMemberObjects
-      operationId: applications_checkMemberObjects
+      operationId: application_checkMemberObjects
       parameters:
         - name: application-id
           in: path
@@ -1716,7 +1704,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: applications_getMemberGroups
+      operationId: application_getMemberGroups
       parameters:
         - name: application-id
           in: path
@@ -1768,7 +1756,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getMemberObjects
-      operationId: applications_getMemberObjects
+      operationId: application_getMemberObjects
       parameters:
         - name: application-id
           in: path
@@ -1824,7 +1812,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0
-      operationId: applications_removeKey
+      operationId: application_removeKey
       parameters:
         - name: application-id
           in: path
@@ -1865,7 +1853,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
-      operationId: applications_removePassword
+      operationId: application_removePassword
       parameters:
         - name: application-id
           in: path
@@ -1904,7 +1892,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: applications_restore
+      operationId: application_restore
       parameters:
         - name: application-id
           in: path
@@ -1933,7 +1921,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
-      operationId: applications_setVerifiedPublisher
+      operationId: application_setVerifiedPublisher
       parameters:
         - name: application-id
           in: path
@@ -1970,7 +1958,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
-      operationId: applications_unsetVerifiedPublisher
+      operationId: application_unsetVerifiedPublisher
       parameters:
         - name: application-id
           in: path
@@ -1995,7 +1983,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
-      operationId: applications_ListOwners
+      operationId: application_ListOwners
       parameters:
         - name: application-id
           in: path
@@ -2074,7 +2062,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Delete ref of navigation property owners for applications
-      operationId: applications_DeleteOwnersGraphBPreRef
+      operationId: application_DeleteOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2120,7 +2108,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
-      operationId: applications_ListOwnersGraphBPreRef
+      operationId: application_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2173,7 +2161,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Create new navigation property ref to owners for applications
-      operationId: applications_CreateOwnersGraphBPreRef
+      operationId: application_CreateOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2197,7 +2185,7 @@ paths:
         - applications.synchronization
       summary: Get synchronization from applications
       description: Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
-      operationId: applications_GetSynchronization
+      operationId: application_GetSynchronization
       parameters:
         - name: application-id
           in: path
@@ -2250,7 +2238,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property synchronization in applications
-      operationId: applications_UpdateSynchronization
+      operationId: application_UpdateSynchronization
       parameters:
         - name: application-id
           in: path
@@ -2269,11 +2257,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronization'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2281,7 +2265,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property synchronization for applications
-      operationId: applications_DeleteSynchronization
+      operationId: application_DeleteSynchronization
       parameters:
         - name: application-id
           in: path
@@ -2312,7 +2296,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-list?view=graph-rest-1.0
-      operationId: applications.synchronization_ListJobs
+      operationId: application.synchronization_ListJobs
       parameters:
         - name: application-id
           in: path
@@ -2395,7 +2379,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-1.0
-      operationId: applications.synchronization_CreateJobs
+      operationId: application.synchronization_CreateJobs
       parameters:
         - name: application-id
           in: path
@@ -2428,7 +2412,7 @@ paths:
         - applications.synchronization
       summary: Get jobs from applications
       description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
-      operationId: applications.synchronization_GetJobs
+      operationId: application.synchronization_GetJobs
       parameters:
         - name: application-id
           in: path
@@ -2490,7 +2474,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property jobs in applications
-      operationId: applications.synchronization_UpdateJobs
+      operationId: application.synchronization_UpdateJobs
       parameters:
         - name: application-id
           in: path
@@ -2517,11 +2501,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2529,7 +2509,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property jobs for applications
-      operationId: applications.synchronization_DeleteJobs
+      operationId: application.synchronization_DeleteJobs
       parameters:
         - name: application-id
           in: path
@@ -2568,7 +2548,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
-      operationId: applications.synchronization.jobs_pause
+      operationId: application.synchronization.job_pause
       parameters:
         - name: application-id
           in: path
@@ -2601,7 +2581,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
-      operationId: applications.synchronization.jobs_provisionOnDemand
+      operationId: application.synchronization.job_provisionOnDemand
       parameters:
         - name: application-id
           in: path
@@ -2652,7 +2632,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
-      operationId: applications.synchronization.jobs_restart
+      operationId: application.synchronization.job_restart
       parameters:
         - name: application-id
           in: path
@@ -2697,7 +2677,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
-      operationId: applications.synchronization.jobs_start
+      operationId: application.synchronization.job_start
       parameters:
         - name: application-id
           in: path
@@ -2726,7 +2706,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action stop
-      operationId: applications.synchronization.jobs_stop
+      operationId: application.synchronization.job_stop
       parameters:
         - name: application-id
           in: path
@@ -2759,7 +2739,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
-      operationId: applications.synchronization.jobs_validateCredentials
+      operationId: application.synchronization.job_validateCredentials
       parameters:
         - name: application-id
           in: path
@@ -2816,7 +2796,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
-      operationId: applications.synchronization.jobs_GetSchema
+      operationId: application.synchronization.job_GetSchema
       parameters:
         - name: application-id
           in: path
@@ -2880,7 +2860,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
-      operationId: applications.synchronization.jobs_UpdateSchema
+      operationId: application.synchronization.job_UpdateSchema
       parameters:
         - name: application-id
           in: path
@@ -2907,11 +2887,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2919,7 +2895,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property schema for applications
-      operationId: applications.synchronization.jobs_DeleteSchema
+      operationId: application.synchronization.job_DeleteSchema
       parameters:
         - name: application-id
           in: path
@@ -2955,7 +2931,7 @@ paths:
         - applications.synchronization
       summary: Get directories from applications
       description: Contains the collection of directories and all of their objects.
-      operationId: applications.synchronization.jobs.schema_ListDirectories
+      operationId: application.synchronization.job.schema_ListDirectories
       parameters:
         - name: application-id
           in: path
@@ -3046,7 +3022,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to directories for applications
-      operationId: applications.synchronization.jobs.schema_CreateDirectories
+      operationId: application.synchronization.job.schema_CreateDirectories
       parameters:
         - name: application-id
           in: path
@@ -3087,7 +3063,7 @@ paths:
         - applications.synchronization
       summary: Get directories from applications
       description: Contains the collection of directories and all of their objects.
-      operationId: applications.synchronization.jobs.schema_GetDirectories
+      operationId: application.synchronization.job.schema_GetDirectories
       parameters:
         - name: application-id
           in: path
@@ -3157,7 +3133,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property directories in applications
-      operationId: applications.synchronization.jobs.schema_UpdateDirectories
+      operationId: application.synchronization.job.schema_UpdateDirectories
       parameters:
         - name: application-id
           in: path
@@ -3192,11 +3168,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3204,7 +3176,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property directories for applications
-      operationId: applications.synchronization.jobs.schema_DeleteDirectories
+      operationId: application.synchronization.job.schema_DeleteDirectories
       parameters:
         - name: application-id
           in: path
@@ -3251,7 +3223,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directorydefinition-discover?view=graph-rest-1.0
-      operationId: applications.synchronization.jobs.schema.directories_discover
+      operationId: application.synchronization.job.schema.directory_discover
       parameters:
         - name: application-id
           in: path
@@ -3292,7 +3264,7 @@ paths:
       tags:
         - applications.Functions
       summary: Invoke function filterOperators
-      operationId: applications.synchronization.jobs.schema_filterOperators
+      operationId: application.synchronization.job.schema_filterOperators
       parameters:
         - name: application-id
           in: path
@@ -3378,7 +3350,7 @@ paths:
       tags:
         - applications.Functions
       summary: Invoke function functions
-      operationId: applications.synchronization.jobs.schema_functions
+      operationId: application.synchronization.job.schema_functions
       parameters:
         - name: application-id
           in: path
@@ -3462,7 +3434,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
-      operationId: applications.synchronization.jobs.schema_parseExpression
+      operationId: application.synchronization.job.schema_parseExpression
       parameters:
         - name: application-id
           in: path
@@ -3512,7 +3484,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action validateCredentials
-      operationId: applications.synchronization.jobs_validateCredentials
+      operationId: application.synchronization.job_validateCredentials
       parameters:
         - name: application-id
           in: path
@@ -3561,7 +3533,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
-      operationId: applications.synchronization_acquireAccessToken
+      operationId: application.synchronization_acquireAccessToken
       parameters:
         - name: application-id
           in: path
@@ -3596,7 +3568,7 @@ paths:
       tags:
         - applications.Functions
       summary: Invoke function Ping
-      operationId: applications.synchronization_Ping
+      operationId: application.synchronization_Ping
       parameters:
         - name: application-id
           in: path
@@ -3631,7 +3603,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-1.0
-      operationId: applications.synchronization_ListTemplates
+      operationId: application.synchronization_ListTemplates
       parameters:
         - name: application-id
           in: path
@@ -3716,7 +3688,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to templates for applications
-      operationId: applications.synchronization_CreateTemplates
+      operationId: application.synchronization_CreateTemplates
       parameters:
         - name: application-id
           in: path
@@ -3749,7 +3721,7 @@ paths:
         - applications.synchronization
       summary: Get templates from applications
       description: Pre-configured synchronization settings for a particular application.
-      operationId: applications.synchronization_GetTemplates
+      operationId: application.synchronization_GetTemplates
       parameters:
         - name: application-id
           in: path
@@ -3813,7 +3785,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property templates in applications
-      operationId: applications.synchronization_UpdateTemplates
+      operationId: application.synchronization_UpdateTemplates
       parameters:
         - name: application-id
           in: path
@@ -3840,11 +3812,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3852,7 +3820,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property templates for applications
-      operationId: applications.synchronization_DeleteTemplates
+      operationId: application.synchronization_DeleteTemplates
       parameters:
         - name: application-id
           in: path
@@ -3888,7 +3856,7 @@ paths:
         - applications.synchronization
       summary: Get schema from applications
       description: Default synchronization schema for the jobs based on this template.
-      operationId: applications.synchronization.templates_GetSchema
+      operationId: application.synchronization.template_GetSchema
       parameters:
         - name: application-id
           in: path
@@ -3948,7 +3916,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property schema in applications
-      operationId: applications.synchronization.templates_UpdateSchema
+      operationId: application.synchronization.template_UpdateSchema
       parameters:
         - name: application-id
           in: path
@@ -3975,11 +3943,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3987,7 +3951,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property schema for applications
-      operationId: applications.synchronization.templates_DeleteSchema
+      operationId: application.synchronization.template_DeleteSchema
       parameters:
         - name: application-id
           in: path
@@ -4023,7 +3987,7 @@ paths:
         - applications.synchronization
       summary: Get directories from applications
       description: Contains the collection of directories and all of their objects.
-      operationId: applications.synchronization.templates.schema_ListDirectories
+      operationId: application.synchronization.template.schema_ListDirectories
       parameters:
         - name: application-id
           in: path
@@ -4114,7 +4078,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to directories for applications
-      operationId: applications.synchronization.templates.schema_CreateDirectories
+      operationId: application.synchronization.template.schema_CreateDirectories
       parameters:
         - name: application-id
           in: path
@@ -4155,7 +4119,7 @@ paths:
         - applications.synchronization
       summary: Get directories from applications
       description: Contains the collection of directories and all of their objects.
-      operationId: applications.synchronization.templates.schema_GetDirectories
+      operationId: application.synchronization.template.schema_GetDirectories
       parameters:
         - name: application-id
           in: path
@@ -4225,7 +4189,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property directories in applications
-      operationId: applications.synchronization.templates.schema_UpdateDirectories
+      operationId: application.synchronization.template.schema_UpdateDirectories
       parameters:
         - name: application-id
           in: path
@@ -4260,11 +4224,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4272,7 +4232,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property directories for applications
-      operationId: applications.synchronization.templates.schema_DeleteDirectories
+      operationId: application.synchronization.template.schema_DeleteDirectories
       parameters:
         - name: application-id
           in: path
@@ -4319,7 +4279,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directorydefinition-discover?view=graph-rest-1.0
-      operationId: applications.synchronization.templates.schema.directories_discover
+      operationId: application.synchronization.template.schema.directory_discover
       parameters:
         - name: application-id
           in: path
@@ -4360,7 +4320,7 @@ paths:
       tags:
         - applications.Functions
       summary: Invoke function filterOperators
-      operationId: applications.synchronization.templates.schema_filterOperators
+      operationId: application.synchronization.template.schema_filterOperators
       parameters:
         - name: application-id
           in: path
@@ -4446,7 +4406,7 @@ paths:
       tags:
         - applications.Functions
       summary: Invoke function functions
-      operationId: applications.synchronization.templates.schema_functions
+      operationId: application.synchronization.template.schema_functions
       parameters:
         - name: application-id
           in: path
@@ -4530,7 +4490,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
-      operationId: applications.synchronization.templates.schema_parseExpression
+      operationId: application.synchronization.template.schema_parseExpression
       parameters:
         - name: application-id
           in: path
@@ -4584,7 +4544,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenIssuancePolicies
+      operationId: application_ListTokenIssuancePolicies
       parameters:
         - name: application-id
           in: path
@@ -4667,7 +4627,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Delete ref of navigation property tokenIssuancePolicies for applications
-      operationId: applications_DeleteTokenIssuancePoliciesGraphBPreRef
+      operationId: application_DeleteTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4713,7 +4673,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenIssuancePoliciesGraphBPreRef
+      operationId: application_ListTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4764,7 +4724,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for applications
-      operationId: applications_CreateTokenIssuancePoliciesGraphBPreRef
+      operationId: application_CreateTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4791,7 +4751,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenLifetimePolicies
+      operationId: application_ListTokenLifetimePolicies
       parameters:
         - name: application-id
           in: path
@@ -4874,7 +4834,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Delete ref of navigation property tokenLifetimePolicies for applications
-      operationId: applications_DeleteTokenLifetimePoliciesGraphBPreRef
+      operationId: application_DeleteTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4920,7 +4880,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenLifetimePoliciesGraphBPreRef
+      operationId: application_ListTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4971,7 +4931,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for applications
-      operationId: applications_CreateTokenLifetimePoliciesGraphBPreRef
+      operationId: application_CreateTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -4994,7 +4954,7 @@ paths:
       tags:
         - applications.Functions
       summary: Invoke function delta
-      operationId: applications_delta
+      operationId: application_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5183,7 +5143,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: applications_getGraphBPreIds
+      operationId: application_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -5236,7 +5196,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
-      operationId: applications_getUserOwnedObjects
+      operationId: application_getUserOwnedObjects
       requestBody:
         description: Action parameters
         content:
@@ -5272,7 +5232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: applications_validateProperties
+      operationId: application_validateProperties
       requestBody:
         description: Action parameters
         content:
@@ -5312,7 +5272,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0
-      operationId: applicationTemplates.applicationTemplate_ListApplicationTemplate
+      operationId: applicationTemplate_ListApplicationTemplate
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5404,7 +5364,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0
-      operationId: applicationTemplates.applicationTemplate_GetApplicationTemplate
+      operationId: applicationTemplate_GetApplicationTemplate
       parameters:
         - name: applicationTemplate-id
           in: path
@@ -5467,7 +5427,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
-      operationId: applicationTemplates_instantiate
+      operationId: applicationTemplate_instantiate
       parameters:
         - name: applicationTemplate-id
           in: path
@@ -5509,7 +5469,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0
-      operationId: groups_ListAppRoleAssignments
+      operationId: group_ListAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -5609,7 +5569,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0
-      operationId: groups_CreateAppRoleAssignments
+      operationId: group_CreateAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -5642,7 +5602,7 @@ paths:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
       description: Represents the app roles a group has been granted for an application. Supports $expand.
-      operationId: groups_GetAppRoleAssignments
+      operationId: group_GetAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -5715,7 +5675,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in groups
-      operationId: groups_UpdateAppRoleAssignments
+      operationId: group_UpdateAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -5742,11 +5702,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5754,7 +5710,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for groups
-      operationId: groups_DeleteAppRoleAssignments
+      operationId: group_DeleteAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -5789,7 +5745,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesPublishingProfile
       summary: Get entities from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.onPremisesPublishingProfile_ListOnPremisesPublishingProfile
+      operationId: onPremisesPublishingProfile_ListOnPremisesPublishingProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5865,7 +5821,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesPublishingProfile
       summary: Add new entity to onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.onPremisesPublishingProfile_CreateOnPremisesPublishingProfile
+      operationId: onPremisesPublishingProfile_CreateOnPremisesPublishingProfile
       requestBody:
         description: New entity
         content:
@@ -5888,7 +5844,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesPublishingProfile
       summary: Get entity from onPremisesPublishingProfiles by key
-      operationId: onPremisesPublishingProfiles.onPremisesPublishingProfile_GetOnPremisesPublishingProfile
+      operationId: onPremisesPublishingProfile_GetOnPremisesPublishingProfile
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -5949,7 +5905,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesPublishingProfile
       summary: Update entity in onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.onPremisesPublishingProfile_UpdateOnPremisesPublishingProfile
+      operationId: onPremisesPublishingProfile_UpdateOnPremisesPublishingProfile
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -5968,11 +5924,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingProfile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5980,7 +5932,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesPublishingProfile
       summary: Delete entity from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.onPremisesPublishingProfile_DeleteOnPremisesPublishingProfile
+      operationId: onPremisesPublishingProfile_DeleteOnPremisesPublishingProfile
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6011,7 +5963,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onpremisesagentgroup-list?view=graph-rest-1.0
-      operationId: onPremisesPublishingProfiles_ListAgentGroups
+      operationId: onPremisesPublishingProfile_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6093,7 +6045,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onpremisesagentgroup-post?view=graph-rest-1.0
-      operationId: onPremisesPublishingProfiles_CreateAgentGroups
+      operationId: onPremisesPublishingProfile_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6126,7 +6078,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
       description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles_GetAgentGroups
+      operationId: onPremisesPublishingProfile_GetAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6189,7 +6141,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_UpdateAgentGroups
+      operationId: onPremisesPublishingProfile_UpdateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6216,11 +6168,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6228,7 +6176,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_DeleteAgentGroups
+      operationId: onPremisesPublishingProfile_DeleteAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6264,7 +6212,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agents from onPremisesPublishingProfiles
       description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agentGroups_ListAgents
+      operationId: onPremisesPublishingProfile.agentGroup_ListAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6351,7 +6299,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property to agents for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups_CreateAgents
+      operationId: onPremisesPublishingProfile.agentGroup_CreateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6392,7 +6340,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agents from onPremisesPublishingProfiles
       description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agentGroups_GetAgents
+      operationId: onPremisesPublishingProfile.agentGroup_GetAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6462,7 +6410,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Update the navigation property agents in onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups_UpdateAgents
+      operationId: onPremisesPublishingProfile.agentGroup_UpdateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6497,11 +6445,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6509,7 +6453,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete navigation property agents for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups_DeleteAgents
+      operationId: onPremisesPublishingProfile.agentGroup_DeleteAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6553,7 +6497,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agentGroups.agents_ListAgentGroups
+      operationId: onPremisesPublishingProfile.agentGroup_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6648,7 +6592,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.agents_DeleteAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agentGroup_DeleteAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6707,7 +6651,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agentGroups.agents_ListAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agentGroup_ListAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6770,7 +6714,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.agents_CreateAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agentGroup_CreateAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6810,7 +6754,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get publishedResources from onPremisesPublishingProfiles
       description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agentGroups_ListPublishedResources
+      operationId: onPremisesPublishingProfile.agentGroup_ListPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6894,7 +6838,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property to publishedResources for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups_CreatePublishedResources
+      operationId: onPremisesPublishingProfile.agentGroup_CreatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6935,7 +6879,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get publishedResources from onPremisesPublishingProfiles
       description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agentGroups_GetPublishedResources
+      operationId: onPremisesPublishingProfile.agentGroup_GetPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7004,7 +6948,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups_UpdatePublishedResources
+      operationId: onPremisesPublishingProfile.agentGroup_UpdatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7039,11 +6983,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.publishedResource'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7051,7 +6991,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups_DeletePublishedResources
+      operationId: onPremisesPublishingProfile.agentGroup_DeletePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7095,7 +7035,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_ListAgentGroups
+      operationId: onPremisesPublishingProfile.agentGroup.publishedResource_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7189,7 +7129,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_CreateAgentGroups
+      operationId: onPremisesPublishingProfile.agentGroup.publishedResource_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7237,7 +7177,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_DeleteAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agentGroup.publishedResource_DeleteAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7296,7 +7236,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_ListAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agentGroup.publishedResource_ListAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7359,7 +7299,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_CreateAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agentGroup.publishedResource_CreateAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7402,7 +7342,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onpremisesagent-list?view=graph-rest-1.0
-      operationId: onPremisesPublishingProfiles_ListAgents
+      operationId: onPremisesPublishingProfile_ListAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7481,7 +7421,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Create new navigation property to agents for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_CreateAgents
+      operationId: onPremisesPublishingProfile_CreateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7514,7 +7454,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agents from onPremisesPublishingProfiles
       description: List of existing onPremisesAgent objects. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles_GetAgents
+      operationId: onPremisesPublishingProfile_GetAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7576,7 +7516,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Update the navigation property agents in onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_UpdateAgents
+      operationId: onPremisesPublishingProfile_UpdateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7603,11 +7543,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7615,7 +7551,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Delete navigation property agents for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_DeleteAgents
+      operationId: onPremisesPublishingProfile_DeleteAgents
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7651,7 +7587,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agents_ListAgentGroups
+      operationId: onPremisesPublishingProfile.agent_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7738,7 +7674,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agents_DeleteAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agent_DeleteAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7789,7 +7725,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.agents_ListAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agent_ListAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7844,7 +7780,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.agents_CreateAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agent_CreateAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7879,7 +7815,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/connectorgroup-list?view=graph-rest-1.0
-      operationId: onPremisesPublishingProfiles_ListConnectorGroups
+      operationId: onPremisesPublishingProfile_ListConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7964,7 +7900,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
-      operationId: onPremisesPublishingProfiles_CreateConnectorGroups
+      operationId: onPremisesPublishingProfile_CreateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -7997,7 +7933,7 @@ paths:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get connectorGroups from onPremisesPublishingProfiles
       description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles_GetConnectorGroups
+      operationId: onPremisesPublishingProfile_GetConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8061,7 +7997,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Update the navigation property connectorGroups in onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_UpdateConnectorGroups
+      operationId: onPremisesPublishingProfile_UpdateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8088,11 +8024,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8100,7 +8032,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Delete navigation property connectorGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_DeleteConnectorGroups
+      operationId: onPremisesPublishingProfile_DeleteConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8135,7 +8067,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get applications from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectorGroups_ListApplications
+      operationId: onPremisesPublishingProfile.connectorGroup_ListApplications
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8340,7 +8272,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get applications from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectorGroups_GetApplications
+      operationId: onPremisesPublishingProfile.connectorGroup_GetApplications
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8463,7 +8395,7 @@ paths:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get logo for the navigation property applications from onPremisesPublishingProfiles
       description: The main logo for the application. Not nullable.
-      operationId: onPremisesPublishingProfiles.connectorGroups_GetApplicationsLogo
+      operationId: onPremisesPublishingProfile.connectorGroup_GetApplicationsLogo
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8505,7 +8437,7 @@ paths:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Update logo for the navigation property applications in onPremisesPublishingProfiles
       description: The main logo for the application. Not nullable.
-      operationId: onPremisesPublishingProfiles.connectorGroups_SetApplicationsLogo
+      operationId: onPremisesPublishingProfile.connectorGroup_SetApplicationsLogo
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8550,7 +8482,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get members from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectorGroups_ListMembers
+      operationId: onPremisesPublishingProfile.connectorGroup_ListMembers
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8635,7 +8567,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Delete ref of navigation property members for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectorGroups_DeleteMembersGraphBPreRef
+      operationId: onPremisesPublishingProfile.connectorGroup_DeleteMembersGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8685,7 +8617,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get ref of members from onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectorGroups_ListMembersGraphBPreRef
+      operationId: onPremisesPublishingProfile.connectorGroup_ListMembersGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8740,7 +8672,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create new navigation property ref to members for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectorGroups_CreateMembersGraphBPreRef
+      operationId: onPremisesPublishingProfile.connectorGroup_CreateMembersGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8775,7 +8707,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/connector-list?view=graph-rest-1.0
-      operationId: onPremisesPublishingProfiles_ListConnectors
+      operationId: onPremisesPublishingProfile_ListConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8851,7 +8783,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Create new navigation property to connectors for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_CreateConnectors
+      operationId: onPremisesPublishingProfile_CreateConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8884,7 +8816,7 @@ paths:
         - onPremisesPublishingProfiles.connector
       summary: Get connectors from onPremisesPublishingProfiles
       description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles_GetConnectors
+      operationId: onPremisesPublishingProfile_GetConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8945,7 +8877,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Update the navigation property connectors in onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_UpdateConnectors
+      operationId: onPremisesPublishingProfile_UpdateConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -8972,11 +8904,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.connector'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8984,7 +8912,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Delete navigation property connectors for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_DeleteConnectors
+      operationId: onPremisesPublishingProfile_DeleteConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9020,7 +8948,7 @@ paths:
         - onPremisesPublishingProfiles.connector
       summary: Get memberOf from onPremisesPublishingProfiles
       description: The connectorGroup that the connector is a member of. Read-only.
-      operationId: onPremisesPublishingProfiles.connectors_ListMemberGraphOPre
+      operationId: onPremisesPublishingProfile.connector_ListMemberGraphOPre
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9110,7 +9038,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Delete ref of navigation property memberOf for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectors_DeleteMemberGraphOPreGraphBPreRef
+      operationId: onPremisesPublishingProfile.connector_DeleteMemberGraphOPreGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9161,7 +9089,7 @@ paths:
         - onPremisesPublishingProfiles.connector
       summary: Get ref of memberOf from onPremisesPublishingProfiles
       description: The connectorGroup that the connector is a member of. Read-only.
-      operationId: onPremisesPublishingProfiles.connectors_ListMemberGraphOPreGraphBPreRef
+      operationId: onPremisesPublishingProfile.connector_ListMemberGraphOPreGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9218,7 +9146,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Create new navigation property ref to memberOf for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.connectors_CreateMemberGraphOPreGraphBPreRef
+      operationId: onPremisesPublishingProfile.connector_CreateMemberGraphOPreGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9253,7 +9181,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/publishedresource-list?view=graph-rest-1.0
-      operationId: onPremisesPublishingProfiles_ListPublishedResources
+      operationId: onPremisesPublishingProfile_ListPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9333,7 +9261,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/publishedresource-post?view=graph-rest-1.0
-      operationId: onPremisesPublishingProfiles_CreatePublishedResources
+      operationId: onPremisesPublishingProfile_CreatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9366,7 +9294,7 @@ paths:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get publishedResources from onPremisesPublishingProfiles
       description: List of existing publishedResource objects. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles_GetPublishedResources
+      operationId: onPremisesPublishingProfile_GetPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9427,7 +9355,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_UpdatePublishedResources
+      operationId: onPremisesPublishingProfile_UpdatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9454,11 +9382,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.publishedResource'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9466,7 +9390,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles_DeletePublishedResources
+      operationId: onPremisesPublishingProfile_DeletePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9502,7 +9426,7 @@ paths:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.publishedResources_ListAgentGroups
+      operationId: onPremisesPublishingProfile.publishedResource_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9588,7 +9512,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.publishedResources_CreateAgentGroups
+      operationId: onPremisesPublishingProfile.publishedResource_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9628,7 +9552,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.publishedResources_DeleteAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.publishedResource_DeleteAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9679,7 +9603,7 @@ paths:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfiles.publishedResources_ListAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.publishedResource_ListAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9734,7 +9658,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfiles.publishedResources_CreateAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.publishedResource_CreateAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -9769,7 +9693,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal_ListServicePrincipal
+      operationId: servicePrincipal_ListServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9993,7 +9917,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal_CreateServicePrincipal
+      operationId: servicePrincipal_CreateServicePrincipal
       requestBody:
         description: New entity
         content:
@@ -10020,7 +9944,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal_GetServicePrincipal
+      operationId: servicePrincipal_GetServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10147,7 +10071,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal_UpdateServicePrincipal
+      operationId: servicePrincipal_UpdateServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10166,11 +10090,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10182,7 +10102,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal_DeleteServicePrincipal
+      operationId: servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10210,7 +10130,7 @@ paths:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
       description: The appManagementPolicy applied to this service principal.
-      operationId: servicePrincipals_ListAppManagementPolicies
+      operationId: servicePrincipal_ListAppManagementPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10294,7 +10214,7 @@ paths:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
       description: The appManagementPolicy applied to this service principal.
-      operationId: servicePrincipals_GetAppManagementPolicies
+      operationId: servicePrincipal_GetAppManagementPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10362,7 +10282,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0
-      operationId: servicePrincipals_ListAppRoleAssignedTo
+      operationId: servicePrincipal_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10452,7 +10372,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0
-      operationId: servicePrincipals_CreateAppRoleAssignedTo
+      operationId: servicePrincipal_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10485,7 +10405,7 @@ paths:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
       description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
-      operationId: servicePrincipals_GetAppRoleAssignedTo
+      operationId: servicePrincipal_GetAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10548,7 +10468,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignedTo in servicePrincipals
-      operationId: servicePrincipals_UpdateAppRoleAssignedTo
+      operationId: servicePrincipal_UpdateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10575,11 +10495,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10587,7 +10503,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignedTo for servicePrincipals
-      operationId: servicePrincipals_DeleteAppRoleAssignedTo
+      operationId: servicePrincipal_DeleteAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10626,7 +10542,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0
-      operationId: servicePrincipals_ListAppRoleAssignments
+      operationId: servicePrincipal_ListAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10726,7 +10642,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0
-      operationId: servicePrincipals_CreateAppRoleAssignments
+      operationId: servicePrincipal_CreateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10759,7 +10675,7 @@ paths:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
       description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
-      operationId: servicePrincipals_GetAppRoleAssignments
+      operationId: servicePrincipal_GetAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10832,7 +10748,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in servicePrincipals
-      operationId: servicePrincipals_UpdateAppRoleAssignments
+      operationId: servicePrincipal_UpdateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10859,11 +10775,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10871,7 +10783,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for servicePrincipals
-      operationId: servicePrincipals_DeleteAppRoleAssignments
+      operationId: servicePrincipal_DeleteAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10910,7 +10822,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListClaimsMappingPolicies
+      operationId: servicePrincipal_ListClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -10993,7 +10905,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteClaimsMappingPoliciesGraphBPreRef
+      operationId: servicePrincipal_DeleteClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11039,7 +10951,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListClaimsMappingPoliciesGraphBPreRef
+      operationId: servicePrincipal_ListClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11090,7 +11002,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateClaimsMappingPoliciesGraphBPreRef
+      operationId: servicePrincipal_CreateClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11117,7 +11029,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-1.0
-      operationId: servicePrincipals_ListCreatedObjects
+      operationId: servicePrincipal_ListCreatedObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11187,7 +11099,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
       description: Directory objects created by this service principal. Read-only. Nullable.
-      operationId: servicePrincipals_GetCreatedObjects
+      operationId: servicePrincipal_GetCreatedObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11249,7 +11161,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0
-      operationId: servicePrincipals_ListDelegatedPermissionClassifications
+      operationId: servicePrincipal_ListDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11327,7 +11239,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0
-      operationId: servicePrincipals_CreateDelegatedPermissionClassifications
+      operationId: servicePrincipal_CreateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11360,7 +11272,7 @@ paths:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
       description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
-      operationId: servicePrincipals_GetDelegatedPermissionClassifications
+      operationId: servicePrincipal_GetDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11419,7 +11331,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Update the navigation property delegatedPermissionClassifications in servicePrincipals
-      operationId: servicePrincipals_UpdateDelegatedPermissionClassifications
+      operationId: servicePrincipal_UpdateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11446,11 +11358,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11458,7 +11366,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Delete navigation property delegatedPermissionClassifications for servicePrincipals
-      operationId: servicePrincipals_DeleteDelegatedPermissionClassifications
+      operationId: servicePrincipal_DeleteDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11494,7 +11402,7 @@ paths:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
       description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
-      operationId: servicePrincipals_ListEndpoints
+      operationId: servicePrincipal_ListEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11577,7 +11485,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Create new navigation property to endpoints for servicePrincipals
-      operationId: servicePrincipals_CreateEndpoints
+      operationId: servicePrincipal_CreateEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11610,7 +11518,7 @@ paths:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
       description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
-      operationId: servicePrincipals_GetEndpoints
+      operationId: servicePrincipal_GetEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11672,7 +11580,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Update the navigation property endpoints in servicePrincipals
-      operationId: servicePrincipals_UpdateEndpoints
+      operationId: servicePrincipal_UpdateEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11699,11 +11607,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.endpoint'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11711,7 +11615,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Delete navigation property endpoints for servicePrincipals
-      operationId: servicePrincipals_DeleteEndpoints
+      operationId: servicePrincipal_DeleteEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11746,7 +11650,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from servicePrincipals
-      operationId: servicePrincipals_ListFederatedIdentityCredentials
+      operationId: servicePrincipal_ListFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11826,7 +11730,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Create new navigation property to federatedIdentityCredentials for servicePrincipals
-      operationId: servicePrincipals_CreateFederatedIdentityCredentials
+      operationId: servicePrincipal_CreateFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11858,7 +11762,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from servicePrincipals
-      operationId: servicePrincipals_GetFederatedIdentityCredentials
+      operationId: servicePrincipal_GetFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11919,7 +11823,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Update the navigation property federatedIdentityCredentials in servicePrincipals
-      operationId: servicePrincipals_UpdateFederatedIdentityCredentials
+      operationId: servicePrincipal_UpdateFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11946,11 +11850,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11958,7 +11858,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Delete navigation property federatedIdentityCredentials for servicePrincipals
-      operationId: servicePrincipals_DeleteFederatedIdentityCredentials
+      operationId: servicePrincipal_DeleteFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -11997,7 +11897,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListHomeRealmDiscoveryPolicies
+      operationId: servicePrincipal_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12080,7 +11980,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteHomeRealmDiscoveryPoliciesGraphBPreRef
+      operationId: servicePrincipal_DeleteHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12126,7 +12026,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesGraphBPreRef
+      operationId: servicePrincipal_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12177,7 +12077,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateHomeRealmDiscoveryPoliciesGraphBPreRef
+      operationId: servicePrincipal_CreateHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12200,7 +12100,7 @@ paths:
       tags:
         - servicePrincipals.licenseDetails
       summary: Get licenseDetails from servicePrincipals
-      operationId: servicePrincipals_ListLicenseDetails
+      operationId: servicePrincipal_ListLicenseDetails
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12274,7 +12174,7 @@ paths:
       tags:
         - servicePrincipals.licenseDetails
       summary: Create new navigation property to licenseDetails for servicePrincipals
-      operationId: servicePrincipals_CreateLicenseDetails
+      operationId: servicePrincipal_CreateLicenseDetails
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12306,7 +12206,7 @@ paths:
       tags:
         - servicePrincipals.licenseDetails
       summary: Get licenseDetails from servicePrincipals
-      operationId: servicePrincipals_GetLicenseDetails
+      operationId: servicePrincipal_GetLicenseDetails
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12365,7 +12265,7 @@ paths:
       tags:
         - servicePrincipals.licenseDetails
       summary: Update the navigation property licenseDetails in servicePrincipals
-      operationId: servicePrincipals_UpdateLicenseDetails
+      operationId: servicePrincipal_UpdateLicenseDetails
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12392,11 +12292,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.licenseDetails'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12404,7 +12300,7 @@ paths:
       tags:
         - servicePrincipals.licenseDetails
       summary: Delete navigation property licenseDetails for servicePrincipals
-      operationId: servicePrincipals_DeleteLicenseDetails
+      operationId: servicePrincipal_DeleteLicenseDetails
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12443,7 +12339,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0
-      operationId: servicePrincipals_ListMemberGraphOPre
+      operationId: servicePrincipal_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12523,7 +12419,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-      operationId: servicePrincipals_GetMemberGraphOPre
+      operationId: servicePrincipal_GetMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12595,7 +12491,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0
-      operationId: servicePrincipals_addTokenSigningCertificate
+      operationId: servicePrincipal_addTokenSigningCertificate
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12642,7 +12538,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: servicePrincipals_checkMemberGroups
+      operationId: servicePrincipal_checkMemberGroups
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12694,7 +12590,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action checkMemberObjects
-      operationId: servicePrincipals_checkMemberObjects
+      operationId: servicePrincipal_checkMemberObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12750,7 +12646,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-createpasswordsinglesignoncredentials?view=graph-rest-1.0
-      operationId: servicePrincipals_createPasswordSingleSignOnCredentials
+      operationId: servicePrincipal_createPasswordSingleSignOnCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12795,7 +12691,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-deletepasswordsinglesignoncredentials?view=graph-rest-1.0
-      operationId: servicePrincipals_deletePasswordSingleSignOnCredentials
+      operationId: servicePrincipal_deletePasswordSingleSignOnCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12832,7 +12728,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: servicePrincipals_getMemberGroups
+      operationId: servicePrincipal_getMemberGroups
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12884,7 +12780,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberObjects
-      operationId: servicePrincipals_getMemberObjects
+      operationId: servicePrincipal_getMemberObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12940,7 +12836,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-1.0
-      operationId: servicePrincipals_getPasswordSingleSignOnCredentials
+      operationId: servicePrincipal_getPasswordSingleSignOnCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -12981,7 +12877,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: servicePrincipals_restore
+      operationId: servicePrincipal_restore
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13010,7 +12906,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-updatepasswordsinglesignoncredentials?view=graph-rest-1.0
-      operationId: servicePrincipals_updatePasswordSingleSignOnCredentials
+      operationId: servicePrincipal_updatePasswordSingleSignOnCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13051,7 +12947,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0
-      operationId: servicePrincipals_ListOauth2PermissionGrants
+      operationId: servicePrincipal_ListOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13139,7 +13035,7 @@ paths:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from servicePrincipals
       description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-      operationId: servicePrincipals_GetOauth2PermissionGrants
+      operationId: servicePrincipal_GetOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13207,7 +13103,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0
-      operationId: servicePrincipals_ListOwnedObjects
+      operationId: servicePrincipal_ListOwnedObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13277,7 +13173,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
       description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      operationId: servicePrincipals_GetOwnedObjects
+      operationId: servicePrincipal_GetOwnedObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13339,7 +13235,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
-      operationId: servicePrincipals_ListOwners
+      operationId: servicePrincipal_ListOwners
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13418,7 +13314,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Delete ref of navigation property owners for servicePrincipals
-      operationId: servicePrincipals_DeleteOwnersGraphBPreRef
+      operationId: servicePrincipal_DeleteOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13464,7 +13360,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
-      operationId: servicePrincipals_ListOwnersGraphBPreRef
+      operationId: servicePrincipal_ListOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13517,7 +13413,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to owners for servicePrincipals
-      operationId: servicePrincipals_CreateOwnersGraphBPreRef
+      operationId: servicePrincipal_CreateOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13541,7 +13437,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get synchronization from servicePrincipals
       description: Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
-      operationId: servicePrincipals_GetSynchronization
+      operationId: servicePrincipal_GetSynchronization
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13594,7 +13490,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property synchronization in servicePrincipals
-      operationId: servicePrincipals_UpdateSynchronization
+      operationId: servicePrincipal_UpdateSynchronization
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13613,11 +13509,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronization'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13625,7 +13517,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property synchronization for servicePrincipals
-      operationId: servicePrincipals_DeleteSynchronization
+      operationId: servicePrincipal_DeleteSynchronization
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13656,7 +13548,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-list?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization_ListJobs
+      operationId: servicePrincipal.synchronization_ListJobs
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13739,7 +13631,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization_CreateJobs
+      operationId: servicePrincipal.synchronization_CreateJobs
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13772,7 +13664,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get jobs from servicePrincipals
       description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
-      operationId: servicePrincipals.synchronization_GetJobs
+      operationId: servicePrincipal.synchronization_GetJobs
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13834,7 +13726,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property jobs in servicePrincipals
-      operationId: servicePrincipals.synchronization_UpdateJobs
+      operationId: servicePrincipal.synchronization_UpdateJobs
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13861,11 +13753,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13873,7 +13761,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property jobs for servicePrincipals
-      operationId: servicePrincipals.synchronization_DeleteJobs
+      operationId: servicePrincipal.synchronization_DeleteJobs
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13912,7 +13800,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs_pause
+      operationId: servicePrincipal.synchronization.job_pause
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13945,7 +13833,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs_provisionOnDemand
+      operationId: servicePrincipal.synchronization.job_provisionOnDemand
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -13996,7 +13884,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs_restart
+      operationId: servicePrincipal.synchronization.job_restart
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14041,7 +13929,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs_start
+      operationId: servicePrincipal.synchronization.job_start
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14070,7 +13958,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action stop
-      operationId: servicePrincipals.synchronization.jobs_stop
+      operationId: servicePrincipal.synchronization.job_stop
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14103,7 +13991,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs_validateCredentials
+      operationId: servicePrincipal.synchronization.job_validateCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14160,7 +14048,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs_GetSchema
+      operationId: servicePrincipal.synchronization.job_GetSchema
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14224,7 +14112,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs_UpdateSchema
+      operationId: servicePrincipal.synchronization.job_UpdateSchema
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14251,11 +14139,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14263,7 +14147,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property schema for servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs_DeleteSchema
+      operationId: servicePrincipal.synchronization.job_DeleteSchema
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14299,7 +14183,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
       description: Contains the collection of directories and all of their objects.
-      operationId: servicePrincipals.synchronization.jobs.schema_ListDirectories
+      operationId: servicePrincipal.synchronization.job.schema_ListDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14390,7 +14274,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to directories for servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs.schema_CreateDirectories
+      operationId: servicePrincipal.synchronization.job.schema_CreateDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14431,7 +14315,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
       description: Contains the collection of directories and all of their objects.
-      operationId: servicePrincipals.synchronization.jobs.schema_GetDirectories
+      operationId: servicePrincipal.synchronization.job.schema_GetDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14501,7 +14385,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property directories in servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs.schema_UpdateDirectories
+      operationId: servicePrincipal.synchronization.job.schema_UpdateDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14536,11 +14420,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14548,7 +14428,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property directories for servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs.schema_DeleteDirectories
+      operationId: servicePrincipal.synchronization.job.schema_DeleteDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14595,7 +14475,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directorydefinition-discover?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs.schema.directories_discover
+      operationId: servicePrincipal.synchronization.job.schema.directory_discover
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14636,7 +14516,7 @@ paths:
       tags:
         - servicePrincipals.Functions
       summary: Invoke function filterOperators
-      operationId: servicePrincipals.synchronization.jobs.schema_filterOperators
+      operationId: servicePrincipal.synchronization.job.schema_filterOperators
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14722,7 +14602,7 @@ paths:
       tags:
         - servicePrincipals.Functions
       summary: Invoke function functions
-      operationId: servicePrincipals.synchronization.jobs.schema_functions
+      operationId: servicePrincipal.synchronization.job.schema_functions
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14806,7 +14686,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs.schema_parseExpression
+      operationId: servicePrincipal.synchronization.job.schema_parseExpression
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14856,7 +14736,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action validateCredentials
-      operationId: servicePrincipals.synchronization.jobs_validateCredentials
+      operationId: servicePrincipal.synchronization.job_validateCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14905,7 +14785,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization_acquireAccessToken
+      operationId: servicePrincipal.synchronization_acquireAccessToken
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14940,7 +14820,7 @@ paths:
       tags:
         - servicePrincipals.Functions
       summary: Invoke function Ping
-      operationId: servicePrincipals.synchronization_Ping
+      operationId: servicePrincipal.synchronization_Ping
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -14975,7 +14855,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization_ListTemplates
+      operationId: servicePrincipal.synchronization_ListTemplates
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15060,7 +14940,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to templates for servicePrincipals
-      operationId: servicePrincipals.synchronization_CreateTemplates
+      operationId: servicePrincipal.synchronization_CreateTemplates
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15093,7 +14973,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get templates from servicePrincipals
       description: Pre-configured synchronization settings for a particular application.
-      operationId: servicePrincipals.synchronization_GetTemplates
+      operationId: servicePrincipal.synchronization_GetTemplates
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15157,7 +15037,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property templates in servicePrincipals
-      operationId: servicePrincipals.synchronization_UpdateTemplates
+      operationId: servicePrincipal.synchronization_UpdateTemplates
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15184,11 +15064,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15196,7 +15072,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property templates for servicePrincipals
-      operationId: servicePrincipals.synchronization_DeleteTemplates
+      operationId: servicePrincipal.synchronization_DeleteTemplates
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15232,7 +15108,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get schema from servicePrincipals
       description: Default synchronization schema for the jobs based on this template.
-      operationId: servicePrincipals.synchronization.templates_GetSchema
+      operationId: servicePrincipal.synchronization.template_GetSchema
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15292,7 +15168,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property schema in servicePrincipals
-      operationId: servicePrincipals.synchronization.templates_UpdateSchema
+      operationId: servicePrincipal.synchronization.template_UpdateSchema
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15319,11 +15195,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15331,7 +15203,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property schema for servicePrincipals
-      operationId: servicePrincipals.synchronization.templates_DeleteSchema
+      operationId: servicePrincipal.synchronization.template_DeleteSchema
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15367,7 +15239,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
       description: Contains the collection of directories and all of their objects.
-      operationId: servicePrincipals.synchronization.templates.schema_ListDirectories
+      operationId: servicePrincipal.synchronization.template.schema_ListDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15458,7 +15330,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to directories for servicePrincipals
-      operationId: servicePrincipals.synchronization.templates.schema_CreateDirectories
+      operationId: servicePrincipal.synchronization.template.schema_CreateDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15499,7 +15371,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
       description: Contains the collection of directories and all of their objects.
-      operationId: servicePrincipals.synchronization.templates.schema_GetDirectories
+      operationId: servicePrincipal.synchronization.template.schema_GetDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15569,7 +15441,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property directories in servicePrincipals
-      operationId: servicePrincipals.synchronization.templates.schema_UpdateDirectories
+      operationId: servicePrincipal.synchronization.template.schema_UpdateDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15604,11 +15476,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15616,7 +15484,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property directories for servicePrincipals
-      operationId: servicePrincipals.synchronization.templates.schema_DeleteDirectories
+      operationId: servicePrincipal.synchronization.template.schema_DeleteDirectories
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15663,7 +15531,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directorydefinition-discover?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.templates.schema.directories_discover
+      operationId: servicePrincipal.synchronization.template.schema.directory_discover
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15704,7 +15572,7 @@ paths:
       tags:
         - servicePrincipals.Functions
       summary: Invoke function filterOperators
-      operationId: servicePrincipals.synchronization.templates.schema_filterOperators
+      operationId: servicePrincipal.synchronization.template.schema_filterOperators
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15790,7 +15658,7 @@ paths:
       tags:
         - servicePrincipals.Functions
       summary: Invoke function functions
-      operationId: servicePrincipals.synchronization.templates.schema_functions
+      operationId: servicePrincipal.synchronization.template.schema_functions
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15874,7 +15742,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.templates.schema_parseExpression
+      operationId: servicePrincipal.synchronization.template.schema_parseExpression
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15925,7 +15793,7 @@ paths:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
       description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_ListTokenIssuancePolicies
+      operationId: servicePrincipal_ListTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -16009,7 +15877,7 @@ paths:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
       description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_GetTokenIssuancePolicies
+      operationId: servicePrincipal_GetTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -16074,7 +15942,7 @@ paths:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
       description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_ListTokenLifetimePolicies
+      operationId: servicePrincipal_ListTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -16158,7 +16026,7 @@ paths:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
       description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_GetTokenLifetimePolicies
+      operationId: servicePrincipal_GetTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -16225,7 +16093,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
-      operationId: servicePrincipals_ListTransitiveMemberGraphOPre
+      operationId: servicePrincipal_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -16304,7 +16172,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_GetTransitiveMemberGraphOPre
+      operationId: servicePrincipal_GetTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -16372,7 +16240,7 @@ paths:
       tags:
         - servicePrincipals.Functions
       summary: Invoke function delta
-      operationId: servicePrincipals_delta
+      operationId: servicePrincipal_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -16575,7 +16443,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: servicePrincipals_getGraphBPreIds
+      operationId: servicePrincipal_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -16628,7 +16496,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
-      operationId: servicePrincipals_getUserOwnedObjects
+      operationId: servicePrincipal_getUserOwnedObjects
       requestBody:
         description: Action parameters
         content:
@@ -16664,7 +16532,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: servicePrincipals_validateProperties
+      operationId: servicePrincipal_validateProperties
       requestBody:
         description: Action parameters
         content:
@@ -16704,7 +16572,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0
-      operationId: users_ListAppRoleAssignments
+      operationId: user_ListAppRoleAssignments
       parameters:
         - name: user-id
           in: path
@@ -16804,7 +16672,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0
-      operationId: users_CreateAppRoleAssignments
+      operationId: user_CreateAppRoleAssignments
       parameters:
         - name: user-id
           in: path
@@ -16837,7 +16705,7 @@ paths:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
       description: Represents the app roles a user has been granted for an application. Supports $expand.
-      operationId: users_GetAppRoleAssignments
+      operationId: user_GetAppRoleAssignments
       parameters:
         - name: user-id
           in: path
@@ -16910,7 +16778,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in users
-      operationId: users_UpdateAppRoleAssignments
+      operationId: user_UpdateAppRoleAssignments
       parameters:
         - name: user-id
           in: path
@@ -16937,11 +16805,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16949,7 +16813,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for users
-      operationId: users_DeleteAppRoleAssignments
+      operationId: user_DeleteAppRoleAssignments
       parameters:
         - name: user-id
           in: path

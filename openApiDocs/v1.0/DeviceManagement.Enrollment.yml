@@ -66,11 +66,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -274,11 +270,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -314,7 +306,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfigurations_ListAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_ListAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -382,7 +374,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations_CreateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_CreateAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -415,7 +407,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfigurations_GetAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_GetAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -472,7 +464,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations_UpdateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_UpdateAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -499,11 +491,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -511,7 +499,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations_DeleteAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_DeleteAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -723,11 +711,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -975,11 +959,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1014,7 +994,7 @@ paths:
       tags:
         - roleManagement.roleManagement
       summary: Get roleManagement
-      operationId: roleManagement.roleManagement_GetRoleManagement
+      operationId: roleManagement_GetRoleManagement
       parameters:
         - name: $select
           in: query
@@ -1057,7 +1037,7 @@ paths:
       tags:
         - roleManagement.roleManagement
       summary: Update roleManagement
-      operationId: roleManagement.roleManagement_UpdateRoleManagement
+      operationId: roleManagement_UpdateRoleManagement
       requestBody:
         description: New property values
         content:
@@ -1067,11 +1047,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.roleManagement'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

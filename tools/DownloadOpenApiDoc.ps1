@@ -13,7 +13,7 @@ if (-not (Test-Path $OpenApiDocOutput)) {
     New-Item -Path $OpenApiDocOutput -Type Directory
 }
 
-$OpenApiBaseUrl = "https://devxapitest.azurewebsites.net"
+$OpenApiBaseUrl = "https://graphexplorerapi.azurewebsites.net"
 $OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&title=$ModuleName&openapiversion=3&style=Powershell&graphVersion=$GraphVersion" -f $ModuleRegex)
 if ($ForceRefresh.IsPresent) {
     $OpenApiServiceUrl = "$OpenApiServiceUrl&forceRefresh=true"

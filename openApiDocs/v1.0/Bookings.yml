@@ -11,7 +11,7 @@ paths:
       tags:
         - solutions.solutionsRoot
       summary: Get solutions
-      operationId: solutions.solutionsRoot_GetSolutionsRoot
+      operationId: solution.solutionsRoot_GetSolutionsRoot
       parameters:
         - name: $select
           in: query
@@ -54,7 +54,7 @@ paths:
       tags:
         - solutions.solutionsRoot
       summary: Update solutions
-      operationId: solutions.solutionsRoot_UpdateSolutionsRoot
+      operationId: solution.solutionsRoot_UpdateSolutionsRoot
       requestBody:
         description: New property values
         content:
@@ -64,11 +64,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -81,7 +77,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
-      operationId: solutions_ListBookingBusinesses
+      operationId: solution_ListBookingBusinesses
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -190,7 +186,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
-      operationId: solutions_CreateBookingBusinesses
+      operationId: solution_CreateBookingBusinesses
       requestBody:
         description: New navigation property
         content:
@@ -213,7 +209,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingBusinesses from solutions
-      operationId: solutions_GetBookingBusinesses
+      operationId: solution_GetBookingBusinesses
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -285,7 +281,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property bookingBusinesses in solutions
-      operationId: solutions_UpdateBookingBusinesses
+      operationId: solution_UpdateBookingBusinesses
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -304,11 +300,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -316,7 +308,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property bookingBusinesses for solutions
-      operationId: solutions_DeleteBookingBusinesses
+      operationId: solution_DeleteBookingBusinesses
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -347,7 +339,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_ListAppointments
+      operationId: solution.bookingBusiness_ListAppointments
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -488,7 +480,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_CreateAppointments
+      operationId: solution.bookingBusiness_CreateAppointments
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -521,7 +513,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get appointments from solutions
       description: All the appointments of this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses_GetAppointments
+      operationId: solution.bookingBusiness_GetAppointments
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -601,7 +593,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property appointments in solutions
-      operationId: solutions.bookingBusinesses_UpdateAppointments
+      operationId: solution.bookingBusiness_UpdateAppointments
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -628,11 +620,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -640,7 +628,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property appointments for solutions
-      operationId: solutions.bookingBusinesses_DeleteAppointments
+      operationId: solution.bookingBusiness_DeleteAppointments
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -679,7 +667,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses.appointments_cancel
+      operationId: solution.bookingBusiness.appointment_cancel
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -725,7 +713,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_ListCalendarView
+      operationId: solution.bookingBusiness_ListCalendarView
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -862,7 +850,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to calendarView for solutions
-      operationId: solutions.bookingBusinesses_CreateCalendarView
+      operationId: solution.bookingBusiness_CreateCalendarView
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -895,7 +883,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get calendarView from solutions
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses_GetCalendarView
+      operationId: solution.bookingBusiness_GetCalendarView
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -975,7 +963,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property calendarView in solutions
-      operationId: solutions.bookingBusinesses_UpdateCalendarView
+      operationId: solution.bookingBusiness_UpdateCalendarView
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1002,11 +990,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1014,7 +998,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property calendarView for solutions
-      operationId: solutions.bookingBusinesses_DeleteCalendarView
+      operationId: solution.bookingBusiness_DeleteCalendarView
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1053,7 +1037,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses.calendarView_cancel
+      operationId: solution.bookingBusiness.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1099,7 +1083,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_ListCustomers
+      operationId: solution.bookingBusiness_ListCustomers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1168,7 +1152,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_CreateCustomers
+      operationId: solution.bookingBusiness_CreateCustomers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1201,7 +1185,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get customers from solutions
       description: All the customers of this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses_GetCustomers
+      operationId: solution.bookingBusiness_GetCustomers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1257,7 +1241,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property customers in solutions
-      operationId: solutions.bookingBusinesses_UpdateCustomers
+      operationId: solution.bookingBusiness_UpdateCustomers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1284,11 +1268,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1296,7 +1276,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property customers for solutions
-      operationId: solutions.bookingBusinesses_DeleteCustomers
+      operationId: solution.bookingBusiness_DeleteCustomers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1335,7 +1315,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_ListCustomQuestions
+      operationId: solution.bookingBusiness_ListCustomQuestions
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1413,7 +1393,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_CreateCustomQuestions
+      operationId: solution.bookingBusiness_CreateCustomQuestions
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1446,7 +1426,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get customQuestions from solutions
       description: All the custom questions of this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses_GetCustomQuestions
+      operationId: solution.bookingBusiness_GetCustomQuestions
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1505,7 +1485,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property customQuestions in solutions
-      operationId: solutions.bookingBusinesses_UpdateCustomQuestions
+      operationId: solution.bookingBusiness_UpdateCustomQuestions
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1532,11 +1512,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1544,7 +1520,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property customQuestions for solutions
-      operationId: solutions.bookingBusinesses_DeleteCustomQuestions
+      operationId: solution.bookingBusiness_DeleteCustomQuestions
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1583,7 +1559,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_getStaffAvailability
+      operationId: solution.bookingBusiness_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1643,7 +1619,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_publish
+      operationId: solution.bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1668,7 +1644,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_unpublish
+      operationId: solution.bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1693,7 +1669,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_ListServices
+      operationId: solution.bookingBusiness_ListServices
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1825,7 +1801,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_CreateServices
+      operationId: solution.bookingBusiness_CreateServices
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1858,7 +1834,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get services from solutions
       description: All the services offered by this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses_GetServices
+      operationId: solution.bookingBusiness_GetServices
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1935,7 +1911,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property services in solutions
-      operationId: solutions.bookingBusinesses_UpdateServices
+      operationId: solution.bookingBusiness_UpdateServices
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1962,11 +1938,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.bookingService'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1974,7 +1946,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property services for solutions
-      operationId: solutions.bookingBusinesses_DeleteServices
+      operationId: solution.bookingBusiness_DeleteServices
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2013,7 +1985,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_ListStaffMembers
+      operationId: solution.bookingBusiness_ListStaffMembers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2082,7 +2054,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
-      operationId: solutions.bookingBusinesses_CreateStaffMembers
+      operationId: solution.bookingBusiness_CreateStaffMembers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2115,7 +2087,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get staffMembers from solutions
       description: All the staff members that provide services in this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses_GetStaffMembers
+      operationId: solution.bookingBusiness_GetStaffMembers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2171,7 +2143,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property staffMembers in solutions
-      operationId: solutions.bookingBusinesses_UpdateStaffMembers
+      operationId: solution.bookingBusiness_UpdateStaffMembers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2198,11 +2170,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2210,7 +2178,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property staffMembers for solutions
-      operationId: solutions.bookingBusinesses_DeleteStaffMembers
+      operationId: solution.bookingBusiness_DeleteStaffMembers
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2249,7 +2217,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
-      operationId: solutions_ListBookingCurrencies
+      operationId: solution_ListBookingCurrencies
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2309,7 +2277,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Create new navigation property to bookingCurrencies for solutions
-      operationId: solutions_CreateBookingCurrencies
+      operationId: solution_CreateBookingCurrencies
       requestBody:
         description: New navigation property
         content:
@@ -2332,7 +2300,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Get bookingCurrencies from solutions
-      operationId: solutions_GetBookingCurrencies
+      operationId: solution_GetBookingCurrencies
       parameters:
         - name: bookingCurrency-id
           in: path
@@ -2381,7 +2349,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Update the navigation property bookingCurrencies in solutions
-      operationId: solutions_UpdateBookingCurrencies
+      operationId: solution_UpdateBookingCurrencies
       parameters:
         - name: bookingCurrency-id
           in: path
@@ -2400,11 +2368,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2412,7 +2376,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Delete navigation property bookingCurrencies for solutions
-      operationId: solutions_DeleteBookingCurrencies
+      operationId: solution_DeleteBookingCurrencies
       parameters:
         - name: bookingCurrency-id
           in: path

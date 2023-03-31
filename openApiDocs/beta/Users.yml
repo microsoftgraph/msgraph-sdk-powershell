@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0
-      operationId: users.user_ListUser
+      operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -456,7 +456,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
-      operationId: users.user_CreateUser
+      operationId: user_CreateUser
       requestBody:
         description: New entity
         content:
@@ -483,7 +483,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0
-      operationId: users.user_GetUser
+      operationId: user_GetUser
       parameters:
         - name: user-id
           in: path
@@ -744,7 +744,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0
-      operationId: users.user_UpdateUser
+      operationId: user_UpdateUser
       parameters:
         - name: user-id
           in: path
@@ -763,11 +763,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.user'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -779,7 +775,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
-      operationId: users.user_DeleteUser
+      operationId: user_DeleteUser
       parameters:
         - name: user-id
           in: path
@@ -810,7 +806,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
-      operationId: users_ListCreatedObjects
+      operationId: user_ListCreatedObjects
       parameters:
         - name: user-id
           in: path
@@ -880,7 +876,7 @@ paths:
         - users.directoryObject
       summary: Get createdObjects from users
       description: Directory objects that were created by the user. Read-only. Nullable.
-      operationId: users_GetCreatedObjects
+      operationId: user_GetCreatedObjects
       parameters:
         - name: user-id
           in: path
@@ -942,7 +938,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0
-      operationId: users_ListDirectReports
+      operationId: user_ListDirectReports
       parameters:
         - name: user-id
           in: path
@@ -1022,7 +1018,7 @@ paths:
         - users.directoryObject
       summary: Get directReports from users
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-      operationId: users_GetDirectReports
+      operationId: user_GetDirectReports
       parameters:
         - name: user-id
           in: path
@@ -1091,7 +1087,7 @@ paths:
         - users.extension
       summary: Get extensions from users
       description: The collection of open extensions defined for the user. Supports $expand. Nullable.
-      operationId: users_ListExtensions
+      operationId: user_ListExtensions
       parameters:
         - name: user-id
           in: path
@@ -1156,7 +1152,7 @@ paths:
       tags:
         - users.extension
       summary: Create new navigation property to extensions for users
-      operationId: users_CreateExtensions
+      operationId: user_CreateExtensions
       parameters:
         - name: user-id
           in: path
@@ -1189,7 +1185,7 @@ paths:
         - users.extension
       summary: Get extensions from users
       description: The collection of open extensions defined for the user. Supports $expand. Nullable.
-      operationId: users_GetExtensions
+      operationId: user_GetExtensions
       parameters:
         - name: user-id
           in: path
@@ -1245,7 +1241,7 @@ paths:
       tags:
         - users.extension
       summary: Update the navigation property extensions in users
-      operationId: users_UpdateExtensions
+      operationId: user_UpdateExtensions
       parameters:
         - name: user-id
           in: path
@@ -1272,11 +1268,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1284,7 +1276,7 @@ paths:
       tags:
         - users.extension
       summary: Delete navigation property extensions for users
-      operationId: users_DeleteExtensions
+      operationId: user_DeleteExtensions
       parameters:
         - name: user-id
           in: path
@@ -1323,7 +1315,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
-      operationId: users_ListLicenseDetails
+      operationId: user_ListLicenseDetails
       parameters:
         - name: user-id
           in: path
@@ -1397,7 +1389,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Create new navigation property to licenseDetails for users
-      operationId: users_CreateLicenseDetails
+      operationId: user_CreateLicenseDetails
       parameters:
         - name: user-id
           in: path
@@ -1429,7 +1421,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get licenseDetails from users
-      operationId: users_GetLicenseDetails
+      operationId: user_GetLicenseDetails
       parameters:
         - name: user-id
           in: path
@@ -1488,7 +1480,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Update the navigation property licenseDetails in users
-      operationId: users_UpdateLicenseDetails
+      operationId: user_UpdateLicenseDetails
       parameters:
         - name: user-id
           in: path
@@ -1515,11 +1507,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.licenseDetails'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1527,7 +1515,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Delete navigation property licenseDetails for users
-      operationId: users_DeleteLicenseDetails
+      operationId: user_DeleteLicenseDetails
       parameters:
         - name: user-id
           in: path
@@ -1566,7 +1554,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
-      operationId: users_GetManager
+      operationId: user_GetManager
       parameters:
         - name: user-id
           in: path
@@ -1620,7 +1608,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
-      operationId: users_GetManagerGraphBPreRef
+      operationId: user_GetManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1644,7 +1632,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Update the ref of navigation property manager in users
-      operationId: users_SetManagerGraphBPreRef
+      operationId: user_SetManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1666,7 +1654,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Delete ref of navigation property manager for users
-      operationId: users_DeleteManagerGraphBPreRef
+      operationId: user_DeleteManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1697,7 +1685,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
-      operationId: users_ListMemberGraphOPre
+      operationId: user_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -1777,7 +1765,7 @@ paths:
         - users.directoryObject
       summary: Get memberOf from users
       description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
-      operationId: users_GetMemberGraphOPre
+      operationId: user_GetMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -1845,7 +1833,7 @@ paths:
       tags:
         - users.notification
       summary: Get notifications from users
-      operationId: users_ListNotifications
+      operationId: user_ListNotifications
       parameters:
         - name: user-id
           in: path
@@ -1931,7 +1919,7 @@ paths:
       tags:
         - users.notification
       summary: Create new navigation property to notifications for users
-      operationId: users_CreateNotifications
+      operationId: user_CreateNotifications
       parameters:
         - name: user-id
           in: path
@@ -1963,7 +1951,7 @@ paths:
       tags:
         - users.notification
       summary: Get notifications from users
-      operationId: users_GetNotifications
+      operationId: user_GetNotifications
       parameters:
         - name: user-id
           in: path
@@ -2026,7 +2014,7 @@ paths:
       tags:
         - users.notification
       summary: Update the navigation property notifications in users
-      operationId: users_UpdateNotifications
+      operationId: user_UpdateNotifications
       parameters:
         - name: user-id
           in: path
@@ -2053,11 +2041,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.notification'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2065,7 +2049,7 @@ paths:
       tags:
         - users.notification
       summary: Delete navigation property notifications for users
-      operationId: users_DeleteNotifications
+      operationId: user_DeleteNotifications
       parameters:
         - name: user-id
           in: path
@@ -2104,7 +2088,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
-      operationId: users_ListOauth2PermissionGrants
+      operationId: user_ListOauth2PermissionGrants
       parameters:
         - name: user-id
           in: path
@@ -2191,7 +2175,7 @@ paths:
       tags:
         - users.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from users
-      operationId: users_GetOauth2PermissionGrants
+      operationId: user_GetOauth2PermissionGrants
       parameters:
         - name: user-id
           in: path
@@ -2256,7 +2240,7 @@ paths:
         - users.outlookUser
       summary: Get outlook from users
       description: Selective Outlook services available to the user. Read-only. Nullable.
-      operationId: users_GetOutlook
+      operationId: user_GetOutlook
       parameters:
         - name: user-id
           in: path
@@ -2301,7 +2285,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
-      operationId: users.outlook_ListMasterCategories
+      operationId: user.outlook_ListMasterCategories
       parameters:
         - name: user-id
           in: path
@@ -2363,7 +2347,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
-      operationId: users.outlook_CreateMasterCategories
+      operationId: user.outlook_CreateMasterCategories
       parameters:
         - name: user-id
           in: path
@@ -2396,7 +2380,7 @@ paths:
         - users.outlookUser
       summary: Get masterCategories from users
       description: A list of categories defined for the user.
-      operationId: users.outlook_GetMasterCategories
+      operationId: user.outlook_GetMasterCategories
       parameters:
         - name: user-id
           in: path
@@ -2442,7 +2426,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property masterCategories in users
-      operationId: users.outlook_UpdateMasterCategories
+      operationId: user.outlook_UpdateMasterCategories
       parameters:
         - name: user-id
           in: path
@@ -2469,11 +2453,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.outlookCategory'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2481,7 +2461,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property masterCategories for users
-      operationId: users.outlook_DeleteMasterCategories
+      operationId: user.outlook_DeleteMasterCategories
       parameters:
         - name: user-id
           in: path
@@ -2520,7 +2500,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0
-      operationId: users.outlook_ListTaskFolders
+      operationId: user.outlook_ListTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -2593,7 +2573,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to taskFolders for users
-      operationId: users.outlook_CreateTaskFolders
+      operationId: user.outlook_CreateTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -2631,7 +2611,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get taskFolders from users
-      operationId: users.outlook_GetTaskFolders
+      operationId: user.outlook_GetTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -2688,7 +2668,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property taskFolders in users
-      operationId: users.outlook_UpdateTaskFolders
+      operationId: user.outlook_UpdateTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -2715,11 +2695,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -2733,7 +2709,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property taskFolders for users
-      operationId: users.outlook_DeleteTaskFolders
+      operationId: user.outlook_DeleteTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -2775,7 +2751,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: users.outlook.taskFolders_ListMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -2857,7 +2833,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: users.outlook.taskFolders_CreateMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -2904,7 +2880,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: users.outlook.taskFolders_GetMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -2975,7 +2951,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: users.outlook.taskFolders_UpdateMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -3010,11 +2986,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -3028,7 +3000,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: users.outlook.taskFolders_DeleteMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -3078,7 +3050,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: users.outlook.taskFolders_ListSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -3160,7 +3132,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: users.outlook.taskFolders_CreateSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -3207,7 +3179,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: users.outlook.taskFolders_GetSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -3278,7 +3250,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: users.outlook.taskFolders_UpdateSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -3313,11 +3285,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -3331,7 +3299,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: users.outlook.taskFolders_DeleteSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -3384,7 +3352,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
-      operationId: users.outlook.taskFolders_ListTasks
+      operationId: user.outlook.taskFolder_ListTasks
       parameters:
         - name: user-id
           in: path
@@ -3510,7 +3478,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to tasks for users
-      operationId: users.outlook.taskFolders_CreateTasks
+      operationId: user.outlook.taskFolder_CreateTasks
       parameters:
         - name: user-id
           in: path
@@ -3557,7 +3525,7 @@ paths:
         - users.outlookUser
       summary: Get tasks from users
       description: The tasks in this task folder. Read-only. Nullable.
-      operationId: users.outlook.taskFolders_GetTasks
+      operationId: user.outlook.taskFolder_GetTasks
       parameters:
         - name: user-id
           in: path
@@ -3637,7 +3605,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property tasks in users
-      operationId: users.outlook.taskFolders_UpdateTasks
+      operationId: user.outlook.taskFolder_UpdateTasks
       parameters:
         - name: user-id
           in: path
@@ -3672,11 +3640,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.outlookTask'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -3690,7 +3654,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property tasks for users
-      operationId: users.outlook.taskFolders_DeleteTasks
+      operationId: user.outlook.taskFolder_DeleteTasks
       parameters:
         - name: user-id
           in: path
@@ -3743,7 +3707,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
-      operationId: users.outlook.taskFolders.tasks_ListAttachments
+      operationId: user.outlook.taskFolder_ListAttachments
       parameters:
         - name: user-id
           in: path
@@ -3848,7 +3812,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
-      operationId: users.outlook.taskFolders.tasks_CreateAttachments
+      operationId: user.outlook.taskFolder_CreateAttachments
       parameters:
         - name: user-id
           in: path
@@ -3903,7 +3867,7 @@ paths:
         - users.outlookUser
       summary: Get attachments from users
       description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
-      operationId: users.outlook.taskFolders.tasks_GetAttachments
+      operationId: user.outlook.taskFolder_GetAttachments
       parameters:
         - name: user-id
           in: path
@@ -3986,7 +3950,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property attachments for users
-      operationId: users.outlook.taskFolders.tasks_DeleteAttachments
+      operationId: user.outlook.taskFolder_DeleteAttachments
       parameters:
         - name: user-id
           in: path
@@ -4044,7 +4008,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.taskFolders.tasks_ListMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4134,7 +4098,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: users.outlook.taskFolders.tasks_CreateMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4189,7 +4153,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.taskFolders.tasks_GetMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4268,7 +4232,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: users.outlook.taskFolders.tasks_UpdateMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4311,11 +4275,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -4329,7 +4289,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: users.outlook.taskFolders.tasks_DeleteMultiValueExtendedProperties
+      operationId: user.outlook.taskFolder_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4387,7 +4347,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.taskFolders.tasks_ListSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4477,7 +4437,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: users.outlook.taskFolders.tasks_CreateSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4532,7 +4492,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.taskFolders.tasks_GetSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4611,7 +4571,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: users.outlook.taskFolders.tasks_UpdateSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4654,11 +4614,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -4672,7 +4628,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: users.outlook.taskFolders.tasks_DeleteSingleValueExtendedProperties
+      operationId: user.outlook.taskFolder_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -4733,7 +4689,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-1.0
-      operationId: users.outlook_ListTaskGroups
+      operationId: user.outlook_ListTaskGroups
       parameters:
         - name: user-id
           in: path
@@ -4808,7 +4764,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlookuser-post-taskgroups?view=graph-rest-1.0
-      operationId: users.outlook_CreateTaskGroups
+      operationId: user.outlook_CreateTaskGroups
       parameters:
         - name: user-id
           in: path
@@ -4846,7 +4802,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get taskGroups from users
-      operationId: users.outlook_GetTaskGroups
+      operationId: user.outlook_GetTaskGroups
       parameters:
         - name: user-id
           in: path
@@ -4901,7 +4857,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property taskGroups in users
-      operationId: users.outlook_UpdateTaskGroups
+      operationId: user.outlook_UpdateTaskGroups
       parameters:
         - name: user-id
           in: path
@@ -4928,11 +4884,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.outlookTaskGroup'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -4946,7 +4898,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property taskGroups for users
-      operationId: users.outlook_DeleteTaskGroups
+      operationId: user.outlook_DeleteTaskGroups
       parameters:
         - name: user-id
           in: path
@@ -4991,7 +4943,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-1.0
-      operationId: users.outlook.taskGroups_ListTaskFolders
+      operationId: user.outlook.taskGroup_ListTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -5072,7 +5024,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to taskFolders for users
-      operationId: users.outlook.taskGroups_CreateTaskFolders
+      operationId: user.outlook.taskGroup_CreateTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -5119,7 +5071,7 @@ paths:
         - users.outlookUser
       summary: Get taskFolders from users
       description: The collection of task folders in the task group. Read-only. Nullable.
-      operationId: users.outlook.taskGroups_GetTaskFolders
+      operationId: user.outlook.taskGroup_GetTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -5184,7 +5136,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property taskFolders in users
-      operationId: users.outlook.taskGroups_UpdateTaskFolders
+      operationId: user.outlook.taskGroup_UpdateTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -5219,11 +5171,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -5237,7 +5185,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property taskFolders for users
-      operationId: users.outlook.taskGroups_DeleteTaskFolders
+      operationId: user.outlook.taskGroup_DeleteTaskFolders
       parameters:
         - name: user-id
           in: path
@@ -5287,7 +5235,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: users.outlook.taskGroups.taskFolders_ListMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5377,7 +5325,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: users.outlook.taskGroups.taskFolders_CreateMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5432,7 +5380,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: users.outlook.taskGroups.taskFolders_GetMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5511,7 +5459,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: users.outlook.taskGroups.taskFolders_UpdateMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5554,11 +5502,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -5572,7 +5516,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: users.outlook.taskGroups.taskFolders_DeleteMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5630,7 +5574,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: users.outlook.taskGroups.taskFolders_ListSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5720,7 +5664,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: users.outlook.taskGroups.taskFolders_CreateSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5775,7 +5719,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: users.outlook.taskGroups.taskFolders_GetSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5854,7 +5798,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: users.outlook.taskGroups.taskFolders_UpdateSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5897,11 +5841,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -5915,7 +5855,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: users.outlook.taskGroups.taskFolders_DeleteSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -5976,7 +5916,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
-      operationId: users.outlook.taskGroups.taskFolders_ListTasks
+      operationId: user.outlook.taskGroup.taskFolder_ListTasks
       parameters:
         - name: user-id
           in: path
@@ -6110,7 +6050,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to tasks for users
-      operationId: users.outlook.taskGroups.taskFolders_CreateTasks
+      operationId: user.outlook.taskGroup.taskFolder_CreateTasks
       parameters:
         - name: user-id
           in: path
@@ -6165,7 +6105,7 @@ paths:
         - users.outlookUser
       summary: Get tasks from users
       description: The tasks in this task folder. Read-only. Nullable.
-      operationId: users.outlook.taskGroups.taskFolders_GetTasks
+      operationId: user.outlook.taskGroup.taskFolder_GetTasks
       parameters:
         - name: user-id
           in: path
@@ -6253,7 +6193,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property tasks in users
-      operationId: users.outlook.taskGroups.taskFolders_UpdateTasks
+      operationId: user.outlook.taskGroup.taskFolder_UpdateTasks
       parameters:
         - name: user-id
           in: path
@@ -6296,11 +6236,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.outlookTask'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -6314,7 +6250,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property tasks for users
-      operationId: users.outlook.taskGroups.taskFolders_DeleteTasks
+      operationId: user.outlook.taskGroup.taskFolder_DeleteTasks
       parameters:
         - name: user-id
           in: path
@@ -6375,7 +6311,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
-      operationId: users.outlook.taskGroups.taskFolders.tasks_ListAttachments
+      operationId: user.outlook.taskGroup.taskFolder_ListAttachments
       parameters:
         - name: user-id
           in: path
@@ -6488,7 +6424,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
-      operationId: users.outlook.taskGroups.taskFolders.tasks_CreateAttachments
+      operationId: user.outlook.taskGroup.taskFolder_CreateAttachments
       parameters:
         - name: user-id
           in: path
@@ -6551,7 +6487,7 @@ paths:
         - users.outlookUser
       summary: Get attachments from users
       description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
-      operationId: users.outlook.taskGroups.taskFolders.tasks_GetAttachments
+      operationId: user.outlook.taskGroup.taskFolder_GetAttachments
       parameters:
         - name: user-id
           in: path
@@ -6642,7 +6578,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property attachments for users
-      operationId: users.outlook.taskGroups.taskFolders.tasks_DeleteAttachments
+      operationId: user.outlook.taskGroup.taskFolder_DeleteAttachments
       parameters:
         - name: user-id
           in: path
@@ -6708,7 +6644,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.taskGroups.taskFolders.tasks_ListMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -6806,7 +6742,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: users.outlook.taskGroups.taskFolders.tasks_CreateMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -6869,7 +6805,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.taskGroups.taskFolders.tasks_GetMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -6956,7 +6892,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: users.outlook.taskGroups.taskFolders.tasks_UpdateMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -7007,11 +6943,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -7025,7 +6957,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: users.outlook.taskGroups.taskFolders.tasks_DeleteMultiValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -7091,7 +7023,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.taskGroups.taskFolders.tasks_ListSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -7189,7 +7121,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: users.outlook.taskGroups.taskFolders.tasks_CreateSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -7252,7 +7184,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.taskGroups.taskFolders.tasks_GetSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -7339,7 +7271,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: users.outlook.taskGroups.taskFolders.tasks_UpdateSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -7390,11 +7322,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -7408,7 +7336,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: users.outlook.taskGroups.taskFolders.tasks_DeleteSingleValueExtendedProperties
+      operationId: user.outlook.taskGroup.taskFolder_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -7477,7 +7405,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-1.0
-      operationId: users.outlook_ListTasks
+      operationId: user.outlook_ListTasks
       parameters:
         - name: user-id
           in: path
@@ -7599,7 +7527,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
-      operationId: users.outlook_CreateTasks
+      operationId: user.outlook_CreateTasks
       parameters:
         - name: user-id
           in: path
@@ -7637,7 +7565,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get tasks from users
-      operationId: users.outlook_GetTasks
+      operationId: user.outlook_GetTasks
       parameters:
         - name: user-id
           in: path
@@ -7709,7 +7637,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property tasks in users
-      operationId: users.outlook_UpdateTasks
+      operationId: user.outlook_UpdateTasks
       parameters:
         - name: user-id
           in: path
@@ -7736,11 +7664,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.outlookTask'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -7754,7 +7678,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property tasks for users
-      operationId: users.outlook_DeleteTasks
+      operationId: user.outlook_DeleteTasks
       parameters:
         - name: user-id
           in: path
@@ -7799,7 +7723,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
-      operationId: users.outlook.tasks_ListAttachments
+      operationId: user.outlook.task_ListAttachments
       parameters:
         - name: user-id
           in: path
@@ -7896,7 +7820,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
-      operationId: users.outlook.tasks_CreateAttachments
+      operationId: user.outlook.task_CreateAttachments
       parameters:
         - name: user-id
           in: path
@@ -7943,7 +7867,7 @@ paths:
         - users.outlookUser
       summary: Get attachments from users
       description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
-      operationId: users.outlook.tasks_GetAttachments
+      operationId: user.outlook.task_GetAttachments
       parameters:
         - name: user-id
           in: path
@@ -8018,7 +7942,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property attachments for users
-      operationId: users.outlook.tasks_DeleteAttachments
+      operationId: user.outlook.task_DeleteAttachments
       parameters:
         - name: user-id
           in: path
@@ -8068,7 +7992,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.tasks_ListMultiValueExtendedProperties
+      operationId: user.outlook.task_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8150,7 +8074,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: users.outlook.tasks_CreateMultiValueExtendedProperties
+      operationId: user.outlook.task_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8197,7 +8121,7 @@ paths:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.tasks_GetMultiValueExtendedProperties
+      operationId: user.outlook.task_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8268,7 +8192,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: users.outlook.tasks_UpdateMultiValueExtendedProperties
+      operationId: user.outlook.task_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8303,11 +8227,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -8321,7 +8241,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: users.outlook.tasks_DeleteMultiValueExtendedProperties
+      operationId: user.outlook.task_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8371,7 +8291,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.tasks_ListSingleValueExtendedProperties
+      operationId: user.outlook.task_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8453,7 +8373,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: users.outlook.tasks_CreateSingleValueExtendedProperties
+      operationId: user.outlook.task_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8500,7 +8420,7 @@ paths:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: users.outlook.tasks_GetSingleValueExtendedProperties
+      operationId: user.outlook.task_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8571,7 +8491,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: users.outlook.tasks_UpdateSingleValueExtendedProperties
+      operationId: user.outlook.task_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8606,11 +8526,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -8624,7 +8540,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: users.outlook.tasks_DeleteSingleValueExtendedProperties
+      operationId: user.outlook.task_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
@@ -8677,7 +8593,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
-      operationId: users_ListOwnedDevices
+      operationId: user_ListOwnedDevices
       parameters:
         - name: user-id
           in: path
@@ -8757,7 +8673,7 @@ paths:
         - users.directoryObject
       summary: Get ownedDevices from users
       description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-      operationId: users_GetOwnedDevices
+      operationId: user_GetOwnedDevices
       parameters:
         - name: user-id
           in: path
@@ -8829,7 +8745,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
-      operationId: users_ListOwnedObjects
+      operationId: user_ListOwnedObjects
       parameters:
         - name: user-id
           in: path
@@ -8909,7 +8825,7 @@ paths:
         - users.directoryObject
       summary: Get ownedObjects from users
       description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      operationId: users_GetOwnedObjects
+      operationId: user_GetOwnedObjects
       parameters:
         - name: user-id
           in: path
@@ -8978,7 +8894,7 @@ paths:
         - users.profilePhoto
       summary: Get photo from users
       description: The user's profile photo. Read-only.
-      operationId: users_GetPhoto
+      operationId: user_GetPhoto
       parameters:
         - name: user-id
           in: path
@@ -9016,7 +8932,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photo in users
-      operationId: users_UpdatePhoto
+      operationId: user_UpdatePhoto
       parameters:
         - name: user-id
           in: path
@@ -9035,11 +8951,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9048,7 +8960,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get media content for the navigation property photo from users
-      operationId: users_GetPhotoContent
+      operationId: user_GetPhotoContent
       parameters:
         - name: user-id
           in: path
@@ -9073,7 +8985,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update media content for the navigation property photo in users
-      operationId: users_SetPhotoContent
+      operationId: user_SetPhotoContent
       parameters:
         - name: user-id
           in: path
@@ -9102,7 +9014,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
-      operationId: users_ListPhotos
+      operationId: user_ListPhotos
       parameters:
         - name: user-id
           in: path
@@ -9161,7 +9073,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
-      operationId: users_GetPhotos
+      operationId: user_GetPhotos
       parameters:
         - name: user-id
           in: path
@@ -9208,7 +9120,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get media content for the navigation property photos from users
-      operationId: users_GetPhotosContent
+      operationId: user_GetPhotosContent
       parameters:
         - name: user-id
           in: path
@@ -9241,7 +9153,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update media content for the navigation property photos in users
-      operationId: users_SetPhotosContent
+      operationId: user_SetPhotosContent
       parameters:
         - name: user-id
           in: path
@@ -9282,7 +9194,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
-      operationId: users_ListRegisteredDevices
+      operationId: user_ListRegisteredDevices
       parameters:
         - name: user-id
           in: path
@@ -9362,7 +9274,7 @@ paths:
         - users.directoryObject
       summary: Get registeredDevices from users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-      operationId: users_GetRegisteredDevices
+      operationId: user_GetRegisteredDevices
       parameters:
         - name: user-id
           in: path
@@ -9430,7 +9342,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get settings from users
-      operationId: users_GetSettings
+      operationId: user_GetSettings
       parameters:
         - name: user-id
           in: path
@@ -9488,7 +9400,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property settings in users
-      operationId: users_UpdateSettings
+      operationId: user_UpdateSettings
       parameters:
         - name: user-id
           in: path
@@ -9507,11 +9419,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userSettings'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9519,7 +9427,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property settings for users
-      operationId: users_DeleteSettings
+      operationId: user_DeleteSettings
       parameters:
         - name: user-id
           in: path
@@ -9550,7 +9458,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0
-      operationId: users.settings_GetContactMergeSuggestions
+      operationId: user.setting_GetContactMergeSuggestions
       parameters:
         - name: user-id
           in: path
@@ -9603,7 +9511,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0
-      operationId: users.settings_UpdateContactMergeSuggestions
+      operationId: user.setting_UpdateContactMergeSuggestions
       parameters:
         - name: user-id
           in: path
@@ -9622,11 +9530,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9634,7 +9538,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property contactMergeSuggestions for users
-      operationId: users.settings_DeleteContactMergeSuggestions
+      operationId: user.setting_DeleteContactMergeSuggestions
       parameters:
         - name: user-id
           in: path
@@ -9665,7 +9569,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0
-      operationId: users.settings_GetItemInsights
+      operationId: user.setting_GetItemInsights
       parameters:
         - name: user-id
           in: path
@@ -9718,7 +9622,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
-      operationId: users.settings_UpdateItemInsights
+      operationId: user.setting_UpdateItemInsights
       parameters:
         - name: user-id
           in: path
@@ -9737,11 +9641,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9749,7 +9649,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property itemInsights for users
-      operationId: users.settings_DeleteItemInsights
+      operationId: user.setting_DeleteItemInsights
       parameters:
         - name: user-id
           in: path
@@ -9780,7 +9680,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0
-      operationId: users.settings_GetRegionalAndLanguageSettings
+      operationId: user.setting_GetRegionalAndLanguageSettings
       parameters:
         - name: user-id
           in: path
@@ -9835,7 +9735,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property regionalAndLanguageSettings in users
-      operationId: users.settings_UpdateRegionalAndLanguageSettings
+      operationId: user.setting_UpdateRegionalAndLanguageSettings
       parameters:
         - name: user-id
           in: path
@@ -9854,11 +9754,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9866,7 +9762,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property regionalAndLanguageSettings for users
-      operationId: users.settings_DeleteRegionalAndLanguageSettings
+      operationId: user.setting_DeleteRegionalAndLanguageSettings
       parameters:
         - name: user-id
           in: path
@@ -9897,7 +9793,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
-      operationId: users.settings_GetShiftPreferences
+      operationId: user.setting_GetShiftPreferences
       parameters:
         - name: user-id
           in: path
@@ -9954,7 +9850,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
-      operationId: users.settings_UpdateShiftPreferences
+      operationId: user.setting_UpdateShiftPreferences
       parameters:
         - name: user-id
           in: path
@@ -9973,11 +9869,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9985,7 +9877,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property shiftPreferences for users
-      operationId: users.settings_DeleteShiftPreferences
+      operationId: user.setting_DeleteShiftPreferences
       parameters:
         - name: user-id
           in: path
@@ -10013,7 +9905,7 @@ paths:
         - users.todo
       summary: Get todo from users
       description: Represents the To Do services available to a user.
-      operationId: users_GetTodo
+      operationId: user_GetTodo
       parameters:
         - name: user-id
           in: path
@@ -10063,7 +9955,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property todo in users
-      operationId: users_UpdateTodo
+      operationId: user_UpdateTodo
       parameters:
         - name: user-id
           in: path
@@ -10082,11 +9974,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.todo'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10094,7 +9982,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property todo for users
-      operationId: users_DeleteTodo
+      operationId: user_DeleteTodo
       parameters:
         - name: user-id
           in: path
@@ -10125,7 +10013,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0
-      operationId: users.todo_ListLists
+      operationId: user.todo_ListLists
       parameters:
         - name: user-id
           in: path
@@ -10210,7 +10098,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0
-      operationId: users.todo_CreateLists
+      operationId: user.todo_CreateLists
       parameters:
         - name: user-id
           in: path
@@ -10243,7 +10131,7 @@ paths:
         - users.todo
       summary: Get lists from users
       description: The task lists in the users mailbox.
-      operationId: users.todo_GetLists
+      operationId: user.todo_GetLists
       parameters:
         - name: user-id
           in: path
@@ -10307,7 +10195,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property lists in users
-      operationId: users.todo_UpdateLists
+      operationId: user.todo_UpdateLists
       parameters:
         - name: user-id
           in: path
@@ -10334,11 +10222,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10346,7 +10230,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property lists for users
-      operationId: users.todo_DeleteLists
+      operationId: user.todo_DeleteLists
       parameters:
         - name: user-id
           in: path
@@ -10382,7 +10266,7 @@ paths:
         - users.todo
       summary: Get extensions from users
       description: The collection of open extensions defined for the task list. Nullable.
-      operationId: users.todo.lists_ListExtensions
+      operationId: user.todo.list_ListExtensions
       parameters:
         - name: user-id
           in: path
@@ -10455,7 +10339,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
-      operationId: users.todo.lists_CreateExtensions
+      operationId: user.todo.list_CreateExtensions
       parameters:
         - name: user-id
           in: path
@@ -10496,7 +10380,7 @@ paths:
         - users.todo
       summary: Get extensions from users
       description: The collection of open extensions defined for the task list. Nullable.
-      operationId: users.todo.lists_GetExtensions
+      operationId: user.todo.list_GetExtensions
       parameters:
         - name: user-id
           in: path
@@ -10560,7 +10444,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
-      operationId: users.todo.lists_UpdateExtensions
+      operationId: user.todo.list_UpdateExtensions
       parameters:
         - name: user-id
           in: path
@@ -10595,11 +10479,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10607,7 +10487,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
-      operationId: users.todo.lists_DeleteExtensions
+      operationId: user.todo.list_DeleteExtensions
       parameters:
         - name: user-id
           in: path
@@ -10654,7 +10534,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0
-      operationId: users.todo.lists_ListTasks
+      operationId: user.todo.list_ListTasks
       parameters:
         - name: user-id
           in: path
@@ -10786,7 +10666,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0
-      operationId: users.todo.lists_CreateTasks
+      operationId: user.todo.list_CreateTasks
       parameters:
         - name: user-id
           in: path
@@ -10827,7 +10707,7 @@ paths:
         - users.todo
       summary: Get tasks from users
       description: The tasks in this task list. Read-only. Nullable.
-      operationId: users.todo.lists_GetTasks
+      operationId: user.todo.list_GetTasks
       parameters:
         - name: user-id
           in: path
@@ -10916,7 +10796,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property tasks in users
-      operationId: users.todo.lists_UpdateTasks
+      operationId: user.todo.list_UpdateTasks
       parameters:
         - name: user-id
           in: path
@@ -10951,11 +10831,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.todoTask'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10963,7 +10839,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property tasks for users
-      operationId: users.todo.lists_DeleteTasks
+      operationId: user.todo.list_DeleteTasks
       parameters:
         - name: user-id
           in: path
@@ -11010,7 +10886,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
-      operationId: users.todo.lists.tasks_ListAttachments
+      operationId: user.todo.list.task_ListAttachments
       parameters:
         - name: user-id
           in: path
@@ -11094,7 +10970,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
-      operationId: users.todo.lists.tasks_CreateAttachments
+      operationId: user.todo.list.task_CreateAttachments
       parameters:
         - name: user-id
           in: path
@@ -11143,7 +11019,7 @@ paths:
         - users.todo
       summary: Get attachments from users
       description: A collection of file attachments for the task.
-      operationId: users.todo.lists.tasks_GetAttachments
+      operationId: user.todo.list.task_GetAttachments
       parameters:
         - name: user-id
           in: path
@@ -11207,7 +11083,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property attachments for users
-      operationId: users.todo.lists.tasks_DeleteAttachments
+      operationId: user.todo.list.task_DeleteAttachments
       parameters:
         - name: user-id
           in: path
@@ -11261,7 +11137,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
-      operationId: users.todo.lists.tasks_GetAttachmentsContent
+      operationId: user.todo.list.task_GetAttachmentsContent
       parameters:
         - name: user-id
           in: path
@@ -11310,7 +11186,7 @@ paths:
       tags:
         - users.todo
       summary: Update media content for the navigation property attachments in users
-      operationId: users.todo.lists.tasks_SetAttachmentsContent
+      operationId: user.todo.list.task_SetAttachmentsContent
       parameters:
         - name: user-id
           in: path
@@ -11363,7 +11239,7 @@ paths:
       tags:
         - users.todo
       summary: Get attachmentSessions from users
-      operationId: users.todo.lists.tasks_ListAttachmentSessions
+      operationId: user.todo.list.task_ListAttachmentSessions
       parameters:
         - name: user-id
           in: path
@@ -11441,7 +11317,7 @@ paths:
       tags:
         - users.todo
       summary: Get attachmentSessions from users
-      operationId: users.todo.lists.tasks_GetAttachmentSessions
+      operationId: user.todo.list.task_GetAttachmentSessions
       parameters:
         - name: user-id
           in: path
@@ -11504,7 +11380,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property attachmentSessions in users
-      operationId: users.todo.lists.tasks_UpdateAttachmentSessions
+      operationId: user.todo.list.task_UpdateAttachmentSessions
       parameters:
         - name: user-id
           in: path
@@ -11547,11 +11423,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11559,7 +11431,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property attachmentSessions for users
-      operationId: users.todo.lists.tasks_DeleteAttachmentSessions
+      operationId: user.todo.list.task_DeleteAttachmentSessions
       parameters:
         - name: user-id
           in: path
@@ -11611,7 +11483,7 @@ paths:
         - users.todo
       summary: Get content for the navigation property attachmentSessions from users
       description: The content streams that are uploaded.
-      operationId: users.todo.lists.tasks_GetAttachmentSessionsContent
+      operationId: user.todo.list.task_GetAttachmentSessionsContent
       parameters:
         - name: user-id
           in: path
@@ -11661,7 +11533,7 @@ paths:
         - users.todo
       summary: Update content for the navigation property attachmentSessions in users
       description: The content streams that are uploaded.
-      operationId: users.todo.lists.tasks_SetAttachmentSessionsContent
+      operationId: user.todo.list.task_SetAttachmentSessionsContent
       parameters:
         - name: user-id
           in: path
@@ -11715,7 +11587,7 @@ paths:
         - users.todo
       summary: Get checklistItems from users
       description: A collection of smaller subtasks linked to the more complex parent task.
-      operationId: users.todo.lists.tasks_ListChecklistItems
+      operationId: user.todo.list.task_ListChecklistItems
       parameters:
         - name: user-id
           in: path
@@ -11808,7 +11680,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to checklistItems for users
-      operationId: users.todo.lists.tasks_CreateChecklistItems
+      operationId: user.todo.list.task_CreateChecklistItems
       parameters:
         - name: user-id
           in: path
@@ -11857,7 +11729,7 @@ paths:
         - users.todo
       summary: Get checklistItems from users
       description: A collection of smaller subtasks linked to the more complex parent task.
-      operationId: users.todo.lists.tasks_GetChecklistItems
+      operationId: user.todo.list.task_GetChecklistItems
       parameters:
         - name: user-id
           in: path
@@ -11933,7 +11805,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property checklistItems in users
-      operationId: users.todo.lists.tasks_UpdateChecklistItems
+      operationId: user.todo.list.task_UpdateChecklistItems
       parameters:
         - name: user-id
           in: path
@@ -11976,11 +11848,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.checklistItem'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11988,7 +11856,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property checklistItems for users
-      operationId: users.todo.lists.tasks_DeleteChecklistItems
+      operationId: user.todo.list.task_DeleteChecklistItems
       parameters:
         - name: user-id
           in: path
@@ -12040,7 +11908,7 @@ paths:
         - users.todo
       summary: Get extensions from users
       description: The collection of open extensions defined for the task. Nullable.
-      operationId: users.todo.lists.tasks_ListExtensions
+      operationId: user.todo.list.task_ListExtensions
       parameters:
         - name: user-id
           in: path
@@ -12121,7 +11989,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
-      operationId: users.todo.lists.tasks_CreateExtensions
+      operationId: user.todo.list.task_CreateExtensions
       parameters:
         - name: user-id
           in: path
@@ -12170,7 +12038,7 @@ paths:
         - users.todo
       summary: Get extensions from users
       description: The collection of open extensions defined for the task. Nullable.
-      operationId: users.todo.lists.tasks_GetExtensions
+      operationId: user.todo.list.task_GetExtensions
       parameters:
         - name: user-id
           in: path
@@ -12242,7 +12110,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
-      operationId: users.todo.lists.tasks_UpdateExtensions
+      operationId: user.todo.list.task_UpdateExtensions
       parameters:
         - name: user-id
           in: path
@@ -12285,11 +12153,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12297,7 +12161,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
-      operationId: users.todo.lists.tasks_DeleteExtensions
+      operationId: user.todo.list.task_DeleteExtensions
       parameters:
         - name: user-id
           in: path
@@ -12352,7 +12216,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
-      operationId: users.todo.lists.tasks_ListLinkedResources
+      operationId: user.todo.list.task_ListLinkedResources
       parameters:
         - name: user-id
           in: path
@@ -12449,7 +12313,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
-      operationId: users.todo.lists.tasks_CreateLinkedResources
+      operationId: user.todo.list.task_CreateLinkedResources
       parameters:
         - name: user-id
           in: path
@@ -12498,7 +12362,7 @@ paths:
         - users.todo
       summary: Get linkedResources from users
       description: A collection of resources linked to the task.
-      operationId: users.todo.lists.tasks_GetLinkedResources
+      operationId: user.todo.list.task_GetLinkedResources
       parameters:
         - name: user-id
           in: path
@@ -12574,7 +12438,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property linkedResources in users
-      operationId: users.todo.lists.tasks_UpdateLinkedResources
+      operationId: user.todo.list.task_UpdateLinkedResources
       parameters:
         - name: user-id
           in: path
@@ -12617,11 +12481,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.linkedResource'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12629,7 +12489,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property linkedResources for users
-      operationId: users.todo.lists.tasks_DeleteLinkedResources
+      operationId: user.todo.list.task_DeleteLinkedResources
       parameters:
         - name: user-id
           in: path
@@ -12684,7 +12544,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0
-      operationId: users_ListTransitiveMemberGraphOPre
+      operationId: user_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -12764,7 +12624,7 @@ paths:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
       description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
-      operationId: users_GetTransitiveMemberGraphOPre
+      operationId: user_GetTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -12833,7 +12693,7 @@ paths:
         - users.directoryObject
       summary: Get transitiveReports from users
       description: The transitive reports for a user. Read-only.
-      operationId: users_ListTransitiveReports
+      operationId: user_ListTransitiveReports
       parameters:
         - name: user-id
           in: path
@@ -12913,7 +12773,7 @@ paths:
         - users.directoryObject
       summary: Get transitiveReports from users
       description: The transitive reports for a user. Read-only.
-      operationId: users_GetTransitiveReports
+      operationId: user_GetTransitiveReports
       parameters:
         - name: user-id
           in: path
@@ -14307,15 +14167,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -24939,6 +24799,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -30336,6 +30198,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30368,6 +30240,8 @@ components:
           properties:
             allowedInstallationScopes:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             azureADAppId:
               type: string
               description: The WebApplicationInfo.Id from the Teams app manifest.
@@ -33500,6 +33374,17 @@ components:
         - emailUser
         - azureCommunicationServicesUser
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -33516,6 +33401,14 @@ components:
         - personal
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -35613,6 +35506,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'

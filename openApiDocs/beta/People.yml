@@ -11,7 +11,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get analytics from users
-      operationId: users_GetAnalytics
+      operationId: user_GetAnalytics
       parameters:
         - name: user-id
           in: path
@@ -62,7 +62,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Update the navigation property analytics in users
-      operationId: users_UpdateAnalytics
+      operationId: user_UpdateAnalytics
       parameters:
         - name: user-id
           in: path
@@ -81,11 +81,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userAnalytics'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -93,7 +89,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Delete navigation property analytics for users
-      operationId: users_DeleteAnalytics
+      operationId: user_DeleteAnalytics
       parameters:
         - name: user-id
           in: path
@@ -121,7 +117,7 @@ paths:
         - users.userAnalytics
       summary: Get activityStatistics from users
       description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-      operationId: users.analytics_ListActivityStatistics
+      operationId: user.analytic_ListActivityStatistics
       parameters:
         - name: user-id
           in: path
@@ -201,7 +197,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Create new navigation property to activityStatistics for users
-      operationId: users.analytics_CreateActivityStatistics
+      operationId: user.analytic_CreateActivityStatistics
       parameters:
         - name: user-id
           in: path
@@ -234,7 +230,7 @@ paths:
         - users.userAnalytics
       summary: Get activityStatistics from users
       description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-      operationId: users.analytics_GetActivityStatistics
+      operationId: user.analytic_GetActivityStatistics
       parameters:
         - name: user-id
           in: path
@@ -295,7 +291,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Update the navigation property activityStatistics in users
-      operationId: users.analytics_UpdateActivityStatistics
+      operationId: user.analytic_UpdateActivityStatistics
       parameters:
         - name: user-id
           in: path
@@ -322,11 +318,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.activityStatistics'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -334,7 +326,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Delete navigation property activityStatistics for users
-      operationId: users.analytics_DeleteActivityStatistics
+      operationId: user.analytic_DeleteActivityStatistics
       parameters:
         - name: user-id
           in: path
@@ -373,7 +365,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
-      operationId: users_ListPeople
+      operationId: user_ListPeople
       parameters:
         - name: user-id
           in: path
@@ -488,7 +480,7 @@ paths:
         - users.person
       summary: Get people from users
       description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
-      operationId: users_GetPeople
+      operationId: user_GetPeople
       parameters:
         - name: user-id
           in: path
@@ -557,7 +549,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-1.0
-      operationId: users_GetProfile
+      operationId: user_GetProfile
       parameters:
         - name: user-id
           in: path
@@ -643,7 +635,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property profile in users
-      operationId: users_UpdateProfile
+      operationId: user_UpdateProfile
       parameters:
         - name: user-id
           in: path
@@ -662,11 +654,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.profile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -678,7 +666,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0
-      operationId: users_DeleteProfile
+      operationId: user_DeleteProfile
       parameters:
         - name: user-id
           in: path
@@ -709,7 +697,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0
-      operationId: users.profile_ListAccount
+      operationId: user.profile_ListAccount
       parameters:
         - name: user-id
           in: path
@@ -814,7 +802,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0
-      operationId: users.profile_CreateAccount
+      operationId: user.profile_CreateAccount
       parameters:
         - name: user-id
           in: path
@@ -846,7 +834,7 @@ paths:
       tags:
         - users.profile
       summary: Get account from users
-      operationId: users.profile_GetAccount
+      operationId: user.profile_GetAccount
       parameters:
         - name: user-id
           in: path
@@ -914,7 +902,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property account in users
-      operationId: users.profile_UpdateAccount
+      operationId: user.profile_UpdateAccount
       parameters:
         - name: user-id
           in: path
@@ -941,11 +929,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -953,7 +937,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property account for users
-      operationId: users.profile_DeleteAccount
+      operationId: user.profile_DeleteAccount
       parameters:
         - name: user-id
           in: path
@@ -992,7 +976,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-1.0
-      operationId: users.profile_ListAddresses
+      operationId: user.profile_ListAddresses
       parameters:
         - name: user-id
           in: path
@@ -1094,7 +1078,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-addresses?view=graph-rest-1.0
-      operationId: users.profile_CreateAddresses
+      operationId: user.profile_CreateAddresses
       parameters:
         - name: user-id
           in: path
@@ -1127,7 +1111,7 @@ paths:
         - users.profile
       summary: Get addresses from users
       description: Represents details of addresses associated with the user.
-      operationId: users.profile_GetAddresses
+      operationId: user.profile_GetAddresses
       parameters:
         - name: user-id
           in: path
@@ -1194,7 +1178,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property addresses in users
-      operationId: users.profile_UpdateAddresses
+      operationId: user.profile_UpdateAddresses
       parameters:
         - name: user-id
           in: path
@@ -1221,11 +1205,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.itemAddress'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1233,7 +1213,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property addresses for users
-      operationId: users.profile_DeleteAddresses
+      operationId: user.profile_DeleteAddresses
       parameters:
         - name: user-id
           in: path
@@ -1272,7 +1252,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
-      operationId: users.profile_ListAnniversaries
+      operationId: user.profile_ListAnniversaries
       parameters:
         - name: user-id
           in: path
@@ -1374,7 +1354,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
-      operationId: users.profile_CreateAnniversaries
+      operationId: user.profile_CreateAnniversaries
       parameters:
         - name: user-id
           in: path
@@ -1407,7 +1387,7 @@ paths:
         - users.profile
       summary: Get anniversaries from users
       description: Represents the details of meaningful dates associated with a person.
-      operationId: users.profile_GetAnniversaries
+      operationId: user.profile_GetAnniversaries
       parameters:
         - name: user-id
           in: path
@@ -1474,7 +1454,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property anniversaries in users
-      operationId: users.profile_UpdateAnniversaries
+      operationId: user.profile_UpdateAnniversaries
       parameters:
         - name: user-id
           in: path
@@ -1501,11 +1481,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1513,7 +1489,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property anniversaries for users
-      operationId: users.profile_DeleteAnniversaries
+      operationId: user.profile_DeleteAnniversaries
       parameters:
         - name: user-id
           in: path
@@ -1552,7 +1528,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0
-      operationId: users.profile_ListAwards
+      operationId: user.profile_ListAwards
       parameters:
         - name: user-id
           in: path
@@ -1663,7 +1639,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0
-      operationId: users.profile_CreateAwards
+      operationId: user.profile_CreateAwards
       parameters:
         - name: user-id
           in: path
@@ -1696,7 +1672,7 @@ paths:
         - users.profile
       summary: Get awards from users
       description: Represents the details of awards or honors associated with a person.
-      operationId: users.profile_GetAwards
+      operationId: user.profile_GetAwards
       parameters:
         - name: user-id
           in: path
@@ -1766,7 +1742,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property awards in users
-      operationId: users.profile_UpdateAwards
+      operationId: user.profile_UpdateAwards
       parameters:
         - name: user-id
           in: path
@@ -1793,11 +1769,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.personAward'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1805,7 +1777,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property awards for users
-      operationId: users.profile_DeleteAwards
+      operationId: user.profile_DeleteAwards
       parameters:
         - name: user-id
           in: path
@@ -1844,7 +1816,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-1.0
-      operationId: users.profile_ListCertifications
+      operationId: user.profile_ListCertifications
       parameters:
         - name: user-id
           in: path
@@ -1967,7 +1939,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-certifications?view=graph-rest-1.0
-      operationId: users.profile_CreateCertifications
+      operationId: user.profile_CreateCertifications
       parameters:
         - name: user-id
           in: path
@@ -2000,7 +1972,7 @@ paths:
         - users.profile
       summary: Get certifications from users
       description: Represents the details of certifications associated with a person.
-      operationId: users.profile_GetCertifications
+      operationId: user.profile_GetCertifications
       parameters:
         - name: user-id
           in: path
@@ -2074,7 +2046,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property certifications in users
-      operationId: users.profile_UpdateCertifications
+      operationId: user.profile_UpdateCertifications
       parameters:
         - name: user-id
           in: path
@@ -2101,11 +2073,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.personCertification'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2113,7 +2081,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property certifications for users
-      operationId: users.profile_DeleteCertifications
+      operationId: user.profile_DeleteCertifications
       parameters:
         - name: user-id
           in: path
@@ -2152,7 +2120,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
-      operationId: users.profile_ListEducationalActivities
+      operationId: user.profile_ListEducationalActivities
       parameters:
         - name: user-id
           in: path
@@ -2260,7 +2228,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
-      operationId: users.profile_CreateEducationalActivities
+      operationId: user.profile_CreateEducationalActivities
       parameters:
         - name: user-id
           in: path
@@ -2293,7 +2261,7 @@ paths:
         - users.profile
       summary: Get educationalActivities from users
       description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
-      operationId: users.profile_GetEducationalActivities
+      operationId: user.profile_GetEducationalActivities
       parameters:
         - name: user-id
           in: path
@@ -2362,7 +2330,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property educationalActivities in users
-      operationId: users.profile_UpdateEducationalActivities
+      operationId: user.profile_UpdateEducationalActivities
       parameters:
         - name: user-id
           in: path
@@ -2389,11 +2357,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.educationalActivity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2401,7 +2365,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property educationalActivities for users
-      operationId: users.profile_DeleteEducationalActivities
+      operationId: user.profile_DeleteEducationalActivities
       parameters:
         - name: user-id
           in: path
@@ -2440,7 +2404,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-emails?view=graph-rest-1.0
-      operationId: users.profile_ListEmails
+      operationId: user.profile_ListEmails
       parameters:
         - name: user-id
           in: path
@@ -2542,7 +2506,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-emails?view=graph-rest-1.0
-      operationId: users.profile_CreateEmails
+      operationId: user.profile_CreateEmails
       parameters:
         - name: user-id
           in: path
@@ -2575,7 +2539,7 @@ paths:
         - users.profile
       summary: Get emails from users
       description: Represents detailed information about email addresses associated with the user.
-      operationId: users.profile_GetEmails
+      operationId: user.profile_GetEmails
       parameters:
         - name: user-id
           in: path
@@ -2642,7 +2606,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property emails in users
-      operationId: users.profile_UpdateEmails
+      operationId: user.profile_UpdateEmails
       parameters:
         - name: user-id
           in: path
@@ -2669,11 +2633,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.itemEmail'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2681,7 +2641,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property emails for users
-      operationId: users.profile_DeleteEmails
+      operationId: user.profile_DeleteEmails
       parameters:
         - name: user-id
           in: path
@@ -2720,7 +2680,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-1.0
-      operationId: users.profile_ListInterests
+      operationId: user.profile_ListInterests
       parameters:
         - name: user-id
           in: path
@@ -2831,7 +2791,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-interests?view=graph-rest-1.0
-      operationId: users.profile_CreateInterests
+      operationId: user.profile_CreateInterests
       parameters:
         - name: user-id
           in: path
@@ -2864,7 +2824,7 @@ paths:
         - users.profile
       summary: Get interests from users
       description: Provides detailed information about interests the user has associated with themselves in various services.
-      operationId: users.profile_GetInterests
+      operationId: user.profile_GetInterests
       parameters:
         - name: user-id
           in: path
@@ -2934,7 +2894,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property interests in users
-      operationId: users.profile_UpdateInterests
+      operationId: user.profile_UpdateInterests
       parameters:
         - name: user-id
           in: path
@@ -2961,11 +2921,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.personInterest'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2973,7 +2929,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property interests for users
-      operationId: users.profile_DeleteInterests
+      operationId: user.profile_DeleteInterests
       parameters:
         - name: user-id
           in: path
@@ -3012,7 +2968,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-languages?view=graph-rest-1.0
-      operationId: users.profile_ListLanguages
+      operationId: user.profile_ListLanguages
       parameters:
         - name: user-id
           in: path
@@ -3126,7 +3082,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-languages?view=graph-rest-1.0
-      operationId: users.profile_CreateLanguages
+      operationId: user.profile_CreateLanguages
       parameters:
         - name: user-id
           in: path
@@ -3159,7 +3115,7 @@ paths:
         - users.profile
       summary: Get languages from users
       description: Represents detailed information about languages that a user has added to their profile.
-      operationId: users.profile_GetLanguages
+      operationId: user.profile_GetLanguages
       parameters:
         - name: user-id
           in: path
@@ -3230,7 +3186,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property languages in users
-      operationId: users.profile_UpdateLanguages
+      operationId: user.profile_UpdateLanguages
       parameters:
         - name: user-id
           in: path
@@ -3257,11 +3213,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.languageProficiency'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3269,7 +3221,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property languages for users
-      operationId: users.profile_DeleteLanguages
+      operationId: user.profile_DeleteLanguages
       parameters:
         - name: user-id
           in: path
@@ -3308,7 +3260,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-names?view=graph-rest-1.0
-      operationId: users.profile_ListNames
+      operationId: user.profile_ListNames
       parameters:
         - name: user-id
           in: path
@@ -3434,7 +3386,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-names?view=graph-rest-1.0
-      operationId: users.profile_CreateNames
+      operationId: user.profile_CreateNames
       parameters:
         - name: user-id
           in: path
@@ -3467,7 +3419,7 @@ paths:
         - users.profile
       summary: Get names from users
       description: Represents the names a user has added to their profile.
-      operationId: users.profile_GetNames
+      operationId: user.profile_GetNames
       parameters:
         - name: user-id
           in: path
@@ -3542,7 +3494,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property names in users
-      operationId: users.profile_UpdateNames
+      operationId: user.profile_UpdateNames
       parameters:
         - name: user-id
           in: path
@@ -3569,11 +3521,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.personName'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3581,7 +3529,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property names for users
-      operationId: users.profile_DeleteNames
+      operationId: user.profile_DeleteNames
       parameters:
         - name: user-id
           in: path
@@ -3620,7 +3568,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-1.0
-      operationId: users.profile_ListNotes
+      operationId: user.profile_ListNotes
       parameters:
         - name: user-id
           in: path
@@ -3722,7 +3670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-notes?view=graph-rest-1.0
-      operationId: users.profile_CreateNotes
+      operationId: user.profile_CreateNotes
       parameters:
         - name: user-id
           in: path
@@ -3755,7 +3703,7 @@ paths:
         - users.profile
       summary: Get notes from users
       description: Represents notes that a user has added to their profile.
-      operationId: users.profile_GetNotes
+      operationId: user.profile_GetNotes
       parameters:
         - name: user-id
           in: path
@@ -3822,7 +3770,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property notes in users
-      operationId: users.profile_UpdateNotes
+      operationId: user.profile_UpdateNotes
       parameters:
         - name: user-id
           in: path
@@ -3849,11 +3797,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.personAnnotation'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3861,7 +3805,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property notes for users
-      operationId: users.profile_DeleteNotes
+      operationId: user.profile_DeleteNotes
       parameters:
         - name: user-id
           in: path
@@ -3900,7 +3844,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
-      operationId: users.profile_ListPatents
+      operationId: user.profile_ListPatents
       parameters:
         - name: user-id
           in: path
@@ -4014,7 +3958,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
-      operationId: users.profile_CreatePatents
+      operationId: user.profile_CreatePatents
       parameters:
         - name: user-id
           in: path
@@ -4047,7 +3991,7 @@ paths:
         - users.profile
       summary: Get patents from users
       description: Represents patents that a user has added to their profile.
-      operationId: users.profile_GetPatents
+      operationId: user.profile_GetPatents
       parameters:
         - name: user-id
           in: path
@@ -4118,7 +4062,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property patents in users
-      operationId: users.profile_UpdatePatents
+      operationId: user.profile_UpdatePatents
       parameters:
         - name: user-id
           in: path
@@ -4145,11 +4089,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.itemPatent'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4157,7 +4097,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property patents for users
-      operationId: users.profile_DeletePatents
+      operationId: user.profile_DeletePatents
       parameters:
         - name: user-id
           in: path
@@ -4196,7 +4136,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-phones?view=graph-rest-1.0
-      operationId: users.profile_ListPhones
+      operationId: user.profile_ListPhones
       parameters:
         - name: user-id
           in: path
@@ -4298,7 +4238,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-phones?view=graph-rest-1.0
-      operationId: users.profile_CreatePhones
+      operationId: user.profile_CreatePhones
       parameters:
         - name: user-id
           in: path
@@ -4331,7 +4271,7 @@ paths:
         - users.profile
       summary: Get phones from users
       description: Represents detailed information about phone numbers associated with a user in various services.
-      operationId: users.profile_GetPhones
+      operationId: user.profile_GetPhones
       parameters:
         - name: user-id
           in: path
@@ -4398,7 +4338,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property phones in users
-      operationId: users.profile_UpdatePhones
+      operationId: user.profile_UpdatePhones
       parameters:
         - name: user-id
           in: path
@@ -4425,11 +4365,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.itemPhone'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4437,7 +4373,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property phones for users
-      operationId: users.profile_DeletePhones
+      operationId: user.profile_DeletePhones
       parameters:
         - name: user-id
           in: path
@@ -4476,7 +4412,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-positions?view=graph-rest-1.0
-      operationId: users.profile_ListPositions
+      operationId: user.profile_ListPositions
       parameters:
         - name: user-id
           in: path
@@ -4584,7 +4520,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-positions?view=graph-rest-1.0
-      operationId: users.profile_CreatePositions
+      operationId: user.profile_CreatePositions
       parameters:
         - name: user-id
           in: path
@@ -4617,7 +4553,7 @@ paths:
         - users.profile
       summary: Get positions from users
       description: Represents detailed information about work positions associated with a user's profile.
-      operationId: users.profile_GetPositions
+      operationId: user.profile_GetPositions
       parameters:
         - name: user-id
           in: path
@@ -4686,7 +4622,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property positions in users
-      operationId: users.profile_UpdatePositions
+      operationId: user.profile_UpdatePositions
       parameters:
         - name: user-id
           in: path
@@ -4713,11 +4649,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.workPosition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4725,7 +4657,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property positions for users
-      operationId: users.profile_DeletePositions
+      operationId: user.profile_DeletePositions
       parameters:
         - name: user-id
           in: path
@@ -4764,7 +4696,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-projects?view=graph-rest-1.0
-      operationId: users.profile_ListProjects
+      operationId: user.profile_ListProjects
       parameters:
         - name: user-id
           in: path
@@ -4881,7 +4813,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-projects?view=graph-rest-1.0
-      operationId: users.profile_CreateProjects
+      operationId: user.profile_CreateProjects
       parameters:
         - name: user-id
           in: path
@@ -4914,7 +4846,7 @@ paths:
         - users.profile
       summary: Get projects from users
       description: Represents detailed information about projects associated with a user.
-      operationId: users.profile_GetProjects
+      operationId: user.profile_GetProjects
       parameters:
         - name: user-id
           in: path
@@ -4986,7 +4918,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property projects in users
-      operationId: users.profile_UpdateProjects
+      operationId: user.profile_UpdateProjects
       parameters:
         - name: user-id
           in: path
@@ -5013,11 +4945,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.projectParticipation'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5025,7 +4953,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property projects for users
-      operationId: users.profile_DeleteProjects
+      operationId: user.profile_DeleteProjects
       parameters:
         - name: user-id
           in: path
@@ -5064,7 +4992,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-1.0
-      operationId: users.profile_ListPublications
+      operationId: user.profile_ListPublications
       parameters:
         - name: user-id
           in: path
@@ -5175,7 +5103,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-publications?view=graph-rest-1.0
-      operationId: users.profile_CreatePublications
+      operationId: user.profile_CreatePublications
       parameters:
         - name: user-id
           in: path
@@ -5208,7 +5136,7 @@ paths:
         - users.profile
       summary: Get publications from users
       description: Represents details of any publications a user has added to their profile.
-      operationId: users.profile_GetPublications
+      operationId: user.profile_GetPublications
       parameters:
         - name: user-id
           in: path
@@ -5278,7 +5206,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property publications in users
-      operationId: users.profile_UpdatePublications
+      operationId: user.profile_UpdatePublications
       parameters:
         - name: user-id
           in: path
@@ -5305,11 +5233,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.itemPublication'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5317,7 +5241,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property publications for users
-      operationId: users.profile_DeletePublications
+      operationId: user.profile_DeletePublications
       parameters:
         - name: user-id
           in: path
@@ -5356,7 +5280,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
-      operationId: users.profile_ListSkills
+      operationId: user.profile_ListSkills
       parameters:
         - name: user-id
           in: path
@@ -5467,7 +5391,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
-      operationId: users.profile_CreateSkills
+      operationId: user.profile_CreateSkills
       parameters:
         - name: user-id
           in: path
@@ -5500,7 +5424,7 @@ paths:
         - users.profile
       summary: Get skills from users
       description: Represents detailed information about skills associated with a user in various services.
-      operationId: users.profile_GetSkills
+      operationId: user.profile_GetSkills
       parameters:
         - name: user-id
           in: path
@@ -5570,7 +5494,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property skills in users
-      operationId: users.profile_UpdateSkills
+      operationId: user.profile_UpdateSkills
       parameters:
         - name: user-id
           in: path
@@ -5597,11 +5521,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.skillProficiency'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5609,7 +5529,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property skills for users
-      operationId: users.profile_DeleteSkills
+      operationId: user.profile_DeleteSkills
       parameters:
         - name: user-id
           in: path
@@ -5648,7 +5568,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-1.0
-      operationId: users.profile_ListWebAccounts
+      operationId: user.profile_ListWebAccounts
       parameters:
         - name: user-id
           in: path
@@ -5759,7 +5679,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-webaccounts?view=graph-rest-1.0
-      operationId: users.profile_CreateWebAccounts
+      operationId: user.profile_CreateWebAccounts
       parameters:
         - name: user-id
           in: path
@@ -5792,7 +5712,7 @@ paths:
         - users.profile
       summary: Get webAccounts from users
       description: Represents web accounts the user has indicated they use or has added to their user profile.
-      operationId: users.profile_GetWebAccounts
+      operationId: user.profile_GetWebAccounts
       parameters:
         - name: user-id
           in: path
@@ -5862,7 +5782,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property webAccounts in users
-      operationId: users.profile_UpdateWebAccounts
+      operationId: user.profile_UpdateWebAccounts
       parameters:
         - name: user-id
           in: path
@@ -5889,11 +5809,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.webAccount'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5901,7 +5817,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property webAccounts for users
-      operationId: users.profile_DeleteWebAccounts
+      operationId: user.profile_DeleteWebAccounts
       parameters:
         - name: user-id
           in: path
@@ -5940,7 +5856,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-1.0
-      operationId: users.profile_ListWebsites
+      operationId: user.profile_ListWebsites
       parameters:
         - name: user-id
           in: path
@@ -6048,7 +5964,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/profile-post-websites?view=graph-rest-1.0
-      operationId: users.profile_CreateWebsites
+      operationId: user.profile_CreateWebsites
       parameters:
         - name: user-id
           in: path
@@ -6081,7 +5997,7 @@ paths:
         - users.profile
       summary: Get websites from users
       description: Represents detailed information about websites associated with a user in various services.
-      operationId: users.profile_GetWebsites
+      operationId: user.profile_GetWebsites
       parameters:
         - name: user-id
           in: path
@@ -6150,7 +6066,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property websites in users
-      operationId: users.profile_UpdateWebsites
+      operationId: user.profile_UpdateWebsites
       parameters:
         - name: user-id
           in: path
@@ -6177,11 +6093,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.personWebsite'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6189,7 +6101,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property websites for users
-      operationId: users.profile_DeleteWebsites
+      operationId: user.profile_DeleteWebsites
       parameters:
         - name: user-id
           in: path

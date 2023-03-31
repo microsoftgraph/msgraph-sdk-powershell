@@ -11,7 +11,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
-      operationId: users_ListActivities
+      operationId: user_ListActivities
       parameters:
         - name: user-id
           in: path
@@ -117,7 +117,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to activities for users
-      operationId: users_CreateActivities
+      operationId: user_CreateActivities
       parameters:
         - name: user-id
           in: path
@@ -149,7 +149,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
-      operationId: users_GetActivities
+      operationId: user_GetActivities
       parameters:
         - name: user-id
           in: path
@@ -220,7 +220,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property activities in users
-      operationId: users_UpdateActivities
+      operationId: user_UpdateActivities
       parameters:
         - name: user-id
           in: path
@@ -247,11 +247,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userActivity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -259,7 +255,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property activities for users
-      operationId: users_DeleteActivities
+      operationId: user_DeleteActivities
       parameters:
         - name: user-id
           in: path
@@ -294,7 +290,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
-      operationId: users.activities_ListHistoryItems
+      operationId: user.activity_ListHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -393,7 +389,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to historyItems for users
-      operationId: users.activities_CreateHistoryItems
+      operationId: user.activity_CreateHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -433,7 +429,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
-      operationId: users.activities_GetHistoryItems
+      operationId: user.activity_GetHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -507,7 +503,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property historyItems in users
-      operationId: users.activities_UpdateHistoryItems
+      operationId: user.activity_UpdateHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -542,11 +538,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -554,7 +546,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property historyItems for users
-      operationId: users.activities_DeleteHistoryItems
+      operationId: user.activity_DeleteHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -597,7 +589,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activity from users
-      operationId: users.activities.historyItems_GetActivity
+      operationId: user.activity.historyItem_GetActivity
       parameters:
         - name: user-id
           in: path
@@ -677,7 +669,7 @@ paths:
       tags:
         - users.device
       summary: Get devices from users
-      operationId: users_ListDevices
+      operationId: user_ListDevices
       parameters:
         - name: user-id
           in: path
@@ -867,7 +859,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property to devices for users
-      operationId: users_CreateDevices
+      operationId: user_CreateDevices
       parameters:
         - name: user-id
           in: path
@@ -899,7 +891,7 @@ paths:
       tags:
         - users.device
       summary: Get devices from users
-      operationId: users_GetDevices
+      operationId: user_GetDevices
       parameters:
         - name: user-id
           in: path
@@ -1006,7 +998,7 @@ paths:
       tags:
         - users.device
       summary: Update the navigation property devices in users
-      operationId: users_UpdateDevices
+      operationId: user_UpdateDevices
       parameters:
         - name: user-id
           in: path
@@ -1033,11 +1025,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.device'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1045,7 +1033,7 @@ paths:
       tags:
         - users.device
       summary: Delete navigation property devices for users
-      operationId: users_DeleteDevices
+      operationId: user_DeleteDevices
       parameters:
         - name: user-id
           in: path
@@ -1081,7 +1069,7 @@ paths:
         - users.device
       summary: Get commands from users
       description: Set of commands sent to this device.
-      operationId: users.devices_ListCommands
+      operationId: user.device_ListCommands
       parameters:
         - name: user-id
           in: path
@@ -1180,7 +1168,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property to commands for users
-      operationId: users.devices_CreateCommands
+      operationId: user.device_CreateCommands
       parameters:
         - name: user-id
           in: path
@@ -1221,7 +1209,7 @@ paths:
         - users.device
       summary: Get commands from users
       description: Set of commands sent to this device.
-      operationId: users.devices_GetCommands
+      operationId: user.device_GetCommands
       parameters:
         - name: user-id
           in: path
@@ -1295,7 +1283,7 @@ paths:
       tags:
         - users.device
       summary: Update the navigation property commands in users
-      operationId: users.devices_UpdateCommands
+      operationId: user.device_UpdateCommands
       parameters:
         - name: user-id
           in: path
@@ -1330,11 +1318,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.command'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1342,7 +1326,7 @@ paths:
       tags:
         - users.device
       summary: Delete navigation property commands for users
-      operationId: users.devices_DeleteCommands
+      operationId: user.device_DeleteCommands
       parameters:
         - name: user-id
           in: path
@@ -1385,7 +1369,7 @@ paths:
       tags:
         - users.device
       summary: Get responsepayload from users
-      operationId: users.devices.commands_GetResponsepayload
+      operationId: user.device.command_GetResponsepayload
       parameters:
         - name: user-id
           in: path
@@ -1451,7 +1435,7 @@ paths:
         - users.device
       summary: Get extensions from users
       description: The collection of open extensions defined for the device. Read-only. Nullable.
-      operationId: users.devices_ListExtensions
+      operationId: user.device_ListExtensions
       parameters:
         - name: user-id
           in: path
@@ -1524,7 +1508,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property to extensions for users
-      operationId: users.devices_CreateExtensions
+      operationId: user.device_CreateExtensions
       parameters:
         - name: user-id
           in: path
@@ -1565,7 +1549,7 @@ paths:
         - users.device
       summary: Get extensions from users
       description: The collection of open extensions defined for the device. Read-only. Nullable.
-      operationId: users.devices_GetExtensions
+      operationId: user.device_GetExtensions
       parameters:
         - name: user-id
           in: path
@@ -1629,7 +1613,7 @@ paths:
       tags:
         - users.device
       summary: Update the navigation property extensions in users
-      operationId: users.devices_UpdateExtensions
+      operationId: user.device_UpdateExtensions
       parameters:
         - name: user-id
           in: path
@@ -1664,11 +1648,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1676,7 +1656,7 @@ paths:
       tags:
         - users.device
       summary: Delete navigation property extensions for users
-      operationId: users.devices_DeleteExtensions
+      operationId: user.device_DeleteExtensions
       parameters:
         - name: user-id
           in: path
@@ -1723,7 +1703,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
-      operationId: users.devices_ListMemberGraphOPre
+      operationId: user.device_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -1811,7 +1791,7 @@ paths:
         - users.device
       summary: Get memberOf from users
       description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users.devices_GetMemberGraphOPre
+      operationId: user.device_GetMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -1891,7 +1871,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
-      operationId: users.devices_ListRegisteredOwners
+      operationId: user.device_ListRegisteredOwners
       parameters:
         - name: user-id
           in: path
@@ -1978,7 +1958,7 @@ paths:
       tags:
         - users.device
       summary: Delete ref of navigation property registeredOwners for users
-      operationId: users.devices_DeleteRegisteredOwnersGraphBPreRef
+      operationId: user.device_DeleteRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2032,7 +2012,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
-      operationId: users.devices_ListRegisteredOwnersGraphBPreRef
+      operationId: user.device_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2093,7 +2073,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property ref to registeredOwners for users
-      operationId: users.devices_CreateRegisteredOwnersGraphBPreRef
+      operationId: user.device_CreateRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2128,7 +2108,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
-      operationId: users.devices_ListRegisteredUsers
+      operationId: user.device_ListRegisteredUsers
       parameters:
         - name: user-id
           in: path
@@ -2210,13 +2190,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}':
-    get:
+  '/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/$ref':
+    delete:
       tags:
         - users.device
-      summary: Get registeredUsers from users
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      operationId: users.devices_GetRegisteredUsers
+      summary: Delete ref of navigation property registeredUsers for users
+      operationId: user.device_DeleteRegisteredUsersGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2242,6 +2221,52 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          style: form
+          explode: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/registeredUsers/$ref':
+    get:
+      tags:
+        - users.device
+      summary: Get ref of registeredUsers from users
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
+      operationId: user.device_ListRegisteredUsersGraphBPreRef
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
@@ -2252,9 +2277,14 @@ paths:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
-        - name: $select
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
           in: query
-          description: Select properties to be returned
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -2263,27 +2293,46 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
+                - deletedDateTime desc
               type: string
       responses:
         2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.device
+      summary: Create new navigation property ref to registeredUsers for users
+      operationId: user.device_CreateRegisteredUsersGraphBPreRef
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2296,7 +2345,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
-      operationId: users.devices_ListTransitiveMemberGraphOPre
+      operationId: user.device_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -2384,7 +2433,7 @@ paths:
         - users.device
       summary: Get transitiveMemberOf from users
       description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-      operationId: users.devices_GetTransitiveMemberGraphOPre
+      operationId: user.device_GetTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -2464,7 +2513,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
-      operationId: users.devices_ListUsageRights
+      operationId: user.device_ListUsageRights
       parameters:
         - name: user-id
           in: path
@@ -2546,7 +2595,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property to usageRights for users
-      operationId: users.devices_CreateUsageRights
+      operationId: user.device_CreateUsageRights
       parameters:
         - name: user-id
           in: path
@@ -2587,7 +2636,7 @@ paths:
         - users.device
       summary: Get usageRights from users
       description: Represents the usage rights a device has been granted.
-      operationId: users.devices_GetUsageRights
+      operationId: user.device_GetUsageRights
       parameters:
         - name: user-id
           in: path
@@ -2654,7 +2703,7 @@ paths:
       tags:
         - users.device
       summary: Update the navigation property usageRights in users
-      operationId: users.devices_UpdateUsageRights
+      operationId: user.device_UpdateUsageRights
       parameters:
         - name: user-id
           in: path
@@ -2689,11 +2738,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.usageRight'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2701,7 +2746,7 @@ paths:
       tags:
         - users.device
       summary: Delete navigation property usageRights for users
-      operationId: users.devices_DeleteUsageRights
+      operationId: user.device_DeleteUsageRights
       parameters:
         - name: user-id
           in: path

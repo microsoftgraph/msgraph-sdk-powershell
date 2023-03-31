@@ -11,7 +11,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get entities from directoryObjects
-      operationId: directoryObjects.directoryObject_ListDirectoryObject
+      operationId: directoryObject_ListDirectoryObject
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -81,7 +81,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Add new entity to directoryObjects
-      operationId: directoryObjects.directoryObject_CreateDirectoryObject
+      operationId: directoryObject_CreateDirectoryObject
       requestBody:
         description: New entity
         content:
@@ -108,7 +108,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-get?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject_GetDirectoryObject
+      operationId: directoryObject_GetDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -157,7 +157,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Update entity in directoryObjects
-      operationId: directoryObjects.directoryObject_UpdateDirectoryObject
+      operationId: directoryObject_UpdateDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -176,11 +176,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -192,7 +188,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-delete?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject_DeleteDirectoryObject
+      operationId: directoryObject_DeleteDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -223,7 +219,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: directoryObjects_checkMemberGroups
+      operationId: directoryObject_checkMemberGroups
       parameters:
         - name: directoryObject-id
           in: path
@@ -275,7 +271,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryObjects_checkMemberObjects
+      operationId: directoryObject_checkMemberObjects
       parameters:
         - name: directoryObject-id
           in: path
@@ -331,7 +327,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: directoryObjects_getMemberGroups
+      operationId: directoryObject_getMemberGroups
       parameters:
         - name: directoryObject-id
           in: path
@@ -387,7 +383,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: directoryObjects_getMemberObjects
+      operationId: directoryObject_getMemberObjects
       parameters:
         - name: directoryObject-id
           in: path
@@ -443,7 +439,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: directoryObjects_restore
+      operationId: directoryObject_restore
       parameters:
         - name: directoryObject-id
           in: path
@@ -468,7 +464,7 @@ paths:
       tags:
         - directoryObjects.Functions
       summary: Invoke function delta
-      operationId: directoryObjects_delta
+      operationId: directoryObject_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -539,7 +535,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: directoryObjects_getAvailableExtensionProperties
+      operationId: directoryObject_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
         content:
@@ -587,7 +583,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: directoryObjects_getGraphBPreIds
+      operationId: directoryObject_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -640,7 +636,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: directoryObjects_validateProperties
+      operationId: directoryObject_validateProperties
       requestBody:
         description: Action parameters
         content:

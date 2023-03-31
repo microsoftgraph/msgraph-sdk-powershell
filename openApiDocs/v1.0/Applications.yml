@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list?view=graph-rest-1.0
-      operationId: applications.application_ListApplication
+      operationId: application_ListApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -210,7 +210,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
-      operationId: applications.application_CreateApplication
+      operationId: application_CreateApplication
       requestBody:
         description: New entity
         content:
@@ -237,7 +237,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0
-      operationId: applications.application_GetApplication
+      operationId: application_GetApplication
       parameters:
         - name: application-id
           in: path
@@ -341,7 +341,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0
-      operationId: applications.application_UpdateApplication
+      operationId: application_UpdateApplication
       parameters:
         - name: application-id
           in: path
@@ -360,11 +360,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.application'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -376,7 +372,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
-      operationId: applications.application_DeleteApplication
+      operationId: application_DeleteApplication
       parameters:
         - name: application-id
           in: path
@@ -403,7 +399,8 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Get appManagementPolicies from applications
-      operationId: applications_ListAppManagementPolicies
+      description: The appManagementPolicy applied to this application.
+      operationId: application_ListAppManagementPolicies
       parameters:
         - name: application-id
           in: path
@@ -486,7 +483,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Delete ref of navigation property appManagementPolicies for applications
-      operationId: applications_DeleteAppManagementPoliciesGraphBPreRef
+      operationId: application_DeleteAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -528,7 +525,8 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Get ref of appManagementPolicies from applications
-      operationId: applications_ListAppManagementPoliciesGraphBPreRef
+      description: The appManagementPolicy applied to this application.
+      operationId: application_ListAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -579,7 +577,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Create new navigation property ref to appManagementPolicies for applications
-      operationId: applications_CreateAppManagementPoliciesGraphBPreRef
+      operationId: application_CreateAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -603,7 +601,7 @@ paths:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
       description: 'Supports $filter (/$count eq 0, /$count ne 0). Read-only.'
-      operationId: applications_GetCreatedOnBehalfGraphOPre
+      operationId: application_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: application-id
           in: path
@@ -657,7 +655,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
-      operationId: applications_ListExtensionProperties
+      operationId: application_ListExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -744,7 +742,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
-      operationId: applications_CreateExtensionProperties
+      operationId: application_CreateExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -777,7 +775,7 @@ paths:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
       description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-      operationId: applications_GetExtensionProperties
+      operationId: application_GetExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -839,7 +837,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Update the navigation property extensionProperties in applications
-      operationId: applications_UpdateExtensionProperties
+      operationId: application_UpdateExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -866,11 +864,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -878,7 +872,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Delete navigation property extensionProperties for applications
-      operationId: applications_DeleteExtensionProperties
+      operationId: application_DeleteExtensionProperties
       parameters:
         - name: application-id
           in: path
@@ -917,7 +911,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0
-      operationId: applications_ListFederatedIdentityCredentials
+      operationId: application_ListFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1001,7 +995,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0
-      operationId: applications_CreateFederatedIdentityCredentials
+      operationId: application_CreateFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1034,7 +1028,7 @@ paths:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
       description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
-      operationId: applications_GetFederatedIdentityCredentials
+      operationId: application_GetFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1095,7 +1089,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Update the navigation property federatedIdentityCredentials in applications
-      operationId: applications_UpdateFederatedIdentityCredentials
+      operationId: application_UpdateFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1122,11 +1116,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1134,7 +1124,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Delete navigation property federatedIdentityCredentials for applications
-      operationId: applications_DeleteFederatedIdentityCredentials
+      operationId: application_DeleteFederatedIdentityCredentials
       parameters:
         - name: application-id
           in: path
@@ -1169,7 +1159,7 @@ paths:
       tags:
         - applications.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from applications
-      operationId: applications_ListHomeRealmDiscoveryPolicies
+      operationId: application_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: application-id
           in: path
@@ -1252,7 +1242,7 @@ paths:
       tags:
         - applications.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from applications
-      operationId: applications_GetHomeRealmDiscoveryPolicies
+      operationId: application_GetHomeRealmDiscoveryPolicies
       parameters:
         - name: application-id
           in: path
@@ -1317,7 +1307,7 @@ paths:
         - applications.application
       summary: Get logo for application from applications
       description: The main logo for the application. Not nullable.
-      operationId: applications.application_GetLogo
+      operationId: application_GetLogo
       parameters:
         - name: application-id
           in: path
@@ -1343,7 +1333,7 @@ paths:
         - applications.application
       summary: Update logo for application in applications
       description: The main logo for the application. Not nullable.
-      operationId: applications.application_SetLogo
+      operationId: application_SetLogo
       parameters:
         - name: application-id
           in: path
@@ -1376,7 +1366,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
-      operationId: applications_addKey
+      operationId: application_addKey
       parameters:
         - name: application-id
           in: path
@@ -1421,7 +1411,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0
-      operationId: applications_addPassword
+      operationId: application_addPassword
       parameters:
         - name: application-id
           in: path
@@ -1462,7 +1452,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: applications_checkMemberGroups
+      operationId: application_checkMemberGroups
       parameters:
         - name: application-id
           in: path
@@ -1514,7 +1504,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action checkMemberObjects
-      operationId: applications_checkMemberObjects
+      operationId: application_checkMemberObjects
       parameters:
         - name: application-id
           in: path
@@ -1570,7 +1560,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: applications_getMemberGroups
+      operationId: application_getMemberGroups
       parameters:
         - name: application-id
           in: path
@@ -1626,7 +1616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: applications_getMemberObjects
+      operationId: application_getMemberObjects
       parameters:
         - name: application-id
           in: path
@@ -1682,7 +1672,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0
-      operationId: applications_removeKey
+      operationId: application_removeKey
       parameters:
         - name: application-id
           in: path
@@ -1723,7 +1713,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
-      operationId: applications_removePassword
+      operationId: application_removePassword
       parameters:
         - name: application-id
           in: path
@@ -1762,7 +1752,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: applications_restore
+      operationId: application_restore
       parameters:
         - name: application-id
           in: path
@@ -1791,7 +1781,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
-      operationId: applications_setVerifiedPublisher
+      operationId: application_setVerifiedPublisher
       parameters:
         - name: application-id
           in: path
@@ -1828,7 +1818,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
-      operationId: applications_unsetVerifiedPublisher
+      operationId: application_unsetVerifiedPublisher
       parameters:
         - name: application-id
           in: path
@@ -1853,7 +1843,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
-      operationId: applications_ListOwners
+      operationId: application_ListOwners
       parameters:
         - name: application-id
           in: path
@@ -1932,7 +1922,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Delete ref of navigation property owners for applications
-      operationId: applications_DeleteOwnersGraphBPreRef
+      operationId: application_DeleteOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1978,7 +1968,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
-      operationId: applications_ListOwnersGraphBPreRef
+      operationId: application_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2031,7 +2021,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Create new navigation property ref to owners for applications
-      operationId: applications_CreateOwnersGraphBPreRef
+      operationId: application_CreateOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2058,7 +2048,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenIssuancePolicies
+      operationId: application_ListTokenIssuancePolicies
       parameters:
         - name: application-id
           in: path
@@ -2141,7 +2131,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Delete ref of navigation property tokenIssuancePolicies for applications
-      operationId: applications_DeleteTokenIssuancePoliciesGraphBPreRef
+      operationId: application_DeleteTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2187,7 +2177,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenIssuancePoliciesGraphBPreRef
+      operationId: application_ListTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2238,7 +2228,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for applications
-      operationId: applications_CreateTokenIssuancePoliciesGraphBPreRef
+      operationId: application_CreateTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2265,7 +2255,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenLifetimePolicies
+      operationId: application_ListTokenLifetimePolicies
       parameters:
         - name: application-id
           in: path
@@ -2348,7 +2338,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Delete ref of navigation property tokenLifetimePolicies for applications
-      operationId: applications_DeleteTokenLifetimePoliciesGraphBPreRef
+      operationId: application_DeleteTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2394,7 +2384,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenLifetimePoliciesGraphBPreRef
+      operationId: application_ListTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2445,7 +2435,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for applications
-      operationId: applications_CreateTokenLifetimePoliciesGraphBPreRef
+      operationId: application_CreateTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2468,7 +2458,7 @@ paths:
       tags:
         - applications.Functions
       summary: Invoke function delta
-      operationId: applications_delta
+      operationId: application_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2652,7 +2642,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: applications_getAvailableExtensionProperties
+      operationId: application_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
         content:
@@ -2700,7 +2690,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: applications_getGraphBPreIds
+      operationId: application_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -2753,7 +2743,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: applications_validateProperties
+      operationId: application_validateProperties
       requestBody:
         description: Action parameters
         content:
@@ -2793,7 +2783,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0
-      operationId: applicationTemplates.applicationTemplate_ListApplicationTemplate
+      operationId: applicationTemplate_ListApplicationTemplate
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2879,7 +2869,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0
-      operationId: applicationTemplates.applicationTemplate_GetApplicationTemplate
+      operationId: applicationTemplate_GetApplicationTemplate
       parameters:
         - name: applicationTemplate-id
           in: path
@@ -2940,7 +2930,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
-      operationId: applicationTemplates_instantiate
+      operationId: applicationTemplate_instantiate
       parameters:
         - name: applicationTemplate-id
           in: path
@@ -2982,7 +2972,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0
-      operationId: groups_ListAppRoleAssignments
+      operationId: group_ListAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -3085,7 +3075,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0
-      operationId: groups_CreateAppRoleAssignments
+      operationId: group_CreateAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -3118,7 +3108,7 @@ paths:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
       description: Represents the app roles a group has been granted for an application. Supports $expand.
-      operationId: groups_GetAppRoleAssignments
+      operationId: group_GetAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -3192,7 +3182,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in groups
-      operationId: groups_UpdateAppRoleAssignments
+      operationId: group_UpdateAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -3219,11 +3209,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3231,7 +3217,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for groups
-      operationId: groups_DeleteAppRoleAssignments
+      operationId: group_DeleteAppRoleAssignments
       parameters:
         - name: group-id
           in: path
@@ -3270,7 +3256,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal_ListServicePrincipal
+      operationId: servicePrincipal_ListServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3475,7 +3461,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal_CreateServicePrincipal
+      operationId: servicePrincipal_CreateServicePrincipal
       requestBody:
         description: New entity
         content:
@@ -3502,7 +3488,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal_GetServicePrincipal
+      operationId: servicePrincipal_GetServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3616,7 +3602,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Update entity in servicePrincipals
-      operationId: servicePrincipals.servicePrincipal_UpdateServicePrincipal
+      operationId: servicePrincipal_UpdateServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3635,11 +3621,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3651,7 +3633,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal_DeleteServicePrincipal
+      operationId: servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3678,7 +3660,8 @@ paths:
       tags:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
-      operationId: servicePrincipals_ListAppManagementPolicies
+      description: The appManagementPolicy applied to this application.
+      operationId: servicePrincipal_ListAppManagementPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3761,7 +3744,8 @@ paths:
       tags:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
-      operationId: servicePrincipals_GetAppManagementPolicies
+      description: The appManagementPolicy applied to this application.
+      operationId: servicePrincipal_GetAppManagementPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3829,7 +3813,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0
-      operationId: servicePrincipals_ListAppRoleAssignedTo
+      operationId: servicePrincipal_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3922,7 +3906,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0
-      operationId: servicePrincipals_CreateAppRoleAssignedTo
+      operationId: servicePrincipal_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3955,7 +3939,7 @@ paths:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
       description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
-      operationId: servicePrincipals_GetAppRoleAssignedTo
+      operationId: servicePrincipal_GetAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4019,7 +4003,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignedTo in servicePrincipals
-      operationId: servicePrincipals_UpdateAppRoleAssignedTo
+      operationId: servicePrincipal_UpdateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4046,11 +4030,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4058,7 +4038,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignedTo for servicePrincipals
-      operationId: servicePrincipals_DeleteAppRoleAssignedTo
+      operationId: servicePrincipal_DeleteAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4097,7 +4077,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0
-      operationId: servicePrincipals_ListAppRoleAssignments
+      operationId: servicePrincipal_ListAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4200,7 +4180,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0
-      operationId: servicePrincipals_CreateAppRoleAssignments
+      operationId: servicePrincipal_CreateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4233,7 +4213,7 @@ paths:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
       description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
-      operationId: servicePrincipals_GetAppRoleAssignments
+      operationId: servicePrincipal_GetAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4307,7 +4287,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in servicePrincipals
-      operationId: servicePrincipals_UpdateAppRoleAssignments
+      operationId: servicePrincipal_UpdateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4334,11 +4314,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4346,7 +4322,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for servicePrincipals
-      operationId: servicePrincipals_DeleteAppRoleAssignments
+      operationId: servicePrincipal_DeleteAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4385,7 +4361,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListClaimsMappingPolicies
+      operationId: servicePrincipal_ListClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4468,7 +4444,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteClaimsMappingPoliciesGraphBPreRef
+      operationId: servicePrincipal_DeleteClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4514,7 +4490,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListClaimsMappingPoliciesGraphBPreRef
+      operationId: servicePrincipal_ListClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4565,7 +4541,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateClaimsMappingPoliciesGraphBPreRef
+      operationId: servicePrincipal_CreateClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4589,7 +4565,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
       description: Directory objects created by this service principal. Read-only. Nullable.
-      operationId: servicePrincipals_ListCreatedObjects
+      operationId: servicePrincipal_ListCreatedObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4659,7 +4635,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
       description: Directory objects created by this service principal. Read-only. Nullable.
-      operationId: servicePrincipals_GetCreatedObjects
+      operationId: servicePrincipal_GetCreatedObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4721,7 +4697,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0
-      operationId: servicePrincipals_ListDelegatedPermissionClassifications
+      operationId: servicePrincipal_ListDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4799,7 +4775,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0
-      operationId: servicePrincipals_CreateDelegatedPermissionClassifications
+      operationId: servicePrincipal_CreateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4831,7 +4807,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
-      operationId: servicePrincipals_GetDelegatedPermissionClassifications
+      operationId: servicePrincipal_GetDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4890,7 +4866,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Update the navigation property delegatedPermissionClassifications in servicePrincipals
-      operationId: servicePrincipals_UpdateDelegatedPermissionClassifications
+      operationId: servicePrincipal_UpdateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4917,11 +4893,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4929,7 +4901,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Delete navigation property delegatedPermissionClassifications for servicePrincipals
-      operationId: servicePrincipals_DeleteDelegatedPermissionClassifications
+      operationId: servicePrincipal_DeleteDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4964,7 +4936,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
-      operationId: servicePrincipals_ListEndpoints
+      operationId: servicePrincipal_ListEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5047,7 +5019,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Create new navigation property to endpoints for servicePrincipals
-      operationId: servicePrincipals_CreateEndpoints
+      operationId: servicePrincipal_CreateEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5079,7 +5051,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
-      operationId: servicePrincipals_GetEndpoints
+      operationId: servicePrincipal_GetEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5141,7 +5113,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Update the navigation property endpoints in servicePrincipals
-      operationId: servicePrincipals_UpdateEndpoints
+      operationId: servicePrincipal_UpdateEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5168,11 +5140,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.endpoint'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5180,7 +5148,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Delete navigation property endpoints for servicePrincipals
-      operationId: servicePrincipals_DeleteEndpoints
+      operationId: servicePrincipal_DeleteEndpoints
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5216,7 +5184,7 @@ paths:
         - servicePrincipals.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from servicePrincipals
       description: 'Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-      operationId: servicePrincipals_ListFederatedIdentityCredentials
+      operationId: servicePrincipal_ListFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5296,7 +5264,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Create new navigation property to federatedIdentityCredentials for servicePrincipals
-      operationId: servicePrincipals_CreateFederatedIdentityCredentials
+      operationId: servicePrincipal_CreateFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5329,7 +5297,7 @@ paths:
         - servicePrincipals.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from servicePrincipals
       description: 'Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-      operationId: servicePrincipals_GetFederatedIdentityCredentials
+      operationId: servicePrincipal_GetFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5390,7 +5358,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Update the navigation property federatedIdentityCredentials in servicePrincipals
-      operationId: servicePrincipals_UpdateFederatedIdentityCredentials
+      operationId: servicePrincipal_UpdateFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5417,11 +5385,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5429,7 +5393,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Delete navigation property federatedIdentityCredentials for servicePrincipals
-      operationId: servicePrincipals_DeleteFederatedIdentityCredentials
+      operationId: servicePrincipal_DeleteFederatedIdentityCredentials
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5468,7 +5432,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListHomeRealmDiscoveryPolicies
+      operationId: servicePrincipal_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5551,7 +5515,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteHomeRealmDiscoveryPoliciesGraphBPreRef
+      operationId: servicePrincipal_DeleteHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5597,7 +5561,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesGraphBPreRef
+      operationId: servicePrincipal_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5648,7 +5612,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateHomeRealmDiscoveryPoliciesGraphBPreRef
+      operationId: servicePrincipal_CreateHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5675,7 +5639,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0
-      operationId: servicePrincipals_ListMemberGraphOPre
+      operationId: servicePrincipal_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5755,7 +5719,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-      operationId: servicePrincipals_GetMemberGraphOPre
+      operationId: servicePrincipal_GetMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5827,7 +5791,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0
-      operationId: servicePrincipals_addKey
+      operationId: servicePrincipal_addKey
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5872,7 +5836,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0
-      operationId: servicePrincipals_addPassword
+      operationId: servicePrincipal_addPassword
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5913,7 +5877,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0
-      operationId: servicePrincipals_addTokenSigningCertificate
+      operationId: servicePrincipal_addTokenSigningCertificate
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5960,7 +5924,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: servicePrincipals_checkMemberGroups
+      operationId: servicePrincipal_checkMemberGroups
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6012,7 +5976,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action checkMemberObjects
-      operationId: servicePrincipals_checkMemberObjects
+      operationId: servicePrincipal_checkMemberObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6068,7 +6032,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: servicePrincipals_getMemberGroups
+      operationId: servicePrincipal_getMemberGroups
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6124,7 +6088,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: servicePrincipals_getMemberObjects
+      operationId: servicePrincipal_getMemberObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6180,7 +6144,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0
-      operationId: servicePrincipals_removeKey
+      operationId: servicePrincipal_removeKey
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6221,7 +6185,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0
-      operationId: servicePrincipals_removePassword
+      operationId: servicePrincipal_removePassword
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6260,7 +6224,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: servicePrincipals_restore
+      operationId: servicePrincipal_restore
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6289,7 +6253,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0
-      operationId: servicePrincipals_ListOauth2PermissionGrants
+      operationId: servicePrincipal_ListOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6371,7 +6335,7 @@ paths:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from servicePrincipals
       description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-      operationId: servicePrincipals_GetOauth2PermissionGrants
+      operationId: servicePrincipal_GetOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6434,7 +6398,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
       description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      operationId: servicePrincipals_ListOwnedObjects
+      operationId: servicePrincipal_ListOwnedObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6504,7 +6468,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
       description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      operationId: servicePrincipals_GetOwnedObjects
+      operationId: servicePrincipal_GetOwnedObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6566,7 +6530,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
-      operationId: servicePrincipals_ListOwners
+      operationId: servicePrincipal_ListOwners
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6645,7 +6609,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Delete ref of navigation property owners for servicePrincipals
-      operationId: servicePrincipals_DeleteOwnersGraphBPreRef
+      operationId: servicePrincipal_DeleteOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6691,7 +6655,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
-      operationId: servicePrincipals_ListOwnersGraphBPreRef
+      operationId: servicePrincipal_ListOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6744,7 +6708,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to owners for servicePrincipals
-      operationId: servicePrincipals_CreateOwnersGraphBPreRef
+      operationId: servicePrincipal_CreateOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6768,7 +6732,7 @@ paths:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
       description: The tokenIssuancePolicies assigned to this service principal.
-      operationId: servicePrincipals_ListTokenIssuancePolicies
+      operationId: servicePrincipal_ListTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6852,7 +6816,7 @@ paths:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
       description: The tokenIssuancePolicies assigned to this service principal.
-      operationId: servicePrincipals_GetTokenIssuancePolicies
+      operationId: servicePrincipal_GetTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6917,7 +6881,7 @@ paths:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
       description: The tokenLifetimePolicies assigned to this service principal.
-      operationId: servicePrincipals_ListTokenLifetimePolicies
+      operationId: servicePrincipal_ListTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7001,7 +6965,7 @@ paths:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
       description: The tokenLifetimePolicies assigned to this service principal.
-      operationId: servicePrincipals_GetTokenLifetimePolicies
+      operationId: servicePrincipal_GetTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7068,7 +7032,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
-      operationId: servicePrincipals_ListTransitiveMemberGraphOPre
+      operationId: servicePrincipal_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7147,7 +7111,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_GetTransitiveMemberGraphOPre
+      operationId: servicePrincipal_GetTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7215,7 +7179,7 @@ paths:
       tags:
         - servicePrincipals.Functions
       summary: Invoke function delta
-      operationId: servicePrincipals_delta
+      operationId: servicePrincipal_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7401,7 +7365,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: servicePrincipals_getAvailableExtensionProperties
+      operationId: servicePrincipal_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
         content:
@@ -7449,7 +7413,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: servicePrincipals_getGraphBPreIds
+      operationId: servicePrincipal_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -7502,7 +7466,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: servicePrincipals_validateProperties
+      operationId: servicePrincipal_validateProperties
       requestBody:
         description: Action parameters
         content:
@@ -7542,7 +7506,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0
-      operationId: users_ListAppRoleAssignments
+      operationId: user_ListAppRoleAssignments
       parameters:
         - name: user-id
           in: path
@@ -7645,7 +7609,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0
-      operationId: users_CreateAppRoleAssignments
+      operationId: user_CreateAppRoleAssignments
       parameters:
         - name: user-id
           in: path
@@ -7678,7 +7642,7 @@ paths:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
       description: Represents the app roles a user has been granted for an application. Supports $expand.
-      operationId: users_GetAppRoleAssignments
+      operationId: user_GetAppRoleAssignments
       parameters:
         - name: user-id
           in: path
@@ -7752,7 +7716,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in users
-      operationId: users_UpdateAppRoleAssignments
+      operationId: user_UpdateAppRoleAssignments
       parameters:
         - name: user-id
           in: path
@@ -7779,11 +7743,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7791,7 +7751,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for users
-      operationId: users_DeleteAppRoleAssignments
+      operationId: user_DeleteAppRoleAssignments
       parameters:
         - name: user-id
           in: path
@@ -7961,6 +7921,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+              description: The appManagementPolicy applied to this application.
               x-ms-navigationProperty: true
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -8409,6 +8370,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+              description: The appManagementPolicy applied to this application.
               x-ms-navigationProperty: true
             appRoleAssignedTo:
               type: array
@@ -8837,6 +8799,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.weakAlgorithms'
         isSignedRequestRequired:
           type: boolean
+          description: Specifies whether signed authentication requests for this application should be required.
       additionalProperties:
         type: object
     microsoft.graph.requiredResourceAccess:
@@ -9048,10 +9011,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
+          description: Collection of keyCredential restrictions settings to be applied to an application or service principal.
         passwordCredentials:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
+          description: Collection of password restrictions settings to be applied to an application or service principal.
       additionalProperties:
         type: object
     microsoft.graph.permissionClassificationType:
@@ -9399,6 +9364,7 @@ components:
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.'
           format: date-time
           nullable: true
         restrictionType:
@@ -9417,6 +9383,7 @@ components:
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.'
           format: date-time
           nullable: true
         restrictionType:

@@ -68,11 +68,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncement'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -263,11 +259,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.serviceHealth'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -303,7 +295,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get issues from admin
       description: 'A collection of issues that happened on the service, with detailed information for each issue.'
-      operationId: admin.serviceAnnouncement.healthOverviews_ListIssues
+      operationId: admin.serviceAnnouncement.healthOverview_ListIssues
       parameters:
         - name: serviceHealth-id
           in: path
@@ -410,7 +402,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to issues for admin
-      operationId: admin.serviceAnnouncement.healthOverviews_CreateIssues
+      operationId: admin.serviceAnnouncement.healthOverview_CreateIssues
       parameters:
         - name: serviceHealth-id
           in: path
@@ -443,7 +435,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get issues from admin
       description: 'A collection of issues that happened on the service, with detailed information for each issue.'
-      operationId: admin.serviceAnnouncement.healthOverviews_GetIssues
+      operationId: admin.serviceAnnouncement.healthOverview_GetIssues
       parameters:
         - name: serviceHealth-id
           in: path
@@ -513,7 +505,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property issues in admin
-      operationId: admin.serviceAnnouncement.healthOverviews_UpdateIssues
+      operationId: admin.serviceAnnouncement.healthOverview_UpdateIssues
       parameters:
         - name: serviceHealth-id
           in: path
@@ -540,11 +532,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -552,7 +540,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property issues for admin
-      operationId: admin.serviceAnnouncement.healthOverviews_DeleteIssues
+      operationId: admin.serviceAnnouncement.healthOverview_DeleteIssues
       parameters:
         - name: serviceHealth-id
           in: path
@@ -587,7 +575,7 @@ paths:
       tags:
         - admin.Functions
       summary: Invoke function incidentReport
-      operationId: admin.serviceAnnouncement.healthOverviews.issues_incidentReport
+      operationId: admin.serviceAnnouncement.healthOverview.issue_incidentReport
       parameters:
         - name: serviceHealth-id
           in: path
@@ -835,11 +823,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -874,7 +858,7 @@ paths:
       tags:
         - admin.Functions
       summary: Invoke function incidentReport
-      operationId: admin.serviceAnnouncement.issues_incidentReport
+      operationId: admin.serviceAnnouncement.issue_incidentReport
       parameters:
         - name: serviceHealthIssue-id
           in: path
@@ -1122,11 +1106,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1165,7 +1145,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages_ListAttachments
+      operationId: admin.serviceAnnouncement.message_ListAttachments
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1245,7 +1225,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to attachments for admin
-      operationId: admin.serviceAnnouncement.messages_CreateAttachments
+      operationId: admin.serviceAnnouncement.message_CreateAttachments
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1278,7 +1258,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
       description: A collection of serviceAnnouncementAttachments.
-      operationId: admin.serviceAnnouncement.messages_GetAttachments
+      operationId: admin.serviceAnnouncement.message_GetAttachments
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1339,7 +1319,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property attachments in admin
-      operationId: admin.serviceAnnouncement.messages_UpdateAttachments
+      operationId: admin.serviceAnnouncement.message_UpdateAttachments
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1366,11 +1346,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1378,7 +1354,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property attachments for admin
-      operationId: admin.serviceAnnouncement.messages_DeleteAttachments
+      operationId: admin.serviceAnnouncement.message_DeleteAttachments
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1417,7 +1393,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages_GetAttachmentsContent
+      operationId: admin.serviceAnnouncement.message_GetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1451,7 +1427,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Update content for the navigation property attachments in admin
       description: The attachment content.
-      operationId: admin.serviceAnnouncement.messages_SetAttachmentsContent
+      operationId: admin.serviceAnnouncement.message_SetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1551,7 +1527,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages_archive
+      operationId: admin.serviceAnnouncement.message_archive
       requestBody:
         description: Action parameters
         content:
@@ -1593,7 +1569,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages_favorite
+      operationId: admin.serviceAnnouncement.message_favorite
       requestBody:
         description: Action parameters
         content:
@@ -1635,7 +1611,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages_markRead
+      operationId: admin.serviceAnnouncement.message_markRead
       requestBody:
         description: Action parameters
         content:
@@ -1677,7 +1653,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages_markUnread
+      operationId: admin.serviceAnnouncement.message_markUnread
       requestBody:
         description: Action parameters
         content:
@@ -1719,7 +1695,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages_unarchive
+      operationId: admin.serviceAnnouncement.message_unarchive
       requestBody:
         description: Action parameters
         content:
@@ -1761,7 +1737,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages_unfavorite
+      operationId: admin.serviceAnnouncement.message_unfavorite
       requestBody:
         description: Action parameters
         content:

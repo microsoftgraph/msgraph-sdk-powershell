@@ -11,7 +11,7 @@ paths:
       tags:
         - agreements.agreement
       summary: Get entities from agreements
-      operationId: agreements.agreement_ListAgreement
+      operationId: agreement_ListAgreement
       parameters:
         - $ref: '#/components/parameters/search'
         - name: $select
@@ -47,7 +47,7 @@ paths:
       tags:
         - agreements.agreement
       summary: Add new entity to agreements
-      operationId: agreements.agreement_CreateAgreement
+      operationId: agreement_CreateAgreement
       requestBody:
         description: New entity
         content:
@@ -70,7 +70,7 @@ paths:
       tags:
         - agreements.agreement
       summary: Get entity from agreements by key
-      operationId: agreements.agreement_GetAgreement
+      operationId: agreement_GetAgreement
       parameters:
         - name: agreement-id
           in: path
@@ -114,7 +114,7 @@ paths:
       tags:
         - agreements.agreement
       summary: Update entity in agreements
-      operationId: agreements.agreement_UpdateAgreement
+      operationId: agreement_UpdateAgreement
       parameters:
         - name: agreement-id
           in: path
@@ -133,11 +133,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreement'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -145,7 +141,7 @@ paths:
       tags:
         - agreements.agreement
       summary: Delete entity from agreements
-      operationId: agreements.agreement_DeleteAgreement
+      operationId: agreement_DeleteAgreement
       parameters:
         - name: agreement-id
           in: path
@@ -176,7 +172,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0
-      operationId: agreements_ListAcceptances
+      operationId: agreement_ListAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -280,7 +276,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Create new navigation property to acceptances for agreements
-      operationId: agreements_CreateAcceptances
+      operationId: agreement_CreateAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -313,7 +309,7 @@ paths:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
       description: Read-only. Information about acceptances of this agreement.
-      operationId: agreements_GetAcceptances
+      operationId: agreement_GetAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -382,7 +378,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Update the navigation property acceptances in agreements
-      operationId: agreements_UpdateAcceptances
+      operationId: agreement_UpdateAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -409,11 +405,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -421,7 +413,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Delete navigation property acceptances for agreements
-      operationId: agreements_DeleteAcceptances
+      operationId: agreement_DeleteAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -460,7 +452,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0
-      operationId: agreements_GetFile
+      operationId: agreement_GetFile
       parameters:
         - name: agreement-id
           in: path
@@ -517,7 +509,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Update the navigation property file in agreements
-      operationId: agreements_UpdateFile
+      operationId: agreement_UpdateFile
       parameters:
         - name: agreement-id
           in: path
@@ -536,11 +528,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -548,7 +536,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Delete navigation property file for agreements
-      operationId: agreements_DeleteFile
+      operationId: agreement_DeleteFile
       parameters:
         - name: agreement-id
           in: path
@@ -576,7 +564,7 @@ paths:
         - agreements.agreementFile
       summary: Get localizations from agreements
       description: The localized version of the terms of use agreement files attached to the agreement.
-      operationId: agreements.file_ListLocalizations
+      operationId: agreement.file_ListLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -664,7 +652,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Create new navigation property to localizations for agreements
-      operationId: agreements.file_CreateLocalizations
+      operationId: agreement.file_CreateLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -697,7 +685,7 @@ paths:
         - agreements.agreementFile
       summary: Get localizations from agreements
       description: The localized version of the terms of use agreement files attached to the agreement.
-      operationId: agreements.file_GetLocalizations
+      operationId: agreement.file_GetLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -762,7 +750,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Update the navigation property localizations in agreements
-      operationId: agreements.file_UpdateLocalizations
+      operationId: agreement.file_UpdateLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -789,11 +777,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -801,7 +785,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Delete navigation property localizations for agreements
-      operationId: agreements.file_DeleteLocalizations
+      operationId: agreement.file_DeleteLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -837,7 +821,7 @@ paths:
         - agreements.agreementFile
       summary: Get versions from agreements
       description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-      operationId: agreements.file.localizations_ListVersions
+      operationId: agreement.file.localization_ListVersions
       parameters:
         - name: agreement-id
           in: path
@@ -931,7 +915,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Create new navigation property to versions for agreements
-      operationId: agreements.file.localizations_CreateVersions
+      operationId: agreement.file.localization_CreateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -972,7 +956,7 @@ paths:
         - agreements.agreementFile
       summary: Get versions from agreements
       description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-      operationId: agreements.file.localizations_GetVersions
+      operationId: agreement.file.localization_GetVersions
       parameters:
         - name: agreement-id
           in: path
@@ -1043,7 +1027,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Update the navigation property versions in agreements
-      operationId: agreements.file.localizations_UpdateVersions
+      operationId: agreement.file.localization_UpdateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -1078,11 +1062,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFileVersion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1090,7 +1070,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Delete navigation property versions for agreements
-      operationId: agreements.file.localizations_DeleteVersions
+      operationId: agreement.file.localization_DeleteVersions
       parameters:
         - name: agreement-id
           in: path
@@ -1134,7 +1114,7 @@ paths:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
       description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
-      operationId: agreements_ListFiles
+      operationId: agreement_ListFiles
       parameters:
         - name: agreement-id
           in: path
@@ -1226,7 +1206,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0
-      operationId: agreements_CreateFiles
+      operationId: agreement_CreateFiles
       parameters:
         - name: agreement-id
           in: path
@@ -1259,7 +1239,7 @@ paths:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
       description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
-      operationId: agreements_GetFiles
+      operationId: agreement_GetFiles
       parameters:
         - name: agreement-id
           in: path
@@ -1324,7 +1304,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Update the navigation property files in agreements
-      operationId: agreements_UpdateFiles
+      operationId: agreement_UpdateFiles
       parameters:
         - name: agreement-id
           in: path
@@ -1351,11 +1331,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1363,7 +1339,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Delete navigation property files for agreements
-      operationId: agreements_DeleteFiles
+      operationId: agreement_DeleteFiles
       parameters:
         - name: agreement-id
           in: path
@@ -1399,7 +1375,7 @@ paths:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
       description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-      operationId: agreements.files_ListVersions
+      operationId: agreement.file_ListVersions
       parameters:
         - name: agreement-id
           in: path
@@ -1493,7 +1469,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Create new navigation property to versions for agreements
-      operationId: agreements.files_CreateVersions
+      operationId: agreement.file_CreateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -1534,7 +1510,7 @@ paths:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
       description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-      operationId: agreements.files_GetVersions
+      operationId: agreement.file_GetVersions
       parameters:
         - name: agreement-id
           in: path
@@ -1605,7 +1581,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Update the navigation property versions in agreements
-      operationId: agreements.files_UpdateVersions
+      operationId: agreement.file_UpdateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -1640,11 +1616,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFileVersion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1652,7 +1624,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Delete navigation property versions for agreements
-      operationId: agreements.files_DeleteVersions
+      operationId: agreement.file_DeleteVersions
       parameters:
         - name: agreement-id
           in: path
@@ -1695,7 +1667,7 @@ paths:
       tags:
         - identityGovernance.identityGovernance
       summary: Get identityGovernance
-      operationId: identityGovernance.identityGovernance_GetIdentityGovernance
+      operationId: identityGovernance_GetIdentityGovernance
       parameters:
         - name: $select
           in: query
@@ -1742,7 +1714,7 @@ paths:
       tags:
         - identityGovernance.identityGovernance
       summary: Update identityGovernance
-      operationId: identityGovernance.identityGovernance_UpdateIdentityGovernance
+      operationId: identityGovernance_UpdateIdentityGovernance
       requestBody:
         description: New property values
         content:
@@ -1752,11 +1724,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identityGovernance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1819,11 +1787,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewSet'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1854,7 +1818,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews_ListDefinitions
+      operationId: identityGovernance.accessReview_ListDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1959,7 +1923,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews_CreateDefinitions
+      operationId: identityGovernance.accessReview_CreateDefinitions
       requestBody:
         description: New navigation property
         content:
@@ -1983,7 +1947,7 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Get definitions from identityGovernance
       description: Represents the template and scheduling for an access review.
-      operationId: identityGovernance.accessReviews_GetDefinitions
+      operationId: identityGovernance.accessReview_GetDefinitions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2047,7 +2011,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property definitions in identityGovernance
-      operationId: identityGovernance.accessReviews_UpdateDefinitions
+      operationId: identityGovernance.accessReview_UpdateDefinitions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2066,11 +2030,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2078,7 +2038,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property definitions for identityGovernance
-      operationId: identityGovernance.accessReviews_DeleteDefinitions
+      operationId: identityGovernance.accessReview_DeleteDefinitions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2109,7 +2069,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewscheduledefinition-list-instances?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions_ListInstances
+      operationId: identityGovernance.accessReview.definition_ListInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2198,7 +2158,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create new navigation property to instances for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions_CreateInstances
+      operationId: identityGovernance.accessReview.definition_CreateInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2231,7 +2191,7 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
       description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
-      operationId: identityGovernance.accessReviews.definitions_GetInstances
+      operationId: identityGovernance.accessReview.definition_GetInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2299,7 +2259,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property instances in identityGovernance
-      operationId: identityGovernance.accessReviews.definitions_UpdateInstances
+      operationId: identityGovernance.accessReview.definition_UpdateInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2326,11 +2286,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2338,7 +2294,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property instances for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions_DeleteInstances
+      operationId: identityGovernance.accessReview.definition_DeleteInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2377,7 +2333,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewinstance-list-contactedreviewers?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances_ListContactedReviewers
+      operationId: identityGovernance.accessReview.definition.instance_ListContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2459,7 +2415,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create new navigation property to contactedReviewers for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances_CreateContactedReviewers
+      operationId: identityGovernance.accessReview.definition.instance_CreateContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2500,7 +2456,7 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Get contactedReviewers from identityGovernance
       description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
-      operationId: identityGovernance.accessReviews.definitions.instances_GetContactedReviewers
+      operationId: identityGovernance.accessReview.definition.instance_GetContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2567,7 +2523,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property contactedReviewers in identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances_UpdateContactedReviewers
+      operationId: identityGovernance.accessReview.definition.instance_UpdateContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2602,11 +2558,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2614,7 +2566,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property contactedReviewers for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances_DeleteContactedReviewers
+      operationId: identityGovernance.accessReview.definition.instance_DeleteContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2661,7 +2613,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewinstance-list-decisions?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances_ListDecisions
+      operationId: identityGovernance.accessReview.definition.instance_ListDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2773,7 +2725,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create new navigation property to decisions for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances_CreateDecisions
+      operationId: identityGovernance.accessReview.definition.instance_CreateDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2814,7 +2766,7 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
       description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
-      operationId: identityGovernance.accessReviews.definitions.instances_GetDecisions
+      operationId: identityGovernance.accessReview.definition.instance_GetDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2891,7 +2843,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property decisions in identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances_UpdateDecisions
+      operationId: identityGovernance.accessReview.definition.instance_UpdateDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2926,11 +2878,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2938,7 +2886,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property decisions for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances_DeleteDecisions
+      operationId: identityGovernance.accessReview.definition.instance_DeleteDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2981,7 +2929,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.decisions_filterGraphBPreCurrentUser
+      operationId: identityGovernance.accessReview.definition.instance.decision_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3108,7 +3056,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewinstance-acceptrecommendations?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances_acceptRecommendations
+      operationId: identityGovernance.accessReview.definition.instance_acceptRecommendations
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3141,7 +3089,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewinstance-applydecisions?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances_applyDecisions
+      operationId: identityGovernance.accessReview.definition.instance_applyDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3174,7 +3122,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances_batchRecordDecisions
+      operationId: identityGovernance.accessReview.definition.instance_batchRecordDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3229,7 +3177,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewinstance-resetdecisions?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances_resetDecisions
+      operationId: identityGovernance.accessReview.definition.instance_resetDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3262,7 +3210,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances_sendReminder
+      operationId: identityGovernance.accessReview.definition.instance_sendReminder
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3295,7 +3243,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewinstance-stop?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances_stop
+      operationId: identityGovernance.accessReview.definition.instance_stop
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3328,7 +3276,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewinstance-list-stages?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances_ListStages
+      operationId: identityGovernance.accessReview.definition.instance_ListStages
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3418,7 +3366,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create new navigation property to stages for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances_CreateStages
+      operationId: identityGovernance.accessReview.definition.instance_CreateStages
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3459,7 +3407,7 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Get stages from identityGovernance
       description: 'If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.'
-      operationId: identityGovernance.accessReviews.definitions.instances_GetStages
+      operationId: identityGovernance.accessReview.definition.instance_GetStages
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3530,7 +3478,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property stages in identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances_UpdateStages
+      operationId: identityGovernance.accessReview.definition.instance_UpdateStages
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3565,11 +3513,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3577,7 +3521,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property stages for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances_DeleteStages
+      operationId: identityGovernance.accessReview.definition.instance_DeleteStages
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3624,7 +3568,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewstage-list-decisions?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances.stages_ListDecisions
+      operationId: identityGovernance.accessReview.definition.instance.stage_ListDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3744,7 +3688,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create new navigation property to decisions for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances.stages_CreateDecisions
+      operationId: identityGovernance.accessReview.definition.instance.stage_CreateDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3793,7 +3737,7 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
       description: 'Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.'
-      operationId: identityGovernance.accessReviews.definitions.instances.stages_GetDecisions
+      operationId: identityGovernance.accessReview.definition.instance.stage_GetDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3878,7 +3822,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property decisions in identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances.stages_UpdateDecisions
+      operationId: identityGovernance.accessReview.definition.instance.stage_UpdateDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3921,11 +3865,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3933,7 +3873,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property decisions for identityGovernance
-      operationId: identityGovernance.accessReviews.definitions.instances.stages_DeleteDecisions
+      operationId: identityGovernance.accessReview.definition.instance.stage_DeleteDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -3984,7 +3924,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.stages.decisions_filterGraphBPreCurrentUser
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -4119,7 +4059,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewstage-stop?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.definitions.instances.stages_stop
+      operationId: identityGovernance.accessReview.definition.instance.stage_stop
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -4156,7 +4096,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances.stages_filterGraphBPreCurrentUser
+      operationId: identityGovernance.accessReview.definition.instance.stage_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -4256,7 +4196,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions.instances_filterGraphBPreCurrentUser
+      operationId: identityGovernance.accessReview.definition.instance_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -4353,7 +4293,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action stop
-      operationId: identityGovernance.accessReviews.definitions_stop
+      operationId: identityGovernance.accessReview.definition_stop
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -4374,7 +4314,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.accessReviews.definitions_filterGraphBPreCurrentUser
+      operationId: identityGovernance.accessReview.definition_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -4489,7 +4429,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewset-list-historydefinitions?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews_ListHistoryDefinitions
+      operationId: identityGovernance.accessReview_ListHistoryDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4579,7 +4519,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewset-post-historydefinitions?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews_CreateHistoryDefinitions
+      operationId: identityGovernance.accessReview_CreateHistoryDefinitions
       requestBody:
         description: New navigation property
         content:
@@ -4603,7 +4543,7 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Get historyDefinitions from identityGovernance
       description: Represents a collection of access review history data and the scopes used to collect that data.
-      operationId: identityGovernance.accessReviews_GetHistoryDefinitions
+      operationId: identityGovernance.accessReview_GetHistoryDefinitions
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
@@ -4662,7 +4602,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property historyDefinitions in identityGovernance
-      operationId: identityGovernance.accessReviews_UpdateHistoryDefinitions
+      operationId: identityGovernance.accessReview_UpdateHistoryDefinitions
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
@@ -4681,11 +4621,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewHistoryDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4693,7 +4629,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property historyDefinitions for identityGovernance
-      operationId: identityGovernance.accessReviews_DeleteHistoryDefinitions
+      operationId: identityGovernance.accessReview_DeleteHistoryDefinitions
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
@@ -4724,7 +4660,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewhistorydefinition-list-instances?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.historyDefinitions_ListInstances
+      operationId: identityGovernance.accessReview.historyDefinition_ListInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
@@ -4810,7 +4746,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create new navigation property to instances for identityGovernance
-      operationId: identityGovernance.accessReviews.historyDefinitions_CreateInstances
+      operationId: identityGovernance.accessReview.historyDefinition_CreateInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
@@ -4843,7 +4779,7 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
       description: 'If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.'
-      operationId: identityGovernance.accessReviews.historyDefinitions_GetInstances
+      operationId: identityGovernance.accessReview.historyDefinition_GetInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
@@ -4906,7 +4842,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property instances in identityGovernance
-      operationId: identityGovernance.accessReviews.historyDefinitions_UpdateInstances
+      operationId: identityGovernance.accessReview.historyDefinition_UpdateInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
@@ -4933,11 +4869,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewHistoryInstance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4945,7 +4877,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property instances for identityGovernance
-      operationId: identityGovernance.accessReviews.historyDefinitions_DeleteInstances
+      operationId: identityGovernance.accessReview.historyDefinition_DeleteInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
@@ -4984,7 +4916,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accessreviewhistoryinstance-generatedownloaduri?view=graph-rest-1.0
-      operationId: identityGovernance.accessReviews.historyDefinitions.instances_generateDownloadUri
+      operationId: identityGovernance.accessReview.historyDefinition.instance_generateDownloadUri
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
@@ -5069,11 +5001,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appConsentApprovalRoute'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5268,11 +5196,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5311,7 +5235,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/appconsentrequest-list-userconsentrequests?view=graph-rest-1.0
-      operationId: identityGovernance.appConsent.appConsentRequests_ListUserConsentRequests
+      operationId: identityGovernance.appConsent.appConsentRequest_ListUserConsentRequests
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5399,7 +5323,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Create new navigation property to userConsentRequests for identityGovernance
-      operationId: identityGovernance.appConsent.appConsentRequests_CreateUserConsentRequests
+      operationId: identityGovernance.appConsent.appConsentRequest_CreateUserConsentRequests
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5432,7 +5356,7 @@ paths:
         - identityGovernance.appConsentApprovalRoute
       summary: Get userConsentRequests from identityGovernance
       description: A list of pending user consent requests. Supports $filter (eq).
-      operationId: identityGovernance.appConsent.appConsentRequests_GetUserConsentRequests
+      operationId: identityGovernance.appConsent.appConsentRequest_GetUserConsentRequests
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5497,7 +5421,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Update the navigation property userConsentRequests in identityGovernance
-      operationId: identityGovernance.appConsent.appConsentRequests_UpdateUserConsentRequests
+      operationId: identityGovernance.appConsent.appConsentRequest_UpdateUserConsentRequests
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5524,11 +5448,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5536,7 +5456,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Delete navigation property userConsentRequests for identityGovernance
-      operationId: identityGovernance.appConsent.appConsentRequests_DeleteUserConsentRequests
+      operationId: identityGovernance.appConsent.appConsentRequest_DeleteUserConsentRequests
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5572,7 +5492,7 @@ paths:
         - identityGovernance.appConsentApprovalRoute
       summary: Get approval from identityGovernance
       description: Approval decisions associated with a request.
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_GetApproval
+      operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest_GetApproval
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5630,7 +5550,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Update the navigation property approval in identityGovernance
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_UpdateApproval
+      operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest_UpdateApproval
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5657,11 +5577,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.approval'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5669,7 +5585,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Delete navigation property approval for identityGovernance
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_DeleteApproval
+      operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest_DeleteApproval
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5708,7 +5624,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_ListStages
+      operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest.approval_ListStages
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5802,7 +5718,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Create new navigation property to stages for identityGovernance
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_CreateStages
+      operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest.approval_CreateStages
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5843,7 +5759,7 @@ paths:
         - identityGovernance.appConsentApprovalRoute
       summary: Get stages from identityGovernance
       description: A collection of stages in the approval decision.
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_GetStages
+      operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest.approval_GetStages
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5914,7 +5830,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Update the navigation property stages in identityGovernance
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_UpdateStages
+      operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest.approval_UpdateStages
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -5949,11 +5865,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.approvalStage'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5961,7 +5873,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Delete navigation property stages for identityGovernance
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_DeleteStages
+      operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest.approval_DeleteStages
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -6004,7 +5916,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_filterGraphBPreCurrentUser
+      operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: appConsentRequest-id
           in: path
@@ -6102,7 +6014,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.appConsent.appConsentRequests_filterGraphBPreCurrentUser
+      operationId: identityGovernance.appConsent.appConsentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -6246,11 +6158,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.entitlementManagement'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6430,11 +6338,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.approval'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6473,7 +6377,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_ListStages
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_ListStages
       parameters:
         - name: approval-id
           in: path
@@ -6559,7 +6463,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to stages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_CreateStages
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_CreateStages
       parameters:
         - name: approval-id
           in: path
@@ -6592,7 +6496,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get stages from identityGovernance
       description: A collection of stages in the approval decision.
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_GetStages
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_GetStages
       parameters:
         - name: approval-id
           in: path
@@ -6655,7 +6559,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property stages in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_UpdateStages
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_UpdateStages
       parameters:
         - name: approval-id
           in: path
@@ -6682,11 +6586,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.approvalStage'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6694,7 +6594,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property stages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_DeleteStages
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_DeleteStages
       parameters:
         - name: approval-id
           in: path
@@ -6729,7 +6629,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_filterGraphBPreCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -6994,11 +6894,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7037,7 +6933,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.accessPackages_ListAccessPackagesIncompatibleGraphWPre
+      operationId: identityGovernance.entitlementManagement.accessPackage_ListAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackage-id
           in: path
@@ -7129,7 +7025,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get accessPackagesIncompatibleWith from identityGovernance
       description: The access packages that are incompatible with this package. Read-only.
-      operationId: identityGovernance.entitlementManagement.accessPackages_GetAccessPackagesIncompatibleGraphWPre
+      operationId: identityGovernance.entitlementManagement.accessPackage_GetAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackage-id
           in: path
@@ -7201,7 +7097,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_ListAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.accessPackage_ListAssignmentPolicies
       parameters:
         - name: accessPackage-id
           in: path
@@ -7305,7 +7201,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to assignmentPolicies for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_CreateAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.accessPackage_CreateAssignmentPolicies
       parameters:
         - name: accessPackage-id
           in: path
@@ -7337,7 +7233,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_GetAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.accessPackage_GetAssignmentPolicies
       parameters:
         - name: accessPackage-id
           in: path
@@ -7410,7 +7306,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property assignmentPolicies in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_UpdateAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.accessPackage_UpdateAssignmentPolicies
       parameters:
         - name: accessPackage-id
           in: path
@@ -7437,11 +7333,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7449,7 +7341,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property assignmentPolicies for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.accessPackage_DeleteAssignmentPolicies
       parameters:
         - name: accessPackage-id
           in: path
@@ -7485,7 +7377,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
       description: Access package containing this policy. Read-only.
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackage.assignmentPolicy_GetAccessPackage
       parameters:
         - name: accessPackage-id
           in: path
@@ -7558,7 +7450,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
       description: Catalog of the access package containing this policy. Read-only.
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackage.assignmentPolicy_GetCatalog
       parameters:
         - name: accessPackage-id
           in: path
@@ -7625,7 +7517,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get questions from identityGovernance
       description: Questions that are posed to the  requestor.
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_ListQuestions
+      operationId: identityGovernance.entitlementManagement.accessPackage.assignmentPolicy_ListQuestions
       parameters:
         - name: accessPackage-id
           in: path
@@ -7713,7 +7605,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to questions for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_CreateQuestions
+      operationId: identityGovernance.entitlementManagement.accessPackage.assignmentPolicy_CreateQuestions
       parameters:
         - name: accessPackage-id
           in: path
@@ -7754,7 +7646,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get questions from identityGovernance
       description: Questions that are posed to the  requestor.
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetQuestions
+      operationId: identityGovernance.entitlementManagement.accessPackage.assignmentPolicy_GetQuestions
       parameters:
         - name: accessPackage-id
           in: path
@@ -7823,7 +7715,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property questions in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_UpdateQuestions
+      operationId: identityGovernance.entitlementManagement.accessPackage.assignmentPolicy_UpdateQuestions
       parameters:
         - name: accessPackage-id
           in: path
@@ -7858,11 +7750,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackageQuestion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7870,7 +7758,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property questions for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_DeleteQuestions
+      operationId: identityGovernance.entitlementManagement.accessPackage.assignmentPolicy_DeleteQuestions
       parameters:
         - name: accessPackage-id
           in: path
@@ -7913,7 +7801,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_GetCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackage_GetCatalog
       parameters:
         - name: accessPackage-id
           in: path
@@ -7975,7 +7863,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.accessPackages_ListIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.accessPackage_ListIncompatibleAccessPackages
       parameters:
         - name: accessPackage-id
           in: path
@@ -8066,7 +7954,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteIncompatibleAccessPackagesGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.accessPackage_DeleteIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -8112,7 +8000,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.accessPackages_ListIncompatibleAccessPackagesGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.accessPackage_ListIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -8163,7 +8051,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_CreateIncompatibleAccessPackagesGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.accessPackage_CreateIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -8190,7 +8078,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.accessPackages_ListIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.accessPackage_ListIncompatibleGroups
       parameters:
         - name: accessPackage-id
           in: path
@@ -8427,7 +8315,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteIncompatibleGroupsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.accessPackage_DeleteIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -8473,7 +8361,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.accessPackages_ListIncompatibleGroupsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.accessPackage_ListIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -8592,7 +8480,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_CreateIncompatibleGroupsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.accessPackage_CreateIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackage-id
           in: path
@@ -8619,7 +8507,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.accessPackages_getApplicablePolicyRequirements
+      operationId: identityGovernance.entitlementManagement.accessPackage_getApplicablePolicyRequirements
       parameters:
         - name: accessPackage-id
           in: path
@@ -8657,7 +8545,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.accessPackages_filterGraphBPreCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackage_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -8957,11 +8845,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8997,7 +8881,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
       description: Access package containing this policy. Read-only.
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignmentPolicy_GetAccessPackage
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -9062,7 +8946,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
       description: Catalog of the access package containing this policy. Read-only.
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetCatalog
+      operationId: identityGovernance.entitlementManagement.assignmentPolicy_GetCatalog
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -9121,7 +9005,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get questions from identityGovernance
       description: Questions that are posed to the  requestor.
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_ListQuestions
+      operationId: identityGovernance.entitlementManagement.assignmentPolicy_ListQuestions
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -9201,7 +9085,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to questions for identityGovernance
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_CreateQuestions
+      operationId: identityGovernance.entitlementManagement.assignmentPolicy_CreateQuestions
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -9234,7 +9118,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get questions from identityGovernance
       description: Questions that are posed to the  requestor.
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetQuestions
+      operationId: identityGovernance.entitlementManagement.assignmentPolicy_GetQuestions
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -9295,7 +9179,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property questions in identityGovernance
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_UpdateQuestions
+      operationId: identityGovernance.entitlementManagement.assignmentPolicy_UpdateQuestions
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -9322,11 +9206,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackageQuestion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9334,7 +9214,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property questions for identityGovernance
-      operationId: identityGovernance.entitlementManagement.assignmentPolicies_DeleteQuestions
+      operationId: identityGovernance.entitlementManagement.assignmentPolicy_DeleteQuestions
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -9565,11 +9445,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9605,7 +9481,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
       description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignmentRequest_GetAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -9670,7 +9546,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get assignment from identityGovernance
       description: 'For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAssignment
+      operationId: identityGovernance.entitlementManagement.assignmentRequest_GetAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -9733,7 +9609,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-cancel?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_cancel
+      operationId: identityGovernance.entitlementManagement.assignmentRequest_cancel
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -9754,7 +9630,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action reprocess
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_reprocess
+      operationId: identityGovernance.entitlementManagement.assignmentRequest_reprocess
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -9776,7 +9652,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get requestor from identityGovernance
       description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetRequestor
+      operationId: identityGovernance.entitlementManagement.assignmentRequest_GetRequestor
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -9833,7 +9709,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.assignmentRequests_filterGraphBPreCurrentUser
+      operationId: identityGovernance.entitlementManagement.assignmentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -10105,11 +9981,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10145,7 +10017,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
       description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-      operationId: identityGovernance.entitlementManagement.assignments_GetAccessPackage
+      operationId: identityGovernance.entitlementManagement.assignment_GetAccessPackage
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -10210,7 +10082,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicy from identityGovernance
       description: Read-only. Supports $filter (eq) on the id property and $expand query parameters.
-      operationId: identityGovernance.entitlementManagement.assignments_GetAssignmentPolicy
+      operationId: identityGovernance.entitlementManagement.assignment_GetAssignmentPolicy
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -10276,7 +10148,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action reprocess
-      operationId: identityGovernance.entitlementManagement.assignments_reprocess
+      operationId: identityGovernance.entitlementManagement.assignment_reprocess
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -10298,7 +10170,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get target from identityGovernance
       description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-      operationId: identityGovernance.entitlementManagement.assignments_GetTarget
+      operationId: identityGovernance.entitlementManagement.assignment_GetTarget
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -10355,7 +10227,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function additionalAccess
-      operationId: identityGovernance.entitlementManagement.assignments_additionalAccess
+      operationId: identityGovernance.entitlementManagement.assignment_additionalAccess
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10431,7 +10303,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function additionalAccess
-      operationId: identityGovernance.entitlementManagement.assignments_additionalAccess
+      operationId: identityGovernance.entitlementManagement.assignment_additionalAccess
       parameters:
         - name: accessPackageId
           in: path
@@ -10523,7 +10395,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.assignments_filterGraphBPreCurrentUser
+      operationId: identityGovernance.entitlementManagement.assignment_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -10794,11 +10666,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10834,7 +10702,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
       description: The access packages in this catalog. Read-only. Nullable.
-      operationId: identityGovernance.entitlementManagement.catalogs_ListAccessPackages
+      operationId: identityGovernance.entitlementManagement.catalog_ListAccessPackages
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -10924,7 +10792,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to accessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs_CreateAccessPackages
+      operationId: identityGovernance.entitlementManagement.catalog_CreateAccessPackages
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -10957,7 +10825,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
       description: The access packages in this catalog. Read-only. Nullable.
-      operationId: identityGovernance.entitlementManagement.catalogs_GetAccessPackages
+      operationId: identityGovernance.entitlementManagement.catalog_GetAccessPackages
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11028,7 +10896,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property accessPackages in identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs_UpdateAccessPackages
+      operationId: identityGovernance.entitlementManagement.catalog_UpdateAccessPackages
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11055,11 +10923,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11067,7 +10931,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property accessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs_DeleteAccessPackages
+      operationId: identityGovernance.entitlementManagement.catalog_DeleteAccessPackages
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11106,7 +10970,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_ListAccessPackagesIncompatibleGraphWPre
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_ListAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11206,7 +11070,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get accessPackagesIncompatibleWith from identityGovernance
       description: The access packages that are incompatible with this package. Read-only.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetAccessPackagesIncompatibleGraphWPre
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_GetAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11286,7 +11150,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_ListAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_ListAssignmentPolicies
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11398,7 +11262,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to assignmentPolicies for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_CreateAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_CreateAssignmentPolicies
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11438,7 +11302,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_GetAssignmentPolicies
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11519,7 +11383,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property assignmentPolicies in identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_UpdateAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_UpdateAssignmentPolicies
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11554,11 +11418,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11566,7 +11426,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property assignmentPolicies for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_DeleteAssignmentPolicies
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_DeleteAssignmentPolicies
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11610,7 +11470,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
       description: Access package containing this policy. Read-only.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetAccessPackage
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage.assignmentPolicy_GetAccessPackage
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11691,7 +11551,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
       description: Catalog of the access package containing this policy. Read-only.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetCatalog
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage.assignmentPolicy_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11766,7 +11626,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get questions from identityGovernance
       description: Questions that are posed to the  requestor.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_ListQuestions
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage.assignmentPolicy_ListQuestions
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11862,7 +11722,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to questions for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_CreateQuestions
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage.assignmentPolicy_CreateQuestions
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11911,7 +11771,7 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get questions from identityGovernance
       description: Questions that are posed to the  requestor.
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetQuestions
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage.assignmentPolicy_GetQuestions
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -11988,7 +11848,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property questions in identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_UpdateQuestions
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage.assignmentPolicy_UpdateQuestions
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12031,11 +11891,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessPackageQuestion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12043,7 +11899,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property questions for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_DeleteQuestions
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage.assignmentPolicy_DeleteQuestions
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12094,7 +11950,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetCatalog
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12164,7 +12020,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_ListIncompatibleAccessPackages
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_ListIncompatibleAccessPackages
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12263,7 +12119,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_DeleteIncompatibleAccessPackagesGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_DeleteIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12317,7 +12173,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_ListIncompatibleAccessPackagesGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_ListIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12376,7 +12232,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleAccessPackages for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_CreateIncompatibleAccessPackagesGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_CreateIncompatibleAccessPackagesGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12411,7 +12267,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_ListIncompatibleGroups
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_ListIncompatibleGroups
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12656,7 +12512,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_DeleteIncompatibleGroupsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_DeleteIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12710,7 +12566,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_ListIncompatibleGroupsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_ListIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12837,7 +12693,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to incompatibleGroups for identityGovernance
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_CreateIncompatibleGroupsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_CreateIncompatibleGroupsGraphBPreRef
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12872,7 +12728,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_getApplicablePolicyRequirements
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_getApplicablePolicyRequirements
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -12918,7 +12774,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_filterGraphBPreCurrentUser
+      operationId: identityGovernance.entitlementManagement.catalog.accessPackage_filterGraphBPreCurrentUser
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -13198,11 +13054,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13241,7 +13093,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListExternalSponsors
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_ListExternalSponsors
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13309,7 +13161,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to externalSponsors for identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_CreateExternalSponsors
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_CreateExternalSponsors
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13341,7 +13193,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property externalSponsors for identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_DeleteExternalSponsorsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_DeleteExternalSponsorsGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13387,7 +13239,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListExternalSponsorsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_ListExternalSponsorsGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13430,7 +13282,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to externalSponsors for identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_CreateExternalSponsorsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_CreateExternalSponsorsGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13453,7 +13305,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function delta
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_delta
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.externalSponsor_delta
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13532,7 +13384,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_getAvailableExtensionProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.externalSponsor_getAvailableExtensionProperties
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13589,7 +13441,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_getGraphBPreIds
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.externalSponsor_getGraphBPreIds
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13651,7 +13503,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.externalSponsors_validateProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.externalSponsor_validateProperties
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13700,7 +13552,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListInternalSponsors
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_ListInternalSponsors
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13768,7 +13620,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to internalSponsors for identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_CreateInternalSponsors
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_CreateInternalSponsors
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13800,7 +13652,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property internalSponsors for identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_DeleteInternalSponsorsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_DeleteInternalSponsorsGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13846,7 +13698,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListInternalSponsorsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_ListInternalSponsorsGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13889,7 +13741,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property ref to internalSponsors for identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_CreateInternalSponsorsGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedOrganization_CreateInternalSponsorsGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13912,7 +13764,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function delta
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_delta
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.internalSponsor_delta
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -13991,7 +13843,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getAvailableExtensionProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.internalSponsor_getAvailableExtensionProperties
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -14048,7 +13900,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_getGraphBPreIds
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.internalSponsor_getGraphBPreIds
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -14110,7 +13962,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations.internalSponsors_validateProperties
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.internalSponsor_validateProperties
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -14215,11 +14067,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.entitlementManagementSettings'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14300,11 +14148,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.termsOfUseContainer'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14532,11 +14376,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14759,11 +14599,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreement'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14802,7 +14638,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0
-      operationId: identityGovernance.termsGraphOPreUse.agreements_ListAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreement_ListAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -14906,7 +14742,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to acceptances for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements_CreateAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreement_CreateAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -14939,7 +14775,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get acceptances from identityGovernance
       description: Read-only. Information about acceptances of this agreement.
-      operationId: identityGovernance.termsGraphOPreUse.agreements_GetAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreement_GetAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -15008,7 +14844,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property acceptances in identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements_UpdateAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreement_UpdateAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -15035,11 +14871,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15047,7 +14879,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property acceptances for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements_DeleteAcceptances
+      operationId: identityGovernance.termsGraphOPreUse.agreement_DeleteAcceptances
       parameters:
         - name: agreement-id
           in: path
@@ -15086,7 +14918,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0
-      operationId: identityGovernance.termsGraphOPreUse.agreements_GetFile
+      operationId: identityGovernance.termsGraphOPreUse.agreement_GetFile
       parameters:
         - name: agreement-id
           in: path
@@ -15143,7 +14975,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property file in identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements_UpdateFile
+      operationId: identityGovernance.termsGraphOPreUse.agreement_UpdateFile
       parameters:
         - name: agreement-id
           in: path
@@ -15162,11 +14994,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15174,7 +15002,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property file for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements_DeleteFile
+      operationId: identityGovernance.termsGraphOPreUse.agreement_DeleteFile
       parameters:
         - name: agreement-id
           in: path
@@ -15202,7 +15030,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
       description: The localized version of the terms of use agreement files attached to the agreement.
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file_ListLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_ListLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -15290,7 +15118,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to localizations for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file_CreateLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_CreateLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -15323,7 +15151,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
       description: The localized version of the terms of use agreement files attached to the agreement.
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file_GetLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_GetLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -15388,7 +15216,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property localizations in identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file_UpdateLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_UpdateLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -15415,11 +15243,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15427,7 +15251,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property localizations for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file_DeleteLocalizations
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_DeleteLocalizations
       parameters:
         - name: agreement-id
           in: path
@@ -15463,7 +15287,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
       description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_ListVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file.localization_ListVersions
       parameters:
         - name: agreement-id
           in: path
@@ -15557,7 +15381,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to versions for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_CreateVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file.localization_CreateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -15598,7 +15422,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
       description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_GetVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file.localization_GetVersions
       parameters:
         - name: agreement-id
           in: path
@@ -15669,7 +15493,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property versions in identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_UpdateVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file.localization_UpdateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -15704,11 +15528,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFileVersion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15716,7 +15536,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property versions for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_DeleteVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file.localization_DeleteVersions
       parameters:
         - name: agreement-id
           in: path
@@ -15760,7 +15580,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
       description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
-      operationId: identityGovernance.termsGraphOPreUse.agreements_ListFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreement_ListFiles
       parameters:
         - name: agreement-id
           in: path
@@ -15852,7 +15672,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0
-      operationId: identityGovernance.termsGraphOPreUse.agreements_CreateFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreement_CreateFiles
       parameters:
         - name: agreement-id
           in: path
@@ -15885,7 +15705,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
       description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
-      operationId: identityGovernance.termsGraphOPreUse.agreements_GetFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreement_GetFiles
       parameters:
         - name: agreement-id
           in: path
@@ -15950,7 +15770,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property files in identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements_UpdateFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreement_UpdateFiles
       parameters:
         - name: agreement-id
           in: path
@@ -15977,11 +15797,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15989,7 +15805,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property files for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements_DeleteFiles
+      operationId: identityGovernance.termsGraphOPreUse.agreement_DeleteFiles
       parameters:
         - name: agreement-id
           in: path
@@ -16025,7 +15841,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
       description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-      operationId: identityGovernance.termsGraphOPreUse.agreements.files_ListVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_ListVersions
       parameters:
         - name: agreement-id
           in: path
@@ -16119,7 +15935,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to versions for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements.files_CreateVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_CreateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -16160,7 +15976,7 @@ paths:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
       description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
-      operationId: identityGovernance.termsGraphOPreUse.agreements.files_GetVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_GetVersions
       parameters:
         - name: agreement-id
           in: path
@@ -16231,7 +16047,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property versions in identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements.files_UpdateVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_UpdateVersions
       parameters:
         - name: agreement-id
           in: path
@@ -16266,11 +16082,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.agreementFileVersion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16278,7 +16090,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property versions for identityGovernance
-      operationId: identityGovernance.termsGraphOPreUse.agreements.files_DeleteVersions
+      operationId: identityGovernance.termsGraphOPreUse.agreement.file_DeleteVersions
       parameters:
         - name: agreement-id
           in: path
@@ -16387,11 +16199,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16610,11 +16418,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16650,7 +16454,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_GetAppScope
+      operationId: roleManagement.directory.roleAssignment_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -16700,7 +16504,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property appScope in roleManagement
-      operationId: roleManagement.directory.roleAssignments_UpdateAppScope
+      operationId: roleManagement.directory.roleAssignment_UpdateAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -16719,11 +16523,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appScope'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16731,7 +16531,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property appScope for roleManagement
-      operationId: roleManagement.directory.roleAssignments_DeleteAppScope
+      operationId: roleManagement.directory.roleAssignment_DeleteAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -16759,7 +16559,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_GetDirectoryScope
+      operationId: roleManagement.directory.roleAssignment_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -16810,7 +16610,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_GetPrincipal
+      operationId: roleManagement.directory.roleAssignment_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -16861,7 +16661,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
       description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.directory.roleAssignments_GetRoleDefinition
+      operationId: roleManagement.directory.roleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -17132,11 +16932,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17172,7 +16968,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
-      operationId: roleManagement.directory.roleAssignmentScheduleInstances_GetActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentScheduleInstance_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
@@ -17237,7 +17033,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentScheduleInstances_filterGraphBPreCurrentUser
+      operationId: roleManagement.directory.roleAssignmentScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -17584,11 +17380,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17624,7 +17416,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it''s null. Supports $expand.'
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentScheduleRequest_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -17692,7 +17484,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
       description: Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetAppScope
+      operationId: roleManagement.directory.roleAssignmentScheduleRequest_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -17744,7 +17536,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetDirectoryScope
+      operationId: roleManagement.directory.roleAssignmentScheduleRequest_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -17798,7 +17590,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_cancel
+      operationId: roleManagement.directory.roleAssignmentScheduleRequest_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -17820,7 +17612,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
       description: The principal that's getting a role assignment through the request. Supports $expand.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetPrincipal
+      operationId: roleManagement.directory.roleAssignmentScheduleRequest_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -17871,7 +17663,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
       description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRoleDefinition
+      operationId: roleManagement.directory.roleAssignmentScheduleRequest_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -17931,7 +17723,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
       description: The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetTargetSchedule
+      operationId: roleManagement.directory.roleAssignmentScheduleRequest_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -18001,7 +17793,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_filterGraphBPreCurrentUser
+      operationId: roleManagement.directory.roleAssignmentScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -18339,11 +18131,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18379,7 +18167,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
-      operationId: roleManagement.directory.roleAssignmentSchedules_GetActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentSchedule_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
@@ -18446,7 +18234,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleAssignmentSchedules_filterGraphBPreCurrentUser
+      operationId: roleManagement.directory.roleAssignmentSchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -18744,11 +18532,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18784,7 +18568,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-      operationId: roleManagement.directory.roleDefinitions_ListInheritsPermissionsFrom
+      operationId: roleManagement.directory.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -18875,7 +18659,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.directory.roleDefinitions_CreateInheritsPermissionsFrom
+      operationId: roleManagement.directory.roleDefinition_CreateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -18908,7 +18692,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-      operationId: roleManagement.directory.roleDefinitions_GetInheritsPermissionsFrom
+      operationId: roleManagement.directory.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -18974,7 +18758,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      operationId: roleManagement.directory.roleDefinitions_UpdateInheritsPermissionsFrom
+      operationId: roleManagement.directory.roleDefinition_UpdateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -19001,11 +18785,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19013,7 +18793,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.directory.roleDefinitions_DeleteInheritsPermissionsFrom
+      operationId: roleManagement.directory.roleDefinition_DeleteInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -19248,11 +19028,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19287,7 +19063,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleEligibilityScheduleInstances_filterGraphBPreCurrentUser
+      operationId: roleManagement.directory.roleEligibilityScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -19623,11 +19399,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19663,7 +19435,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
       description: Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetAppScope
+      operationId: roleManagement.directory.roleEligibilityScheduleRequest_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -19715,7 +19487,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
       description: The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetDirectoryScope
+      operationId: roleManagement.directory.roleEligibilityScheduleRequest_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -19769,7 +19541,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_cancel
+      operationId: roleManagement.directory.roleEligibilityScheduleRequest_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -19791,7 +19563,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
       description: The principal that's getting a role eligibility through the request. Supports $expand.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetPrincipal
+      operationId: roleManagement.directory.roleEligibilityScheduleRequest_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -19842,7 +19614,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
       description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRoleDefinition
+      operationId: roleManagement.directory.roleEligibilityScheduleRequest_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -19902,7 +19674,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
       description: The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetTargetSchedule
+      operationId: roleManagement.directory.roleEligibilityScheduleRequest_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -19969,7 +19741,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_filterGraphBPreCurrentUser
+      operationId: roleManagement.directory.roleEligibilityScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -20298,11 +20070,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20337,7 +20105,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.directory.roleEligibilitySchedules_filterGraphBPreCurrentUser
+      operationId: roleManagement.directory.roleEligibilitySchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -20506,11 +20274,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20729,11 +20493,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20769,7 +20529,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetAppScope
+      operationId: roleManagement.entitlementManagement.roleAssignment_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -20819,7 +20579,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property appScope in roleManagement
-      operationId: roleManagement.entitlementManagement.roleAssignments_UpdateAppScope
+      operationId: roleManagement.entitlementManagement.roleAssignment_UpdateAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -20838,11 +20598,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appScope'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20850,7 +20606,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property appScope for roleManagement
-      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteAppScope
+      operationId: roleManagement.entitlementManagement.roleAssignment_DeleteAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -20878,7 +20634,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleAssignment_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -20929,7 +20685,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetPrincipal
+      operationId: roleManagement.entitlementManagement.roleAssignment_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -20980,7 +20736,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
       description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetRoleDefinition
+      operationId: roleManagement.entitlementManagement.roleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -21251,11 +21007,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21291,7 +21043,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_GetActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstance_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
@@ -21356,7 +21108,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_filterGraphBPreCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -21703,11 +21455,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21743,7 +21491,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it''s null. Supports $expand.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21811,7 +21559,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
       description: Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetAppScope
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21863,7 +21611,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21917,7 +21665,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_cancel
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21939,7 +21687,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
       description: The principal that's getting a role assignment through the request. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetPrincipal
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21990,7 +21738,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
       description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRoleDefinition
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -22050,7 +21798,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
       description: The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetTargetSchedule
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -22120,7 +21868,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_filterGraphBPreCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -22458,11 +22206,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22498,7 +22242,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_GetActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentSchedule_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
@@ -22565,7 +22309,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_filterGraphBPreCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentSchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -22863,11 +22607,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22903,7 +22643,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleDefinitions_ListInheritsPermissionsFrom
+      operationId: roleManagement.entitlementManagement.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -22994,7 +22734,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.entitlementManagement.roleDefinitions_CreateInheritsPermissionsFrom
+      operationId: roleManagement.entitlementManagement.roleDefinition_CreateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -23027,7 +22767,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleDefinitions_GetInheritsPermissionsFrom
+      operationId: roleManagement.entitlementManagement.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -23093,7 +22833,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      operationId: roleManagement.entitlementManagement.roleDefinitions_UpdateInheritsPermissionsFrom
+      operationId: roleManagement.entitlementManagement.roleDefinition_UpdateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -23120,11 +22860,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23132,7 +22868,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.entitlementManagement.roleDefinitions_DeleteInheritsPermissionsFrom
+      operationId: roleManagement.entitlementManagement.roleDefinition_DeleteInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -23367,11 +23103,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23406,7 +23138,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleInstances_filterGraphBPreCurrentUser
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -23742,11 +23474,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23782,7 +23510,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
       description: Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetAppScope
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23834,7 +23562,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
       description: The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23888,7 +23616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_cancel
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23910,7 +23638,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
       description: The principal that's getting a role eligibility through the request. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetPrincipal
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23961,7 +23689,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
       description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRoleDefinition
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -24021,7 +23749,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
       description: The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetTargetSchedule
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -24088,7 +23816,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_filterGraphBPreCurrentUser
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -24417,11 +24145,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24456,7 +24180,7 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
-      operationId: roleManagement.entitlementManagement.roleEligibilitySchedules_filterGraphBPreCurrentUser
+      operationId: roleManagement.entitlementManagement.roleEligibilitySchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
           in: path
@@ -24562,7 +24286,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-agreementacceptances?view=graph-rest-1.0
-      operationId: users_ListAgreementAcceptances
+      operationId: user_ListAgreementAcceptances
       parameters:
         - name: user-id
           in: path
@@ -24668,7 +24392,7 @@ paths:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
       description: The user's terms of use acceptance statuses. Read-only. Nullable.
-      operationId: users_GetAgreementAcceptances
+      operationId: user_GetAgreementAcceptances
       parameters:
         - name: user-id
           in: path
@@ -30683,6 +30407,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -33272,6 +32998,28 @@ components:
         - pager
         - radio
       type: string
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.assignedPlan:
       title: assignedPlan
       type: object
@@ -39361,15 +39109,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string

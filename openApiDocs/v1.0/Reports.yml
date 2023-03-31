@@ -11,7 +11,7 @@ paths:
       tags:
         - auditLogs.auditLogRoot
       summary: Get auditLogs
-      operationId: auditLogs.auditLogRoot_GetAuditLogRoot
+      operationId: auditLog.auditLogRoot_GetAuditLogRoot
       parameters:
         - name: $select
           in: query
@@ -57,7 +57,7 @@ paths:
       tags:
         - auditLogs.auditLogRoot
       summary: Update auditLogs
-      operationId: auditLogs.auditLogRoot_UpdateAuditLogRoot
+      operationId: auditLog.auditLogRoot_UpdateAuditLogRoot
       requestBody:
         description: New property values
         content:
@@ -67,11 +67,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -84,7 +80,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryaudit-list?view=graph-rest-1.0
-      operationId: auditLogs_ListDirectoryAudits
+      operationId: auditLog_ListDirectoryAudits
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -174,7 +170,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Create new navigation property to directoryAudits for auditLogs
-      operationId: auditLogs_CreateDirectoryAudits
+      operationId: auditLog_CreateDirectoryAudits
       requestBody:
         description: New navigation property
         content:
@@ -197,7 +193,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
-      operationId: auditLogs_GetDirectoryAudits
+      operationId: auditLog_GetDirectoryAudits
       parameters:
         - name: directoryAudit-id
           in: path
@@ -256,7 +252,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Update the navigation property directoryAudits in auditLogs
-      operationId: auditLogs_UpdateDirectoryAudits
+      operationId: auditLog_UpdateDirectoryAudits
       parameters:
         - name: directoryAudit-id
           in: path
@@ -275,11 +271,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryAudit'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -287,7 +279,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Delete navigation property directoryAudits for auditLogs
-      operationId: auditLogs_DeleteDirectoryAudits
+      operationId: auditLog_DeleteDirectoryAudits
       parameters:
         - name: directoryAudit-id
           in: path
@@ -318,7 +310,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0
-      operationId: auditLogs_ListProvisioning
+      operationId: auditLog_ListProvisioning
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -423,7 +415,7 @@ paths:
       tags:
         - auditLogs.provisioningObjectSummary
       summary: Create new navigation property to provisioning for auditLogs
-      operationId: auditLogs_CreateProvisioning
+      operationId: auditLog_CreateProvisioning
       requestBody:
         description: New navigation property
         content:
@@ -446,7 +438,7 @@ paths:
       tags:
         - auditLogs.provisioningObjectSummary
       summary: Get provisioning from auditLogs
-      operationId: auditLogs_GetProvisioning
+      operationId: auditLog_GetProvisioning
       parameters:
         - name: provisioningObjectSummary-id
           in: path
@@ -510,7 +502,7 @@ paths:
       tags:
         - auditLogs.provisioningObjectSummary
       summary: Update the navigation property provisioning in auditLogs
-      operationId: auditLogs_UpdateProvisioning
+      operationId: auditLog_UpdateProvisioning
       parameters:
         - name: provisioningObjectSummary-id
           in: path
@@ -529,11 +521,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -541,7 +529,7 @@ paths:
       tags:
         - auditLogs.provisioningObjectSummary
       summary: Delete navigation property provisioning for auditLogs
-      operationId: auditLogs_DeleteProvisioning
+      operationId: auditLog_DeleteProvisioning
       parameters:
         - name: provisioningObjectSummary-id
           in: path
@@ -572,7 +560,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/signin-list?view=graph-rest-1.0
-      operationId: auditLogs_ListSignIns
+      operationId: auditLog_ListSignIns
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -698,7 +686,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Create new navigation property to signIns for auditLogs
-      operationId: auditLogs_CreateSignIns
+      operationId: auditLog_CreateSignIns
       requestBody:
         description: New navigation property
         content:
@@ -721,7 +709,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
-      operationId: auditLogs_GetSignIns
+      operationId: auditLog_GetSignIns
       parameters:
         - name: signIn-id
           in: path
@@ -792,7 +780,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Update the navigation property signIns in auditLogs
-      operationId: auditLogs_UpdateSignIns
+      operationId: auditLog_UpdateSignIns
       parameters:
         - name: signIn-id
           in: path
@@ -811,11 +799,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.signIn'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -823,7 +807,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Delete navigation property signIns for auditLogs
-      operationId: auditLogs_DeleteSignIns
+      operationId: auditLog_DeleteSignIns
       parameters:
         - name: signIn-id
           in: path
@@ -903,11 +887,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementReports'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -935,7 +915,7 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
       description: Entity representing a job to export a report
-      operationId: deviceManagement.reports_ListExportJobs
+      operationId: deviceManagement.report_ListExportJobs
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1022,7 +1002,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to exportJobs for deviceManagement
-      operationId: deviceManagement.reports_CreateExportJobs
+      operationId: deviceManagement.report_CreateExportJobs
       requestBody:
         description: New navigation property
         content:
@@ -1046,7 +1026,7 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
       description: Entity representing a job to export a report
-      operationId: deviceManagement.reports_GetExportJobs
+      operationId: deviceManagement.report_GetExportJobs
       parameters:
         - name: deviceManagementExportJob-id
           in: path
@@ -1104,7 +1084,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property exportJobs in deviceManagement
-      operationId: deviceManagement.reports_UpdateExportJobs
+      operationId: deviceManagement.report_UpdateExportJobs
       parameters:
         - name: deviceManagementExportJob-id
           in: path
@@ -1123,11 +1103,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1135,7 +1111,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property exportJobs for deviceManagement
-      operationId: deviceManagement.reports_DeleteExportJobs
+      operationId: deviceManagement.report_DeleteExportJobs
       parameters:
         - name: deviceManagementExportJob-id
           in: path
@@ -1162,7 +1138,7 @@ paths:
       tags:
         - reports.reportRoot
       summary: Get reports
-      operationId: reports.reportRoot_GetReportRoot
+      operationId: report.reportRoot_GetReportRoot
       parameters:
         - name: $select
           in: query
@@ -1211,7 +1187,7 @@ paths:
       tags:
         - reports.reportRoot
       summary: Update reports
-      operationId: reports.reportRoot_UpdateReportRoot
+      operationId: report.reportRoot_UpdateReportRoot
       requestBody:
         description: New property values
         content:
@@ -1221,11 +1197,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.reportRoot'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1238,7 +1210,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/reportroot-list-dailyprintusagebyprinter?view=graph-rest-1.0
-      operationId: reports_ListDailyPrintUsageGraphBPrePrinter
+      operationId: report_ListDailyPrintUsageGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1310,7 +1282,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Create new navigation property to dailyPrintUsageByPrinter for reports
-      operationId: reports_CreateDailyPrintUsageGraphBPrePrinter
+      operationId: report_CreateDailyPrintUsageGraphBPrePrinter
       requestBody:
         description: New navigation property
         content:
@@ -1333,7 +1305,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Get dailyPrintUsageByPrinter from reports
-      operationId: reports_GetDailyPrintUsageGraphBPrePrinter
+      operationId: report_GetDailyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -1386,7 +1358,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Update the navigation property dailyPrintUsageByPrinter in reports
-      operationId: reports_UpdateDailyPrintUsageGraphBPrePrinter
+      operationId: report_UpdateDailyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -1405,11 +1377,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1417,7 +1385,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Delete navigation property dailyPrintUsageByPrinter for reports
-      operationId: reports_DeleteDailyPrintUsageGraphBPrePrinter
+      operationId: report_DeleteDailyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -1448,7 +1416,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/reportroot-list-dailyprintusagebyuser?view=graph-rest-1.0
-      operationId: reports_ListDailyPrintUsageGraphBPreUser
+      operationId: report_ListDailyPrintUsageGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1520,7 +1488,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Create new navigation property to dailyPrintUsageByUser for reports
-      operationId: reports_CreateDailyPrintUsageGraphBPreUser
+      operationId: report_CreateDailyPrintUsageGraphBPreUser
       requestBody:
         description: New navigation property
         content:
@@ -1543,7 +1511,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Get dailyPrintUsageByUser from reports
-      operationId: reports_GetDailyPrintUsageGraphBPreUser
+      operationId: report_GetDailyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -1596,7 +1564,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Update the navigation property dailyPrintUsageByUser in reports
-      operationId: reports_UpdateDailyPrintUsageGraphBPreUser
+      operationId: report_UpdateDailyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -1615,11 +1583,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1627,7 +1591,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Delete navigation property dailyPrintUsageByUser for reports
-      operationId: reports_DeleteDailyPrintUsageGraphBPreUser
+      operationId: report_DeleteDailyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -1655,7 +1619,7 @@ paths:
         - reports.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
       description: Metadata for the device configuration device activity report
-      operationId: reports_deviceConfigurationDeviceActivity
+      operationId: report_deviceConfigurationDeviceActivity
       responses:
         2XX:
           description: Success
@@ -1672,7 +1636,7 @@ paths:
         - reports.Functions
       summary: Invoke function deviceConfigurationUserActivity
       description: Metadata for the device configuration user activity report
-      operationId: reports_deviceConfigurationUserActivity
+      operationId: report_deviceConfigurationUserActivity
       responses:
         2XX:
           description: Success
@@ -1688,7 +1652,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailActivityCounts
-      operationId: reports_getEmailActivityCounts
+      operationId: report_getEmailActivityCounts
       parameters:
         - name: period
           in: path
@@ -1718,7 +1682,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailActivityUserCounts
-      operationId: reports_getEmailActivityUserCounts
+      operationId: report_getEmailActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -1748,7 +1712,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailActivityUserDetail
-      operationId: reports_getEmailActivityUserDetail
+      operationId: report_getEmailActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -1780,7 +1744,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailActivityUserDetail
-      operationId: reports_getEmailActivityUserDetail
+      operationId: report_getEmailActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -1810,7 +1774,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageAppsUserCounts
-      operationId: reports_getEmailAppUsageAppsUserCounts
+      operationId: report_getEmailAppUsageAppsUserCounts
       parameters:
         - name: period
           in: path
@@ -1840,7 +1804,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageUserCounts
-      operationId: reports_getEmailAppUsageUserCounts
+      operationId: report_getEmailAppUsageUserCounts
       parameters:
         - name: period
           in: path
@@ -1870,7 +1834,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageUserDetail
-      operationId: reports_getEmailAppUsageUserDetail
+      operationId: report_getEmailAppUsageUserDetail
       parameters:
         - name: date
           in: path
@@ -1902,7 +1866,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageUserDetail
-      operationId: reports_getEmailAppUsageUserDetail
+      operationId: report_getEmailAppUsageUserDetail
       parameters:
         - name: period
           in: path
@@ -1932,7 +1896,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageVersionsUserCounts
-      operationId: reports_getEmailAppUsageVersionsUserCounts
+      operationId: report_getEmailAppUsageVersionsUserCounts
       parameters:
         - name: period
           in: path
@@ -1962,7 +1926,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getGroupArchivedPrintJobs
-      operationId: reports_getGroupArchivedPrintJobs
+      operationId: report_getGroupArchivedPrintJobs
       parameters:
         - name: groupId
           in: path
@@ -2024,7 +1988,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getM365AppPlatformUserCounts
-      operationId: reports_getM365AppPlatformUserCounts
+      operationId: report_getM365AppPlatformUserCounts
       parameters:
         - name: period
           in: path
@@ -2054,7 +2018,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getM365AppUserCounts
-      operationId: reports_getM365AppUserCounts
+      operationId: report_getM365AppUserCounts
       parameters:
         - name: period
           in: path
@@ -2084,7 +2048,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getM365AppUserDetail
-      operationId: reports_getM365AppUserDetail
+      operationId: report_getM365AppUserDetail
       parameters:
         - name: date
           in: path
@@ -2116,7 +2080,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getM365AppUserDetail
-      operationId: reports_getM365AppUserDetail
+      operationId: report_getM365AppUserDetail
       parameters:
         - name: period
           in: path
@@ -2146,7 +2110,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getMailboxUsageDetail
-      operationId: reports_getMailboxUsageDetail
+      operationId: report_getMailboxUsageDetail
       parameters:
         - name: period
           in: path
@@ -2176,7 +2140,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getMailboxUsageMailboxCounts
-      operationId: reports_getMailboxUsageMailboxCounts
+      operationId: report_getMailboxUsageMailboxCounts
       parameters:
         - name: period
           in: path
@@ -2206,7 +2170,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getMailboxUsageQuotaStatusMailboxCounts
-      operationId: reports_getMailboxUsageQuotaStatusMailboxCounts
+      operationId: report_getMailboxUsageQuotaStatusMailboxCounts
       parameters:
         - name: period
           in: path
@@ -2236,7 +2200,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getMailboxUsageStorage
-      operationId: reports_getMailboxUsageStorage
+      operationId: report_getMailboxUsageStorage
       parameters:
         - name: period
           in: path
@@ -2266,7 +2230,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActivationCounts
-      operationId: reports_getOffice365ActivationCounts
+      operationId: report_getOffice365ActivationCounts
       responses:
         2XX:
           description: Success
@@ -2288,7 +2252,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActivationsUserCounts
-      operationId: reports_getOffice365ActivationsUserCounts
+      operationId: report_getOffice365ActivationsUserCounts
       responses:
         2XX:
           description: Success
@@ -2310,7 +2274,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActivationsUserDetail
-      operationId: reports_getOffice365ActivationsUserDetail
+      operationId: report_getOffice365ActivationsUserDetail
       responses:
         2XX:
           description: Success
@@ -2332,7 +2296,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActiveUserCounts
-      operationId: reports_getOffice365ActiveUserCounts
+      operationId: report_getOffice365ActiveUserCounts
       parameters:
         - name: period
           in: path
@@ -2362,7 +2326,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActiveUserDetail
-      operationId: reports_getOffice365ActiveUserDetail
+      operationId: report_getOffice365ActiveUserDetail
       parameters:
         - name: date
           in: path
@@ -2394,7 +2358,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActiveUserDetail
-      operationId: reports_getOffice365ActiveUserDetail
+      operationId: report_getOffice365ActiveUserDetail
       parameters:
         - name: period
           in: path
@@ -2424,7 +2388,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityCounts
-      operationId: reports_getOffice365GroupsActivityCounts
+      operationId: report_getOffice365GroupsActivityCounts
       parameters:
         - name: period
           in: path
@@ -2454,7 +2418,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityDetail
-      operationId: reports_getOffice365GroupsActivityDetail
+      operationId: report_getOffice365GroupsActivityDetail
       parameters:
         - name: date
           in: path
@@ -2486,7 +2450,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityDetail
-      operationId: reports_getOffice365GroupsActivityDetail
+      operationId: report_getOffice365GroupsActivityDetail
       parameters:
         - name: period
           in: path
@@ -2516,7 +2480,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityFileCounts
-      operationId: reports_getOffice365GroupsActivityFileCounts
+      operationId: report_getOffice365GroupsActivityFileCounts
       parameters:
         - name: period
           in: path
@@ -2546,7 +2510,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityGroupCounts
-      operationId: reports_getOffice365GroupsActivityGroupCounts
+      operationId: report_getOffice365GroupsActivityGroupCounts
       parameters:
         - name: period
           in: path
@@ -2576,7 +2540,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityStorage
-      operationId: reports_getOffice365GroupsActivityStorage
+      operationId: report_getOffice365GroupsActivityStorage
       parameters:
         - name: period
           in: path
@@ -2606,7 +2570,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ServicesUserCounts
-      operationId: reports_getOffice365ServicesUserCounts
+      operationId: report_getOffice365ServicesUserCounts
       parameters:
         - name: period
           in: path
@@ -2636,7 +2600,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveActivityFileCounts
-      operationId: reports_getOneDriveActivityFileCounts
+      operationId: report_getOneDriveActivityFileCounts
       parameters:
         - name: period
           in: path
@@ -2666,7 +2630,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveActivityUserCounts
-      operationId: reports_getOneDriveActivityUserCounts
+      operationId: report_getOneDriveActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -2696,7 +2660,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveActivityUserDetail
-      operationId: reports_getOneDriveActivityUserDetail
+      operationId: report_getOneDriveActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -2728,7 +2692,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveActivityUserDetail
-      operationId: reports_getOneDriveActivityUserDetail
+      operationId: report_getOneDriveActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -2758,7 +2722,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveUsageAccountCounts
-      operationId: reports_getOneDriveUsageAccountCounts
+      operationId: report_getOneDriveUsageAccountCounts
       parameters:
         - name: period
           in: path
@@ -2788,7 +2752,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveUsageAccountDetail
-      operationId: reports_getOneDriveUsageAccountDetail
+      operationId: report_getOneDriveUsageAccountDetail
       parameters:
         - name: date
           in: path
@@ -2820,7 +2784,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveUsageAccountDetail
-      operationId: reports_getOneDriveUsageAccountDetail
+      operationId: report_getOneDriveUsageAccountDetail
       parameters:
         - name: period
           in: path
@@ -2850,7 +2814,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveUsageFileCounts
-      operationId: reports_getOneDriveUsageFileCounts
+      operationId: report_getOneDriveUsageFileCounts
       parameters:
         - name: period
           in: path
@@ -2880,7 +2844,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveUsageStorage
-      operationId: reports_getOneDriveUsageStorage
+      operationId: report_getOneDriveUsageStorage
       parameters:
         - name: period
           in: path
@@ -2910,7 +2874,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getPrinterArchivedPrintJobs
-      operationId: reports_getPrinterArchivedPrintJobs
+      operationId: report_getPrinterArchivedPrintJobs
       parameters:
         - name: printerId
           in: path
@@ -2972,7 +2936,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityFileCounts
-      operationId: reports_getSharePointActivityFileCounts
+      operationId: report_getSharePointActivityFileCounts
       parameters:
         - name: period
           in: path
@@ -3002,7 +2966,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityPages
-      operationId: reports_getSharePointActivityPages
+      operationId: report_getSharePointActivityPages
       parameters:
         - name: period
           in: path
@@ -3032,7 +2996,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityUserCounts
-      operationId: reports_getSharePointActivityUserCounts
+      operationId: report_getSharePointActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -3062,7 +3026,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityUserDetail
-      operationId: reports_getSharePointActivityUserDetail
+      operationId: report_getSharePointActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -3094,7 +3058,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityUserDetail
-      operationId: reports_getSharePointActivityUserDetail
+      operationId: report_getSharePointActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -3124,7 +3088,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsageDetail
-      operationId: reports_getSharePointSiteUsageDetail
+      operationId: report_getSharePointSiteUsageDetail
       parameters:
         - name: date
           in: path
@@ -3156,7 +3120,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsageDetail
-      operationId: reports_getSharePointSiteUsageDetail
+      operationId: report_getSharePointSiteUsageDetail
       parameters:
         - name: period
           in: path
@@ -3186,7 +3150,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsageFileCounts
-      operationId: reports_getSharePointSiteUsageFileCounts
+      operationId: report_getSharePointSiteUsageFileCounts
       parameters:
         - name: period
           in: path
@@ -3216,7 +3180,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsagePages
-      operationId: reports_getSharePointSiteUsagePages
+      operationId: report_getSharePointSiteUsagePages
       parameters:
         - name: period
           in: path
@@ -3246,7 +3210,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsageSiteCounts
-      operationId: reports_getSharePointSiteUsageSiteCounts
+      operationId: report_getSharePointSiteUsageSiteCounts
       parameters:
         - name: period
           in: path
@@ -3276,7 +3240,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsageStorage
-      operationId: reports_getSharePointSiteUsageStorage
+      operationId: report_getSharePointSiteUsageStorage
       parameters:
         - name: period
           in: path
@@ -3306,7 +3270,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessActivityCounts
-      operationId: reports_getSkypeGraphFPreBusinessActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessActivityCounts
       parameters:
         - name: period
           in: path
@@ -3336,7 +3300,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessActivityUserCounts
-      operationId: reports_getSkypeGraphFPreBusinessActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -3366,7 +3330,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
-      operationId: reports_getSkypeGraphFPreBusinessActivityUserDetail
+      operationId: report_getSkypeGraphFPreBusinessActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -3398,7 +3362,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
-      operationId: reports_getSkypeGraphFPreBusinessActivityUserDetail
+      operationId: report_getSkypeGraphFPreBusinessActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -3428,7 +3392,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
-      operationId: reports_getSkypeGraphFPreBusinessDeviceUsageDistributionUserCounts
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageDistributionUserCounts
       parameters:
         - name: period
           in: path
@@ -3458,7 +3422,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserCounts
-      operationId: reports_getSkypeGraphFPreBusinessDeviceUsageUserCounts
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserCounts
       parameters:
         - name: period
           in: path
@@ -3488,7 +3452,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
-      operationId: reports_getSkypeGraphFPreBusinessDeviceUsageUserDetail
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserDetail
       parameters:
         - name: date
           in: path
@@ -3520,7 +3484,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
-      operationId: reports_getSkypeGraphFPreBusinessDeviceUsageUserDetail
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserDetail
       parameters:
         - name: period
           in: path
@@ -3550,7 +3514,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityCounts
-      operationId: reports_getSkypeGraphFPreBusinessOrganizerActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityCounts
       parameters:
         - name: period
           in: path
@@ -3580,7 +3544,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
-      operationId: reports_getSkypeGraphFPreBusinessOrganizerActivityMinuteCounts
+      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityMinuteCounts
       parameters:
         - name: period
           in: path
@@ -3610,7 +3574,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityUserCounts
-      operationId: reports_getSkypeGraphFPreBusinessOrganizerActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -3640,7 +3604,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityCounts
-      operationId: reports_getSkypeGraphFPreBusinessParticipantActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessParticipantActivityCounts
       parameters:
         - name: period
           in: path
@@ -3670,7 +3634,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityMinuteCounts
-      operationId: reports_getSkypeGraphFPreBusinessParticipantActivityMinuteCounts
+      operationId: report_getSkypeGraphFPreBusinessParticipantActivityMinuteCounts
       parameters:
         - name: period
           in: path
@@ -3700,7 +3664,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityUserCounts
-      operationId: reports_getSkypeGraphFPreBusinessParticipantActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessParticipantActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -3730,7 +3694,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityCounts
-      operationId: reports_getSkypeGraphFPreBusinessPeerToPeerActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityCounts
       parameters:
         - name: period
           in: path
@@ -3760,7 +3724,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
-      operationId: reports_getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCounts
+      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCounts
       parameters:
         - name: period
           in: path
@@ -3790,7 +3754,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
-      operationId: reports_getSkypeGraphFPreBusinessPeerToPeerActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -3820,7 +3784,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageDistributionUserCounts
-      operationId: reports_getTeamsDeviceUsageDistributionUserCounts
+      operationId: report_getTeamsDeviceUsageDistributionUserCounts
       parameters:
         - name: period
           in: path
@@ -3850,7 +3814,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageUserCounts
-      operationId: reports_getTeamsDeviceUsageUserCounts
+      operationId: report_getTeamsDeviceUsageUserCounts
       parameters:
         - name: period
           in: path
@@ -3880,7 +3844,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageUserDetail
-      operationId: reports_getTeamsDeviceUsageUserDetail
+      operationId: report_getTeamsDeviceUsageUserDetail
       parameters:
         - name: date
           in: path
@@ -3912,7 +3876,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageUserDetail
-      operationId: reports_getTeamsDeviceUsageUserDetail
+      operationId: report_getTeamsDeviceUsageUserDetail
       parameters:
         - name: period
           in: path
@@ -3942,7 +3906,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityCounts
-      operationId: reports_getTeamsUserActivityCounts
+      operationId: report_getTeamsUserActivityCounts
       parameters:
         - name: period
           in: path
@@ -3972,7 +3936,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityUserCounts
-      operationId: reports_getTeamsUserActivityUserCounts
+      operationId: report_getTeamsUserActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -4002,7 +3966,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityUserDetail
-      operationId: reports_getTeamsUserActivityUserDetail
+      operationId: report_getTeamsUserActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -4034,7 +3998,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityUserDetail
-      operationId: reports_getTeamsUserActivityUserDetail
+      operationId: report_getTeamsUserActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -4064,7 +4028,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getUserArchivedPrintJobs
-      operationId: reports_getUserArchivedPrintJobs
+      operationId: report_getUserArchivedPrintJobs
       parameters:
         - name: userId
           in: path
@@ -4126,7 +4090,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerActivityCounts
-      operationId: reports_getYammerActivityCounts
+      operationId: report_getYammerActivityCounts
       parameters:
         - name: period
           in: path
@@ -4156,7 +4120,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerActivityUserCounts
-      operationId: reports_getYammerActivityUserCounts
+      operationId: report_getYammerActivityUserCounts
       parameters:
         - name: period
           in: path
@@ -4186,7 +4150,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerActivityUserDetail
-      operationId: reports_getYammerActivityUserDetail
+      operationId: report_getYammerActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -4218,7 +4182,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerActivityUserDetail
-      operationId: reports_getYammerActivityUserDetail
+      operationId: report_getYammerActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -4248,7 +4212,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerDeviceUsageDistributionUserCounts
-      operationId: reports_getYammerDeviceUsageDistributionUserCounts
+      operationId: report_getYammerDeviceUsageDistributionUserCounts
       parameters:
         - name: period
           in: path
@@ -4278,7 +4242,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerDeviceUsageUserCounts
-      operationId: reports_getYammerDeviceUsageUserCounts
+      operationId: report_getYammerDeviceUsageUserCounts
       parameters:
         - name: period
           in: path
@@ -4308,7 +4272,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerDeviceUsageUserDetail
-      operationId: reports_getYammerDeviceUsageUserDetail
+      operationId: report_getYammerDeviceUsageUserDetail
       parameters:
         - name: date
           in: path
@@ -4340,7 +4304,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerDeviceUsageUserDetail
-      operationId: reports_getYammerDeviceUsageUserDetail
+      operationId: report_getYammerDeviceUsageUserDetail
       parameters:
         - name: period
           in: path
@@ -4370,7 +4334,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerGroupsActivityCounts
-      operationId: reports_getYammerGroupsActivityCounts
+      operationId: report_getYammerGroupsActivityCounts
       parameters:
         - name: period
           in: path
@@ -4400,7 +4364,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerGroupsActivityDetail
-      operationId: reports_getYammerGroupsActivityDetail
+      operationId: report_getYammerGroupsActivityDetail
       parameters:
         - name: date
           in: path
@@ -4432,7 +4396,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerGroupsActivityDetail
-      operationId: reports_getYammerGroupsActivityDetail
+      operationId: report_getYammerGroupsActivityDetail
       parameters:
         - name: period
           in: path
@@ -4462,7 +4426,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerGroupsActivityGroupCounts
-      operationId: reports_getYammerGroupsActivityGroupCounts
+      operationId: report_getYammerGroupsActivityGroupCounts
       parameters:
         - name: period
           in: path
@@ -4492,7 +4456,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: reports_managedDeviceEnrollmentFailureDetails
+      operationId: report_managedDeviceEnrollmentFailureDetails
       responses:
         2XX:
           description: Success
@@ -4508,7 +4472,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: reports_managedDeviceEnrollmentFailureDetails
+      operationId: report_managedDeviceEnrollmentFailureDetails
       parameters:
         - name: skip
           in: path
@@ -4563,7 +4527,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: reports_managedDeviceEnrollmentTopFailures
+      operationId: report_managedDeviceEnrollmentTopFailures
       responses:
         2XX:
           description: Success
@@ -4579,7 +4543,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: reports_managedDeviceEnrollmentTopFailures
+      operationId: report_managedDeviceEnrollmentTopFailures
       parameters:
         - name: period
           in: path
@@ -4608,7 +4572,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyprinter?view=graph-rest-1.0
-      operationId: reports_ListMonthlyPrintUsageGraphBPrePrinter
+      operationId: report_ListMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4680,7 +4644,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Create new navigation property to monthlyPrintUsageByPrinter for reports
-      operationId: reports_CreateMonthlyPrintUsageGraphBPrePrinter
+      operationId: report_CreateMonthlyPrintUsageGraphBPrePrinter
       requestBody:
         description: New navigation property
         content:
@@ -4703,7 +4667,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Get monthlyPrintUsageByPrinter from reports
-      operationId: reports_GetMonthlyPrintUsageGraphBPrePrinter
+      operationId: report_GetMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -4756,7 +4720,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Update the navigation property monthlyPrintUsageByPrinter in reports
-      operationId: reports_UpdateMonthlyPrintUsageGraphBPrePrinter
+      operationId: report_UpdateMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -4775,11 +4739,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4787,7 +4747,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Delete navigation property monthlyPrintUsageByPrinter for reports
-      operationId: reports_DeleteMonthlyPrintUsageGraphBPrePrinter
+      operationId: report_DeleteMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
           in: path
@@ -4818,7 +4778,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyuser?view=graph-rest-1.0
-      operationId: reports_ListMonthlyPrintUsageGraphBPreUser
+      operationId: report_ListMonthlyPrintUsageGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4890,7 +4850,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Create new navigation property to monthlyPrintUsageByUser for reports
-      operationId: reports_CreateMonthlyPrintUsageGraphBPreUser
+      operationId: report_CreateMonthlyPrintUsageGraphBPreUser
       requestBody:
         description: New navigation property
         content:
@@ -4913,7 +4873,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Get monthlyPrintUsageByUser from reports
-      operationId: reports_GetMonthlyPrintUsageGraphBPreUser
+      operationId: report_GetMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -4966,7 +4926,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Update the navigation property monthlyPrintUsageByUser in reports
-      operationId: reports_UpdateMonthlyPrintUsageGraphBPreUser
+      operationId: report_UpdateMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -4985,11 +4945,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4997,7 +4953,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Delete navigation property monthlyPrintUsageByUser for reports
-      operationId: reports_DeleteMonthlyPrintUsageGraphBPreUser
+      operationId: report_DeleteMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
           in: path
@@ -5024,7 +4980,7 @@ paths:
       tags:
         - reports.securityReportsRoot
       summary: Get security from reports
-      operationId: reports_GetSecurity
+      operationId: report_GetSecurity
       parameters:
         - name: $select
           in: query
@@ -5064,7 +5020,7 @@ paths:
       tags:
         - reports.securityReportsRoot
       summary: Update the navigation property security in reports
-      operationId: reports_UpdateSecurity
+      operationId: report_UpdateSecurity
       requestBody:
         description: New navigation property values
         content:
@@ -5074,11 +5030,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5086,7 +5038,7 @@ paths:
       tags:
         - reports.securityReportsRoot
       summary: Delete navigation property security for reports
-      operationId: reports_DeleteSecurity
+      operationId: report_DeleteSecurity
       parameters:
         - name: If-Match
           in: header
@@ -5105,7 +5057,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getAttackSimulationRepeatOffenders
-      operationId: reports.security_getAttackSimulationRepeatOffenders
+      operationId: report.security_getAttackSimulationRepeatOffenders
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5140,7 +5092,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getAttackSimulationSimulationUserCoverage
-      operationId: reports.security_getAttackSimulationSimulationUserCoverage
+      operationId: report.security_getAttackSimulationSimulationUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5175,7 +5127,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getAttackSimulationTrainingUserCoverage
-      operationId: reports.security_getAttackSimulationTrainingUserCoverage
+      operationId: report.security_getAttackSimulationTrainingUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

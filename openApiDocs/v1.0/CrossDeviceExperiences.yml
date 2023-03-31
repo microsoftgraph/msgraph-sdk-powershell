@@ -12,7 +12,7 @@ paths:
         - users.userActivity
       summary: Get activities from users
       description: The user's activities across devices. Read-only. Nullable.
-      operationId: users_ListActivities
+      operationId: user_ListActivities
       parameters:
         - name: user-id
           in: path
@@ -118,7 +118,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to activities for users
-      operationId: users_CreateActivities
+      operationId: user_CreateActivities
       parameters:
         - name: user-id
           in: path
@@ -151,7 +151,7 @@ paths:
         - users.userActivity
       summary: Get activities from users
       description: The user's activities across devices. Read-only. Nullable.
-      operationId: users_GetActivities
+      operationId: user_GetActivities
       parameters:
         - name: user-id
           in: path
@@ -222,7 +222,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property activities in users
-      operationId: users_UpdateActivities
+      operationId: user_UpdateActivities
       parameters:
         - name: user-id
           in: path
@@ -249,11 +249,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userActivity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -261,7 +257,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property activities for users
-      operationId: users_DeleteActivities
+      operationId: user_DeleteActivities
       parameters:
         - name: user-id
           in: path
@@ -297,7 +293,7 @@ paths:
         - users.userActivity
       summary: Get historyItems from users
       description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-      operationId: users.activities_ListHistoryItems
+      operationId: user.activity_ListHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -396,7 +392,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to historyItems for users
-      operationId: users.activities_CreateHistoryItems
+      operationId: user.activity_CreateHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -437,7 +433,7 @@ paths:
         - users.userActivity
       summary: Get historyItems from users
       description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-      operationId: users.activities_GetHistoryItems
+      operationId: user.activity_GetHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -511,7 +507,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property historyItems in users
-      operationId: users.activities_UpdateHistoryItems
+      operationId: user.activity_UpdateHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -546,11 +542,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -558,7 +550,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property historyItems for users
-      operationId: users.activities_DeleteHistoryItems
+      operationId: user.activity_DeleteHistoryItems
       parameters:
         - name: user-id
           in: path
@@ -602,7 +594,7 @@ paths:
         - users.userActivity
       summary: Get activity from users
       description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_GetActivity
+      operationId: user.activity.historyItem_GetActivity
       parameters:
         - name: user-id
           in: path

@@ -11,7 +11,7 @@ paths:
       tags:
         - communications.cloudCommunications
       summary: Get communications
-      operationId: communications.cloudCommunications_GetCloudCommunications
+      operationId: communication.cloudCommunication_GetCloudCommunications
       parameters:
         - name: $select
           in: query
@@ -59,7 +59,7 @@ paths:
       tags:
         - communications.cloudCommunications
       summary: Update communications
-      operationId: communications.cloudCommunications_UpdateCloudCommunications
+      operationId: communication.cloudCommunication_UpdateCloudCommunications
       requestBody:
         description: New property values
         content:
@@ -69,11 +69,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.cloudCommunications'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -82,7 +78,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get callRecords from communications
-      operationId: communications_ListCallRecords
+      operationId: communication_ListCallRecords
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -168,7 +164,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to callRecords for communications
-      operationId: communications_CreateCallRecords
+      operationId: communication_CreateCallRecords
       requestBody:
         description: New navigation property
         content:
@@ -191,7 +187,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get callRecords from communications
-      operationId: communications_GetCallRecords
+      operationId: communication_GetCallRecords
       parameters:
         - name: callRecord-id
           in: path
@@ -250,7 +246,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property callRecords in communications
-      operationId: communications_UpdateCallRecords
+      operationId: communication_UpdateCallRecords
       parameters:
         - name: callRecord-id
           in: path
@@ -269,11 +265,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -281,7 +273,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property callRecords for communications
-      operationId: communications_DeleteCallRecords
+      operationId: communication_DeleteCallRecords
       parameters:
         - name: callRecord-id
           in: path
@@ -312,7 +304,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/callrecords-session-list?view=graph-rest-1.0
-      operationId: communications.callRecords_ListSessions
+      operationId: communication.callRecord_ListSessions
       parameters:
         - name: callRecord-id
           in: path
@@ -397,7 +389,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to sessions for communications
-      operationId: communications.callRecords_CreateSessions
+      operationId: communication.callRecord_CreateSessions
       parameters:
         - name: callRecord-id
           in: path
@@ -430,7 +422,7 @@ paths:
         - communications.callRecord
       summary: Get sessions from communications
       description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
-      operationId: communications.callRecords_GetSessions
+      operationId: communication.callRecord_GetSessions
       parameters:
         - name: callRecord-id
           in: path
@@ -494,7 +486,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property sessions in communications
-      operationId: communications.callRecords_UpdateSessions
+      operationId: communication.callRecord_UpdateSessions
       parameters:
         - name: callRecord-id
           in: path
@@ -521,11 +513,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.callRecords.session'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -533,7 +521,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property sessions for communications
-      operationId: communications.callRecords_DeleteSessions
+      operationId: communication.callRecord_DeleteSessions
       parameters:
         - name: callRecord-id
           in: path
@@ -569,7 +557,7 @@ paths:
         - communications.callRecord
       summary: Get segments from communications
       description: The list of segments involved in the session. Read-only. Nullable.
-      operationId: communications.callRecords.sessions_ListSegments
+      operationId: communication.callRecord.session_ListSegments
       parameters:
         - name: callRecord-id
           in: path
@@ -660,7 +648,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to segments for communications
-      operationId: communications.callRecords.sessions_CreateSegments
+      operationId: communication.callRecord.session_CreateSegments
       parameters:
         - name: callRecord-id
           in: path
@@ -701,7 +689,7 @@ paths:
         - communications.callRecord
       summary: Get segments from communications
       description: The list of segments involved in the session. Read-only. Nullable.
-      operationId: communications.callRecords.sessions_GetSegments
+      operationId: communication.callRecord.session_GetSegments
       parameters:
         - name: callRecord-id
           in: path
@@ -771,7 +759,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property segments in communications
-      operationId: communications.callRecords.sessions_UpdateSegments
+      operationId: communication.callRecord.session_UpdateSegments
       parameters:
         - name: callRecord-id
           in: path
@@ -806,11 +794,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -818,7 +802,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property segments for communications
-      operationId: communications.callRecords.sessions_DeleteSegments
+      operationId: communication.callRecord.session_DeleteSegments
       parameters:
         - name: callRecord-id
           in: path
@@ -861,7 +845,7 @@ paths:
       tags:
         - communications.call
       summary: Get calls from communications
-      operationId: communications_ListCalls
+      operationId: communication_ListCalls
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1008,7 +992,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
-      operationId: communications_CreateCalls
+      operationId: communication_CreateCalls
       requestBody:
         description: New navigation property
         content:
@@ -1031,7 +1015,7 @@ paths:
       tags:
         - communications.call
       summary: Get calls from communications
-      operationId: communications_GetCalls
+      operationId: communication_GetCalls
       parameters:
         - name: call-id
           in: path
@@ -1113,7 +1097,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property calls in communications
-      operationId: communications_UpdateCalls
+      operationId: communication_UpdateCalls
       parameters:
         - name: call-id
           in: path
@@ -1132,11 +1116,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.call'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1144,7 +1124,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property calls for communications
-      operationId: communications_DeleteCalls
+      operationId: communication_DeleteCalls
       parameters:
         - name: call-id
           in: path
@@ -1175,7 +1155,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0
-      operationId: communications.calls_ListAudioRoutingGroups
+      operationId: communication.call_ListAudioRoutingGroups
       parameters:
         - name: call-id
           in: path
@@ -1253,7 +1233,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0
-      operationId: communications.calls_CreateAudioRoutingGroups
+      operationId: communication.call_CreateAudioRoutingGroups
       parameters:
         - name: call-id
           in: path
@@ -1285,7 +1265,7 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
-      operationId: communications.calls_GetAudioRoutingGroups
+      operationId: communication.call_GetAudioRoutingGroups
       parameters:
         - name: call-id
           in: path
@@ -1344,7 +1324,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property audioRoutingGroups in communications
-      operationId: communications.calls_UpdateAudioRoutingGroups
+      operationId: communication.call_UpdateAudioRoutingGroups
       parameters:
         - name: call-id
           in: path
@@ -1371,11 +1351,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1383,7 +1359,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property audioRoutingGroups for communications
-      operationId: communications.calls_DeleteAudioRoutingGroups
+      operationId: communication.call_DeleteAudioRoutingGroups
       parameters:
         - name: call-id
           in: path
@@ -1422,7 +1398,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
-      operationId: communications.calls_ListContentSharingSessions
+      operationId: communication.call_ListContentSharingSessions
       parameters:
         - name: call-id
           in: path
@@ -1487,7 +1463,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to contentSharingSessions for communications
-      operationId: communications.calls_CreateContentSharingSessions
+      operationId: communication.call_CreateContentSharingSessions
       parameters:
         - name: call-id
           in: path
@@ -1519,7 +1495,7 @@ paths:
       tags:
         - communications.call
       summary: Get contentSharingSessions from communications
-      operationId: communications.calls_GetContentSharingSessions
+      operationId: communication.call_GetContentSharingSessions
       parameters:
         - name: call-id
           in: path
@@ -1575,7 +1551,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property contentSharingSessions in communications
-      operationId: communications.calls_UpdateContentSharingSessions
+      operationId: communication.call_UpdateContentSharingSessions
       parameters:
         - name: call-id
           in: path
@@ -1602,11 +1578,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1614,7 +1586,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property contentSharingSessions for communications
-      operationId: communications.calls_DeleteContentSharingSessions
+      operationId: communication.call_DeleteContentSharingSessions
       parameters:
         - name: call-id
           in: path
@@ -1653,7 +1625,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
-      operationId: communications.calls_addLargeGalleryView
+      operationId: communication.call_addLargeGalleryView
       parameters:
         - name: call-id
           in: path
@@ -1695,7 +1667,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-answer?view=graph-rest-1.0
-      operationId: communications.calls_answer
+      operationId: communication.call_answer
       parameters:
         - name: call-id
           in: path
@@ -1746,7 +1718,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0
-      operationId: communications.calls_cancelMediaProcessing
+      operationId: communication.call_cancelMediaProcessing
       parameters:
         - name: call-id
           in: path
@@ -1788,7 +1760,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0
-      operationId: communications.calls_changeScreenSharingRole
+      operationId: communication.call_changeScreenSharingRole
       parameters:
         - name: call-id
           in: path
@@ -1825,7 +1797,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-keepalive?view=graph-rest-1.0
-      operationId: communications.calls_keepAlive
+      operationId: communication.call_keepAlive
       parameters:
         - name: call-id
           in: path
@@ -1850,7 +1822,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-mute?view=graph-rest-1.0
-      operationId: communications.calls_mute
+      operationId: communication.call_mute
       parameters:
         - name: call-id
           in: path
@@ -1892,7 +1864,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
-      operationId: communications.calls_playPrompt
+      operationId: communication.call_playPrompt
       parameters:
         - name: call-id
           in: path
@@ -1938,7 +1910,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action record
-      operationId: communications.calls_record
+      operationId: communication.call_record
       parameters:
         - name: call-id
           in: path
@@ -2019,7 +1991,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-record?view=graph-rest-1.0
-      operationId: communications.calls_recordResponse
+      operationId: communication.call_recordResponse
       parameters:
         - name: call-id
           in: path
@@ -2100,7 +2072,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
-      operationId: communications.calls_redirect
+      operationId: communication.call_redirect
       parameters:
         - name: call-id
           in: path
@@ -2158,7 +2130,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
-      operationId: communications.calls_reject
+      operationId: communication.call_reject
       parameters:
         - name: call-id
           in: path
@@ -2198,7 +2170,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
-      operationId: communications.calls_subscribeToTone
+      operationId: communication.call_subscribeToTone
       parameters:
         - name: call-id
           in: path
@@ -2240,7 +2212,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
-      operationId: communications.calls_transfer
+      operationId: communication.call_transfer
       parameters:
         - name: call-id
           in: path
@@ -2279,7 +2251,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-unmute?view=graph-rest-1.0
-      operationId: communications.calls_unmute
+      operationId: communication.call_unmute
       parameters:
         - name: call-id
           in: path
@@ -2321,7 +2293,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0
-      operationId: communications.calls_updateRecordingStatus
+      operationId: communication.call_updateRecordingStatus
       parameters:
         - name: call-id
           in: path
@@ -2361,7 +2333,7 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      operationId: communications.calls_ListOperations
+      operationId: communication.call_ListOperations
       parameters:
         - name: call-id
           in: path
@@ -2435,7 +2407,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to operations for communications
-      operationId: communications.calls_CreateOperations
+      operationId: communication.call_CreateOperations
       parameters:
         - name: call-id
           in: path
@@ -2467,7 +2439,7 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      operationId: communications.calls_GetOperations
+      operationId: communication.call_GetOperations
       parameters:
         - name: call-id
           in: path
@@ -2526,7 +2498,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property operations in communications
-      operationId: communications.calls_UpdateOperations
+      operationId: communication.call_UpdateOperations
       parameters:
         - name: call-id
           in: path
@@ -2553,11 +2525,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.commsOperation'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2565,7 +2533,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property operations for communications
-      operationId: communications.calls_DeleteOperations
+      operationId: communication.call_DeleteOperations
       parameters:
         - name: call-id
           in: path
@@ -2604,7 +2572,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
-      operationId: communications.calls_ListParticipants
+      operationId: communication.call_ListParticipants
       parameters:
         - name: call-id
           in: path
@@ -2693,7 +2661,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to participants for communications
-      operationId: communications.calls_CreateParticipants
+      operationId: communication.call_CreateParticipants
       parameters:
         - name: call-id
           in: path
@@ -2725,7 +2693,7 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
-      operationId: communications.calls_GetParticipants
+      operationId: communication.call_GetParticipants
       parameters:
         - name: call-id
           in: path
@@ -2789,7 +2757,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property participants in communications
-      operationId: communications.calls_UpdateParticipants
+      operationId: communication.call_UpdateParticipants
       parameters:
         - name: call-id
           in: path
@@ -2816,11 +2784,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.participant'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2828,7 +2792,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property participants for communications
-      operationId: communications.calls_DeleteParticipants
+      operationId: communication.call_DeleteParticipants
       parameters:
         - name: call-id
           in: path
@@ -2867,7 +2831,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
-      operationId: communications.calls.participants_mute
+      operationId: communication.call.participant_mute
       parameters:
         - name: call-id
           in: path
@@ -2917,7 +2881,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0
-      operationId: communications.calls.participants_startHoldMusic
+      operationId: communication.call.participant_startHoldMusic
       parameters:
         - name: call-id
           in: path
@@ -2969,7 +2933,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
-      operationId: communications.calls.participants_stopHoldMusic
+      operationId: communication.call.participant_stopHoldMusic
       parameters:
         - name: call-id
           in: path
@@ -3019,7 +2983,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
-      operationId: communications.calls.participants_invite
+      operationId: communication.call.participant_invite
       parameters:
         - name: call-id
           in: path
@@ -3065,7 +3029,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/participant-muteall?view=graph-rest-1.0
-      operationId: communications.calls.participants_muteAll
+      operationId: communication.call.participant_muteAll
       parameters:
         - name: call-id
           in: path
@@ -3112,7 +3076,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-1.0
-      operationId: communications.calls_logTeleconferenceDeviceQuality
+      operationId: communication.call_logTeleconferenceDeviceQuality
       requestBody:
         description: Action parameters
         content:
@@ -3140,7 +3104,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
-      operationId: communications_getPresencesGraphBPreUserId
+      operationId: communication_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
         content:
@@ -3188,7 +3152,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: communications_ListOnlineMeetings
+      operationId: communication_ListOnlineMeetings
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3348,7 +3312,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to onlineMeetings for communications
-      operationId: communications_CreateOnlineMeetings
+      operationId: communication_CreateOnlineMeetings
       requestBody:
         description: New navigation property
         content:
@@ -3371,7 +3335,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get onlineMeetings from communications
-      operationId: communications_GetOnlineMeetings
+      operationId: communication_GetOnlineMeetings
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3460,7 +3424,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property onlineMeetings in communications
-      operationId: communications_UpdateOnlineMeetings
+      operationId: communication_UpdateOnlineMeetings
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3479,11 +3443,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3491,7 +3451,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property onlineMeetings for communications
-      operationId: communications_DeleteOnlineMeetings
+      operationId: communication_DeleteOnlineMeetings
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3522,7 +3482,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: communications_GetOnlineMeetingsAlternativeRecording
+      operationId: communication_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3548,7 +3508,7 @@ paths:
         - communications.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in communications
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: communications_SetOnlineMeetingsAlternativeRecording
+      operationId: communication_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3581,7 +3541,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
-      operationId: communications.onlineMeetings_ListAttendanceReports
+      operationId: communication.onlineMeeting_ListAttendanceReports
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3657,7 +3617,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceReports for communications
-      operationId: communications.onlineMeetings_CreateAttendanceReports
+      operationId: communication.onlineMeeting_CreateAttendanceReports
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3690,7 +3650,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
       description: The attendance reports of an online meeting. Read-only.
-      operationId: communications.onlineMeetings_GetAttendanceReports
+      operationId: communication.onlineMeeting_GetAttendanceReports
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3751,7 +3711,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceReports in communications
-      operationId: communications.onlineMeetings_UpdateAttendanceReports
+      operationId: communication.onlineMeeting_UpdateAttendanceReports
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3778,11 +3738,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3790,7 +3746,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceReports for communications
-      operationId: communications.onlineMeetings_DeleteAttendanceReports
+      operationId: communication.onlineMeeting_DeleteAttendanceReports
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3829,7 +3785,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
-      operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3920,7 +3876,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceRecords for communications
-      operationId: communications.onlineMeetings.attendanceReports_CreateAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_CreateAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3961,7 +3917,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
       description: List of attendance records of an attendance report. Read-only.
-      operationId: communications.onlineMeetings.attendanceReports_GetAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4031,7 +3987,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceRecords in communications
-      operationId: communications.onlineMeetings.attendanceReports_UpdateAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_UpdateAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4066,11 +4022,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4078,7 +4030,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceRecords for communications
-      operationId: communications.onlineMeetings.attendanceReports_DeleteAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_DeleteAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4125,7 +4077,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: communications_GetOnlineMeetingsAttendeeReport
+      operationId: communication_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4151,7 +4103,7 @@ paths:
         - communications.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in communications
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: communications_SetOnlineMeetingsAttendeeReport
+      operationId: communication_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4184,7 +4136,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
-      operationId: communications.onlineMeetings_GetMeetingAttendanceReport
+      operationId: communication.onlineMeeting_GetMeetingAttendanceReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4237,7 +4189,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property meetingAttendanceReport in communications
-      operationId: communications.onlineMeetings_UpdateMeetingAttendanceReport
+      operationId: communication.onlineMeeting_UpdateMeetingAttendanceReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4256,11 +4208,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4268,7 +4216,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property meetingAttendanceReport for communications
-      operationId: communications.onlineMeetings_DeleteMeetingAttendanceReport
+      operationId: communication.onlineMeeting_DeleteMeetingAttendanceReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4299,7 +4247,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
-      operationId: communications.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4382,7 +4330,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceRecords for communications
-      operationId: communications.onlineMeetings.meetingAttendanceReport_CreateAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4415,7 +4363,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
       description: List of attendance records of an attendance report. Read-only.
-      operationId: communications.onlineMeetings.meetingAttendanceReport_GetAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4477,7 +4425,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceRecords in communications
-      operationId: communications.onlineMeetings.meetingAttendanceReport_UpdateAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4504,11 +4452,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4516,7 +4460,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceRecords for communications
-      operationId: communications.onlineMeetings.meetingAttendanceReport_DeleteAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4555,7 +4499,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: communications_GetOnlineMeetingsRecording
+      operationId: communication_GetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4581,7 +4525,7 @@ paths:
         - communications.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in communications
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: communications_SetOnlineMeetingsRecording
+      operationId: communication_SetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4614,7 +4558,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
-      operationId: communications.onlineMeetings_GetRegistration
+      operationId: communication.onlineMeeting_GetRegistration
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4678,7 +4622,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
-      operationId: communications.onlineMeetings_UpdateRegistration
+      operationId: communication.onlineMeeting_UpdateRegistration
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4697,11 +4641,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4713,7 +4653,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
-      operationId: communications.onlineMeetings_DeleteRegistration
+      operationId: communication.onlineMeeting_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4744,7 +4684,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
-      operationId: communications.onlineMeetings.registration_ListCustomQuestions
+      operationId: communication.onlineMeeting.registration_ListCustomQuestions
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4825,7 +4765,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
-      operationId: communications.onlineMeetings.registration_CreateCustomQuestions
+      operationId: communication.onlineMeeting.registration_CreateCustomQuestions
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4858,7 +4798,7 @@ paths:
         - communications.onlineMeeting
       summary: Get customQuestions from communications
       description: Custom registration questions.
-      operationId: communications.onlineMeetings.registration_GetCustomQuestions
+      operationId: communication.onlineMeeting.registration_GetCustomQuestions
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4918,7 +4858,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property customQuestions in communications
-      operationId: communications.onlineMeetings.registration_UpdateCustomQuestions
+      operationId: communication.onlineMeeting.registration_UpdateCustomQuestions
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4945,11 +4885,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4957,7 +4893,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property customQuestions for communications
-      operationId: communications.onlineMeetings.registration_DeleteCustomQuestions
+      operationId: communication.onlineMeeting.registration_DeleteCustomQuestions
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4996,7 +4932,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
-      operationId: communications.onlineMeetings_ListTranscripts
+      operationId: communication.onlineMeeting_ListTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5067,7 +5003,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to transcripts for communications
-      operationId: communications.onlineMeetings_CreateTranscripts
+      operationId: communication.onlineMeeting_CreateTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5100,7 +5036,7 @@ paths:
         - communications.onlineMeeting
       summary: Get transcripts from communications
       description: The transcripts of an online meeting. Read-only.
-      operationId: communications.onlineMeetings_GetTranscripts
+      operationId: communication.onlineMeeting_GetTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5158,7 +5094,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property transcripts in communications
-      operationId: communications.onlineMeetings_UpdateTranscripts
+      operationId: communication.onlineMeeting_UpdateTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5185,11 +5121,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5197,7 +5129,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property transcripts for communications
-      operationId: communications.onlineMeetings_DeleteTranscripts
+      operationId: communication.onlineMeeting_DeleteTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5236,7 +5168,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
-      operationId: communications.onlineMeetings_GetTranscriptsContent
+      operationId: communication.onlineMeeting_GetTranscriptsContent
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5270,7 +5202,7 @@ paths:
         - communications.onlineMeeting
       summary: Update content for the navigation property transcripts in communications
       description: A field that represents the content of the transcript. Read-only.
-      operationId: communications.onlineMeetings_SetTranscriptsContent
+      operationId: communication.onlineMeeting_SetTranscriptsContent
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5307,7 +5239,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get virtualAppointment from communications
-      operationId: communications.onlineMeetings_GetVirtualAppointment
+      operationId: communication.onlineMeeting_GetVirtualAppointment
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5360,7 +5292,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property virtualAppointment in communications
-      operationId: communications.onlineMeetings_UpdateVirtualAppointment
+      operationId: communication.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5379,11 +5311,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5391,7 +5319,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property virtualAppointment for communications
-      operationId: communications.onlineMeetings_DeleteVirtualAppointment
+      operationId: communication.onlineMeeting_DeleteVirtualAppointment
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5422,7 +5350,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
-      operationId: communications.onlineMeetings_createOrGet
+      operationId: communication.onlineMeeting_createOrGet
       requestBody:
         description: Action parameters
         content:
@@ -5467,7 +5395,7 @@ paths:
       tags:
         - communications.presence
       summary: Get presences from communications
-      operationId: communications_ListPresences
+      operationId: communication_ListPresences
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5536,7 +5464,7 @@ paths:
       tags:
         - communications.presence
       summary: Create new navigation property to presences for communications
-      operationId: communications_CreatePresences
+      operationId: communication_CreatePresences
       requestBody:
         description: New navigation property
         content:
@@ -5559,7 +5487,7 @@ paths:
       tags:
         - communications.presence
       summary: Get presences from communications
-      operationId: communications_GetPresences
+      operationId: communication_GetPresences
       parameters:
         - name: presence-id
           in: path
@@ -5611,7 +5539,7 @@ paths:
       tags:
         - communications.presence
       summary: Update the navigation property presences in communications
-      operationId: communications_UpdatePresences
+      operationId: communication_UpdatePresences
       parameters:
         - name: presence-id
           in: path
@@ -5630,11 +5558,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.presence'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5642,7 +5566,7 @@ paths:
       tags:
         - communications.presence
       summary: Delete navigation property presences for communications
-      operationId: communications_DeletePresences
+      operationId: communication_DeletePresences
       parameters:
         - name: presence-id
           in: path
@@ -5673,7 +5597,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
-      operationId: communications.presences_clearPresence
+      operationId: communication.presence_clearPresence
       parameters:
         - name: presence-id
           in: path
@@ -5711,7 +5635,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
-      operationId: communications.presences_clearUserPreferredPresence
+      operationId: communication.presence_clearUserPreferredPresence
       parameters:
         - name: presence-id
           in: path
@@ -5736,7 +5660,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
-      operationId: communications.presences_setPresence
+      operationId: communication.presence_setPresence
       parameters:
         - name: presence-id
           in: path
@@ -5783,7 +5707,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
-      operationId: communications.presences_setStatusMessage
+      operationId: communication.presence_setStatusMessage
       parameters:
         - name: presence-id
           in: path
@@ -5820,7 +5744,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
-      operationId: communications.presences_setUserPreferredPresence
+      operationId: communication.presence_setUserPreferredPresence
       parameters:
         - name: presence-id
           in: path
@@ -5864,7 +5788,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: users_ListOnlineMeetings
+      operationId: user_ListOnlineMeetings
       parameters:
         - name: user-id
           in: path
@@ -6036,7 +5960,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0
-      operationId: users_CreateOnlineMeetings
+      operationId: user_CreateOnlineMeetings
       parameters:
         - name: user-id
           in: path
@@ -6068,7 +5992,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get onlineMeetings from users
-      operationId: users_GetOnlineMeetings
+      operationId: user_GetOnlineMeetings
       parameters:
         - name: user-id
           in: path
@@ -6165,7 +6089,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property onlineMeetings in users
-      operationId: users_UpdateOnlineMeetings
+      operationId: user_UpdateOnlineMeetings
       parameters:
         - name: user-id
           in: path
@@ -6192,11 +6116,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6204,7 +6124,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property onlineMeetings for users
-      operationId: users_DeleteOnlineMeetings
+      operationId: user_DeleteOnlineMeetings
       parameters:
         - name: user-id
           in: path
@@ -6243,7 +6163,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: users_GetOnlineMeetingsAlternativeRecording
+      operationId: user_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
           in: path
@@ -6277,7 +6197,7 @@ paths:
         - users.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in users
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: users_SetOnlineMeetingsAlternativeRecording
+      operationId: user_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
           in: path
@@ -6318,7 +6238,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
-      operationId: users.onlineMeetings_ListAttendanceReports
+      operationId: user.onlineMeeting_ListAttendanceReports
       parameters:
         - name: user-id
           in: path
@@ -6402,7 +6322,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceReports for users
-      operationId: users.onlineMeetings_CreateAttendanceReports
+      operationId: user.onlineMeeting_CreateAttendanceReports
       parameters:
         - name: user-id
           in: path
@@ -6443,7 +6363,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceReports from users
       description: The attendance reports of an online meeting. Read-only.
-      operationId: users.onlineMeetings_GetAttendanceReports
+      operationId: user.onlineMeeting_GetAttendanceReports
       parameters:
         - name: user-id
           in: path
@@ -6512,7 +6432,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceReports in users
-      operationId: users.onlineMeetings_UpdateAttendanceReports
+      operationId: user.onlineMeeting_UpdateAttendanceReports
       parameters:
         - name: user-id
           in: path
@@ -6547,11 +6467,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6559,7 +6475,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceReports for users
-      operationId: users.onlineMeetings_DeleteAttendanceReports
+      operationId: user.onlineMeeting_DeleteAttendanceReports
       parameters:
         - name: user-id
           in: path
@@ -6606,7 +6522,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
-      operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_ListAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -6705,7 +6621,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceRecords for users
-      operationId: users.onlineMeetings.attendanceReports_CreateAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_CreateAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -6754,7 +6670,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
       description: List of attendance records of an attendance report. Read-only.
-      operationId: users.onlineMeetings.attendanceReports_GetAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_GetAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -6832,7 +6748,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceRecords in users
-      operationId: users.onlineMeetings.attendanceReports_UpdateAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_UpdateAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -6875,11 +6791,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6887,7 +6799,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceRecords for users
-      operationId: users.onlineMeetings.attendanceReports_DeleteAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_DeleteAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -6942,7 +6854,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: users_GetOnlineMeetingsAttendeeReport
+      operationId: user_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
           in: path
@@ -6976,7 +6888,7 @@ paths:
         - users.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in users
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: users_SetOnlineMeetingsAttendeeReport
+      operationId: user_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
           in: path
@@ -7017,7 +6929,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
-      operationId: users.onlineMeetings_GetMeetingAttendanceReport
+      operationId: user.onlineMeeting_GetMeetingAttendanceReport
       parameters:
         - name: user-id
           in: path
@@ -7078,7 +6990,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property meetingAttendanceReport in users
-      operationId: users.onlineMeetings_UpdateMeetingAttendanceReport
+      operationId: user.onlineMeeting_UpdateMeetingAttendanceReport
       parameters:
         - name: user-id
           in: path
@@ -7105,11 +7017,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7117,7 +7025,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property meetingAttendanceReport for users
-      operationId: users.onlineMeetings_DeleteMeetingAttendanceReport
+      operationId: user.onlineMeeting_DeleteMeetingAttendanceReport
       parameters:
         - name: user-id
           in: path
@@ -7156,7 +7064,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
-      operationId: users.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -7247,7 +7155,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceRecords for users
-      operationId: users.onlineMeetings.meetingAttendanceReport_CreateAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -7288,7 +7196,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
       description: List of attendance records of an attendance report. Read-only.
-      operationId: users.onlineMeetings.meetingAttendanceReport_GetAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_GetAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -7358,7 +7266,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceRecords in users
-      operationId: users.onlineMeetings.meetingAttendanceReport_UpdateAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -7393,11 +7301,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7405,7 +7309,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceRecords for users
-      operationId: users.onlineMeetings.meetingAttendanceReport_DeleteAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecords
       parameters:
         - name: user-id
           in: path
@@ -7452,7 +7356,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: users_GetOnlineMeetingsRecording
+      operationId: user_GetOnlineMeetingsRecording
       parameters:
         - name: user-id
           in: path
@@ -7486,7 +7390,7 @@ paths:
         - users.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in users
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: users_SetOnlineMeetingsRecording
+      operationId: user_SetOnlineMeetingsRecording
       parameters:
         - name: user-id
           in: path
@@ -7527,7 +7431,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
-      operationId: users.onlineMeetings_GetRegistration
+      operationId: user.onlineMeeting_GetRegistration
       parameters:
         - name: user-id
           in: path
@@ -7599,7 +7503,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
-      operationId: users.onlineMeetings_UpdateRegistration
+      operationId: user.onlineMeeting_UpdateRegistration
       parameters:
         - name: user-id
           in: path
@@ -7626,11 +7530,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7642,7 +7542,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
-      operationId: users.onlineMeetings_DeleteRegistration
+      operationId: user.onlineMeeting_DeleteRegistration
       parameters:
         - name: user-id
           in: path
@@ -7681,7 +7581,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
-      operationId: users.onlineMeetings.registration_ListCustomQuestions
+      operationId: user.onlineMeeting.registration_ListCustomQuestions
       parameters:
         - name: user-id
           in: path
@@ -7770,7 +7670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
-      operationId: users.onlineMeetings.registration_CreateCustomQuestions
+      operationId: user.onlineMeeting.registration_CreateCustomQuestions
       parameters:
         - name: user-id
           in: path
@@ -7811,7 +7711,7 @@ paths:
         - users.onlineMeeting
       summary: Get customQuestions from users
       description: Custom registration questions.
-      operationId: users.onlineMeetings.registration_GetCustomQuestions
+      operationId: user.onlineMeeting.registration_GetCustomQuestions
       parameters:
         - name: user-id
           in: path
@@ -7879,7 +7779,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property customQuestions in users
-      operationId: users.onlineMeetings.registration_UpdateCustomQuestions
+      operationId: user.onlineMeeting.registration_UpdateCustomQuestions
       parameters:
         - name: user-id
           in: path
@@ -7914,11 +7814,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7926,7 +7822,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property customQuestions for users
-      operationId: users.onlineMeetings.registration_DeleteCustomQuestions
+      operationId: user.onlineMeeting.registration_DeleteCustomQuestions
       parameters:
         - name: user-id
           in: path
@@ -7973,7 +7869,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
-      operationId: users.onlineMeetings_ListTranscripts
+      operationId: user.onlineMeeting_ListTranscripts
       parameters:
         - name: user-id
           in: path
@@ -8052,7 +7948,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to transcripts for users
-      operationId: users.onlineMeetings_CreateTranscripts
+      operationId: user.onlineMeeting_CreateTranscripts
       parameters:
         - name: user-id
           in: path
@@ -8093,7 +7989,7 @@ paths:
         - users.onlineMeeting
       summary: Get transcripts from users
       description: The transcripts of an online meeting. Read-only.
-      operationId: users.onlineMeetings_GetTranscripts
+      operationId: user.onlineMeeting_GetTranscripts
       parameters:
         - name: user-id
           in: path
@@ -8159,7 +8055,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property transcripts in users
-      operationId: users.onlineMeetings_UpdateTranscripts
+      operationId: user.onlineMeeting_UpdateTranscripts
       parameters:
         - name: user-id
           in: path
@@ -8194,11 +8090,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8206,7 +8098,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property transcripts for users
-      operationId: users.onlineMeetings_DeleteTranscripts
+      operationId: user.onlineMeeting_DeleteTranscripts
       parameters:
         - name: user-id
           in: path
@@ -8253,7 +8145,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
-      operationId: users.onlineMeetings_GetTranscriptsContent
+      operationId: user.onlineMeeting_GetTranscriptsContent
       parameters:
         - name: user-id
           in: path
@@ -8295,7 +8187,7 @@ paths:
         - users.onlineMeeting
       summary: Update content for the navigation property transcripts in users
       description: A field that represents the content of the transcript. Read-only.
-      operationId: users.onlineMeetings_SetTranscriptsContent
+      operationId: user.onlineMeeting_SetTranscriptsContent
       parameters:
         - name: user-id
           in: path
@@ -8340,7 +8232,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get virtualAppointment from users
-      operationId: users.onlineMeetings_GetVirtualAppointment
+      operationId: user.onlineMeeting_GetVirtualAppointment
       parameters:
         - name: user-id
           in: path
@@ -8401,7 +8293,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property virtualAppointment in users
-      operationId: users.onlineMeetings_UpdateVirtualAppointment
+      operationId: user.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: user-id
           in: path
@@ -8428,11 +8320,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8440,7 +8328,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property virtualAppointment for users
-      operationId: users.onlineMeetings_DeleteVirtualAppointment
+      operationId: user.onlineMeeting_DeleteVirtualAppointment
       parameters:
         - name: user-id
           in: path
@@ -8474,12 +8362,12 @@ paths:
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      summary: Get presence
+      description: Get a user's presence information.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
-      operationId: users_GetPresence
+        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+      operationId: user_GetPresence
       parameters:
         - name: user-id
           in: path
@@ -8531,7 +8419,7 @@ paths:
       tags:
         - users.presence
       summary: Update the navigation property presence in users
-      operationId: users_UpdatePresence
+      operationId: user_UpdatePresence
       parameters:
         - name: user-id
           in: path
@@ -8550,11 +8438,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.presence'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8562,7 +8446,7 @@ paths:
       tags:
         - users.presence
       summary: Delete navigation property presence for users
-      operationId: users_DeletePresence
+      operationId: user_DeletePresence
       parameters:
         - name: user-id
           in: path

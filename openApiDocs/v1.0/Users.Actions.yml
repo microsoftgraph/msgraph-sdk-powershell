@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0
-      operationId: users.authentication.methods_resetPassword
+      operationId: user.authentication.method_resetPassword
       parameters:
         - name: user-id
           in: path
@@ -65,7 +65,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/phoneauthenticationmethod-disablesmssignin?view=graph-rest-1.0
-      operationId: users.authentication.phoneMethods_disableSmsSignIn
+      operationId: user.authentication.phoneMethod_disableSmsSignIn
       parameters:
         - name: user-id
           in: path
@@ -98,7 +98,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-1.0
-      operationId: users.authentication.phoneMethods_enableSmsSignIn
+      operationId: user.authentication.phoneMethod_enableSmsSignIn
       parameters:
         - name: user-id
           in: path
@@ -131,7 +131,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.attachments_createUploadSession
+      operationId: user.calendar.calendarView.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -180,7 +180,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.instances.attachments_createUploadSession
+      operationId: user.calendar.calendarView.instance.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -237,7 +237,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.instances_accept
+      operationId: user.calendar.calendarView.instance_accept
       parameters:
         - name: user-id
           in: path
@@ -295,7 +295,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.instances_cancel
+      operationId: user.calendar.calendarView.instance_cancel
       parameters:
         - name: user-id
           in: path
@@ -349,7 +349,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.instances_decline
+      operationId: user.calendar.calendarView.instance_decline
       parameters:
         - name: user-id
           in: path
@@ -409,7 +409,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.instances_dismissReminder
+      operationId: user.calendar.calendarView.instance_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -450,7 +450,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.instances_forward
+      operationId: user.calendar.calendarView.instance_forward
       parameters:
         - name: user-id
           in: path
@@ -508,7 +508,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.instances_snoozeReminder
+      operationId: user.calendar.calendarView.instance_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -561,7 +561,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.instances_tentativelyAccept
+      operationId: user.calendar.calendarView.instance_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -621,7 +621,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendar.calendarView_accept
+      operationId: user.calendar.calendarView_accept
       parameters:
         - name: user-id
           in: path
@@ -671,7 +671,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendar.calendarView_cancel
+      operationId: user.calendar.calendarView_cancel
       parameters:
         - name: user-id
           in: path
@@ -717,7 +717,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendar.calendarView_decline
+      operationId: user.calendar.calendarView_decline
       parameters:
         - name: user-id
           in: path
@@ -769,7 +769,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendar.calendarView_dismissReminder
+      operationId: user.calendar.calendarView_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -802,7 +802,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendar.calendarView_forward
+      operationId: user.calendar.calendarView_forward
       parameters:
         - name: user-id
           in: path
@@ -852,7 +852,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendar.calendarView_snoozeReminder
+      operationId: user.calendar.calendarView_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -897,7 +897,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendar.calendarView_tentativelyAccept
+      operationId: user.calendar.calendarView_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -949,7 +949,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendar.events.attachments_createUploadSession
+      operationId: user.calendar.event.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -998,7 +998,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendar.events.instances.attachments_createUploadSession
+      operationId: user.calendar.event.instance.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -1055,7 +1055,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendar.events.instances_accept
+      operationId: user.calendar.event.instance_accept
       parameters:
         - name: user-id
           in: path
@@ -1113,7 +1113,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendar.events.instances_cancel
+      operationId: user.calendar.event.instance_cancel
       parameters:
         - name: user-id
           in: path
@@ -1167,7 +1167,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendar.events.instances_decline
+      operationId: user.calendar.event.instance_decline
       parameters:
         - name: user-id
           in: path
@@ -1227,7 +1227,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendar.events.instances_dismissReminder
+      operationId: user.calendar.event.instance_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -1268,7 +1268,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendar.events.instances_forward
+      operationId: user.calendar.event.instance_forward
       parameters:
         - name: user-id
           in: path
@@ -1326,7 +1326,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendar.events.instances_snoozeReminder
+      operationId: user.calendar.event.instance_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -1379,7 +1379,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendar.events.instances_tentativelyAccept
+      operationId: user.calendar.event.instance_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -1439,7 +1439,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendar.events_accept
+      operationId: user.calendar.event_accept
       parameters:
         - name: user-id
           in: path
@@ -1489,7 +1489,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendar.events_cancel
+      operationId: user.calendar.event_cancel
       parameters:
         - name: user-id
           in: path
@@ -1535,7 +1535,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendar.events_decline
+      operationId: user.calendar.event_decline
       parameters:
         - name: user-id
           in: path
@@ -1587,7 +1587,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendar.events_dismissReminder
+      operationId: user.calendar.event_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -1620,7 +1620,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendar.events_forward
+      operationId: user.calendar.event_forward
       parameters:
         - name: user-id
           in: path
@@ -1670,7 +1670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendar.events_snoozeReminder
+      operationId: user.calendar.event_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -1715,7 +1715,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendar.events_tentativelyAccept
+      operationId: user.calendar.event_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -1767,7 +1767,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
-      operationId: users.calendar_getSchedule
+      operationId: user.calendar_getSchedule
       parameters:
         - name: user-id
           in: path
@@ -1834,7 +1834,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.attachments_createUploadSession
+      operationId: user.calendarGroup.calendarView.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -1899,7 +1899,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.instances.attachments_createUploadSession
+      operationId: user.calendarGroup.calendarView.instance.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -1972,7 +1972,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.instances_accept
+      operationId: user.calendarGroup.calendarView.instance_accept
       parameters:
         - name: user-id
           in: path
@@ -2046,7 +2046,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.instances_cancel
+      operationId: user.calendarGroup.calendarView.instance_cancel
       parameters:
         - name: user-id
           in: path
@@ -2116,7 +2116,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.instances_decline
+      operationId: user.calendarGroup.calendarView.instance_decline
       parameters:
         - name: user-id
           in: path
@@ -2192,7 +2192,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.instances_dismissReminder
+      operationId: user.calendarGroup.calendarView.instance_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -2249,7 +2249,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.instances_forward
+      operationId: user.calendarGroup.calendarView.instance_forward
       parameters:
         - name: user-id
           in: path
@@ -2323,7 +2323,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.instances_snoozeReminder
+      operationId: user.calendarGroup.calendarView.instance_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -2392,7 +2392,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.instances_tentativelyAccept
+      operationId: user.calendarGroup.calendarView.instance_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -2468,7 +2468,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView_accept
+      operationId: user.calendarGroup.calendarView_accept
       parameters:
         - name: user-id
           in: path
@@ -2534,7 +2534,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView_cancel
+      operationId: user.calendarGroup.calendarView_cancel
       parameters:
         - name: user-id
           in: path
@@ -2596,7 +2596,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView_decline
+      operationId: user.calendarGroup.calendarView_decline
       parameters:
         - name: user-id
           in: path
@@ -2664,7 +2664,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView_dismissReminder
+      operationId: user.calendarGroup.calendarView_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -2713,7 +2713,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView_forward
+      operationId: user.calendarGroup.calendarView_forward
       parameters:
         - name: user-id
           in: path
@@ -2779,7 +2779,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView_snoozeReminder
+      operationId: user.calendarGroup.calendarView_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -2840,7 +2840,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView_tentativelyAccept
+      operationId: user.calendarGroup.calendarView_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -2908,7 +2908,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.attachments_createUploadSession
+      operationId: user.calendarGroup.event.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -2973,7 +2973,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.instances.attachments_createUploadSession
+      operationId: user.calendarGroup.event.instance.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -3046,7 +3046,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.instances_accept
+      operationId: user.calendarGroup.event.instance_accept
       parameters:
         - name: user-id
           in: path
@@ -3120,7 +3120,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.instances_cancel
+      operationId: user.calendarGroup.event.instance_cancel
       parameters:
         - name: user-id
           in: path
@@ -3190,7 +3190,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.instances_decline
+      operationId: user.calendarGroup.event.instance_decline
       parameters:
         - name: user-id
           in: path
@@ -3266,7 +3266,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.instances_dismissReminder
+      operationId: user.calendarGroup.event.instance_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -3323,7 +3323,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.instances_forward
+      operationId: user.calendarGroup.event.instance_forward
       parameters:
         - name: user-id
           in: path
@@ -3397,7 +3397,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.instances_snoozeReminder
+      operationId: user.calendarGroup.event.instance_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -3466,7 +3466,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.instances_tentativelyAccept
+      operationId: user.calendarGroup.event.instance_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -3542,7 +3542,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events_accept
+      operationId: user.calendarGroup.event_accept
       parameters:
         - name: user-id
           in: path
@@ -3608,7 +3608,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events_cancel
+      operationId: user.calendarGroup.event_cancel
       parameters:
         - name: user-id
           in: path
@@ -3670,7 +3670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events_decline
+      operationId: user.calendarGroup.event_decline
       parameters:
         - name: user-id
           in: path
@@ -3738,7 +3738,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events_dismissReminder
+      operationId: user.calendarGroup.event_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -3787,7 +3787,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events_forward
+      operationId: user.calendarGroup.event_forward
       parameters:
         - name: user-id
           in: path
@@ -3853,7 +3853,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events_snoozeReminder
+      operationId: user.calendarGroup.event_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -3914,7 +3914,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events_tentativelyAccept
+      operationId: user.calendarGroup.event_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -3982,7 +3982,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars_getSchedule
+      operationId: user.calendarGroup_getSchedule
       parameters:
         - name: user-id
           in: path
@@ -4065,7 +4065,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.attachments_createUploadSession
+      operationId: user.calendar.calendarView.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -4122,7 +4122,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.instances.attachments_createUploadSession
+      operationId: user.calendar.calendarView.instance.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -4187,7 +4187,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.instances_accept
+      operationId: user.calendar.calendarView.instance_accept
       parameters:
         - name: user-id
           in: path
@@ -4253,7 +4253,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.instances_cancel
+      operationId: user.calendar.calendarView.instance_cancel
       parameters:
         - name: user-id
           in: path
@@ -4315,7 +4315,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.instances_decline
+      operationId: user.calendar.calendarView.instance_decline
       parameters:
         - name: user-id
           in: path
@@ -4383,7 +4383,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.instances_dismissReminder
+      operationId: user.calendar.calendarView.instance_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -4432,7 +4432,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.instances_forward
+      operationId: user.calendar.calendarView.instance_forward
       parameters:
         - name: user-id
           in: path
@@ -4498,7 +4498,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.instances_snoozeReminder
+      operationId: user.calendar.calendarView.instance_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -4559,7 +4559,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.instances_tentativelyAccept
+      operationId: user.calendar.calendarView.instance_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -4627,7 +4627,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendars.calendarView_accept
+      operationId: user.calendar.calendarView_accept
       parameters:
         - name: user-id
           in: path
@@ -4685,7 +4685,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendars.calendarView_cancel
+      operationId: user.calendar.calendarView_cancel
       parameters:
         - name: user-id
           in: path
@@ -4739,7 +4739,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendars.calendarView_decline
+      operationId: user.calendar.calendarView_decline
       parameters:
         - name: user-id
           in: path
@@ -4799,7 +4799,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendars.calendarView_dismissReminder
+      operationId: user.calendar.calendarView_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -4840,7 +4840,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendars.calendarView_forward
+      operationId: user.calendar.calendarView_forward
       parameters:
         - name: user-id
           in: path
@@ -4898,7 +4898,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendars.calendarView_snoozeReminder
+      operationId: user.calendar.calendarView_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -4951,7 +4951,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendars.calendarView_tentativelyAccept
+      operationId: user.calendar.calendarView_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -5011,7 +5011,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendars.events.attachments_createUploadSession
+      operationId: user.calendar.event.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -5068,7 +5068,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendars.events.instances.attachments_createUploadSession
+      operationId: user.calendar.event.instance.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -5133,7 +5133,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendars.events.instances_accept
+      operationId: user.calendar.event.instance_accept
       parameters:
         - name: user-id
           in: path
@@ -5199,7 +5199,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendars.events.instances_cancel
+      operationId: user.calendar.event.instance_cancel
       parameters:
         - name: user-id
           in: path
@@ -5261,7 +5261,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendars.events.instances_decline
+      operationId: user.calendar.event.instance_decline
       parameters:
         - name: user-id
           in: path
@@ -5329,7 +5329,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendars.events.instances_dismissReminder
+      operationId: user.calendar.event.instance_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -5378,7 +5378,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendars.events.instances_forward
+      operationId: user.calendar.event.instance_forward
       parameters:
         - name: user-id
           in: path
@@ -5444,7 +5444,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendars.events.instances_snoozeReminder
+      operationId: user.calendar.event.instance_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -5505,7 +5505,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendars.events.instances_tentativelyAccept
+      operationId: user.calendar.event.instance_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -5573,7 +5573,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendars.events_accept
+      operationId: user.calendar.event_accept
       parameters:
         - name: user-id
           in: path
@@ -5631,7 +5631,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendars.events_cancel
+      operationId: user.calendar.event_cancel
       parameters:
         - name: user-id
           in: path
@@ -5685,7 +5685,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendars.events_decline
+      operationId: user.calendar.event_decline
       parameters:
         - name: user-id
           in: path
@@ -5745,7 +5745,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendars.events_dismissReminder
+      operationId: user.calendar.event_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -5786,7 +5786,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendars.events_forward
+      operationId: user.calendar.event_forward
       parameters:
         - name: user-id
           in: path
@@ -5844,7 +5844,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendars.events_snoozeReminder
+      operationId: user.calendar.event_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -5897,7 +5897,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendars.events_tentativelyAccept
+      operationId: user.calendar.event_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -5957,7 +5957,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
-      operationId: users.calendars_getSchedule
+      operationId: user.calendar_getSchedule
       parameters:
         - name: user-id
           in: path
@@ -6032,7 +6032,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendarView.attachments_createUploadSession
+      operationId: user.calendarView.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -6081,7 +6081,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.calendarView.instances.attachments_createUploadSession
+      operationId: user.calendarView.instance.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -6138,7 +6138,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendarView.instances_accept
+      operationId: user.calendarView.instance_accept
       parameters:
         - name: user-id
           in: path
@@ -6196,7 +6196,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendarView.instances_cancel
+      operationId: user.calendarView.instance_cancel
       parameters:
         - name: user-id
           in: path
@@ -6250,7 +6250,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendarView.instances_decline
+      operationId: user.calendarView.instance_decline
       parameters:
         - name: user-id
           in: path
@@ -6310,7 +6310,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendarView.instances_dismissReminder
+      operationId: user.calendarView.instance_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -6351,7 +6351,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendarView.instances_forward
+      operationId: user.calendarView.instance_forward
       parameters:
         - name: user-id
           in: path
@@ -6409,7 +6409,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendarView.instances_snoozeReminder
+      operationId: user.calendarView.instance_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -6462,7 +6462,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendarView.instances_tentativelyAccept
+      operationId: user.calendarView.instance_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -6522,7 +6522,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.calendarView_accept
+      operationId: user.calendarView_accept
       parameters:
         - name: user-id
           in: path
@@ -6572,7 +6572,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.calendarView_cancel
+      operationId: user.calendarView_cancel
       parameters:
         - name: user-id
           in: path
@@ -6618,7 +6618,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.calendarView_decline
+      operationId: user.calendarView_decline
       parameters:
         - name: user-id
           in: path
@@ -6670,7 +6670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.calendarView_dismissReminder
+      operationId: user.calendarView_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -6703,7 +6703,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.calendarView_forward
+      operationId: user.calendarView_forward
       parameters:
         - name: user-id
           in: path
@@ -6753,7 +6753,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.calendarView_snoozeReminder
+      operationId: user.calendarView_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -6798,7 +6798,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.calendarView_tentativelyAccept
+      operationId: user.calendarView_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -6850,7 +6850,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
-      operationId: users.chats.installedApps_upgrade
+      operationId: user.chat.installedApp_upgrade
       parameters:
         - name: user-id
           in: path
@@ -6891,7 +6891,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
-      operationId: users.chats.members_add
+      operationId: user.chat.member_add
       parameters:
         - name: user-id
           in: path
@@ -6951,7 +6951,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
-      operationId: users.chats.messages_softDelete
+      operationId: user.chat.message_softDelete
       parameters:
         - name: user-id
           in: path
@@ -6988,7 +6988,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
-      operationId: users.chats.messages_undoSoftDelete
+      operationId: user.chat.message_undoSoftDelete
       parameters:
         - name: user-id
           in: path
@@ -7025,7 +7025,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
-      operationId: users.chats.messages.replies_softDelete
+      operationId: user.chat.message.reply_softDelete
       parameters:
         - name: user-id
           in: path
@@ -7070,7 +7070,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
-      operationId: users.chats.messages.replies_undoSoftDelete
+      operationId: user.chat.message.reply_undoSoftDelete
       parameters:
         - name: user-id
           in: path
@@ -7119,7 +7119,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
-      operationId: users.chats_hideGraphFPreUser
+      operationId: user.chat_hideGraphFPreUser
       parameters:
         - name: user-id
           in: path
@@ -7164,7 +7164,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
-      operationId: users.chats_markChatReadGraphFPreUser
+      operationId: user.chat_markChatReadGraphFPreUser
       parameters:
         - name: user-id
           in: path
@@ -7209,7 +7209,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
-      operationId: users.chats_markChatUnreadGraphFPreUser
+      operationId: user.chat_markChatUnreadGraphFPreUser
       parameters:
         - name: user-id
           in: path
@@ -7259,7 +7259,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-sendactivitynotification?view=graph-rest-1.0
-      operationId: users.chats_sendActivityNotification
+      operationId: user.chat_sendActivityNotification
       parameters:
         - name: user-id
           in: path
@@ -7319,7 +7319,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
-      operationId: users.chats_unhideGraphFPreUser
+      operationId: user.chat_unhideGraphFPreUser
       parameters:
         - name: user-id
           in: path
@@ -7364,7 +7364,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
-      operationId: users.drives.items.listItem.documentSetVersions_restore
+      operationId: user.drive.item.listItem.documentSetVersion_restore
       parameters:
         - name: user-id
           in: path
@@ -7413,7 +7413,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
-      operationId: users.drives.items.listItem.versions_restoreVersion
+      operationId: user.drive.item.listItem.version_restoreVersion
       parameters:
         - name: user-id
           in: path
@@ -7462,7 +7462,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
-      operationId: users.drives.items_checkin
+      operationId: user.drive.item_checkin
       parameters:
         - name: user-id
           in: path
@@ -7519,7 +7519,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
-      operationId: users.drives.items_checkout
+      operationId: user.drive.item_checkout
       parameters:
         - name: user-id
           in: path
@@ -7560,7 +7560,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
-      operationId: users.drives.items_copy
+      operationId: user.drive.item_copy
       parameters:
         - name: user-id
           in: path
@@ -7620,7 +7620,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
-      operationId: users.drives.items_createLink
+      operationId: user.drive.item_createLink
       parameters:
         - name: user-id
           in: path
@@ -7695,7 +7695,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
-      operationId: users.drives.items_createUploadSession
+      operationId: user.drive.item_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -7752,7 +7752,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
-      operationId: users.drives.items_follow
+      operationId: user.drive.item_follow
       parameters:
         - name: user-id
           in: path
@@ -7797,7 +7797,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
-      operationId: users.drives.items_invite
+      operationId: user.drive.item_invite
       parameters:
         - name: user-id
           in: path
@@ -7892,7 +7892,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action preview
-      operationId: users.drives.items_preview
+      operationId: user.drive.item_preview
       parameters:
         - name: user-id
           in: path
@@ -7954,7 +7954,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
-      operationId: users.drives.items_restore
+      operationId: user.drive.item_restore
       parameters:
         - name: user-id
           in: path
@@ -8014,7 +8014,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
-      operationId: users.drives.items_unfollow
+      operationId: user.drive.item_unfollow
       parameters:
         - name: user-id
           in: path
@@ -8051,7 +8051,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action validatePermission
-      operationId: users.drives.items_validatePermission
+      operationId: user.drive.item_validatePermission
       parameters:
         - name: user-id
           in: path
@@ -8107,7 +8107,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
-      operationId: users.drives.items.permissions_grant
+      operationId: user.drive.item.permission_grant
       parameters:
         - name: user-id
           in: path
@@ -8189,7 +8189,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reauthorize
-      operationId: users.drives.items.subscriptions_reauthorize
+      operationId: user.drive.item.subscription_reauthorize
       parameters:
         - name: user-id
           in: path
@@ -8238,7 +8238,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
-      operationId: users.drives.items.versions_restoreVersion
+      operationId: user.drive.item.version_restoreVersion
       parameters:
         - name: user-id
           in: path
@@ -8287,7 +8287,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: users.drives.list.contentTypes_associateGraphWPreHubSites
+      operationId: user.drive.list.contentType_associateGraphWPreHubSites
       parameters:
         - name: user-id
           in: path
@@ -8346,7 +8346,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
-      operationId: users.drives.list.contentTypes_copyToDefaultContentLocation
+      operationId: user.drive.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: user-id
           in: path
@@ -8402,7 +8402,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
-      operationId: users.drives.list.contentTypes_publish
+      operationId: user.drive.list.contentType_publish
       parameters:
         - name: user-id
           in: path
@@ -8443,7 +8443,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
-      operationId: users.drives.list.contentTypes_unpublish
+      operationId: user.drive.list.contentType_unpublish
       parameters:
         - name: user-id
           in: path
@@ -8484,7 +8484,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
-      operationId: users.drives.list.contentTypes_addCopy
+      operationId: user.drive.list.contentType_addCopy
       parameters:
         - name: user-id
           in: path
@@ -8533,7 +8533,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
-      operationId: users.drives.list.contentTypes_addCopyFromContentTypeHub
+      operationId: user.drive.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: user-id
           in: path
@@ -8582,7 +8582,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
-      operationId: users.drives.list.items.documentSetVersions_restore
+      operationId: user.drive.list.item.documentSetVersion_restore
       parameters:
         - name: user-id
           in: path
@@ -8631,7 +8631,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
-      operationId: users.drives.list.items.versions_restoreVersion
+      operationId: user.drive.list.item.version_restoreVersion
       parameters:
         - name: user-id
           in: path
@@ -8676,7 +8676,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reauthorize
-      operationId: users.drives.list.subscriptions_reauthorize
+      operationId: user.drive.list.subscription_reauthorize
       parameters:
         - name: user-id
           in: path
@@ -8717,7 +8717,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
-      operationId: users.drives.root.listItem.documentSetVersions_restore
+      operationId: user.drive.root.listItem.documentSetVersion_restore
       parameters:
         - name: user-id
           in: path
@@ -8758,7 +8758,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
-      operationId: users.drives.root.listItem.versions_restoreVersion
+      operationId: user.drive.root.listItem.version_restoreVersion
       parameters:
         - name: user-id
           in: path
@@ -8799,7 +8799,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
-      operationId: users.drives.root_checkin
+      operationId: user.drive.root_checkin
       parameters:
         - name: user-id
           in: path
@@ -8848,7 +8848,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
-      operationId: users.drives.root_checkout
+      operationId: user.drive.root_checkout
       parameters:
         - name: user-id
           in: path
@@ -8881,7 +8881,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
-      operationId: users.drives.root_copy
+      operationId: user.drive.root_copy
       parameters:
         - name: user-id
           in: path
@@ -8933,7 +8933,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
-      operationId: users.drives.root_createLink
+      operationId: user.drive.root_createLink
       parameters:
         - name: user-id
           in: path
@@ -9000,7 +9000,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
-      operationId: users.drives.root_createUploadSession
+      operationId: user.drive.root_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -9049,7 +9049,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
-      operationId: users.drives.root_follow
+      operationId: user.drive.root_follow
       parameters:
         - name: user-id
           in: path
@@ -9086,7 +9086,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
-      operationId: users.drives.root_invite
+      operationId: user.drive.root_invite
       parameters:
         - name: user-id
           in: path
@@ -9173,7 +9173,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action preview
-      operationId: users.drives.root_preview
+      operationId: user.drive.root_preview
       parameters:
         - name: user-id
           in: path
@@ -9227,7 +9227,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
-      operationId: users.drives.root_restore
+      operationId: user.drive.root_restore
       parameters:
         - name: user-id
           in: path
@@ -9279,7 +9279,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
-      operationId: users.drives.root_unfollow
+      operationId: user.drive.root_unfollow
       parameters:
         - name: user-id
           in: path
@@ -9308,7 +9308,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action validatePermission
-      operationId: users.drives.root_validatePermission
+      operationId: user.drive.root_validatePermission
       parameters:
         - name: user-id
           in: path
@@ -9356,7 +9356,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
-      operationId: users.drives.root.permissions_grant
+      operationId: user.drive.root.permission_grant
       parameters:
         - name: user-id
           in: path
@@ -9430,7 +9430,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reauthorize
-      operationId: users.drives.root.subscriptions_reauthorize
+      operationId: user.drive.root.subscription_reauthorize
       parameters:
         - name: user-id
           in: path
@@ -9471,7 +9471,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
-      operationId: users.drives.root.versions_restoreVersion
+      operationId: user.drive.root.version_restoreVersion
       parameters:
         - name: user-id
           in: path
@@ -9512,7 +9512,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.events.attachments_createUploadSession
+      operationId: user.event.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -9561,7 +9561,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.events.instances.attachments_createUploadSession
+      operationId: user.event.instance.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -9618,7 +9618,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.events.instances_accept
+      operationId: user.event.instance_accept
       parameters:
         - name: user-id
           in: path
@@ -9676,7 +9676,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.events.instances_cancel
+      operationId: user.event.instance_cancel
       parameters:
         - name: user-id
           in: path
@@ -9730,7 +9730,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.events.instances_decline
+      operationId: user.event.instance_decline
       parameters:
         - name: user-id
           in: path
@@ -9790,7 +9790,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.events.instances_dismissReminder
+      operationId: user.event.instance_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -9831,7 +9831,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.events.instances_forward
+      operationId: user.event.instance_forward
       parameters:
         - name: user-id
           in: path
@@ -9889,7 +9889,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.events.instances_snoozeReminder
+      operationId: user.event.instance_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -9942,7 +9942,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.events.instances_tentativelyAccept
+      operationId: user.event.instance_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -10002,7 +10002,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
-      operationId: users.events_accept
+      operationId: user.event_accept
       parameters:
         - name: user-id
           in: path
@@ -10052,7 +10052,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
-      operationId: users.events_cancel
+      operationId: user.event_cancel
       parameters:
         - name: user-id
           in: path
@@ -10098,7 +10098,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
-      operationId: users.events_decline
+      operationId: user.event_decline
       parameters:
         - name: user-id
           in: path
@@ -10150,7 +10150,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
-      operationId: users.events_dismissReminder
+      operationId: user.event_dismissReminder
       parameters:
         - name: user-id
           in: path
@@ -10183,7 +10183,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
-      operationId: users.events_forward
+      operationId: user.event_forward
       parameters:
         - name: user-id
           in: path
@@ -10233,7 +10233,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
-      operationId: users.events_snoozeReminder
+      operationId: user.event_snoozeReminder
       parameters:
         - name: user-id
           in: path
@@ -10278,7 +10278,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
-      operationId: users.events_tentativelyAccept
+      operationId: user.event_tentativelyAccept
       parameters:
         - name: user-id
           in: path
@@ -10330,7 +10330,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
-      operationId: users.joinedTeams.channels.members_add
+      operationId: user.joinedTeam.channel.member_add
       parameters:
         - name: user-id
           in: path
@@ -10398,7 +10398,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
-      operationId: users.joinedTeams.channels.messages_softDelete
+      operationId: user.joinedTeam.channel.message_softDelete
       parameters:
         - name: user-id
           in: path
@@ -10443,7 +10443,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
-      operationId: users.joinedTeams.channels.messages_undoSoftDelete
+      operationId: user.joinedTeam.channel.message_undoSoftDelete
       parameters:
         - name: user-id
           in: path
@@ -10488,7 +10488,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
-      operationId: users.joinedTeams.channels.messages.replies_softDelete
+      operationId: user.joinedTeam.channel.message.reply_softDelete
       parameters:
         - name: user-id
           in: path
@@ -10541,7 +10541,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
-      operationId: users.joinedTeams.channels.messages.replies_undoSoftDelete
+      operationId: user.joinedTeam.channel.message.reply_undoSoftDelete
       parameters:
         - name: user-id
           in: path
@@ -10598,7 +10598,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
-      operationId: users.joinedTeams.channels_completeMigration
+      operationId: user.joinedTeam.channel_completeMigration
       parameters:
         - name: user-id
           in: path
@@ -10639,7 +10639,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
-      operationId: users.joinedTeams.channels_provisionEmail
+      operationId: user.joinedTeam.channel_provisionEmail
       parameters:
         - name: user-id
           in: path
@@ -10684,7 +10684,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
-      operationId: users.joinedTeams.channels_removeEmail
+      operationId: user.joinedTeam.channel_removeEmail
       parameters:
         - name: user-id
           in: path
@@ -10725,7 +10725,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
-      operationId: users.joinedTeams.installedApps_upgrade
+      operationId: user.joinedTeam.installedApp_upgrade
       parameters:
         - name: user-id
           in: path
@@ -10766,7 +10766,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
-      operationId: users.joinedTeams.members_add
+      operationId: user.joinedTeam.member_add
       parameters:
         - name: user-id
           in: path
@@ -10830,7 +10830,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
-      operationId: users.joinedTeams_archive
+      operationId: user.joinedTeam_archive
       parameters:
         - name: user-id
           in: path
@@ -10877,7 +10877,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
-      operationId: users.joinedTeams_clone
+      operationId: user.joinedTeam_clone
       parameters:
         - name: user-id
           in: path
@@ -10936,7 +10936,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
-      operationId: users.joinedTeams_completeMigration
+      operationId: user.joinedTeam_completeMigration
       parameters:
         - name: user-id
           in: path
@@ -10969,7 +10969,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
-      operationId: users.joinedTeams_sendActivityNotification
+      operationId: user.joinedTeam_sendActivityNotification
       parameters:
         - name: user-id
           in: path
@@ -11029,7 +11029,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
-      operationId: users.joinedTeams_unarchive
+      operationId: user.joinedTeam_unarchive
       parameters:
         - name: user-id
           in: path
@@ -11062,7 +11062,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
-      operationId: users.joinedTeams.primaryChannel.members_add
+      operationId: user.joinedTeam.primaryChannel.member_add
       parameters:
         - name: user-id
           in: path
@@ -11122,7 +11122,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
-      operationId: users.joinedTeams.primaryChannel.messages_softDelete
+      operationId: user.joinedTeam.primaryChannel.message_softDelete
       parameters:
         - name: user-id
           in: path
@@ -11159,7 +11159,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
-      operationId: users.joinedTeams.primaryChannel.messages_undoSoftDelete
+      operationId: user.joinedTeam.primaryChannel.message_undoSoftDelete
       parameters:
         - name: user-id
           in: path
@@ -11196,7 +11196,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
-      operationId: users.joinedTeams.primaryChannel.messages.replies_softDelete
+      operationId: user.joinedTeam.primaryChannel.message.reply_softDelete
       parameters:
         - name: user-id
           in: path
@@ -11241,7 +11241,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
-      operationId: users.joinedTeams.primaryChannel.messages.replies_undoSoftDelete
+      operationId: user.joinedTeam.primaryChannel.message.reply_undoSoftDelete
       parameters:
         - name: user-id
           in: path
@@ -11290,7 +11290,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
-      operationId: users.joinedTeams.primaryChannel_completeMigration
+      operationId: user.joinedTeam.primaryChannel_completeMigration
       parameters:
         - name: user-id
           in: path
@@ -11323,7 +11323,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
-      operationId: users.joinedTeams.primaryChannel_provisionEmail
+      operationId: user.joinedTeam.primaryChannel_provisionEmail
       parameters:
         - name: user-id
           in: path
@@ -11360,7 +11360,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
-      operationId: users.joinedTeams.primaryChannel_removeEmail
+      operationId: user.joinedTeam.primaryChannel_removeEmail
       parameters:
         - name: user-id
           in: path
@@ -11393,7 +11393,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
-      operationId: users.joinedTeams.schedule_share
+      operationId: user.joinedTeam.schedule_share
       parameters:
         - name: user-id
           in: path
@@ -11450,7 +11450,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages.attachments_createUploadSession
+      operationId: user.mailFolder.childFolder.message.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -11515,7 +11515,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_copy
+      operationId: user.mailFolder.childFolder.message_copy
       parameters:
         - name: user-id
           in: path
@@ -11580,7 +11580,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_createForward
+      operationId: user.mailFolder.childFolder.message_createForward
       parameters:
         - name: user-id
           in: path
@@ -11652,7 +11652,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_createReply
+      operationId: user.mailFolder.childFolder.message_createReply
       parameters:
         - name: user-id
           in: path
@@ -11720,7 +11720,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_createReplyAll
+      operationId: user.mailFolder.childFolder.message_createReplyAll
       parameters:
         - name: user-id
           in: path
@@ -11788,7 +11788,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_forward
+      operationId: user.mailFolder.childFolder.message_forward
       parameters:
         - name: user-id
           in: path
@@ -11856,7 +11856,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_move
+      operationId: user.mailFolder.childFolder.message_move
       parameters:
         - name: user-id
           in: path
@@ -11921,7 +11921,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_reply
+      operationId: user.mailFolder.childFolder.message_reply
       parameters:
         - name: user-id
           in: path
@@ -11985,7 +11985,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_replyAll
+      operationId: user.mailFolder.childFolder.message_replyAll
       parameters:
         - name: user-id
           in: path
@@ -12049,7 +12049,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-send?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_send
+      operationId: user.mailFolder.childFolder.message_send
       parameters:
         - name: user-id
           in: path
@@ -12098,7 +12098,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders_copy
+      operationId: user.mailFolder.childFolder_copy
       parameters:
         - name: user-id
           in: path
@@ -12155,7 +12155,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders_move
+      operationId: user.mailFolder.childFolder_move
       parameters:
         - name: user-id
           in: path
@@ -12212,7 +12212,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.mailFolders.messages.attachments_createUploadSession
+      operationId: user.mailFolder.message.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -12269,7 +12269,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_copy
+      operationId: user.mailFolder.message_copy
       parameters:
         - name: user-id
           in: path
@@ -12326,7 +12326,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_createForward
+      operationId: user.mailFolder.message_createForward
       parameters:
         - name: user-id
           in: path
@@ -12390,7 +12390,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_createReply
+      operationId: user.mailFolder.message_createReply
       parameters:
         - name: user-id
           in: path
@@ -12450,7 +12450,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_createReplyAll
+      operationId: user.mailFolder.message_createReplyAll
       parameters:
         - name: user-id
           in: path
@@ -12510,7 +12510,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_forward
+      operationId: user.mailFolder.message_forward
       parameters:
         - name: user-id
           in: path
@@ -12570,7 +12570,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_move
+      operationId: user.mailFolder.message_move
       parameters:
         - name: user-id
           in: path
@@ -12627,7 +12627,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_reply
+      operationId: user.mailFolder.message_reply
       parameters:
         - name: user-id
           in: path
@@ -12683,7 +12683,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_replyAll
+      operationId: user.mailFolder.message_replyAll
       parameters:
         - name: user-id
           in: path
@@ -12739,7 +12739,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-send?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_send
+      operationId: user.mailFolder.message_send
       parameters:
         - name: user-id
           in: path
@@ -12780,7 +12780,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
-      operationId: users.mailFolders_copy
+      operationId: user.mailFolder_copy
       parameters:
         - name: user-id
           in: path
@@ -12829,7 +12829,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0
-      operationId: users.mailFolders_move
+      operationId: user.mailFolder_move
       parameters:
         - name: user-id
           in: path
@@ -12875,7 +12875,7 @@ paths:
         - users.Actions
       summary: Invoke action bypassActivationLock
       description: Bypass activation lock
-      operationId: users.managedDevices_bypassActivationLock
+      operationId: user.managedDevice_bypassActivationLock
       parameters:
         - name: user-id
           in: path
@@ -12905,7 +12905,7 @@ paths:
         - users.Actions
       summary: Invoke action cleanWindowsDevice
       description: Clean Windows device
-      operationId: users.managedDevices_cleanWindowsDevice
+      operationId: user.managedDevice_cleanWindowsDevice
       parameters:
         - name: user-id
           in: path
@@ -12948,7 +12948,7 @@ paths:
         - users.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
       description: Delete user from shared Apple device
-      operationId: users.managedDevices_deleteUserFromSharedAppleDevice
+      operationId: user.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: user-id
           in: path
@@ -12991,7 +12991,7 @@ paths:
         - users.Actions
       summary: Invoke action disableLostMode
       description: Disable lost mode
-      operationId: users.managedDevices_disableLostMode
+      operationId: user.managedDevice_disableLostMode
       parameters:
         - name: user-id
           in: path
@@ -13021,7 +13021,7 @@ paths:
         - users.Actions
       summary: Invoke action locateDevice
       description: Locate a device
-      operationId: users.managedDevices_locateDevice
+      operationId: user.managedDevice_locateDevice
       parameters:
         - name: user-id
           in: path
@@ -13051,7 +13051,7 @@ paths:
         - users.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
       description: Logout shared Apple device active user
-      operationId: users.managedDevices_logoutSharedAppleDeviceActiveUser
+      operationId: user.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: user-id
           in: path
@@ -13081,7 +13081,7 @@ paths:
         - users.Actions
       summary: Invoke action rebootNow
       description: Reboot device
-      operationId: users.managedDevices_rebootNow
+      operationId: user.managedDevice_rebootNow
       parameters:
         - name: user-id
           in: path
@@ -13111,7 +13111,7 @@ paths:
         - users.Actions
       summary: Invoke action recoverPasscode
       description: Recover passcode
-      operationId: users.managedDevices_recoverPasscode
+      operationId: user.managedDevice_recoverPasscode
       parameters:
         - name: user-id
           in: path
@@ -13141,7 +13141,7 @@ paths:
         - users.Actions
       summary: Invoke action remoteLock
       description: Remote lock
-      operationId: users.managedDevices_remoteLock
+      operationId: user.managedDevice_remoteLock
       parameters:
         - name: user-id
           in: path
@@ -13171,7 +13171,7 @@ paths:
         - users.Actions
       summary: Invoke action requestRemoteAssistance
       description: Request remote assistance
-      operationId: users.managedDevices_requestRemoteAssistance
+      operationId: user.managedDevice_requestRemoteAssistance
       parameters:
         - name: user-id
           in: path
@@ -13201,7 +13201,7 @@ paths:
         - users.Actions
       summary: Invoke action resetPasscode
       description: Reset passcode
-      operationId: users.managedDevices_resetPasscode
+      operationId: user.managedDevice_resetPasscode
       parameters:
         - name: user-id
           in: path
@@ -13231,7 +13231,7 @@ paths:
         - users.Actions
       summary: Invoke action retire
       description: Retire a device
-      operationId: users.managedDevices_retire
+      operationId: user.managedDevice_retire
       parameters:
         - name: user-id
           in: path
@@ -13261,7 +13261,7 @@ paths:
         - users.Actions
       summary: Invoke action shutDown
       description: Shut down device
-      operationId: users.managedDevices_shutDown
+      operationId: user.managedDevice_shutDown
       parameters:
         - name: user-id
           in: path
@@ -13290,7 +13290,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action syncDevice
-      operationId: users.managedDevices_syncDevice
+      operationId: user.managedDevice_syncDevice
       parameters:
         - name: user-id
           in: path
@@ -13319,7 +13319,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: users.managedDevices_updateWindowsDeviceAccount
+      operationId: user.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: user-id
           in: path
@@ -13360,7 +13360,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: users.managedDevices_windowsDefenderScan
+      operationId: user.managedDevice_windowsDefenderScan
       parameters:
         - name: user-id
           in: path
@@ -13402,7 +13402,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: users.managedDevices_windowsDefenderUpdateSignatures
+      operationId: user.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: user-id
           in: path
@@ -13432,7 +13432,7 @@ paths:
         - users.Actions
       summary: Invoke action wipe
       description: Wipe a device
-      operationId: users.managedDevices_wipe
+      operationId: user.managedDevice_wipe
       parameters:
         - name: user-id
           in: path
@@ -13490,7 +13490,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.messages.attachments_createUploadSession
+      operationId: user.message.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -13539,7 +13539,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
-      operationId: users.messages_copy
+      operationId: user.message_copy
       parameters:
         - name: user-id
           in: path
@@ -13588,7 +13588,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
-      operationId: users.messages_createForward
+      operationId: user.message_createForward
       parameters:
         - name: user-id
           in: path
@@ -13644,7 +13644,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0
-      operationId: users.messages_createReply
+      operationId: user.message_createReply
       parameters:
         - name: user-id
           in: path
@@ -13696,7 +13696,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
-      operationId: users.messages_createReplyAll
+      operationId: user.message_createReplyAll
       parameters:
         - name: user-id
           in: path
@@ -13748,7 +13748,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
-      operationId: users.messages_forward
+      operationId: user.message_forward
       parameters:
         - name: user-id
           in: path
@@ -13800,7 +13800,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0
-      operationId: users.messages_move
+      operationId: user.message_move
       parameters:
         - name: user-id
           in: path
@@ -13849,7 +13849,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
-      operationId: users.messages_reply
+      operationId: user.message_reply
       parameters:
         - name: user-id
           in: path
@@ -13897,7 +13897,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0
-      operationId: users.messages_replyAll
+      operationId: user.message_replyAll
       parameters:
         - name: user-id
           in: path
@@ -13945,7 +13945,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-send?view=graph-rest-1.0
-      operationId: users.messages_send
+      operationId: user.message_send
       parameters:
         - name: user-id
           in: path
@@ -13977,7 +13977,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0
-      operationId: users_assignLicense
+      operationId: user_assignLicense
       parameters:
         - name: user-id
           in: path
@@ -14004,7 +14004,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0
-      operationId: users_changePassword
+      operationId: user_changePassword
       parameters:
         - name: user-id
           in: path
@@ -14031,7 +14031,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: users_checkMemberGroups
+      operationId: user_checkMemberGroups
       parameters:
         - name: user-id
           in: path
@@ -14083,7 +14083,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkMemberObjects
-      operationId: users_checkMemberObjects
+      operationId: user_checkMemberObjects
       parameters:
         - name: user-id
           in: path
@@ -14139,7 +14139,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-exportpersonaldata?view=graph-rest-1.0
-      operationId: users_exportPersonalData
+      operationId: user_exportPersonalData
       parameters:
         - name: user-id
           in: path
@@ -14166,7 +14166,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-findmeetingtimes?view=graph-rest-1.0
-      operationId: users_findMeetingTimes
+      operationId: user_findMeetingTimes
       parameters:
         - name: user-id
           in: path
@@ -14193,7 +14193,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
-      operationId: users_getMailTips
+      operationId: user_getMailTips
       parameters:
         - name: user-id
           in: path
@@ -14223,7 +14223,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: users_getMemberGroups
+      operationId: user_getMemberGroups
       parameters:
         - name: user-id
           in: path
@@ -14279,7 +14279,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: users_getMemberObjects
+      operationId: user_getMemberObjects
       parameters:
         - name: user-id
           in: path
@@ -14332,7 +14332,7 @@ paths:
         - users.Actions
       summary: Invoke action removeAllDevicesFromManagement
       description: Retire all devices from management for this user
-      operationId: users_removeAllDevicesFromManagement
+      operationId: user_removeAllDevicesFromManagement
       parameters:
         - name: user-id
           in: path
@@ -14357,7 +14357,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-1.0
-      operationId: users_reprocessLicenseAssignment
+      operationId: user_reprocessLicenseAssignment
       parameters:
         - name: user-id
           in: path
@@ -14382,7 +14382,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: users_restore
+      operationId: user_restore
       parameters:
         - name: user-id
           in: path
@@ -14407,7 +14407,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action revokeSignInSessions
-      operationId: users_revokeSignInSessions
+      operationId: user_revokeSignInSessions
       parameters:
         - name: user-id
           in: path
@@ -14432,7 +14432,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0
-      operationId: users_sendMail
+      operationId: user_sendMail
       parameters:
         - name: user-id
           in: path
@@ -14459,7 +14459,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
-      operationId: users_translateExchangeIds
+      operationId: user_translateExchangeIds
       parameters:
         - name: user-id
           in: path
@@ -14486,7 +14486,7 @@ paths:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
       description: Issues a wipe operation on an app registration with specified device tag.
-      operationId: users_wipeManagedAppRegistrationsGraphBPreDeviceTag
+      operationId: user_wipeManagedAppRegistrationsGraphBPreDeviceTag
       parameters:
         - name: user-id
           in: path
@@ -14513,7 +14513,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
-      operationId: users.onenote.notebooks_copyNotebook
+      operationId: user.onenote.notebook_copyNotebook
       parameters:
         - name: user-id
           in: path
@@ -14575,7 +14575,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: users.onenote.notebooks.sectionGroups.sections_copyToNotebook
+      operationId: user.onenote.notebook.sectionGroup_copyToNotebook
       parameters:
         - name: user-id
           in: path
@@ -14653,7 +14653,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: users.onenote.notebooks.sectionGroups.sections_copyToSectionGroup
+      operationId: user.onenote.notebook.sectionGroup_copyToSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -14731,7 +14731,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_copyToSection
+      operationId: user.onenote.notebook.sectionGroup.page_copyToSection
       parameters:
         - name: user-id
           in: path
@@ -14810,7 +14810,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action onenotePatchContent
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_onenotePatchContent
+      operationId: user.onenote.notebook.sectionGroup.page_onenotePatchContent
       parameters:
         - name: user-id
           in: path
@@ -14881,7 +14881,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: users.onenote.notebooks.sections_copyToNotebook
+      operationId: user.onenote.notebook.section_copyToNotebook
       parameters:
         - name: user-id
           in: path
@@ -14951,7 +14951,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: users.onenote.notebooks.sections_copyToSectionGroup
+      operationId: user.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -15021,7 +15021,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: users.onenote.notebooks.sections.pages_copyToSection
+      operationId: user.onenote.notebook.section.page_copyToSection
       parameters:
         - name: user-id
           in: path
@@ -15092,7 +15092,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action onenotePatchContent
-      operationId: users.onenote.notebooks.sections.pages_onenotePatchContent
+      operationId: user.onenote.notebook.section.page_onenotePatchContent
       parameters:
         - name: user-id
           in: path
@@ -15155,7 +15155,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
-      operationId: users.onenote.notebooks_getNotebookFromWebUrl
+      operationId: user.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: user-id
           in: path
@@ -15197,7 +15197,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: users.onenote.pages_copyToSection
+      operationId: user.onenote.page_copyToSection
       parameters:
         - name: user-id
           in: path
@@ -15252,7 +15252,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action onenotePatchContent
-      operationId: users.onenote.pages_onenotePatchContent
+      operationId: user.onenote.page_onenotePatchContent
       parameters:
         - name: user-id
           in: path
@@ -15299,7 +15299,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: users.onenote.sectionGroups.sections_copyToNotebook
+      operationId: user.onenote.sectionGroup_copyToNotebook
       parameters:
         - name: user-id
           in: path
@@ -15369,7 +15369,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: users.onenote.sectionGroups.sections_copyToSectionGroup
+      operationId: user.onenote.sectionGroup_copyToSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -15439,7 +15439,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: users.onenote.sectionGroups.sections.pages_copyToSection
+      operationId: user.onenote.sectionGroup.page_copyToSection
       parameters:
         - name: user-id
           in: path
@@ -15510,7 +15510,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action onenotePatchContent
-      operationId: users.onenote.sectionGroups.sections.pages_onenotePatchContent
+      operationId: user.onenote.sectionGroup.page_onenotePatchContent
       parameters:
         - name: user-id
           in: path
@@ -15573,7 +15573,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: users.onenote.sections_copyToNotebook
+      operationId: user.onenote.section_copyToNotebook
       parameters:
         - name: user-id
           in: path
@@ -15635,7 +15635,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: users.onenote.sections_copyToSectionGroup
+      operationId: user.onenote.section_copyToSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -15697,7 +15697,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: users.onenote.sections.pages_copyToSection
+      operationId: user.onenote.section.page_copyToSection
       parameters:
         - name: user-id
           in: path
@@ -15760,7 +15760,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action onenotePatchContent
-      operationId: users.onenote.sections.pages_onenotePatchContent
+      operationId: user.onenote.section.page_onenotePatchContent
       parameters:
         - name: user-id
           in: path
@@ -15815,7 +15815,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
-      operationId: users.onlineMeetings_createOrGet
+      operationId: user.onlineMeeting_createOrGet
       parameters:
         - name: user-id
           in: path
@@ -15873,7 +15873,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
-      operationId: users.presence_clearPresence
+      operationId: user.presence_clearPresence
       parameters:
         - name: user-id
           in: path
@@ -15911,7 +15911,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
-      operationId: users.presence_clearUserPreferredPresence
+      operationId: user.presence_clearUserPreferredPresence
       parameters:
         - name: user-id
           in: path
@@ -15936,7 +15936,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
-      operationId: users.presence_setPresence
+      operationId: user.presence_setPresence
       parameters:
         - name: user-id
           in: path
@@ -15983,7 +15983,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
-      operationId: users.presence_setUserPreferredPresence
+      operationId: user.presence_setUserPreferredPresence
       parameters:
         - name: user-id
           in: path
@@ -16027,7 +16027,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/userteamwork-sendactivitynotification?view=graph-rest-1.0
-      operationId: users.teamwork_sendActivityNotification
+      operationId: user.teamwork_sendActivityNotification
       parameters:
         - name: user-id
           in: path
@@ -16077,7 +16077,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/taskfileattachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.todo.lists.tasks.attachments_createUploadSession
+      operationId: user.todo.list.task.attachment_createUploadSession
       parameters:
         - name: user-id
           in: path
@@ -16134,7 +16134,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: users_getAvailableExtensionProperties
+      operationId: user_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
         content:
@@ -16182,7 +16182,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: users_getGraphBPreIds
+      operationId: user_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -16235,7 +16235,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: users_validateProperties
+      operationId: user_validateProperties
       requestBody:
         description: Action parameters
         content:
@@ -18970,6 +18970,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -20682,6 +20684,28 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.assignedPlan:
@@ -28929,15 +28953,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string

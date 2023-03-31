@@ -244,11 +244,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.androidDeviceOwnerEnrollmentProfile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -472,11 +468,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.androidForWorkEnrollmentProfile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -696,11 +688,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appleUserInitiatedEnrollmentProfile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -736,7 +724,7 @@ paths:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get assignments from deviceManagement
       description: The list of assignments for this profile.
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_ListAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_ListAssignments
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
@@ -804,7 +792,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_CreateAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_CreateAssignments
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
@@ -837,7 +825,7 @@ paths:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get assignments from deviceManagement
       description: The list of assignments for this profile.
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_GetAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_GetAssignments
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
@@ -894,7 +882,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_UpdateAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_UpdateAssignments
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
@@ -921,11 +909,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appleEnrollmentProfileAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -933,7 +917,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_DeleteAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_DeleteAssignments
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
@@ -1225,11 +1209,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotEvent'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1265,7 +1245,7 @@ paths:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get policyStatusDetails from deviceManagement
       description: Policy and application status details for this device.
-      operationId: deviceManagement.autopilotEvents_ListPolicyStatusDetails
+      operationId: deviceManagement.autopilotEvent_ListPolicyStatusDetails
       parameters:
         - name: deviceManagementAutopilotEvent-id
           in: path
@@ -1348,7 +1328,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Create new navigation property to policyStatusDetails for deviceManagement
-      operationId: deviceManagement.autopilotEvents_CreatePolicyStatusDetails
+      operationId: deviceManagement.autopilotEvent_CreatePolicyStatusDetails
       parameters:
         - name: deviceManagementAutopilotEvent-id
           in: path
@@ -1381,7 +1361,7 @@ paths:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get policyStatusDetails from deviceManagement
       description: Policy and application status details for this device.
-      operationId: deviceManagement.autopilotEvents_GetPolicyStatusDetails
+      operationId: deviceManagement.autopilotEvent_GetPolicyStatusDetails
       parameters:
         - name: deviceManagementAutopilotEvent-id
           in: path
@@ -1443,7 +1423,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Update the navigation property policyStatusDetails in deviceManagement
-      operationId: deviceManagement.autopilotEvents_UpdatePolicyStatusDetails
+      operationId: deviceManagement.autopilotEvent_UpdatePolicyStatusDetails
       parameters:
         - name: deviceManagementAutopilotEvent-id
           in: path
@@ -1470,11 +1450,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1482,7 +1458,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Delete navigation property policyStatusDetails for deviceManagement
-      operationId: deviceManagement.autopilotEvents_DeletePolicyStatusDetails
+      operationId: deviceManagement.autopilotEvent_DeletePolicyStatusDetails
       parameters:
         - name: deviceManagementAutopilotEvent-id
           in: path
@@ -1572,11 +1548,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1816,11 +1788,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.depOnboardingSetting'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1856,7 +1824,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultIosEnrollmentProfile from deviceManagement
       description: Default iOS Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings_GetDefaultIosEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSetting_GetDefaultIosEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -1961,7 +1929,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultMacOsEnrollmentProfile from deviceManagement
       description: Default MacOs Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings_GetDefaultMacOsEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSetting_GetDefaultMacOsEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2057,7 +2025,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get enrollmentProfiles from deviceManagement
       description: The enrollment profiles.
-      operationId: deviceManagement.depOnboardingSettings_ListEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_ListEnrollmentProfiles
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2140,7 +2108,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Create new navigation property to enrollmentProfiles for deviceManagement
-      operationId: deviceManagement.depOnboardingSettings_CreateEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_CreateEnrollmentProfiles
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2173,7 +2141,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get enrollmentProfiles from deviceManagement
       description: The enrollment profiles.
-      operationId: deviceManagement.depOnboardingSettings_GetEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_GetEnrollmentProfiles
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2235,7 +2203,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Update the navigation property enrollmentProfiles in deviceManagement
-      operationId: deviceManagement.depOnboardingSettings_UpdateEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_UpdateEnrollmentProfiles
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2262,11 +2230,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.enrollmentProfile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2274,7 +2238,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Delete navigation property enrollmentProfiles for deviceManagement
-      operationId: deviceManagement.depOnboardingSettings_DeleteEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_DeleteEnrollmentProfiles
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2310,7 +2274,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get importedAppleDeviceIdentities from deviceManagement
       description: The imported Apple device identities.
-      operationId: deviceManagement.depOnboardingSettings_ListImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_ListImportedAppleDeviceIdentities
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2408,7 +2372,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Create new navigation property to importedAppleDeviceIdentities for deviceManagement
-      operationId: deviceManagement.depOnboardingSettings_CreateImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_CreateImportedAppleDeviceIdentities
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2441,7 +2405,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get importedAppleDeviceIdentities from deviceManagement
       description: The imported Apple device identities.
-      operationId: deviceManagement.depOnboardingSettings_GetImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_GetImportedAppleDeviceIdentities
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2508,7 +2472,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Update the navigation property importedAppleDeviceIdentities in deviceManagement
-      operationId: deviceManagement.depOnboardingSettings_UpdateImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_UpdateImportedAppleDeviceIdentities
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2535,11 +2499,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2547,7 +2507,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Delete navigation property importedAppleDeviceIdentities for deviceManagement
-      operationId: deviceManagement.depOnboardingSettings_DeleteImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_DeleteImportedAppleDeviceIdentities
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2767,11 +2727,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2807,7 +2763,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfigurations_ListAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_ListAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -2881,7 +2837,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations_CreateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_CreateAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -2914,7 +2870,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfigurations_GetAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_GetAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -2973,7 +2929,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations_UpdateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_UpdateAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -3000,11 +2956,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3012,7 +2964,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations_DeleteAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_DeleteAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -3228,11 +3180,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3444,11 +3392,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3668,11 +3612,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3916,11 +3856,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3956,7 +3892,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignedDevices from deviceManagement
       description: The list of assigned devices for the profile.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_ListAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_ListAssignedDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4100,7 +4036,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Create new navigation property to assignedDevices for deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_CreateAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_CreateAssignedDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4133,7 +4069,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignedDevices from deviceManagement
       description: The list of assigned devices for the profile.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_GetAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_GetAssignedDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4218,7 +4154,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Update the navigation property assignedDevices in deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_UpdateAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_UpdateAssignedDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4245,11 +4181,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4257,7 +4189,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Delete navigation property assignedDevices for deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_DeleteAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_DeleteAssignedDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4293,7 +4225,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get deploymentProfile from deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_GetDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4368,7 +4300,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get intendedDeploymentProfile from deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_GetIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4443,7 +4375,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the profile.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_ListAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_ListAssignments
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4517,7 +4449,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_CreateAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_CreateAssignments
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4550,7 +4482,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the profile.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_GetAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_GetAssignments
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4609,7 +4541,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_UpdateAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_UpdateAssignments
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4636,11 +4568,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfileAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4648,7 +4576,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_DeleteAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_DeleteAssignments
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4940,11 +4868,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4980,7 +4904,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get deploymentProfile from deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_GetDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -5047,7 +4971,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get intendedDeploymentProfile from deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_GetIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -5167,11 +5091,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotSettings'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5387,11 +5307,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfile'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5427,7 +5343,7 @@ paths:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments of the profile.
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_ListAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_ListAssignments
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
@@ -5495,7 +5411,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_CreateAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_CreateAssignments
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
@@ -5528,7 +5444,7 @@ paths:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments of the profile.
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_GetAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_GetAssignments
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
@@ -5585,7 +5501,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_UpdateAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_UpdateAssignments
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
@@ -5612,11 +5528,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfileAssignment'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5624,7 +5536,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_DeleteAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_DeleteAssignments
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
@@ -5659,7 +5571,7 @@ paths:
       tags:
         - roleManagement.roleManagement
       summary: Get roleManagement
-      operationId: roleManagement.roleManagement_GetRoleManagement
+      operationId: roleManagement_GetRoleManagement
       parameters:
         - name: $select
           in: query
@@ -5708,7 +5620,7 @@ paths:
       tags:
         - roleManagement.roleManagement
       summary: Update roleManagement
-      operationId: roleManagement.roleManagement_UpdateRoleManagement
+      operationId: roleManagement_UpdateRoleManagement
       requestBody:
         description: New property values
         content:
@@ -5718,11 +5630,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.roleManagement'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5787,11 +5695,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5973,11 +5877,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6016,7 +5916,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
-      operationId: roleManagement.cloudPC.resourceNamespaces_ListResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -6101,7 +6001,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to resourceActions for roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces_CreateResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_CreateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -6134,7 +6034,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
       description: Operations that an authorized principal are allowed to perform.
-      operationId: roleManagement.cloudPC.resourceNamespaces_GetResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -6198,7 +6098,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceActions in roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces_UpdateResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_UpdateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -6225,11 +6125,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6237,7 +6133,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceActions for roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces_DeleteResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_DeleteResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -6272,7 +6168,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceScope from roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions_GetResourceScope
+      operationId: roleManagement.cloudPC.resourceNamespace.resourceAction_GetResourceScope
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -6331,7 +6227,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceScope in roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions_UpdateResourceScope
+      operationId: roleManagement.cloudPC.resourceNamespace.resourceAction_UpdateResourceScope
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -6358,11 +6254,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6370,7 +6262,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceScope for roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions_DeleteResourceScope
+      operationId: roleManagement.cloudPC.resourceNamespace.resourceAction_DeleteResourceScope
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -6604,11 +6496,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6644,7 +6532,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
       description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-      operationId: roleManagement.cloudPC.roleAssignments_ListAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_ListAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -6715,7 +6603,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to appScopes for roleManagement
-      operationId: roleManagement.cloudPC.roleAssignments_CreateAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_CreateAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -6748,7 +6636,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
       description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-      operationId: roleManagement.cloudPC.roleAssignments_GetAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_GetAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -6806,7 +6694,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property appScopes in roleManagement
-      operationId: roleManagement.cloudPC.roleAssignments_UpdateAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_UpdateAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -6833,11 +6721,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appScope'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6845,7 +6729,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property appScopes for roleManagement
-      operationId: roleManagement.cloudPC.roleAssignments_DeleteAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_DeleteAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -6881,7 +6765,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
       description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments_ListDirectoryScopes
+      operationId: roleManagement.cloudPC.roleAssignment_ListDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -6951,7 +6835,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
       description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments_GetDirectoryScopes
+      operationId: roleManagement.cloudPC.roleAssignment_GetDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -7010,7 +6894,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
       description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments_ListPrincipals
+      operationId: roleManagement.cloudPC.roleAssignment_ListPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -7080,7 +6964,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
       description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments_GetPrincipals
+      operationId: roleManagement.cloudPC.roleAssignment_GetPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -7139,7 +7023,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.cloudPC.roleAssignments_GetRoleDefinition
+      operationId: roleManagement.cloudPC.roleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -7160,6 +7044,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7221,6 +7106,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -7249,6 +7136,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7333,6 +7221,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7389,11 +7278,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7429,7 +7314,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
-      operationId: roleManagement.cloudPC.roleDefinitions_ListInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -7456,6 +7341,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -7484,6 +7371,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7520,7 +7408,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.cloudPC.roleDefinitions_CreateInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_CreateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -7553,7 +7441,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
-      operationId: roleManagement.cloudPC.roleDefinitions_GetInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -7582,6 +7470,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7619,7 +7508,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      operationId: roleManagement.cloudPC.roleDefinitions_UpdateInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_UpdateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -7646,11 +7535,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7658,7 +7543,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.cloudPC.roleDefinitions_DeleteInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_DeleteInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -7750,11 +7635,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7936,11 +7817,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7979,7 +7856,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
-      operationId: roleManagement.deviceManagement.resourceNamespaces_ListResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -8064,7 +7941,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to resourceActions for roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces_CreateResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_CreateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -8097,7 +7974,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
       description: Operations that an authorized principal are allowed to perform.
-      operationId: roleManagement.deviceManagement.resourceNamespaces_GetResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -8161,7 +8038,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceActions in roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces_UpdateResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_UpdateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -8188,11 +8065,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8200,7 +8073,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceActions for roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces_DeleteResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_DeleteResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -8235,7 +8108,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceScope from roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.resourceActions_GetResourceScope
+      operationId: roleManagement.deviceManagement.resourceNamespace.resourceAction_GetResourceScope
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -8294,7 +8167,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceScope in roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.resourceActions_UpdateResourceScope
+      operationId: roleManagement.deviceManagement.resourceNamespace.resourceAction_UpdateResourceScope
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -8321,11 +8194,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8333,7 +8202,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceScope for roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.resourceActions_DeleteResourceScope
+      operationId: roleManagement.deviceManagement.resourceNamespace.resourceAction_DeleteResourceScope
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
@@ -8567,11 +8436,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8607,7 +8472,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
       description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-      operationId: roleManagement.deviceManagement.roleAssignments_ListAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_ListAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8678,7 +8543,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to appScopes for roleManagement
-      operationId: roleManagement.deviceManagement.roleAssignments_CreateAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_CreateAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8711,7 +8576,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
       description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-      operationId: roleManagement.deviceManagement.roleAssignments_GetAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_GetAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8769,7 +8634,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property appScopes in roleManagement
-      operationId: roleManagement.deviceManagement.roleAssignments_UpdateAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_UpdateAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8796,11 +8661,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appScope'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8808,7 +8669,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property appScopes for roleManagement
-      operationId: roleManagement.deviceManagement.roleAssignments_DeleteAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_DeleteAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8844,7 +8705,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
       description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments_ListDirectoryScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_ListDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8914,7 +8775,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
       description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments_GetDirectoryScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_GetDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8973,7 +8834,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
       description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments_ListPrincipals
+      operationId: roleManagement.deviceManagement.roleAssignment_ListPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -9043,7 +8904,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
       description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments_GetPrincipals
+      operationId: roleManagement.deviceManagement.roleAssignment_GetPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -9102,7 +8963,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.deviceManagement.roleAssignments_GetRoleDefinition
+      operationId: roleManagement.deviceManagement.roleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -9123,6 +8984,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9184,6 +9046,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -9212,6 +9076,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9296,6 +9161,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9352,11 +9218,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9392,7 +9254,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
-      operationId: roleManagement.deviceManagement.roleDefinitions_ListInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -9419,6 +9281,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -9447,6 +9311,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9483,7 +9348,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.deviceManagement.roleDefinitions_CreateInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_CreateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -9516,7 +9381,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
-      operationId: roleManagement.deviceManagement.roleDefinitions_GetInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -9545,6 +9410,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9582,7 +9448,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      operationId: roleManagement.deviceManagement.roleDefinitions_UpdateInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_UpdateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -9609,11 +9475,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9621,7 +9483,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.deviceManagement.roleDefinitions_DeleteInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_DeleteInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
@@ -11049,6 +10911,8 @@ components:
         - title: unifiedRoleDefinition
           type: object
           properties:
+            allowedPrincipalTypes:
+              $ref: '#/components/schemas/microsoft.graph.allowedRolePrincipalTypes'
             description:
               type: string
               description: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
@@ -11229,6 +11093,9 @@ components:
         - androidWorkProfile
         - unknown
         - androidAOSP
+        - androidMobileApplicationManagement
+        - iOSMobileApplicationManagement
+        - unknownFutureValue
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -11265,6 +11132,15 @@ components:
           - value: androidAOSP
             description: Android AOSP.
             name: androidAOSP
+          - value: androidMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for android devices.
+            name: androidMobileApplicationManagement
+          - value: iOSMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for iOS devices
+            name: iOSMobileApplicationManagement
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use
+            name: unknownFutureValue
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -11459,7 +11335,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -12013,6 +11889,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.allowedRolePrincipalTypes:
+      title: allowedRolePrincipalTypes
+      enum:
+        - user
+        - servicePrincipal
+        - group
+        - unknownFutureValue
+      type: string
     microsoft.graph.unifiedRolePermission:
       title: unifiedRolePermission
       type: object
