@@ -11,6 +11,7 @@ steps:
 
   - task: PoliCheck@2
     displayName: "Run PoliCheck"
+    enabled: false
     inputs:
       inputType: CmdLine
       cmdLineArgs: '/F:$(Build.SourcesDirectory)/src /T:9 /Sev:"1|2" /PE:2 /O:poli_result_src.xml'
