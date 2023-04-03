@@ -31,7 +31,7 @@ directive:
         let serviceClientRegex = /(public\s*Microsoft.(Graph|Graph.Beta).PowerShell.People\s*)(Client\s*=>)/gmi
         $ = $.replace(serviceClientRegex, "$1Service$3");
 
-        let serviceClientCallRegex = /(this.)(Client.UsersProfile(Create|Update)Projects)/gmi
+        let serviceClientCallRegex = /(this.)(Client.UserProfile(Create|Update)Projects)/gmi
         $ = $.replace(serviceClientCallRegex, "$1Service$2");
 
         return $;
