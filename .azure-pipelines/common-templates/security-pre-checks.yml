@@ -7,11 +7,11 @@ steps:
       debugMode: false
       toolMajorVersion: V2
       scanFolder: '$(Build.SourcesDirectory)/src'
-      suppressionsFile: './config/credscan/credscan-suppressions.json'
+      suppressionsFile: './scripts/ci/credscan/credscan-suppressions.json'
 
   - task: PoliCheck@2
     displayName: "Run PoliCheck"
     inputs:
       inputType: CmdLine
       cmdLineArgs: '/F:$(Build.SourcesDirectory)/src /T:9 /Sev:"1|2" /PE:1|2|3|4 /O:poli_result_src.xml'
-      optionsUEPATH: './config/policheck/policheck-exclusions.xml'
+      optionsUEPATH: './scripts/ci/policheck/policheck-exclusions.xml'
