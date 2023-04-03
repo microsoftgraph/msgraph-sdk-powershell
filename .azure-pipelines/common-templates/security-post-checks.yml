@@ -12,3 +12,6 @@ steps:
     inputs:
       CredScan: true
       PoliCheck: true
+      GdnBreakAllTools: false
+      GdnBreakGdnToolPoliCheck: true
+      GdnBreakGdnToolPoliCheckSeverity: Error
