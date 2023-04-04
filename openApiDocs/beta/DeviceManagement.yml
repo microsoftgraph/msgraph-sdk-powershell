@@ -110,6 +110,7 @@ paths:
                 - managedDevices
                 - mobileAppTroubleshootingEvents
                 - oemWarrantyInformationOnboarding
+                - privilegeManagementElevations
                 - remoteActionAudits
                 - tenantAttachRBAC
                 - userExperienceAnalyticsAnomaly
@@ -281,6 +282,7 @@ paths:
                 - managedDevices
                 - mobileAppTroubleshootingEvents
                 - oemWarrantyInformationOnboarding
+                - privilegeManagementElevations
                 - remoteActionAudits
                 - tenantAttachRBAC
                 - userExperienceAnalyticsAnomaly
@@ -7088,7 +7090,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Get settingDefinitions from deviceManagement
-      description: List of related Setting Definitions
+      description: List of related Setting Definitions. This property is read-only.
       operationId: deviceManagement.compliancePolicies.settings_ListSettingDefinitions
       parameters:
         - name: deviceManagementCompliancePolicy-id
@@ -7217,7 +7219,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementCompliancePolicy
       summary: Get settingDefinitions from deviceManagement
-      description: List of related Setting Definitions
+      description: List of related Setting Definitions. This property is read-only.
       operationId: deviceManagement.compliancePolicies.settings_GetSettingDefinitions
       parameters:
         - name: deviceManagementCompliancePolicy-id
@@ -8283,7 +8285,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementConfigurationPolicy
       summary: Get settingDefinitions from deviceManagement
-      description: List of related Setting Definitions
+      description: List of related Setting Definitions. This property is read-only.
       operationId: deviceManagement.configurationPolicies.settings_ListSettingDefinitions
       parameters:
         - name: deviceManagementConfigurationPolicy-id
@@ -8412,7 +8414,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementConfigurationPolicy
       summary: Get settingDefinitions from deviceManagement
-      description: List of related Setting Definitions
+      description: List of related Setting Definitions. This property is read-only.
       operationId: deviceManagement.configurationPolicies.settings_GetSettingDefinitions
       parameters:
         - name: deviceManagementConfigurationPolicy-id
@@ -22514,6 +22516,8 @@ paths:
                 - displayName desc
                 - isAssigned
                 - isAssigned desc
+                - isMigratingToConfigurationPolicy
+                - isMigratingToConfigurationPolicy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - roleScopeTagIds
@@ -22535,6 +22539,7 @@ paths:
                 - description
                 - displayName
                 - isAssigned
+                - isMigratingToConfigurationPolicy
                 - lastModifiedDateTime
                 - roleScopeTagIds
                 - templateId
@@ -22628,6 +22633,7 @@ paths:
                 - description
                 - displayName
                 - isAssigned
+                - isMigratingToConfigurationPolicy
                 - lastModifiedDateTime
                 - roleScopeTagIds
                 - templateId
@@ -46498,6 +46504,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.oemWarrantyInformationOnboarding'
               description: List of OEM Warranty Statuses
               x-ms-navigationProperty: true
+            privilegeManagementElevations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.privilegeManagementElevation'
+              description: The endpoint privilege management elevation event entity contains elevation details.
+              x-ms-navigationProperty: true
             remoteActionAudits:
               type: array
               items:
@@ -48492,7 +48504,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
-              description: List of related Setting Definitions
+              description: List of related Setting Definitions. This property is read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -50610,6 +50622,10 @@ components:
             isAssigned:
               type: boolean
               description: Signifies whether or not the intent is assigned to users
+            isMigratingToConfigurationPolicy:
+              type: boolean
+              description: Signifies whether or not the intent is being migrated to the configurationPolicies endpoint
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -55647,6 +55663,78 @@ components:
           additionalProperties:
             type: object
           description: Warranty status entity for a given OEM
+    microsoft.graph.privilegeManagementElevation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: privilegeManagementElevation
+          type: object
+          properties:
+            certificatePayload:
+              type: string
+              description: 'The certificate payload of the application. This is computed by hashing the certificate information on the client. Example: `32c220482c68413fbf8290e3b1e49b0a85901cfcd62ab0738760568a2a6e8a50`'
+              nullable: true
+            companyName:
+              type: string
+              description: 'The company name of the application. This value is set by the creator of the application. Example: `Microsoft Corporation`'
+              nullable: true
+            deviceId:
+              type: string
+              description: 'The Intune deviceId. Unique identifier for the managed device. Example: `92ce5047-9553-4731-817f-9b401a999a1b`'
+              nullable: true
+            deviceName:
+              type: string
+              description: 'The name associated with the device in the intune database. Example: `JOHNDOE-LAPTOP`.'
+              nullable: true
+            elevationType:
+              $ref: '#/components/schemas/microsoft.graph.privilegeManagementElevationType'
+            eventDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the application was elevated. Example:`2014-01-01T00:00:00Z`
+              format: date-time
+            fileDescription:
+              type: string
+              description: 'The file description of the application. This value is set by the creator of the application. Example: `Editor of multiple coding languages.`'
+              nullable: true
+            filePath:
+              type: string
+              description: 'The full file path of the application including the filename and file extension. Example: `C:\Program Files\vscode.exe`'
+              nullable: true
+            fileVersion:
+              type: string
+              description: 'The version of the application. This value is set by the creator of the application. Example: `6.2211.1035.1000`'
+              nullable: true
+            hash:
+              type: string
+              description: 'The sha256 hash of the application. Example: `32c220482c68413fbf8290e3b1e49b0a85901cfcd62ab0738760568a2a6e8a57`'
+              nullable: true
+            internalName:
+              type: string
+              description: 'The internal name of the application. This value is set by the creator of the application. Example: `VS code`'
+              nullable: true
+            justification:
+              type: string
+              description: 'The justification to elevate the application. This is an input by the user when the privilegeManagementElevationType is of type userConfirmedElevation or support approved elevation. This will be null in all other scenarios. The length is capped at 256 char, enforced on the client side. Example: `To install debug tool.`.'
+              nullable: true
+            productName:
+              type: string
+              description: 'The product name of the application. This value is set by the creator of the application. Example: `Visual Studio`'
+              nullable: true
+            result:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'The result of the elevation action with 0 being success, and everything else being exit code if the elevation was unsuccessful. The value will always be 0 on all unmanaged elevation. Example: `0`. Valid values 0 to 2147483647'
+              format: int32
+            upn:
+              type: string
+              description: 'The User Principal Name of the user who performed the elevation. Example: `john@domain.com`'
+              nullable: true
+            userType:
+              $ref: '#/components/schemas/microsoft.graph.privilegeManagementEndUserType'
+          additionalProperties:
+            type: object
+          description: The endpoint privilege management elevation result entity representing a single elevation action on a client device.
     microsoft.graph.tenantAttachRBAC:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -57531,6 +57619,9 @@ components:
         - androidWorkProfile
         - unknown
         - androidAOSP
+        - androidMobileApplicationManagement
+        - iOSMobileApplicationManagement
+        - unknownFutureValue
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -57567,6 +57658,15 @@ components:
           - value: androidAOSP
             description: Android AOSP.
             name: androidAOSP
+          - value: androidMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for android devices.
+            name: androidMobileApplicationManagement
+          - value: iOSMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for iOS devices
+            name: iOSMobileApplicationManagement
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use
+            name: unknownFutureValue
     microsoft.graph.deviceManagementConstraint:
       title: deviceManagementConstraint
       type: object
@@ -64691,7 +64791,7 @@ components:
           properties:
             displayName:
               type: string
-              description: The image's display name.
+              description: The display name of the image.
               nullable: true
             expirationDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -64702,22 +64802,22 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
+              description: 'The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             operatingSystem:
               type: string
-              description: 'The image''s operating system. For example: Windows 10 Enterprise.'
+              description: 'The operating system of the image. For example, Windows 10 Enterprise.'
               nullable: true
             osBuildNumber:
               type: string
-              description: 'The image''s OS build version. For example: 1909.'
+              description: 'The OS build version of the image. For example, 1909.'
               nullable: true
             osStatus:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageOsStatus'
             sourceImageResourceId:
               type: string
-              description: 'The ID of the source image resource on Azure. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}''.'
+              description: 'The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.'
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageStatus'
@@ -64725,7 +64825,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageStatusDetails'
             version:
               type: string
-              description: 'The image version. For example: 0.0.1, 1.5.13.'
+              description: 'The image version. For example, 0.0.1 and 1.5.13.'
               nullable: true
           additionalProperties:
             type: object
@@ -64768,7 +64868,7 @@ components:
             endDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
+              description: The date in which this image is no longer within long-term support. The Cloud PC continues to provide short-term support. Read-only.
               format: date
               nullable: true
             expirationDate:
@@ -64779,7 +64879,7 @@ components:
               nullable: true
             offer:
               type: string
-              description: The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+              description: The offer name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
               nullable: true
             offerDisplayName:
               type: string
@@ -64787,7 +64887,7 @@ components:
               nullable: true
             publisher:
               type: string
-              description: The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+              description: The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
               nullable: true
             recommendedSku:
               type: string
@@ -64802,7 +64902,7 @@ components:
               nullable: true
             sku:
               type: string
-              description: The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+              description: The SKU name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
               nullable: true
             skuDisplayName:
               type: string
@@ -65076,7 +65176,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as''2014-01-01T00:00:00Z''.'
+              description: 'The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastRestoredDateTime:
@@ -65912,6 +66012,68 @@ components:
           - value: dateTime
             description: Indicates the value for a custom attribute script is a date conforming to ISO 8601.
             name: dateTime
+    microsoft.graph.privilegeManagementElevationType:
+      title: privilegeManagementElevationType
+      enum:
+        - undetermined
+        - unmanagedElevation
+        - zeroTouchElevation
+        - userConfirmedElevation
+        - supportApprovedElevation
+        - unknownFutureValue
+      type: string
+      description: Indicates the type of elevation occured
+      x-ms-enum:
+        name: privilegeManagementElevationType
+        modelAsString: false
+        values:
+          - value: undetermined
+            description: Default. If the type was unknown on the client for some reasons.
+            name: undetermined
+          - value: unmanagedElevation
+            description: 'The elevation was done without any use of endpoint privilege management. For example: the administrator on a client machine elevated an application with their admin right.'
+            name: unmanagedElevation
+          - value: zeroTouchElevation
+            description: The elevation was done using the endpoint privilege management zero touch elevation policy.
+            name: zeroTouchElevation
+          - value: userConfirmedElevation
+            description: The elevation was done using the endpoint privilege management user confirmed elevation policy.
+            name: userConfirmedElevation
+          - value: supportApprovedElevation
+            description: The elevation was done using the endpoint privilege management support approved elevation policy.
+            name: supportApprovedElevation
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.privilegeManagementEndUserType:
+      title: privilegeManagementEndUserType
+      enum:
+        - undetermined
+        - azureAd
+        - hybrid
+        - local
+        - unknownFutureValue
+      type: string
+      description: The type of user account on Windows that was used to performed the elevation.
+      x-ms-enum:
+        name: privilegeManagementEndUserType
+        modelAsString: false
+        values:
+          - value: undetermined
+            description: Default. Unable to determine the login type of the user.
+            name: undetermined
+          - value: azureAd
+            description: The user who performed the elevation logged in using an Azure Active Directory (Azure AD) account.
+            name: azureAd
+          - value: hybrid
+            description: The user who performed the elevation logged in using Hybrid Azure AD joined account.
+            name: hybrid
+          - value: local
+            description: The user who performed the elevation logged in using a Windows local account.
+            name: local
+          - value: unknownFutureValue
+            description: Evolvable emuneration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.appleOwnerTypeEnrollmentType:
       title: appleOwnerTypeEnrollmentType
       type: object
@@ -66723,6 +66885,8 @@ components:
           description: 'The date and time when this deployment was completed or canceled. The actual date time is determined by the value of state. If the state is canceled, this property holds the cancellation date/time. If the the state is completed, this property holds the completion date/time. If the deployment is not completed before the deployment end date, then completed date/time and end date/time are the same. This is always in the deployment timezone. Note: An installation that is in progress can continue past the deployment end date.'
           format: date-time
           nullable: true
+        errorCode:
+          $ref: '#/components/schemas/microsoft.graph.zebraFotaErrorCode'
         lastUpdatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
@@ -72294,7 +72458,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -72500,6 +72664,47 @@ components:
             name: auto
           - value: unknownFutureValue
             description: Unknown future enum value.
+            name: unknownFutureValue
+    microsoft.graph.zebraFotaErrorCode:
+      title: zebraFotaErrorCode
+      enum:
+        - success
+        - noDevicesFoundInSelectedAadGroups
+        - noIntuneDevicesFoundInSelectedAadGroups
+        - noZebraFotaEnrolledDevicesFoundForCurrentTenant
+        - noZebraFotaEnrolledDevicesFoundInSelectedAadGroups
+        - noZebraFotaDevicesFoundForSelectedDeviceModel
+        - zebraFotaCreateDeploymentRequestFailure
+        - unknownFutureValue
+      type: string
+      description: 'An error code indicating the failure reason, when the deployment state is createFailed. Possible values: See zebraFotaErrorCode enum.'
+      x-ms-enum:
+        name: zebraFotaErrorCode
+        modelAsString: false
+        values:
+          - value: success
+            description: Default error code indicating success (no error).
+            name: success
+          - value: noDevicesFoundInSelectedAadGroups
+            description: 'This error indicates that no devices were found in the selected Azure Active Directory (AAD) security group(s) when creating a deployment. E.g.: a user selects one or more security groups that doesn''t include any devices'
+            name: noDevicesFoundInSelectedAadGroups
+          - value: noIntuneDevicesFoundInSelectedAadGroups
+            description: 'This error indicates that no Intune managed devices were found in the selected Azure Active Directory (AAD) security groups when creating a deployment. E.g.: a user selects a group that includes devices that are no longer managed in Intune.'
+            name: noIntuneDevicesFoundInSelectedAadGroups
+          - value: noZebraFotaEnrolledDevicesFoundForCurrentTenant
+            description: 'This error indicates that no Zebra FOTA enrolled devices were found for the current tenant when creating a deployment. E.g.: a user has not enrolled any devices in Zebra FOTA and attempts to create a deployment targeting only non-Zebra devices.'
+            name: noZebraFotaEnrolledDevicesFoundForCurrentTenant
+          - value: noZebraFotaEnrolledDevicesFoundInSelectedAadGroups
+            description: 'This error indicates that no Zebra FOTA enrolled devices were found in the selected Azure Active Directory (AAD) Groups when creating a deployment. E.g.: a user has enrolled one or more devices in Zebra FOTA, but attempts to create a deployment targeting security groups that don''t include any Zebra Devices.'
+            name: noZebraFotaEnrolledDevicesFoundInSelectedAadGroups
+          - value: noZebraFotaDevicesFoundForSelectedDeviceModel
+            description: 'This error indicates that no Zebra FOTA devices were found that match the selected device model when creating a deployment. E.g.: a user selects `TC8300` device model, but no Zebra devices with the same device model were found in the targeted Azure Active Directory (AAD) security groups.'
+            name: noZebraFotaDevicesFoundForSelectedDeviceModel
+          - value: zebraFotaCreateDeploymentRequestFailure
+            description: 'This error indicates that an external request to Zebra APIs failed when creating a deployment. The failure can be caused by a transient issue (e.g.: Network is down) or caused by a permanent server error.'
+            name: zebraFotaCreateDeploymentRequestFailure
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.zebraFotaDeploymentState:
       title: zebraFotaDeploymentState
@@ -77589,6 +77794,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -82334,6 +82541,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -82366,6 +82583,8 @@ components:
           properties:
             allowedInstallationScopes:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             azureADAppId:
               type: string
               description: The WebApplicationInfo.Id from the Teams app manifest.
@@ -85237,6 +85456,17 @@ components:
         - emailUser
         - azureCommunicationServicesUser
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -85253,6 +85483,14 @@ components:
         - personal
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -85647,15 +85885,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -87441,6 +87679,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'

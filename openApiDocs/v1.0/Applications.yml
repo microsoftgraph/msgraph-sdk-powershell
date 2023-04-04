@@ -403,6 +403,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Get appManagementPolicies from applications
+      description: The appManagementPolicy applied to this application.
       operationId: applications_ListAppManagementPolicies
       parameters:
         - name: application-id
@@ -528,6 +529,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Get ref of appManagementPolicies from applications
+      description: The appManagementPolicy applied to this application.
       operationId: applications_ListAppManagementPoliciesGraphBPreRef
       parameters:
         - name: application-id
@@ -3678,6 +3680,7 @@ paths:
       tags:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
+      description: The appManagementPolicy applied to this application.
       operationId: servicePrincipals_ListAppManagementPolicies
       parameters:
         - name: servicePrincipal-id
@@ -3761,6 +3764,7 @@ paths:
       tags:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
+      description: The appManagementPolicy applied to this application.
       operationId: servicePrincipals_GetAppManagementPolicies
       parameters:
         - name: servicePrincipal-id
@@ -7961,6 +7965,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+              description: The appManagementPolicy applied to this application.
               x-ms-navigationProperty: true
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -8409,6 +8414,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+              description: The appManagementPolicy applied to this application.
               x-ms-navigationProperty: true
             appRoleAssignedTo:
               type: array
@@ -8837,6 +8843,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.weakAlgorithms'
         isSignedRequestRequired:
           type: boolean
+          description: Specifies whether signed authentication requests for this application should be required.
       additionalProperties:
         type: object
     microsoft.graph.requiredResourceAccess:
@@ -9048,10 +9055,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
+          description: Collection of keyCredential restrictions settings to be applied to an application or service principal.
         passwordCredentials:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
+          description: Collection of password restrictions settings to be applied to an application or service principal.
       additionalProperties:
         type: object
     microsoft.graph.permissionClassificationType:
@@ -9399,6 +9408,7 @@ components:
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.'
           format: date-time
           nullable: true
         restrictionType:
@@ -9417,6 +9427,7 @@ components:
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.'
           format: date-time
           nullable: true
         restrictionType:

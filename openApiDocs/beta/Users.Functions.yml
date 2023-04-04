@@ -17694,6 +17694,657 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.planner.plans.buckets.tasks_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: The unique identifier of plannerBucket
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activeChecklistItemCount
+                - appliedCategories
+                - assigneePriority
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
+                - createdDateTime
+                - creationSource
+                - dueDateTime
+                - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
+                - previewType
+                - priority
+                - recurrence
+                - referenceCount
+                - startDateTime
+                - title
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
+                - assigneePriority
+                - assigneePriority desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - creationSource
+                - creationSource desc
+                - dueDateTime
+                - dueDateTime desc
+                - hasDescription
+                - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
+                - previewType
+                - previewType desc
+                - priority
+                - priority desc
+                - recurrence
+                - recurrence desc
+                - referenceCount
+                - referenceCount desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerTask
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.planner.plans.buckets_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - creationSource
+                - name
+                - orderHint
+                - planId
+                - tasks
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - creationSource
+                - creationSource desc
+                - name
+                - name desc
+                - orderHint
+                - orderHint desc
+                - planId
+                - planId desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerBucket
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.planner.plans.tasks_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activeChecklistItemCount
+                - appliedCategories
+                - assigneePriority
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
+                - createdDateTime
+                - creationSource
+                - dueDateTime
+                - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
+                - previewType
+                - priority
+                - recurrence
+                - referenceCount
+                - startDateTime
+                - title
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
+                - assigneePriority
+                - assigneePriority desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - creationSource
+                - creationSource desc
+                - dueDateTime
+                - dueDateTime desc
+                - hasDescription
+                - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
+                - previewType
+                - previewType desc
+                - priority
+                - priority desc
+                - recurrence
+                - recurrence desc
+                - referenceCount
+                - referenceCount desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerTask
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/planner/plans/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.planner.plans_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - container
+                - contexts
+                - createdBy
+                - createdDateTime
+                - creationSource
+                - owner
+                - sharedWithContainers
+                - title
+                - buckets
+                - details
+                - tasks
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - container
+                - container desc
+                - contexts
+                - contexts desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - creationSource
+                - creationSource desc
+                - owner
+                - owner desc
+                - sharedWithContainers
+                - sharedWithContainers desc
+                - title
+                - title desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerPlan
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/planner/tasks/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.planner.tasks_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activeChecklistItemCount
+                - appliedCategories
+                - assigneePriority
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
+                - createdDateTime
+                - creationSource
+                - dueDateTime
+                - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
+                - previewType
+                - priority
+                - recurrence
+                - referenceCount
+                - startDateTime
+                - title
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
+                - assigneePriority
+                - assigneePriority desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - creationSource
+                - creationSource desc
+                - dueDateTime
+                - dueDateTime desc
+                - hasDescription
+                - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
+                - previewType
+                - previewType desc
+                - priority
+                - priority desc
+                - recurrence
+                - recurrence desc
+                - referenceCount
+                - referenceCount desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerTask
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/microsoft.graph.delta()':
     get:
       tags:
@@ -20551,6 +21202,195 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: plannerDelta
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerTask
+          type: object
+          properties:
+            activeChecklistItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              format: int32
+              nullable: true
+            appliedCategories:
+              $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
+            assigneePriority:
+              type: string
+              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              nullable: true
+            assignments:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
+            bucketId:
+              type: string
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+              nullable: true
+            checklistItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of checklist items that are present on the task.
+              format: int32
+              nullable: true
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            conversationThreadId:
+              type: string
+              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
+            dueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            hasDescription:
+              type: boolean
+              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+              nullable: true
+            orderHint:
+              type: string
+              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              format: int32
+              nullable: true
+            planId:
+              type: string
+              description: Plan ID to which the task belongs.
+              nullable: true
+            previewType:
+              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
+              format: int32
+              nullable: true
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskRecurrence'
+            referenceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of external references that exist on the task.
+              format: int32
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            title:
+              type: string
+              description: Title of the task.
+            assignedToTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+            bucketTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+            details:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+            progressTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerBucket:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerBucket
+          type: object
+          properties:
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
+            name:
+              type: string
+              description: Name of the bucket.
+            orderHint:
+              type: string
+              description: 'Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.'
+              nullable: true
+            planId:
+              type: string
+              description: Plan ID to which the bucket belongs.
+              nullable: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. The collection of tasks in the bucket.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerPlan:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerPlan
+          type: object
+          properties:
+            container:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
+            contexts:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanContextCollection'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
+            owner:
+              type: string
+              nullable: true
+            sharedWithContainers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerSharedWithContainer'
+            title:
+              type: string
+              description: Required. Title of the plan.
+            buckets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+              description: Collection of buckets in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            details:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Collection of tasks in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.todoTask:
@@ -24506,6 +25346,191 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.plannerAppliedCategories:
+      title: plannerAppliedCategories
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerAssignments:
+      title: plannerAssignments
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskCreation:
+      title: plannerTaskCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
+        teamsPublicationInfo:
+          $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPreviewType:
+      title: plannerPreviewType
+      enum:
+        - automatic
+        - noPreview
+        - checklist
+        - description
+        - reference
+      type: string
+    microsoft.graph.plannerTaskRecurrence:
+      title: plannerTaskRecurrence
+      type: object
+      properties:
+        nextInSeriesTaskId:
+          type: string
+          nullable: true
+        occurrenceId:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        previousInSeriesTaskId:
+          type: string
+          nullable: true
+        recurrenceStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        schedule:
+          $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
+        seriesId:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerAssignedToTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHintsByAssignee:
+              $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
+            unassignedOrderHint:
+              type: string
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerBucketTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerBucketTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerTaskDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerTaskDetails
+          type: object
+          properties:
+            checklist:
+              $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
+            description:
+              type: string
+              description: Description of the task.
+              nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            previewType:
+              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            references:
+              $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerProgressTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerProgressTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerBucketCreation:
+      title: plannerBucketCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanContainer:
+      title: plannerPlanContainer
+      type: object
+      properties:
+        containerId:
+          type: string
+          description: The identifier of the resource that contains the plan. Optional.
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
+        url:
+          type: string
+          description: The full canonical URL of the container. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanContextCollection:
+      title: plannerPlanContextCollection
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanCreation:
+      title: plannerPlanCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerSharedWithContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
+        - title: plannerSharedWithContainer
+          type: object
+          properties:
+            accessLevel:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanAccessLevel'
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerPlanDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerPlanDetails
+          type: object
+          properties:
+            categoryDescriptions:
+              $ref: '#/components/schemas/microsoft.graph.plannerCategoryDescriptions'
+            contextDetails:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanContextDetailsCollection'
+            sharedWith:
+              $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
+          additionalProperties:
+            type: object
     microsoft.graph.taskStatus:
       title: taskStatus
       enum:
@@ -24603,15 +25628,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -26982,18 +28007,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.identitySet:
-      title: identitySet
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        device:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-      additionalProperties:
-        type: object
     microsoft.graph.attendeeBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.recipient'
@@ -28391,52 +29404,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.plannerPlan:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerPlan
-          type: object
-          properties:
-            container:
-              $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
-            contexts:
-              $ref: '#/components/schemas/microsoft.graph.plannerPlanContextCollection'
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            creationSource:
-              $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
-            owner:
-              type: string
-              nullable: true
-            sharedWithContainers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerSharedWithContainer'
-            title:
-              type: string
-              description: Required. Title of the plan.
-            buckets:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-              description: Collection of buckets in the plan. Read-only. Nullable.
-              x-ms-navigationProperty: true
-            details:
-              $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Collection of tasks in the plan. Read-only. Nullable.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.notebook:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.onenoteEntityHierarchyModel'
@@ -28852,6 +29819,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -29488,6 +30457,210 @@ components:
         stageId:
           type: string
           description: Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerCreationSourceKind:
+      title: plannerCreationSourceKind
+      enum:
+        - none
+        - external
+        - publication
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerTeamsPublicationInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
+        - title: plannerTeamsPublicationInfo
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when this task was last modified by the publication process. Read-only.
+              format: date-time
+              nullable: true
+            publicationId:
+              type: string
+              description: The identifier of the publication. Read-only.
+              nullable: true
+            publishedToPlanId:
+              type: string
+              description: The identifier of the plannerPlan this task was originally placed in. Read-only.
+              nullable: true
+            publishingTeamId:
+              type: string
+              description: The identifier of the team that initiated the publication process. Read-only.
+              nullable: true
+            publishingTeamName:
+              type: string
+              description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerRecurrenceSchedule:
+      title: plannerRecurrenceSchedule
+      type: object
+      properties:
+        nextOccurrenceDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        patternStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerOrderHintsByAssignee:
+      title: plannerOrderHintsByAssignee
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerChecklistItems:
+      title: plannerChecklistItems
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerExternalReferences:
+      title: plannerExternalReferences
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerContainerType:
+      title: plannerContainerType
+      enum:
+        - group
+        - unknownFutureValue
+        - roster
+        - project
+        - driveItem
+      type: string
+    microsoft.graph.plannerPlanAccessLevel:
+      title: plannerPlanAccessLevel
+      enum:
+        - readAccess
+        - readWriteAccess
+        - fullAccess
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerCategoryDescriptions:
+      title: plannerCategoryDescriptions
+      type: object
+      properties:
+        category1:
+          type: string
+          description: The label associated with Category 1
+          nullable: true
+        category10:
+          type: string
+          description: The label associated with Category 10
+          nullable: true
+        category11:
+          type: string
+          description: The label associated with Category 11
+          nullable: true
+        category12:
+          type: string
+          description: The label associated with Category 12
+          nullable: true
+        category13:
+          type: string
+          description: The label associated with Category 13
+          nullable: true
+        category14:
+          type: string
+          description: The label associated with Category 14
+          nullable: true
+        category15:
+          type: string
+          description: The label associated with Category 15
+          nullable: true
+        category16:
+          type: string
+          description: The label associated with Category 16
+          nullable: true
+        category17:
+          type: string
+          description: The label associated with Category 17
+          nullable: true
+        category18:
+          type: string
+          description: The label associated with Category 18
+          nullable: true
+        category19:
+          type: string
+          description: The label associated with Category 19
+          nullable: true
+        category2:
+          type: string
+          description: The label associated with Category 2
+          nullable: true
+        category20:
+          type: string
+          description: The label associated with Category 20
+          nullable: true
+        category21:
+          type: string
+          description: The label associated with Category 21
+          nullable: true
+        category22:
+          type: string
+          description: The label associated with Category 22
+          nullable: true
+        category23:
+          type: string
+          description: The label associated with Category 23
+          nullable: true
+        category24:
+          type: string
+          description: The label associated with Category 24
+          nullable: true
+        category25:
+          type: string
+          description: The label associated with Category 25
+          nullable: true
+        category3:
+          type: string
+          description: The label associated with Category 3
+          nullable: true
+        category4:
+          type: string
+          description: The label associated with Category 4
+          nullable: true
+        category5:
+          type: string
+          description: The label associated with Category 5
+          nullable: true
+        category6:
+          type: string
+          description: The label associated with Category 6
+          nullable: true
+        category7:
+          type: string
+          description: The label associated with Category 7
+          nullable: true
+        category8:
+          type: string
+          description: The label associated with Category 8
+          nullable: true
+        category9:
+          type: string
+          description: The label associated with Category 9
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanContextDetailsCollection:
+      title: plannerPlanContextDetailsCollection
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerUserIds:
+      title: plannerUserIds
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.automaticRepliesSetting:
@@ -32362,122 +33535,6 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.plannerTask:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerTask
-          type: object
-          properties:
-            activeChecklistItemCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Number of checklist items with value set to false, representing incomplete items.'
-              format: int32
-              nullable: true
-            appliedCategories:
-              $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
-            assigneePriority:
-              type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
-              nullable: true
-            assignments:
-              $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
-            bucketId:
-              type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
-              nullable: true
-            checklistItemCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of checklist items that are present on the task.
-              format: int32
-              nullable: true
-            completedBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            completedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            conversationThreadId:
-              type: string
-              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
-              nullable: true
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            creationSource:
-              $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
-            dueDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            hasDescription:
-              type: boolean
-              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
-              nullable: true
-            orderHint:
-              type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
-              nullable: true
-            percentComplete:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
-              format: int32
-              nullable: true
-            planId:
-              type: string
-              description: Plan ID to which the task belongs.
-              nullable: true
-            previewType:
-              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
-            priority:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
-              format: int32
-              nullable: true
-            recurrence:
-              $ref: '#/components/schemas/microsoft.graph.plannerTaskRecurrence'
-            referenceCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of external references that exist on the task.
-              format: int32
-              nullable: true
-            startDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            title:
-              type: string
-              description: Title of the task.
-            assignedToTaskBoardFormat:
-              $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
-            bucketTaskBoardFormat:
-              $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
-            details:
-              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
-            progressTaskBoardFormat:
-              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
-          additionalProperties:
-            type: object
     microsoft.graph.officeGraphInsights:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -34537,86 +35594,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.plannerPlanContainer:
-      title: plannerPlanContainer
-      type: object
-      properties:
-        containerId:
-          type: string
-          description: The identifier of the resource that contains the plan. Optional.
-          nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
-        url:
-          type: string
-          description: The full canonical URL of the container. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerPlanContextCollection:
-      title: plannerPlanContextCollection
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerPlanCreation:
-      title: plannerPlanCreation
-      type: object
-      properties:
-        creationSourceKind:
-          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerSharedWithContainer:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
-        - title: plannerSharedWithContainer
-          type: object
-          properties:
-            accessLevel:
-              $ref: '#/components/schemas/microsoft.graph.plannerPlanAccessLevel'
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerBucket:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerBucket
-          type: object
-          properties:
-            creationSource:
-              $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
-            name:
-              type: string
-              description: Name of the bucket.
-            orderHint:
-              type: string
-              description: 'Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.'
-              nullable: true
-            planId:
-              type: string
-              description: Plan ID to which the bucket belongs.
-              nullable: true
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. The collection of tasks in the bucket.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerPlanDetails:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerPlanDetails
-          type: object
-          properties:
-            categoryDescriptions:
-              $ref: '#/components/schemas/microsoft.graph.plannerCategoryDescriptions'
-            contextDetails:
-              $ref: '#/components/schemas/microsoft.graph.plannerPlanContextDetailsCollection'
-            sharedWith:
-              $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
-          additionalProperties:
-            type: object
     microsoft.graph.onenoteEntityHierarchyModel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.onenoteEntitySchemaObjectModel'
@@ -34813,6 +35790,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -34845,6 +35832,8 @@ components:
           properties:
             allowedInstallationScopes:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             azureADAppId:
               type: string
               description: The WebApplicationInfo.Id from the Teams app manifest.
@@ -36745,118 +37734,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.plannerAppliedCategories:
-      title: plannerAppliedCategories
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerAssignments:
-      title: plannerAssignments
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerTaskCreation:
-      title: plannerTaskCreation
-      type: object
-      properties:
-        creationSourceKind:
-          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
-        teamsPublicationInfo:
-          $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerPreviewType:
-      title: plannerPreviewType
-      enum:
-        - automatic
-        - noPreview
-        - checklist
-        - description
-        - reference
-      type: string
-    microsoft.graph.plannerTaskRecurrence:
-      title: plannerTaskRecurrence
-      type: object
-      properties:
-        nextInSeriesTaskId:
-          type: string
-          nullable: true
-        occurrenceId:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-        previousInSeriesTaskId:
-          type: string
-          nullable: true
-        recurrenceStartDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-        schedule:
-          $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
-        seriesId:
-          type: string
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerAssignedToTaskBoardTaskFormat
-          type: object
-          properties:
-            orderHintsByAssignee:
-              $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
-            unassignedOrderHint:
-              type: string
-              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerBucketTaskBoardTaskFormat:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerBucketTaskBoardTaskFormat
-          type: object
-          properties:
-            orderHint:
-              type: string
-              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerTaskDetails:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerTaskDetails
-          type: object
-          properties:
-            checklist:
-              $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
-            description:
-              type: string
-              description: Description of the task.
-              nullable: true
-            notes:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            previewType:
-              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
-            references:
-              $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerProgressTaskBoardTaskFormat:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerProgressTaskBoardTaskFormat
-          type: object
-          properties:
-            orderHint:
-              type: string
-              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.sharedInsight:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -37951,155 +38828,6 @@ components:
         - system
         - siteCollection
       type: string
-    microsoft.graph.plannerContainerType:
-      title: plannerContainerType
-      enum:
-        - group
-        - unknownFutureValue
-        - roster
-        - project
-        - driveItem
-      type: string
-    microsoft.graph.plannerCreationSourceKind:
-      title: plannerCreationSourceKind
-      enum:
-        - none
-        - external
-        - publication
-        - unknownFutureValue
-      type: string
-    microsoft.graph.plannerPlanAccessLevel:
-      title: plannerPlanAccessLevel
-      enum:
-        - readAccess
-        - readWriteAccess
-        - fullAccess
-        - unknownFutureValue
-      type: string
-    microsoft.graph.plannerBucketCreation:
-      title: plannerBucketCreation
-      type: object
-      properties:
-        creationSourceKind:
-          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerCategoryDescriptions:
-      title: plannerCategoryDescriptions
-      type: object
-      properties:
-        category1:
-          type: string
-          description: The label associated with Category 1
-          nullable: true
-        category10:
-          type: string
-          description: The label associated with Category 10
-          nullable: true
-        category11:
-          type: string
-          description: The label associated with Category 11
-          nullable: true
-        category12:
-          type: string
-          description: The label associated with Category 12
-          nullable: true
-        category13:
-          type: string
-          description: The label associated with Category 13
-          nullable: true
-        category14:
-          type: string
-          description: The label associated with Category 14
-          nullable: true
-        category15:
-          type: string
-          description: The label associated with Category 15
-          nullable: true
-        category16:
-          type: string
-          description: The label associated with Category 16
-          nullable: true
-        category17:
-          type: string
-          description: The label associated with Category 17
-          nullable: true
-        category18:
-          type: string
-          description: The label associated with Category 18
-          nullable: true
-        category19:
-          type: string
-          description: The label associated with Category 19
-          nullable: true
-        category2:
-          type: string
-          description: The label associated with Category 2
-          nullable: true
-        category20:
-          type: string
-          description: The label associated with Category 20
-          nullable: true
-        category21:
-          type: string
-          description: The label associated with Category 21
-          nullable: true
-        category22:
-          type: string
-          description: The label associated with Category 22
-          nullable: true
-        category23:
-          type: string
-          description: The label associated with Category 23
-          nullable: true
-        category24:
-          type: string
-          description: The label associated with Category 24
-          nullable: true
-        category25:
-          type: string
-          description: The label associated with Category 25
-          nullable: true
-        category3:
-          type: string
-          description: The label associated with Category 3
-          nullable: true
-        category4:
-          type: string
-          description: The label associated with Category 4
-          nullable: true
-        category5:
-          type: string
-          description: The label associated with Category 5
-          nullable: true
-        category6:
-          type: string
-          description: The label associated with Category 6
-          nullable: true
-        category7:
-          type: string
-          description: The label associated with Category 7
-          nullable: true
-        category8:
-          type: string
-          description: The label associated with Category 8
-          nullable: true
-        category9:
-          type: string
-          description: The label associated with Category 9
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerPlanContextDetailsCollection:
-      title: plannerPlanContextDetailsCollection
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerUserIds:
-      title: plannerUserIds
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.replyRestriction:
       title: replyRestriction
       enum:
@@ -38115,6 +38843,17 @@ components:
         - moderators
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -38131,6 +38870,14 @@ components:
         - personal
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -39524,69 +40271,6 @@ components:
           - value: noStatusCleared
             description: No status cleared
             name: noStatusCleared
-    microsoft.graph.plannerTeamsPublicationInfo:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
-        - title: plannerTeamsPublicationInfo
-          type: object
-          properties:
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when this task was last modified by the publication process. Read-only.
-              format: date-time
-              nullable: true
-            publicationId:
-              type: string
-              description: The identifier of the publication. Read-only.
-              nullable: true
-            publishedToPlanId:
-              type: string
-              description: The identifier of the plannerPlan this task was originally placed in. Read-only.
-              nullable: true
-            publishingTeamId:
-              type: string
-              description: The identifier of the team that initiated the publication process. Read-only.
-              nullable: true
-            publishingTeamName:
-              type: string
-              description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerRecurrenceSchedule:
-      title: plannerRecurrenceSchedule
-      type: object
-      properties:
-        nextOccurrenceDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        pattern:
-          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
-        patternStartDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerOrderHintsByAssignee:
-      title: plannerOrderHintsByAssignee
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerChecklistItems:
-      title: plannerChecklistItems
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerExternalReferences:
-      title: plannerExternalReferences
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.sharingDetail:
       title: sharingDetail
       type: object
@@ -40082,6 +40766,13 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
       enum:

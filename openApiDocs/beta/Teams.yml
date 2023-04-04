@@ -251,6 +251,8 @@ paths:
                 - id desc
                 - allowedInstallationScopes
                 - allowedInstallationScopes desc
+                - authorization
+                - authorization desc
                 - azureADAppId
                 - azureADAppId desc
                 - createdBy
@@ -282,6 +284,7 @@ paths:
               enum:
                 - id
                 - allowedInstallationScopes
+                - authorization
                 - azureADAppId
                 - createdBy
                 - description
@@ -390,6 +393,7 @@ paths:
               enum:
                 - id
                 - allowedInstallationScopes
+                - authorization
                 - azureADAppId
                 - createdBy
                 - description
@@ -1629,6 +1633,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -1641,6 +1647,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -1737,6 +1744,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -1864,6 +1872,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: teamsAppInstallation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consentedPermissionSet:
+                  $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -1969,6 +1989,7 @@ paths:
               enum:
                 - id
                 - allowedInstallationScopes
+                - authorization
                 - azureADAppId
                 - createdBy
                 - description
@@ -2570,11 +2591,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -6628,15 +6649,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - groups.team
-      summary: Create team from group
-      description: "Create a new team from a group. In order to create a team, the group must have a least one owner. If the group was created less than 15 minutes ago, it's possible for the Create team call to fail with a 404 error code due to replication delays.\nThe recommended pattern is to retry the Create team call three times, with a 10 second delay between calls."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-teams?view=graph-rest-1.0
-      operationId: groups_UpdateTeam
+      summary: Update the navigation property team in groups
+      operationId: groups_SetTeam
       parameters:
         - name: group-id
           in: path
@@ -7808,11 +7825,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: groups.team.channels_CreateMessages
       parameters:
         - name: group-id
@@ -10341,6 +10358,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -10353,6 +10372,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -10449,6 +10469,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -10648,6 +10669,7 @@ paths:
               enum:
                 - id
                 - allowedInstallationScopes
+                - authorization
                 - azureADAppId
                 - createdBy
                 - description
@@ -13012,11 +13034,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: groups.team.primaryChannel_CreateMessages
       parameters:
         - name: group-id
@@ -19747,11 +19769,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teams.channels_CreateMessages
       parameters:
         - name: team-id
@@ -23432,6 +23454,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -23444,6 +23468,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -23540,6 +23565,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -23667,6 +23693,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: teamsAppInstallation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consentedPermissionSet:
+                  $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -23772,6 +23810,7 @@ paths:
               enum:
                 - id
                 - allowedInstallationScopes
+                - authorization
                 - azureADAppId
                 - createdBy
                 - description
@@ -26956,11 +26995,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teams.primaryChannel_CreateMessages
       parameters:
         - name: team-id
@@ -34894,11 +34933,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teamwork.deletedTeams.channels_CreateMessages
       parameters:
         - name: deletedTeam-id
@@ -41405,11 +41444,11 @@ paths:
     post:
       tags:
         - teamwork.teamTemplate
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teamwork.teamTemplates.definitions.teamDefinition.channels_CreateMessages
       parameters:
         - name: teamTemplate-id
@@ -45506,6 +45545,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -45518,6 +45559,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -45630,6 +45672,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -45781,6 +45824,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: teamsAppInstallation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consentedPermissionSet:
+                  $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -45902,6 +45957,7 @@ paths:
               enum:
                 - id
                 - allowedInstallationScopes
+                - authorization
                 - azureADAppId
                 - createdBy
                 - description
@@ -49486,11 +49542,11 @@ paths:
     post:
       tags:
         - teamwork.teamTemplate
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel_CreateMessages
       parameters:
         - name: teamTemplate-id
@@ -57422,6 +57478,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -57434,6 +57492,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -57546,6 +57605,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -57777,6 +57837,7 @@ paths:
               enum:
                 - id
                 - allowedInstallationScopes
+                - authorization
                 - azureADAppId
                 - createdBy
                 - description
@@ -58394,11 +58455,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: users.chats_CreateMessages
       parameters:
         - name: user-id
@@ -61707,6 +61768,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -61719,6 +61782,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
                 - chat
@@ -61817,6 +61881,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
                 - chat
@@ -62038,6 +62103,8 @@ components:
           properties:
             allowedInstallationScopes:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             azureADAppId:
               type: string
               description: The WebApplicationInfo.Id from the Teams app manifest.
@@ -62203,12 +62270,24 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -64740,6 +64819,14 @@ components:
         - personal
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.identitySet:
       title: identitySet
       type: object
@@ -64797,6 +64884,17 @@ components:
           type: string
           description: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
           format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -70912,6 +71010,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.publicErrorDetail:
       title: publicErrorDetail
       type: object
@@ -84565,15 +84670,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
