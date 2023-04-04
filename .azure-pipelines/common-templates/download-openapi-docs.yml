@@ -10,6 +10,8 @@ parameters:
     displayName: Build Agent
   - name: SkipForceRefresh
     type: string
+  - name: SkipSingularizeOperationIds
+    type: string
 
 steps:
   - template: ./checkout.yml
@@ -42,7 +44,7 @@ steps:
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
-      arguments: -SkipForceRefresh:$$(SkipForceRefresh)
+      arguments: -SkipForceRefresh:$$(SkipForceRefresh) -SkipSingularizeOperationIds:$$(SkipSingularizeOperationIds)
       pwsh: true
 
   - task: PowerShell@2
@@ -50,7 +52,7 @@ steps:
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
-      arguments: -BetaGraphVersion -SkipForceRefresh:$$(SkipForceRefresh)
+      arguments: -BetaGraphVersion -SkipForceRefresh:$$(SkipForceRefresh) -SkipSingularizeOperationIds:$$(SkipSingularizeOperationIds)
       pwsh: true
 
   - task: PowerShell@2

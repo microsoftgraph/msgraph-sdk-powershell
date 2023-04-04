@@ -5,7 +5,8 @@ Param(
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $OpenApiDocOutput = (Join-Path $PSScriptRoot "..\openApiDocs"),
     [switch] $BetaGraphVersion,
-    [switch] $SkipForceRefresh
+    [switch] $SkipForceRefresh,
+    [switch] $SkipSingularizeOperationIds
 )
 
 $ErrorActionPreference = 'Stop'
@@ -40,18 +41,22 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
     $ModuleName = $_
     if (-not ($v1Excludes -contains $ModuleName -and $GraphVersion -eq "v1.0")) {
         $ForceRefresh = $false
+        $SingularizeOperationIds = $false
         # Check whether ForceRefresh is required, Only required for the First Request.
         if ($RequestCount -eq 0 -and $SkipForceRefresh -eq $false) {
             $ForceRefresh = $true
         }
-
+        if($SkipSingularizeOperationIds -eq $false) {
+            $SingularizeOperationIds = $true
+        }
+        
         try {
             # Download OpenAPI document for module.
-            & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount
+            & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds:$SingularizeOperationIds
         }
         catch {
             Write-Error $_.Exception
-        }
+       }
         $RequestCount++
     }
 }

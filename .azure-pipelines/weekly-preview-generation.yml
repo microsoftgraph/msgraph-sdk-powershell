@@ -13,6 +13,9 @@ parameters:
   - name: SkipForceRefresh
     displayName: Skip Force Refresh
     default: false
+  - name: SkipSingularizeOperationIds
+    displayName: Skip Singularization of Operation Ids
+    default: false
     type: boolean
   - name: Test
     type: boolean
@@ -29,6 +32,7 @@ variables:
   BaseBranch: ${{ parameters.BaseBranch }}
   BuildAgent: ${{ parameters.BuildAgent }}
   SkipForceRefresh: ${{ parameters.SkipForceRefresh }}
+  SkipSingularizeOperationIds: ${{ parameters.SkipSingularizeOperationIds}}
 
 pool: $(BuildAgent)
 trigger: none
@@ -52,6 +56,7 @@ jobs:
           BaseBranch: $(BaseBranch)
           BuildAgent: $(BuildAgent)
           SkipForceRefresh: $(SkipForceRefresh)
+          SkipSingularizeOperationIds: $(SkipSingularizeOperationIds)
 
   - job: MsGraphPsSdkWeeklyGeneration
     dependsOn: RefreshOpenAPIDocuments
