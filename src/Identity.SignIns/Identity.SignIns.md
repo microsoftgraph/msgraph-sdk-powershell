@@ -17,7 +17,7 @@ require:
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAcces$|^policy\.policyRoot_.*PolicyRoot|^policy_(Get|Create|Delete|Update|List)ConditionalAccessPolicy$|^invitation\.invitation_(List|Get|Update|Delete)Invitation$|^invitation_(.*)InvitedUser$|^identityProtection\.identityProtectionRoot_(.*)$|^identity\.identityContainer_(.*)$|^identityProvider(\.identityProvider.*|_.*)$|^identity\.conditionalAcces(_.*AuthenticationStrength|\.authenticationStrength(\.|_).*)$
+  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAcces$|^policy\.policyRoot_.*PolicyRoot|^policy_(Get|Create|Delete|Update|List)ConditionalAccessPolicy$|^invitation\.invitation_(List|Get|Update|Delete)Invitation$|^invitation_(.*)InvitedUser$|^identityProtection\.identityProtectionRoot_(.*)$|^identity\.identityContainer_(.*)$|^identityProvider(\.identityProvider.*|_.*)$
 # Remove cmdlets
   - where:
       subject: ^(Oauth2PermissionGrant)(\1)+
@@ -41,5 +41,9 @@ directive:
   - where:
       verb: New|Update
       subject: ^UserAuthenticationPasswordMethod$
+    remove: true
+  - where:
+      subject: ^IdentityConditionalAccessAuthenticationStrength.*$
+      variant: ^List$|Get$|GetViaIdentity$|Update$|UpdateExpanded$|UpdateViaIdentity$|UpdateViaIdentityExpanded$|Create$|CreateExpanded$|Delete$|DeleteViaIdentity$|Usage$|UsageViaIdentity$|Find$|FindViaIdentity$
     remove: true
 ```
