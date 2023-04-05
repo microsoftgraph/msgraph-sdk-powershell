@@ -77,7 +77,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -274,7 +274,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -308,6 +308,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/connectors/$count:
+    get:
+      tags:
+        - print.printConnector
+      summary: Get the number of the resource
+      operationId: print.connectors_GetCount-1d73
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/operations:
     get:
       tags:
@@ -468,7 +482,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -502,6 +516,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/operations/$count:
+    get:
+      tags:
+        - print.printOperation
+      summary: Get the number of the resource
+      operationId: print.operations_GetCount-8242
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/printers:
     get:
       tags:
@@ -735,7 +763,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -929,6 +957,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/connectors/$count':
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printers.connectors_GetCount-68ae
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/printers/{printer-id}/microsoft.graph.getCapabilities()':
     get:
       tags:
@@ -1258,6 +1308,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/shares/$count':
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printers.shares_GetCount-5f30
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/printers/{printer-id}/taskTriggers':
     get:
       tags:
@@ -1460,7 +1532,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1564,6 +1636,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/taskTriggers/$count':
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printers.taskTriggers_GetCount-f066
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /print/printers/$count:
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printers_GetCount-c43f
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/printers/microsoft.graph.create:
     post:
       tags:
@@ -1824,7 +1932,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2179,6 +2287,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/printerShares/{printerShare-id}/allowedGroups/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.printerShares.allowedGroups_GetCount-163d
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/printerShares/{printerShare-id}/allowedGroups/$ref':
     get:
       tags:
@@ -2786,6 +2916,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2831,7 +2967,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/print/printerShares/{printerShare-id}/allowedUsers/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.printerShares.allowedUsers_GetCount-5d77
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/print/printerShares/{printerShare-id}/allowedUsers/$ref':
     get:
       tags:
@@ -3036,6 +3206,12 @@ paths:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3061,6 +3237,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/printer':
     get:
@@ -3136,6 +3318,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/printerShares/$count:
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.printerShares_GetCount-535b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports:
     get:
       tags:
@@ -3219,7 +3415,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3422,7 +3618,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3456,6 +3652,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/applicationSignInDetailedSummary/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.applicationSignInDetailedSummary_GetCount-2173
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/authenticationMethods:
     get:
       tags:
@@ -3514,7 +3724,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3839,7 +4049,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3873,6 +4083,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/authenticationMethods/userRegistrationDetails/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.authenticationMethods.userRegistrationDetails_GetCount-1806
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/credentialUserRegistrationDetails:
     get:
       tags:
@@ -4058,7 +4282,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4092,6 +4316,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/credentialUserRegistrationDetails/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.credentialUserRegistrationDetails_GetCount-a5ee
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/dailyPrintUsage:
     get:
       tags:
@@ -4288,7 +4526,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4322,6 +4560,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/dailyPrintUsage/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.dailyPrintUsage_GetCount-2e16
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/dailyPrintUsageByPrinter:
     get:
       tags:
@@ -4526,7 +4778,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4560,6 +4812,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/dailyPrintUsageByPrinter/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.dailyPrintUsageGraphBPrePrinter_GetCount-a4cb
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/dailyPrintUsageByUser:
     get:
       tags:
@@ -4764,7 +5030,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4798,6 +5064,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/dailyPrintUsageByUser/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.dailyPrintUsageGraphBPreUser_GetCount-4268
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/dailyPrintUsageSummariesByPrinter:
     get:
       tags:
@@ -4998,7 +5278,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5032,6 +5312,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/dailyPrintUsageSummariesByPrinter/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.dailyPrintUsageSummariesGraphBPrePrinter_GetCount-2889
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/dailyPrintUsageSummariesByUser:
     get:
       tags:
@@ -5232,7 +5526,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5266,6 +5560,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/dailyPrintUsageSummariesByUser/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.dailyPrintUsageSummariesGraphBPreUser_GetCount-924d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/microsoft.graph.deviceConfigurationDeviceActivity():
     get:
       tags:
@@ -10381,7 +10689,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10415,6 +10723,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/monthlyPrintUsageByPrinter/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.monthlyPrintUsageGraphBPrePrinter_GetCount-20c8
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/monthlyPrintUsageByUser:
     get:
       tags:
@@ -10619,7 +10941,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10653,6 +10975,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/monthlyPrintUsageByUser/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.monthlyPrintUsageGraphBPreUser_GetCount-750f
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/monthlyPrintUsageSummariesByPrinter:
     get:
       tags:
@@ -10853,7 +11189,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10887,6 +11223,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/monthlyPrintUsageSummariesByPrinter/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.monthlyPrintUsageSummariesGraphBPrePrinter_GetCount-0a62
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/monthlyPrintUsageSummariesByUser:
     get:
       tags:
@@ -11087,7 +11437,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11121,6 +11471,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/monthlyPrintUsageSummariesByUser/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.monthlyPrintUsageSummariesGraphBPreUser_GetCount-a574
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/reports/security:
     get:
       tags:
@@ -11177,7 +11541,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11493,7 +11857,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11527,6 +11891,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/reports/userCredentialUsageDetails/$count:
+    get:
+      tags:
+        - print.reportRoot
+      summary: Get the number of the resource
+      operationId: print.reports.userCredentialUsageDetails_GetCount-c395
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/services:
     get:
       tags:
@@ -11688,7 +12066,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11920,7 +12298,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11962,6 +12340,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/services/{printService-id}/endpoints/$count':
+    get:
+      tags:
+        - print.printService
+      summary: Get the number of the resource
+      operationId: print.services.endpoints_GetCount-805a
+      parameters:
+        - name: printService-id
+          in: path
+          description: The unique identifier of printService
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printService
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /print/services/$count:
+    get:
+      tags:
+        - print.printService
+      summary: Get the number of the resource
+      operationId: print.services_GetCount-719b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/shares:
     get:
       tags:
@@ -12187,7 +12601,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12542,6 +12956,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/allowedGroups/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.shares.allowedGroups_GetCount-9181
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/shares/{printerShare-id}/allowedGroups/$ref':
     get:
       tags:
@@ -13149,6 +13585,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13194,7 +13636,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/allowedUsers/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.shares.allowedUsers_GetCount-ee00
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/print/shares/{printerShare-id}/allowedUsers/$ref':
     get:
       tags:
@@ -13399,6 +13875,12 @@ paths:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13424,6 +13906,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/print/shares/{printerShare-id}/printer':
     get:
@@ -13499,6 +13987,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/shares/$count:
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.shares_GetCount-070b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/taskDefinitions:
     get:
       tags:
@@ -13671,7 +14173,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13911,7 +14413,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14076,6 +14578,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/taskDefinitions/{printTaskDefinition-id}/tasks/$count':
+    get:
+      tags:
+        - print.printTaskDefinition
+      summary: Get the number of the resource
+      operationId: print.taskDefinitions.tasks_GetCount-0c4f
+      parameters:
+        - name: printTaskDefinition-id
+          in: path
+          description: The unique identifier of printTaskDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTaskDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /print/taskDefinitions/$count:
+    get:
+      tags:
+        - print.printTaskDefinition
+      summary: Get the number of the resource
+      operationId: print.taskDefinitions_GetCount-ee04
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.print:
@@ -17301,10 +17839,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -17348,6 +17886,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.printOperationCollectionResponse:
       title: Collection of printOperation
       type: object
@@ -19097,6 +19638,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
               description: The results of every partner agent's installation status on Cloud PC.
+            powerState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -19328,7 +19871,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity''s tags property.Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -24432,6 +24975,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -24924,6 +25469,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcPowerState:
+      title: cloudPcPowerState
+      enum:
+        - running
+        - poweredOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -24952,6 +25504,8 @@ components:
         - restoring
         - pendingProvision
         - unknownFutureValue
+        - movingRegion
+        - resizePendingLicense
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -29352,6 +29906,10 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            metadataContent:
+              type: string
+              format: base64url
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -31921,6 +32479,17 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31953,6 +32522,8 @@ components:
           properties:
             allowedInstallationScopes:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             azureADAppId:
               type: string
               description: The WebApplicationInfo.Id from the Teams app manifest.
@@ -32575,11 +33146,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -33100,7 +33671,7 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         decisionHistoriesForReviewersEnabled:
           type: boolean
           description: 'Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).'
@@ -33111,7 +33682,7 @@ components:
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+          description: 'Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -34319,23 +34890,28 @@ components:
       properties:
         nextInSeriesTaskId:
           type: string
+          description: 'The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.'
           nullable: true
         occurrenceId:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
           format: int32
         previousInSeriesTaskId:
           type: string
+          description: The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
           nullable: true
         recurrenceStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         schedule:
           $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
         seriesId:
           type: string
+          description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
@@ -36311,6 +36887,18 @@ components:
         - moderators
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          description: The name of the resource-specific permission.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -36327,6 +36915,14 @@ components:
         - personal
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -37310,6 +37906,7 @@ components:
         nextOccurrenceDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The next date for this schedule. When a new task is instantiated to continue the recurrence series, this date is used for the dueDateTime of the new plannerTask. Auto-generated by the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         pattern:
@@ -37317,6 +37914,7 @@ components:
         patternStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date for the recurrence pattern. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -37768,15 +38366,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -38089,6 +38687,13 @@ components:
       enum:
         - pin
         - reuse
+      type: string
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
       type: string
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
@@ -39276,6 +39881,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.printConnectorCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.printOperationCollectionResponse:
       description: Retrieved collection
       content:

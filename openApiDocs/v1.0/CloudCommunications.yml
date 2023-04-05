@@ -69,7 +69,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -269,7 +269,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -521,7 +521,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -806,7 +806,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -856,6 +856,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/$count':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get the number of the resource
+      operationId: communications.callRecords.sessions.segments_GetCount-4fed
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: session-id
+          in: path
+          description: The unique identifier of session
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: session
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/callRecords/{callRecord-id}/sessions/$count':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get the number of the resource
+      operationId: communications.callRecords.sessions_GetCount-c743
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /communications/callRecords/$count:
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get the number of the resource
+      operationId: communications.callRecords_GetCount-e558
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /communications/calls:
     get:
       tags:
@@ -1108,7 +1174,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1339,7 +1405,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1381,6 +1447,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/audioRoutingGroups/$count':
+    get:
+      tags:
+        - communications.call
+      summary: Get the number of the resource
+      operationId: communications.calls.audioRoutingGroups_GetCount-157e
+      parameters:
+        - name: call-id
+          in: path
+          description: The unique identifier of call
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/communications/calls/{call-id}/contentSharingSessions':
     get:
       tags:
@@ -1570,7 +1658,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1612,6 +1700,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/contentSharingSessions/$count':
+    get:
+      tags:
+        - communications.call
+      summary: Get the number of the resource
+      operationId: communications.calls.contentSharingSessions_GetCount-a2b2
+      parameters:
+        - name: call-id
+          in: path
+          description: The unique identifier of call
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/communications/calls/{call-id}/microsoft.graph.addLargeGalleryView':
     post:
       tags:
@@ -2426,7 +2536,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2468,6 +2578,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/operations/$count':
+    get:
+      tags:
+        - communications.call
+      summary: Get the number of the resource
+      operationId: communications.calls.operations_GetCount-3444
+      parameters:
+        - name: call-id
+          in: path
+          description: The unique identifier of call
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/communications/calls/{call-id}/participants':
     get:
       tags:
@@ -2681,7 +2813,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2875,15 +3007,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/participants/$count':
+    get:
+      tags:
+        - communications.call
+      summary: Get the number of the resource
+      operationId: communications.calls.participants_GetCount-4efe
+      parameters:
+        - name: call-id
+          in: path
+          description: The unique identifier of call
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/communications/calls/{call-id}/participants/microsoft.graph.invite':
     post:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
@@ -2921,6 +3075,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /communications/calls/$count:
+    get:
+      tags:
+        - communications.call
+      summary: Get the number of the resource
+      operationId: communications.calls_GetCount-5d04
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /communications/calls/microsoft.graph.logTeleconferenceDeviceQuality:
     post:
       tags:
@@ -3249,7 +3417,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3489,7 +3657,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3773,7 +3941,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3823,6 +3991,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get the number of the resource
+      operationId: communications.onlineMeetings.attendanceReports.attendanceRecords_GetCount-73e4
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: meetingAttendanceReport-id
+          in: path
+          description: The unique identifier of meetingAttendanceReport
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: meetingAttendanceReport
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports/$count':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get the number of the resource
+      operationId: communications.onlineMeetings.attendanceReports_GetCount-c621
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/communications/onlineMeetings/{onlineMeeting-id}/attendeeReport':
     get:
       tags:
@@ -3882,6 +4102,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /communications/onlineMeetings/$count:
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get the number of the resource
+      operationId: communications.onlineMeetings_GetCount-91a5
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /communications/onlineMeetings/microsoft.graph.createOrGet:
     post:
       tags:
@@ -4091,7 +4325,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4279,6 +4513,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /communications/presences/$count:
+    get:
+      tags:
+        - communications.presence
+      summary: Get the number of the resource
+      operationId: communications.presences_GetCount-e4ed
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onlineMeetings':
     get:
       tags:
@@ -4568,7 +4816,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4848,7 +5096,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5172,7 +5420,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5230,6 +5478,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get the number of the resource
+      operationId: users.onlineMeetings.attendanceReports.attendanceRecords_GetCount-3340
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: meetingAttendanceReport-id
+          in: path
+          description: The unique identifier of meetingAttendanceReport
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: meetingAttendanceReport
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/$count':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get the number of the resource
+      operationId: users.onlineMeetings.attendanceReports_GetCount-e849
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendeeReport':
     get:
       tags:
@@ -5305,6 +5621,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/$count':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get the number of the resource
+      operationId: users.onlineMeetings_GetCount-1fc7
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/presence':
     get:
       tags:
@@ -5383,7 +5721,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6760,6 +7098,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.callCollectionResponse:
       title: Collection of call
       type: object
@@ -7565,6 +7906,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.callRecords.segmentCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.callCollectionResponse:
       description: Retrieved collection
       content:

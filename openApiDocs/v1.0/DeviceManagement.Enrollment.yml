@@ -66,7 +66,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -274,7 +274,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -499,7 +499,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -541,6 +541,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceEnrollmentConfigurations.assignments_GetCount-f0d7
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: The unique identifier of deviceEnrollmentConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/deviceEnrollmentConfigurations/$count:
+    get:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceEnrollmentConfigurations_GetCount-69e5
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/importedWindowsAutopilotDeviceIdentities:
     get:
       tags:
@@ -723,7 +759,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -757,6 +793,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/importedWindowsAutopilotDeviceIdentities/$count:
+    get:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Get the number of the resource
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities_GetCount-36aa
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/windowsAutopilotDeviceIdentities:
     get:
       tags:
@@ -975,7 +1025,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1009,6 +1059,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/windowsAutopilotDeviceIdentities/$count:
+    get:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Get the number of the resource
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetCount-0841
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /roleManagement:
     get:
       tags:
@@ -1067,7 +1131,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1351,6 +1415,11 @@ components:
         - title: rbacApplication
           type: object
           properties:
+            resourceNamespaces:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+              x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
@@ -1436,6 +1505,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.importedWindowsAutopilotDeviceIdentityCollectionResponse:
       title: Collection of importedWindowsAutopilotDeviceIdentity
       type: object
@@ -1490,6 +1562,21 @@ components:
           - value: error
             description: Error status.
             name: error
+    microsoft.graph.unifiedRbacResourceNamespace:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRbacResourceNamespace
+          type: object
+          properties:
+            name:
+              type: string
+            resourceActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.unifiedRoleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1800,6 +1887,31 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.unifiedRbacResourceAction:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRbacResourceAction
+          type: object
+          properties:
+            actionVerb:
+              type: string
+              nullable: true
+            authenticationContextId:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            isAuthenticationContextSettable:
+              type: boolean
+              nullable: true
+            name:
+              type: string
+            resourceScopeId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.appScope:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2217,6 +2329,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignmentCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.importedWindowsAutopilotDeviceIdentityCollectionResponse:
       description: Retrieved collection
       content:

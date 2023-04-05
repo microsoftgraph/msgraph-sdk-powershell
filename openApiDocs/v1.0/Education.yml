@@ -68,7 +68,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -316,7 +316,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -548,7 +548,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -590,6 +590,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignmentCategories/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.assignmentCategories_GetCount-8570
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/classes/{educationClass-id}/assignmentCategories/microsoft.graph.delta()':
     get:
       tags:
@@ -749,7 +771,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1081,7 +1103,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1293,6 +1315,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.assignments.categories_GetCount-639a
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/$ref':
     get:
       tags:
@@ -1807,7 +1859,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1857,6 +1909,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/resources/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.assignments.resources_GetCount-f57b
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/rubric':
     get:
       tags:
@@ -1958,7 +2040,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2379,7 +2461,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2919,7 +3001,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2977,6 +3059,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/outcomes/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.assignments.submissions.outcomes_GetCount-2ffd
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources':
     get:
       tags:
@@ -3242,7 +3362,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3300,6 +3420,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.assignments.submissions.resources_GetCount-3e92
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources':
     get:
       tags:
@@ -3561,7 +3719,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3619,6 +3777,96 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.assignments.submissions.submittedResources_GetCount-ecf9
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.assignments.submissions_GetCount-231f
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/education/classes/{educationClass-id}/assignments/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.assignments_GetCount-a470
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/classes/{educationClass-id}/assignments/microsoft.graph.delta()':
     get:
       tags:
@@ -3839,7 +4087,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4236,6 +4484,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/members/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.members_GetCount-4459
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/classes/{educationClass-id}/members/$ref':
     get:
       tags:
@@ -4568,6 +4838,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/schools/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.schools_GetCount-fef1
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/classes/{educationClass-id}/teachers':
     get:
       tags:
@@ -4788,6 +5080,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/teachers/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes.teachers_GetCount-4305
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/classes/{educationClass-id}/teachers/$ref':
     get:
       tags:
@@ -4920,6 +5234,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/classes/$count:
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.classes_GetCount-fe5a
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/classes/microsoft.graph.delta():
     get:
       tags:
@@ -5127,7 +5455,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5414,7 +5742,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5594,6 +5922,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/me/assignments/{educationAssignment-id}/categories/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.assignments.categories_GetCount-da6c
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/me/assignments/{educationAssignment-id}/categories/$ref':
     get:
       tags:
@@ -6028,7 +6378,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6070,6 +6420,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/me/assignments/{educationAssignment-id}/resources/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.assignments.resources_GetCount-c8bf
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/me/assignments/{educationAssignment-id}/rubric':
     get:
       tags:
@@ -6155,7 +6527,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6512,7 +6884,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6972,7 +7344,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7022,6 +7394,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/outcomes/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.assignments.submissions.outcomes_GetCount-86b6
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources':
     get:
       tags:
@@ -7255,7 +7657,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7305,6 +7707,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.assignments.submissions.resources_GetCount-4a0c
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources':
     get:
       tags:
@@ -7534,7 +7966,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7584,6 +8016,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.assignments.submissions.submittedResources_GetCount-a574
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/education/me/assignments/{educationAssignment-id}/submissions/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.assignments.submissions_GetCount-39e1
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /education/me/assignments/$count:
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.assignments_GetCount-d634
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/me/assignments/microsoft.graph.delta():
     get:
       tags:
@@ -7910,6 +8408,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/me/classes/$count:
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.classes_GetCount-94ca
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/me/rubrics:
     get:
       tags:
@@ -8107,7 +8619,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8141,6 +8653,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/me/rubrics/$count:
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.rubrics_GetCount-346e
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/me/schools:
     get:
       tags:
@@ -8325,6 +8851,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/me/schools/$count:
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.schools_GetCount-c9bf
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/me/taughtClasses:
     get:
       tags:
@@ -8517,6 +9057,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/me/taughtClasses/$count:
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.me.taughtClasses_GetCount-94df
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/me/user:
     get:
       tags:
@@ -8540,6 +9094,7 @@ paths:
               enum:
                 - id
                 - deletedDateTime
+                - signInActivity
                 - accountEnabled
                 - ageGroup
                 - assignedLicenses
@@ -8960,7 +9515,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9080,7 +9635,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9252,6 +9807,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/schools/{educationSchool-id}/classes/$count':
+    get:
+      tags:
+        - education.educationSchool
+      summary: Get the number of the resource
+      operationId: education.schools.classes_GetCount-d3ee
+      parameters:
+        - name: educationSchool-id
+          in: path
+          description: The unique identifier of educationSchool
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSchool
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/schools/{educationSchool-id}/classes/$ref':
     get:
       tags:
@@ -9564,6 +10141,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/schools/{educationSchool-id}/users/$count':
+    get:
+      tags:
+        - education.educationSchool
+      summary: Get the number of the resource
+      operationId: education.schools.users_GetCount-e5a6
+      parameters:
+        - name: educationSchool-id
+          in: path
+          description: The unique identifier of educationSchool
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSchool
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/schools/{educationSchool-id}/users/$ref':
     get:
       tags:
@@ -9696,6 +10295,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/schools/$count:
+    get:
+      tags:
+        - education.educationSchool
+      summary: Get the number of the resource
+      operationId: education.schools_GetCount-c02b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/schools/microsoft.graph.delta():
     get:
       tags:
@@ -10120,7 +10733,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10448,7 +11061,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10660,6 +11273,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.assignments.categories_GetCount-0551
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/$ref':
     get:
       tags:
@@ -11174,7 +11817,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11224,6 +11867,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/resources/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.assignments.resources_GetCount-69da
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/rubric':
     get:
       tags:
@@ -11325,7 +11998,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11746,7 +12419,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12286,7 +12959,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12344,6 +13017,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/outcomes/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.assignments.submissions.outcomes_GetCount-c6c3
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources':
     get:
       tags:
@@ -12609,7 +13320,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12667,6 +13378,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.assignments.submissions.resources_GetCount-cb98
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources':
     get:
       tags:
@@ -12928,7 +13677,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12986,6 +13735,96 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.assignments.submissions.submittedResources_GetCount-6158
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.assignments.submissions_GetCount-fe47
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/education/users/{educationUser-id}/assignments/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.assignments_GetCount-d390
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/users/{educationUser-id}/assignments/microsoft.graph.delta()':
     get:
       tags:
@@ -13336,6 +14175,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/classes/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.classes_GetCount-4517
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/users/{educationUser-id}/rubrics':
     get:
       tags:
@@ -13566,7 +14427,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13608,6 +14469,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/rubrics/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.rubrics_GetCount-7e40
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/users/{educationUser-id}/schools':
     get:
       tags:
@@ -13808,6 +14691,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/schools/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.schools_GetCount-a99c
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/users/{educationUser-id}/taughtClasses':
     get:
       tags:
@@ -14016,6 +14921,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/taughtClasses/$count':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users.taughtClasses_GetCount-788d
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/education/users/{educationUser-id}/user':
     get:
       tags:
@@ -14047,6 +14974,7 @@ paths:
               enum:
                 - id
                 - deletedDateTime
+                - signInActivity
                 - accountEnabled
                 - ageGroup
                 - assignedLicenses
@@ -14235,6 +15163,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/users/$count:
+    get:
+      tags:
+        - education.educationUser
+      summary: Get the number of the resource
+      operationId: education.users_GetCount-6be9
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/users/microsoft.graph.delta():
     get:
       tags:
@@ -15357,6 +16299,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -17172,6 +18116,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          description: Request identifier of the last non-interactive sign-in performed by this user.
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.authorizationInfo:
       title: authorizationInfo
       type: object
@@ -18809,6 +19779,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.educationAssignmentCollectionResponse:
       title: Collection of educationAssignment
       type: object
@@ -26949,15 +27922,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -27777,6 +28750,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.educationCategoryCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.educationAssignmentCollectionResponse:
       description: Retrieved collection
       content:
