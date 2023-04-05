@@ -1,21 +1,17 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 steps:
-  - task: CredScan@2
+  - task: CredScan@3
     displayName: "Run CredScan"
     inputs:
       debugMode: false
-      batchSize: 20
-      toolMajorVersion: "V2"
-      searchersFileType: "Skype"
+      toolMajorVersion: V2
+      scanFolder: '$(Build.SourcesDirectory)/src'
+      suppressionsFile: $(System.DefaultWorkingDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
 
-  - task: PoliCheck@1
+  - task: PoliCheck@2
     displayName: "Run PoliCheck"
-    condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/main'), false))
     inputs:
-      targetType: F
-      SOMEnabled: true
-      optionsFC: 0
-      optionsXS: 0
-      optionsHMENABLE: 0
-      continueOnError: true
+      inputType: CmdLine
+      cmdLineArgs: '/F:$(Build.SourcesDirectory)/src /T:9 /Sev:"1|2" /PE:1|2|3|4 /O:poli_result_src.xml'
+      optionsUEPATH: $(System.DefaultWorkingDirectory)/.azure-pipelines/config/policheck/policheck-exclusions.xml
