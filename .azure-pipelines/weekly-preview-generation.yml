@@ -23,6 +23,13 @@ parameters:
   - name: Sign
     type: boolean
     default: true
+  - name: CreatePullRequest
+    type: boolean
+    default: true
+  - name: SkipOpenAPIDocsDownload
+    displayName: Skip OpenAPI Docs Download
+    default: false
+    type: boolean
 
 variables:
   Branch: "WeeklyPreviewRefresh"
@@ -52,11 +59,12 @@ jobs:
           BaseBranch: $(BaseBranch)
           BuildAgent: $(BuildAgent)
           SkipForceRefresh: $(SkipForceRefresh)
+          SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
 
   - job: MsGraphPsSdkWeeklyGeneration
     dependsOn: RefreshOpenAPIDocuments
     displayName: Microsoft Graph PowerShell SDK Generation
-    condition: succeeded()
+    condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
     timeoutInMinutes: 840
     variables:
       WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
@@ -101,3 +109,10 @@ jobs:
               allowPackageConflicts: true
       - template: ./generation-templates/generate-command-metadata.yml
       - template: ./common-templates/security-post-checks.yml
+      - ${{ if eq(parameters.CreatePullRequest, true) }}:
+          - template: common-templates/create-pr.yml
+            parameters:
+              BaseBranch: $(BaseBranch)
+              TargetBranch: $(WeeklyBranch)
+              Title: "[v2] Weekly OpenApiDocs Refresh"
+              Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."

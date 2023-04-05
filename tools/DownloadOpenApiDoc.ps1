@@ -14,7 +14,7 @@ if (-not (Test-Path $OpenApiDocOutput)) {
 }
 
 $OpenApiBaseUrl = "https://graphexplorerapi.azurewebsites.net"
-$OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&title=$ModuleName&openapiversion=3&style=Powershell&graphVersion=$GraphVersion" -f $ModuleRegex)
+$OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&title=$ModuleName&openapiversion=3&style=Powershell&fileName=powershell_v2&graphVersion=$GraphVersion" -f $ModuleRegex)
 if ($ForceRefresh.IsPresent) {
     $OpenApiServiceUrl = "$OpenApiServiceUrl&forceRefresh=true"
 }
