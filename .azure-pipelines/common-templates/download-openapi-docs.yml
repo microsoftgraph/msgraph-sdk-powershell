@@ -10,8 +10,9 @@ parameters:
     displayName: Build Agent
   - name: SkipForceRefresh
     type: string
-  - name: SkipSingularizeOperationIds
-    type: string
+  - name: SkipOpenAPIDocsDownload
+    type: boolean
+    default: false
 
 steps:
   - template: ./checkout.yml
@@ -41,18 +42,20 @@ steps:
 
   - task: PowerShell@2
     displayName: Download v1.0 OpenApi docs
+    condition: and(succeeded(), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false))
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
-      arguments: -SkipForceRefresh:$$(SkipForceRefresh) -SkipSingularizeOperationIds:$$(SkipSingularizeOperationIds)
+      arguments: -SkipForceRefresh:$$(SkipForceRefresh)
       pwsh: true
 
   - task: PowerShell@2
     displayName: Download beta OpenApi docs
+    condition: and(succeeded(), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false))
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
-      arguments: -BetaGraphVersion -SkipForceRefresh:$$(SkipForceRefresh) -SkipSingularizeOperationIds:$$(SkipSingularizeOperationIds)
+      arguments: -BetaGraphVersion -SkipForceRefresh:$$(SkipForceRefresh)
       pwsh: true
 
   - task: PowerShell@2
@@ -62,15 +65,21 @@ steps:
       pwsh: true
       targetType: "inline"
       script: |
-        $diff = git diff --name-only
-        $ModulesWithChanges = @{}
-        $diff | %{
-          if (($_ -match 'openApiDocs\/(v1.0|beta)\/(.*).yml') -and !$ModulesWithChanges.ContainsKey($matches.2))
-          {
-            $ModulesWithChanges.Add($matches.2, $matches.1)
+        Write-Host "SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}"
+        if ('${{ parameters.SkipOpenAPIDocsDownload }}' -eq 'True') {
+          $ModuleNames = "Skipped"
+          Write-Warning "Skipped OpenAPI Docs Download."
+        } else  {
+          $diff = git diff --name-only
+          $ModulesWithChanges = @{}
+          $diff | %{
+            if (($_ -match 'openApiDocs\/(v1.0|beta)\/(.*).yml') -and !$ModulesWithChanges.ContainsKey($matches.2))
+            {
+              $ModulesWithChanges.Add($matches.2, $matches.1)
+            }
           }
+          $ModuleNames = $ModulesWithChanges.Keys
         }
-        $ModuleNames = $ModulesWithChanges.Keys
         Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
 
   - task: PowerShell@2
