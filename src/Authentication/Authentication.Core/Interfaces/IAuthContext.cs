@@ -34,6 +34,12 @@ namespace Microsoft.Graph.PowerShell.Authentication
         EnvironmentVariable
     }
 
+    public enum SigninUi
+    {
+        Browser,
+        Native
+    }
+
     public interface IAuthContext
     {
         string ManagedIdentityId { get; set; }
@@ -50,5 +56,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         ContextScope ContextScope { get; set; }
         Version PSHostVersion { get; set; }
         SecureString ClientSecret { get; set; }
+        SigninUi SigninUi { get; set; }
     }
 }

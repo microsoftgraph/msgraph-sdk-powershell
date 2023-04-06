@@ -4,14 +4,18 @@
 using Azure.Core;
 using Azure.Core.Diagnostics;
 using Azure.Identity;
+using Azure.Identity.BrokeredAuthentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Identity.Client;
+using Microsoft.Identity.Client.Broker;
 using Microsoft.Identity.Client.Extensions.Msal;
 using System;
 using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
@@ -105,16 +109,23 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
         {
+            using AzureEventSourceListener listener = AzureEventSourceListener.CreateConsoleLogger();
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-
-            var interactiveOptions = new InteractiveBrowserCredentialOptions
+            InteractiveBrowserCredentialOptions interactiveOptions;
+            if (authContext.SigninUi == SigninUi.Native)
             {
-                ClientId = authContext.ClientId,
-                TenantId = authContext.TenantId,
-                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
-                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
-            };
+                [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
+                IntPtr parentWindowHandle = GetForegroundWindow();
+                interactiveOptions = new InteractiveBrowserCredentialBrokerOptions(parentWindowHandle);
+            } else {
+                interactiveOptions = new InteractiveBrowserCredentialOptions();
+            }
+
+            interactiveOptions.ClientId = authContext.ClientId;
+            interactiveOptions.TenantId = authContext.TenantId ?? "common";
+            interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
+            interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
 
             if (!File.Exists(Constants.AuthRecordPath))
             {
