@@ -68,6 +68,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -272,6 +276,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryAudit'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -301,6 +309,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /auditLogs/directoryAudits/$count:
+    get:
+      tags:
+        - auditLogs.directoryAudit
+      summary: Get the number of the resource
+      operationId: auditLog.directoryAudit_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /auditLogs/provisioning:
     get:
       tags:
@@ -522,6 +544,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -551,6 +577,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /auditLogs/provisioning/$count:
+    get:
+      tags:
+        - auditLogs.provisioningObjectSummary
+      summary: Get the number of the resource
+      operationId: auditLog.provisioning_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /auditLogs/signIns:
     get:
       tags:
@@ -800,6 +840,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.signIn'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -829,6 +873,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /auditLogs/signIns/$count:
+    get:
+      tags:
+        - auditLogs.signIn
+      summary: Get the number of the resource
+      operationId: auditLog.signIn_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/reports:
     get:
       tags:
@@ -888,6 +946,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementReports'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1104,6 +1166,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1133,6 +1199,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/reports/exportJobs/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Get the number of the resource
+      operationId: deviceManagement.report.exportJob_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /reports:
     get:
       tags:
@@ -1198,6 +1278,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.reportRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1378,6 +1462,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1407,6 +1495,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /reports/dailyPrintUsageByPrinter/$count:
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get the number of the resource
+      operationId: report.dailyPrintUsageGraphBPrePrinter_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /reports/dailyPrintUsageByUser:
     get:
       tags:
@@ -1584,6 +1686,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1613,6 +1719,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /reports/dailyPrintUsageByUser/$count:
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get the number of the resource
+      operationId: report.dailyPrintUsageGraphBPreUser_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /reports/microsoft.graph.deviceConfigurationDeviceActivity():
     get:
       tags:
@@ -4740,6 +4860,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4769,6 +4893,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /reports/monthlyPrintUsageByPrinter/$count:
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get the number of the resource
+      operationId: report.monthlyPrintUsageGraphBPrePrinter_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /reports/monthlyPrintUsageByUser:
     get:
       tags:
@@ -4946,6 +5084,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4975,6 +5117,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /reports/monthlyPrintUsageByUser/$count:
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get the number of the resource
+      operationId: report.monthlyPrintUsageGraphBPreUser_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /reports/security:
     get:
       tags:
@@ -5031,6 +5187,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6141,6 +6301,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.provisioningObjectSummaryCollectionResponse:
       title: Collection of provisioningObjectSummary
       type: object
@@ -6414,6 +6577,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.directoryAuditCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.provisioningObjectSummaryCollectionResponse:
       description: Retrieved collection
       content:

@@ -438,6 +438,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.adminWindows'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -528,6 +532,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.adminWindowsUpdates'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -608,6 +616,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalog'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -799,6 +811,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -828,6 +844,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /admin/windows/updates/catalog/entries/$count:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.catalog.entry_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/windows/updates/deploymentAudiences:
     get:
       tags:
@@ -1002,6 +1032,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1222,6 +1256,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1455,6 +1493,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deploymentAudience.exclusion_GetCount
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssets':
     post:
       tags:
@@ -1802,6 +1862,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2035,6 +2099,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deploymentAudience.member_GetCount
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssets':
     post:
       tags:
@@ -2300,6 +2386,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /admin/windows/updates/deploymentAudiences/$count:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deploymentAudience_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/windows/updates/deployments:
     get:
       tags:
@@ -2486,6 +2586,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2594,6 +2698,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2814,6 +2922,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3047,6 +3159,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deployment.audience.exclusion_GetCount
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssets':
     post:
       tags:
@@ -3394,6 +3528,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3627,6 +3765,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/admin/windows/updates/deployments/{deployment-id}/audience/members/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deployment.audience.member_GetCount
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssets':
     post:
       tags:
@@ -3892,6 +4052,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /admin/windows/updates/deployments/$count:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deployment_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/windows/updates/resourceConnections:
     get:
       tags:
@@ -4058,6 +4232,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4087,6 +4265,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /admin/windows/updates/resourceConnections/$count:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.resourceConnection_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/windows/updates/updatableAssets:
     get:
       tags:
@@ -4249,6 +4441,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4442,6 +4638,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /admin/windows/updates/updatableAssets/$count:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.updatableAsset_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.enrollAssets:
     post:
       tags:
@@ -4744,6 +4954,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4852,6 +5066,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5072,6 +5290,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5305,6 +5527,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.updatePolicy.audience.exclusion_GetCount
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssets':
     post:
       tags:
@@ -5652,6 +5896,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5885,6 +6133,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.updatePolicy.audience.member_GetCount
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssets':
     post:
       tags:
@@ -6361,6 +6631,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.complianceChange'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6463,6 +6737,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.updatePolicy.complianceChange_GetCount
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/windows/updates/updatePolicies/$count:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.updatePolicy_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.browserSite:
@@ -7217,6 +7527,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.windowsUpdates.deploymentAudienceCollectionResponse:
       title: Collection of deploymentAudience
       type: object
@@ -7541,6 +7854,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntryCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.windowsUpdates.deploymentAudienceCollectionResponse:
       description: Retrieved collection
       content:

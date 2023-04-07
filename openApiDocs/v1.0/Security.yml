@@ -28,6 +28,8 @@ paths:
                 - alerts_v2
                 - incidents
                 - attackSimulation
+                - triggers
+                - triggerTypes
                 - alerts
                 - secureScoreControlProfiles
                 - secureScores
@@ -47,6 +49,8 @@ paths:
                 - alerts_v2
                 - incidents
                 - attackSimulation
+                - triggers
+                - triggerTypes
                 - alerts
                 - secureScoreControlProfiles
                 - secureScores
@@ -76,6 +80,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -550,6 +558,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.alert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -579,6 +591,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/alerts_v2/$count:
+    get:
+      tags:
+        - security.alert
+      summary: Get the number of the resource
+      operationId: security.alerts_v2_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/alerts/{alert-id}':
     get:
       tags:
@@ -691,9 +717,27 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.alert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/alerts/$count:
+    get:
+      tags:
+        - security.alert
+      summary: Get the number of the resource
+      operationId: security.alert_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/attackSimulation:
     get:
       tags:
@@ -754,6 +798,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -973,6 +1021,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1209,6 +1261,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1246,6 +1302,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/attackSimulation/simulationAutomations/{simulationAutomation-id}/runs/$count':
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.simulationAutomation.run_GetCount
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: The unique identifier of simulationAutomation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/attackSimulation/simulationAutomations/$count:
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.simulationAutomation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/attackSimulation/simulations:
     get:
       tags:
@@ -1464,6 +1556,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1493,6 +1589,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/attackSimulation/simulations/$count:
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.simulation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/cases:
     get:
       tags:
@@ -1551,6 +1661,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1797,6 +1911,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2069,6 +2187,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2586,6 +2708,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2743,6 +2869,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/siteSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian.siteSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCustodian-id
+          in: path
+          description: The unique identifier of ediscoveryCustodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCustodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/unifiedGroupSources':
     get:
       tags:
@@ -2994,6 +3150,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3198,6 +3358,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/unifiedGroupSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian.unifiedGroupSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCustodian-id
+          in: path
+          description: The unique identifier of ediscoveryCustodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCustodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/userSources':
     get:
       tags:
@@ -3453,6 +3643,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.userSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3498,6 +3692,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/userSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian.userSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCustodian-id
+          in: path
+          description: The unique identifier of ediscoveryCustodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCustodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/microsoft.graph.security.applyHold':
     post:
       tags:
@@ -3844,6 +4090,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3975,6 +4225,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4209,6 +4463,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/microsoft.graph.security.applyHold':
     post:
       tags:
@@ -4500,6 +4776,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4537,6 +4817,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/operations/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.operation_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets':
     get:
       tags:
@@ -4748,6 +5050,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5087,6 +5393,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5191,6 +5501,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/queries/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.reviewSet.query_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewSet-id
+          in: path
+          description: The unique identifier of ediscoveryReviewSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewSet
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.reviewSet_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches':
     get:
       tags:
@@ -5438,6 +5800,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5718,6 +6084,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5763,6 +6133,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/additionalSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search.additionalSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/addToReviewSetOperation':
     get:
       tags:
@@ -5992,6 +6392,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/custodianSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search.custodianSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/lastEstimateStatisticsOperation':
     get:
       tags:
@@ -6317,6 +6747,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/noncustodialSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search.noncustodialSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/settings':
     get:
       tags:
@@ -6401,6 +6883,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6678,6 +7164,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6884,6 +7374,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/{ediscoveryReviewTag-id}/childTags/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.tag.childTag_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewTag-id
+          in: path
+          description: The unique identifier of ediscoveryReviewTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewTag
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/{ediscoveryReviewTag-id}/parent':
     get:
       tags:
@@ -6951,6 +7471,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.tag_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/microsoft.graph.security.asHierarchy()':
     get:
       tags:
@@ -7037,6 +7579,20 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /security/cases/ediscoveryCases/$count:
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/incidents:
     get:
       tags:
@@ -7251,6 +7807,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incident'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7517,6 +8077,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/incidents/{incident-id}/alerts/$count':
+    get:
+      tags:
+        - security.incident
+      summary: Get the number of the resource
+      operationId: security.incident.alert_GetCount
+      parameters:
+        - name: incident-id
+          in: path
+          description: The unique identifier of incident
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incident
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/incidents/$count:
+    get:
+      tags:
+        - security.incident
+      summary: Get the number of the resource
+      operationId: security.incident_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/microsoft.graph.security.runHuntingQuery:
     post:
       tags:
@@ -7779,6 +8375,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7808,6 +8408,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/secureScoreControlProfiles/$count:
+    get:
+      tags:
+        - security.secureScoreControlProfile
+      summary: Get the number of the resource
+      operationId: security.secureScoreControlProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/secureScores:
     get:
       tags:
@@ -8005,6 +8619,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScore'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8034,6 +8652,714 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/secureScores/$count:
+    get:
+      tags:
+        - security.secureScore
+      summary: Get the number of the resource
+      operationId: security.secureScore_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/triggers:
+    get:
+      tags:
+        - security.triggersRoot
+      summary: Get triggers from security
+      operationId: security_GetTriggers
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - retentionEvents
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - retentionEvents
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.triggersRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.triggersRoot
+      summary: Update the navigation property triggers in security
+      operationId: security_UpdateTriggers
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.triggersRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.triggersRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.triggersRoot
+      summary: Delete navigation property triggers for security
+      operationId: security_DeleteTriggers
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/triggers/retentionEvents:
+    get:
+      tags:
+        - security.triggersRoot
+      summary: Get retentionEvents from security
+      operationId: security.trigger_ListRetentionEvents
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - eventPropagationResults
+                - eventPropagationResults desc
+                - eventQueries
+                - eventQueries desc
+                - eventStatus
+                - eventStatus desc
+                - eventTriggerDateTime
+                - eventTriggerDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastStatusUpdateDateTime
+                - lastStatusUpdateDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - displayName
+                - eventPropagationResults
+                - eventQueries
+                - eventStatus
+                - eventTriggerDateTime
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - lastStatusUpdateDateTime
+                - retentionEventType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - retentionEventType
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.retentionEventCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.triggersRoot
+      summary: Create new navigation property to retentionEvents for security
+      operationId: security.trigger_CreateRetentionEvents
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/triggers/retentionEvents/{retentionEvent-id}':
+    get:
+      tags:
+        - security.triggersRoot
+      summary: Get retentionEvents from security
+      operationId: security.trigger_GetRetentionEvents
+      parameters:
+        - name: retentionEvent-id
+          in: path
+          description: The unique identifier of retentionEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionEvent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - displayName
+                - eventPropagationResults
+                - eventQueries
+                - eventStatus
+                - eventTriggerDateTime
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - lastStatusUpdateDateTime
+                - retentionEventType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - retentionEventType
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.triggersRoot
+      summary: Update the navigation property retentionEvents in security
+      operationId: security.trigger_UpdateRetentionEvents
+      parameters:
+        - name: retentionEvent-id
+          in: path
+          description: The unique identifier of retentionEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionEvent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.triggersRoot
+      summary: Delete navigation property retentionEvents for security
+      operationId: security.trigger_DeleteRetentionEvents
+      parameters:
+        - name: retentionEvent-id
+          in: path
+          description: The unique identifier of retentionEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionEvent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/triggers/retentionEvents/{retentionEvent-id}/retentionEventType':
+    get:
+      tags:
+        - security.triggersRoot
+      summary: Get retentionEventType from security
+      description: Specifies the event that will start the retention period for labels that use this event type when an event is created.
+      operationId: security.trigger.retentionEvent_GetRetentionEventType
+      parameters:
+        - name: retentionEvent-id
+          in: path
+          description: The unique identifier of retentionEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionEvent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/triggers/retentionEvents/$count:
+    get:
+      tags:
+        - security.triggersRoot
+      summary: Get the number of the resource
+      operationId: security.trigger.retentionEvent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/triggerTypes:
+    get:
+      tags:
+        - security.triggerTypesRoot
+      summary: Get triggerTypes from security
+      operationId: security_GetTriggerTypes
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - retentionEventTypes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - retentionEventTypes
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.triggerTypesRoot
+      summary: Update the navigation property triggerTypes in security
+      operationId: security_UpdateTriggerTypes
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.triggerTypesRoot
+      summary: Delete navigation property triggerTypes for security
+      operationId: security_DeleteTriggerTypes
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/triggerTypes/retentionEventTypes:
+    get:
+      tags:
+        - security.triggerTypesRoot
+      summary: Get retentionEventTypes from security
+      operationId: security.triggerType_ListRetentionEventTypes
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.retentionEventTypeCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.triggerTypesRoot
+      summary: Create new navigation property to retentionEventTypes for security
+      operationId: security.triggerType_CreateRetentionEventTypes
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/triggerTypes/retentionEventTypes/{retentionEventType-id}':
+    get:
+      tags:
+        - security.triggerTypesRoot
+      summary: Get retentionEventTypes from security
+      operationId: security.triggerType_GetRetentionEventTypes
+      parameters:
+        - name: retentionEventType-id
+          in: path
+          description: The unique identifier of retentionEventType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionEventType
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.triggerTypesRoot
+      summary: Update the navigation property retentionEventTypes in security
+      operationId: security.triggerType_UpdateRetentionEventTypes
+      parameters:
+        - name: retentionEventType-id
+          in: path
+          description: The unique identifier of retentionEventType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionEventType
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.triggerTypesRoot
+      summary: Delete navigation property retentionEventTypes for security
+      operationId: security.triggerType_DeleteRetentionEventTypes
+      parameters:
+        - name: retentionEventType-id
+          in: path
+          description: The unique identifier of retentionEventType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionEventType
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/triggerTypes/retentionEventTypes/$count:
+    get:
+      tags:
+        - security.triggerTypesRoot
+      summary: Get the number of the resource
+      operationId: security.triggerType.retentionEventType_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.security:
@@ -8058,6 +9384,10 @@ components:
               x-ms-navigationProperty: true
             attackSimulation:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
+            triggers:
+              $ref: '#/components/schemas/microsoft.graph.security.triggersRoot'
+            triggerTypes:
+              $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
             alerts:
               type: array
               items:
@@ -9550,6 +10880,121 @@ components:
               nullable: true
             vendorInformation:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+          additionalProperties:
+            type: object
+    microsoft.graph.security.triggersRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: triggersRoot
+          type: object
+          properties:
+            retentionEvents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.retentionEvent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: retentionEvent
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date time when the retentionEvent was created.
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: Optional information about the event.
+              nullable: true
+            displayName:
+              type: string
+              description: Name of the event.
+              nullable: true
+            eventPropagationResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.eventPropagationResult'
+            eventQueries:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.eventQuery'
+              description: 'Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.'
+            eventStatus:
+              $ref: '#/components/schemas/microsoft.graph.security.retentionEventStatus'
+            eventTriggerDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Optional time when the event should be triggered.
+              format: date-time
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The latest date time when the retentionEvent was modified.
+              format: date-time
+              nullable: true
+            lastStatusUpdateDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last time the status of the event was updated.
+              format: date-time
+              nullable: true
+            retentionEventType:
+              $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
+          additionalProperties:
+            type: object
+    microsoft.graph.security.retentionEventType:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: retentionEventType
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date time when the retentionEventType was created.
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: Optional information about the event type.
+              nullable: true
+            displayName:
+              type: string
+              description: Name of the event type.
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The latest date time when the retentionEventType was modified.
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.triggerTypesRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: triggerTypesRoot
+          type: object
+          properties:
+            retentionEventTypes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -11983,6 +13428,47 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.eventPropagationResult:
+      title: eventPropagationResult
+      type: object
+      properties:
+        location:
+          type: string
+          description: The name of the specific location in the workload associated with the event.
+          nullable: true
+        serviceName:
+          type: string
+          description: The name of the workload associated with the event.
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.security.eventPropagationStatus'
+        statusInformation:
+          type: string
+          description: Additional information about the status of the event creation request.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.eventQuery:
+      title: eventQuery
+      type: object
+      properties:
+        query:
+          type: string
+          description: 'Represents unique identification for the  query. ''Asset ID'' for SharePoint Online and OneDrive for Business, ''keywords'' for Exchange Online.'
+        queryType:
+          $ref: '#/components/schemas/microsoft.graph.security.queryType'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.retentionEventStatus:
+      title: retentionEventStatus
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.publicError'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.security.eventStatusType'
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -12018,6 +13504,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.simulationAutomationCollectionResponse:
       title: Collection of simulationAutomation
       type: object
@@ -12247,6 +13736,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.secureScore'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.retentionEventCollectionResponse:
+      title: Collection of retentionEvent
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.retentionEventTypeCollectionResponse:
+      title: Collection of retentionEventType
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -15043,6 +16558,31 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.eventPropagationStatus:
+      title: eventPropagationStatus
+      enum:
+        - none
+        - inProcessing
+        - failed
+        - success
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.queryType:
+      title: queryType
+      enum:
+        - files
+        - messages
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.eventStatusType:
+      title: eventStatusType
+      enum:
+        - pending
+        - error
+        - success
+        - notAvaliable
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -15200,18 +16740,22 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
           type: string
+          description: Request identifier of the last non-interactive sign-in performed by this user.
           nullable: true
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
           type: string
+          description: Request identifier of the last interactive sign-in performed by this user.
           nullable: true
       additionalProperties:
         type: object
@@ -23337,6 +24881,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.alertCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.simulationAutomationCollectionResponse:
       description: Retrieved collection
       content:
@@ -23445,6 +24995,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.secureScoreCollectionResponse'
+    microsoft.graph.security.retentionEventCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.retentionEventCollectionResponse'
+    microsoft.graph.security.retentionEventTypeCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.retentionEventTypeCollectionResponse'
   parameters:
     top:
       name: $top

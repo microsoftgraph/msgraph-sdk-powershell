@@ -85,6 +85,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -326,6 +330,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedInsight'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -478,6 +486,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/shared/$count':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get the number of the resource
+      operationId: user.insight.shared_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/insights/trending':
     get:
       tags:
@@ -686,6 +716,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.trending'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -781,6 +815,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/trending/$count':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get the number of the resource
+      operationId: user.insight.trending_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/insights/used':
     get:
       tags:
@@ -988,6 +1044,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.usedInsight'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1083,6 +1143,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/used/$count':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get the number of the resource
+      operationId: user.insight.used_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/people':
     get:
       tags:
@@ -1263,6 +1345,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/people/$count':
+    get:
+      tags:
+        - users.person
+      summary: Get the number of the resource
+      operationId: user.person_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.officeGraphInsights:
@@ -1670,6 +1774,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.trendingCollectionResponse:
       title: Collection of trending
       type: object
@@ -1890,6 +1997,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.sharedInsightCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.trendingCollectionResponse:
       description: Retrieved collection
       content:

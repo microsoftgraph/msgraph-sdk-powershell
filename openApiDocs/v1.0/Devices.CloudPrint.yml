@@ -74,6 +74,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.print'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -259,6 +263,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -288,6 +296,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/connectors/$count:
+    get:
+      tags:
+        - print.printConnector
+      summary: Get the number of the resource
+      operationId: print.connector_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/operations:
     get:
       tags:
@@ -451,6 +473,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -480,6 +506,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/operations/$count:
+    get:
+      tags:
+        - print.printOperation
+      summary: Get the number of the resource
+      operationId: print.operation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/printers:
     get:
       tags:
@@ -702,6 +742,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printer'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -883,6 +927,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/connectors/$count':
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printer.connector_GetCount
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/printers/{printer-id}/microsoft.graph.restoreFactoryDefaults':
     post:
       tags:
@@ -1092,6 +1158,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/shares/$count':
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printer.share_GetCount
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/printers/{printer-id}/taskTriggers':
     get:
       tags:
@@ -1295,6 +1383,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1394,6 +1486,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/taskTriggers/$count':
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printer.taskTrigger_GetCount
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /print/printers/$count:
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printer_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/printers/microsoft.graph.create:
     post:
       tags:
@@ -1600,6 +1728,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printService'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1828,6 +1960,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printServiceEndpoint'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1865,6 +2001,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/services/{printService-id}/endpoints/$count':
+    get:
+      tags:
+        - print.printService
+      summary: Get the number of the resource
+      operationId: print.service.endpoint_GetCount
+      parameters:
+        - name: printService-id
+          in: path
+          description: The unique identifier of printService
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printService
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /print/services/$count:
+    get:
+      tags:
+        - print.printService
+      summary: Get the number of the resource
+      operationId: print.service_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/shares:
     get:
       tags:
@@ -2083,6 +2255,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printerShare'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2395,6 +2571,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/allowedGroups/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.share.allowedGroup_GetCount
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/shares/{printerShare-id}/allowedGroups/$ref':
     get:
       tags:
@@ -2970,6 +3168,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/allowedUsers/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.share.allowedUser_GetCount
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/shares/{printerShare-id}/allowedUsers/$ref':
     get:
       tags:
@@ -3258,6 +3478,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /print/shares/$count:
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.share_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /print/taskDefinitions:
     get:
       tags:
@@ -3432,6 +3666,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3668,6 +3906,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3711,7 +3953,7 @@ paths:
         - print.printTaskDefinition
       summary: Get definition from print
       description: The printTaskDefinition that was used to create this task. Read-only.
-      operationId: print.taskDefinition_GetDefinition
+      operationId: print.taskDefinition.task_GetDefinition
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -3773,7 +4015,7 @@ paths:
         - print.printTaskDefinition
       summary: Get trigger from print
       description: The printTaskTrigger that triggered this task's execution. Read-only.
-      operationId: print.taskDefinition_GetTrigger
+      operationId: print.taskDefinition.task_GetTrigger
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -3828,6 +4070,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/taskDefinitions/{printTaskDefinition-id}/tasks/$count':
+    get:
+      tags:
+        - print.printTaskDefinition
+      summary: Get the number of the resource
+      operationId: print.taskDefinition.task_GetCount
+      parameters:
+        - name: printTaskDefinition-id
+          in: path
+          description: The unique identifier of printTaskDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTaskDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /print/taskDefinitions/$count:
+    get:
+      tags:
+        - print.printTaskDefinition
+      summary: Get the number of the resource
+      operationId: print.taskDefinition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.print:
@@ -5145,6 +5423,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.printOperationCollectionResponse:
       title: Collection of printOperation
       type: object
@@ -6428,18 +6709,22 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
           type: string
+          description: Request identifier of the last non-interactive sign-in performed by this user.
           nullable: true
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
           type: string
+          description: Request identifier of the last interactive sign-in performed by this user.
           nullable: true
       additionalProperties:
         type: object
@@ -18078,6 +18363,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.printConnectorCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.printOperationCollectionResponse:
       description: Retrieved collection
       content:

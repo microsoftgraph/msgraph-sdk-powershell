@@ -109,6 +109,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -587,6 +591,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.alert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -616,6 +624,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/alerts_v2/$count:
+    get:
+      tags:
+        - security.alert
+      summary: Get the number of the resource
+      operationId: security.alerts_v2_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/alerts/{alert-id}':
     get:
       tags:
@@ -729,9 +751,27 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.alert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/alerts/$count:
+    get:
+      tags:
+        - security.alert
+      summary: Get the number of the resource
+      operationId: security.alert_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/alerts/microsoft.graph.updateAlerts:
     post:
       tags:
@@ -845,6 +885,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1053,6 +1097,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attackSimulationOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1082,6 +1130,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/attackSimulation/operations/$count:
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.operation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/attackSimulation/payloads:
     get:
       tags:
@@ -1328,6 +1390,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.payload'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1357,6 +1423,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/attackSimulation/payloads/$count:
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.payload_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/attackSimulation/simulationAutomations:
     get:
       tags:
@@ -1555,6 +1635,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1791,6 +1875,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1828,6 +1916,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/attackSimulation/simulationAutomations/{simulationAutomation-id}/runs/$count':
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.simulationAutomation.run_GetCount
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: The unique identifier of simulationAutomation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/attackSimulation/simulationAutomations/$count:
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.simulationAutomation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/attackSimulation/simulations:
     get:
       tags:
@@ -2066,6 +2190,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2101,7 +2229,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get payload from security
       description: The payload associated with a simulation during its creation.
-      operationId: security.attackSimulation_GetPayload
+      operationId: security.attackSimulation.simulation_GetPayload
       parameters:
         - name: simulation-id
           in: path
@@ -2167,6 +2295,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/attackSimulation/simulations/$count:
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.simulation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/cases:
     get:
       tags:
@@ -2225,6 +2367,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2475,6 +2621,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2747,6 +2897,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3264,6 +3418,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3424,6 +3582,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/siteSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian.siteSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCustodian-id
+          in: path
+          description: The unique identifier of ediscoveryCustodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCustodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/unifiedGroupSources':
     get:
       tags:
@@ -3675,6 +3863,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3893,6 +4085,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/unifiedGroupSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian.unifiedGroupSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCustodian-id
+          in: path
+          description: The unique identifier of ediscoveryCustodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCustodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/userSources':
     get:
       tags:
@@ -4148,6 +4370,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.userSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4193,6 +4419,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/userSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian.userSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCustodian-id
+          in: path
+          description: The unique identifier of ediscoveryCustodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCustodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/microsoft.graph.security.applyHold':
     post:
       tags:
@@ -4516,6 +4794,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryHoldPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4797,6 +5079,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4957,6 +5243,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/legalHolds/{ediscoveryHoldPolicy-id}/siteSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.legalHold.siteSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryHoldPolicy-id
+          in: path
+          description: The unique identifier of ediscoveryHoldPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryHoldPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/legalHolds/{ediscoveryHoldPolicy-id}/userSources':
     get:
       tags:
@@ -5209,6 +5525,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.userSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5254,6 +5574,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/legalHolds/{ediscoveryHoldPolicy-id}/userSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.legalHold.userSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryHoldPolicy-id
+          in: path
+          description: The unique identifier of ediscoveryHoldPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryHoldPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/legalHolds/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.legalHold_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/microsoft.graph.security.close':
     post:
       tags:
@@ -5528,6 +5900,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5659,6 +6035,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5893,6 +6273,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/microsoft.graph.security.applyHold':
     post:
       tags:
@@ -6192,6 +6594,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6229,6 +6635,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/operations/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.operation_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets':
     get:
       tags:
@@ -6444,6 +6872,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6760,6 +7192,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryFile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6891,6 +7327,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryFile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7250,6 +7690,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/files/{ediscoveryFile-id}/tags/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.reviewSet.file.tag_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewSet-id
+          in: path
+          description: The unique identifier of ediscoveryReviewSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewSet
+        - name: ediscoveryFile-id
+          in: path
+          description: The unique identifier of ediscoveryFile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryFile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/files/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.reviewSet.file_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewSet-id
+          in: path
+          description: The unique identifier of ediscoveryReviewSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewSet
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/microsoft.graph.security.addToReviewSet':
     post:
       tags:
@@ -7611,6 +8119,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7905,6 +8417,58 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/queries/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.reviewSet.query_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewSet-id
+          in: path
+          description: The unique identifier of ediscoveryReviewSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewSet
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.reviewSet_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches':
     get:
       tags:
@@ -8152,6 +8716,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8432,6 +9000,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8477,6 +9049,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/additionalSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search.additionalSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/addToReviewSetOperation':
     get:
       tags:
@@ -8706,6 +9308,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/custodianSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search.custodianSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/lastEstimateStatisticsOperation':
     get:
       tags:
@@ -9035,6 +9667,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/noncustodialSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search.noncustodialSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/settings':
     get:
       tags:
@@ -9119,6 +9803,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9396,6 +10084,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9602,6 +10294,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/{ediscoveryReviewTag-id}/childTags/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.tag.childTag_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewTag-id
+          in: path
+          description: The unique identifier of ediscoveryReviewTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewTag
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/{ediscoveryReviewTag-id}/parent':
     get:
       tags:
@@ -9669,6 +10391,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.tag_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/microsoft.graph.security.asHierarchy()':
     get:
       tags:
@@ -9755,6 +10499,20 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /security/cases/ediscoveryCases/$count:
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/cloudAppSecurityProfiles:
     get:
       tags:
@@ -9976,6 +10734,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10005,6 +10767,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/cloudAppSecurityProfiles/$count:
+    get:
+      tags:
+        - security.cloudAppSecurityProfile
+      summary: Get the number of the resource
+      operationId: security.cloudAppSecurityProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/domainSecurityProfiles:
     get:
       tags:
@@ -10214,6 +10990,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.domainSecurityProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10243,6 +11023,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/domainSecurityProfiles/$count:
+    get:
+      tags:
+        - security.domainSecurityProfile
+      summary: Get the number of the resource
+      operationId: security.domainSecurityProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/fileSecurityProfiles:
     get:
       tags:
@@ -10460,6 +11254,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.fileSecurityProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10489,6 +11287,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/fileSecurityProfiles/$count:
+    get:
+      tags:
+        - security.fileSecurityProfile
+      summary: Get the number of the resource
+      operationId: security.fileSecurityProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/hostSecurityProfiles:
     get:
       tags:
@@ -10714,6 +11526,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.hostSecurityProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10743,6 +11559,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/hostSecurityProfiles/$count:
+    get:
+      tags:
+        - security.hostSecurityProfile
+      summary: Get the number of the resource
+      operationId: security.hostSecurityProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/incidents:
     get:
       tags:
@@ -10973,6 +11803,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incident'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11243,6 +12077,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/incidents/{incident-id}/alerts/$count':
+    get:
+      tags:
+        - security.incident
+      summary: Get the number of the resource
+      operationId: security.incident.alert_GetCount
+      parameters:
+        - name: incident-id
+          in: path
+          description: The unique identifier of incident
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incident
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/incidents/$count:
+    get:
+      tags:
+        - security.incident
+      summary: Get the number of the resource
+      operationId: security.incident_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/informationProtection:
     get:
       tags:
@@ -11303,6 +12173,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.informationProtection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11388,6 +12262,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.informationProtectionPolicySetting'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11607,6 +12485,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11721,6 +12603,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11750,6 +12636,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/informationProtection/sensitivityLabels/$count:
+    get:
+      tags:
+        - security.informationProtection
+      summary: Get the number of the resource
+      operationId: security.informationProtection.sensitivityLabel_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateApplication:
     post:
       tags:
@@ -12130,6 +13030,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ipSecurityProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12159,6 +13063,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/ipSecurityProfiles/$count:
+    get:
+      tags:
+        - security.ipSecurityProfile
+      summary: Get the number of the resource
+      operationId: security.ipSecurityProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/labels:
     get:
       tags:
@@ -12217,6 +13135,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.labelsRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12463,6 +13385,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionLabel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12692,6 +13618,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dispositionReviewStage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12729,6 +13659,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/labels/retentionLabels/{retentionLabel-id}/dispositionReviewStages/$count':
+    get:
+      tags:
+        - security.labelsRoot
+      summary: Get the number of the resource
+      operationId: security.label.retentionLabel.dispositionReviewStage_GetCount
+      parameters:
+        - name: retentionLabel-id
+          in: path
+          description: The unique identifier of retentionLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionLabel
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/labels/retentionLabels/{retentionLabel-id}/retentionEventType':
     get:
       tags:
@@ -12784,6 +13736,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/labels/retentionLabels/$count:
+    get:
+      tags:
+        - security.labelsRoot
+      summary: Get the number of the resource
+      operationId: security.label.retentionLabel_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/microsoft.graph.security.runHuntingQuery:
     post:
       tags:
@@ -12986,6 +13952,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13015,6 +13985,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/providerTenantSettings/$count:
+    get:
+      tags:
+        - security.providerTenantSetting
+      summary: Get the number of the resource
+      operationId: security.providerTenantSetting_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/secureScoreControlProfiles:
     get:
       tags:
@@ -13248,6 +14232,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13277,6 +14265,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/secureScoreControlProfiles/$count:
+    get:
+      tags:
+        - security.secureScoreControlProfile
+      summary: Get the number of the resource
+      operationId: security.secureScoreControlProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/secureScores:
     get:
       tags:
@@ -13475,6 +14477,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScore'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13504,6 +14510,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/secureScores/$count:
+    get:
+      tags:
+        - security.secureScore
+      summary: Get the number of the resource
+      operationId: security.secureScore_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/securityActions:
     get:
       tags:
@@ -13721,6 +14741,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.securityAction'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13775,6 +14799,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /security/securityActions/$count:
+    get:
+      tags:
+        - security.securityAction
+      summary: Get the number of the resource
+      operationId: security.securityAction_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/subjectRightsRequests:
     get:
       tags:
@@ -14040,6 +15078,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.subjectRightsRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14502,6 +15544,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -14771,7 +15819,41 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/security/subjectRightsRequests/{subjectRightsRequest-id}/approvers/$count':
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get the number of the resource
+      operationId: security.subjectRightsRequest.approver_GetCount
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators':
     get:
       tags:
@@ -15205,6 +16287,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15474,7 +16562,41 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/$count':
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get the number of the resource
+      operationId: security.subjectRightsRequest.collaborator_GetCount
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/microsoft.graph.getFinalAttachment()':
     get:
       tags:
@@ -15746,6 +16868,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authoredNote'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15783,6 +16909,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/subjectRightsRequests/{subjectRightsRequest-id}/notes/$count':
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get the number of the resource
+      operationId: security.subjectRightsRequest.note_GetCount
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/team':
     get:
       tags:
@@ -15880,6 +17028,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/subjectRightsRequests/$count:
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get the number of the resource
+      operationId: security.subjectRightsRequest_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence:
     get:
       tags:
@@ -15956,6 +17118,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.threatIntelligence'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16140,6 +17306,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.articleIndicator'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16169,6 +17339,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatIntelligence/articleIndicators/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.articleIndicator_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence/articles:
     get:
       tags:
@@ -16363,6 +17547,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.article'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16528,6 +17716,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/articles/{article-id}/indicators/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.article.indicator_GetCount
+      parameters:
+        - name: article-id
+          in: path
+          description: The unique identifier of article
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: article
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/threatIntelligence/articles/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.article_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence/hostComponents:
     get:
       tags:
@@ -16707,6 +17931,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.hostComponent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16800,6 +18028,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatIntelligence/hostComponents/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.hostComponent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence/hostCookies:
     get:
       tags:
@@ -16975,6 +18217,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.hostCookie'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17068,6 +18314,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatIntelligence/hostCookies/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.hostCookie_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence/hosts:
     get:
       tags:
@@ -17255,6 +18515,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.host'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17436,6 +18700,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hosts/{host-id}/components/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.host.component_GetCount
+      parameters:
+        - name: host-id
+          in: path
+          description: The unique identifier of host
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: host
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/threatIntelligence/hosts/{host-id}/cookies':
     get:
       tags:
@@ -17584,12 +18870,34 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hosts/{host-id}/cookies/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.host.cookie_GetCount
+      parameters:
+        - name: host-id
+          in: path
+          description: The unique identifier of host
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: host
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/threatIntelligence/hosts/{host-id}/passiveDns':
     get:
       tags:
         - security.threatIntelligence
       summary: List passiveDns
-      description: Get a list of passiveDnsRecord resources.
+      description: Get a list of passiveDnsRecord resources associated to a host.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-host-list-passivedns?view=graph-rest-1.0
@@ -17736,6 +19044,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hosts/{host-id}/passiveDns/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.host.passiveDn_GetCount
+      parameters:
+        - name: host-id
+          in: path
+          description: The unique identifier of host
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: host
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/threatIntelligence/hosts/{host-id}/passiveDnsReverse':
     get:
       tags:
@@ -17888,6 +19218,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hosts/{host-id}/passiveDnsReverse/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.host.passiveDnsReverse_GetCount
+      parameters:
+        - name: host-id
+          in: path
+          description: The unique identifier of host
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: host
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/threatIntelligence/hosts/{host-id}/reputation':
     get:
       tags:
@@ -17968,6 +19320,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.hostReputation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18145,6 +19501,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hosts/{host-id}/trackers/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.host.tracker_GetCount
+      parameters:
+        - name: host-id
+          in: path
+          description: The unique identifier of host
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: host
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/threatIntelligence/hosts/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.host_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence/hostTrackers:
     get:
       tags:
@@ -18320,6 +19712,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.hostTracker'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18413,6 +19809,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatIntelligence/hostTrackers/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.hostTracker_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence/intelligenceProfileIndicators:
     get:
       tags:
@@ -18582,6 +19992,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.intelligenceProfileIndicator'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18611,6 +20025,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatIntelligence/intelligenceProfileIndicators/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.intelligenceProfileIndicator_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence/intelProfiles:
     get:
       tags:
@@ -18809,6 +20237,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.intelligenceProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18982,6 +20414,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/intelProfiles/{intelligenceProfile-id}/indicators/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.intelProfile.indicator_GetCount
+      parameters:
+        - name: intelligenceProfile-id
+          in: path
+          description: The unique identifier of intelligenceProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: intelligenceProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/threatIntelligence/intelProfiles/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.intelProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence/passiveDnsRecords:
     get:
       tags:
@@ -19161,6 +20629,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.passiveDnsRecord'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19304,6 +20776,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatIntelligence/passiveDnsRecords/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.passiveDnsRecord_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatIntelligence/vulnerabilities:
     get:
       tags:
@@ -19527,6 +21013,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.vulnerability'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19717,6 +21207,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/vulnerabilities/{vulnerability-id}/articles/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.vulnerability.article_GetCount
+      parameters:
+        - name: vulnerability-id
+          in: path
+          description: The unique identifier of vulnerability
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: vulnerability
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/threatIntelligence/vulnerabilities/{vulnerability-id}/components':
     get:
       tags:
@@ -19912,6 +21424,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.vulnerabilityComponent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19949,6 +21465,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/vulnerabilities/{vulnerability-id}/components/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.vulnerability.component_GetCount
+      parameters:
+        - name: vulnerability-id
+          in: path
+          description: The unique identifier of vulnerability
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: vulnerability
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/threatIntelligence/vulnerabilities/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.vulnerability_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatSubmission:
     get:
       tags:
@@ -20014,6 +21566,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.threatSubmissionRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20272,6 +21828,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.emailThreatSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20301,6 +21861,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatSubmission/emailThreats/$count:
+    get:
+      tags:
+        - security.threatSubmissionRoot
+      summary: Get the number of the resource
+      operationId: security.threatSubmission.emailThreat_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatSubmission/emailThreatSubmissionPolicies:
     get:
       tags:
@@ -20510,6 +22084,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.emailThreatSubmissionPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20539,6 +22117,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatSubmission/emailThreatSubmissionPolicies/$count:
+    get:
+      tags:
+        - security.threatSubmissionRoot
+      summary: Get the number of the resource
+      operationId: security.threatSubmission.emailThreatSubmissionPolicy_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatSubmission/fileThreats:
     get:
       tags:
@@ -20740,6 +22332,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.fileThreatSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20769,6 +22365,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatSubmission/fileThreats/$count:
+    get:
+      tags:
+        - security.threatSubmissionRoot
+      summary: Get the number of the resource
+      operationId: security.threatSubmission.fileThreat_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/threatSubmission/urlThreats:
     get:
       tags:
@@ -20974,6 +22584,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.urlThreatSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21003,6 +22617,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/threatSubmission/urlThreats/$count:
+    get:
+      tags:
+        - security.threatSubmissionRoot
+      summary: Get the number of the resource
+      operationId: security.threatSubmission.urlThreat_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/tiIndicators:
     get:
       tags:
@@ -21396,6 +23024,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tiIndicator'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21425,6 +23057,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/tiIndicators/$count:
+    get:
+      tags:
+        - security.tiIndicator
+      summary: Get the number of the resource
+      operationId: security.tiIndicator_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/tiIndicators/microsoft.graph.deleteTiIndicators:
     post:
       tags:
@@ -21675,6 +23321,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.triggersRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21905,6 +23555,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21990,6 +23644,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/triggers/retentionEvents/$count:
+    get:
+      tags:
+        - security.triggersRoot
+      summary: Get the number of the resource
+      operationId: security.trigger.retentionEvent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/triggerTypes:
     get:
       tags:
@@ -22048,6 +23716,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22254,6 +23926,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22283,6 +23959,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/triggerTypes/retentionEventTypes/$count:
+    get:
+      tags:
+        - security.triggerTypesRoot
+      summary: Get the number of the resource
+      operationId: security.triggerType.retentionEventType_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/userSecurityProfiles:
     get:
       tags:
@@ -22476,6 +24166,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22505,6 +24199,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/userSecurityProfiles/$count:
+    get:
+      tags:
+        - security.userSecurityProfile
+      summary: Get the number of the resource
+      operationId: security.userSecurityProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.security:
@@ -30539,6 +32247,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
               description: The results of every partner agent's installation status on Cloud PC.
+            powerState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -30741,7 +32451,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity''s tags property.Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -34026,6 +35736,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.attackSimulationOperationCollectionResponse:
       title: Collection of attackSimulationOperation
       type: object
@@ -37174,6 +38887,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcPowerState:
+      title: cloudPcPowerState
+      enum:
+        - running
+        - poweredOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -37202,6 +38922,8 @@ components:
         - restoring
         - pendingProvision
         - unknownFutureValue
+        - movingRegion
+        - resizePendingLicense
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -41446,6 +43168,11 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            metadataContent:
+              type: string
+              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -42043,6 +43770,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
     microsoft.graph.teamsApp:
@@ -44969,7 +46697,7 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         decisionHistoriesForReviewersEnabled:
           type: boolean
           description: 'Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).'
@@ -44980,7 +46708,7 @@ components:
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+          description: 'Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -46120,23 +47848,28 @@ components:
       properties:
         nextInSeriesTaskId:
           type: string
+          description: 'The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.'
           nullable: true
         occurrenceId:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
           format: int32
         previousInSeriesTaskId:
           type: string
+          description: The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
           nullable: true
         recurrenceStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         schedule:
           $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
         seriesId:
           type: string
+          description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
@@ -47152,6 +48885,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
         permissionValue:
           type: string
+          description: The name of the resource-specific permission.
           nullable: true
       additionalProperties:
         type: object
@@ -49667,6 +51401,7 @@ components:
         nextOccurrenceDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The next date for this schedule. When a new task is instantiated to continue the recurrence series, this date is used for the dueDateTime of the new plannerTask. Auto-generated by the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         pattern:
@@ -49674,6 +51409,7 @@ components:
         patternStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date for the recurrence pattern. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -52908,6 +54644,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.alertCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.attackSimulationOperationCollectionResponse:
       description: Retrieved collection
       content:

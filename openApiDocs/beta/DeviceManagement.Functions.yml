@@ -2242,6 +2242,158 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/deviceManagement/virtualEndpoint/cloudPCs/microsoft.graph.getProvisionedCloudPCs(groupId=''{groupId}'',servicePlanId=''{servicePlanId}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getProvisionedCloudPCs
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getProvisionedCloudPCs
+      parameters:
+        - name: groupId
+          in: path
+          description: 'Usage: groupId=''{groupId}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: servicePlanId
+          in: path
+          description: 'Usage: servicePlanId=''{servicePlanId}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - aadDeviceId
+                - connectivityResult
+                - diskEncryptionState
+                - displayName
+                - gracePeriodEndDateTime
+                - imageDisplayName
+                - lastLoginResult
+                - lastModifiedDateTime
+                - lastRemoteActionResult
+                - managedDeviceId
+                - managedDeviceName
+                - onPremisesConnectionName
+                - osVersion
+                - partnerAgentInstallResults
+                - powerState
+                - provisioningPolicyId
+                - provisioningPolicyName
+                - provisioningType
+                - servicePlanId
+                - servicePlanName
+                - servicePlanType
+                - status
+                - statusDetails
+                - userAccountType
+                - userPrincipalName
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - aadDeviceId
+                - aadDeviceId desc
+                - connectivityResult
+                - connectivityResult desc
+                - diskEncryptionState
+                - diskEncryptionState desc
+                - displayName
+                - displayName desc
+                - gracePeriodEndDateTime
+                - gracePeriodEndDateTime desc
+                - imageDisplayName
+                - imageDisplayName desc
+                - lastLoginResult
+                - lastLoginResult desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastRemoteActionResult
+                - lastRemoteActionResult desc
+                - managedDeviceId
+                - managedDeviceId desc
+                - managedDeviceName
+                - managedDeviceName desc
+                - onPremisesConnectionName
+                - onPremisesConnectionName desc
+                - osVersion
+                - osVersion desc
+                - partnerAgentInstallResults
+                - partnerAgentInstallResults desc
+                - powerState
+                - powerState desc
+                - provisioningPolicyId
+                - provisioningPolicyId desc
+                - provisioningPolicyName
+                - provisioningPolicyName desc
+                - provisioningType
+                - provisioningType desc
+                - servicePlanId
+                - servicePlanId desc
+                - servicePlanName
+                - servicePlanName desc
+                - servicePlanType
+                - servicePlanType desc
+                - status
+                - status desc
+                - statusDetails
+                - statusDetails desc
+                - userAccountType
+                - userAccountType desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of cloudPC
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPC'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages():
     get:
       tags:
@@ -3663,6 +3815,7 @@ components:
         - activating
         - waitlisted
         - unknownFutureValue
+        - standbyMode
       type: string
     microsoft.graph.cloudPcRemoteActionCapability:
       title: cloudPcRemoteActionCapability
@@ -3674,6 +3827,96 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionName'
       additionalProperties:
         type: object
+    microsoft.graph.cloudPC:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPC
+          type: object
+          properties:
+            aadDeviceId:
+              type: string
+              description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+              nullable: true
+            connectivityResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            diskEncryptionState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
+            displayName:
+              type: string
+              description: The display name of the Cloud PC.
+              nullable: true
+            gracePeriodEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            imageDisplayName:
+              type: string
+              description: Name of the OS image that's on the Cloud PC.
+              nullable: true
+            lastLoginResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcLoginResult'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            lastRemoteActionResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
+            managedDeviceId:
+              type: string
+              description: The Intune device ID of the Cloud PC.
+              nullable: true
+            managedDeviceName:
+              type: string
+              description: The Intune device name of the Cloud PC.
+              nullable: true
+            onPremisesConnectionName:
+              type: string
+              description: The Azure network connection that is applied during the provisioning of Cloud PCs.
+              nullable: true
+            osVersion:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+            partnerAgentInstallResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
+              description: The results of every partner agent's installation status on Cloud PC.
+            powerState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
+            provisioningPolicyId:
+              type: string
+              description: The provisioning policy ID of the Cloud PC.
+              nullable: true
+            provisioningPolicyName:
+              type: string
+              description: The provisioning policy that is applied during the provisioning of Cloud PCs.
+              nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
+            servicePlanId:
+              type: string
+              description: The service plan ID of the Cloud PC.
+              nullable: true
+            servicePlanName:
+              type: string
+              description: The service plan name of the Cloud PC.
+              nullable: true
+            servicePlanType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcStatus'
+            statusDetails:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+            userAccountType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+            userPrincipalName:
+              type: string
+              description: The user principal name (UPN) of the user assigned to the Cloud PC.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcSourceDeviceImage:
       title: cloudPcSourceDeviceImage
       type: object
@@ -4352,6 +4595,115 @@ components:
         - placeUnderReview
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcConnectivityResult:
+      title: cloudPcConnectivityResult
+      type: object
+      properties:
+        failedHealthCheckItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+          description: 'A list of failed health check items. If the status property is available, this property will be empty.'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
+        updatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
+          format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcDiskEncryptionState:
+      title: cloudPcDiskEncryptionState
+      enum:
+        - notAvailable
+        - notEncrypted
+        - encryptedUsingPlatformManagedKey
+        - encryptedUsingCustomerManagedKey
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcLoginResult:
+      title: cloudPcLoginResult
+      type: object
+      properties:
+        time:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''. Read-only.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcOperatingSystem:
+      title: cloudPcOperatingSystem
+      enum:
+        - windows10
+        - windows11
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentInstallResult:
+      title: cloudPcPartnerAgentInstallResult
+      type: object
+      properties:
+        installStatus:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
+        isThirdPartyPartner:
+          type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
+          nullable: true
+        partnerAgentName:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
+        retriable:
+          type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcPowerState:
+      title: cloudPcPowerState
+      enum:
+        - running
+        - poweredOff
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcServicePlanType:
+      title: cloudPcServicePlanType
+      enum:
+        - enterprise
+        - business
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcStatus:
+      title: cloudPcStatus
+      enum:
+        - notProvisioned
+        - provisioning
+        - provisioned
+        - inGracePeriod
+        - deprovisioning
+        - failed
+        - provisionedWithWarnings
+        - resizing
+        - restoring
+        - pendingProvision
+        - unknownFutureValue
+        - movingRegion
+        - resizePendingLicense
+      type: string
+    microsoft.graph.cloudPcUserAccountType:
+      title: cloudPcUserAccountType
+      enum:
+        - standardUser
+        - administrator
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -4425,6 +4777,53 @@ components:
         - percentage
         - affectedCloudPcCount
         - affectedCloudPcPercentage
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcHealthCheckItem:
+      title: cloudPcHealthCheckItem
+      type: object
+      properties:
+        additionalDetails:
+          type: string
+          description: Additional message for this health check.
+          nullable: true
+        displayName:
+          type: string
+          description: The connectivity health check item name.
+        lastHealthCheckDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        result:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEventResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcConnectivityStatus:
+      title: cloudPcConnectivityStatus
+      enum:
+        - unknown
+        - available
+        - availableWithWarning
+        - unavailable
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentInstallStatus:
+      title: cloudPcPartnerAgentInstallStatus
+      enum:
+        - installed
+        - installFailed
+        - installing
+        - uninstalling
+        - uninstallFailed
+        - licensed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentName:
+      title: cloudPcPartnerAgentName
+      enum:
+        - citrix
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.MainError:

@@ -71,6 +71,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -291,6 +295,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.auditEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -320,6 +328,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/auditEvents/$count:
+    get:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Get the number of the resource
+      operationId: deviceManagement.auditEvent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/cartToClassAssociations:
     get:
       tags:
@@ -503,6 +525,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cartToClassAssociation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -532,6 +558,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/cartToClassAssociations/$count:
+    get:
+      tags:
+        - deviceManagement.cartToClassAssociation
+      summary: Get the number of the resource
+      operationId: deviceManagement.cartToClassAssociation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/comanagementEligibleDevices:
     get:
       tags:
@@ -763,6 +803,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.comanagementEligibleDevice'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -792,6 +836,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/comanagementEligibleDevices/$count:
+    get:
+      tags:
+        - deviceManagement.comanagementEligibleDevice
+      summary: Get the number of the resource
+      operationId: deviceManagement.comanagementEligibleDevice_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/complianceManagementPartners:
     get:
       tags:
@@ -983,6 +1041,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1012,6 +1074,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/complianceManagementPartners/$count:
+    get:
+      tags:
+        - deviceManagement.complianceManagementPartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.complianceManagementPartner_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/deviceConfigurationRestrictedAppsViolations:
     get:
       tags:
@@ -1203,6 +1279,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.restrictedAppsViolation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1232,6 +1312,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/deviceConfigurationRestrictedAppsViolations/$count:
+    get:
+      tags:
+        - deviceManagement.restrictedAppsViolation
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceConfigurationRestrictedAppsViolation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/deviceConfigurationsAllManagedDeviceCertificateStates:
     get:
       tags:
@@ -1435,6 +1529,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAllDeviceCertificateState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1464,6 +1562,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/deviceConfigurationsAllManagedDeviceCertificateStates/$count:
+    get:
+      tags:
+        - deviceManagement.managedAllDeviceCertificateState
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceConfigurationsAllManagedDeviceCertificateState_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/deviceManagementPartners:
     get:
       tags:
@@ -1655,6 +1767,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1684,6 +1800,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/deviceManagementPartners/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementPartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceManagementPartner_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/domainJoinConnectors:
     get:
       tags:
@@ -1855,6 +1985,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementDomainJoinConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1884,6 +2018,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/domainJoinConnectors/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementDomainJoinConnector
+      summary: Get the number of the resource
+      operationId: deviceManagement.domainJoinConnector_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/exchangeConnectors:
     get:
       tags:
@@ -2075,6 +2223,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2104,6 +2256,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/exchangeConnectors/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementExchangeConnector
+      summary: Get the number of the resource
+      operationId: deviceManagement.exchangeConnector_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/exchangeOnPremisesPolicies:
     get:
       tags:
@@ -2279,6 +2445,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeOnPremisesPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2386,6 +2556,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2415,6 +2589,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/exchangeOnPremisesPolicies/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementExchangeOnPremisesPolicy
+      summary: Get the number of the resource
+      operationId: deviceManagement.exchangeOnPremisesPolicy_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/exchangeOnPremisesPolicy:
     get:
       tags:
@@ -2478,6 +2666,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeOnPremisesPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2560,6 +2752,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2768,6 +2964,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2954,6 +3154,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/children/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyCategory
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyCategory.child_GetCount
+      parameters:
+        - name: groupPolicyCategory-id
+          in: path
+          description: The unique identifier of groupPolicyCategory
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyCategory
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/definitionFile':
     get:
       tags:
@@ -3208,6 +3430,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/definitions/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyCategory
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyCategory.definition_GetCount
+      parameters:
+        - name: groupPolicyCategory-id
+          in: path
+          description: The unique identifier of groupPolicyCategory
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyCategory
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/groupPolicyCategories/{groupPolicyCategory-id}/parent':
     get:
       tags:
@@ -3270,6 +3514,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/groupPolicyCategories/$count:
+    get:
+      tags:
+        - deviceManagement.groupPolicyCategory
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyCategory_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/groupPolicyDefinitionFiles:
     get:
       tags:
@@ -3465,6 +3723,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3687,6 +3949,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile-id}/definitions/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinitionFile
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyDefinitionFile.definition_GetCount
+      parameters:
+        - name: groupPolicyDefinitionFile-id
+          in: path
+          description: The unique identifier of groupPolicyDefinitionFile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinitionFile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/groupPolicyDefinitionFiles/$count:
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinitionFile
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyDefinitionFile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/groupPolicyDefinitions:
     get:
       tags:
@@ -3910,6 +4208,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4158,6 +4460,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4510,6 +4816,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4627,6 +4937,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/presentations/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.presentation_GetCount
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: The unique identifier of groupPolicyDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/previousVersionDefinition':
     get:
       tags:
@@ -4723,6 +5055,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5075,6 +5411,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5192,6 +5532,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition/previousVersionDefinition/presentations/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition.presentation_GetCount
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: The unique identifier of groupPolicyDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/presentations':
     get:
       tags:
@@ -5392,6 +5754,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5509,6 +5875,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/presentations/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyDefinition.presentation_GetCount
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: The unique identifier of groupPolicyDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition':
     get:
       tags:
@@ -5605,6 +5993,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5853,6 +6245,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6205,6 +6601,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6322,6 +6722,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/nextVersionDefinition/presentations/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition.presentation_GetCount
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: The unique identifier of groupPolicyDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/presentations':
     get:
       tags:
@@ -6522,6 +6944,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6639,6 +7065,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition/presentations/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.presentation_GetCount
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: The unique identifier of groupPolicyDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/groupPolicyDefinitions/$count:
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyDefinition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/groupPolicyMigrationReports:
     get:
       tags:
@@ -6854,6 +7316,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyMigrationReport'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7151,6 +7617,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicySettingMapping'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7188,6 +7658,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport-id}/groupPolicySettingMappings/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyMigrationReport
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyMigrationReport.groupPolicySettingMapping_GetCount
+      parameters:
+        - name: groupPolicyMigrationReport-id
+          in: path
+          description: The unique identifier of groupPolicyMigrationReport
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyMigrationReport
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport-id}/unsupportedGroupPolicyExtensions':
     get:
       tags:
@@ -7392,6 +7884,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unsupportedGroupPolicyExtension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7429,6 +7925,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport-id}/unsupportedGroupPolicyExtensions/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyMigrationReport
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyMigrationReport.unsupportedGroupPolicyExtension_GetCount
+      parameters:
+        - name: groupPolicyMigrationReport-id
+          in: path
+          description: The unique identifier of groupPolicyMigrationReport
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyMigrationReport
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/groupPolicyMigrationReports/$count:
+    get:
+      tags:
+        - deviceManagement.groupPolicyMigrationReport
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyMigrationReport_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/groupPolicyObjectFiles:
     get:
       tags:
@@ -7608,6 +8140,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyObjectFile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7637,6 +8173,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/groupPolicyObjectFiles/$count:
+    get:
+      tags:
+        - deviceManagement.groupPolicyObjectFile
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyObjectFile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/groupPolicyUploadedDefinitionFiles:
     get:
       tags:
@@ -7856,6 +8406,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyUploadedDefinitionFile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8089,6 +8643,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8126,6 +8684,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyUploadedDefinitionFiles/{groupPolicyUploadedDefinitionFile-id}/groupPolicyOperations/$count':
+    get:
+      tags:
+        - deviceManagement.groupPolicyUploadedDefinitionFile
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile.groupPolicyOperation_GetCount
+      parameters:
+        - name: groupPolicyUploadedDefinitionFile-id
+          in: path
+          description: The unique identifier of groupPolicyUploadedDefinitionFile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/groupPolicyUploadedDefinitionFiles/$count:
+    get:
+      tags:
+        - deviceManagement.groupPolicyUploadedDefinitionFile
+      summary: Get the number of the resource
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/intuneBrandingProfiles:
     get:
       tags:
@@ -8417,6 +9011,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.intuneBrandingProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8638,6 +9236,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.intuneBrandingProfileAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8675,6 +9277,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/intuneBrandingProfiles/{intuneBrandingProfile-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.intuneBrandingProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.intuneBrandingProfile.assignment_GetCount
+      parameters:
+        - name: intuneBrandingProfile-id
+          in: path
+          description: The unique identifier of intuneBrandingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: intuneBrandingProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/intuneBrandingProfiles/$count:
+    get:
+      tags:
+        - deviceManagement.intuneBrandingProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.intuneBrandingProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/iosUpdateStatuses:
     get:
       tags:
@@ -8878,6 +9516,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8907,6 +9549,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/iosUpdateStatuses/$count:
+    get:
+      tags:
+        - deviceManagement.iosUpdateDeviceStatus
+      summary: Get the number of the resource
+      operationId: deviceManagement.iosUpdateStatus_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/mobileThreatDefenseConnectors:
     get:
       tags:
@@ -9134,6 +9790,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9163,6 +9823,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/mobileThreatDefenseConnectors/$count:
+    get:
+      tags:
+        - deviceManagement.mobileThreatDefenseConnector
+      summary: Get the number of the resource
+      operationId: deviceManagement.mobileThreatDefenseConnector_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/ndesConnectors:
     get:
       tags:
@@ -9346,6 +10020,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ndesConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9375,6 +10053,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/ndesConnectors/$count:
+    get:
+      tags:
+        - deviceManagement.ndesConnector
+      summary: Get the number of the resource
+      operationId: deviceManagement.ndesConnector_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/remoteAssistancePartners:
     get:
       tags:
@@ -9550,6 +10242,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9579,6 +10275,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/remoteAssistancePartners/$count:
+    get:
+      tags:
+        - deviceManagement.remoteAssistancePartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.remoteAssistancePartner_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/resourceOperations:
     get:
       tags:
@@ -9754,6 +10464,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.resourceOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9783,6 +10497,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/resourceOperations/$count:
+    get:
+      tags:
+        - deviceManagement.resourceOperation
+      summary: Get the number of the resource
+      operationId: deviceManagement.resourceOperation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/roleAssignments:
     get:
       tags:
@@ -9970,6 +10698,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10140,6 +10872,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}/roleScopeTags/$count':
+    get:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleAssignment.roleScopeTag_GetCount
+      parameters:
+        - name: deviceAndAppManagementRoleAssignment-id
+          in: path
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/roleAssignments/$count:
+    get:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleAssignment_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/roleDefinitions:
     get:
       tags:
@@ -10327,6 +11095,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10568,6 +11340,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10672,6 +11448,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments/$count':
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleDefinition.roleAssignment_GetCount
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: The unique identifier of roleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/roleDefinitions/$count:
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleDefinition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/roleScopeTags:
     get:
       tags:
@@ -10843,6 +11655,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11064,6 +11880,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11101,6 +11921,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/roleScopeTags/{roleScopeTag-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.roleScopeTag
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleScopeTag.assignment_GetCount
+      parameters:
+        - name: roleScopeTag-id
+          in: path
+          description: The unique identifier of roleScopeTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: roleScopeTag
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/roleScopeTags/$count:
+    get:
+      tags:
+        - deviceManagement.roleScopeTag
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleScopeTag_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/telecomExpenseManagementPartners:
     get:
       tags:
@@ -11276,6 +12132,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11305,6 +12165,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/telecomExpenseManagementPartners/$count:
+    get:
+      tags:
+        - deviceManagement.telecomExpenseManagementPartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.telecomExpenseManagementPartner_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/termsAndConditions:
     get:
       tags:
@@ -11512,6 +12386,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11749,6 +12627,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11860,6 +12742,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/acceptanceStatuses/$count':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndCondition.acceptanceStatus_GetCount
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: The unique identifier of termsAndConditions
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments':
     get:
       tags:
@@ -12052,6 +12956,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12089,6 +12997,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndCondition.assignment_GetCount
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: The unique identifier of termsAndConditions
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/termsAndConditions/{termsAndConditions-id}/groupAssignments':
     get:
       tags:
@@ -12285,6 +13215,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsGroupAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12396,6 +13330,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/groupAssignments/$count':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndCondition.groupAssignment_GetCount
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: The unique identifier of termsAndConditions
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/termsAndConditions/$count:
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndCondition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/userPfxCertificates:
     get:
       tags:
@@ -12599,6 +13569,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userPFXCertificate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12628,6 +13602,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/userPfxCertificates/$count:
+    get:
+      tags:
+        - deviceManagement.userPFXCertificate
+      summary: Get the number of the resource
+      operationId: deviceManagement.userPfxCertificate_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint:
     get:
       tags:
@@ -12714,6 +13702,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEndpoint'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12937,6 +13929,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcAuditEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12966,6 +13962,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/auditEvents/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.auditEvent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/cloudPCs:
     get:
       tags:
@@ -13022,6 +14032,8 @@ paths:
                 - osVersion desc
                 - partnerAgentInstallResults
                 - partnerAgentInstallResults desc
+                - powerState
+                - powerState desc
                 - provisioningPolicyId
                 - provisioningPolicyId desc
                 - provisioningPolicyName
@@ -13068,6 +14080,7 @@ paths:
                 - onPremisesConnectionName
                 - osVersion
                 - partnerAgentInstallResults
+                - powerState
                 - provisioningPolicyId
                 - provisioningPolicyName
                 - provisioningType
@@ -13163,6 +14176,7 @@ paths:
                 - onPremisesConnectionName
                 - osVersion
                 - partnerAgentInstallResults
+                - powerState
                 - provisioningPolicyId
                 - provisioningPolicyName
                 - provisioningType
@@ -13220,6 +14234,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPC'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13249,6 +14267,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/cloudPCs/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.cloudPC_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping:
     get:
       tags:
@@ -13310,6 +14342,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13533,6 +14569,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13562,6 +14602,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/deviceImages/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.deviceImage_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/externalPartnerSettings:
     get:
       tags:
@@ -13744,6 +14798,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13773,6 +14831,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/externalPartnerSettings/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.externalPartnerSetting_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/galleryImages:
     get:
       tags:
@@ -13979,6 +15051,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14008,6 +15084,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/galleryImages/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.galleryImage_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/onPremisesConnections:
     get:
       tags:
@@ -14238,6 +15328,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14267,6 +15361,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/onPremisesConnections/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.onPremisesConnection_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/organizationSettings:
     get:
       tags:
@@ -14336,6 +15444,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcOrganizationSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14595,6 +15707,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14820,6 +15936,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15298,6 +16418,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15575,7 +16701,85 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}/assignedUsers/$count':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment.assignedUser_GetCount
+      parameters:
+        - name: cloudPcProvisioningPolicy-id
+          in: path
+          description: The unique identifier of cloudPcProvisioningPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcProvisioningPolicy
+        - name: cloudPcProvisioningPolicyAssignment-id
+          in: path
+          description: The unique identifier of cloudPcProvisioningPolicyAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcProvisioningPolicyAssignment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment_GetCount
+      parameters:
+        - name: cloudPcProvisioningPolicy-id
+          in: path
+          description: The unique identifier of cloudPcProvisioningPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcProvisioningPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/virtualEndpoint/provisioningPolicies/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/reports:
     get:
       tags:
@@ -15635,6 +16839,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcReports'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15847,6 +17055,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15876,6 +17088,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/reports/exportJobs/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.report.exportJob_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/servicePlans:
     get:
       tags:
@@ -15906,6 +17132,8 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
+                - provisioningType
+                - provisioningType desc
                 - ramInGB
                 - ramInGB desc
                 - storageInGB
@@ -15931,6 +17159,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - provisioningType
                 - ramInGB
                 - storageInGB
                 - supportedSolution
@@ -16009,6 +17238,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - provisioningType
                 - ramInGB
                 - storageInGB
                 - supportedSolution
@@ -16062,6 +17292,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16091,6 +17325,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/servicePlans/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.servicePlan_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/sharedUseServicePlans:
     get:
       tags:
@@ -16261,6 +17509,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16290,6 +17542,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/sharedUseServicePlans/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.sharedUseServicePlan_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/snapshots:
     get:
       tags:
@@ -16472,6 +17738,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16501,6 +17771,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/snapshots/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.snapshot_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/supportedRegions:
     get:
       tags:
@@ -16675,6 +17959,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16704,6 +17992,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/supportedRegions/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.supportedRegion_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/virtualEndpoint/userSettings:
     get:
       tags:
@@ -16894,6 +18196,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcUserSetting'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17119,6 +18425,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17156,6 +18466,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.userSetting.assignment_GetCount
+      parameters:
+        - name: cloudPcUserSetting-id
+          in: path
+          description: The unique identifier of cloudPcUserSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcUserSetting
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/virtualEndpoint/userSettings/$count:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get the number of the resource
+      operationId: deviceManagement.virtualEndpoint.userSetting_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.applePushNotificationCertificate:
@@ -19053,6 +20399,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
               description: The results of every partner agent's installation status on Cloud PC.
+            powerState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -20124,6 +21472,8 @@ components:
             displayName:
               type: string
               description: The name for the service plan. Read-only.
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
             ramInGB:
               maximum: 2147483647
               minimum: -2147483648
@@ -21877,6 +23227,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcPowerState:
+      title: cloudPcPowerState
+      enum:
+        - running
+        - poweredOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -21905,6 +23262,8 @@ components:
         - restoring
         - pendingProvision
         - unknownFutureValue
+        - movingRegion
+        - resizePendingLicense
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -22646,7 +24005,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity''s tags property.Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -26207,6 +27566,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.cartToClassAssociationCollectionResponse:
       title: Collection of cartToClassAssociation
       type: object
@@ -32980,6 +34342,11 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            metadataContent:
+              type: string
+              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -36693,7 +38060,7 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         decisionHistoriesForReviewersEnabled:
           type: boolean
           description: 'Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).'
@@ -36704,7 +38071,7 @@ components:
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+          description: 'Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -37914,23 +39281,28 @@ components:
       properties:
         nextInSeriesTaskId:
           type: string
+          description: 'The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.'
           nullable: true
         occurrenceId:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
           format: int32
         previousInSeriesTaskId:
           type: string
+          description: The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
           nullable: true
         recurrenceStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         schedule:
           $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
         seriesId:
           type: string
+          description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
@@ -38774,6 +40146,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
     microsoft.graph.teamsApp:
@@ -41749,6 +43122,7 @@ components:
         nextOccurrenceDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The next date for this schedule. When a new task is instantiated to continue the recurrence series, this date is used for the dueDateTime of the new plannerTask. Auto-generated by the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         pattern:
@@ -41756,6 +43130,7 @@ components:
         patternStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date for the recurrence pattern. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -42050,6 +43425,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
         permissionValue:
           type: string
+          description: The name of the resource-specific permission.
           nullable: true
       additionalProperties:
         type: object
@@ -45377,6 +46753,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.auditEventCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.cartToClassAssociationCollectionResponse:
       description: Retrieved collection
       content:

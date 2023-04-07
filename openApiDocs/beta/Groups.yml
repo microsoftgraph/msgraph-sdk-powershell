@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0
-      operationId: groupLifecyclePolicy.groupLifecyclePolicy_ListGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_ListGroupLifecyclePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -85,7 +85,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0
-      operationId: groupLifecyclePolicy.groupLifecyclePolicy_CreateGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_CreateGroupLifecyclePolicy
       requestBody:
         description: New entity
         content:
@@ -112,7 +112,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-get?view=graph-rest-1.0
-      operationId: groupLifecyclePolicy.groupLifecyclePolicy_GetGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_GetGroupLifecyclePolicy
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
@@ -167,7 +167,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-update?view=graph-rest-1.0
-      operationId: groupLifecyclePolicy.groupLifecyclePolicy_UpdateGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_UpdateGroupLifecyclePolicy
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
@@ -187,6 +187,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -198,7 +202,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-delete?view=graph-rest-1.0
-      operationId: groupLifecyclePolicy.groupLifecyclePolicy_DeleteGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_DeleteGroupLifecyclePolicy
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
@@ -306,6 +310,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /groupLifecyclePolicies/$count:
+    get:
+      tags:
+        - groupLifecyclePolicies.groupLifecyclePolicy
+      summary: Get the number of the resource
+      operationId: groupLifecyclePolicy_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /groupLifecyclePolicies/microsoft.graph.renewGroup:
     post:
       tags:
@@ -839,6 +857,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.group'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -974,6 +996,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/acceptedSenders/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: group.acceptedSender_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/acceptedSenders/$ref':
     get:
       tags:
@@ -1264,12 +1307,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -1392,15 +1435,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -1636,15 +1679,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -1921,12 +1964,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -2033,15 +2076,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -2245,15 +2288,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -2652,12 +2695,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -2780,15 +2823,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -3024,15 +3067,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -3309,12 +3352,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -3421,15 +3464,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -3633,15 +3676,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -3902,12 +3945,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -3998,15 +4041,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -4178,15 +4221,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -4626,12 +4669,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -4754,15 +4797,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -4998,15 +5041,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -5283,12 +5326,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -5395,15 +5438,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -5607,15 +5650,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -6014,12 +6057,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -6142,15 +6185,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -6386,15 +6429,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -6671,12 +6714,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -6783,15 +6826,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -6995,15 +7038,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -7264,12 +7307,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -7360,15 +7403,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -7540,15 +7583,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -8105,12 +8148,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -8233,15 +8276,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -8477,15 +8520,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -8762,12 +8805,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -8874,15 +8917,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -9086,15 +9129,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -9493,12 +9536,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -9621,15 +9664,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -9865,15 +9908,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -10150,12 +10193,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -10262,15 +10305,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -10474,15 +10517,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -10743,12 +10786,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -10839,15 +10882,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -11019,15 +11062,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -11699,6 +11742,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationThread'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11749,10 +11796,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -12079,6 +12126,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.post'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12390,6 +12441,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.attachment_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -12738,6 +12834,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12799,6 +12899,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/extensions/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.extension_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo':
     get:
       tags:
@@ -13206,6 +13351,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/attachments/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.inReplyTo.attachment_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -13554,6 +13744,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13615,6 +13809,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/extensions/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.inReplyTo.extension_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/mentions':
     get:
       tags:
@@ -13930,6 +14169,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/mentions/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.inReplyTo.mention_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/microsoft.graph.forward':
     post:
       tags:
@@ -14001,10 +14285,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.conversation.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -14345,6 +14629,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14406,6 +14694,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.inReplyTo.multiValueExtendedProperty_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/singleValueExtendedProperties':
     get:
       tags:
@@ -14694,6 +15028,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14755,6 +15093,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.inReplyTo.singleValueExtendedProperty_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/mentions':
     get:
       tags:
@@ -15070,6 +15454,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/mentions/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.mention_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/microsoft.graph.forward':
     post:
       tags:
@@ -15141,10 +15570,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.conversation.thread.post_reply
       parameters:
         - name: group-id
@@ -15485,6 +15914,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15546,6 +15979,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.multiValueExtendedProperty_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -15834,6 +16313,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15895,6 +16378,140 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post.singleValueExtendedProperty_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread.post_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/conversations/{conversation-id}/threads/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation.thread_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/conversations/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: group.conversation_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/createdOnBehalfOf':
     get:
       tags:
@@ -21738,6 +22355,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.endpoint'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21775,6 +22396,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/endpoints/$count':
+    get:
+      tags:
+        - groups.endpoint
+      summary: Get the number of the resource
+      operationId: group.endpoint_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -21996,12 +22639,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -22124,15 +22767,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -22368,15 +23011,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -22653,12 +23296,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -22765,15 +23408,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -22977,15 +23620,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -23384,12 +24027,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -23512,15 +24155,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -23756,15 +24399,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -24041,12 +24684,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -24153,15 +24796,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -24365,15 +25008,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -24634,12 +25277,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -24730,15 +25373,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -24910,15 +25553,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -25325,6 +25968,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25362,6 +26009,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/extensions/$count':
+    get:
+      tags:
+        - groups.extension
+      summary: Get the number of the resource
+      operationId: group.extension_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/groupLifecyclePolicies':
     get:
       tags:
@@ -25565,6 +26234,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25704,6 +26377,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/groupLifecyclePolicies/$count':
+    get:
+      tags:
+        - groups.groupLifecyclePolicy
+      summary: Get the number of the resource
+      operationId: group.groupLifecyclePolicy_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/groupLifecyclePolicies/microsoft.graph.renewGroup':
     post:
       tags:
@@ -25903,6 +26598,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/memberOf/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: group.memberOf_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/members':
     get:
       tags:
@@ -26028,6 +26755,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/members/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: group.member_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/members/$ref':
     get:
       tags:
@@ -26257,6 +27016,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/membersWithLicenseErrors/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: group.membersGraphWPreLicenseError_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/microsoft.graph.addFavorite':
     post:
       tags:
@@ -26899,7 +27690,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: group.onenote.notebook.sectionGroup_copyToNotebook
+      operationId: group.onenote.notebook.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -26977,7 +27768,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: group.onenote.notebook.sectionGroup_copyToSectionGroup
+      operationId: group.onenote.notebook.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -27055,7 +27846,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: group.onenote.notebook.sectionGroup.page_copyToSection
+      operationId: group.onenote.notebook.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -27134,7 +27925,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: group.onenote.notebook.sectionGroup.page_onenotePatchContent
+      operationId: group.onenote.notebook.sectionGroup.section.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -27201,7 +27992,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: group.onenote.notebook.sectionGroup.page_preview
+      operationId: group.onenote.notebook.sectionGroup.section.page_preview
       parameters:
         - name: group-id
           in: path
@@ -27813,7 +28604,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: group.onenote.sectionGroup_copyToNotebook
+      operationId: group.onenote.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -27883,7 +28674,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: group.onenote.sectionGroup_copyToSectionGroup
+      operationId: group.onenote.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -27953,7 +28744,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: group.onenote.sectionGroup.page_copyToSection
+      operationId: group.onenote.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -28024,7 +28815,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: group.onenote.sectionGroup.page_onenotePatchContent
+      operationId: group.onenote.sectionGroup.section.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -28083,7 +28874,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: group.onenote.sectionGroup.page_preview
+      operationId: group.onenote.sectionGroup.section.page_preview
       parameters:
         - name: group-id
           in: path
@@ -28535,6 +29326,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/owners/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: group.owner_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/owners/$ref':
     get:
       tags:
@@ -28830,6 +29653,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29152,6 +29979,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/permissionGrants/$count':
+    get:
+      tags:
+        - groups.resourceSpecificPermissionGrant
+      summary: Get the number of the resource
+      operationId: group.permissionGrant_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/permissionGrants/microsoft.graph.delta()':
     get:
       tags:
@@ -29447,6 +30296,36 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.profilePhoto
+      summary: Delete navigation property photo for groups
+      operationId: group_DeletePhoto
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29688,12 +30567,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/photos/$count':
+    get:
+      tags:
+        - groups.profilePhoto
+      summary: Get the number of the resource
+      operationId: group.photo_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()':
     get:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.planner.bucket.task_delta
+      operationId: group.planner.plan.bucket.task_delta
       parameters:
         - name: group-id
           in: path
@@ -29854,7 +30754,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.planner.bucket_delta
+      operationId: group.planner.plan.bucket_delta
       parameters:
         - name: group-id
           in: path
@@ -29947,7 +30847,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.planner.task_delta
+      operationId: group.planner.plan.task_delta
       parameters:
         - name: group-id
           in: path
@@ -30100,7 +31000,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.planner_delta
+      operationId: group.planner.plan_delta
       parameters:
         - name: group-id
           in: path
@@ -30296,6 +31196,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/rejectedSenders/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: group.rejectedSender_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/rejectedSenders/$ref':
     get:
       tags:
@@ -30569,6 +31490,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directorySetting'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30606,6 +31531,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/settings/$count':
+    get:
+      tags:
+        - groups.directorySetting
+      summary: Get the number of the resource
+      operationId: group.setting_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites':
     post:
       tags:
@@ -33286,7 +34233,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: group.site.onenote.notebook.sectionGroup_copyToNotebook
+      operationId: group.site.onenote.notebook.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -33372,7 +34319,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: group.site.onenote.notebook.sectionGroup_copyToSectionGroup
+      operationId: group.site.onenote.notebook.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -33458,7 +34405,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: group.site.onenote.notebook.sectionGroup.page_copyToSection
+      operationId: group.site.onenote.notebook.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -33545,7 +34492,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: group.site.onenote.notebook.sectionGroup.page_onenotePatchContent
+      operationId: group.site.onenote.notebook.sectionGroup.section.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -33620,7 +34567,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: group.site.onenote.notebook.sectionGroup.page_preview
+      operationId: group.site.onenote.notebook.sectionGroup.section.page_preview
       parameters:
         - name: group-id
           in: path
@@ -34320,7 +35267,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
-      operationId: group.site.onenote.sectionGroup_copyToNotebook
+      operationId: group.site.onenote.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
           in: path
@@ -34398,7 +35345,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
-      operationId: group.site.onenote.sectionGroup_copyToSectionGroup
+      operationId: group.site.onenote.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -34476,7 +35423,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: group.site.onenote.sectionGroup.page_copyToSection
+      operationId: group.site.onenote.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
           in: path
@@ -34555,7 +35502,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action onenotePatchContent
-      operationId: group.site.onenote.sectionGroup.page_onenotePatchContent
+      operationId: group.site.onenote.sectionGroup.section.page_onenotePatchContent
       parameters:
         - name: group-id
           in: path
@@ -34622,7 +35569,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function preview
-      operationId: group.site.onenote.sectionGroup.page_preview
+      operationId: group.site.onenote.sectionGroup.section.page_preview
       parameters:
         - name: group-id
           in: path
@@ -39010,6 +39957,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationThread'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39052,10 +40003,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -39350,6 +40301,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.post'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39629,6 +40584,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.attachment_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -39937,6 +40929,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39990,6 +40986,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.extension_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo':
     get:
       tags:
@@ -40357,6 +41390,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/attachments/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.inReplyTo.attachment_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -40665,6 +41735,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -40718,6 +41792,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/extensions/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.inReplyTo.extension_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/mentions':
     get:
       tags:
@@ -41001,6 +42112,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/mentions/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.inReplyTo.mention_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/microsoft.graph.forward':
     post:
       tags:
@@ -41064,10 +42212,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -41368,6 +42516,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41421,6 +42573,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.inReplyTo.multiValueExtendedProperty_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/singleValueExtendedProperties':
     get:
       tags:
@@ -41677,6 +42867,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41730,6 +42924,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.inReplyTo.singleValueExtendedProperty_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/mentions':
     get:
       tags:
@@ -42013,6 +43245,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/mentions/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.mention_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/microsoft.graph.forward':
     post:
       tags:
@@ -42076,10 +43345,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.thread.post_reply
       parameters:
         - name: group-id
@@ -42380,6 +43649,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42433,6 +43706,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.multiValueExtendedProperty_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -42689,6 +44000,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42742,6 +44057,94 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post.singleValueExtendedProperty_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread.post_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/threads/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: group.thread_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/transitiveMemberOf':
     get:
       tags:
@@ -42894,6 +44297,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/transitiveMemberOf/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: group.transitiveMemberOf_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/transitiveMembers':
     get:
       tags:
@@ -43046,6 +44481,62 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/transitiveMembers/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: group.transitiveMember_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /groups/$count:
+    get:
+      tags:
+        - groups.group
+      summary: Get the number of the resource
+      operationId: group_GetCount
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /groups/microsoft.graph.delta():
     get:
       tags:
@@ -43686,6 +45177,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -45993,6 +47490,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
     microsoft.graph.teamVisibilityType:
@@ -48106,23 +49604,28 @@ components:
       properties:
         nextInSeriesTaskId:
           type: string
+          description: 'The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.'
           nullable: true
         occurrenceId:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
           format: int32
         previousInSeriesTaskId:
           type: string
+          description: The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
           nullable: true
         recurrenceStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         schedule:
           $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
         seriesId:
           type: string
+          description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
@@ -48769,6 +50272,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
         permissionValue:
           type: string
+          description: The name of the resource-specific permission.
           nullable: true
       additionalProperties:
         type: object
@@ -48903,6 +50407,9 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.groupCollectionResponse:
       title: Collection of group
       type: object
@@ -51431,6 +52938,7 @@ components:
         nextOccurrenceDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The next date for this schedule. When a new task is instantiated to continue the recurrence series, this date is used for the dueDateTime of the new plannerTask. Auto-generated by the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         pattern:
@@ -51438,6 +52946,7 @@ components:
         patternStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date for the recurrence pattern. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -52879,6 +54388,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
               description: The results of every partner agent's installation status on Cloud PC.
+            powerState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -53081,7 +54592,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity''s tags property.Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -56946,6 +58457,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcPowerState:
+      title: cloudPcPowerState
+      enum:
+        - running
+        - poweredOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -56974,6 +58492,8 @@ components:
         - restoring
         - pendingProvision
         - unknownFutureValue
+        - movingRegion
+        - resizePendingLicense
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -61022,6 +62542,11 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            metadataContent:
+              type: string
+              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -62573,7 +64098,7 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         decisionHistoriesForReviewersEnabled:
           type: boolean
           description: 'Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).'
@@ -62584,7 +64109,7 @@ components:
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+          description: 'Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -68397,6 +69922,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.groupCollectionResponse:
       description: Retrieved collection
       content:

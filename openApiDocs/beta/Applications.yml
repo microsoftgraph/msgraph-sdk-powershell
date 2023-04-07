@@ -373,6 +373,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.application'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -532,6 +536,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/applications/{application-id}/appManagementPolicies/$count':
+    get:
+      tags:
+        - applications.appManagementPolicy
+      summary: Get the number of the resource
+      operationId: application.appManagementPolicy_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/appManagementPolicies/$ref':
     get:
       tags:
@@ -832,6 +858,8 @@ paths:
                 - appDisplayName desc
                 - dataType
                 - dataType desc
+                - isMultiValued
+                - isMultiValued desc
                 - isSyncedFromOnPremises
                 - isSyncedFromOnPremises desc
                 - name
@@ -853,6 +881,7 @@ paths:
                 - deletedDateTime
                 - appDisplayName
                 - dataType
+                - isMultiValued
                 - isSyncedFromOnPremises
                 - name
                 - targetObjects
@@ -951,6 +980,7 @@ paths:
                 - deletedDateTime
                 - appDisplayName
                 - dataType
+                - isMultiValued
                 - isSyncedFromOnPremises
                 - name
                 - targetObjects
@@ -1009,6 +1039,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extensionProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1046,6 +1080,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/applications/{application-id}/extensionProperties/$count':
+    get:
+      tags:
+        - applications.extensionProperty
+      summary: Get the number of the resource
+      operationId: application.extensionProperty_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/federatedIdentityCredentials':
     get:
       tags:
@@ -1261,6 +1317,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1298,6 +1358,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/applications/{application-id}/federatedIdentityCredentials/$count':
+    get:
+      tags:
+        - applications.federatedIdentityCredential
+      summary: Get the number of the resource
+      operationId: application.federatedIdentityCredential_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/homeRealmDiscoveryPolicies':
     get:
       tags:
@@ -1445,6 +1527,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/applications/{application-id}/homeRealmDiscoveryPolicies/$count':
+    get:
+      tags:
+        - applications.homeRealmDiscoveryPolicy
+      summary: Get the number of the resource
+      operationId: application.homeRealmDiscoveryPolicy_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/logo':
     get:
       tags:
@@ -2099,6 +2203,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/applications/{application-id}/owners/$count':
+    get:
+      tags:
+        - applications.directoryObject
+      summary: Get the number of the resource
+      operationId: application.owner_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/owners/$ref':
     get:
       tags:
@@ -2258,6 +2394,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronization'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2502,6 +2642,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2888,6 +3032,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3169,6 +3317,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3259,6 +3411,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/$count':
+    get:
+      tags:
+        - applications.synchronization
+      summary: Get the number of the resource
+      operationId: application.synchronization.job.schema.directory_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
@@ -3479,6 +3661,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/applications/{application-id}/synchronization/jobs/$count':
+    get:
+      tags:
+        - applications.synchronization
+      summary: Get the number of the resource
+      operationId: application.synchronization.job_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/synchronization/jobs/microsoft.graph.validateCredentials':
     post:
       tags:
@@ -3594,6 +3798,63 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/applications/{application-id}/synchronization/secrets':
+    put:
+      tags:
+        - applications.synchronization
+      summary: Update property secrets value.
+      operationId: application.synchronization_SetSecrets
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+        default:
+          $ref: '#/components/responses/error'
+  '/applications/{application-id}/synchronization/secrets/$count':
+    get:
+      tags:
+        - applications.synchronization
+      summary: Get the number of the resource
+      operationId: application.synchronization.Secret_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/synchronization/templates':
     get:
       tags:
@@ -3813,6 +4074,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3944,6 +4209,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4225,6 +4494,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4315,6 +4588,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/$count':
+    get:
+      tags:
+        - applications.synchronization
+      summary: Get the number of the resource
+      operationId: application.synchronization.template.schema.directory_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationTemplate-id
+          in: path
+          description: The unique identifier of synchronizationTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationTemplate
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
@@ -4535,6 +4838,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/applications/{application-id}/synchronization/templates/$count':
+    get:
+      tags:
+        - applications.synchronization
+      summary: Get the number of the resource
+      operationId: application.synchronization.template_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/tokenIssuancePolicies':
     get:
       tags:
@@ -4664,6 +4989,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/applications/{application-id}/tokenIssuancePolicies/$count':
+    get:
+      tags:
+        - applications.tokenIssuancePolicy
+      summary: Get the number of the resource
+      operationId: application.tokenIssuancePolicy_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/tokenIssuancePolicies/$ref':
     get:
       tags:
@@ -4871,6 +5218,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/applications/{application-id}/tokenLifetimePolicies/$count':
+    get:
+      tags:
+        - applications.tokenLifetimePolicy
+      summary: Get the number of the resource
+      operationId: application.tokenLifetimePolicy_GetCount
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/tokenLifetimePolicies/$ref':
     get:
       tags:
@@ -4949,6 +5318,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /applications/$count:
+    get:
+      tags:
+        - applications.application
+      summary: Get the number of the resource
+      operationId: application_GetCount
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /applications/microsoft.graph.delta():
     get:
       tags:
@@ -5460,6 +5853,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /applicationTemplates/$count:
+    get:
+      tags:
+        - applicationTemplates.applicationTemplate
+      summary: Get the number of the resource
+      operationId: applicationTemplate_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/appRoleAssignments':
     get:
       tags:
@@ -5703,6 +6110,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5740,6 +6151,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/appRoleAssignments/$count':
+    get:
+      tags:
+        - groups.appRoleAssignment
+      summary: Get the number of the resource
+      operationId: group.appRoleAssignment_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /onPremisesPublishingProfiles:
     get:
       tags:
@@ -5925,6 +6368,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6169,6 +6616,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6446,6 +6897,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6497,7 +6952,7 @@ paths:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfile.agentGroup_ListAgentGroups
+      operationId: onPremisesPublishingProfile.agentGroup.agent_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6592,7 +7047,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfile.agentGroup_DeleteAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agentGroup.agent_DeleteAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6645,13 +7100,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.agentGroup.agent.agentGroup_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: The unique identifier of onPremisesAgentGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: The unique identifier of onPremisesAgent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/$ref':
     get:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get ref of agentGroups from onPremisesPublishingProfiles
       description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-      operationId: onPremisesPublishingProfile.agentGroup_ListAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agentGroup.agent_ListAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6714,7 +7207,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property ref to agentGroups for onPremisesPublishingProfiles
-      operationId: onPremisesPublishingProfile.agentGroup_CreateAgentGroupsGraphBPreRef
+      operationId: onPremisesPublishingProfile.agentGroup.agent_CreateAgentGroupsGraphBPreRef
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
@@ -6748,6 +7241,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.agentGroup.agent_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: The unique identifier of onPremisesAgentGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources':
     get:
       tags:
@@ -6984,6 +7507,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publishedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7230,6 +7757,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.agentGroup.publishedResource.agentGroup_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: The unique identifier of onPremisesAgentGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: The unique identifier of publishedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups/$ref':
     get:
       tags:
@@ -7333,6 +7898,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.agentGroup.publishedResource_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: The unique identifier of onPremisesAgentGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.agentGroup_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents':
     get:
       tags:
@@ -7544,6 +8161,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7719,6 +8340,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.agent.agentGroup_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: The unique identifier of onPremisesAgent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/$ref':
     get:
       tags:
@@ -7806,6 +8457,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.agent_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups':
     get:
       tags:
@@ -7896,10 +8569,10 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create connectorGroup
-      description: Create a new connectorGroup.
+      description: Create a connectorGroup object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_CreateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8025,6 +8698,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connectorGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8477,6 +9154,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/applications/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.connectorGroup.application_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: The unique identifier of connectorGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members':
     get:
       tags:
@@ -8612,6 +9319,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.connectorGroup.member_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: The unique identifier of connectorGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/$ref':
     get:
       tags:
@@ -8698,6 +9435,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.connectorGroup_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors':
     get:
       tags:
@@ -8905,6 +9664,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9083,6 +9846,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.connector.memberOf_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: The unique identifier of connector
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref':
     get:
       tags:
@@ -9172,6 +9965,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.connector_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources':
     get:
       tags:
@@ -9383,6 +10198,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publishedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9597,6 +10416,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.publishedResource.agentGroup_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: The unique identifier of publishedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/$ref':
     get:
       tags:
@@ -9684,6 +10533,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.publishedResource_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /onPremisesPublishingProfiles/$count:
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesPublishingProfile
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /servicePrincipals:
     get:
       tags:
@@ -10091,6 +10976,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10273,6 +11162,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/appManagementPolicies/$count':
+    get:
+      tags:
+        - servicePrincipals.appManagementPolicy
+      summary: Get the number of the resource
+      operationId: servicePrincipal.appManagementPolicy_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo':
     get:
       tags:
@@ -10496,6 +11407,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10533,6 +11448,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo/$count':
+    get:
+      tags:
+        - servicePrincipals.appRoleAssignment
+      summary: Get the number of the resource
+      operationId: servicePrincipal.appRoleAssignedTo_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/appRoleAssignments':
     get:
       tags:
@@ -10776,6 +11713,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10813,6 +11754,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/appRoleAssignments/$count':
+    get:
+      tags:
+        - servicePrincipals.appRoleAssignment
+      summary: Get the number of the resource
+      operationId: servicePrincipal.appRoleAssignment_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies':
     get:
       tags:
@@ -10942,6 +11915,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$count':
+    get:
+      tags:
+        - servicePrincipals.claimsMappingPolicy
+      summary: Get the number of the resource
+      operationId: servicePrincipal.claimsMappingPolicy_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref':
     get:
       tags:
@@ -11152,6 +12147,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/createdObjects/$count':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the number of the resource
+      operationId: servicePrincipal.createdObject_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications':
     get:
       tags:
@@ -11359,6 +12376,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11396,6 +12417,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications/$count':
+    get:
+      tags:
+        - servicePrincipals.delegatedPermissionClassification
+      summary: Get the number of the resource
+      operationId: servicePrincipal.delegatedPermissionClassification_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/endpoints':
     get:
       tags:
@@ -11608,6 +12651,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.endpoint'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11645,6 +12692,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/endpoints/$count':
+    get:
+      tags:
+        - servicePrincipals.endpoint
+      summary: Get the number of the resource
+      operationId: servicePrincipal.endpoint_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials':
     get:
       tags:
@@ -11851,6 +12920,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11888,6 +12961,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/$count':
+    get:
+      tags:
+        - servicePrincipals.federatedIdentityCredential
+      summary: Get the number of the resource
+      operationId: servicePrincipal.federatedIdentityCredential_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies':
     get:
       tags:
@@ -12017,6 +13112,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$count':
+    get:
+      tags:
+        - servicePrincipals.homeRealmDiscoveryPolicy
+      summary: Get the number of the resource
+      operationId: servicePrincipal.homeRealmDiscoveryPolicy_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref':
     get:
       tags:
@@ -12293,6 +13410,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.licenseDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12330,6 +13451,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/licenseDetails/$count':
+    get:
+      tags:
+        - servicePrincipals.licenseDetails
+      summary: Get the number of the resource
+      operationId: servicePrincipal.licenseDetail_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/memberOf':
     get:
       tags:
@@ -12482,6 +13625,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/memberOf/$count':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the number of the resource
+      operationId: servicePrincipal.memberOf_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addTokenSigningCertificate':
     post:
       tags:
@@ -13094,6 +14269,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/$count':
+    get:
+      tags:
+        - servicePrincipals.oAuth2PermissionGrant
+      summary: Get the number of the resource
+      operationId: servicePrincipal.oauth2PermissionGrant_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects':
     get:
       tags:
@@ -13226,6 +14423,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/ownedObjects/$count':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the number of the resource
+      operationId: servicePrincipal.ownedObject_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/owners':
     get:
       tags:
@@ -13351,6 +14570,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/owners/$count':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the number of the resource
+      operationId: servicePrincipal.owner_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/owners/$ref':
     get:
       tags:
@@ -13510,6 +14761,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronization'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13754,6 +15009,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14140,6 +15399,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14421,6 +15684,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14511,6 +15778,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/$count':
+    get:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Get the number of the resource
+      operationId: servicePrincipal.synchronization.job.schema.directory_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
@@ -14731,6 +16028,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/$count':
+    get:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Get the number of the resource
+      operationId: servicePrincipal.synchronization.job_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/microsoft.graph.validateCredentials':
     post:
       tags:
@@ -14846,6 +16165,63 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/secrets':
+    put:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Update property secrets value.
+      operationId: servicePrincipal.synchronization_SetSecrets
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+        default:
+          $ref: '#/components/responses/error'
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/secrets/$count':
+    get:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Get the number of the resource
+      operationId: servicePrincipal.synchronization.Secret_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates':
     get:
       tags:
@@ -15065,6 +16441,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15196,6 +16576,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15477,6 +16861,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15567,6 +16955,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/$count':
+    get:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Get the number of the resource
+      operationId: servicePrincipal.synchronization.template.schema.directory_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationTemplate-id
+          in: path
+          description: The unique identifier of synchronizationTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationTemplate
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
@@ -15787,6 +17205,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/$count':
+    get:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Get the number of the resource
+      operationId: servicePrincipal.synchronization.template_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies':
     get:
       tags:
@@ -15936,6 +17376,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$count':
+    get:
+      tags:
+        - servicePrincipals.tokenIssuancePolicy
+      summary: Get the number of the resource
+      operationId: servicePrincipal.tokenIssuancePolicy_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies':
     get:
       tags:
@@ -16085,6 +17547,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$count':
+    get:
+      tags:
+        - servicePrincipals.tokenLifetimePolicy
+      summary: Get the number of the resource
+      operationId: servicePrincipal.tokenLifetimePolicy_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf':
     get:
       tags:
@@ -16235,6 +17719,62 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/$count':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the number of the resource
+      operationId: servicePrincipal.transitiveMemberOf_GetCount
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /servicePrincipals/$count:
+    get:
+      tags:
+        - servicePrincipals.servicePrincipal
+      summary: Get the number of the resource
+      operationId: servicePrincipal_GetCount
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /servicePrincipals/microsoft.graph.delta():
     get:
       tags:
@@ -16660,6 +18200,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.appRoleAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -16698,6 +18244,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/appRoleAssignments/{appRoleAssignment-id}':
     get:
@@ -16773,6 +18325,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -16806,8 +18364,18 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -16842,7 +18410,51 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/appRoleAssignments/$count':
+    get:
+      tags:
+        - users.appRoleAssignment
+      summary: Get the number of the resource
+      operationId: user.appRoleAssignment_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
 components:
   schemas:
     microsoft.graph.application:
@@ -16960,7 +18572,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -17082,6 +18694,8 @@ components:
             dataType:
               type: string
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+            isMultiValued:
+              type: boolean
             isSyncedFromOnPremises:
               type: boolean
               description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
@@ -17917,7 +19531,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity''s tags property.Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -19293,6 +20907,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     StringCollectionResponse:
       title: Collection of string
       type: object
@@ -20409,6 +22026,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.appManagementPolicyCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     StringCollectionResponse:
       description: Retrieved collection
       content:

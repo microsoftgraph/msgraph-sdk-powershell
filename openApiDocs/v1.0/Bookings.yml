@@ -65,6 +65,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -301,6 +305,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -621,6 +629,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -704,12 +716,34 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/$count':
+    get:
+      tags:
+        - solutions.bookingBusiness
+      summary: Get the number of the resource
+      operationId: solution.bookingBusiness.appointment_GetCount
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: The unique identifier of bookingBusiness
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView':
     get:
       tags:
         - solutions.bookingBusiness
-      summary: List business calendarView
-      description: Get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+      summary: Get calendarView from solutions
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
@@ -723,6 +757,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
+        - name: start
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: end
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -901,6 +951,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
+        - name: start
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: end
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -991,6 +1057,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1074,6 +1144,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/$count':
+    get:
+      tags:
+        - solutions.bookingBusiness
+      summary: Get the number of the resource
+      operationId: solution.bookingBusiness.calendarView_GetCount
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: The unique identifier of bookingBusiness
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customers':
     get:
       tags:
@@ -1269,6 +1361,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1306,6 +1402,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/bookingBusinesses/{bookingBusiness-id}/customers/$count':
+    get:
+      tags:
+        - solutions.bookingBusiness
+      summary: Get the number of the resource
+      operationId: solution.bookingBusiness.customer_GetCount
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: The unique identifier of bookingBusiness
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions':
     get:
       tags:
@@ -1513,6 +1631,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1550,6 +1672,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/$count':
+    get:
+      tags:
+        - solutions.bookingBusiness
+      summary: Get the number of the resource
+      operationId: solution.bookingBusiness.customQuestion_GetCount
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: The unique identifier of bookingBusiness
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.getStaffAvailability':
     post:
       tags:
@@ -1939,6 +2083,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingService'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1976,6 +2124,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/bookingBusinesses/{bookingBusiness-id}/services/$count':
+    get:
+      tags:
+        - solutions.bookingBusiness
+      summary: Get the number of the resource
+      operationId: solution.bookingBusiness.service_GetCount
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: The unique identifier of bookingBusiness
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers':
     get:
       tags:
@@ -2171,6 +2341,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2208,6 +2382,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/$count':
+    get:
+      tags:
+        - solutions.bookingBusiness
+      summary: Get the number of the resource
+      operationId: solution.bookingBusiness.staffMember_GetCount
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: The unique identifier of bookingBusiness
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /solutions/bookingBusinesses/$count:
+    get:
+      tags:
+        - solutions.bookingBusiness
+      summary: Get the number of the resource
+      operationId: solution.bookingBusiness_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /solutions/bookingCurrencies:
     get:
       tags:
@@ -2369,6 +2579,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2398,6 +2612,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /solutions/bookingCurrencies/$count:
+    get:
+      tags:
+        - solutions.bookingCurrency
+      summary: Get the number of the resource
+      operationId: solution.bookingCurrency_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.solutionsRoot:
@@ -3025,6 +3253,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.bookingCustomerBaseCollectionResponse:
       title: Collection of bookingCustomerBase
       type: object
@@ -3248,6 +3479,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.bookingAppointmentCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.bookingCustomerBaseCollectionResponse:
       description: Retrieved collection
       content:

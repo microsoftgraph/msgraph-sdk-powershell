@@ -65,6 +65,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.external'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -289,6 +293,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -520,6 +528,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -785,6 +797,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -830,6 +846,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.group.member_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: The unique identifier of externalGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/external/connections/{externalConnection-id}/groups/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.group_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/items':
     get:
       tags:
@@ -1032,6 +1100,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1301,6 +1373,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1413,6 +1489,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/items/{externalItem-id}/activities/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.item.activity_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalItem-id
+          in: path
+          description: The unique identifier of externalItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/items/{externalItem-id}/microsoft.graph.externalConnectors.addActivities':
     post:
       tags:
@@ -1474,6 +1580,28 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/external/connections/{externalConnection-id}/items/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.item_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/operations':
     get:
       tags:
@@ -1668,6 +1796,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1705,6 +1837,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/operations/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.operation_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/quota':
     get:
       tags:
@@ -1783,6 +1937,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1895,6 +2053,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1924,6 +2086,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/connections/$count:
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData:
     get:
       tags:
@@ -1990,7 +2166,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
-      operationId: external.industryDatum_ListDataConnectors
+      operationId: external.industryData_ListDataConnectors
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2056,7 +2232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
-      operationId: external.industryDatum_CreateDataConnectors
+      operationId: external.industryData_CreateDataConnectors
       requestBody:
         description: New navigation property
         content:
@@ -2080,7 +2256,7 @@ paths:
         - external.industryDataRoot
       summary: Get dataConnectors from external
       description: Set of connectors for importing data from source systems.
-      operationId: external.industryDatum_GetDataConnectors
+      operationId: external.industryData_GetDataConnectors
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2131,7 +2307,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property dataConnectors in external
-      operationId: external.industryDatum_UpdateDataConnectors
+      operationId: external.industryData_UpdateDataConnectors
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2151,6 +2327,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2158,7 +2338,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property dataConnectors for external
-      operationId: external.industryDatum_DeleteDataConnectors
+      operationId: external.industryData_DeleteDataConnectors
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2189,7 +2369,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
-      operationId: external.industryDatum.dataConnector_validate
+      operationId: external.industryData.dataConnector_validate
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2211,7 +2391,7 @@ paths:
         - external.industryDataRoot
       summary: Get sourceSystem from external
       description: The sourceSystemDefinition this connector is connected to.
-      operationId: external.industryDatum.dataConnector_GetSourceSystem
+      operationId: external.industryData.dataConnector_GetSourceSystem
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2258,6 +2438,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/dataConnectors/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.dataConnector_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/inboundFlows:
     get:
       tags:
@@ -2267,7 +2461,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
-      operationId: external.industryDatum_ListInboundFlows
+      operationId: external.industryData_ListInboundFlows
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2342,12 +2536,12 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFileFlow
-      description: 'Create a new inboundFileFlow object. The following prerequisite resources are required when you create an **inboundFileFlow**:'
+      summary: Create inboundFlow
+      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an **inboundFlow**:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
-      operationId: external.industryDatum_CreateInboundFlows
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateInboundFlows
       requestBody:
         description: New navigation property
         content:
@@ -2371,7 +2565,7 @@ paths:
         - external.industryDataRoot
       summary: Get inboundFlows from external
       description: Set of data import flow activities to bring data into the canonical store via a connector.
-      operationId: external.industryDatum_GetInboundFlows
+      operationId: external.industryData_GetInboundFlows
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2428,7 +2622,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property inboundFlows in external
-      operationId: external.industryDatum_UpdateInboundFlows
+      operationId: external.industryData_UpdateInboundFlows
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2448,6 +2642,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2455,7 +2653,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property inboundFlows for external
-      operationId: external.industryDatum_DeleteInboundFlows
+      operationId: external.industryData_DeleteInboundFlows
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2483,7 +2681,7 @@ paths:
         - external.industryDataRoot
       summary: Get dataConnector from external
       description: The data connector in the context of which this flow pulls in data from a source system.
-      operationId: external.industryDatum.inboundFlow_GetDataConnector
+      operationId: external.industryData.inboundFlow_GetDataConnector
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2536,7 +2734,7 @@ paths:
         - external.industryDataRoot
       summary: Get year from external
       description: The year that the data brought in via this flow applies to.
-      operationId: external.industryDatum.inboundFlow_GetYear
+      operationId: external.industryData.inboundFlow_GetYear
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2584,6 +2782,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/inboundFlows/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.inboundFlow_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/operations:
     get:
       tags:
@@ -2593,7 +2805,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0
-      operationId: external.industryDatum_ListOperations
+      operationId: external.industryData_ListOperations
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2665,7 +2877,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create new navigation property to operations for external
-      operationId: external.industryDatum_CreateOperations
+      operationId: external.industryData_CreateOperations
       requestBody:
         description: New navigation property
         content:
@@ -2689,7 +2901,7 @@ paths:
         - external.industryDataRoot
       summary: Get operations from external
       description: Set of ephemeral operations that the system runs currently. Read-only.
-      operationId: external.industryDatum_GetOperations
+      operationId: external.industryData_GetOperations
       parameters:
         - name: longRunningOperation-id
           in: path
@@ -2742,7 +2954,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property operations in external
-      operationId: external.industryDatum_UpdateOperations
+      operationId: external.industryData_UpdateOperations
       parameters:
         - name: longRunningOperation-id
           in: path
@@ -2762,6 +2974,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2769,7 +2985,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property operations for external
-      operationId: external.industryDatum_DeleteOperations
+      operationId: external.industryData_DeleteOperations
       parameters:
         - name: longRunningOperation-id
           in: path
@@ -2791,6 +3007,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/operations/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.operation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/referenceDefinitions:
     get:
       tags:
@@ -2800,7 +3030,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
-      operationId: external.industryDatum_ListReferenceDefinitions
+      operationId: external.industryData_ListReferenceDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2878,7 +3108,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create new navigation property to referenceDefinitions for external
-      operationId: external.industryDatum_CreateReferenceDefinitions
+      operationId: external.industryData_CreateReferenceDefinitions
       requestBody:
         description: New navigation property
         content:
@@ -2902,7 +3132,7 @@ paths:
         - external.industryDataRoot
       summary: Get referenceDefinitions from external
       description: Set of user modifiable system picker types.
-      operationId: external.industryDatum_GetReferenceDefinitions
+      operationId: external.industryData_GetReferenceDefinitions
       parameters:
         - name: referenceDefinition-id
           in: path
@@ -2957,7 +3187,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property referenceDefinitions in external
-      operationId: external.industryDatum_UpdateReferenceDefinitions
+      operationId: external.industryData_UpdateReferenceDefinitions
       parameters:
         - name: referenceDefinition-id
           in: path
@@ -2977,6 +3207,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2984,7 +3218,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property referenceDefinitions for external
-      operationId: external.industryDatum_DeleteReferenceDefinitions
+      operationId: external.industryData_DeleteReferenceDefinitions
       parameters:
         - name: referenceDefinition-id
           in: path
@@ -3006,6 +3240,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/referenceDefinitions/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.referenceDefinition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/roleGroups:
     get:
       tags:
@@ -3015,7 +3263,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
-      operationId: external.industryDatum_ListRoleGroups
+      operationId: external.industryData_ListRoleGroups
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3078,7 +3326,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create new navigation property to roleGroups for external
-      operationId: external.industryDatum_CreateRoleGroups
+      operationId: external.industryData_CreateRoleGroups
       requestBody:
         description: New navigation property
         content:
@@ -3102,7 +3350,7 @@ paths:
         - external.industryDataRoot
       summary: Get roleGroups from external
       description: Set of groups of individual roles that makes role-based admin simpler.
-      operationId: external.industryDatum_GetRoleGroups
+      operationId: external.industryData_GetRoleGroups
       parameters:
         - name: roleGroup-id
           in: path
@@ -3152,7 +3400,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property roleGroups in external
-      operationId: external.industryDatum_UpdateRoleGroups
+      operationId: external.industryData_UpdateRoleGroups
       parameters:
         - name: roleGroup-id
           in: path
@@ -3172,6 +3420,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3179,7 +3431,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property roleGroups for external
-      operationId: external.industryDatum_DeleteRoleGroups
+      operationId: external.industryData_DeleteRoleGroups
       parameters:
         - name: roleGroup-id
           in: path
@@ -3201,6 +3453,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/roleGroups/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.roleGroup_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/runs:
     get:
       tags:
@@ -3210,7 +3476,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
-      operationId: external.industryDatum_ListRuns
+      operationId: external.industryData_ListRuns
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3286,7 +3552,7 @@ paths:
         - external.industryDataRoot
       summary: Get runs from external
       description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
-      operationId: external.industryDatum_GetRuns
+      operationId: external.industryData_GetRuns
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3343,7 +3609,7 @@ paths:
         - external.industryDataRoot
       summary: Get activities from external
       description: The set of activities performed during the run.
-      operationId: external.industryDatum.run_ListActivities
+      operationId: external.industryData.run_ListActivities
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3421,7 +3687,7 @@ paths:
         - external.industryDataRoot
       summary: Get activities from external
       description: The set of activities performed during the run.
-      operationId: external.industryDatum.run_GetActivities
+      operationId: external.industryData.run_GetActivities
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3484,7 +3750,7 @@ paths:
         - external.industryDataRoot
       summary: Get activity from external
       description: The flow that was run by this activity.
-      operationId: external.industryDatum.run.activity_GetActivity
+      operationId: external.industryData.run.activity_GetActivity
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3538,12 +3804,34 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/industryData/runs/{industryDataRun-id}/activities/$count':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.run.activity_GetCount
+      parameters:
+        - name: industryDataRun-id
+          in: path
+          description: The unique identifier of industryDataRun
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRun
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/industryData/runs/{industryDataRun-id}/microsoft.graph.industryData.getStatistics()':
     get:
       tags:
         - external.Functions
       summary: Invoke function getStatistics
-      operationId: external.industryDatum.run_getStatistics
+      operationId: external.industryData.run_getStatistics
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3563,12 +3851,26 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /external/industryData/runs/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.run_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/runs/microsoft.graph.industryData.getStatistics():
     get:
       tags:
         - external.Functions
       summary: Invoke function getStatistics
-      operationId: external.industryDatum.run_getStatistics
+      operationId: external.industryData.run_getStatistics
       responses:
         2XX:
           description: Success
@@ -3588,7 +3890,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-1.0
-      operationId: external.industryDatum_ListSourceSystems
+      operationId: external.industryData_ListSourceSystems
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3658,7 +3960,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-1.0
-      operationId: external.industryDatum_CreateSourceSystems
+      operationId: external.industryData_CreateSourceSystems
       requestBody:
         description: New navigation property
         content:
@@ -3682,7 +3984,7 @@ paths:
         - external.industryDataRoot
       summary: Get sourceSystems from external
       description: Set of source definitions that represents real-world external systems.
-      operationId: external.industryDatum_GetSourceSystems
+      operationId: external.industryData_GetSourceSystems
       parameters:
         - name: sourceSystemDefinition-id
           in: path
@@ -3733,7 +4035,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property sourceSystems in external
-      operationId: external.industryDatum_UpdateSourceSystems
+      operationId: external.industryData_UpdateSourceSystems
       parameters:
         - name: sourceSystemDefinition-id
           in: path
@@ -3753,6 +4055,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3760,7 +4066,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property sourceSystems for external
-      operationId: external.industryDatum_DeleteSourceSystems
+      operationId: external.industryData_DeleteSourceSystems
       parameters:
         - name: sourceSystemDefinition-id
           in: path
@@ -3782,6 +4088,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/sourceSystems/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.sourceSystem_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/years:
     get:
       tags:
@@ -3791,7 +4111,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
-      operationId: external.industryDatum_ListYears
+      operationId: external.industryData_ListYears
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3864,7 +4184,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
-      operationId: external.industryDatum_CreateYears
+      operationId: external.industryData_CreateYears
       requestBody:
         description: New navigation property
         content:
@@ -3888,7 +4208,7 @@ paths:
         - external.industryDataRoot
       summary: Get years from external
       description: Set of years represented in the system.
-      operationId: external.industryDatum_GetYears
+      operationId: external.industryData_GetYears
       parameters:
         - name: yearTimePeriodDefinition-id
           in: path
@@ -3940,7 +4260,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property years in external
-      operationId: external.industryDatum_UpdateYears
+      operationId: external.industryData_UpdateYears
       parameters:
         - name: yearTimePeriodDefinition-id
           in: path
@@ -3960,6 +4280,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3967,7 +4291,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property years for external
-      operationId: external.industryDatum_DeleteYears
+      operationId: external.industryData_DeleteYears
       parameters:
         - name: yearTimePeriodDefinition-id
           in: path
@@ -3989,6 +4313,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/years/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.year_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /search:
     get:
       tags:
@@ -4051,6 +4389,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.searchEntity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4244,6 +4586,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.acronym'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4273,6 +4619,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /search/acronyms/$count:
+    get:
+      tags:
+        - search.acronym
+      summary: Get the number of the resource
+      operationId: search.acronym_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /search/bookmarks:
     get:
       tags:
@@ -4499,6 +4859,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.bookmark'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4528,6 +4892,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /search/bookmarks/$count:
+    get:
+      tags:
+        - search.bookmark
+      summary: Get the number of the resource
+      operationId: search.bookmark_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /search/microsoft.graph.query:
     post:
       tags:
@@ -4793,6 +5171,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.qna'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4822,6 +5204,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /search/qnas/$count:
+    get:
+      tags:
+        - search.qna
+      summary: Get the number of the resource
+      operationId: search.qna_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.externalConnectors.external:
@@ -6282,6 +6678,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       title: Collection of externalItem
       type: object
@@ -6986,6 +7385,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.identityCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       description: Retrieved collection
       content:

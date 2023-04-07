@@ -137,6 +137,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -360,6 +364,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyCompliance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -389,6 +397,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/aggregatedPolicyCompliances/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.aggregatedPolicyCompliance_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/appPerformances:
     get:
       tags:
@@ -582,6 +604,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.appPerformance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -611,6 +637,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/appPerformances/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.appPerformance_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/auditEvents:
     get:
       tags:
@@ -818,6 +858,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.auditEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -847,6 +891,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/auditEvents/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.auditEvent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/cloudPcConnections:
     get:
       tags:
@@ -1025,6 +1083,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcConnection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1054,6 +1116,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/cloudPcConnections/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.cloudPcConnection_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/cloudPcDevices:
     get:
       tags:
@@ -1260,6 +1336,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcDevice'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1289,6 +1369,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/cloudPcDevices/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.cloudPcDevice_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/cloudPcsOverview:
     get:
       tags:
@@ -1527,6 +1621,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcOverview'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1556,6 +1654,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/cloudPcsOverview/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.cloudPcsOverview_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/conditionalAccessPolicyCoverages:
     get:
       tags:
@@ -1730,6 +1842,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.conditionalAccessPolicyCoverage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1759,6 +1875,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/conditionalAccessPolicyCoverages/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.conditionalAccessPolicyCoverage_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/credentialUserRegistrationsSummaries:
     get:
       tags:
@@ -1961,6 +2091,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1990,6 +2124,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/credentialUserRegistrationsSummaries/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.credentialUserRegistrationsSummary_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/deviceAppPerformances:
     get:
       tags:
@@ -2207,6 +2355,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceAppPerformance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2236,6 +2388,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/deviceAppPerformances/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.deviceAppPerformance_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries:
     get:
       tags:
@@ -2446,6 +2612,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2475,6 +2645,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.deviceCompliancePolicySettingStateSummary_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/deviceHealthStatuses:
     get:
       tags:
@@ -2688,6 +2872,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceHealthStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2717,6 +2905,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/deviceHealthStatuses/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.deviceHealthStatus_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managedDeviceCompliances:
     get:
       tags:
@@ -2931,6 +3133,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceCompliance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2960,6 +3166,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedDeviceCompliances/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedDeviceCompliance_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managedDeviceComplianceTrends:
     get:
       tags:
@@ -3154,6 +3374,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3183,6 +3407,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedDeviceComplianceTrends/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedDeviceComplianceTrend_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managedTenantAlertLogs:
     get:
       tags:
@@ -3360,6 +3598,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3461,6 +3703,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantAlertLogs/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantAlertLog_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions:
     get:
       tags:
@@ -3642,6 +3898,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3854,6 +4114,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition-id}/alertRules/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantAlertRuleDefinition.alertRule_GetCount
+      parameters:
+        - name: managedTenantAlertRuleDefinition-id
+          in: path
+          description: The unique identifier of managedTenantAlertRuleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRuleDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantAlertRuleDefinition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managedTenantAlertRules:
     get:
       tags:
@@ -4067,6 +4363,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4295,6 +4595,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}/alerts/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantAlertRule.alert_GetCount
+      parameters:
+        - name: managedTenantAlertRule-id
+          in: path
+          description: The unique identifier of managedTenantAlertRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRule
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}/ruleDefinition':
     get:
       tags:
@@ -4352,6 +4674,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantAlertRules/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantAlertRule_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managedTenantAlerts:
     get:
       tags:
@@ -4581,6 +4917,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4757,6 +5097,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/alertLogs/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantAlert.alertLog_GetCount
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: The unique identifier of managedTenantAlert
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/alertRule':
     get:
       tags:
@@ -4982,6 +5344,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/apiNotifications/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantAlert.apiNotification_GetCount
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: The unique identifier of managedTenantAlert
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/emailNotifications':
     get:
       tags:
@@ -5137,6 +5521,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/emailNotifications/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantAlert.emailNotification_GetCount
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: The unique identifier of managedTenantAlert
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /tenantRelationships/managedTenants/managedTenantAlerts/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantAlert_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managedTenantApiNotifications:
     get:
       tags:
@@ -5326,6 +5746,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5427,6 +5851,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantApiNotifications/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantApiNotification_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managedTenantEmailNotifications:
     get:
       tags:
@@ -5612,6 +6050,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5713,6 +6155,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantEmailNotifications/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantEmailNotification_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managedTenantTicketingEndpoints:
     get:
       tags:
@@ -5894,6 +6350,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5923,6 +6383,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantTicketingEndpoints/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managedTenantTicketingEndpoint_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managementActions:
     get:
       tags:
@@ -6105,6 +6579,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementAction'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6134,6 +6612,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managementActions/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementAction_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managementActionTenantDeploymentStatuses:
     get:
       tags:
@@ -6304,6 +6796,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionTenantDeploymentStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6333,6 +6829,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managementActionTenantDeploymentStatuses/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementActionTenantDeploymentStatus_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managementIntents:
     get:
       tags:
@@ -6503,6 +7013,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementIntent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6532,6 +7046,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managementIntents/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementIntent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managementTemplateCollections:
     get:
       tags:
@@ -6713,6 +7241,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6929,6 +7461,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managementTemplateCollections/{managementTemplateCollection-id}/managementTemplates/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplateCollection.managementTemplate_GetCount
+      parameters:
+        - name: managementTemplateCollection-id
+          in: path
+          description: The unique identifier of managementTemplateCollection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateCollection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /tenantRelationships/managedTenants/managementTemplateCollections/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplateCollection_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managementTemplateCollectionTenantSummaries:
     get:
       tags:
@@ -7158,6 +7726,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7187,6 +7759,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managementTemplateCollectionTenantSummaries/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplateCollectionTenantSummary_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managementTemplates:
     get:
       tags:
@@ -7409,6 +7995,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7589,6 +8179,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managementTemplates/{managementTemplate-id}/managementTemplateCollections/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplate.managementTemplateCollection_GetCount
+      parameters:
+        - name: managementTemplate-id
+          in: path
+          description: The unique identifier of managementTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplate
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/tenantRelationships/managedTenants/managementTemplates/{managementTemplate-id}/managementTemplateSteps':
     get:
       tags:
@@ -7760,6 +8372,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managementTemplates/{managementTemplate-id}/managementTemplateSteps/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplate.managementTemplateStep_GetCount
+      parameters:
+        - name: managementTemplate-id
+          in: path
+          description: The unique identifier of managementTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplate
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /tenantRelationships/managedTenants/managementTemplates/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplate_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managementTemplateSteps:
     get:
       tags:
@@ -7961,6 +8609,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8287,6 +8939,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep-id}/versions/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplateStep.version_GetCount
+      parameters:
+        - name: managementTemplateStep-id
+          in: path
+          description: The unique identifier of managementTemplateStep
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateStep
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /tenantRelationships/managedTenants/managementTemplateSteps/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplateStep_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managementTemplateStepTenantSummaries:
     get:
       tags:
@@ -8500,6 +9188,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepTenantSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8529,6 +9221,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managementTemplateStepTenantSummaries/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplateStepTenantSummary_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/managementTemplateStepVersions:
     get:
       tags:
@@ -8726,6 +9432,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9037,6 +9747,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9145,6 +9859,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion-id}/deployments/$count':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion.deployment_GetCount
+      parameters:
+        - name: managementTemplateStepVersion-id
+          in: path
+          description: The unique identifier of managementTemplateStepVersion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateStepVersion
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion-id}/templateStep':
     get:
       tags:
@@ -9209,6 +9945,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managementTemplateStepVersions/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/myRoles:
     get:
       tags:
@@ -9371,6 +10121,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.myRole'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9400,6 +10154,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/myRoles/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.myRole_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/tenantGroups:
     get:
       tags:
@@ -9578,6 +10346,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9607,6 +10379,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/tenantGroups/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.tenantGroup_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/tenants:
     get:
       tags:
@@ -9789,6 +10575,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9818,6 +10608,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/tenants/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.tenant_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/tenantsCustomizedInformation:
     get:
       tags:
@@ -9992,6 +10796,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantCustomizedInformation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10021,6 +10829,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/tenantsCustomizedInformation/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.tenantsCustomizedInformation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/tenantsDetailedInformation:
     get:
       tags:
@@ -10219,6 +11041,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantDetailedInformation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10248,6 +11074,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/tenantsDetailedInformation/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.tenantsDetailedInformation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/tenantTags:
     get:
       tags:
@@ -10442,6 +11282,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10471,6 +11315,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/tenantTags/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.tenantTag_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/windowsDeviceMalwareStates:
     get:
       tags:
@@ -10693,6 +11551,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsDeviceMalwareState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10722,6 +11584,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/windowsDeviceMalwareStates/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.windowsDeviceMalwareState_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /tenantRelationships/managedTenants/windowsProtectionStates:
     get:
       tags:
@@ -10980,6 +11856,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsProtectionState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11009,6 +11889,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/windowsProtectionStates/$count:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get the number of the resource
+      operationId: tenantRelationship.managedTenant.windowsProtectionState_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.managedTenants.managedTenant:
@@ -13676,6 +14570,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.managedTenants.appPerformanceCollectionResponse:
       title: Collection of appPerformance
       type: object
@@ -14400,6 +15297,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyComplianceCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.managedTenants.appPerformanceCollectionResponse:
       description: Retrieved collection
       content:
