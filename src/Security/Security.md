@@ -41,4 +41,10 @@ directive:
       variant: Update1|UpdateExpanded1
     set:
       subject: $1Multiple
+  - where:
+      verb: Get
+      subject: ^(SecurityAlert)$
+      variant: Get1
+    set:
+      subject: $1V2Count
 ```
