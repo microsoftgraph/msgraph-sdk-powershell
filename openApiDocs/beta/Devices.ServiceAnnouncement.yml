@@ -117,7 +117,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -312,7 +312,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -589,7 +589,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -671,6 +671,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/$count':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.healthOverviews.issues_GetCount-fd80
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/serviceAnnouncement/healthOverviews/$count:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.healthOverviews_GetCount-51c2
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/serviceAnnouncement/issues:
     get:
       tags:
@@ -884,7 +920,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -950,6 +986,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /admin/serviceAnnouncement/issues/$count:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.issues_GetCount-e140
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/serviceAnnouncement/messages:
     get:
       tags:
@@ -1171,7 +1221,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1415,7 +1465,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1529,9 +1579,35 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/$count':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.messages.attachments_GetCount-e0ef
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive':
     get:
       tags:
@@ -1591,6 +1667,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /admin/serviceAnnouncement/messages/$count:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.messages_GetCount-0cc9
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/serviceAnnouncement/messages/microsoft.graph.archive:
     post:
       tags:
@@ -5341,6 +5431,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.serviceUpdateMessageCollectionResponse:
       title: Collection of serviceUpdateMessage
       type: object
@@ -5468,6 +5561,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.serviceHealthIssueCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.serviceUpdateMessageCollectionResponse:
       description: Retrieved collection
       content:

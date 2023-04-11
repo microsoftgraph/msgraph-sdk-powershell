@@ -187,7 +187,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -221,6 +221,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /dataPolicyOperations/$count:
+    get:
+      tags:
+        - dataPolicyOperations.dataPolicyOperation
+      summary: Get the number of the resource
+      operationId: dataPolicyOperations_GetCount-b129
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity:
     get:
       tags:
@@ -295,7 +309,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -476,7 +490,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -555,6 +569,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /identity/apiConnectors/$count:
+    get:
+      tags:
+        - identity.identityApiConnector
+      summary: Get the number of the resource
+      operationId: identity.apiConnectors_GetCount-7133
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/authenticationEventListeners:
     get:
       tags:
@@ -719,7 +747,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -753,6 +781,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/authenticationEventListeners/$count:
+    get:
+      tags:
+        - identity.authenticationEventListener
+      summary: Get the number of the resource
+      operationId: identity.authenticationEventListeners_GetCount-3038
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/b2cUserFlows:
     get:
       tags:
@@ -950,7 +992,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1120,6 +1162,34 @@ paths:
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/identityProviders/$count':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2cUserFlows.identityProviders_GetCount-3a03
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2cIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/identityProviders/$ref':
     get:
       tags:
@@ -1414,7 +1484,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1678,7 +1748,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1817,6 +1887,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/$count':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2cUserFlows.languages.defaultPages_GetCount-82a6
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2cIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: The unique identifier of userFlowLanguageConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages':
     get:
       tags:
@@ -2039,7 +2139,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2178,6 +2278,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/$count':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2cUserFlows.languages.overridesPages_GetCount-264f
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2cIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: The unique identifier of userFlowLanguageConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/$count':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2cUserFlows.languages_GetCount-7c70
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2cIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments':
     get:
       tags:
@@ -2396,7 +2548,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2500,6 +2652,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/$count':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2cUserFlows.userAttributeAssignments_GetCount-7342
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2cIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.getOrder()':
     get:
       tags:
@@ -2689,6 +2863,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userFlowIdentityProviders/$count':
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2cUserFlows.userFlowIdentityProviders_GetCount-383b
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2cIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identity/b2cUserFlows/$count:
+    get:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2cUserFlows_GetCount-9b1b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/b2xUserFlows:
     get:
       tags:
@@ -2878,7 +3088,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3067,6 +3277,34 @@ paths:
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders/$count':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2xUserFlows.identityProviders_GetCount-97b6
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2xIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages':
     get:
       tags:
@@ -3273,7 +3511,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3537,7 +3775,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3676,6 +3914,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/$count':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2xUserFlows.languages.defaultPages_GetCount-335e
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2xIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: The unique identifier of userFlowLanguageConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages':
     get:
       tags:
@@ -3898,7 +4166,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4037,6 +4305,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/$count':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2xUserFlows.languages.overridesPages_GetCount-5299
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2xIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: userFlowLanguageConfiguration-id
+          in: path
+          description: The unique identifier of userFlowLanguageConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userFlowLanguageConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/$count':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2xUserFlows.languages_GetCount-16c9
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2xIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments':
     get:
       tags:
@@ -4255,7 +4575,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4359,6 +4679,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/$count':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2xUserFlows.userAttributeAssignments_GetCount-b381
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2xIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.getOrder()':
     get:
       tags:
@@ -4532,6 +4874,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$count':
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2xUserFlows.userFlowIdentityProviders_GetCount-0185
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2xIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$ref':
     get:
       tags:
@@ -4598,6 +4962,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/b2xUserFlows/$count:
+    get:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.b2xUserFlows_GetCount-cfff
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/conditionalAccess:
     get:
       tags:
@@ -4666,7 +5044,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4865,7 +5243,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4899,6 +5277,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/authenticationContextClassReferences/$count:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.authenticationContextClassReferences_GetCount-1d40
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/conditionalAccess/authenticationStrength:
     get:
       tags:
@@ -4960,7 +5352,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5151,7 +5543,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5185,6 +5577,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/authenticationStrength/authenticationMethodModes/$count:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.authenticationStrength.authenticationMethodModes_GetCount-e876
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/conditionalAccess/authenticationStrength/policies:
     get:
       tags:
@@ -5371,7 +5777,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5603,7 +6009,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5645,6 +6051,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/$count':
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.authenticationStrength.policies.combinationConfigurations_GetCount-64b7
+      parameters:
+        - name: authenticationStrengthPolicy-id
+          in: path
+          description: The unique identifier of authenticationStrengthPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationStrengthPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/microsoft.graph.updateAllowedCombinations':
     post:
       tags:
@@ -5713,6 +6141,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /identity/conditionalAccess/authenticationStrength/policies/$count:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.authenticationStrength.policies_GetCount-8166
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identity/conditionalAccess/authenticationStrength/policies/microsoft.graph.findByMethodMode(authenticationMethodModes={authenticationMethodModes})':
     get:
       tags:
@@ -5879,7 +6321,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6100,7 +6542,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6146,6 +6588,26 @@ paths:
         version: 2023-02/AuthenticationStrengthsRemove
         description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
       x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/authenticationStrengths/authenticationMethodModes/$count:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.authenticationStrengths.authenticationMethodModes_GetCount-01ed
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-31T00:00:00.0000000+00:00'
+        date: '2023-02-01T00:00:00.0000000+00:00'
+        version: 2023-02/AuthenticationStrengthsRemove
+        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
   /identity/conditionalAccess/authenticationStrengths/policies:
     get:
       tags:
@@ -6350,7 +6812,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6612,7 +7074,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6666,6 +7128,34 @@ paths:
         version: 2023-02/AuthenticationStrengthsRemove
         description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
       x-ms-docs-operation-type: operation
+  '/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/$count':
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.authenticationStrengths.policies.combinationConfigurations_GetCount-df5e
+      parameters:
+        - name: authenticationStrengthPolicy-id
+          in: path
+          description: The unique identifier of authenticationStrengthPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationStrengthPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-31T00:00:00.0000000+00:00'
+        date: '2023-02-01T00:00:00.0000000+00:00'
+        version: 2023-02/AuthenticationStrengthsRemove
+        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
   '/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy-id}/microsoft.graph.updateAllowedCombinations':
     post:
       tags:
@@ -6746,6 +7236,26 @@ paths:
         version: 2023-02/AuthenticationStrengthsRemove
         description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
       x-ms-docs-operation-type: function
+  /identity/conditionalAccess/authenticationStrengths/policies/$count:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.authenticationStrengths.policies_GetCount-f639
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-31T00:00:00.0000000+00:00'
+        date: '2023-02-01T00:00:00.0000000+00:00'
+        version: 2023-02/AuthenticationStrengthsRemove
+        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
   '/identity/conditionalAccess/authenticationStrengths/policies/microsoft.graph.findByMethodMode(authenticationMethodModes={authenticationMethodModes})':
     get:
       tags:
@@ -7017,7 +7527,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7051,6 +7561,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/namedLocations/$count:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.namedLocations_GetCount-e424
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/conditionalAccess/policies:
     get:
       tags:
@@ -7244,7 +7768,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7278,6 +7802,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/policies/$count:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.policies_GetCount-608a
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/conditionalAccess/templates:
     get:
       tags:
@@ -7406,6 +7944,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/templates/$count:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get the number of the resource
+      operationId: identity.conditionalAccess.templates_GetCount-a96d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/continuousAccessEvaluationPolicy:
     get:
       tags:
@@ -7475,7 +8027,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7673,7 +8225,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7732,6 +8284,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /identity/customAuthenticationExtensions/$count:
+    get:
+      tags:
+        - identity.customAuthenticationExtension
+      summary: Get the number of the resource
+      operationId: identity.customAuthenticationExtensions_GetCount-bad5
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/customAuthenticationExtensions/microsoft.graph.validateAuthenticationConfiguration:
     post:
       tags:
@@ -7927,7 +8493,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7961,6 +8527,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/identityProviders/$count:
+    get:
+      tags:
+        - identity.identityProviderBase
+      summary: Get the number of the resource
+      operationId: identity.identityProviders_GetCount-7742
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/identityProviders/microsoft.graph.availableProviderTypes():
     get:
       tags:
@@ -8174,7 +8754,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8208,6 +8788,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/userFlowAttributes/$count:
+    get:
+      tags:
+        - identity.identityUserFlowAttribute
+      summary: Get the number of the resource
+      operationId: identity.userFlowAttributes_GetCount-9651
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identity/userFlows:
     get:
       tags:
@@ -8394,7 +8988,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8440,6 +9034,26 @@ paths:
         version: 2021-05/identityProvider
         description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
       x-ms-docs-operation-type: operation
+  /identity/userFlows/$count:
+    get:
+      tags:
+        - identity.identityUserFlow
+      summary: Get the number of the resource
+      operationId: identity.userFlows_GetCount-5e0c
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-01-15T00:00:00.0000000+00:00'
+        date: '2021-05-21T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
   /identityProtection:
     get:
       tags:
@@ -8502,7 +9116,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8747,7 +9361,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8781,6 +9395,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identityProtection/riskDetections/$count:
+    get:
+      tags:
+        - identityProtection.riskDetection
+      summary: Get the number of the resource
+      operationId: identityProtection.riskDetections_GetCount-ee19
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identityProtection/riskyServicePrincipals:
     get:
       tags:
@@ -8815,6 +9443,8 @@ paths:
                 - appId desc
                 - displayName
                 - displayName desc
+                - isEnabled
+                - isEnabled desc
                 - isProcessing
                 - isProcessing desc
                 - riskDetail
@@ -8842,6 +9472,7 @@ paths:
                 - accountEnabled
                 - appId
                 - displayName
+                - isEnabled
                 - isProcessing
                 - riskDetail
                 - riskLastUpdatedDateTime
@@ -8924,6 +9555,7 @@ paths:
                 - accountEnabled
                 - appId
                 - displayName
+                - isEnabled
                 - isProcessing
                 - riskDetail
                 - riskLastUpdatedDateTime
@@ -8978,7 +9610,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9054,6 +9686,8 @@ paths:
                 - appId desc
                 - displayName
                 - displayName desc
+                - isEnabled
+                - isEnabled desc
                 - isProcessing
                 - isProcessing desc
                 - riskDetail
@@ -9087,6 +9721,7 @@ paths:
                 - accountEnabled
                 - appId
                 - displayName
+                - isEnabled
                 - isProcessing
                 - riskDetail
                 - riskLastUpdatedDateTime
@@ -9189,6 +9824,7 @@ paths:
                 - accountEnabled
                 - appId
                 - displayName
+                - isEnabled
                 - isProcessing
                 - riskDetail
                 - riskLastUpdatedDateTime
@@ -9254,7 +9890,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9296,6 +9932,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history/$count':
+    get:
+      tags:
+        - identityProtection.riskyServicePrincipal
+      summary: Get the number of the resource
+      operationId: identityProtection.riskyServicePrincipals.history_GetCount-818f
+      parameters:
+        - name: riskyServicePrincipal-id
+          in: path
+          description: The unique identifier of riskyServicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: riskyServicePrincipal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identityProtection/riskyServicePrincipals/$count:
+    get:
+      tags:
+        - identityProtection.riskyServicePrincipal
+      summary: Get the number of the resource
+      operationId: identityProtection.riskyServicePrincipals_GetCount-d335
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identityProtection/riskyServicePrincipals/microsoft.graph.confirmCompromised:
     post:
       tags:
@@ -9551,7 +10223,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9822,7 +10494,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9864,6 +10536,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityProtection/riskyUsers/{riskyUser-id}/history/$count':
+    get:
+      tags:
+        - identityProtection.riskyUser
+      summary: Get the number of the resource
+      operationId: identityProtection.riskyUsers.history_GetCount-33a2
+      parameters:
+        - name: riskyUser-id
+          in: path
+          description: The unique identifier of riskyUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: riskyUser
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identityProtection/riskyUsers/$count:
+    get:
+      tags:
+        - identityProtection.riskyUser
+      summary: Get the number of the resource
+      operationId: identityProtection.riskyUsers_GetCount-2b7d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identityProtection/riskyUsers/microsoft.graph.confirmCompromised:
     post:
       tags:
@@ -10163,7 +10871,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10197,6 +10905,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identityProtection/servicePrincipalRiskDetections/$count:
+    get:
+      tags:
+        - identityProtection.servicePrincipalRiskDetection
+      summary: Get the number of the resource
+      operationId: identityProtection.servicePrincipalRiskDetections_GetCount-1bc5
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identityProviders:
     get:
       tags:
@@ -10399,7 +11121,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10449,6 +11171,26 @@ paths:
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
+  /identityProviders/$count:
+    get:
+      tags:
+        - identityProviders.identityProvider
+      summary: Get the number of the resource
+      operationId: identityProviders_GetCount-a7d6
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
   /identityProviders/microsoft.graph.availableProviderTypes():
     get:
       tags:
@@ -10558,7 +11300,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10737,6 +11479,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /informationProtection/bitlocker/recoveryKeys/$count:
+    get:
+      tags:
+        - informationProtection.bitlocker
+      summary: Get the number of the resource
+      operationId: informationProtection.bitlocker.recoveryKeys_GetCount-3584
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /informationProtection/dataLossPreventionPolicies:
     get:
       tags:
@@ -10893,7 +11649,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10927,6 +11683,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /informationProtection/dataLossPreventionPolicies/$count:
+    get:
+      tags:
+        - informationProtection.dataLossPreventionPolicy
+      summary: Get the number of the resource
+      operationId: informationProtection.dataLossPreventionPolicies_GetCount-018b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /informationProtection/dataLossPreventionPolicies/microsoft.graph.evaluate:
     post:
       tags:
@@ -11175,7 +11945,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11415,7 +12185,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11461,6 +12231,26 @@ paths:
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
+  /informationProtection/policy/labels/$count:
+    get:
+      tags:
+        - informationProtection.informationProtectionPolicy
+      summary: Get the number of the resource
+      operationId: informationProtection.policy.labels_GetCount-9bc9
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2022-08-15T00:00:00.0000000+00:00'
+        date: '2021-02-15T00:00:00.0000000+00:00'
+        version: 2021-02/Beta_SensitivityLabels
+        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
   /informationProtection/policy/labels/microsoft.graph.evaluateApplication:
     post:
       tags:
@@ -11864,7 +12654,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12135,7 +12925,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12177,6 +12967,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/$count':
+    get:
+      tags:
+        - informationProtection.sensitivityLabel
+      summary: Get the number of the resource
+      operationId: informationProtection.sensitivityLabels.sublabels_GetCount-163e
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/microsoft.graph.evaluate':
     post:
       tags:
@@ -12218,6 +13030,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /informationProtection/sensitivityLabels/$count:
+    get:
+      tags:
+        - informationProtection.sensitivityLabel
+      summary: Get the number of the resource
+      operationId: informationProtection.sensitivityLabels_GetCount-60e5
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /informationProtection/sensitivityLabels/microsoft.graph.evaluate:
     post:
       tags:
@@ -12309,7 +13135,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12527,7 +13353,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12760,7 +13586,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12802,6 +13628,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results/$count':
+    get:
+      tags:
+        - informationProtection.threatAssessmentRequest
+      summary: Get the number of the resource
+      operationId: informationProtection.threatAssessmentRequests.results_GetCount-6c75
+      parameters:
+        - name: threatAssessmentRequest-id
+          in: path
+          description: The unique identifier of threatAssessmentRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: threatAssessmentRequest
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /informationProtection/threatAssessmentRequests/$count:
+    get:
+      tags:
+        - informationProtection.threatAssessmentRequest
+      summary: Get the number of the resource
+      operationId: informationProtection.threatAssessmentRequests_GetCount-693a
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /invitations:
     get:
       tags:
@@ -12998,7 +13860,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13290,7 +14152,27 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  /invitations/$count:
+    get:
+      tags:
+        - invitations.invitation
+      summary: Get the number of the resource
+      operationId: invitations_GetCount-8ff1
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /oauth2PermissionGrants:
     get:
       tags:
@@ -13487,7 +14369,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13525,6 +14407,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /oauth2PermissionGrants/$count:
+    get:
+      tags:
+        - oauth2PermissionGrants.oAuth2PermissionGrant
+      summary: Get the number of the resource
+      operationId: oauth2PermissionGrants_GetCount-8287
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /oauth2PermissionGrants/microsoft.graph.delta():
     get:
       tags:
@@ -13742,6 +14638,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/certificateBasedAuthConfiguration/$count':
+    get:
+      tags:
+        - organization.certificateBasedAuthConfiguration
+      summary: Get the number of the resource
+      operationId: organization.certificateBasedAuthConfiguration_GetCount-8262
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies:
     get:
       tags:
@@ -13850,7 +14768,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13924,7 +14842,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14135,7 +15053,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14169,6 +15087,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/activityBasedTimeoutPolicies/$count:
+    get:
+      tags:
+        - policies.activityBasedTimeoutPolicy
+      summary: Get the number of the resource
+      operationId: policies.activityBasedTimeoutPolicies_GetCount-1f03
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/adminConsentRequestPolicy:
     get:
       tags:
@@ -14238,7 +15170,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14449,7 +15381,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14614,6 +15546,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/appManagementPolicies/{appManagementPolicy-id}/appliesTo/$count':
+    get:
+      tags:
+        - policies.appManagementPolicy
+      summary: Get the number of the resource
+      operationId: policies.appManagementPolicies.appliesTo_GetCount-b064
+      parameters:
+        - name: appManagementPolicy-id
+          in: path
+          description: The unique identifier of appManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appManagementPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /policies/appManagementPolicies/$count:
+    get:
+      tags:
+        - policies.appManagementPolicy
+      summary: Get the number of the resource
+      operationId: policies.appManagementPolicies_GetCount-c99e
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/authenticationFlowsPolicy:
     get:
       tags:
@@ -14680,7 +15648,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14778,7 +15746,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14966,7 +15934,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15000,6 +15968,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/$count:
+    get:
+      tags:
+        - policies.authenticationMethodsPolicy
+      summary: Get the number of the resource
+      operationId: policies.authenticationMethodsPolicy.authenticationMethodConfigurations_GetCount-e541
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/authenticationStrengthPolicies:
     get:
       tags:
@@ -15193,7 +16175,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15425,7 +16407,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15467,6 +16449,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/authenticationStrengthPolicies/{authenticationStrengthPolicy-id}/combinationConfigurations/$count':
+    get:
+      tags:
+        - policies.authenticationStrengthPolicy
+      summary: Get the number of the resource
+      operationId: policies.authenticationStrengthPolicies.combinationConfigurations_GetCount-7b5f
+      parameters:
+        - name: authenticationStrengthPolicy-id
+          in: path
+          description: The unique identifier of authenticationStrengthPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationStrengthPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/authenticationStrengthPolicies/{authenticationStrengthPolicy-id}/microsoft.graph.updateAllowedCombinations':
     post:
       tags:
@@ -15535,6 +16539,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /policies/authenticationStrengthPolicies/$count:
+    get:
+      tags:
+        - policies.authenticationStrengthPolicy
+      summary: Get the number of the resource
+      operationId: policies.authenticationStrengthPolicies_GetCount-db73
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/authenticationStrengthPolicies/microsoft.graph.findByMethodMode(authenticationMethodModes={authenticationMethodModes})':
     get:
       tags:
@@ -15843,7 +16861,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16070,7 +17088,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16112,6 +17130,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/authorizationPolicy/{authorizationPolicy-id}/defaultUserRoleOverrides/$count':
+    get:
+      tags:
+        - policies.authorizationPolicy
+      summary: Get the number of the resource
+      operationId: policies.authorizationPolicy.defaultUserRoleOverrides_GetCount-0f74
+      parameters:
+        - name: authorizationPolicy-id
+          in: path
+          description: The unique identifier of authorizationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /policies/authorizationPolicy/$count:
+    get:
+      tags:
+        - policies.authorizationPolicy
+      summary: Get the number of the resource
+      operationId: policies.authorizationPolicy_GetCount-8ddd
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/b2cAuthenticationMethodsPolicy:
     get:
       tags:
@@ -16178,7 +17232,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16389,7 +17443,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16423,6 +17477,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/claimsMappingPolicies/$count:
+    get:
+      tags:
+        - policies.claimsMappingPolicy
+      summary: Get the number of the resource
+      operationId: policies.claimsMappingPolicies_GetCount-0f66
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/conditionalAccessPolicies:
     get:
       tags:
@@ -16609,7 +17677,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16643,6 +17711,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/conditionalAccessPolicies/$count:
+    get:
+      tags:
+        - policies.conditionalAccessPolicy
+      summary: Get the number of the resource
+      operationId: policies.conditionalAccessPolicies_GetCount-2c66
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/crossTenantAccessPolicy:
     get:
       tags:
@@ -16715,7 +17797,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16812,7 +17894,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17051,7 +18133,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17172,7 +18254,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17220,6 +18302,20 @@ paths:
         date: '2022-03-24T00:00:00.0000000+00:00'
         version: 2022-04/PrivatePreview:CrossTenantSyncPolicy
       x-ms-docs-operation-type: operation
+  /policies/crossTenantAccessPolicy/partners/$count:
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Get the number of the resource
+      operationId: policies.crossTenantAccessPolicy.partners_GetCount-d5d2
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/defaultAppManagementPolicy:
     get:
       tags:
@@ -17289,7 +18385,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17422,7 +18518,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17516,7 +18612,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17727,7 +18823,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17904,6 +19000,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$count':
+    get:
+      tags:
+        - policies.featureRolloutPolicy
+      summary: Get the number of the resource
+      operationId: policies.featureRolloutPolicies.appliesTo_GetCount-b7fc
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: The unique identifier of featureRolloutPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref':
     get:
       tags:
@@ -18202,6 +19320,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /policies/featureRolloutPolicies/$count:
+    get:
+      tags:
+        - policies.featureRolloutPolicy
+      summary: Get the number of the resource
+      operationId: policies.featureRolloutPolicies_GetCount-bb08
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/homeRealmDiscoveryPolicies:
     get:
       tags:
@@ -18387,7 +19519,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18421,6 +19553,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/homeRealmDiscoveryPolicies/$count:
+    get:
+      tags:
+        - policies.homeRealmDiscoveryPolicy
+      summary: Get the number of the resource
+      operationId: policies.homeRealmDiscoveryPolicies_GetCount-9451
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/identitySecurityDefaultsEnforcementPolicy:
     get:
       tags:
@@ -18488,7 +19634,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18703,7 +19849,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19058,6 +20204,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/mobileAppManagementPolicies/{mobilityManagementPolicy-id}/includedGroups/$count':
+    get:
+      tags:
+        - policies.mobilityManagementPolicy
+      summary: Get the number of the resource
+      operationId: policies.mobileAppManagementPolicies.includedGroups_GetCount-c90e
+      parameters:
+        - name: mobilityManagementPolicy-id
+          in: path
+          description: The unique identifier of mobilityManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobilityManagementPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/mobileAppManagementPolicies/{mobilityManagementPolicy-id}/includedGroups/$ref':
     get:
       tags:
@@ -19228,6 +20396,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/mobileAppManagementPolicies/$count:
+    get:
+      tags:
+        - policies.mobilityManagementPolicy
+      summary: Get the number of the resource
+      operationId: policies.mobileAppManagementPolicies_GetCount-d162
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/mobileDeviceManagementPolicies:
     get:
       tags:
@@ -19416,7 +20598,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19771,6 +20953,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy-id}/includedGroups/$count':
+    get:
+      tags:
+        - policies.mobilityManagementPolicy
+      summary: Get the number of the resource
+      operationId: policies.mobileDeviceManagementPolicies.includedGroups_GetCount-2b91
+      parameters:
+        - name: mobilityManagementPolicy-id
+          in: path
+          description: The unique identifier of mobilityManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobilityManagementPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy-id}/includedGroups/$ref':
     get:
       tags:
@@ -19941,6 +21145,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/mobileDeviceManagementPolicies/$count:
+    get:
+      tags:
+        - policies.mobilityManagementPolicy
+      summary: Get the number of the resource
+      operationId: policies.mobileDeviceManagementPolicies_GetCount-b4c6
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/permissionGrantPolicies:
     get:
       tags:
@@ -20122,7 +21340,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20386,7 +21604,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20428,6 +21646,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes/$count':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get the number of the resource
+      operationId: policies.permissionGrantPolicies.excludes_GetCount-7507
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: The unique identifier of permissionGrantPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes':
     get:
       tags:
@@ -20658,7 +21898,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20700,6 +21940,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes/$count':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get the number of the resource
+      operationId: policies.permissionGrantPolicies.includes_GetCount-4a76
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: The unique identifier of permissionGrantPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /policies/permissionGrantPolicies/$count:
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get the number of the resource
+      operationId: policies.permissionGrantPolicies_GetCount-86b8
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/roleManagementPolicies:
     get:
       tags:
@@ -20893,7 +22169,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21121,7 +22397,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21163,6 +22439,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/effectiveRules/$count':
+    get:
+      tags:
+        - policies.unifiedRoleManagementPolicy
+      summary: Get the number of the resource
+      operationId: policies.roleManagementPolicies.effectiveRules_GetCount-5858
+      parameters:
+        - name: unifiedRoleManagementPolicy-id
+          in: path
+          description: The unique identifier of unifiedRoleManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleManagementPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/rules':
     get:
       tags:
@@ -21357,7 +22655,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21399,6 +22697,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/rules/$count':
+    get:
+      tags:
+        - policies.unifiedRoleManagementPolicy
+      summary: Get the number of the resource
+      operationId: policies.roleManagementPolicies.rules_GetCount-6c00
+      parameters:
+        - name: unifiedRoleManagementPolicy-id
+          in: path
+          description: The unique identifier of unifiedRoleManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleManagementPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /policies/roleManagementPolicies/$count:
+    get:
+      tags:
+        - policies.unifiedRoleManagementPolicy
+      summary: Get the number of the resource
+      operationId: policies.roleManagementPolicies_GetCount-cdca
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/roleManagementPolicyAssignments:
     get:
       tags:
@@ -21576,7 +22910,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21671,6 +23005,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/roleManagementPolicyAssignments/$count:
+    get:
+      tags:
+        - policies.unifiedRoleManagementPolicyAssignment
+      summary: Get the number of the resource
+      operationId: policies.roleManagementPolicyAssignments_GetCount-8d94
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/servicePrincipalCreationPolicies:
     get:
       tags:
@@ -21847,7 +23195,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22086,7 +23434,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22128,6 +23476,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy-id}/excludes/$count':
+    get:
+      tags:
+        - policies.servicePrincipalCreationPolicy
+      summary: Get the number of the resource
+      operationId: policies.servicePrincipalCreationPolicies.excludes_GetCount-feb5
+      parameters:
+        - name: servicePrincipalCreationPolicy-id
+          in: path
+          description: The unique identifier of servicePrincipalCreationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipalCreationPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy-id}/includes':
     get:
       tags:
@@ -22333,7 +23703,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22375,6 +23745,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy-id}/includes/$count':
+    get:
+      tags:
+        - policies.servicePrincipalCreationPolicy
+      summary: Get the number of the resource
+      operationId: policies.servicePrincipalCreationPolicies.includes_GetCount-4d69
+      parameters:
+        - name: servicePrincipalCreationPolicy-id
+          in: path
+          description: The unique identifier of servicePrincipalCreationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipalCreationPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /policies/servicePrincipalCreationPolicies/$count:
+    get:
+      tags:
+        - policies.servicePrincipalCreationPolicy
+      summary: Get the number of the resource
+      operationId: policies.servicePrincipalCreationPolicies_GetCount-a1cf
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/tokenIssuancePolicies:
     get:
       tags:
@@ -22560,7 +23966,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22594,6 +24000,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/tokenIssuancePolicies/$count:
+    get:
+      tags:
+        - policies.tokenIssuancePolicy
+      summary: Get the number of the resource
+      operationId: policies.tokenIssuancePolicies_GetCount-224d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/tokenLifetimePolicies:
     get:
       tags:
@@ -22779,7 +24199,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22813,6 +24233,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/tokenLifetimePolicies/$count:
+    get:
+      tags:
+        - policies.tokenLifetimePolicy
+      summary: Get the number of the resource
+      operationId: policies.tokenLifetimePolicies_GetCount-12df
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /trustFramework:
     get:
       tags:
@@ -22871,7 +24305,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23043,7 +24477,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23295,6 +24729,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /trustFramework/keySets/$count:
+    get:
+      tags:
+        - trustFramework.trustFrameworkKeySet
+      summary: Get the number of the resource
+      operationId: trustFramework.keySets_GetCount-ffde
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /trustFramework/policies:
     get:
       tags:
@@ -23451,7 +24899,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23542,6 +24990,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /trustFramework/policies/$count:
+    get:
+      tags:
+        - trustFramework.trustFrameworkPolicy
+      summary: Get the number of the resource
+      operationId: trustFramework.policies_GetCount-b7b4
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/authentication':
     get:
       tags:
@@ -23612,6 +25074,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authentication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -23636,13 +25104,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authentication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -23669,6 +25143,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/emailMethods':
     get:
@@ -23739,6 +25219,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.emailAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -23777,6 +25263,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/emailMethods/{emailAuthenticationMethod-id}':
     get:
@@ -23836,6 +25328,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -23868,13 +25366,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -23909,7 +25413,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/emailMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.emailMethods_GetCount-6f5c
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/fido2Methods':
     get:
       tags:
@@ -23994,6 +25532,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.fido2AuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24061,6 +25605,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -24095,7 +25645,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/fido2Methods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.fido2Methods_GetCount-9673
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/methods':
     get:
       tags:
@@ -24162,6 +25746,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.authenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24196,6 +25786,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/methods/{authenticationMethod-id}':
     get:
@@ -24254,6 +25850,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -24286,14 +25888,48 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/methods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.methods_GetCount-0da1
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods':
     get:
       tags:
@@ -24377,6 +26013,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.microsoftAuthenticatorAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24445,6 +26087,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -24479,6 +26127,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device':
     get:
@@ -24588,7 +26242,41 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.microsoftAuthenticatorMethods_GetCount-af8c
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/operations':
     get:
       tags:
@@ -24666,6 +26354,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.longRunningOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24700,6 +26394,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/operations/{longRunningOperation-id}':
     get:
@@ -24762,6 +26462,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -24794,13 +26500,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -24835,7 +26547,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/operations/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.operations_GetCount-40a4
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods':
     get:
       tags:
@@ -24913,6 +26659,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -24979,6 +26731,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -25013,6 +26771,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}/device':
     get:
@@ -25121,7 +26885,41 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods_GetCount-3003
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/passwordMethods':
     get:
       tags:
@@ -25194,6 +26992,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.passwordAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -25228,6 +27032,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/passwordMethods/{passwordAuthenticationMethod-id}':
     get:
@@ -25288,7 +27098,41 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/passwordMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.passwordMethods_GetCount-ec55
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/phoneMethods':
     get:
       tags:
@@ -25364,6 +27208,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.phoneAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -25402,6 +27252,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}':
     get:
@@ -25463,6 +27319,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -25495,13 +27357,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -25536,7 +27404,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/phoneMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.phoneMethods_GetCount-2ea0
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/softwareOathMethods':
     get:
       tags:
@@ -25606,6 +27508,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.softwareOathAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -25667,6 +27575,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -25701,13 +27615,47 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/softwareOathMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.softwareOathMethods_GetCount-0ccd
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/temporaryAccessPassMethods':
     get:
       tags:
         - users.authentication
       summary: List temporaryAccessPassMethods
-      description: Retrieve a list of a user's temporaryAccessPassAuthenticationMethod objects and their properties. This API will only return a single object in the collection as a user can have only one Temporary Access Pass method.
+      description: Retrieve a list of a user's temporaryAccessPassAuthenticationMethod objects and their properties. This API will only return a single object in the collection as a user can have only one Temporary Access Pass (TAP) method.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/authentication-list-temporaryaccesspassmethods?view=graph-rest-1.0
@@ -25783,6 +27731,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.temporaryAccessPassAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -25821,6 +27775,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod-id}':
     get:
@@ -25884,6 +27844,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -25918,7 +27884,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/temporaryAccessPassMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.temporaryAccessPassMethods_GetCount-3b4c
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/authentication/windowsHelloForBusinessMethods':
     get:
       tags:
@@ -25996,6 +27996,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.windowsHelloForBusinessAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -26062,6 +28068,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -26096,6 +28108,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device':
     get:
@@ -26205,7 +28223,41 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/windowsHelloForBusinessMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods_GetCount-0479
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/informationProtection':
     get:
       tags:
@@ -26266,6 +28318,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.informationProtection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -26290,13 +28348,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -26323,6 +28387,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/bitlocker':
     get:
@@ -26374,6 +28444,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bitlocker'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/bitlocker/recoveryKeys':
     get:
@@ -26453,6 +28529,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.bitlockerRecoveryKeyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -26518,7 +28600,41 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/informationProtection/bitlocker/recoveryKeys/$count':
+    get:
+      tags:
+        - users.informationProtection
+      summary: Get the number of the resource
+      operationId: users.informationProtection.bitlocker.recoveryKeys_GetCount-f910
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/informationProtection/dataLossPreventionPolicies':
     get:
       tags:
@@ -26584,6 +28700,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.dataLossPreventionPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -26618,6 +28740,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy-id}':
     get:
@@ -26676,6 +28804,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -26708,13 +28842,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -26749,7 +28889,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/informationProtection/dataLossPreventionPolicies/$count':
+    get:
+      tags:
+        - users.informationProtection
+      summary: Get the number of the resource
+      operationId: users.informationProtection.dataLossPreventionPolicies_GetCount-9cb9
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/informationProtection/policy':
     get:
       tags:
@@ -26802,10 +28976,10 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
-        version: 2021-02/Beta_SensitivityLabels
-        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -26830,7 +29004,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26839,10 +29013,10 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
-        version: 2021-02/Beta_SensitivityLabels
-        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -26871,10 +29045,10 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
-        version: 2021-02/Beta_SensitivityLabels
-        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/policy/labels':
     get:
@@ -26965,10 +29139,10 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
-        version: 2021-02/Beta_SensitivityLabels
-        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -27005,10 +29179,10 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
-        version: 2021-02/Beta_SensitivityLabels
-        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/policy/labels/{informationProtectionLabel-id}':
     get:
@@ -27075,10 +29249,10 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
-        version: 2021-02/Beta_SensitivityLabels
-        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -27111,7 +29285,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -27120,10 +29294,10 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
-        version: 2021-02/Beta_SensitivityLabels
-        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -27160,11 +29334,39 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
-        version: 2021-02/Beta_SensitivityLabels
-        description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/informationProtection/policy/labels/$count':
+    get:
+      tags:
+        - users.informationProtection
+      summary: Get the number of the resource
+      operationId: users.informationProtection.policy.labels_GetCount-847f
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/informationProtection/sensitivityLabels':
     get:
       tags:
@@ -27265,6 +29467,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.sensitivityLabelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -27299,6 +29507,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/sensitivityLabels/{sensitivityLabel-id}':
     get:
@@ -27370,6 +29584,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -27402,13 +29622,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -27443,6 +29669,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels':
     get:
@@ -27552,6 +29784,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.sensitivityLabelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -27594,6 +29832,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}':
     get:
@@ -27673,6 +29917,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -27713,13 +29963,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -27762,7 +30018,77 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/$count':
+    get:
+      tags:
+        - users.informationProtection
+      summary: Get the number of the resource
+      operationId: users.informationProtection.sensitivityLabels.sublabels_GetCount-9cd5
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/informationProtection/sensitivityLabels/$count':
+    get:
+      tags:
+        - users.informationProtection
+      summary: Get the number of the resource
+      operationId: users.informationProtection.sensitivityLabels_GetCount-4162
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/informationProtection/sensitivityPolicySettings':
     get:
       tags:
@@ -27815,6 +30141,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -27839,13 +30171,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -27872,6 +30210,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/threatAssessmentRequests':
     get:
@@ -27962,6 +30306,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.threatAssessmentRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -28000,6 +30350,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}':
     get:
@@ -28066,6 +30422,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -28098,13 +30460,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -28139,6 +30507,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results':
     get:
@@ -28220,6 +30594,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.threatAssessmentResultCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -28262,6 +30642,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results/{threatAssessmentResult-id}':
     get:
@@ -28331,6 +30717,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -28371,13 +30763,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -28420,7 +30818,77 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results/$count':
+    get:
+      tags:
+        - users.informationProtection
+      summary: Get the number of the resource
+      operationId: users.informationProtection.threatAssessmentRequests.results_GetCount-7d97
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: threatAssessmentRequest-id
+          in: path
+          description: The unique identifier of threatAssessmentRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: threatAssessmentRequest
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/informationProtection/threatAssessmentRequests/$count':
+    get:
+      tags:
+        - users.informationProtection
+      summary: Get the number of the resource
+      operationId: users.informationProtection.threatAssessmentRequests_GetCount-4c1a
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
 components:
   schemas:
     microsoft.graph.dataPolicyOperation:
@@ -29235,6 +31703,9 @@ components:
             displayName:
               type: string
               description: The display name for the service principal.
+              nullable: true
+            isEnabled:
+              type: boolean
               nullable: true
             isProcessing:
               type: boolean
@@ -32629,10 +35100,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -33227,6 +35698,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
               description: The results of every partner agent's installation status on Cloud PC.
+            powerState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -33429,7 +35902,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity''s tags property.Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -36729,6 +39202,9 @@ components:
         allowedToCreateSecurityGroups:
           type: boolean
           description: Indicates whether the default user role can create security groups.
+        allowedToCreateTenants:
+          type: boolean
+          nullable: true
         allowedToReadBitlockerKeysForOwnedDevice:
           type: boolean
           description: Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
@@ -36898,7 +39374,7 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         decisionHistoriesForReviewersEnabled:
           type: boolean
           description: 'Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).'
@@ -36909,7 +39385,7 @@ components:
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+          description: 'Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -37152,6 +39628,9 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.identityApiConnectorCollectionResponse:
       title: Collection of identityApiConnector
       type: object
@@ -38218,19 +40697,19 @@ components:
           type: array
           items:
             type: string
-          description: 'Group IDs in scope of policy unless explicitly excluded, or All.'
+          description: Group IDs in scope of policy unless explicitly excluded.
         includeGuestsOrExternalUsers:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessGuestsOrExternalUsers'
         includeRoles:
           type: array
           items:
             type: string
-          description: 'Role IDs in scope of policy unless explicitly excluded, or All.'
+          description: Role IDs in scope of policy unless explicitly excluded.
         includeUsers:
           type: array
           items:
             type: string
-          description: 'User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.'
+          description: 'User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.'
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessGrantControl:
@@ -38674,6 +41153,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcPowerState:
+      title: cloudPcPowerState
+      enum:
+        - running
+        - poweredOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -38702,6 +41188,8 @@ components:
         - restoring
         - pendingProvision
         - unknownFutureValue
+        - movingRegion
+        - resizePendingLicense
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -44322,6 +46810,10 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            metadataContent:
+              type: string
+              format: base64url
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -44400,6 +46892,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -45660,11 +48154,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -49082,23 +51576,28 @@ components:
       properties:
         nextInSeriesTaskId:
           type: string
+          description: 'The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.'
           nullable: true
         occurrenceId:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
           format: int32
         previousInSeriesTaskId:
           type: string
+          description: The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
           nullable: true
         recurrenceStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         schedule:
           $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
         seriesId:
           type: string
+          description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
@@ -49873,6 +52372,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -49905,6 +52415,8 @@ components:
           properties:
             allowedInstallationScopes:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             azureADAppId:
               type: string
               description: The WebApplicationInfo.Id from the Teams app manifest.
@@ -52884,6 +55396,7 @@ components:
         nextOccurrenceDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The next date for this schedule. When a new task is instantiated to continue the recurrence series, this date is used for the dueDateTime of the new plannerTask. Auto-generated by the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         pattern:
@@ -52891,6 +55404,7 @@ components:
         patternStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date for the recurrence pattern. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -53177,6 +55691,18 @@ components:
         - emailUser
         - azureCommunicationServicesUser
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          description: The name of the resource-specific permission.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -53193,6 +55719,14 @@ components:
         - personal
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -53587,15 +56121,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -55393,6 +57927,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -56485,6 +59026,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.identityApiConnectorCollectionResponse:
       description: Retrieved collection
       content:

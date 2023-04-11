@@ -64,7 +64,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -292,7 +292,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -527,7 +527,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -796,7 +796,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -846,6 +846,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connections.groups.members_GetCount-482b
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: The unique identifier of externalGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/external/connections/{externalConnection-id}/groups/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connections.groups_GetCount-51f5
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/items':
     get:
       tags:
@@ -1016,11 +1068,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - external.externalConnection
       summary: Update the navigation property items in external
-      operationId: external.connections_UpdateItems
+      operationId: external.connections_SetItems
       parameters:
         - name: externalConnection-id
           in: path
@@ -1047,7 +1099,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1320,7 +1372,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1437,6 +1489,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/items/{externalItem-id}/activities/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connections.items.activities_GetCount-d5b5
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalItem-id
+          in: path
+          description: The unique identifier of externalItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/items/{externalItem-id}/microsoft.graph.externalConnectors.addActivities':
     post:
       tags:
@@ -1498,6 +1580,28 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/external/connections/{externalConnection-id}/items/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connections.items_GetCount-e4dc
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/operations':
     get:
       tags:
@@ -1691,7 +1795,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1733,6 +1837,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/operations/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connections.operations_GetCount-f5c4
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/quota':
     get:
       tags:
@@ -1810,7 +1936,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1926,7 +2052,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1960,6 +2086,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/connections/$count:
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connections_GetCount-5ccf
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData:
     get:
       tags:
@@ -2186,7 +2326,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2298,15 +2438,29 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/dataConnectors/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.dataConnectors_GetCount-9a1c
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/inboundFlows:
     get:
       tags:
         - external.industryDataRoot
-      summary: List inboundFileFlows
-      description: Get a list of the inboundFileFlow objects and their properties.
+      summary: List inboundFlows
+      description: Get a list of the inboundFlow objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
       operationId: external.industryData_ListInboundFlows
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2382,11 +2536,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFileFlow
-      description: 'Create a new inboundFileFlow object. The following prerequisite resources are required when you create an **inboundFileFlow**:'
+      summary: Create inboundFlow
+      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an **inboundFlow**:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
       operationId: external.industryData_CreateInboundFlows
       requestBody:
         description: New navigation property
@@ -2487,7 +2641,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2628,6 +2782,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/inboundFlows/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.inboundFlows_GetCount-9a6a
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/operations:
     get:
       tags:
@@ -2805,7 +2973,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2839,6 +3007,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/operations/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.operations_GetCount-bd84
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/referenceDefinitions:
     get:
       tags:
@@ -3024,7 +3206,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3058,6 +3240,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/referenceDefinitions/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.referenceDefinitions_GetCount-6401
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/roleGroups:
     get:
       tags:
@@ -3223,7 +3419,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3257,6 +3453,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/roleGroups/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.roleGroups_GetCount-77ec
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/runs:
     get:
       tags:
@@ -3594,6 +3804,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/industryData/runs/{industryDataRun-id}/activities/$count':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.runs.activities_GetCount-5270
+      parameters:
+        - name: industryDataRun-id
+          in: path
+          description: The unique identifier of industryDataRun
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRun
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/industryData/runs/{industryDataRun-id}/microsoft.graph.industryData.getStatistics()':
     get:
       tags:
@@ -3619,6 +3851,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /external/industryData/runs/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.runs_GetCount-1731
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/runs/microsoft.graph.industryData.getStatistics():
     get:
       tags:
@@ -3808,7 +4054,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3842,6 +4088,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/sourceSystems/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.sourceSystems_GetCount-e0b9
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/years:
     get:
       tags:
@@ -4019,7 +4279,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4053,6 +4313,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/years/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.years_GetCount-b7cc
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /search:
     get:
       tags:
@@ -4114,7 +4388,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4311,7 +4585,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4345,6 +4619,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /search/acronyms/$count:
+    get:
+      tags:
+        - search.acronym
+      summary: Get the number of the resource
+      operationId: search.acronyms_GetCount-b41d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /search/bookmarks:
     get:
       tags:
@@ -4570,7 +4858,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4604,6 +4892,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /search/bookmarks/$count:
+    get:
+      tags:
+        - search.bookmark
+      summary: Get the number of the resource
+      operationId: search.bookmarks_GetCount-b2b7
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /search/microsoft.graph.query:
     post:
       tags:
@@ -4868,7 +5170,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4902,6 +5204,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /search/qnas/$count:
+    get:
+      tags:
+        - search.qna
+      summary: Get the number of the resource
+      operationId: search.qnas_GetCount-ef94
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.externalConnectors.external:
@@ -6083,6 +6399,9 @@ components:
         - androidWorkProfile
         - unknown
         - androidAOSP
+        - androidMobileApplicationManagement
+        - iOSMobileApplicationManagement
+        - unknownFutureValue
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -6119,6 +6438,15 @@ components:
           - value: androidAOSP
             description: Android AOSP.
             name: androidAOSP
+          - value: androidMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for android devices.
+            name: androidMobileApplicationManagement
+          - value: iOSMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for iOS devices
+            name: iOSMobileApplicationManagement
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use
+            name: unknownFutureValue
     microsoft.graph.search.answerVariant:
       title: answerVariant
       type: object
@@ -6350,6 +6678,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       title: Collection of externalItem
       type: object
@@ -7054,6 +7385,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.identityCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       description: Retrieved collection
       content:

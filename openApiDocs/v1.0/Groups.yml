@@ -186,7 +186,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -310,6 +310,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /groupLifecyclePolicies/$count:
+    get:
+      tags:
+        - groupLifecyclePolicies.groupLifecyclePolicy
+      summary: Get the number of the resource
+      operationId: groupLifecyclePolicies_GetCount-ca62
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /groups:
     get:
       tags:
@@ -752,7 +766,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -892,6 +906,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/acceptedSenders/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: groups.acceptedSenders_GetCount-576b
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/acceptedSenders/$ref':
     get:
       tags:
@@ -1109,12 +1144,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -1221,15 +1256,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -1433,15 +1468,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -1695,12 +1730,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -1791,15 +1826,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -1971,15 +2006,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -2339,12 +2374,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -2451,15 +2486,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -2663,15 +2698,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -2925,12 +2960,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -3021,15 +3056,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -3201,15 +3236,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -3686,12 +3721,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -3798,15 +3833,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -4010,15 +4045,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -4272,12 +4307,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -4368,15 +4403,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -4548,15 +4583,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -5224,7 +5259,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5861,6 +5896,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads.posts.attachments_GetCount-d70e
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -6208,7 +6288,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6274,6 +6354,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/extensions/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads.posts.extensions_GetCount-e717
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo':
     get:
       tags:
@@ -6678,6 +6803,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/attachments/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads.posts.inReplyTo.attachments_GetCount-d80c
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -7025,7 +7195,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7091,6 +7261,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/extensions/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads.posts.inReplyTo.extensions_GetCount-6de4
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/microsoft.graph.forward':
     post:
       tags:
@@ -7505,7 +7720,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7571,6 +7786,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads.posts.inReplyTo.multiValueExtendedProperties_GetCount-a639
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/singleValueExtendedProperties':
     get:
       tags:
@@ -7858,7 +8119,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7924,6 +8185,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads.posts.inReplyTo.singleValueExtendedProperties_GetCount-7c2c
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/microsoft.graph.forward':
     post:
       tags:
@@ -8338,7 +8645,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8404,6 +8711,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads.posts.multiValueExtendedProperties_GetCount-bd30
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -8691,7 +9044,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8757,6 +9110,140 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads.posts.singleValueExtendedProperties_GetCount-ef28
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads.posts_GetCount-3615
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/conversations/{conversation-id}/threads/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations.threads_GetCount-401a
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: The unique identifier of conversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/conversations/$count':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get the number of the resource
+      operationId: groups.conversations_GetCount-c7df
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/createdOnBehalfOf':
     get:
       tags:
@@ -14198,12 +14685,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -14310,15 +14797,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -14522,15 +15009,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -14784,12 +15271,12 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
                 SendResponse:
                   type: boolean
                   default: false
+                  nullable: true
+                Comment:
+                  type: string
                   nullable: true
               additionalProperties:
                 type: object
@@ -14880,15 +15367,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -15060,15 +15547,15 @@ paths:
             schema:
               type: object
               properties:
-                Comment:
-                  type: string
-                  nullable: true
+                ProposedNewTime:
+                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
                 SendResponse:
                   type: boolean
                   default: false
                   nullable: true
-                ProposedNewTime:
-                  $ref: '#/components/schemas/microsoft.graph.timeSlot'
+                Comment:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -15467,7 +15954,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15509,6 +15996,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/extensions/$count':
+    get:
+      tags:
+        - groups.extension
+      summary: Get the number of the resource
+      operationId: groups.extensions_GetCount-e2e0
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/groupLifecyclePolicies':
     get:
       tags:
@@ -15711,7 +16220,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15855,6 +16364,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/groupLifecyclePolicies/$count':
+    get:
+      tags:
+        - groups.groupLifecyclePolicy
+      summary: Get the number of the resource
+      operationId: groups.groupLifecyclePolicies_GetCount-ba70
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/memberOf':
     get:
       tags:
@@ -16007,6 +16538,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/memberOf/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: groups.memberOf_GetCount-e9c5
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/members':
     get:
       tags:
@@ -16132,6 +16695,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/members/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: groups.members_GetCount-e1e6
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/members/$ref':
     get:
       tags:
@@ -16361,6 +16956,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/membersWithLicenseErrors/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: groups.membersGraphWPreLicenseErrors_GetCount-3ebc
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/microsoft.graph.addFavorite':
     post:
       tags:
@@ -18601,6 +19228,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/owners/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: groups.owners_GetCount-9fe3
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/owners/$ref':
     get:
       tags:
@@ -18895,7 +19554,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19226,6 +19885,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/permissionGrants/$count':
+    get:
+      tags:
+        - groups.resourceSpecificPermissionGrant
+      summary: Get the number of the resource
+      operationId: groups.permissionGrants_GetCount-76af
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/permissionGrants/microsoft.graph.delta()':
     get:
       tags:
@@ -19532,11 +20213,37 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.profilePhoto
+      summary: Delete navigation property photo for groups
+      operationId: groups_DeletePhoto
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19778,6 +20485,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/photos/$count':
+    get:
+      tags:
+        - groups.profilePhoto
+      summary: Get the number of the resource
+      operationId: groups.photos_GetCount-7ca0
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/rejectedSenders':
     get:
       tags:
@@ -19880,6 +20608,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/rejectedSenders/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: groups.rejectedSenders_GetCount-b188
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/rejectedSenders/$ref':
     get:
       tags:
@@ -20155,7 +20904,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20197,6 +20946,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/settings/$count':
+    get:
+      tags:
+        - groups.groupSetting
+      summary: Get the number of the resource
+      operationId: groups.settings_GetCount-7641
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites':
     post:
       tags:
@@ -25969,7 +26740,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26542,6 +27313,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads.posts.attachments_GetCount-b54e
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -26849,7 +27657,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26907,6 +27715,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads.posts.extensions_GetCount-5e10
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo':
     get:
       tags:
@@ -27271,6 +28116,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/attachments/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads.posts.inReplyTo.attachments_GetCount-5b74
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/attachments/microsoft.graph.createUploadSession':
     post:
       tags:
@@ -27578,7 +28460,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -27636,6 +28518,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/extensions/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads.posts.inReplyTo.extensions_GetCount-364f
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/microsoft.graph.forward':
     post:
       tags:
@@ -28002,7 +28921,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28060,6 +28979,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads.posts.inReplyTo.multiValueExtendedProperties_GetCount-c9fe
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/singleValueExtendedProperties':
     get:
       tags:
@@ -28315,7 +29272,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28373,6 +29330,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads.posts.inReplyTo.singleValueExtendedProperties_GetCount-5c65
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/microsoft.graph.forward':
     post:
       tags:
@@ -28739,7 +29734,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28797,6 +29792,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads.posts.multiValueExtendedProperties_GetCount-8586
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -29052,7 +30085,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -29110,6 +30143,94 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads.posts.singleValueExtendedProperties_GetCount-f296
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: The unique identifier of post
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/threads/{conversationThread-id}/posts/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads.posts_GetCount-fcff
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: The unique identifier of conversationThread
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/threads/$count':
+    get:
+      tags:
+        - groups.conversationThread
+      summary: Get the number of the resource
+      operationId: groups.threads_GetCount-22d8
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/transitiveMemberOf':
     get:
       tags:
@@ -29262,6 +30383,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/transitiveMemberOf/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: groups.transitiveMemberOf_GetCount-c756
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/transitiveMembers':
     get:
       tags:
@@ -29414,6 +30567,62 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/transitiveMembers/$count':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get the number of the resource
+      operationId: groups.transitiveMembers_GetCount-1996
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /groups/$count:
+    get:
+      tags:
+        - groups.group
+      summary: Get the number of the resource
+      operationId: groups_GetCount-044a
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /groups/microsoft.graph.delta():
     get:
       tags:
@@ -29943,7 +31152,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -29981,6 +31190,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /groupSettings/$count:
+    get:
+      tags:
+        - groupSettings.groupSetting
+      summary: Get the number of the resource
+      operationId: groupSettings_GetCount-d8de
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.groupLifecyclePolicy:
@@ -33825,6 +35048,9 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.groupCollectionResponse:
       title: Collection of group
       type: object
@@ -34880,6 +36106,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -36992,6 +38220,32 @@ components:
         - noEnd
         - numbered
       type: string
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          description: Request identifier of the last non-interactive sign-in performed by this user.
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.assignedPlan:
       title: assignedPlan
       type: object
@@ -38443,6 +39697,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             attendanceReports:
               type: array
               items:
@@ -40612,6 +41868,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -42663,15 +43933,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -42782,6 +44052,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.groupCollectionResponse:
       description: Retrieved collection
       content:

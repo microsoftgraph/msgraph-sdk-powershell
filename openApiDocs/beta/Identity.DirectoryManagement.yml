@@ -216,7 +216,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -441,7 +441,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -483,6 +483,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/administrativeUnits/{administrativeUnit-id}/extensions/$count':
+    get:
+      tags:
+        - administrativeUnits.extension
+      summary: Get the number of the resource
+      operationId: administrativeUnits.extensions_GetCount-d91f
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: The unique identifier of administrativeUnit
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/administrativeUnits/{administrativeUnit-id}/members':
     get:
       tags:
@@ -605,6 +627,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/administrativeUnits/{administrativeUnit-id}/members/$count':
+    get:
+      tags:
+        - administrativeUnits.directoryObject
+      summary: Get the number of the resource
+      operationId: administrativeUnits.members_GetCount-bb9a
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: The unique identifier of administrativeUnit
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/administrativeUnits/{administrativeUnit-id}/members/$ref':
     get:
       tags:
@@ -1137,7 +1191,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1179,6 +1233,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/administrativeUnits/{administrativeUnit-id}/scopedRoleMembers/$count':
+    get:
+      tags:
+        - administrativeUnits.scopedRoleMembership
+      summary: Get the number of the resource
+      operationId: administrativeUnits.scopedRoleMembers_GetCount-ef82
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: The unique identifier of administrativeUnit
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /administrativeUnits/$count:
+    get:
+      tags:
+        - administrativeUnits.administrativeUnit
+      summary: Get the number of the resource
+      operationId: administrativeUnits_GetCount-ce9c
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /administrativeUnits/microsoft.graph.delta():
     get:
       tags:
@@ -1640,7 +1740,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1826,6 +1926,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/directReports/$count':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get the number of the resource
+      operationId: contacts.directReports_GetCount-94c4
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: The unique identifier of orgContact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/contacts/{orgContact-id}/manager':
     get:
       tags:
@@ -2032,6 +2164,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/memberOf/$count':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get the number of the resource
+      operationId: contacts.memberOf_GetCount-46e4
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: The unique identifier of orgContact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -2424,6 +2588,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/transitiveMemberOf/$count':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get the number of the resource
+      operationId: contacts.transitiveMemberOf_GetCount-d749
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: The unique identifier of orgContact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/contacts/{orgContact-id}/transitiveReports':
     get:
       tags:
@@ -2553,6 +2749,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/transitiveReports/$count':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get the number of the resource
+      operationId: contacts.transitiveReports_GetCount-c575
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: The unique identifier of orgContact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /contacts/$count:
+    get:
+      tags:
+        - contacts.orgContact
+      summary: Get the number of the resource
+      operationId: contacts_GetCount-60f9
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /contacts/microsoft.graph.delta():
     get:
       tags:
@@ -2976,7 +3218,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3255,6 +3497,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /contracts/$count:
+    get:
+      tags:
+        - contracts.contract
+      summary: Get the number of the resource
+      operationId: contracts_GetCount-8092
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /contracts/microsoft.graph.delta():
     get:
       tags:
@@ -3805,7 +4061,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4066,7 +4322,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4165,6 +4421,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/commands/$count':
+    get:
+      tags:
+        - devices.command
+      summary: Get the number of the resource
+      operationId: devices.commands_GetCount-25cf
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/devices/{device-id}/extensions':
     get:
       tags:
@@ -4352,7 +4630,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4394,6 +4672,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/extensions/$count':
+    get:
+      tags:
+        - devices.extension
+      summary: Get the number of the resource
+      operationId: devices.extensions_GetCount-40b0
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/devices/{device-id}/memberOf':
     get:
       tags:
@@ -4546,6 +4846,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/memberOf/$count':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the number of the resource
+      operationId: devices.memberOf_GetCount-bd14
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/devices/{device-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -4916,6 +5248,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/registeredOwners/$count':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the number of the resource
+      operationId: devices.registeredOwners_GetCount-d4e7
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/devices/{device-id}/registeredOwners/$ref':
     get:
       tags:
@@ -5079,13 +5443,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/devices/{device-id}/registeredUsers/{directoryObject-id}':
-    get:
+  '/devices/{device-id}/registeredUsers/{directoryObject-id}/$ref':
+    delete:
       tags:
         - devices.directoryObject
-      summary: Get registeredUsers from devices
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      operationId: devices_GetRegisteredUsers
+      summary: Delete ref of navigation property registeredUsers for devices
+      operationId: devices_DeleteRegisteredUsersGraphBPreRef
       parameters:
         - name: device-id
           in: path
@@ -5103,6 +5466,40 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          style: form
+          explode: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/devices/{device-id}/registeredUsers/$count':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the number of the resource
+      operationId: devices.registeredUsers_GetCount-e934
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
@@ -5113,9 +5510,50 @@ paths:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
-        - name: $select
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/devices/{device-id}/registeredUsers/$ref':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get ref of registeredUsers from devices
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
+      operationId: devices_ListRegisteredUsersGraphBPreRef
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
           in: query
-          description: Select properties to be returned
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -5124,27 +5562,38 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
+                - deletedDateTime desc
               type: string
       responses:
         2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - devices.directoryObject
+      summary: Create new navigation property ref to registeredUsers for devices
+      operationId: devices_CreateRegisteredUsersGraphBPreRef
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5300,6 +5749,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/transitiveMemberOf/$count':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the number of the resource
+      operationId: devices.transitiveMemberOf_GetCount-5cbd
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/devices/{device-id}/usageRights':
     get:
       tags:
@@ -5502,7 +5983,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5544,6 +6025,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/usageRights/$count':
+    get:
+      tags:
+        - devices.usageRight
+      summary: Get the number of the resource
+      operationId: devices.usageRights_GetCount-4b57
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /devices/$count:
+    get:
+      tags:
+        - devices.device
+      summary: Get the number of the resource
+      operationId: devices_GetCount-3489
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /devices/microsoft.graph.delta():
     get:
       tags:
@@ -5934,7 +6461,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6128,7 +6655,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6349,7 +6876,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6391,6 +6918,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directory/administrativeUnits/{administrativeUnit-id}/extensions/$count':
+    get:
+      tags:
+        - directory.administrativeUnit
+      summary: Get the number of the resource
+      operationId: directory.administrativeUnits.extensions_GetCount-48cb
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: The unique identifier of administrativeUnit
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/directory/administrativeUnits/{administrativeUnit-id}/members':
     get:
       tags:
@@ -6513,6 +7062,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directory/administrativeUnits/{administrativeUnit-id}/members/$count':
+    get:
+      tags:
+        - directory.administrativeUnit
+      summary: Get the number of the resource
+      operationId: directory.administrativeUnits.members_GetCount-777a
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: The unique identifier of administrativeUnit
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/directory/administrativeUnits/{administrativeUnit-id}/members/$ref':
     get:
       tags:
@@ -7045,7 +7626,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7087,6 +7668,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directory/administrativeUnits/{administrativeUnit-id}/scopedRoleMembers/$count':
+    get:
+      tags:
+        - directory.administrativeUnit
+      summary: Get the number of the resource
+      operationId: directory.administrativeUnits.scopedRoleMembers_GetCount-cb3a
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: The unique identifier of administrativeUnit
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directory/administrativeUnits/$count:
+    get:
+      tags:
+        - directory.administrativeUnit
+      summary: Get the number of the resource
+      operationId: directory.administrativeUnits_GetCount-a5a1
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/administrativeUnits/microsoft.graph.delta():
     get:
       tags:
@@ -7467,7 +8084,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7501,6 +8118,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /directory/attributeSets/$count:
+    get:
+      tags:
+        - directory.attributeSet
+      summary: Get the number of the resource
+      operationId: directory.attributeSets_GetCount-147b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/customSecurityAttributeDefinitions:
     get:
       tags:
@@ -7698,7 +8329,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7930,7 +8561,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7972,6 +8603,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition-id}/allowedValues/$count':
+    get:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Get the number of the resource
+      operationId: directory.customSecurityAttributeDefinitions.allowedValues_GetCount-c982
+      parameters:
+        - name: customSecurityAttributeDefinition-id
+          in: path
+          description: The unique identifier of customSecurityAttributeDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: customSecurityAttributeDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directory/customSecurityAttributeDefinitions/$count:
+    get:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Get the number of the resource
+      operationId: directory.customSecurityAttributeDefinitions_GetCount-ae4b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/deletedItems:
     get:
       tags:
@@ -8128,7 +8795,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8407,6 +9074,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directory/deletedItems/$count:
+    get:
+      tags:
+        - directory.directoryObject
+      summary: Get the number of the resource
+      operationId: directory.deletedItems_GetCount-665f
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/deletedItems/microsoft.graph.delta():
     get:
       tags:
@@ -8797,7 +9478,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9004,6 +9685,34 @@ paths:
         version: 2021-01/DirectoryFeatureRolloutPolicies
         description: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.
       x-ms-docs-operation-type: operation
+  '/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$count':
+    get:
+      tags:
+        - directory.featureRolloutPolicy
+      summary: Get the number of the resource
+      operationId: directory.featureRolloutPolicies.appliesTo_GetCount-ba4b
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: The unique identifier of featureRolloutPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2021-06-30T00:00:00.0000000+00:00'
+        date: '2021-03-05T00:00:00.0000000+00:00'
+        version: 2021-01/DirectoryFeatureRolloutPolicies
+        description: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.
   '/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref':
     get:
       tags:
@@ -9338,6 +10047,26 @@ paths:
         version: 2021-01/DirectoryFeatureRolloutPolicies
         description: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.
       x-ms-docs-operation-type: action
+  /directory/featureRolloutPolicies/$count:
+    get:
+      tags:
+        - directory.featureRolloutPolicy
+      summary: Get the number of the resource
+      operationId: directory.featureRolloutPolicies_GetCount-041a
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2021-06-30T00:00:00.0000000+00:00'
+        date: '2021-03-05T00:00:00.0000000+00:00'
+        version: 2021-01/DirectoryFeatureRolloutPolicies
+        description: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.
   /directory/federationConfigurations:
     get:
       tags:
@@ -9496,7 +10225,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9530,6 +10259,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /directory/federationConfigurations/$count:
+    get:
+      tags:
+        - directory.identityProviderBase
+      summary: Get the number of the resource
+      operationId: directory.federationConfigurations_GetCount-1592
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/federationConfigurations/microsoft.graph.availableProviderTypes():
     get:
       tags:
@@ -9774,7 +10517,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9935,11 +10678,29 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directory/impactedResources/$count:
+    get:
+      tags:
+        - directory.impactedResource
+      summary: Get the number of the resource
+      operationId: directory.impactedResources_GetCount-e429
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/inboundSharedUserProfiles:
     get:
       tags:
         - directory.inboundSharedUserProfile
-      summary: Get inboundSharedUserProfiles from directory
+      summary: List inboundSharedUserProfiles
+      description: Retrieve the properties of all inboundSharedUserProfiles.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-list-inboundshareduserprofiles?view=graph-rest-1.0
       operationId: directory_ListInboundSharedUserProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10029,6 +10790,7 @@ paths:
       tags:
         - directory.inboundSharedUserProfile
       summary: Get inboundSharedUserProfiles from directory
+      description: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
       operationId: directory_GetInboundSharedUserProfiles
       parameters:
         - name: inboundSharedUserProfile-userId
@@ -10099,7 +10861,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10138,6 +10900,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action exportPersonalData
+      description: Create a request to export the personal data for an inboundSharedUserProfile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/inboundshareduserprofile-exportpersonaldata?view=graph-rest-1.0
       operationId: directory.inboundSharedUserProfiles_exportPersonalData
       parameters:
         - name: inboundSharedUserProfile-userId
@@ -10172,6 +10938,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action removePersonalData
+      description: 'Create a request to remove the personal data for an inboundSharedUserProfile. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/inboundshareduserprofile-removepersonaldata?view=graph-rest-1.0
       operationId: directory.inboundSharedUserProfiles_removePersonalData
       parameters:
         - name: inboundSharedUserProfile-userId
@@ -10188,6 +10958,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directory/inboundSharedUserProfiles/$count:
+    get:
+      tags:
+        - directory.inboundSharedUserProfile
+      summary: Get the number of the resource
+      operationId: directory.inboundSharedUserProfiles_GetCount-ea62
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/onPremisesSynchronization:
     get:
       tags:
@@ -10350,7 +11134,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10384,11 +11168,29 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /directory/onPremisesSynchronization/$count:
+    get:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Get the number of the resource
+      operationId: directory.onPremisesSynchronization_GetCount-df9d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/outboundSharedUserProfiles:
     get:
       tags:
         - directory.outboundSharedUserProfile
-      summary: Get outboundSharedUserProfiles from directory
+      summary: List outboundSharedUserProfiles
+      description: Retrieve the properties of all outboundSharedUserProfiles.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-list-outboundshareduserprofiles?view=graph-rest-1.0
       operationId: directory_ListOutboundSharedUserProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10540,7 +11342,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10578,7 +11380,11 @@ paths:
     get:
       tags:
         - directory.outboundSharedUserProfile
-      summary: Get tenants from directory
+      summary: Get tenantReferences
+      description: List the tenant references of an outboundSharedUserProfile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outboundshareduserprofile-list-tenants?view=graph-rest-1.0
       operationId: directory.outboundSharedUserProfiles_ListTenants
       parameters:
         - name: outboundSharedUserProfile-userId
@@ -10676,6 +11482,7 @@ paths:
       tags:
         - directory.outboundSharedUserProfile
       summary: Get tenants from directory
+      description: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
       operationId: directory.outboundSharedUserProfiles_GetTenants
       parameters:
         - name: outboundSharedUserProfile-userId
@@ -10759,7 +11566,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10806,6 +11613,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action removePersonalData
+      description: Create a request to remove the personal data for an outboundSharedUserProfile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/tenantreference-removepersonaldata?view=graph-rest-1.0
       operationId: directory.outboundSharedUserProfiles.tenants_removePersonalData
       parameters:
         - name: outboundSharedUserProfile-userId
@@ -10830,6 +11641,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/directory/outboundSharedUserProfiles/{outboundSharedUserProfile-userId}/tenants/$count':
+    get:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Get the number of the resource
+      operationId: directory.outboundSharedUserProfiles.tenants_GetCount-e4ef
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: The unique identifier of outboundSharedUserProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directory/outboundSharedUserProfiles/$count:
+    get:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Get the number of the resource
+      operationId: directory.outboundSharedUserProfiles_GetCount-c707
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/recommendations:
     get:
       tags:
@@ -11067,7 +11914,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11228,6 +12075,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directory/recommendations/$count:
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get the number of the resource
+      operationId: directory.recommendations_GetCount-e93c
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/sharedEmailDomains:
     get:
       tags:
@@ -11384,7 +12245,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11418,6 +12279,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /directory/sharedEmailDomains/$count:
+    get:
+      tags:
+        - directory.sharedEmailDomain
+      summary: Get the number of the resource
+      operationId: directory.sharedEmailDomains_GetCount-c142
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directoryRoles:
     get:
       tags:
@@ -11605,7 +12480,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11764,6 +12639,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directoryRoles/{directoryRole-id}/members/$count':
+    get:
+      tags:
+        - directoryRoles.directoryObject
+      summary: Get the number of the resource
+      operationId: directoryRoles.members_GetCount-5361
+      parameters:
+        - name: directoryRole-id
+          in: path
+          description: The unique identifier of directoryRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRole
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/directoryRoles/{directoryRole-id}/members/$ref':
     get:
       tags:
@@ -12291,7 +13198,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12333,6 +13240,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directoryRoles/{directoryRole-id}/scopedMembers/$count':
+    get:
+      tags:
+        - directoryRoles.scopedRoleMembership
+      summary: Get the number of the resource
+      operationId: directoryRoles.scopedMembers_GetCount-b2b2
+      parameters:
+        - name: directoryRole-id
+          in: path
+          description: The unique identifier of directoryRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRole
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directoryRoles/$count:
+    get:
+      tags:
+        - directoryRoles.directoryRole
+      summary: Get the number of the resource
+      operationId: directoryRoles_GetCount-ad68
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directoryRoles/microsoft.graph.delta():
     get:
       tags:
@@ -12711,7 +13654,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12990,6 +13933,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directoryRoleTemplates/$count:
+    get:
+      tags:
+        - directoryRoleTemplates.directoryRoleTemplate
+      summary: Get the number of the resource
+      operationId: directoryRoleTemplates_GetCount-ed85
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directoryRoleTemplates/microsoft.graph.delta():
     get:
       tags:
@@ -13362,7 +14319,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13641,6 +14598,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directorySettingTemplates/$count:
+    get:
+      tags:
+        - directorySettingTemplates.directorySettingTemplate
+      summary: Get the number of the resource
+      operationId: directorySettingTemplates_GetCount-4f4a
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directorySettingTemplates/microsoft.graph.delta():
     get:
       tags:
@@ -14069,7 +15040,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14239,6 +15210,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/domains/{domain-id}/domainNameReferences/$count':
+    get:
+      tags:
+        - domains.directoryObject
+      summary: Get the number of the resource
+      operationId: domains.domainNameReferences_GetCount-a205
+      parameters:
+        - name: domain-id
+          in: path
+          description: The unique identifier of domain
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/domains/{domain-id}/federationConfiguration':
     get:
       tags:
@@ -14482,7 +15475,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14524,6 +15517,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/domains/{domain-id}/federationConfiguration/$count':
+    get:
+      tags:
+        - domains.internalDomainFederation
+      summary: Get the number of the resource
+      operationId: domains.federationConfiguration_GetCount-9087
+      parameters:
+        - name: domain-id
+          in: path
+          description: The unique identifier of domain
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/domains/{domain-id}/microsoft.graph.forceDelete':
     post:
       tags:
@@ -14838,7 +15853,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14880,6 +15895,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/domains/{domain-id}/serviceConfigurationRecords/$count':
+    get:
+      tags:
+        - domains.domainDnsRecord
+      summary: Get the number of the resource
+      operationId: domains.serviceConfigurationRecords_GetCount-999b
+      parameters:
+        - name: domain-id
+          in: path
+          description: The unique identifier of domain
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/domains/{domain-id}/sharedEmailDomainInvitations':
     get:
       tags:
@@ -15077,7 +16114,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15119,6 +16156,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/domains/{domain-id}/sharedEmailDomainInvitations/$count':
+    get:
+      tags:
+        - domains.sharedEmailDomainInvitation
+      summary: Get the number of the resource
+      operationId: domains.sharedEmailDomainInvitations_GetCount-57f7
+      parameters:
+        - name: domain-id
+          in: path
+          description: The unique identifier of domain
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/domains/{domain-id}/verificationDnsRecords':
     get:
       tags:
@@ -15329,7 +16388,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15371,6 +16430,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/domains/{domain-id}/verificationDnsRecords/$count':
+    get:
+      tags:
+        - domains.domainDnsRecord
+      summary: Get the number of the resource
+      operationId: domains.verificationDnsRecords_GetCount-d5a7
+      parameters:
+        - name: domain-id
+          in: path
+          description: The unique identifier of domain
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /domains/$count:
+    get:
+      tags:
+        - domains.domain
+      summary: Get the number of the resource
+      operationId: domains_GetCount-3c31
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /organization:
     get:
       tags:
@@ -15659,7 +16754,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15805,7 +16900,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16452,7 +17547,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17019,6 +18114,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/$count':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get the number of the resource
+      operationId: organization.branding.localizations_GetCount-e39f
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/squareLogo':
     get:
       tags:
@@ -17324,7 +18441,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17366,6 +18483,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/extensions/$count':
+    get:
+      tags:
+        - organization.extension
+      summary: Get the number of the resource
+      operationId: organization.extensions_GetCount-bee2
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -17733,7 +18872,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17849,7 +18988,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17965,7 +19104,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18081,7 +19220,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18197,7 +19336,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18433,7 +19572,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18475,6 +19614,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/settings/profileCardProperties/$count':
+    get:
+      tags:
+        - organization.organizationSettings
+      summary: Get the number of the resource
+      operationId: organization.settings.profileCardProperties_GetCount-ea44
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/settings/pronouns':
     get:
       tags:
@@ -18556,7 +19717,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18590,6 +19751,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /organization/$count:
+    get:
+      tags:
+        - organization.organization
+      summary: Get the number of the resource
+      operationId: organization_GetCount-9453
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /organization/microsoft.graph.getByIds:
     post:
       tags:
@@ -18898,7 +20073,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18936,6 +20111,19 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /settings/$count:
+    get:
+      tags:
+        - settings.directorySetting
+      summary: Get the number of the resource
+      operationId: settings_GetCount-26b2
+      parameters:
+        - $ref: '#/components/parameters/search'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /subscribedSkus:
     get:
       tags:
@@ -19096,7 +20284,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19205,6 +20393,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.scopedRoleMembershipCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -19239,6 +20433,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/scopedRoleMemberOf/{scopedRoleMembership-id}':
     get:
@@ -19300,6 +20500,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -19332,13 +20538,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -19373,7 +20585,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/scopedRoleMemberOf/$count':
+    get:
+      tags:
+        - users.scopedRoleMembership
+      summary: Get the number of the resource
+      operationId: users.scopedRoleMemberOf_GetCount-0e30
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
 components:
   schemas:
     microsoft.graph.administrativeUnit:
@@ -19884,6 +21130,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
+              description: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
               x-ms-navigationProperty: true
             onPremisesSynchronization:
               type: array
@@ -20090,12 +21337,16 @@ components:
       properties:
         displayName:
           type: string
+          description: The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
         homeTenantId:
           type: string
+          description: The home tenant id of the external user. Read-only.
         userId:
           type: string
+          description: The object id of the external user. Read-only.
         userPrincipalName:
           type: string
+          description: The user principal name (UPN) of the external user. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.onPremisesDirectorySynchronization:
@@ -20116,10 +21367,12 @@ components:
       properties:
         userId:
           type: string
+          description: The object id of the external user. Read-only.
         tenants:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.tenantReference'
+          description: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
           x-ms-navigationProperty: true
       additionalProperties:
         type: object
@@ -20129,6 +21382,7 @@ components:
       properties:
         tenantId:
           type: string
+          description: The identifier of the Azure AD tenant. Read-only. Key.
       additionalProperties:
         type: object
     microsoft.graph.recommendation:
@@ -21632,6 +22886,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
@@ -22342,6 +23599,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.directoryObjectCollectionResponse:
       description: Retrieved collection
       content:

@@ -244,7 +244,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -278,6 +278,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/androidDeviceOwnerEnrollmentProfiles/$count:
+    get:
+      tags:
+        - deviceManagement.androidDeviceOwnerEnrollmentProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles_GetCount-8294
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/androidForWorkEnrollmentProfiles:
     get:
       tags:
@@ -472,7 +486,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -506,6 +520,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/androidForWorkEnrollmentProfiles/$count:
+    get:
+      tags:
+        - deviceManagement.androidForWorkEnrollmentProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfiles_GetCount-07c7
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/appleUserInitiatedEnrollmentProfiles:
     get:
       tags:
@@ -696,7 +724,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -921,7 +949,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -963,6 +991,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/appleUserInitiatedEnrollmentProfiles/{appleUserInitiatedEnrollmentProfile-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.appleUserInitiatedEnrollmentProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.assignments_GetCount-1339
+      parameters:
+        - name: appleUserInitiatedEnrollmentProfile-id
+          in: path
+          description: The unique identifier of appleUserInitiatedEnrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/appleUserInitiatedEnrollmentProfiles/$count:
+    get:
+      tags:
+        - deviceManagement.appleUserInitiatedEnrollmentProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_GetCount-53c5
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/autopilotEvents:
     get:
       tags:
@@ -1225,7 +1289,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1470,7 +1534,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1512,6 +1576,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent-id}/policyStatusDetails/$count':
+    get:
+      tags:
+        - deviceManagement.deviceManagementAutopilotEvent
+      summary: Get the number of the resource
+      operationId: deviceManagement.autopilotEvents.policyStatusDetails_GetCount-27a5
+      parameters:
+        - name: deviceManagementAutopilotEvent-id
+          in: path
+          description: The unique identifier of deviceManagementAutopilotEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementAutopilotEvent
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/autopilotEvents/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementAutopilotEvent
+      summary: Get the number of the resource
+      operationId: deviceManagement.autopilotEvents_GetCount-48ac
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/conditionalAccessSettings:
     get:
       tags:
@@ -1572,7 +1672,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1816,7 +1916,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2262,7 +2362,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2304,6 +2404,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles/$count':
+    get:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Get the number of the resource
+      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_GetCount-0710
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/importedAppleDeviceIdentities':
     get:
       tags:
@@ -2535,7 +2657,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2577,6 +2699,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/importedAppleDeviceIdentities/$count':
+    get:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Get the number of the resource
+      operationId: deviceManagement.depOnboardingSettings.importedAppleDeviceIdentities_GetCount-1a85
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/depOnboardingSettings/$count:
+    get:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Get the number of the resource
+      operationId: deviceManagement.depOnboardingSettings_GetCount-7c8b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/deviceEnrollmentConfigurations:
     get:
       tags:
@@ -2767,7 +2925,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3000,7 +3158,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3042,6 +3200,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceEnrollmentConfigurations.assignments_GetCount-f0d7
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: The unique identifier of deviceEnrollmentConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/deviceEnrollmentConfigurations/$count:
+    get:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceEnrollmentConfigurations_GetCount-69e5
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/importedDeviceIdentities:
     get:
       tags:
@@ -3228,7 +3422,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3262,6 +3456,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/importedDeviceIdentities/$count:
+    get:
+      tags:
+        - deviceManagement.importedDeviceIdentity
+      summary: Get the number of the resource
+      operationId: deviceManagement.importedDeviceIdentities_GetCount-d89f
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/importedWindowsAutopilotDeviceIdentities:
     get:
       tags:
@@ -3444,7 +3652,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3478,6 +3686,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/importedWindowsAutopilotDeviceIdentities/$count:
+    get:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Get the number of the resource
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities_GetCount-36aa
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice:
     get:
       tags:
@@ -3668,7 +3890,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3702,6 +3924,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/$count:
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
+      summary: Get the number of the resource
+      operationId: deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice_GetCount-106d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/windowsAutopilotDeploymentProfiles:
     get:
       tags:
@@ -3916,7 +4152,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4245,7 +4481,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4437,6 +4673,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/$count':
+    get:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetCount-3346
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeploymentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignments':
     get:
       tags:
@@ -4636,7 +4894,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4678,6 +4936,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignments_GetCount-418f
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeploymentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/windowsAutopilotDeploymentProfiles/$count:
+    get:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_GetCount-4b46
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/windowsAutopilotDeviceIdentities:
     get:
       tags:
@@ -4940,7 +5234,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5108,6 +5402,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/windowsAutopilotDeviceIdentities/$count:
+    get:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Get the number of the resource
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetCount-0841
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/windowsAutopilotSettings:
     get:
       tags:
@@ -5167,7 +5475,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5387,7 +5695,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5612,7 +5920,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5654,6 +5962,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.windowsFeatureUpdateProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.windowsFeatureUpdateProfiles.assignments_GetCount-7b29
+      parameters:
+        - name: windowsFeatureUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsFeatureUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsFeatureUpdateProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/windowsFeatureUpdateProfiles/$count:
+    get:
+      tags:
+        - deviceManagement.windowsFeatureUpdateProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.windowsFeatureUpdateProfiles_GetCount-dba3
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /roleManagement:
     get:
       tags:
@@ -5718,7 +6062,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5787,7 +6131,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5973,7 +6317,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6225,7 +6569,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6358,7 +6702,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6400,6 +6744,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions_GetCount-c7ea
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /roleManagement/cloudPC/resourceNamespaces/$count:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.cloudPC.resourceNamespaces_GetCount-ce1b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /roleManagement/cloudPC/roleAssignments:
     get:
       tags:
@@ -6604,7 +6984,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6833,7 +7213,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6875,6 +7255,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.cloudPC.roleAssignments.appScopes_GetCount-f810
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes':
     get:
       tags:
@@ -7004,6 +7406,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.cloudPC.roleAssignments.directoryScopes_GetCount-2dc2
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals':
     get:
       tags:
@@ -7133,6 +7557,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.cloudPC.roleAssignments.principals_GetCount-aa5e
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition':
     get:
       tags:
@@ -7160,6 +7606,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7193,6 +7640,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /roleManagement/cloudPC/roleAssignments/$count:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.cloudPC.roleAssignments_GetCount-f9ed
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /roleManagement/cloudPC/roleDefinitions:
     get:
       tags:
@@ -7221,6 +7682,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -7249,6 +7712,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7333,6 +7797,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7389,7 +7854,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7456,6 +7921,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -7484,6 +7951,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7582,6 +8050,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7646,7 +8115,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7688,6 +8157,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.cloudPC.roleDefinitions.inheritsPermissionsFrom_GetCount-643c
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /roleManagement/cloudPC/roleDefinitions/$count:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.cloudPC.roleDefinitions_GetCount-c3d7
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /roleManagement/deviceManagement:
     get:
       tags:
@@ -7750,7 +8255,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7936,7 +8441,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8188,7 +8693,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8321,7 +8826,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8363,6 +8868,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.deviceManagement.resourceNamespaces.resourceActions_GetCount-80dc
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /roleManagement/deviceManagement/resourceNamespaces/$count:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.deviceManagement.resourceNamespaces_GetCount-c626
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /roleManagement/deviceManagement/roleAssignments:
     get:
       tags:
@@ -8567,7 +9108,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8796,7 +9337,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8838,6 +9379,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.deviceManagement.roleAssignments.appScopes_GetCount-b6cd
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes':
     get:
       tags:
@@ -8967,6 +9530,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.deviceManagement.roleAssignments.directoryScopes_GetCount-8d97
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals':
     get:
       tags:
@@ -9096,6 +9681,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.deviceManagement.roleAssignments.principals_GetCount-f624
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition':
     get:
       tags:
@@ -9123,6 +9730,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9156,6 +9764,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /roleManagement/deviceManagement/roleAssignments/$count:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.deviceManagement.roleAssignments_GetCount-fe89
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /roleManagement/deviceManagement/roleDefinitions:
     get:
       tags:
@@ -9184,6 +9806,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -9212,6 +9836,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9296,6 +9921,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9352,7 +9978,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9419,6 +10045,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -9447,6 +10075,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9545,6 +10174,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9609,7 +10239,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9651,6 +10281,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.deviceManagement.roleDefinitions.inheritsPermissionsFrom_GetCount-fb75
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /roleManagement/deviceManagement/roleDefinitions/$count:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.deviceManagement.roleDefinitions_GetCount-e40e
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.androidDeviceOwnerEnrollmentProfile:
@@ -11049,6 +11715,8 @@ components:
         - title: unifiedRoleDefinition
           type: object
           properties:
+            allowedPrincipalTypes:
+              $ref: '#/components/schemas/microsoft.graph.allowedRolePrincipalTypes'
             description:
               type: string
               description: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
@@ -11229,6 +11897,9 @@ components:
         - androidWorkProfile
         - unknown
         - androidAOSP
+        - androidMobileApplicationManagement
+        - iOSMobileApplicationManagement
+        - unknownFutureValue
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -11265,6 +11936,15 @@ components:
           - value: androidAOSP
             description: Android AOSP.
             name: androidAOSP
+          - value: androidMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for android devices.
+            name: androidMobileApplicationManagement
+          - value: iOSMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for iOS devices
+            name: iOSMobileApplicationManagement
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use
+            name: unknownFutureValue
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -11459,7 +12139,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -12013,6 +12693,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.allowedRolePrincipalTypes:
+      title: allowedRolePrincipalTypes
+      enum:
+        - user
+        - servicePrincipal
+        - group
+        - unknownFutureValue
+      type: string
     microsoft.graph.unifiedRolePermission:
       title: unifiedRolePermission
       type: object
@@ -12055,6 +12743,9 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.androidForWorkEnrollmentProfileCollectionResponse:
       title: Collection of androidForWorkEnrollmentProfile
       type: object
@@ -13127,6 +13818,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.androidForWorkEnrollmentProfileCollectionResponse:
       description: Retrieved collection
       content:

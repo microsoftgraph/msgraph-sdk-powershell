@@ -90,7 +90,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -374,7 +374,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -690,7 +690,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1112,6 +1112,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sectionGroups.sectionGroups_GetCount-e27e
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
@@ -1418,7 +1456,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1811,7 +1849,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1994,6 +2032,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2192,6 +2234,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_GetCount-6db1
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -2372,6 +2460,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sectionGroups.sections_GetCount-abc0
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sectionGroups_GetCount-e27e
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections':
     get:
       tags:
@@ -2646,7 +2802,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2999,7 +3155,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3158,6 +3314,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3340,6 +3500,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sections.pages_GetCount-9305
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -3504,6 +3702,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sections_GetCount-8678
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/notebooks/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks_GetCount-4d2a
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/operations':
     get:
       tags:
@@ -3719,7 +3969,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3761,6 +4011,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/operations/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.operations_GetCount-b2ab
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/pages':
     get:
       tags:
@@ -4000,7 +4272,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4111,6 +4383,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4261,6 +4537,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.pages_GetCount-8bf6
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/resources':
     get:
       tags:
@@ -4460,7 +4758,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4571,9 +4869,35 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/resources/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.resources_GetCount-b07f
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sectionGroups':
     get:
       tags:
@@ -4812,7 +5136,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5194,6 +5518,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sectionGroups.sectionGroups_GetCount-17b9
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
@@ -5468,7 +5822,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5821,7 +6175,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5980,6 +6334,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6162,6 +6520,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sectionGroups.sections.pages_GetCount-110b
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -6326,6 +6722,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sectionGroups.sections_GetCount-4d99
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/sectionGroups/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sectionGroups_GetCount-17b9
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sections':
     get:
       tags:
@@ -6564,7 +7012,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6877,7 +7325,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7012,6 +7460,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7178,6 +7630,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sections.pages_GetCount-375d
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -7326,6 +7808,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sections/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sections_GetCount-0122
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote':
     get:
       tags:
@@ -7411,7 +7915,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7695,7 +8199,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8011,7 +8515,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8433,6 +8937,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sectionGroups.sectionGroups_GetCount-52f9
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
@@ -8739,7 +9281,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9132,7 +9674,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9315,6 +9857,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9513,6 +10059,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_GetCount-56bb
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -9693,6 +10285,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sectionGroups.sections_GetCount-26e6
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sectionGroups_GetCount-52f9
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections':
     get:
       tags:
@@ -9967,7 +10627,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10320,7 +10980,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10479,6 +11139,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10661,6 +11325,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sections.pages_GetCount-9b53
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -10825,6 +11527,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sections_GetCount-6101
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/notebooks/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks_GetCount-fb6b
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/operations':
     get:
       tags:
@@ -11040,7 +11794,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11082,6 +11836,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/operations/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.operations_GetCount-eadd
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/pages':
     get:
       tags:
@@ -11321,7 +12097,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11432,6 +12208,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11582,6 +12362,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.pages_GetCount-bfb1
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/resources':
     get:
       tags:
@@ -11781,7 +12583,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11892,9 +12694,35 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/resources/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.resources_GetCount-476e
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sectionGroups':
     get:
       tags:
@@ -12133,7 +12961,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12515,6 +13343,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sectionGroups.sectionGroups_GetCount-2fdb
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
@@ -12789,7 +13647,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13142,7 +14000,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13301,6 +14159,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13483,6 +14345,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sectionGroups.sections.pages_GetCount-9ecc
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -13647,6 +14547,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sectionGroups.sections_GetCount-2fbc
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/sectionGroups/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sectionGroups_GetCount-2fdb
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sections':
     get:
       tags:
@@ -13885,7 +14837,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14198,7 +15150,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14333,6 +15285,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14499,6 +15455,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sections.pages_GetCount-a33a
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -14647,6 +15633,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sections/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sections_GetCount-5061
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote':
     get:
       tags:
@@ -14731,7 +15739,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15015,7 +16023,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15331,7 +16339,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15753,6 +16761,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sectionGroups.sectionGroups_GetCount-2e9f
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
@@ -16059,7 +17105,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16452,7 +17498,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16635,6 +17681,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16833,6 +17883,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sectionGroups.sections.pages_GetCount-a323
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -17013,6 +18109,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sectionGroups.sections_GetCount-2e73
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sectionGroups_GetCount-2e9f
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections':
     get:
       tags:
@@ -17287,7 +18451,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17640,7 +18804,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17799,6 +18963,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17981,6 +19149,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sections.pages_GetCount-c5e5
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -18145,6 +19351,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sections_GetCount-2f79
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/onenote/notebooks/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks_GetCount-af06
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/operations':
     get:
       tags:
@@ -18360,7 +19618,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18402,6 +19660,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/operations/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.operations_GetCount-adfa
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/pages':
     get:
       tags:
@@ -18641,7 +19921,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18752,6 +20032,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18902,6 +20186,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.pages_GetCount-b080
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/resources':
     get:
       tags:
@@ -19101,7 +20407,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19212,9 +20518,35 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/resources/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.resources_GetCount-dba6
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/sectionGroups':
     get:
       tags:
@@ -19453,7 +20785,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19835,6 +21167,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sectionGroups.sectionGroups_GetCount-497a
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
@@ -20109,7 +21471,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20462,7 +21824,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20621,6 +21983,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20803,6 +22169,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sectionGroups.sections.pages_GetCount-dfde
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -20967,6 +22371,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sectionGroups.sections_GetCount-6826
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/onenote/sectionGroups/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sectionGroups_GetCount-497a
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/sections':
     get:
       tags:
@@ -21205,7 +22661,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21518,7 +22974,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21653,6 +23109,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21819,6 +23279,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sections.pages_GetCount-17eb
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -21967,6 +23457,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sections/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sections_GetCount-8b0b
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.onenote:
@@ -22374,6 +23886,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.onenoteSectionCollectionResponse:
       title: Collection of onenoteSection
       type: object
@@ -22530,6 +24045,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.sectionGroupCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.onenoteSectionCollectionResponse:
       description: Retrieved collection
       content:

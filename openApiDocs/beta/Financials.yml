@@ -62,7 +62,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -480,6 +480,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/accounts/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.accounts_GetCount-6379
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/agedAccountsPayable':
     get:
       tags:
@@ -643,6 +665,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/agedAccountsPayable/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.agedAccountsPayable_GetCount-6ff4
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/agedAccountsReceivable':
     get:
       tags:
@@ -806,6 +850,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/agedAccountsReceivable/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.agedAccountsReceivable_GetCount-a7c5
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/companyInformation':
     get:
       tags:
@@ -1008,7 +1074,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1086,6 +1152,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/companyInformation/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.companyInformation_GetCount-6f48
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/countriesRegions':
     get:
       tags:
@@ -1287,7 +1375,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1329,6 +1417,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/countriesRegions/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.countriesRegions_GetCount-9750
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/currencies':
     get:
       tags:
@@ -1538,7 +1648,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1580,6 +1690,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/currencies/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.currencies_GetCount-bc19
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/customerPaymentJournals':
     get:
       tags:
@@ -1793,7 +1925,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2175,7 +2307,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2357,7 +2489,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2517,7 +2649,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2674,7 +2806,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2835,7 +2967,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3150,7 +3282,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3307,9 +3439,51 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.customerPaymentJournals.customerPayments.customer.picture_GetCount-b949
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customerPaymentJournal-id
+          in: path
+          description: The unique identifier of customerPaymentJournal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPaymentJournal
+        - name: customerPayment-id
+          in: path
+          description: The unique identifier of customerPayment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPayment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/shipmentMethod':
     get:
       tags:
@@ -3417,7 +3591,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3467,6 +3641,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.customerPaymentJournals.customerPayments_GetCount-ebc0
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customerPaymentJournal-id
+          in: path
+          description: The unique identifier of customerPaymentJournal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPaymentJournal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/customerPaymentJournals/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.customerPaymentJournals_GetCount-2620
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/customerPayments':
     get:
       tags:
@@ -3712,7 +3938,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3870,7 +4096,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4006,7 +4232,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4139,7 +4365,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4276,7 +4502,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4551,7 +4777,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4684,9 +4910,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.customerPayments.customer.picture_GetCount-1c57
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customerPayment-id
+          in: path
+          description: The unique identifier of customerPayment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPayment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/shipmentMethod':
     get:
       tags:
@@ -4778,7 +5038,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4820,6 +5080,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/customerPayments/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.customerPayments_GetCount-6685
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/customers':
     get:
       tags:
@@ -5097,7 +5379,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5233,7 +5515,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5366,7 +5648,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5503,7 +5785,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5778,7 +6060,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5911,9 +6193,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/customers/{customer-id}/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.customers.picture_GetCount-b1cb
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customer-id
+          in: path
+          description: The unique identifier of customer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: customer
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/customers/{customer-id}/shipmentMethod':
     get:
       tags:
@@ -6005,7 +6321,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6047,6 +6363,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/customers/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.customers_GetCount-166b
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/dimensions':
     get:
       tags:
@@ -6337,6 +6675,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/dimensions/{dimension-id}/dimensionValues/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.dimensions.dimensionValues_GetCount-ca3d
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: dimension-id
+          in: path
+          description: The unique identifier of dimension
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: dimension
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/dimensions/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.dimensions_GetCount-2ef0
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/dimensionValues':
     get:
       tags:
@@ -6472,6 +6862,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/dimensionValues/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.dimensionValues_GetCount-845d
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/employees':
     get:
       tags:
@@ -6729,7 +7141,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7004,7 +7416,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7137,9 +7549,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/employees/{employee-id}/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.employees.picture_GetCount-e362
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: employee-id
+          in: path
+          description: The unique identifier of employee
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: employee
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/employees/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.employees_GetCount-3b18
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/generalLedgerEntries':
     get:
       tags:
@@ -7366,6 +7834,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/generalLedgerEntries/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.generalLedgerEntries_GetCount-47eb
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/itemCategories':
     get:
       tags:
@@ -7563,7 +8053,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7605,6 +8095,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/itemCategories/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.itemCategories_GetCount-e0f6
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/items':
     get:
       tags:
@@ -7858,7 +8370,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7991,7 +8503,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8266,7 +8778,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8399,9 +8911,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/items/{item-id}/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.items.picture_GetCount-9446
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: item-id
+          in: path
+          description: The unique identifier of item
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: item
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/items/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.items_GetCount-7c8b
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/journalLines':
     get:
       tags:
@@ -8635,7 +9203,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8740,6 +9308,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/journalLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.journalLines_GetCount-f0b1
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/journals':
     get:
       tags:
@@ -8953,7 +9543,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9323,7 +9913,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9444,6 +10034,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/journals/{journal-id}/journalLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.journals.journalLines_GetCount-d7a7
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: journal-id
+          in: path
+          description: The unique identifier of journal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: journal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/journals/{journal-id}/microsoft.graph.post':
     post:
       tags:
@@ -9473,6 +10093,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/financials/companies/{company-id}/journals/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.journals_GetCount-6499
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/paymentMethods':
     get:
       tags:
@@ -9670,7 +10312,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9712,6 +10354,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/paymentMethods/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.paymentMethods_GetCount-57e8
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/paymentTerms':
     get:
       tags:
@@ -9925,7 +10589,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9967,6 +10631,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/paymentTerms/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.paymentTerms_GetCount-d101
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/picture':
     get:
       tags:
@@ -10168,7 +10854,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10277,9 +10963,35 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.picture_GetCount-e3e4
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/purchaseInvoiceLines':
     get:
       tags:
@@ -10526,7 +11238,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10704,7 +11416,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10837,7 +11549,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11112,7 +11824,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11245,9 +11957,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.purchaseInvoiceLines.item.picture_GetCount-78ee
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoiceLine-id
+          in: path
+          description: The unique identifier of purchaseInvoiceLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoiceLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/purchaseInvoiceLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.purchaseInvoiceLines_GetCount-eb18
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/purchaseInvoices':
     get:
       tags:
@@ -11518,7 +12286,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11620,7 +12388,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11961,7 +12729,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12163,7 +12931,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12320,7 +13088,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12635,7 +13403,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12792,9 +13560,81 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines.item.picture_GetCount-f71a
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoice-id
+          in: path
+          description: The unique identifier of purchaseInvoice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoice
+        - name: purchaseInvoiceLine-id
+          in: path
+          description: The unique identifier of purchaseInvoiceLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoiceLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines_GetCount-54d9
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoice-id
+          in: path
+          description: The unique identifier of purchaseInvoice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoice
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor':
     get:
       tags:
@@ -12906,7 +13746,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13042,7 +13882,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13175,7 +14015,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13312,7 +14152,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13587,7 +14427,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13720,9 +14560,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.purchaseInvoices.vendor.picture_GetCount-830f
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoice-id
+          in: path
+          description: The unique identifier of purchaseInvoice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoice
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/purchaseInvoices/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.purchaseInvoices_GetCount-03b5
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesCreditMemoLines':
     get:
       tags:
@@ -13973,7 +14869,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14151,7 +15047,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14284,7 +15180,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14559,7 +15455,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14692,9 +15588,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesCreditMemoLines.item.picture_GetCount-7834
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemoLine-id
+          in: path
+          description: The unique identifier of salesCreditMemoLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemoLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesCreditMemoLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesCreditMemoLines_GetCount-d0f9
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesCreditMemos':
     get:
       tags:
@@ -14977,7 +15929,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15079,7 +16031,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15237,7 +16189,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15373,7 +16325,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15506,7 +16458,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15643,7 +16595,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15918,7 +16870,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16051,9 +17003,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesCreditMemos.customer.picture_GetCount-b82f
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemo-id
+          in: path
+          description: The unique identifier of salesCreditMemo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemo
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/shipmentMethod':
     get:
       tags:
@@ -16145,7 +17131,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16282,7 +17268,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16598,7 +17584,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16800,7 +17786,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16957,7 +17943,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17272,7 +18258,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17429,9 +18415,103 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesCreditMemos.salesCreditMemoLines.item.picture_GetCount-48a1
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemo-id
+          in: path
+          description: The unique identifier of salesCreditMemo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemo
+        - name: salesCreditMemoLine-id
+          in: path
+          description: The unique identifier of salesCreditMemoLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemoLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesCreditMemos.salesCreditMemoLines_GetCount-9f7f
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemo-id
+          in: path
+          description: The unique identifier of salesCreditMemo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemo
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesCreditMemos/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesCreditMemos_GetCount-07d3
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesInvoiceLines':
     get:
       tags:
@@ -17682,7 +18762,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17860,7 +18940,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17993,7 +19073,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18268,7 +19348,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18401,9 +19481,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesInvoiceLines.item.picture_GetCount-2e0f
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoiceLine-id
+          in: path
+          description: The unique identifier of salesInvoiceLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoiceLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesInvoiceLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesInvoiceLines_GetCount-0a2a
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesInvoices':
     get:
       tags:
@@ -18710,7 +19846,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18812,7 +19948,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18970,7 +20106,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19106,7 +20242,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19239,7 +20375,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19376,7 +20512,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19651,7 +20787,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19784,9 +20920,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesInvoices.customer.picture_GetCount-883f
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoice-id
+          in: path
+          description: The unique identifier of salesInvoice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoice
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/shipmentMethod':
     get:
       tags:
@@ -19878,7 +21048,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20160,7 +21330,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20476,7 +21646,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20678,7 +21848,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20835,7 +22005,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21150,7 +22320,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21307,9 +22477,81 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesInvoices.salesInvoiceLines.item.picture_GetCount-fadc
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoice-id
+          in: path
+          description: The unique identifier of salesInvoice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoice
+        - name: salesInvoiceLine-id
+          in: path
+          description: The unique identifier of salesInvoiceLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoiceLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesInvoices.salesInvoiceLines_GetCount-7837
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoice-id
+          in: path
+          description: The unique identifier of salesInvoice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoice
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/shipmentMethod':
     get:
       tags:
@@ -21401,7 +22643,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21443,6 +22685,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesInvoices/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesInvoices_GetCount-ebf0
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesOrderLines':
     get:
       tags:
@@ -21709,7 +22973,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21887,7 +23151,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22020,7 +23284,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22295,7 +23559,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22428,9 +23692,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesOrderLines.item.picture_GetCount-fd82
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrderLine-id
+          in: path
+          description: The unique identifier of salesOrderLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrderLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesOrderLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesOrderLines_GetCount-80ce
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesOrders':
     get:
       tags:
@@ -22725,7 +24045,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22827,7 +24147,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -22985,7 +24305,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23121,7 +24441,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23254,7 +24574,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23391,7 +24711,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23666,7 +24986,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23799,9 +25119,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesOrders.customer.picture_GetCount-eb29
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrder-id
+          in: path
+          description: The unique identifier of salesOrder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/shipmentMethod':
     get:
       tags:
@@ -23893,7 +25247,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -24030,7 +25384,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -24362,7 +25716,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -24564,7 +25918,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -24721,7 +26075,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -25036,7 +26390,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -25193,9 +26547,103 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesOrders.salesOrderLines.item.picture_GetCount-85c5
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrder-id
+          in: path
+          description: The unique identifier of salesOrder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrder
+        - name: salesOrderLine-id
+          in: path
+          description: The unique identifier of salesOrderLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrderLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesOrders.salesOrderLines_GetCount-04a8
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrder-id
+          in: path
+          description: The unique identifier of salesOrder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesOrders/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesOrders_GetCount-4785
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesQuoteLines':
     get:
       tags:
@@ -25438,7 +26886,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -25616,7 +27064,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -25749,7 +27197,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26024,7 +27472,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26157,9 +27605,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesQuoteLines.item.picture_GetCount-f55b
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuoteLine-id
+          in: path
+          description: The unique identifier of salesQuoteLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuoteLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesQuoteLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesQuoteLines_GetCount-56ea
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesQuotes':
     get:
       tags:
@@ -26458,7 +27962,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26560,7 +28064,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26718,7 +28222,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26854,7 +28358,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26987,7 +28491,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -27124,7 +28628,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -27399,7 +28903,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -27532,9 +29036,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesQuotes.customer.picture_GetCount-633a
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuote-id
+          in: path
+          description: The unique identifier of salesQuote
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuote
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/shipmentMethod':
     get:
       tags:
@@ -27626,7 +29164,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -27821,7 +29359,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28129,7 +29667,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28331,7 +29869,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28488,7 +30026,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28803,7 +30341,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28960,9 +30498,81 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesQuotes.salesQuoteLines.item.picture_GetCount-34b8
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuote-id
+          in: path
+          description: The unique identifier of salesQuote
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuote
+        - name: salesQuoteLine-id
+          in: path
+          description: The unique identifier of salesQuoteLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuoteLine
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesQuotes.salesQuoteLines_GetCount-ac16
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuote-id
+          in: path
+          description: The unique identifier of salesQuote
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuote
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/shipmentMethod':
     get:
       tags:
@@ -29054,7 +30664,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -29096,6 +30706,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesQuotes/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.salesQuotes_GetCount-5df6
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/shipmentMethods':
     get:
       tags:
@@ -29293,7 +30925,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -29335,6 +30967,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/shipmentMethods/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.shipmentMethods_GetCount-4146
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/taxAreas':
     get:
       tags:
@@ -29536,7 +31190,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -29578,6 +31232,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/taxAreas/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.taxAreas_GetCount-8805
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/taxGroups':
     get:
       tags:
@@ -29779,7 +31455,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -29821,6 +31497,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/taxGroups/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.taxGroups_GetCount-63a7
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/unitsOfMeasure':
     get:
       tags:
@@ -30022,7 +31720,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -30064,6 +31762,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/unitsOfMeasure/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.unitsGraphOPreMeasure_GetCount-9fb0
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/vendors':
     get:
       tags:
@@ -30325,7 +32045,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -30461,7 +32181,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -30594,7 +32314,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -30731,7 +32451,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -31006,7 +32726,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -31139,9 +32859,79 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/vendors/{vendor-id}/picture/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.vendors.picture_GetCount-c4b6
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: vendor-id
+          in: path
+          description: The unique identifier of vendor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: vendor
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/financials/companies/{company-id}/vendors/$count':
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies.vendors_GetCount-a275
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /financials/companies/$count:
+    get:
+      tags:
+        - financials.company
+      summary: Get the number of the resource
+      operationId: financials.companies_GetCount-5561
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.financials:
@@ -33536,6 +35326,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.agedAccountsPayableCollectionResponse:
       title: Collection of agedAccountsPayable
       type: object
@@ -34038,6 +35831,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.accountCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.agedAccountsPayableCollectionResponse:
       description: Retrieved collection
       content:
