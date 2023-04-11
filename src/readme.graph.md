@@ -468,6 +468,19 @@ directive:
       verb: New|Remove|Update|Get
       subject: ^(.*)(IdentityGovernance)TermOfUse$
     remove: true
+# Modify OpenAPI documents to correct AutoREST.PowerShell limitations.
+# Change content-type from text/plain to application/json. AutoREST does not support non-json content types.
+# See https://github.com/Azure/autorest.powershell/issues/206.
+  - from: 'openapi-document'
+    where: $.components.responses.ODataCountResponse.content
+    transform: >-
+          return {
+            "application/json": {
+                "schema" : {
+                    "$ref" : '#/components/schemas/ODataCountResponse'
+                }
+            }
+          }
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
