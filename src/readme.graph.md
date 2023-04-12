@@ -488,17 +488,10 @@ directive:
                 }
             }
           }
-# Set consistency level parameter as required.
-  - from: source-file-csharp
-    where: $
-    transform: >
-      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*Count_Get\d*.cs/gm))
-      {
-        return $;
-      } else {
-        let consistencyLevelParamRegex = /(Required = )false(.*SerializedName = @"ConsistencyLevel")/gsi
-        $ = $.replace(consistencyLevelParamRegex, '$1true$2\n');
-      }
+# Mark consistency level parameter as required for /$count paths when header is present.
+  - from: openapi-document
+    where: $..paths.*[?(/(.*_GetCount)/gmi.exec(@.operationId))]..parameters[?(@.name === "ConsistencyLevel")]
+    transform: $['required'] = true
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
