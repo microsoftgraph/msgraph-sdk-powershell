@@ -585,6 +585,186 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
+    "/security/threatIntelligence": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/articleIndicators": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/articleIndicators/{articleIndicator-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/articles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/articles/{article-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/articles/{article-id}/indicators": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/articles/{article-id}/indicators/{articleIndicator-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hostComponents": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hostComponents/{hostComponent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hostComponents/{hostComponent-id}/host": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hostCookies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hostCookies/{hostCookie-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hostCookies/{hostCookie-id}/host": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/components": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/components/{hostComponent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/cookies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/cookies/{hostCookie-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/passiveDns": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/passiveDns/{passiveDnsRecord-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/passiveDnsReverse": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/passiveDnsReverse/{passiveDnsRecord-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/reputation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/trackers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hosts/{host-id}/trackers/{hostTracker-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hostTrackers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hostTrackers/{hostTracker-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/hostTrackers/{hostTracker-id}/host": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/intelligenceProfileIndicators": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/intelligenceProfileIndicators/{intelligenceProfileIndicator-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/intelProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/intelProfiles/{intelligenceProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/intelProfiles/{intelligenceProfile-id}/indicators": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/intelProfiles/{intelligenceProfile-id}/indicators/{intelligenceProfileIndicator-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/passiveDnsRecords": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/passiveDnsRecords/{passiveDnsRecord-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/passiveDnsRecords/{passiveDnsRecord-id}/artifact": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/passiveDnsRecords/{passiveDnsRecord-id}/parentHost": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/vulnerabilities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/vulnerabilities/{vulnerability-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/vulnerabilities/{vulnerability-id}/articles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/vulnerabilities/{vulnerability-id}/articles/{article-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/vulnerabilities/{vulnerability-id}/components": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/threatIntelligence/vulnerabilities/{vulnerability-id}/components/{vulnerabilityComponent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
     "/security/threatSubmission": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"

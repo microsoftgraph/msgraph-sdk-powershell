@@ -57,6 +57,22 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
+    "/users/{user-id}/devices/{device-id}/memberOf/{directoryObject-id}/microsoft.graph.administrativeUnit": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/memberOf/{directoryObject-id}/microsoft.graph.group": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/memberOf/microsoft.graph.administrativeUnit": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/memberOf/microsoft.graph.group": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
     "/users/{user-id}/devices/{device-id}/registeredOwners": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
@@ -65,7 +81,31 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
+    "/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/microsoft.graph.endpoint": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/microsoft.graph.servicePrincipal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/microsoft.graph.user": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
     "/users/{user-id}/devices/{device-id}/registeredOwners/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredOwners/microsoft.graph.endpoint": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredOwners/microsoft.graph.servicePrincipal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredOwners/microsoft.graph.user": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
@@ -73,7 +113,35 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
-    "/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}": {
+    "/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/microsoft.graph.endpoint": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/microsoft.graph.servicePrincipal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/microsoft.graph.user": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredUsers/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredUsers/microsoft.graph.endpoint": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredUsers/microsoft.graph.servicePrincipal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredUsers/microsoft.graph.user": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
@@ -82,6 +150,22 @@
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
     "/users/{user-id}/devices/{device-id}/transitiveMemberOf/{directoryObject-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.administrativeUnit": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/transitiveMemberOf/microsoft.graph.administrativeUnit": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/transitiveMemberOf/microsoft.graph.group": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },

@@ -29,6 +29,18 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
+    "/communications/callRecords/microsoft.graph.callRecords.getPstnBlockedUsersLog(fromDateTime={fromDateTime},toDateTime={toDateTime})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
+    },
+    "/communications/callRecords/microsoft.graph.callRecords.getPstnOnlineMeetingDialoutReport(fromDateTime={fromDateTime},toDateTime={toDateTime})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
+    },
+    "/communications/callRecords/microsoft.graph.callRecords.getSmsLog(fromDateTime={fromDateTime},toDateTime={toDateTime})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
+    },
     "/communications/calls": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
@@ -229,6 +241,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
+    "/communications/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/metadataContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
+    },
     "/communications/onlineMeetings/{onlineMeeting-id}/virtualAppointment": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
@@ -334,6 +350,10 @@
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
     "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/content": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
+    },
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/metadataContent": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },

@@ -4815,11 +4815,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: Get history
-      description: Read the properties and relationships of a riskyUserHistoryItem object.
+      summary: List history
+      description: Get the riskyUserHistoryItems from the history navigation property.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
       operationId: identityProtection.riskyUsers_ListHistory
       parameters:
         - name: riskyUser-id
@@ -6648,6 +6648,7 @@ paths:
               enum:
                 - id
                 - deletedDateTime
+                - signInActivity
                 - accountEnabled
                 - ageGroup
                 - assignedLicenses
@@ -7674,7 +7675,11 @@ paths:
     get:
       tags:
         - policies.appManagementPolicy
-      summary: Get appManagementPolicies from policies
+      summary: List appManagementPolicies
+      description: Retrieve a list of appManagementPolicy objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-list?view=graph-rest-1.0
       operationId: policies_ListAppManagementPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7748,7 +7753,11 @@ paths:
     post:
       tags:
         - policies.appManagementPolicy
-      summary: Create new navigation property to appManagementPolicies for policies
+      summary: Create appManagementPolicy
+      description: Create an appManagementPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-post?view=graph-rest-1.0
       operationId: policies_CreateAppManagementPolicies
       requestBody:
         description: New navigation property
@@ -7772,6 +7781,7 @@ paths:
       tags:
         - policies.appManagementPolicy
       summary: Get appManagementPolicies from policies
+      description: 'The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.'
       operationId: policies_GetAppManagementPolicies
       parameters:
         - name: appManagementPolicy-id
@@ -7880,7 +7890,11 @@ paths:
     get:
       tags:
         - policies.appManagementPolicy
-      summary: Get appliesTo from policies
+      summary: List appliesTo
+      description: List application and service principal objects that are assigned an appManagementPolicy policy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/appManagementPolicy-list-appliesTo?view=graph-rest-1.0
       operationId: policies.appManagementPolicies_ListAppliesTo
       parameters:
         - name: appManagementPolicy-id
@@ -8116,6 +8130,7 @@ paths:
                 - description
                 - displayName
                 - lastModifiedDateTime
+                - policyMigrationState
                 - policyVersion
                 - reconfirmationInDays
                 - registrationEnforcement
@@ -8209,6 +8224,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - excludeTargets
+                - excludeTargets desc
                 - state
                 - state desc
               type: string
@@ -8223,6 +8240,7 @@ paths:
             items:
               enum:
                 - id
+                - excludeTargets
                 - state
               type: string
         - name: $expand
@@ -8295,6 +8313,7 @@ paths:
             items:
               enum:
                 - id
+                - excludeTargets
                 - state
               type: string
         - name: $expand
@@ -9315,7 +9334,11 @@ paths:
     get:
       tags:
         - policies.tenantAppManagementPolicy
-      summary: Get defaultAppManagementPolicy from policies
+      summary: Get tenantAppManagementPolicy
+      description: Read the properties of a tenantAppManagementPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/tenantappmanagementpolicy-get?view=graph-rest-1.0
       operationId: policies_GetDefaultAppManagementPolicy
       parameters:
         - name: $select
@@ -9361,7 +9384,11 @@ paths:
     patch:
       tags:
         - policies.tenantAppManagementPolicy
-      summary: Update the navigation property defaultAppManagementPolicy in policies
+      summary: Update tenantAppManagementPolicy
+      description: Update the properties of a tenantAppManagementPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/tenantappmanagementpolicy-update?view=graph-rest-1.0
       operationId: policies_UpdateDefaultAppManagementPolicy
       requestBody:
         description: New navigation property values
@@ -15637,6 +15664,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -16232,6 +16261,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+              description: 'The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.'
               x-ms-navigationProperty: true
             authorizationPolicy:
               $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
@@ -16409,6 +16439,8 @@ components:
               description: The date and time of the last update to the policy. Read-only.
               format: date-time
               nullable: true
+            policyMigrationState:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodsPolicyMigrationState'
             policyVersion:
               type: string
               description: The version of the policy in use. Read-only.
@@ -16435,6 +16467,11 @@ components:
         - title: authenticationMethodConfiguration
           type: object
           properties:
+            excludeTargets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.excludeTarget'
+              description: Groups of users that are excluded from a policy.
             state:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodState'
           additionalProperties:
@@ -16556,6 +16593,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled. Default value is false.
             servicePrincipalRestrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
           additionalProperties:
@@ -17606,6 +17644,32 @@ components:
         messageLanguage:
           type: string
           description: 'The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          description: Request identifier of the last non-interactive sign-in performed by this user.
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          description: Request identifier of the last interactive sign-in performed by this user.
           nullable: true
       additionalProperties:
         type: object
@@ -19561,6 +19625,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             attendanceReports:
               type: array
               items:
@@ -19888,10 +19954,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
+          description: Collection of keyCredential restrictions settings to be applied to an application or service principal.
         passwordCredentials:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
+          description: Collection of password restrictions settings to be applied to an application or service principal.
       additionalProperties:
         type: object
     microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration:
@@ -19903,12 +19971,31 @@ components:
           description: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
       additionalProperties:
         type: object
+    microsoft.graph.authenticationMethodsPolicyMigrationState:
+      title: authenticationMethodsPolicyMigrationState
+      enum:
+        - preMigration
+        - migrationInProgress
+        - migrationComplete
+        - unknownFutureValue
+      type: string
     microsoft.graph.registrationEnforcement:
       title: registrationEnforcement
       type: object
       properties:
         authenticationMethodsRegistrationCampaign:
           $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRegistrationCampaign'
+      additionalProperties:
+        type: object
+    microsoft.graph.excludeTarget:
+      title: excludeTarget
+      type: object
+      properties:
+        id:
+          type: string
+          description: The object identifier of an Azure Active Directory user or group.
+        targetType:
+          $ref: '#/components/schemas/microsoft.graph.authenticationMethodTargetType'
       additionalProperties:
         type: object
     microsoft.graph.authenticationMethodState:
@@ -19936,6 +20023,9 @@ components:
         allowedToCreateSecurityGroups:
           type: boolean
           description: Indicates whether the default user role can create security groups.
+        allowedToReadBitlockerKeysForOwnedDevice:
+          type: boolean
+          nullable: true
         allowedToReadOtherUsers:
           type: boolean
           description: Indicates whether the default user role can read other users.
@@ -20914,19 +21004,19 @@ components:
           type: array
           items:
             type: string
-          description: 'Group IDs in scope of policy unless explicitly excluded, or All.'
+          description: Group IDs in scope of policy unless explicitly excluded.
         includeGuestsOrExternalUsers:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessGuestsOrExternalUsers'
         includeRoles:
           type: array
           items:
             type: string
-          description: 'Role IDs in scope of policy unless explicitly excluded, or All.'
+          description: Role IDs in scope of policy unless explicitly excluded.
         includeUsers:
           type: array
           items:
             type: string
-          description: 'User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.'
+          description: 'User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.'
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessGrantControl:
@@ -23591,6 +23681,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24602,6 +24706,7 @@ components:
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.'
           format: date-time
           nullable: true
         restrictionType:
@@ -24620,6 +24725,7 @@ components:
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.'
           format: date-time
           nullable: true
         restrictionType:
@@ -24650,6 +24756,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.advancedConfigState'
       additionalProperties:
         type: object
+    microsoft.graph.authenticationMethodTargetType:
+      title: authenticationMethodTargetType
+      enum:
+        - user
+        - group
+        - unknownFutureValue
+      type: string
     microsoft.graph.crossTenantAccessPolicyTargetConfiguration:
       title: crossTenantAccessPolicyTargetConfiguration
       type: object
@@ -28008,17 +28121,6 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
-    microsoft.graph.excludeTarget:
-      title: excludeTarget
-      type: object
-      properties:
-        id:
-          type: string
-          description: The object identifier of an Azure Active Directory user or group.
-        targetType:
-          $ref: '#/components/schemas/microsoft.graph.authenticationMethodTargetType'
-      additionalProperties:
-        type: object
     microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget:
       title: authenticationMethodsRegistrationCampaignIncludeTarget
       type: object
@@ -29330,15 +29432,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -29346,13 +29448,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.authenticationMethodTargetType:
-      title: authenticationMethodTargetType
-      enum:
-        - user
-        - group
-        - unknownFutureValue
-      type: string
     microsoft.graph.crossTenantAccessPolicyTargetType:
       title: crossTenantAccessPolicyTargetType
       enum:

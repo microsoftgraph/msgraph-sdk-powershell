@@ -64,6 +64,22 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.contactFolderCollectionResponse'
@@ -145,6 +161,22 @@ paths:
                 - id
                 - displayName
                 - parentFolderId
+                - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - childFolders
                 - contacts
                 - multiValueExtendedProperties
@@ -5120,6 +5152,22 @@ paths:
                 - photo
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.contactCollectionResponse'
@@ -5236,6 +5284,22 @@ paths:
                 - yomiCompanyName
                 - yomiGivenName
                 - yomiSurname
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - extensions
                 - multiValueExtendedProperties
                 - photo

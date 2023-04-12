@@ -1069,6 +1069,7 @@ paths:
             items:
               enum:
                 - id
+                - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
                 - roleAssignmentScheduleInstances
@@ -1089,6 +1090,7 @@ paths:
             items:
               enum:
                 - '*'
+                - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
                 - roleAssignmentScheduleInstances
@@ -1132,6 +1134,443 @@ paths:
       summary: Delete navigation property directory for roleManagement
       operationId: roleManagement_DeleteDirectory
       parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/directory/resourceNamespaces:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get resourceNamespaces from roleManagement
+      operationId: roleManagement.directory_ListResourceNamespaces
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - name
+                - name desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - name
+                - resourceActions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - resourceActions
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to resourceNamespaces for roleManagement
+      operationId: roleManagement.directory_CreateResourceNamespaces
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get resourceNamespaces from roleManagement
+      operationId: roleManagement.directory_GetResourceNamespaces
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - name
+                - resourceActions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - resourceActions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property resourceNamespaces in roleManagement
+      operationId: roleManagement.directory_UpdateResourceNamespaces
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property resourceNamespaces for roleManagement
+      operationId: roleManagement.directory_DeleteResourceNamespaces
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get resourceActions from roleManagement
+      operationId: roleManagement.directory.resourceNamespaces_ListResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - actionVerb
+                - actionVerb desc
+                - authenticationContextId
+                - authenticationContextId desc
+                - description
+                - description desc
+                - isAuthenticationContextSettable
+                - isAuthenticationContextSettable desc
+                - name
+                - name desc
+                - resourceScopeId
+                - resourceScopeId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionVerb
+                - authenticationContextId
+                - description
+                - isAuthenticationContextSettable
+                - name
+                - resourceScopeId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceActionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to resourceActions for roleManagement
+      operationId: roleManagement.directory.resourceNamespaces_CreateResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get resourceActions from roleManagement
+      operationId: roleManagement.directory.resourceNamespaces_GetResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionVerb
+                - authenticationContextId
+                - description
+                - isAuthenticationContextSettable
+                - name
+                - resourceScopeId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property resourceActions in roleManagement
+      operationId: roleManagement.directory.resourceNamespaces_UpdateResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property resourceActions for roleManagement
+      operationId: roleManagement.directory.resourceNamespaces_DeleteResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
@@ -5144,6 +5583,7 @@ paths:
             items:
               enum:
                 - id
+                - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
                 - roleAssignmentScheduleInstances
@@ -5164,6 +5604,7 @@ paths:
             items:
               enum:
                 - '*'
+                - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
                 - roleAssignmentScheduleInstances
@@ -5207,6 +5648,443 @@ paths:
       summary: Delete navigation property entitlementManagement for roleManagement
       operationId: roleManagement_DeleteEntitlementManagement
       parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/entitlementManagement/resourceNamespaces:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get resourceNamespaces from roleManagement
+      operationId: roleManagement.entitlementManagement_ListResourceNamespaces
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - name
+                - name desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - name
+                - resourceActions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - resourceActions
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to resourceNamespaces for roleManagement
+      operationId: roleManagement.entitlementManagement_CreateResourceNamespaces
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get resourceNamespaces from roleManagement
+      operationId: roleManagement.entitlementManagement_GetResourceNamespaces
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - name
+                - resourceActions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - resourceActions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property resourceNamespaces in roleManagement
+      operationId: roleManagement.entitlementManagement_UpdateResourceNamespaces
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property resourceNamespaces for roleManagement
+      operationId: roleManagement.entitlementManagement_DeleteResourceNamespaces
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get resourceActions from roleManagement
+      operationId: roleManagement.entitlementManagement.resourceNamespaces_ListResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - actionVerb
+                - actionVerb desc
+                - authenticationContextId
+                - authenticationContextId desc
+                - description
+                - description desc
+                - isAuthenticationContextSettable
+                - isAuthenticationContextSettable desc
+                - name
+                - name desc
+                - resourceScopeId
+                - resourceScopeId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionVerb
+                - authenticationContextId
+                - description
+                - isAuthenticationContextSettable
+                - name
+                - resourceScopeId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceActionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to resourceActions for roleManagement
+      operationId: roleManagement.entitlementManagement.resourceNamespaces_CreateResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get resourceActions from roleManagement
+      operationId: roleManagement.entitlementManagement.resourceNamespaces_GetResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionVerb
+                - authenticationContextId
+                - description
+                - isAuthenticationContextSettable
+                - name
+                - resourceScopeId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property resourceActions in roleManagement
+      operationId: roleManagement.entitlementManagement.resourceNamespaces_UpdateResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property resourceActions for roleManagement
+      operationId: roleManagement.entitlementManagement.resourceNamespaces_DeleteResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
@@ -9411,6 +10289,11 @@ components:
         - title: rbacApplication
           type: object
           properties:
+            resourceNamespaces:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+              x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
@@ -9459,6 +10342,46 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
               description: Schedules for role eligibility operations.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.unifiedRbacResourceNamespace:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRbacResourceNamespace
+          type: object
+          properties:
+            name:
+              type: string
+            resourceActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.unifiedRbacResourceAction:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRbacResourceAction
+          type: object
+          properties:
+            actionVerb:
+              type: string
+              nullable: true
+            authenticationContextId:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            isAuthenticationContextSettable:
+              type: boolean
+              nullable: true
+            name:
+              type: string
+            resourceScopeId:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleAssignment:
@@ -10128,6 +11051,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse:
+      title: Collection of unifiedRbacResourceNamespace
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.unifiedRbacResourceActionCollectionResponse:
+      title: Collection of unifiedRbacResourceAction
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.unifiedRoleAssignmentCollectionResponse:
       title: Collection of unifiedRoleAssignment
       type: object
@@ -10498,6 +11447,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentityCollectionResponse'
+    microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse'
+    microsoft.graph.unifiedRbacResourceActionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceActionCollectionResponse'
     microsoft.graph.unifiedRoleAssignmentCollectionResponse:
       description: Retrieved collection
       content:

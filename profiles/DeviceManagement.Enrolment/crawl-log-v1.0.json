@@ -45,6 +45,22 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
     },
+    "/roleManagement/directory/resourceNamespaces": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+    },
     "/roleManagement/directory/roleAssignments": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
@@ -218,6 +234,22 @@
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
     },
     "/roleManagement/entitlementManagement": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
     },

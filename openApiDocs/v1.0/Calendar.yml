@@ -689,10 +689,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.calendarView_CreateAttachments
       parameters:
         - name: group-id
@@ -1177,8 +1177,8 @@ paths:
     get:
       tags:
         - groups.calendar
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -1200,6 +1200,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -1396,6 +1412,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1568,10 +1600,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.calendarView.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -3791,10 +3823,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.events_CreateAttachments
       parameters:
         - name: group-id
@@ -4279,8 +4311,8 @@ paths:
     get:
       tags:
         - groups.calendar
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -4302,6 +4334,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -4498,6 +4546,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4670,10 +4734,10 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendar.events.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -7243,10 +7307,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendarView_CreateAttachments
       parameters:
         - name: group-id
@@ -7731,8 +7795,8 @@ paths:
     get:
       tags:
         - groups.event
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -7754,6 +7818,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -7950,6 +8030,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -8122,10 +8218,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.calendarView.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -10309,10 +10405,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.events_CreateAttachments
       parameters:
         - name: group-id
@@ -10797,8 +10893,8 @@ paths:
     get:
       tags:
         - groups.event
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from groups
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -10820,6 +10916,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -11016,6 +11128,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -11188,10 +11316,10 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: groups.events.instances_CreateAttachments
       parameters:
         - name: group-id
@@ -12958,6 +13086,127 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.room':
+    get:
+      tags:
+        - places.place
+      summary: Get the item of type microsoft.graph.place as microsoft.graph.room
+      operationId: places.place.GetPlace_AsRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.room'
+        default:
+          $ref: '#/components/responses/error'
+  /places/microsoft.graph.room:
+    get:
+      tags:
+        - places.place
+      summary: Get the items of type microsoft.graph.room in the microsoft.graph.place collection
+      operationId: places.place.ListPlace_AsRoom
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - address
+                - address desc
+                - displayName
+                - displayName desc
+                - geoCoordinates
+                - geoCoordinates desc
+                - phone
+                - phone desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.roomCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/calendar':
     get:
       tags:
@@ -13675,10 +13924,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -14163,8 +14412,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -14186,6 +14435,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -14382,6 +14647,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -14554,10 +14835,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -16777,10 +17058,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.events_CreateAttachments
       parameters:
         - name: user-id
@@ -17265,8 +17546,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -17288,6 +17569,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -17484,6 +17781,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -17656,10 +17969,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendar.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -21079,10 +21392,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -21711,8 +22024,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -21750,6 +22063,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -21962,6 +22291,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -22150,10 +22495,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -24933,10 +25278,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_CreateAttachments
       parameters:
         - name: user-id
@@ -25565,8 +25910,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -25604,6 +25949,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -25816,6 +26177,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -26004,10 +26381,10 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -28890,6 +29267,23 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - calendarPermissions
+                - calendarView
+                - events
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.calendarCollectionResponse'
@@ -28982,6 +29376,23 @@ paths:
                 - isTallyingResponses
                 - name
                 - owner
+                - calendarPermissions
+                - calendarView
+                - events
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - calendarPermissions
                 - calendarView
                 - events
@@ -29758,10 +30169,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -30318,8 +30729,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -30349,6 +30760,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -30553,6 +30980,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -30733,10 +31176,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -33236,10 +33679,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.events_CreateAttachments
       parameters:
         - name: user-id
@@ -33796,8 +34239,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -33827,6 +34270,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -34031,6 +34490,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -34211,10 +34686,10 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendars.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -37132,10 +37607,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarView_CreateAttachments
       parameters:
         - name: user-id
@@ -37620,8 +38095,8 @@ paths:
     get:
       tags:
         - users.event
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -37643,6 +38118,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -37839,6 +38330,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -38011,10 +38518,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.calendarView.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -40234,10 +40741,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.events_CreateAttachments
       parameters:
         - name: user-id
@@ -40722,8 +41229,8 @@ paths:
     get:
       tags:
         - users.event
-      summary: List instances
-      description: "Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the \noccurrences and exceptions of the event in the specified time range."
+      summary: Get instances from users
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -40745,6 +41252,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -40941,6 +41464,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -41113,10 +41652,10 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
       operationId: users.events.instances_CreateAttachments
       parameters:
         - name: user-id
@@ -43168,6 +43707,71 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.room:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.place'
+        - title: room
+          type: object
+          properties:
+            audioDeviceName:
+              type: string
+              description: Specifies the name of the audio device in the room.
+              nullable: true
+            bookingType:
+              $ref: '#/components/schemas/microsoft.graph.bookingType'
+            building:
+              type: string
+              description: Specifies the building name or building number that the room is in.
+              nullable: true
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Specifies the capacity of the room.
+              format: int32
+              nullable: true
+            displayDeviceName:
+              type: string
+              description: Specifies the name of the display device in the room.
+              nullable: true
+            emailAddress:
+              type: string
+              description: Email address of the room.
+              nullable: true
+            floorLabel:
+              type: string
+              description: 'Specifies a descriptive label for the floor, for example, P.'
+              nullable: true
+            floorNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Specifies the floor number that the room is on.
+              format: int32
+              nullable: true
+            isWheelChairAccessible:
+              type: boolean
+              description: Specifies whether the room is wheelchair accessible.
+              nullable: true
+            label:
+              type: string
+              description: 'Specifies a descriptive label for the room, for example, a number or name.'
+              nullable: true
+            nickname:
+              type: string
+              description: 'Specifies a nickname for the room, for example, ''conf room''.'
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Specifies additional features of the room, for example, details like the type of view or furniture type.'
+            videoDeviceName:
+              type: string
+              description: Specifies the name of the video device in the room.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.calendarGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43506,6 +44110,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bookingType:
+      title: bookingType
+      enum:
+        - unknown
+        - standard
+        - reserved
+      type: string
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -43588,6 +44199,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.roomCollectionResponse:
+      title: Collection of room
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.room'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -43908,6 +44532,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+    microsoft.graph.roomCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.roomCollectionResponse'
     microsoft.graph.calendarGroupCollectionResponse:
       description: Retrieved collection
       content:

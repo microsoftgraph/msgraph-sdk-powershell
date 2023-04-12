@@ -910,6 +910,8 @@ paths:
                 - isTenantRestricted desc
                 - location
                 - location desc
+                - managedServiceIdentity
+                - managedServiceIdentity desc
                 - mfaDetail
                 - mfaDetail desc
                 - networkLocationDetails
@@ -1016,6 +1018,7 @@ paths:
                 - isInteractive
                 - isTenantRestricted
                 - location
+                - managedServiceIdentity
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
@@ -1149,6 +1152,7 @@ paths:
                 - isInteractive
                 - isTenantRestricted
                 - location
+                - managedServiceIdentity
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
@@ -10428,6 +10432,8 @@ components:
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
+            managedServiceIdentity:
+              $ref: '#/components/schemas/microsoft.graph.managedIdentity'
             mfaDetail:
               $ref: '#/components/schemas/microsoft.graph.mfaDetail'
             networkLocationDetails:
@@ -12258,6 +12264,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.managedIdentity:
+      title: managedIdentity
+      type: object
+      properties:
+        associatedResourceId:
+          type: string
+          description: The ARM resource ID of the Azure resource associated with the managed identity used for sign in.
+          nullable: true
+        msiType:
+          $ref: '#/components/schemas/microsoft.graph.msiType'
+      additionalProperties:
+        type: object
     microsoft.graph.mfaDetail:
       title: mfaDetail
       type: object
@@ -13103,6 +13121,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.msiType:
+      title: msiType
+      enum:
+        - none
+        - userAssigned
+        - systemAssigned
+        - unknownFutureValue
+      type: string
     microsoft.graph.networkType:
       title: networkType
       enum:

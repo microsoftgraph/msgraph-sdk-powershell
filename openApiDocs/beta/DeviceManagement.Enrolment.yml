@@ -7086,6 +7086,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7147,6 +7148,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -7175,6 +7178,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7259,6 +7263,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7378,6 +7383,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -7406,6 +7413,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7504,6 +7512,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9255,6 +9264,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9316,6 +9326,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -9344,6 +9356,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9428,6 +9441,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9547,6 +9561,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -9575,6 +9591,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9673,6 +9690,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -11899,6 +11917,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -12899,6 +12918,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -13577,6 +13597,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -13605,6 +13627,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -13689,6 +13712,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -13808,6 +13832,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -13836,6 +13862,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -13934,6 +13961,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -15042,6 +15070,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -16072,6 +16101,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -18034,6 +18064,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -19034,6 +19065,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -19712,6 +19744,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -19740,6 +19774,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -19824,6 +19859,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -19943,6 +19979,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -19971,6 +20009,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -20069,6 +20108,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -21177,6 +21217,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -22207,6 +22248,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -23402,6 +23444,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -23459,6 +23502,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -23487,6 +23532,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -23567,6 +23613,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -23686,6 +23733,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -23714,6 +23763,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -23812,6 +23862,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -24570,6 +24621,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -26001,6 +26053,8 @@ components:
         - title: unifiedRoleDefinition
           type: object
           properties:
+            allowedPrincipalTypes:
+              $ref: '#/components/schemas/microsoft.graph.allowedRolePrincipalTypes'
             description:
               type: string
               description: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
@@ -26705,6 +26759,9 @@ components:
         - androidWorkProfile
         - unknown
         - androidAOSP
+        - androidMobileApplicationManagement
+        - iOSMobileApplicationManagement
+        - unknownFutureValue
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -26741,6 +26798,15 @@ components:
           - value: androidAOSP
             description: Android AOSP.
             name: androidAOSP
+          - value: androidMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for android devices.
+            name: androidMobileApplicationManagement
+          - value: iOSMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for iOS devices
+            name: iOSMobileApplicationManagement
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use
+            name: unknownFutureValue
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -26935,7 +27001,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -27398,6 +27464,14 @@ components:
       additionalProperties:
         type: object
       description: 'A complex type to store the windows update rollout settings including offer start date time, offer end date time, and days between each set of offers.'
+    microsoft.graph.allowedRolePrincipalTypes:
+      title: allowedRolePrincipalTypes
+      enum:
+        - user
+        - servicePrincipal
+        - group
+        - unknownFutureValue
+      type: string
     microsoft.graph.unifiedRolePermission:
       title: unifiedRolePermission
       type: object

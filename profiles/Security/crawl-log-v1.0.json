@@ -328,6 +328,34 @@
     "/security/secureScores/{secureScore-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/triggers": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/triggers/retentionEvents": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/triggers/retentionEvents/{retentionEvent-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/triggers/retentionEvents/{retentionEvent-id}/retentionEventType": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/triggerTypes": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/triggerTypes/retentionEventTypes": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
+    },
+    "/security/triggerTypes/retentionEventTypes/{retentionEventType-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
     }
   }
 }

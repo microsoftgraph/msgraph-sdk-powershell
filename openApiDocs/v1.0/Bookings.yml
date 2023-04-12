@@ -708,8 +708,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: List business calendarView
-      description: Get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+      summary: Get calendarView from solutions
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
@@ -723,6 +723,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
+        - name: start
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: end
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -901,6 +917,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
+        - name: start
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: end
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
