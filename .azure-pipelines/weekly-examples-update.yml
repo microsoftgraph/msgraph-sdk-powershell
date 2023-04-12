@@ -77,17 +77,9 @@ jobs:
         git push --set-upstream origin $(ComputeBranch.WeeklyExamplesBranch)
         git status
 
-  - task: PowerShell@2
-    displayName: Create examples update
-    env:
-      GITHUB_TOKEN: $(GITHUB_TOKEN)
-    inputs:
-      pwsh: true
-      targetType: inline
-      script: |
-        git status
-        Start-Sleep 15s
-        $Title = "[v1] Examples Update"
-        $Body = "This pull request was automatically created by Azure Pipelines. Contains examples update."
-        $BaseBranch = "dev"
-        . $(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1 -Title $Title -Body $Body -BaseBranchName $BaseBranch
+  - template: ./common-templates/create-pr.yml
+    parameters:
+      BaseBranch: "dev"
+      TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
+      Title: "[v1] Examples Update"
+      Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
