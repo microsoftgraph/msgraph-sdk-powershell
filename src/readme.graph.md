@@ -394,6 +394,13 @@ directive:
           - Body
           - DueDateTime
           - Importance
+  - where:
+      parameter-name: ConsistencyLevel
+    set:
+      completer:
+        name: ConsistencyLevel Completer
+        description: Gets the list of ConsistencyLevel header values.
+        script: "'eventual'"
 # Rename parameters.
   - where:
       variant: ^(Add|Insert|Apply|Approve|Unset|Clear|Wipe|Check|Copy|Disable|Locate|Get|Delta|Abort|Accept|Answer|Autofit|Bounding|Cell|Clean|Column|Columns|Commit|Decline|Dismiss|Down|Entire|Filter|Forward|Intersection|Invite|Keep|Last|Logout|Mute|Offset|Play|Preview|Range|Reassign|Reauthorize|Record|Redirect|Reject|Renew|Reply|Retire|Return|Row|Rows|Scan|Schedule|Snooze|Subscribe|Supported|Target|Time|Unmerge|Unmute|Unsubmit|View|Associate|Lock|Merge|Transfer|Move|Create|Update|Publish|Delete|Remove|Change|Request|Reset|Reboot|Restore|Recover|Send|Set|Assign|Bypass|Start|Cancel|Stop|Submit|Sync|Is|Unpublish|Purge|Close|Compare|Complete|Verify|Confirm|Clone|Disconnect|Enable|Export|Discover|Find|Acquire|Managed|Top|Grant|Hide|Import|Activate|Account|Archive|As|Batch|Begin|Bulk|Calendar|Clock|Cloud|Consent|Custom|Deprovision|Access|Estimate|Execute|Extend|Extract|Post|Force|Functions|Has|Have|Instantiate|Invalidate|License|Mark|Messages|Override|Parse|Pending|Postpone|Reactivate|Recent|Reenable|Reopen|Report|Reprovision|Reupload|Role|Rotate|Scoped|Self|Shared|Share|Soft|Summarize|Translate|Troubleshoot|Unarchive|Unassign|Unhide|Unshare|Unsubscribe|Upload|Users|Migrate|Provision|Generate|Make|Ping|Release|Rename|Resize|Restart|Resume|Revoke|Search|Trigger|Run|End|Pause|Validate|Evaluate|Unblock|Undo|Upgrade|Reprocess|Patch)\d*$
@@ -468,6 +475,23 @@ directive:
       verb: New|Remove|Update|Get
       subject: ^(.*)(IdentityGovernance)TermOfUse$
     remove: true
+# Modify OpenAPI documents to correct AutoREST.PowerShell limitations.
+# Change content-type from text/plain to application/json. AutoREST does not support non-json content types.
+# See https://github.com/Azure/autorest.powershell/issues/206.
+  - from: 'openapi-document'
+    where: $.components.responses.ODataCountResponse.content
+    transform: >-
+          return {
+            "application/json": {
+                "schema" : {
+                    "$ref" : '#/components/schemas/ODataCountResponse'
+                }
+            }
+          }
+# Mark consistency level parameter as required for /$count paths when header is present.
+  - from: openapi-document
+    where: $..paths.*[?(/(.*_GetCount)/gmi.exec(@.operationId))]..parameters[?(@.name === "ConsistencyLevel")]
+    transform: $['required'] = true
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
