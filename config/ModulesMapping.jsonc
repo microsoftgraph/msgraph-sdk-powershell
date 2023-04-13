@@ -28,7 +28,7 @@
   "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",
   "PersonalContacts": "^users.contactFolder$|^users.contact$",
   "Planner": "^planner\\.|^users.plannerUser$|^groups.plannerGroup$",
-  "Reports": "^reports\\.|^auditLogs\\.|^deviceManagement.deviceManagementReports$",
+  "Reports": "^reports\\.|^auditLogs\\.|^deviceManagement.deviceManagementReports$|^admin.adminReportSetting",
   "SchemaExtensions": "^schemaExtensions\\.",
   "Search": "^search\\.|^external\\.",
   "Security": "^security\\.",
