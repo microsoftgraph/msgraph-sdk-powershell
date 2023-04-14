@@ -92,7 +92,7 @@ This example returns the resources in the specified catalog whose display name i
 ## PARAMETERS
 
 ### -AccessPackageCatalogId
-key: id of accessPackageCatalog
+The unique identifier of accessPackageCatalog
 
 ```yaml
 Type: System.String

@@ -22,7 +22,7 @@ New-MgPolicyAppManagementPolicy [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgPolicyAppManagementPolicy -BodyParameter <IMicrosoftGraphAppManagementPolicy> [-Confirm] [-WhatIf]
+New-MgPolicyAppManagementPolicy -BodyParameter <IMicrosoftGraphAppManagementPolicy1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ appManagementPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy1
 Parameter Sets: Create
 Aliases:
 
@@ -211,11 +211,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy1
 
 ## NOTES
 
@@ -230,7 +230,7 @@ APPLIESTO <IMicrosoftGraphDirectoryObject[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
-BODYPARAMETER <IMicrosoftGraphAppManagementPolicy>: appManagementPolicy
+BODYPARAMETER <IMicrosoftGraphAppManagementPolicy1>: appManagementPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -248,7 +248,7 @@ BODYPARAMETER <IMicrosoftGraphAppManagementPolicy>: appManagementPolicy
       - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
     - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
       - `[MaxLifetime <TimeSpan?>]`: 
-      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
       - `[RestrictionType <String>]`: appCredentialRestrictionType
 
 RESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>: appManagementConfiguration
@@ -259,7 +259,7 @@ RESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>: appManagementConfigura
     - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
   - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
     - `[MaxLifetime <TimeSpan?>]`: 
-    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
     - `[RestrictionType <String>]`: appCredentialRestrictionType
 
 ## RELATED LINKS

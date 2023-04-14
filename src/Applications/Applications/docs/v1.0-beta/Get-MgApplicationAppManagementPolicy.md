@@ -41,7 +41,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationId
-key: id of application
+The unique identifier of application
 
 ```yaml
 Type: System.String
@@ -198,7 +198,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy1
 
 ## NOTES
 

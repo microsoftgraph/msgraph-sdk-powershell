@@ -512,7 +512,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -1142,7 +1142,7 @@ BODYPARAMETER <IMicrosoftGraphDrive>: drive
       - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
     - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
     - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
     - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -1157,7 +1157,7 @@ BODYPARAMETER <IMicrosoftGraphDrive>: drive
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[EmployeeLeaveDateTime <DateTime?>]`: 
+    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -1448,7 +1448,7 @@ BODYPARAMETER <IMicrosoftGraphDrive>: drive
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
                 - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-                - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+                - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                 - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                 - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
                 - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -2222,7 +2222,7 @@ BODYPARAMETER <IMicrosoftGraphDrive>: drive
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
           - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
         - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -2553,7 +2553,7 @@ BODYPARAMETER <IMicrosoftGraphDrive>: drive
         - `[OwnersCount <Int32?>]`: Count of owners in a team.
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
         - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
         - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
         - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -2974,6 +2974,10 @@ BODYPARAMETER <IMicrosoftGraphDrive>: drive
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3068,6 +3072,12 @@ BODYPARAMETER <IMicrosoftGraphDrive>: drive
             - `[StartTime <String>]`: Start time for the time range.
           - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
     - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+    - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
     - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
     - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
     - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -3127,9 +3137,9 @@ BODYPARAMETER <IMicrosoftGraphDrive>: drive
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-            - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-            - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+            - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+            - `[DisplayName <String>]`: The title of the linkedResource.
+            - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
             - `[WebUrl <String>]`: Deep link to the linkedResource.
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -3718,7 +3728,7 @@ BUNDLES <IMicrosoftGraphDriveItem[]>: Collection of [bundles][bundle] (albums an
       - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
     - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
     - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
     - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -4057,7 +4067,7 @@ BUNDLES <IMicrosoftGraphDriveItem[]>: Collection of [bundles][bundle] (albums an
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
           - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+          - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
           - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -4089,7 +4099,7 @@ BUNDLES <IMicrosoftGraphDriveItem[]>: Collection of [bundles][bundle] (albums an
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[EmployeeLeaveDateTime <DateTime?>]`: 
+    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -4432,7 +4442,7 @@ BUNDLES <IMicrosoftGraphDriveItem[]>: Collection of [bundles][bundle] (albums an
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
           - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
         - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -4763,7 +4773,7 @@ BUNDLES <IMicrosoftGraphDriveItem[]>: Collection of [bundles][bundle] (albums an
         - `[OwnersCount <Int32?>]`: Count of owners in a team.
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
         - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
         - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
         - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -5184,6 +5194,10 @@ BUNDLES <IMicrosoftGraphDriveItem[]>: Collection of [bundles][bundle] (albums an
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5278,6 +5292,12 @@ BUNDLES <IMicrosoftGraphDriveItem[]>: Collection of [bundles][bundle] (albums an
             - `[StartTime <String>]`: Start time for the time range.
           - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
     - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+    - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
     - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
     - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
     - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -5337,9 +5357,9 @@ BUNDLES <IMicrosoftGraphDriveItem[]>: Collection of [bundles][bundle] (albums an
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-            - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-            - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+            - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+            - `[DisplayName <String>]`: The title of the linkedResource.
+            - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
             - `[WebUrl <String>]`: Deep link to the linkedResource.
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -6301,7 +6321,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
   - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
   - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+  - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
   - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
   - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
   - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -6605,7 +6625,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
         - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-        - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+        - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
         - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
         - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -7106,7 +7126,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
   - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
   - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
   - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-  - `[EmployeeLeaveDateTime <DateTime?>]`: 
+  - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
   - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -7414,7 +7434,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
         - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
         - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-      - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+      - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
       - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
       - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
       - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -7745,7 +7765,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
       - `[OwnersCount <Int32?>]`: Count of owners in a team.
     - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+      - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
       - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
       - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
       - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -8166,6 +8186,10 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the online meeting.
     - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+    - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+      - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
   - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
   - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8260,6 +8284,12 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
           - `[StartTime <String>]`: Start time for the time range.
         - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
   - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+  - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+    - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+    - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+    - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
   - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
   - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
   - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -8319,9 +8349,9 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
         - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-          - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-          - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+          - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+          - `[DisplayName <String>]`: The title of the linkedResource.
+          - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
           - `[WebUrl <String>]`: Deep link to the linkedResource.
         - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
         - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -8880,7 +8910,7 @@ FOLLOWING <IMicrosoftGraphDriveItem[]>: The list of items the user is following.
       - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
     - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
     - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
     - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -9219,7 +9249,7 @@ FOLLOWING <IMicrosoftGraphDriveItem[]>: The list of items the user is following.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
           - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+          - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
           - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -9251,7 +9281,7 @@ FOLLOWING <IMicrosoftGraphDriveItem[]>: The list of items the user is following.
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[EmployeeLeaveDateTime <DateTime?>]`: 
+    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -9594,7 +9624,7 @@ FOLLOWING <IMicrosoftGraphDriveItem[]>: The list of items the user is following.
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
           - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
         - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -9925,7 +9955,7 @@ FOLLOWING <IMicrosoftGraphDriveItem[]>: The list of items the user is following.
         - `[OwnersCount <Int32?>]`: Count of owners in a team.
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
         - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
         - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
         - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -10346,6 +10376,10 @@ FOLLOWING <IMicrosoftGraphDriveItem[]>: The list of items the user is following.
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10440,6 +10474,12 @@ FOLLOWING <IMicrosoftGraphDriveItem[]>: The list of items the user is following.
             - `[StartTime <String>]`: Start time for the time range.
           - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
     - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+    - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
     - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
     - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
     - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -10499,9 +10539,9 @@ FOLLOWING <IMicrosoftGraphDriveItem[]>: The list of items the user is following.
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-            - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-            - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+            - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+            - `[DisplayName <String>]`: The title of the linkedResource.
+            - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
             - `[WebUrl <String>]`: Deep link to the linkedResource.
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -10911,30 +10951,30 @@ FOLLOWING <IMicrosoftGraphDriveItem[]>: The list of items the user is following.
     - `[Worksheets <IMicrosoftGraphWorkbookWorksheet[]>]`: Represents a collection of worksheets associated with the workbook. Read-only.
 
 INPUTOBJECT <IFilesIdentity>: Identity Parameter
-  - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
-  - `[ColumnLinkId <String>]`: key: id of columnLink
-  - `[ContentTypeId <String>]`: key: id of contentType
-  - `[ContentTypeId1 <String>]`: key: id of contentType
-  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
-  - `[DriveId <String>]`: key: id of drive
-  - `[DriveItemId <String>]`: key: id of driveItem
-  - `[DriveItemId1 <String>]`: key: id of driveItem
-  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
+  - `[ColumnLinkId <String>]`: The unique identifier of columnLink
+  - `[ContentTypeId <String>]`: The unique identifier of contentType
+  - `[ContentTypeId1 <String>]`: The unique identifier of contentType
+  - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
+  - `[DriveId <String>]`: The unique identifier of drive
+  - `[DriveItemId <String>]`: The unique identifier of driveItem
+  - `[DriveItemId1 <String>]`: The unique identifier of driveItem
+  - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
-  - `[GroupId <String>]`: key: id of group
+  - `[GroupId <String>]`: The unique identifier of group
   - `[Interval <String>]`: Usage: interval='{interval}'
-  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
-  - `[ListItemId <String>]`: key: id of listItem
-  - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[PermissionId <String>]`: key: id of permission
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
+  - `[ListItemId <String>]`: The unique identifier of listItem
+  - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
+  - `[PermissionId <String>]`: The unique identifier of permission
   - `[Q <String>]`: Usage: q='{q}'
-  - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
-  - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
+  - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
+  - `[SharedDriveItemId <String>]`: The unique identifier of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
-  - `[SubscriptionId <String>]`: key: id of subscription
-  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[SubscriptionId <String>]`: The unique identifier of subscription
+  - `[ThumbnailSetId <String>]`: The unique identifier of thumbnailSet
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UserId <String>]`: key: id of user
+  - `[UserId <String>]`: The unique identifier of user
 
 ITEMS <IMicrosoftGraphDriveItem[]>: All items contained in the drive. Read-only. Nullable.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -11482,7 +11522,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All items contained in the drive. Read-only.
       - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
     - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
     - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
     - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -11821,7 +11861,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All items contained in the drive. Read-only.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
           - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+          - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
           - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -11853,7 +11893,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All items contained in the drive. Read-only.
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[EmployeeLeaveDateTime <DateTime?>]`: 
+    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -12196,7 +12236,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All items contained in the drive. Read-only.
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
           - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
         - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -12527,7 +12567,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All items contained in the drive. Read-only.
         - `[OwnersCount <Int32?>]`: Count of owners in a team.
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
         - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
         - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
         - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -12948,6 +12988,10 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All items contained in the drive. Read-only.
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13042,6 +13086,12 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All items contained in the drive. Read-only.
             - `[StartTime <String>]`: Start time for the time range.
           - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
     - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+    - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
     - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
     - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
     - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -13101,9 +13151,9 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All items contained in the drive. Read-only.
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-            - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-            - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+            - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+            - `[DisplayName <String>]`: The title of the linkedResource.
+            - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
             - `[WebUrl <String>]`: Deep link to the linkedResource.
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -14065,7 +14115,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
   - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
   - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+  - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
   - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
   - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
   - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -14369,7 +14419,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
         - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-        - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+        - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
         - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
         - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -14870,7 +14920,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
   - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
   - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
   - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-  - `[EmployeeLeaveDateTime <DateTime?>]`: 
+  - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
   - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -15178,7 +15228,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
         - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
         - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-      - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+      - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
       - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
       - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
       - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -15509,7 +15559,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
       - `[OwnersCount <Int32?>]`: Count of owners in a team.
     - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+      - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
       - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
       - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
       - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -15930,6 +15980,10 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the online meeting.
     - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+    - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+      - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
   - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
   - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -16024,6 +16078,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
           - `[StartTime <String>]`: Start time for the time range.
         - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
   - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+  - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+    - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+    - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+    - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
   - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
   - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
   - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -16083,9 +16143,9 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
         - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-          - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-          - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+          - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+          - `[DisplayName <String>]`: The title of the linkedResource.
+          - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
           - `[WebUrl <String>]`: Deep link to the linkedResource.
         - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
         - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -16645,7 +16705,7 @@ LIST <IMicrosoftGraphList>: list
       - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
     - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
     - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
     - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -16949,7 +17009,7 @@ LIST <IMicrosoftGraphList>: list
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
           - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+          - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
           - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -17234,7 +17294,7 @@ LIST <IMicrosoftGraphList>: list
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[EmployeeLeaveDateTime <DateTime?>]`: 
+    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -17731,7 +17791,7 @@ LIST <IMicrosoftGraphList>: list
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
           - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
         - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -18062,7 +18122,7 @@ LIST <IMicrosoftGraphList>: list
         - `[OwnersCount <Int32?>]`: Count of owners in a team.
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
         - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
         - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
         - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -18483,6 +18543,10 @@ LIST <IMicrosoftGraphList>: list
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -18577,6 +18641,12 @@ LIST <IMicrosoftGraphList>: list
             - `[StartTime <String>]`: Start time for the time range.
           - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
     - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+    - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
     - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
     - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
     - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -18636,9 +18706,9 @@ LIST <IMicrosoftGraphList>: list
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-            - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-            - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+            - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+            - `[DisplayName <String>]`: The title of the linkedResource.
+            - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
             - `[WebUrl <String>]`: Deep link to the linkedResource.
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -19261,7 +19331,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
       - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
     - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
     - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
     - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -19600,7 +19670,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
           - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+          - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
           - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -19632,7 +19702,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[EmployeeLeaveDateTime <DateTime?>]`: 
+    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -19975,7 +20045,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
           - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
         - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -20306,7 +20376,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
         - `[OwnersCount <Int32?>]`: Count of owners in a team.
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
         - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
         - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
         - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -20727,6 +20797,10 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -20821,6 +20895,12 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
             - `[StartTime <String>]`: Start time for the time range.
           - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
     - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+    - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
     - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
     - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
     - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -20880,9 +20960,9 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-            - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-            - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+            - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+            - `[DisplayName <String>]`: The title of the linkedResource.
+            - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
             - `[WebUrl <String>]`: Deep link to the linkedResource.
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -21847,7 +21927,7 @@ SPECIAL <IMicrosoftGraphDriveItem[]>: Collection of common folders available in 
       - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
     - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
     - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
     - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -22186,7 +22266,7 @@ SPECIAL <IMicrosoftGraphDriveItem[]>: Collection of common folders available in 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
           - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+          - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
           - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -22218,7 +22298,7 @@ SPECIAL <IMicrosoftGraphDriveItem[]>: Collection of common folders available in 
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[EmployeeLeaveDateTime <DateTime?>]`: 
+    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -22561,7 +22641,7 @@ SPECIAL <IMicrosoftGraphDriveItem[]>: Collection of common folders available in 
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
           - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
         - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -22892,7 +22972,7 @@ SPECIAL <IMicrosoftGraphDriveItem[]>: Collection of common folders available in 
         - `[OwnersCount <Int32?>]`: Count of owners in a team.
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
         - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
         - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
         - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -23313,6 +23393,10 @@ SPECIAL <IMicrosoftGraphDriveItem[]>: Collection of common folders available in 
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -23407,6 +23491,12 @@ SPECIAL <IMicrosoftGraphDriveItem[]>: Collection of common folders available in 
             - `[StartTime <String>]`: Start time for the time range.
           - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
     - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+    - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
     - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
     - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
     - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -23466,9 +23556,9 @@ SPECIAL <IMicrosoftGraphDriveItem[]>: Collection of common folders available in 
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-            - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-            - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+            - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+            - `[DisplayName <String>]`: The title of the linkedResource.
+            - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
             - `[WebUrl <String>]`: Deep link to the linkedResource.
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone

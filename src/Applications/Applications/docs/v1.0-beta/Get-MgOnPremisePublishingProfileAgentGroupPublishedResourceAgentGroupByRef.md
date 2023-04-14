@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnPremisesAgentGroupId
-key: id of onPremisesAgentGroup
+The unique identifier of onPremisesAgentGroup
 
 ```yaml
 Type: System.String
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnPremisesPublishingProfileId
-key: id of onPremisesPublishingProfile
+The unique identifier of onPremisesPublishingProfile
 
 ```yaml
 Type: System.String
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishedResourceId
-key: id of publishedResource
+The unique identifier of publishedResource
 
 ```yaml
 Type: System.String

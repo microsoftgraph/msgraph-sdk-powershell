@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-key: id of group
+The unique identifier of group
 
 ```yaml
 Type: System.String
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnenotePageId
-key: id of onenotePage
+The unique identifier of onenotePage
 
 ```yaml
 Type: System.String
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnenoteSectionId
-key: id of onenoteSection
+The unique identifier of onenoteSection
 
 ```yaml
 Type: System.String
@@ -193,15 +193,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <INotesIdentity>: Identity Parameter
-  - `[GroupId <String>]`: key: id of group
-  - `[NotebookId <String>]`: key: id of notebook
-  - `[OnenoteOperationId <String>]`: key: id of onenoteOperation
-  - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[OnenoteResourceId <String>]`: key: id of onenoteResource
-  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
-  - `[SectionGroupId <String>]`: key: id of sectionGroup
-  - `[SiteId <String>]`: key: id of site
-  - `[UserId <String>]`: key: id of user
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[NotebookId <String>]`: The unique identifier of notebook
+  - `[OnenoteOperationId <String>]`: The unique identifier of onenoteOperation
+  - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
+  - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[SectionGroupId <String>]`: The unique identifier of sectionGroup
+  - `[SiteId <String>]`: The unique identifier of site
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

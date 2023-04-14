@@ -161,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalId
-key: id of servicePrincipal
+The unique identifier of servicePrincipal
 
 ```yaml
 Type: System.String
@@ -315,7 +315,7 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationJob>: synchronizationJob
         - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
         - `[Name <String>]`: 
         - `[SupportedApis <String[]>]`: 
-      - `[ReadOnly <Boolean?>]`: 
+      - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
       - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
     - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
       - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
@@ -379,9 +379,9 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationJob>: synchronizationJob
       - `[CountImportedReferenceDeltas <Int64?>]`: Count of imported delta-changes pertaining to reference changes.
       - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Code <String>]`: 
-        - `[Message <String>]`: 
-        - `[TenantActionable <Boolean?>]`: 
+        - `[Code <String>]`: The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
+        - `[Message <String>]`: The error message. For example, Policy permitting auto-redemption of invitations not configured.
+        - `[TenantActionable <Boolean?>]`: The action to take to resolve the error. For example, false.
       - `[State <String>]`: synchronizationTaskExecutionResult
       - `[TimeBegan <DateTime?>]`: Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[TimeEnded <DateTime?>]`: Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -403,8 +403,8 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationJob>: synchronizationJob
     - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-      - `[Key <String>]`: Key.
-      - `[Value <Int64?>]`: Value.
+      - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+      - `[Value <Int64?>]`: Total number of synchronized objects.
     - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
   - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
     - `[Name <String>]`: Name for this key-value pair
@@ -412,34 +412,34 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationJob>: synchronizationJob
   - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
-  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
-  - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
-  - `[ApplicationId <String>]`: key: id of application
-  - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
-  - `[ConnectorGroupId <String>]`: key: id of connectorGroup
-  - `[ConnectorId <String>]`: key: id of connector
-  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
-  - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[EndpointId <String>]`: key: id of endpoint
-  - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
-  - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
-  - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
-  - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
-  - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
-  - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
-  - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
-  - `[OnPremisesPublishingProfileId <String>]`: key: id of onPremisesPublishingProfile
-  - `[PublishedResourceId <String>]`: key: id of publishedResource
-  - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
-  - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
-  - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
-  - `[UserId <String>]`: key: id of user
+  - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
+  - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
+  - `[ApplicationId <String>]`: The unique identifier of application
+  - `[ApplicationTemplateId <String>]`: The unique identifier of applicationTemplate
+  - `[ClaimsMappingPolicyId <String>]`: The unique identifier of claimsMappingPolicy
+  - `[ConnectorGroupId <String>]`: The unique identifier of connectorGroup
+  - `[ConnectorId <String>]`: The unique identifier of connector
+  - `[DelegatedPermissionClassificationId <String>]`: The unique identifier of delegatedPermissionClassification
+  - `[DirectoryDefinitionId <String>]`: The unique identifier of directoryDefinition
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[EndpointId <String>]`: The unique identifier of endpoint
+  - `[ExtensionPropertyId <String>]`: The unique identifier of extensionProperty
+  - `[FederatedIdentityCredentialId <String>]`: The unique identifier of federatedIdentityCredential
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[HomeRealmDiscoveryPolicyId <String>]`: The unique identifier of homeRealmDiscoveryPolicy
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OnPremisesAgentGroupId <String>]`: The unique identifier of onPremisesAgentGroup
+  - `[OnPremisesAgentGroupId1 <String>]`: The unique identifier of onPremisesAgentGroup
+  - `[OnPremisesAgentId <String>]`: The unique identifier of onPremisesAgent
+  - `[OnPremisesPublishingProfileId <String>]`: The unique identifier of onPremisesPublishingProfile
+  - `[PublishedResourceId <String>]`: The unique identifier of publishedResource
+  - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
+  - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
+  - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
+  - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
+  - `[UserId <String>]`: The unique identifier of user
 
 SCHEDULE <IMicrosoftGraphSynchronizationSchedule>: synchronizationSchedule
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -478,7 +478,7 @@ SCHEMA <IMicrosoftGraphSynchronizationSchema>: synchronizationSchema
       - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
       - `[Name <String>]`: 
       - `[SupportedApis <String[]>]`: 
-    - `[ReadOnly <Boolean?>]`: 
+    - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
     - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
   - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
     - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
@@ -543,9 +543,9 @@ STATUS <IMicrosoftGraphSynchronizationStatus>: synchronizationStatus
     - `[CountImportedReferenceDeltas <Int64?>]`: Count of imported delta-changes pertaining to reference changes.
     - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Code <String>]`: 
-      - `[Message <String>]`: 
-      - `[TenantActionable <Boolean?>]`: 
+      - `[Code <String>]`: The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
+      - `[Message <String>]`: The error message. For example, Policy permitting auto-redemption of invitations not configured.
+      - `[TenantActionable <Boolean?>]`: The action to take to resolve the error. For example, false.
     - `[State <String>]`: synchronizationTaskExecutionResult
     - `[TimeBegan <DateTime?>]`: Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[TimeEnded <DateTime?>]`: Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -567,8 +567,8 @@ STATUS <IMicrosoftGraphSynchronizationStatus>: synchronizationStatus
   - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-    - `[Key <String>]`: Key.
-    - `[Value <Int64?>]`: Value.
+    - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+    - `[Value <Int64?>]`: Total number of synchronized objects.
   - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
 
 SYNCHRONIZATIONJOBSETTINGS <IMicrosoftGraphKeyValuePair[]>: Settings associated with the job. Some settings are inherited from the template.

@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClientState
-Optional.
+Required.
 Specifies the value of the clientState property sent by the service in each change notification.
 The maximum length is 255 characters.
 The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -214,7 +214,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-key: id of group
+The unique identifier of group
 
 ```yaml
 Type: System.String
@@ -315,7 +315,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListId
-key: id of list
+The unique identifier of list
 
 ```yaml
 Type: System.String
@@ -435,7 +435,7 @@ Accept wildcard characters: False
 ```
 
 ### -SiteId
-key: id of site
+The unique identifier of site
 
 ```yaml
 Type: System.String
@@ -450,7 +450,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
-key: id of subscription
+The unique identifier of subscription
 
 ```yaml
 Type: System.String
@@ -522,7 +522,7 @@ BODYPARAMETER <IMicrosoftGraphSubscription>: subscription
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
   - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-  - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+  - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
   - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
   - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
   - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Required when includeResourceData is true.
@@ -537,51 +537,51 @@ BODYPARAMETER <IMicrosoftGraphSubscription>: subscription
   - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
 
 INPUTOBJECT <ISitesIdentity>: Identity Parameter
-  - `[BaseItemId <String>]`: key: id of baseItem
-  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
-  - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
-  - `[ColumnLinkId <String>]`: key: id of columnLink
-  - `[ContentTypeId <String>]`: key: id of contentType
-  - `[ContentTypeId1 <String>]`: key: id of contentType
-  - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
-  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
-  - `[DriveId <String>]`: key: id of drive
+  - `[BaseItemId <String>]`: The unique identifier of baseItem
+  - `[BitlockerRecoveryKeyId <String>]`: The unique identifier of bitlockerRecoveryKey
+  - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
+  - `[ColumnLinkId <String>]`: The unique identifier of columnLink
+  - `[ContentTypeId <String>]`: The unique identifier of contentType
+  - `[ContentTypeId1 <String>]`: The unique identifier of contentType
+  - `[DataLossPreventionPolicyId <String>]`: The unique identifier of dataLossPreventionPolicy
+  - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
+  - `[DriveId <String>]`: The unique identifier of drive
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
-  - `[GroupId <String>]`: key: id of group
-  - `[GroupId1 <String>]`: key: id of group
-  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[GroupId1 <String>]`: The unique identifier of group
+  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
-  - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
+  - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
-  - `[ListId <String>]`: key: id of list
+  - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
-  - `[ListItemId <String>]`: key: id of listItem
-  - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[NotebookId <String>]`: key: id of notebook
-  - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[ListItemId <String>]`: The unique identifier of listItem
+  - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
+  - `[NotebookId <String>]`: The unique identifier of notebook
+  - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[PermissionId <String>]`: key: id of permission
-  - `[RelationId <String>]`: key: id of relation
-  - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
-  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
-  - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
-  - `[SetId <String>]`: key: id of set
-  - `[SetId1 <String>]`: key: id of set
-  - `[SiteId <String>]`: key: id of site
-  - `[SiteId1 <String>]`: key: id of site
-  - `[SitePageId <String>]`: key: id of sitePage
+  - `[PermissionId <String>]`: The unique identifier of permission
+  - `[RelationId <String>]`: The unique identifier of relation
+  - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
+  - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
+  - `[SensitivityLabelId1 <String>]`: The unique identifier of sensitivityLabel
+  - `[SetId <String>]`: The unique identifier of set
+  - `[SetId1 <String>]`: The unique identifier of set
+  - `[SiteId <String>]`: The unique identifier of site
+  - `[SiteId1 <String>]`: The unique identifier of site
+  - `[SitePageId <String>]`: The unique identifier of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
-  - `[StoreId <String>]`: key: id of store
-  - `[SubscriptionId <String>]`: key: id of subscription
-  - `[TermId <String>]`: key: id of term
-  - `[TermId1 <String>]`: key: id of term
-  - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
-  - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
+  - `[StoreId <String>]`: The unique identifier of store
+  - `[SubscriptionId <String>]`: The unique identifier of subscription
+  - `[TermId <String>]`: The unique identifier of term
+  - `[TermId1 <String>]`: The unique identifier of term
+  - `[ThreatAssessmentRequestId <String>]`: The unique identifier of threatAssessmentRequest
+  - `[ThreatAssessmentResultId <String>]`: The unique identifier of threatAssessmentResult
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UserId <String>]`: key: id of user
-  - `[WebPartId <String>]`: key: id of webPart
+  - `[UserId <String>]`: The unique identifier of user
+  - `[WebPartId <String>]`: The unique identifier of webPart
 
 ## RELATED LINKS
 

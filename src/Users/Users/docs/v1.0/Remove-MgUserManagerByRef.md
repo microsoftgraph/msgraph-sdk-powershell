@@ -12,13 +12,13 @@ Delete ref of navigation property manager for users
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgUserManagerByRef -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgUserManagerByRef -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -59,7 +59,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -85,11 +85,11 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -151,26 +151,26 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
-  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
-  - `[AttachmentId <String>]`: key: id of attachment
-  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
-  - `[ChecklistItemId <String>]`: key: id of checklistItem
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[LinkedResourceId <String>]`: key: id of linkedResource
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
-  - `[OutlookCategoryId <String>]`: key: id of outlookCategory
-  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[ProfilePhotoId <String>]`: key: id of profilePhoto
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[TodoTaskId <String>]`: key: id of todoTask
-  - `[TodoTaskListId <String>]`: key: id of todoTaskList
-  - `[UserId <String>]`: key: id of user
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentId <String>]`: The unique identifier of attachment
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[NotificationId <String>]`: The unique identifier of notification
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

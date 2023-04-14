@@ -166,6 +166,17 @@ BODYPARAMETER <IMicrosoftGraphRoleManagement>: roleManagement
   - `[Directory <IMicrosoftGraphRbacApplication1>]`: rbacApplication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Name <String>]`: 
+      - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[ActionVerb <String>]`: 
+        - `[AuthenticationContextId <String>]`: 
+        - `[Description <String>]`: 
+        - `[IsAuthenticationContextSettable <Boolean?>]`: 
+        - `[Name <String>]`: 
+        - `[ResourceScopeId <String>]`: 
     - `[RoleAssignmentScheduleInstances <IMicrosoftGraphUnifiedRoleAssignmentScheduleInstance[]>]`: Instances for active role assignments.
       - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -354,6 +365,17 @@ BODYPARAMETER <IMicrosoftGraphRoleManagement>: roleManagement
 DIRECTORY <IMicrosoftGraphRbacApplication1>: rbacApplication
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Name <String>]`: 
+    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[ActionVerb <String>]`: 
+      - `[AuthenticationContextId <String>]`: 
+      - `[Description <String>]`: 
+      - `[IsAuthenticationContextSettable <Boolean?>]`: 
+      - `[Name <String>]`: 
+      - `[ResourceScopeId <String>]`: 
   - `[RoleAssignmentScheduleInstances <IMicrosoftGraphUnifiedRoleAssignmentScheduleInstance[]>]`: Instances for active role assignments.
     - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -541,6 +563,17 @@ DIRECTORY <IMicrosoftGraphRbacApplication1>: rbacApplication
 ENTITLEMENTMANAGEMENT <IMicrosoftGraphRbacApplication1>: rbacApplication
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Name <String>]`: 
+    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[ActionVerb <String>]`: 
+      - `[AuthenticationContextId <String>]`: 
+      - `[Description <String>]`: 
+      - `[IsAuthenticationContextSettable <Boolean?>]`: 
+      - `[Name <String>]`: 
+      - `[ResourceScopeId <String>]`: 
   - `[RoleAssignmentScheduleInstances <IMicrosoftGraphUnifiedRoleAssignmentScheduleInstance[]>]`: Instances for active role assignments.
     - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

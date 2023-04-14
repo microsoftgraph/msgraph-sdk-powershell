@@ -805,6 +805,10 @@ BODYPARAMETER <IMicrosoftGraphOrganization>: organization
           - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
           - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
       - `[DirectoryPropertyName <String>]`: Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
+    - `[Pronouns <IMicrosoftGraphPronounsSettings>]`: pronounsSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
   - `[State <String>]`: State name of the address for the organization.
   - `[Street <String>]`: Street name of the address for organization.
   - `[TechnicalNotificationMails <String[]>]`: Not nullable.
@@ -952,6 +956,10 @@ SETTINGS <IMicrosoftGraphOrganizationSettings>: organizationSettings
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
     - `[DirectoryPropertyName <String>]`: Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
+  - `[Pronouns <IMicrosoftGraphPronounsSettings>]`: pronounsSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
 
 VERIFIEDDOMAINS <IMicrosoftGraphVerifiedDomain[]>: The collection of domains associated with this tenant. Not nullable.
   - `[Capabilities <String>]`: For example, Email, OfficeCommunicationsOnline.

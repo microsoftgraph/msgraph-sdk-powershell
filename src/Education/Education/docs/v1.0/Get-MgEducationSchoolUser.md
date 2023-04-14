@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationSchoolId
-key: id of educationSchool
+The unique identifier of educationSchool
 
 ```yaml
 Type: System.String

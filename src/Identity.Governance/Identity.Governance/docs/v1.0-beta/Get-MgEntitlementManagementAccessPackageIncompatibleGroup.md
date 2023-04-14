@@ -35,7 +35,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 ## PARAMETERS
 
 ### -AccessPackageId
-key: id of accessPackage
+The unique identifier of accessPackage
 
 ```yaml
 Type: System.String

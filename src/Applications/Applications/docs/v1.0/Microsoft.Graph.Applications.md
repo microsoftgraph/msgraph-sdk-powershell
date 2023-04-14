@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: d9036b88-60a8-4fcd-9635-0b024f35b22f
+Module Guid: 668b514f-45a8-42f0-962e-312899c6dfe1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -67,6 +67,12 @@ Invoke action checkMemberObjects
 
 ### [Get-MgApplication](Get-MgApplication.md)
 Get the properties and relationships of an application object.
+
+### [Get-MgApplicationAppManagementPolicy](Get-MgApplicationAppManagementPolicy.md)
+The appManagementPolicy applied to this application.
+
+### [Get-MgApplicationAppManagementPolicyByRef](Get-MgApplicationAppManagementPolicyByRef.md)
+The appManagementPolicy applied to this application.
 
 ### [Get-MgApplicationById](Get-MgApplicationById.md)
 Return the directory objects specified in a list of IDs.
@@ -137,6 +143,9 @@ Supports $expand.
 
 ### [Get-MgServicePrincipal](Get-MgServicePrincipal.md)
 Retrieve the properties and relationships of a servicePrincipal object.
+
+### [Get-MgServicePrincipalAppManagementPolicy](Get-MgServicePrincipalAppManagementPolicy.md)
+The appManagementPolicy applied to this application.
 
 ### [Get-MgServicePrincipalAppRoleAssignedTo](Get-MgServicePrincipalAppRoleAssignedTo.md)
 App role assignments for this app or service, granted to users, groups, and other service principals.
@@ -229,13 +238,124 @@ Get transitiveMemberOf from servicePrincipals
 Represents the app roles a user has been granted for an application.
 Supports $expand.
 
+### [Group-MgServicePrincipalGetMemberOfAs](Group-MgServicePrincipalGetMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgServicePrincipalGetOwnedObjectAs](Group-MgServicePrincipalGetOwnedObjectAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgServicePrincipalGetTransitiveMemberOfAs](Group-MgServicePrincipalGetTransitiveMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgServicePrincipalListMemberOfAs](Group-MgServicePrincipalListMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgServicePrincipalListOwnedObjectAs](Group-MgServicePrincipalListOwnedObjectAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgServicePrincipalListTransitiveMemberOfAs](Group-MgServicePrincipalListTransitiveMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsApplicationGetOwnerAppRoleAssignment](Invoke-MgAsApplicationGetOwnerAppRoleAssignment.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
+
+### [Invoke-MgAsApplicationGetOwnerEndpoint](Invoke-MgAsApplicationGetOwnerEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsApplicationGetOwnerUser](Invoke-MgAsApplicationGetOwnerUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsApplicationListOwnerAppRoleAssignment](Invoke-MgAsApplicationListOwnerAppRoleAssignment.md)
+Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsApplicationListOwnerEndpoint](Invoke-MgAsApplicationListOwnerEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsApplicationListOwnerUser](Invoke-MgAsApplicationListOwnerUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalGetMemberOfAdministrativeUnit](Invoke-MgAsServicePrincipalGetMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsServicePrincipalGetOwnedObjectApplication](Invoke-MgAsServicePrincipalGetOwnedObjectApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsServicePrincipalGetOwnedObjectAppRoleAssignment](Invoke-MgAsServicePrincipalGetOwnedObjectAppRoleAssignment.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
+
+### [Invoke-MgAsServicePrincipalGetOwnedObjectEndpoint](Invoke-MgAsServicePrincipalGetOwnedObjectEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsServicePrincipalGetOwnerAppRoleAssignment](Invoke-MgAsServicePrincipalGetOwnerAppRoleAssignment.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
+
+### [Invoke-MgAsServicePrincipalGetOwnerEndpoint](Invoke-MgAsServicePrincipalGetOwnerEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsServicePrincipalGetOwnerUser](Invoke-MgAsServicePrincipalGetOwnerUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsServicePrincipalGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsServicePrincipalGetTransitiveMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsServicePrincipalListMemberOfAdministrativeUnit](Invoke-MgAsServicePrincipalListMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnedObjectApplication](Invoke-MgAsServicePrincipalListOwnedObjectApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnedObjectAppRoleAssignment](Invoke-MgAsServicePrincipalListOwnedObjectAppRoleAssignment.md)
+Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnedObjectEndpoint](Invoke-MgAsServicePrincipalListOwnedObjectEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnerAppRoleAssignment](Invoke-MgAsServicePrincipalListOwnerAppRoleAssignment.md)
+Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnerEndpoint](Invoke-MgAsServicePrincipalListOwnerEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnerUser](Invoke-MgAsServicePrincipalListOwnerUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsServicePrincipalListTransitiveMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
 ### [Invoke-MgInstantiateApplicationTemplate](Invoke-MgInstantiateApplicationTemplate.md)
 Add an instance of an application from the Azure AD application gallery into your directory.
 You can also use this API to instantiate non-gallery apps.
 Use the following ID for the **applicationTemplate** object: `8adf8e6e-67b2-4cf2-a259-e3dc5476c621`.
 
+### [Invoke-MgServiceApplicationGetOwner](Invoke-MgServiceApplicationGetOwner.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceApplicationListOwner](Invoke-MgServiceApplicationListOwner.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServicePrincipalGetCreatedObject](Invoke-MgServicePrincipalGetCreatedObject.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServicePrincipalGetOwnedObject](Invoke-MgServicePrincipalGetOwnedObject.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServicePrincipalGetOwner](Invoke-MgServicePrincipalGetOwner.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServicePrincipalListCreatedObject](Invoke-MgServicePrincipalListCreatedObject.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServicePrincipalListOwnedObject](Invoke-MgServicePrincipalListOwnedObject.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServicePrincipalListOwner](Invoke-MgServicePrincipalListOwner.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
 ### [New-MgApplication](New-MgApplication.md)
 Create a new application object.
+
+### [New-MgApplicationAppManagementPolicyByRef](New-MgApplicationAppManagementPolicyByRef.md)
+Create new navigation property ref to appManagementPolicies for applications
 
 ### [New-MgApplicationExtensionProperty](New-MgApplicationExtensionProperty.md)
 Create a new directory extension definition, represented by an extensionProperty object.
@@ -298,6 +418,9 @@ To grant an app role assignment to a user, you need three identifiers:
 Delete an application object.
 When deleted, apps are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
+
+### [Remove-MgApplicationAppManagementPolicyByRef](Remove-MgApplicationAppManagementPolicyByRef.md)
+Delete ref of navigation property appManagementPolicies for applications
 
 ### [Remove-MgApplicationExtensionProperty](Remove-MgApplicationExtensionProperty.md)
 Delete navigation property extensionProperties for applications

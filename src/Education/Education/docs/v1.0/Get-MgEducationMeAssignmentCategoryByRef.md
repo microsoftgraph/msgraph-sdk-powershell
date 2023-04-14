@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationAssignmentId
-key: id of educationAssignment
+The unique identifier of educationAssignment
 
 ```yaml
 Type: System.String

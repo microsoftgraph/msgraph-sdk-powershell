@@ -21,8 +21,8 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummar
  [-ExcludedUsersDistinctCount <Int32>] [-Id <String>] [-IncompleteStepsCount <Int32>]
  [-IncompleteUsersCount <Int32>] [-IneligibleStepsCount <Int32>] [-IsComplete] [-LastActionByUserId <String>]
  [-LastActionDateTime <DateTime>] [-ManagementTemplateCollectionDisplayName <String>]
- [-ManagementTemplateCollectionId <String>] [-TenantId <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ManagementTemplateCollectionId <String>] [-RegressedStepsCount <Int32>] [-RegressedUsersCount <Int32>]
+ [-TenantId <String>] [-UnlicensedUsersCount <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -50,7 +50,8 @@ Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummar
  [-Id <String>] [-IncompleteStepsCount <Int32>] [-IncompleteUsersCount <Int32>]
  [-IneligibleStepsCount <Int32>] [-IsComplete] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
  [-ManagementTemplateCollectionDisplayName <String>] [-ManagementTemplateCollectionId <String>]
- [-TenantId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RegressedStepsCount <Int32>] [-RegressedUsersCount <Int32>] [-TenantId <String>]
+ [-UnlicensedUsersCount <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -349,7 +350,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementTemplateCollectionTenantSummaryId
-key: id of managementTemplateCollectionTenantSummary
+The unique identifier of managementTemplateCollectionTenantSummary
 
 ```yaml
 Type: System.String
@@ -378,11 +379,56 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RegressedStepsCount
+.
+
+```yaml
+Type: System.Int32
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegressedUsersCount
+.
+
+```yaml
+Type: System.Int32
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TenantId
 .
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnlicensedUsersCount
+.
+
+```yaml
+Type: System.Int32
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -464,44 +510,50 @@ BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSu
   - `[LastActionDateTime <DateTime?>]`: 
   - `[ManagementTemplateCollectionDisplayName <String>]`: 
   - `[ManagementTemplateCollectionId <String>]`: 
+  - `[RegressedStepsCount <Int32?>]`: 
+  - `[RegressedUsersCount <Int32?>]`: 
   - `[TenantId <String>]`: 
+  - `[UnlicensedUsersCount <Int32?>]`: 
 
 INPUTOBJECT <IManagedTenantsIdentity>: Identity Parameter
-  - `[AggregatedPolicyComplianceId <String>]`: key: id of aggregatedPolicyCompliance
-  - `[AuditEventId <String>]`: key: id of auditEvent
-  - `[CloudPcConnectionId <String>]`: key: id of cloudPcConnection
-  - `[CloudPcDeviceId <String>]`: key: id of cloudPcDevice
-  - `[CloudPcOverviewTenantId <String>]`: key: tenantId of cloudPcOverview
-  - `[ConditionalAccessPolicyCoverageId <String>]`: key: id of conditionalAccessPolicyCoverage
-  - `[CredentialUserRegistrationsSummaryId <String>]`: key: id of credentialUserRegistrationsSummary
-  - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: key: id of deviceCompliancePolicySettingStateSummary
-  - `[ManagedDeviceComplianceId <String>]`: key: id of managedDeviceCompliance
-  - `[ManagedDeviceComplianceTrendId <String>]`: key: id of managedDeviceComplianceTrend
-  - `[ManagedTenantAlertId <String>]`: key: id of managedTenantAlert
-  - `[ManagedTenantAlertLogId <String>]`: key: id of managedTenantAlertLog
-  - `[ManagedTenantAlertRuleDefinitionId <String>]`: key: id of managedTenantAlertRuleDefinition
-  - `[ManagedTenantAlertRuleId <String>]`: key: id of managedTenantAlertRule
-  - `[ManagedTenantApiNotificationId <String>]`: key: id of managedTenantApiNotification
-  - `[ManagedTenantEmailNotificationId <String>]`: key: id of managedTenantEmailNotification
-  - `[ManagedTenantTicketingEndpointId <String>]`: key: id of managedTenantTicketingEndpoint
-  - `[ManagementActionId <String>]`: key: id of managementAction
-  - `[ManagementActionTenantDeploymentStatusId <String>]`: key: id of managementActionTenantDeploymentStatus
-  - `[ManagementIntentId <String>]`: key: id of managementIntent
-  - `[ManagementTemplateCollectionId <String>]`: key: id of managementTemplateCollection
-  - `[ManagementTemplateCollectionTenantSummaryId <String>]`: key: id of managementTemplateCollectionTenantSummary
-  - `[ManagementTemplateId <String>]`: key: id of managementTemplate
-  - `[ManagementTemplateStepDeploymentId <String>]`: key: id of managementTemplateStepDeployment
-  - `[ManagementTemplateStepId <String>]`: key: id of managementTemplateStep
-  - `[ManagementTemplateStepTenantSummaryId <String>]`: key: id of managementTemplateStepTenantSummary
-  - `[ManagementTemplateStepVersionId <String>]`: key: id of managementTemplateStepVersion
-  - `[MyRoleTenantId <String>]`: key: tenantId of myRole
-  - `[TenantCustomizedInformationId <String>]`: key: id of tenantCustomizedInformation
-  - `[TenantDetailedInformationId <String>]`: key: id of tenantDetailedInformation
-  - `[TenantGroupId <String>]`: key: id of tenantGroup
-  - `[TenantId <String>]`: key: id of tenant
-  - `[TenantTagId <String>]`: key: id of tenantTag
-  - `[WindowsDeviceMalwareStateId <String>]`: key: id of windowsDeviceMalwareState
-  - `[WindowsProtectionStateId <String>]`: key: id of windowsProtectionState
+  - `[AggregatedPolicyComplianceId <String>]`: The unique identifier of aggregatedPolicyCompliance
+  - `[AppPerformanceId <String>]`: The unique identifier of appPerformance
+  - `[AuditEventId <String>]`: The unique identifier of auditEvent
+  - `[CloudPcConnectionId <String>]`: The unique identifier of cloudPcConnection
+  - `[CloudPcDeviceId <String>]`: The unique identifier of cloudPcDevice
+  - `[CloudPcOverviewTenantId <String>]`: The unique identifier of cloudPcOverview
+  - `[ConditionalAccessPolicyCoverageId <String>]`: The unique identifier of conditionalAccessPolicyCoverage
+  - `[CredentialUserRegistrationsSummaryId <String>]`: The unique identifier of credentialUserRegistrationsSummary
+  - `[DeviceAppPerformanceId <String>]`: The unique identifier of deviceAppPerformance
+  - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: The unique identifier of deviceCompliancePolicySettingStateSummary
+  - `[DeviceHealthStatusId <String>]`: The unique identifier of deviceHealthStatus
+  - `[ManagedDeviceComplianceId <String>]`: The unique identifier of managedDeviceCompliance
+  - `[ManagedDeviceComplianceTrendId <String>]`: The unique identifier of managedDeviceComplianceTrend
+  - `[ManagedTenantAlertId <String>]`: The unique identifier of managedTenantAlert
+  - `[ManagedTenantAlertLogId <String>]`: The unique identifier of managedTenantAlertLog
+  - `[ManagedTenantAlertRuleDefinitionId <String>]`: The unique identifier of managedTenantAlertRuleDefinition
+  - `[ManagedTenantAlertRuleId <String>]`: The unique identifier of managedTenantAlertRule
+  - `[ManagedTenantApiNotificationId <String>]`: The unique identifier of managedTenantApiNotification
+  - `[ManagedTenantEmailNotificationId <String>]`: The unique identifier of managedTenantEmailNotification
+  - `[ManagedTenantTicketingEndpointId <String>]`: The unique identifier of managedTenantTicketingEndpoint
+  - `[ManagementActionId <String>]`: The unique identifier of managementAction
+  - `[ManagementActionTenantDeploymentStatusId <String>]`: The unique identifier of managementActionTenantDeploymentStatus
+  - `[ManagementIntentId <String>]`: The unique identifier of managementIntent
+  - `[ManagementTemplateCollectionId <String>]`: The unique identifier of managementTemplateCollection
+  - `[ManagementTemplateCollectionTenantSummaryId <String>]`: The unique identifier of managementTemplateCollectionTenantSummary
+  - `[ManagementTemplateId <String>]`: The unique identifier of managementTemplate
+  - `[ManagementTemplateStepDeploymentId <String>]`: The unique identifier of managementTemplateStepDeployment
+  - `[ManagementTemplateStepId <String>]`: The unique identifier of managementTemplateStep
+  - `[ManagementTemplateStepTenantSummaryId <String>]`: The unique identifier of managementTemplateStepTenantSummary
+  - `[ManagementTemplateStepVersionId <String>]`: The unique identifier of managementTemplateStepVersion
+  - `[MyRoleTenantId <String>]`: The unique identifier of myRole
+  - `[TenantCustomizedInformationId <String>]`: The unique identifier of tenantCustomizedInformation
+  - `[TenantDetailedInformationId <String>]`: The unique identifier of tenantDetailedInformation
+  - `[TenantGroupId <String>]`: The unique identifier of tenantGroup
+  - `[TenantId <String>]`: The unique identifier of tenant
+  - `[TenantTagId <String>]`: The unique identifier of tenantTag
+  - `[WindowsDeviceMalwareStateId <String>]`: The unique identifier of windowsDeviceMalwareState
+  - `[WindowsProtectionStateId <String>]`: The unique identifier of windowsProtectionState
 
 ## RELATED LINKS
 

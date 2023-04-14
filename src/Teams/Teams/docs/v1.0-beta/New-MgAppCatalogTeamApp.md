@@ -24,7 +24,7 @@ New-MgAppCatalogTeamApp [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgAppCatalogTeamApp -BodyParameter <IMicrosoftGraphTeamsApp> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgAppCatalogTeamApp -BodyParameter <IMicrosoftGraphTeamsApp1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -81,7 +81,7 @@ teamsApp
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp1
 Parameter Sets: Create
 Aliases:
 
@@ -189,11 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp1
 
 ## NOTES
 
@@ -207,6 +207,13 @@ To create the parameters described below, construct a hash table containing the 
 APPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition1[]>: The details for each version of the app.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowedInstallationScopes <String>]`: teamsAppInstallationScopes
+  - `[Authorization <IMicrosoftGraphTeamsAppAuthorization>]`: teamsAppAuthorization
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[RequiredPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[ResourceSpecificPermissions <IMicrosoftGraphTeamsAppResourceSpecificPermission[]>]`: A collection of resource-specific permissions.
+        - `[PermissionType <String>]`: teamsAppResourceSpecificPermissionType
+        - `[PermissionValue <String>]`: The name of the resource-specific permission.
   - `[AzureAdAppId <String>]`: The WebApplicationInfo.Id from the Teams app manifest.
   - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -237,12 +244,19 @@ APPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition1[]>: The details for each vers
   - `[TeamsAppId <String>]`: The ID from the Teams app manifest.
   - `[Version <String>]`: The version number of the application.
 
-BODYPARAMETER <IMicrosoftGraphTeamsApp>: teamsApp
+BODYPARAMETER <IMicrosoftGraphTeamsApp1>: teamsApp
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>]`: The details for each version of the app.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AllowedInstallationScopes <String>]`: teamsAppInstallationScopes
+    - `[Authorization <IMicrosoftGraphTeamsAppAuthorization>]`: teamsAppAuthorization
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[RequiredPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[ResourceSpecificPermissions <IMicrosoftGraphTeamsAppResourceSpecificPermission[]>]`: A collection of resource-specific permissions.
+          - `[PermissionType <String>]`: teamsAppResourceSpecificPermissionType
+          - `[PermissionValue <String>]`: The name of the resource-specific permission.
     - `[AzureAdAppId <String>]`: The WebApplicationInfo.Id from the Teams app manifest.
     - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

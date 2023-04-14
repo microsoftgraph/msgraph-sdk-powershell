@@ -16,12 +16,12 @@ Update the properties of an application object.
 ```
 Update-MgApplication -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-Api <IMicrosoftGraphApiApplication1>] [-AppId <String>]
- [-AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>] [-AppRoles <IMicrosoftGraphAppRole[]>]
+ [-AppManagementPolicies <IMicrosoftGraphAppManagementPolicy1[]>] [-AppRoles <IMicrosoftGraphAppRole[]>]
  [-Certification <IMicrosoftGraphCertification>] [-ConnectorGroup <IMicrosoftGraphConnectorGroup>]
  [-CreatedDateTime <DateTime>] [-CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]
  [-DefaultRedirectUri <String>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisabledByMicrosoftStatus <String>] [-DisplayName <String>]
- [-ExtensionProperties <IMicrosoftGraphExtensionProperty[]>]
+ [-ExtensionProperties <IMicrosoftGraphExtensionProperty1[]>]
  [-FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>]
  [-GroupMembershipClaims <String>] [-HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy1[]>]
  [-Id <String>] [-IdentifierUris <String[]>] [-Info <IMicrosoftGraphInformationalUrl>]
@@ -45,13 +45,13 @@ Update-MgApplication -ApplicationId <String> [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgApplication -ApplicationId <String> -BodyParameter <IMicrosoftGraphApplication> [-PassThru]
+Update-MgApplication -ApplicationId <String> -BodyParameter <IMicrosoftGraphApplication1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgApplication -InputObject <IApplicationsIdentity> -BodyParameter <IMicrosoftGraphApplication>
+Update-MgApplication -InputObject <IApplicationsIdentity> -BodyParameter <IMicrosoftGraphApplication1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -59,12 +59,12 @@ Update-MgApplication -InputObject <IApplicationsIdentity> -BodyParameter <IMicro
 ```
 Update-MgApplication -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-Api <IMicrosoftGraphApiApplication1>] [-AppId <String>]
- [-AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>] [-AppRoles <IMicrosoftGraphAppRole[]>]
+ [-AppManagementPolicies <IMicrosoftGraphAppManagementPolicy1[]>] [-AppRoles <IMicrosoftGraphAppRole[]>]
  [-Certification <IMicrosoftGraphCertification>] [-ConnectorGroup <IMicrosoftGraphConnectorGroup>]
  [-CreatedDateTime <DateTime>] [-CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]
  [-DefaultRedirectUri <String>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisabledByMicrosoftStatus <String>] [-DisplayName <String>]
- [-ExtensionProperties <IMicrosoftGraphExtensionProperty[]>]
+ [-ExtensionProperties <IMicrosoftGraphExtensionProperty1[]>]
  [-FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>]
  [-GroupMembershipClaims <String>] [-HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy1[]>]
  [-Id <String>] [-IdentifierUris <String[]>] [-Info <IMicrosoftGraphInformationalUrl>]
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationId
-key: id of application
+The unique identifier of application
 
 ```yaml
 Type: System.String
@@ -171,7 +171,7 @@ The appManagementPolicy applied to this application.
 To construct, please use Get-Help -Online and see NOTES section for APPMANAGEMENTPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -205,7 +205,7 @@ application
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -375,7 +375,7 @@ Supports $expand and $filter (/$count eq 0, /$count ne 0).
 To construct, please use Get-Help -Online and see NOTES section for EXTENSIONPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -863,7 +863,8 @@ Accept wildcard characters: False
 
 ### -Tags
 Custom strings that can be used to categorize and identify the application.
-Not nullable.Supports $filter (eq, not, ge, le, startsWith).
+Not nullable.
+Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).
 
 ```yaml
 Type: System.String[]
@@ -1030,7 +1031,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication1
 
 ## OUTPUTS
 
@@ -1064,7 +1065,7 @@ API <IMicrosoftGraphApiApplication1>: apiApplication
     - `[PermissionIds <String[]>]`: The unique identifier for the scopes the client application is granted.
   - `[RequestedAccessTokenVersion <Int32?>]`: Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2
 
-APPMANAGEMENTPOLICIES <IMicrosoftGraphAppManagementPolicy[]>: The appManagementPolicy applied to this application.
+APPMANAGEMENTPOLICIES <IMicrosoftGraphAppManagementPolicy1[]>: The appManagementPolicy applied to this application.
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -1081,7 +1082,7 @@ APPMANAGEMENTPOLICIES <IMicrosoftGraphAppManagementPolicy[]>: The appManagementP
       - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
     - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
       - `[MaxLifetime <TimeSpan?>]`: 
-      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
       - `[RestrictionType <String>]`: appCredentialRestrictionType
 
 APPROLES <IMicrosoftGraphAppRole[]>: The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
@@ -1093,7 +1094,7 @@ APPROLES <IMicrosoftGraphAppRole[]>: The collection of roles defined for the app
   - `[Origin <String>]`: Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
   - `[Value <String>]`: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
 
-BODYPARAMETER <IMicrosoftGraphApplication>: application
+BODYPARAMETER <IMicrosoftGraphApplication1>: application
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -1116,7 +1117,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
       - `[PermissionIds <String[]>]`: The unique identifier for the scopes the client application is granted.
     - `[RequestedAccessTokenVersion <Int32?>]`: Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2
   - `[AppId <String>]`: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
-  - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this application.
+  - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy1[]>]`: The appManagementPolicy applied to this application.
     - `[Description <String>]`: Description for this policy. Required.
     - `[DisplayName <String>]`: Display name for this policy. Required.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -1133,7 +1134,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
         - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
       - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
         - `[MaxLifetime <TimeSpan?>]`: 
-        - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+        - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
         - `[RestrictionType <String>]`: appCredentialRestrictionType
   - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
     - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
@@ -1151,7 +1152,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
   - `[ConnectorGroup <IMicrosoftGraphConnectorGroup>]`: connectorGroup
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Applications <IMicrosoftGraphApplication[]>]`: 
+    - `[Applications <IMicrosoftGraphApplication1[]>]`: 
     - `[ConnectorGroupType <String>]`: connectorGroupType
     - `[IsDefault <Boolean?>]`: Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
     - `[Members <IMicrosoftGraphConnector[]>]`: 
@@ -1168,11 +1169,12 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
   - `[Description <String>]`: Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
   - `[DisabledByMicrosoftStatus <String>]`: Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
   - `[DisplayName <String>]`: The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-  - `[ExtensionProperties <IMicrosoftGraphExtensionProperty[]>]`: Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
+  - `[ExtensionProperties <IMicrosoftGraphExtensionProperty1[]>]`: Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
     - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+    - `[IsMultiValued <Boolean?>]`: 
     - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
     - `[Name <String>]`: Name of the extension property. Not nullable. Supports $filter (eq).
     - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
@@ -1288,7 +1290,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
   - `[RequestSignatureVerification <IMicrosoftGraphRequestSignatureVerification>]`: requestSignatureVerification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedWeakAlgorithms <String>]`: weakAlgorithms
-    - `[IsSignedRequestRequired <Boolean?>]`: 
+    - `[IsSignedRequestRequired <Boolean?>]`: Specifies whether signed authentication requests for this application should be required.
   - `[RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>]`: Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
     - `[ResourceAccess <IMicrosoftGraphResourceAccess[]>]`: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
       - `[Id <String>]`: The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
@@ -1348,7 +1350,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
             - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
             - `[Name <String>]`: 
             - `[SupportedApis <String[]>]`: 
-          - `[ReadOnly <Boolean?>]`: 
+          - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
           - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
         - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
           - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
@@ -1412,9 +1414,9 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
           - `[CountImportedReferenceDeltas <Int64?>]`: Count of imported delta-changes pertaining to reference changes.
           - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Code <String>]`: 
-            - `[Message <String>]`: 
-            - `[TenantActionable <Boolean?>]`: 
+            - `[Code <String>]`: The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
+            - `[Message <String>]`: The error message. For example, Policy permitting auto-redemption of invitations not configured.
+            - `[TenantActionable <Boolean?>]`: The action to take to resolve the error. For example, false.
           - `[State <String>]`: synchronizationTaskExecutionResult
           - `[TimeBegan <DateTime?>]`: Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[TimeEnded <DateTime?>]`: Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -1436,8 +1438,8 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
         - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-          - `[Key <String>]`: Key.
-          - `[Value <Int64?>]`: Value.
+          - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+          - `[Value <Int64?>]`: Total number of synchronized objects.
         - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
       - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
         - `[Name <String>]`: Name for this key-value pair
@@ -1455,7 +1457,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
       - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
       - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
       - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
-  - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).
+  - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).
   - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
   - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy1[]>]`: 
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
@@ -1506,7 +1508,7 @@ CERTIFICATION <IMicrosoftGraphCertification>: certification
 CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Applications <IMicrosoftGraphApplication[]>]`: 
+  - `[Applications <IMicrosoftGraphApplication1[]>]`: 
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Api <IMicrosoftGraphApiApplication1>]`: apiApplication
@@ -1528,7 +1530,7 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
         - `[PermissionIds <String[]>]`: The unique identifier for the scopes the client application is granted.
       - `[RequestedAccessTokenVersion <Int32?>]`: Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2
     - `[AppId <String>]`: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).
-    - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this application.
+    - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy1[]>]`: The appManagementPolicy applied to this application.
       - `[Description <String>]`: Description for this policy. Required.
       - `[DisplayName <String>]`: Display name for this policy. Required.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -1545,7 +1547,7 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
           - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
         - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
           - `[MaxLifetime <TimeSpan?>]`: 
-          - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+          - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
           - `[RestrictionType <String>]`: appCredentialRestrictionType
     - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
       - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
@@ -1567,11 +1569,12 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
     - `[Description <String>]`: Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     - `[DisabledByMicrosoftStatus <String>]`: Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
     - `[DisplayName <String>]`: The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-    - `[ExtensionProperties <IMicrosoftGraphExtensionProperty[]>]`: Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
+    - `[ExtensionProperties <IMicrosoftGraphExtensionProperty1[]>]`: Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
       - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+      - `[IsMultiValued <Boolean?>]`: 
       - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
       - `[Name <String>]`: Name of the extension property. Not nullable. Supports $filter (eq).
       - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
@@ -1687,7 +1690,7 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
     - `[RequestSignatureVerification <IMicrosoftGraphRequestSignatureVerification>]`: requestSignatureVerification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowedWeakAlgorithms <String>]`: weakAlgorithms
-      - `[IsSignedRequestRequired <Boolean?>]`: 
+      - `[IsSignedRequestRequired <Boolean?>]`: Specifies whether signed authentication requests for this application should be required.
     - `[RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>]`: Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
       - `[ResourceAccess <IMicrosoftGraphResourceAccess[]>]`: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
         - `[Id <String>]`: The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
@@ -1747,7 +1750,7 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
               - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
               - `[Name <String>]`: 
               - `[SupportedApis <String[]>]`: 
-            - `[ReadOnly <Boolean?>]`: 
+            - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
             - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
           - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
             - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
@@ -1811,9 +1814,9 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
             - `[CountImportedReferenceDeltas <Int64?>]`: Count of imported delta-changes pertaining to reference changes.
             - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Code <String>]`: 
-              - `[Message <String>]`: 
-              - `[TenantActionable <Boolean?>]`: 
+              - `[Code <String>]`: The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
+              - `[Message <String>]`: The error message. For example, Policy permitting auto-redemption of invitations not configured.
+              - `[TenantActionable <Boolean?>]`: The action to take to resolve the error. For example, false.
             - `[State <String>]`: synchronizationTaskExecutionResult
             - `[TimeBegan <DateTime?>]`: Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[TimeEnded <DateTime?>]`: Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -1835,8 +1838,8 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
           - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-            - `[Key <String>]`: Key.
-            - `[Value <Int64?>]`: Value.
+            - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+            - `[Value <Int64?>]`: Total number of synchronized objects.
           - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
         - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
           - `[Name <String>]`: Name for this key-value pair
@@ -1854,7 +1857,7 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
         - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
         - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
         - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
-    - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).
+    - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).
     - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy1[]>]`: 
       - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
@@ -1911,11 +1914,12 @@ CREATEDONBEHALFOF <IMicrosoftGraphDirectoryObject>: directoryObject
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
-EXTENSIONPROPERTIES <IMicrosoftGraphExtensionProperty[]>: Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
+EXTENSIONPROPERTIES <IMicrosoftGraphExtensionProperty1[]>: Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
   - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+  - `[IsMultiValued <Boolean?>]`: 
   - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
   - `[Name <String>]`: Name of the extension property. Not nullable. Supports $filter (eq).
   - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
@@ -1948,34 +1952,34 @@ INFO <IMicrosoftGraphInformationalUrl>: informationalUrl
   - `[TermsOfServiceUrl <String>]`: Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
-  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
-  - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
-  - `[ApplicationId <String>]`: key: id of application
-  - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
-  - `[ConnectorGroupId <String>]`: key: id of connectorGroup
-  - `[ConnectorId <String>]`: key: id of connector
-  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
-  - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[EndpointId <String>]`: key: id of endpoint
-  - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
-  - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
-  - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
-  - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
-  - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
-  - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
-  - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
-  - `[OnPremisesPublishingProfileId <String>]`: key: id of onPremisesPublishingProfile
-  - `[PublishedResourceId <String>]`: key: id of publishedResource
-  - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
-  - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
-  - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
-  - `[UserId <String>]`: key: id of user
+  - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
+  - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
+  - `[ApplicationId <String>]`: The unique identifier of application
+  - `[ApplicationTemplateId <String>]`: The unique identifier of applicationTemplate
+  - `[ClaimsMappingPolicyId <String>]`: The unique identifier of claimsMappingPolicy
+  - `[ConnectorGroupId <String>]`: The unique identifier of connectorGroup
+  - `[ConnectorId <String>]`: The unique identifier of connector
+  - `[DelegatedPermissionClassificationId <String>]`: The unique identifier of delegatedPermissionClassification
+  - `[DirectoryDefinitionId <String>]`: The unique identifier of directoryDefinition
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[EndpointId <String>]`: The unique identifier of endpoint
+  - `[ExtensionPropertyId <String>]`: The unique identifier of extensionProperty
+  - `[FederatedIdentityCredentialId <String>]`: The unique identifier of federatedIdentityCredential
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[HomeRealmDiscoveryPolicyId <String>]`: The unique identifier of homeRealmDiscoveryPolicy
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OnPremisesAgentGroupId <String>]`: The unique identifier of onPremisesAgentGroup
+  - `[OnPremisesAgentGroupId1 <String>]`: The unique identifier of onPremisesAgentGroup
+  - `[OnPremisesAgentId <String>]`: The unique identifier of onPremisesAgent
+  - `[OnPremisesPublishingProfileId <String>]`: The unique identifier of onPremisesPublishingProfile
+  - `[PublishedResourceId <String>]`: The unique identifier of publishedResource
+  - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
+  - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
+  - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
+  - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
+  - `[UserId <String>]`: The unique identifier of user
 
 KEYCREDENTIALS <IMicrosoftGraphKeyCredential[]>: The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
   - `[CustomKeyIdentifier <Byte[]>]`: A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
@@ -2085,7 +2089,7 @@ PUBLICCLIENT <IMicrosoftGraphPublicClientApplication>: publicClientApplication
 REQUESTSIGNATUREVERIFICATION <IMicrosoftGraphRequestSignatureVerification>: requestSignatureVerification
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedWeakAlgorithms <String>]`: weakAlgorithms
-  - `[IsSignedRequestRequired <Boolean?>]`: 
+  - `[IsSignedRequestRequired <Boolean?>]`: Specifies whether signed authentication requests for this application should be required.
 
 REQUIREDRESOURCEACCESS <IMicrosoftGraphRequiredResourceAccess[]>: Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
   - `[ResourceAccess <IMicrosoftGraphResourceAccess[]>]`: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
@@ -2146,7 +2150,7 @@ SYNCHRONIZATION <IMicrosoftGraphSynchronization>: synchronization
           - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
           - `[Name <String>]`: 
           - `[SupportedApis <String[]>]`: 
-        - `[ReadOnly <Boolean?>]`: 
+        - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
         - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
       - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
         - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
@@ -2210,9 +2214,9 @@ SYNCHRONIZATION <IMicrosoftGraphSynchronization>: synchronization
         - `[CountImportedReferenceDeltas <Int64?>]`: Count of imported delta-changes pertaining to reference changes.
         - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Code <String>]`: 
-          - `[Message <String>]`: 
-          - `[TenantActionable <Boolean?>]`: 
+          - `[Code <String>]`: The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
+          - `[Message <String>]`: The error message. For example, Policy permitting auto-redemption of invitations not configured.
+          - `[TenantActionable <Boolean?>]`: The action to take to resolve the error. For example, false.
         - `[State <String>]`: synchronizationTaskExecutionResult
         - `[TimeBegan <DateTime?>]`: Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[TimeEnded <DateTime?>]`: Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -2234,8 +2238,8 @@ SYNCHRONIZATION <IMicrosoftGraphSynchronization>: synchronization
       - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-        - `[Key <String>]`: Key.
-        - `[Value <Int64?>]`: Value.
+        - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+        - `[Value <Int64?>]`: Total number of synchronized objects.
       - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
     - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
       - `[Name <String>]`: Name for this key-value pair

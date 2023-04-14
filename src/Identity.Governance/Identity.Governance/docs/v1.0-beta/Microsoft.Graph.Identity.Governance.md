@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 819c49a4-be4a-41dc-8f47-f1c92e98587d
+Module Guid: de0775fe-5df1-45b5-bb21-c6054ed59f21
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -119,6 +119,10 @@ Represents the policy that governs which subjects can request or be assigned an 
 The collection of stages when to execute one or more custom access package workflow extensions.
 Supports $expand.
 
+### [Get-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionStageSetting](Get-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionStageSetting.md)
+The collection of stages when to execute one or more custom access package workflow extensions.
+Supports $expand.
+
 ### [Get-MgEntitlementManagementAccessPackageAssignmentRequest](Get-MgEntitlementManagementAccessPackageAssignmentRequest.md)
 Represents access package assignment requests created by or on behalf of a user.
 
@@ -127,6 +131,9 @@ Represents the resource-specific role which a subject has been assigned through 
 
 ### [Get-MgEntitlementManagementAccessPackageCatalog](Get-MgEntitlementManagementAccessPackageCatalog.md)
 A container of access packages.
+
+### [Get-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
+The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.
 
 ### [Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
@@ -183,8 +190,12 @@ Some common uses for this function are to:
 Retrieve a list of a connectedOrganization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
+### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorDelta](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorDelta.md)
+Invoke function delta
+
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject.md)
-Invoke action getUserOwnedObjects
+Retrieve a list of recently deleted application and group objects owned by the specified user.
+This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsor](Get-MgEntitlementManagementConnectedOrganizationInternalSponsor.md)
 Retrieve a list of a connectedOrganization's internal sponsors.
@@ -198,8 +209,12 @@ Some common uses for this function are to:
 Retrieve a list of a connectedOrganization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
+### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorDelta](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorDelta.md)
+Invoke function delta
+
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorUserOwnedObject](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorUserOwnedObject.md)
-Invoke action getUserOwnedObjects
+Retrieve a list of recently deleted application and group objects owned by the specified user.
+This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgEntitlementManagementSetting](Get-MgEntitlementManagementSetting.md)
 Retrieve the properties of an entitlementManagementSettings object.
@@ -333,13 +348,13 @@ Deleted workflows that end up in the deletedItemsContainer.
 The unique identifier of the Azure AD identity that last modified the workflow object.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
-Get runs from identityGovernance
+Workflow runs.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskReport.md)
 Represents the aggregation of task execution data for tasks within a workflow object.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowUserProcessingResult.md)
-Get userProcessingResults from identityGovernance
+Per-user workflow execution results.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
 The workflow versions that are available.
@@ -348,7 +363,7 @@ The workflow versions that are available.
 The unique identifier of the Azure AD identity that last modified the workflow object.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowRun.md)
-Get runs from identityGovernance
+Workflow runs.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 The related taskProcessingResults.
@@ -409,7 +424,7 @@ The unique identifier of the Azure AD user targeted for the task execution.Suppo
 The related workflow task
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResult.md)
-Get userProcessingResults from identityGovernance
+Per-user workflow execution results.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject.md)
 The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
@@ -494,6 +509,24 @@ Get principal from identityGovernance
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestTargetSchedule](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestTargetSchedule.md)
 Get targetSchedule from identityGovernance
+
+### [Get-MgIdentityGovernanceRoleManagementAlert](Get-MgIdentityGovernanceRoleManagementAlert.md)
+Get alerts from identityGovernance
+
+### [Get-MgIdentityGovernanceRoleManagementAlertConfiguration](Get-MgIdentityGovernanceRoleManagementAlertConfiguration.md)
+Get alertConfigurations from identityGovernance
+
+### [Get-MgIdentityGovernanceRoleManagementAlertConfigurationAlertDefinition](Get-MgIdentityGovernanceRoleManagementAlertConfigurationAlertDefinition.md)
+Get alertDefinition from identityGovernance
+
+### [Get-MgIdentityGovernanceRoleManagementAlertDefinition](Get-MgIdentityGovernanceRoleManagementAlertDefinition.md)
+Get alertDefinitions from identityGovernance
+
+### [Get-MgIdentityGovernanceRoleManagementAlertIncident](Get-MgIdentityGovernanceRoleManagementAlertIncident.md)
+Get alertIncidents from identityGovernance
+
+### [Get-MgIdentityGovernanceRoleManagementAlertOperation](Get-MgIdentityGovernanceRoleManagementAlertOperation.md)
+Get operations from identityGovernance
 
 ### [Get-MgIdentityGovernanceTermOfUseAgreement](Get-MgIdentityGovernanceTermOfUseAgreement.md)
 Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
@@ -857,6 +890,9 @@ If no IDs are specified, the decisions will apply to every **accessReviewInstanc
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
 
+### [Invoke-MgRemediateIdentityGovernanceRoleManagementAlertIncident](Invoke-MgRemediateIdentityGovernanceRoleManagementAlertIncident.md)
+Invoke action remediate
+
 ### [Invoke-MgSelfPrivilegedApprovalRoleInfoActivate](Invoke-MgSelfPrivilegedApprovalRoleInfoActivate.md)
 Activate the role that is assigned to the requester.
 
@@ -956,12 +992,18 @@ In Azure AD entitlement management, create a new accessPackageAssignmentPolicy o
 ### [New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Create new navigation property to customExtensionHandlers for identityGovernance
 
+### [New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionStageSetting](New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionStageSetting.md)
+Create new navigation property to customExtensionStageSettings for identityGovernance
+
 ### [New-MgEntitlementManagementAccessPackageAssignmentRequest](New-MgEntitlementManagementAccessPackageAssignmentRequest.md)
 In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.
 This operation is used to assign a user to an access package, or to remove an access package assignment.
 
 ### [New-MgEntitlementManagementAccessPackageCatalog](New-MgEntitlementManagementAccessPackageCatalog.md)
 Create a new accessPackageCatalog object.
+
+### [New-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](New-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
+Create new navigation property to accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Create a new customAccessPackageWorkflowExtension object and add it to an existing accessPackageCatalog object.
@@ -1088,6 +1130,21 @@ Create new navigation property to eligibilityScheduleInstances for identityGover
 
 ### [New-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](New-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
 Create new navigation property to eligibilityScheduleRequests for identityGovernance
+
+### [New-MgIdentityGovernanceRoleManagementAlert](New-MgIdentityGovernanceRoleManagementAlert.md)
+Create new navigation property to alerts for identityGovernance
+
+### [New-MgIdentityGovernanceRoleManagementAlertConfiguration](New-MgIdentityGovernanceRoleManagementAlertConfiguration.md)
+Create new navigation property to alertConfigurations for identityGovernance
+
+### [New-MgIdentityGovernanceRoleManagementAlertDefinition](New-MgIdentityGovernanceRoleManagementAlertDefinition.md)
+Create new navigation property to alertDefinitions for identityGovernance
+
+### [New-MgIdentityGovernanceRoleManagementAlertIncident](New-MgIdentityGovernanceRoleManagementAlertIncident.md)
+Create new navigation property to alertIncidents for identityGovernance
+
+### [New-MgIdentityGovernanceRoleManagementAlertOperation](New-MgIdentityGovernanceRoleManagementAlertOperation.md)
+Create new navigation property to operations for identityGovernance
 
 ### [New-MgIdentityGovernanceTermOfUseAgreement](New-MgIdentityGovernanceTermOfUseAgreement.md)
 Create a new agreement object.
@@ -1230,11 +1287,17 @@ Delete navigation property accessPackageAssignmentPolicies for identityGovernanc
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Remove-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Delete navigation property customExtensionHandlers for identityGovernance
 
+### [Remove-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionStageSetting](Remove-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionStageSetting.md)
+Delete navigation property customExtensionStageSettings for identityGovernance
+
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentRequest](Remove-MgEntitlementManagementAccessPackageAssignmentRequest.md)
 Delete navigation property accessPackageAssignmentRequests for identityGovernance
 
 ### [Remove-MgEntitlementManagementAccessPackageCatalog](Remove-MgEntitlementManagementAccessPackageCatalog.md)
 Delete navigation property accessPackageCatalogs for identityGovernance
+
+### [Remove-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Remove-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
+Delete navigation property accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [Remove-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Remove-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Delete navigation property customAccessPackageWorkflowExtensions for identityGovernance
@@ -1370,6 +1433,21 @@ Delete navigation property eligibilityScheduleInstances for identityGovernance
 
 ### [Remove-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Remove-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
 Delete navigation property eligibilityScheduleRequests for identityGovernance
+
+### [Remove-MgIdentityGovernanceRoleManagementAlert](Remove-MgIdentityGovernanceRoleManagementAlert.md)
+Delete navigation property alerts for identityGovernance
+
+### [Remove-MgIdentityGovernanceRoleManagementAlertConfiguration](Remove-MgIdentityGovernanceRoleManagementAlertConfiguration.md)
+Delete navigation property alertConfigurations for identityGovernance
+
+### [Remove-MgIdentityGovernanceRoleManagementAlertDefinition](Remove-MgIdentityGovernanceRoleManagementAlertDefinition.md)
+Delete navigation property alertDefinitions for identityGovernance
+
+### [Remove-MgIdentityGovernanceRoleManagementAlertIncident](Remove-MgIdentityGovernanceRoleManagementAlertIncident.md)
+Delete navigation property alertIncidents for identityGovernance
+
+### [Remove-MgIdentityGovernanceRoleManagementAlertOperation](Remove-MgIdentityGovernanceRoleManagementAlertOperation.md)
+Delete navigation property operations for identityGovernance
 
 ### [Remove-MgIdentityGovernanceTermOfUseAgreement](Remove-MgIdentityGovernanceTermOfUseAgreement.md)
 Delete navigation property agreements for identityGovernance
@@ -1533,17 +1611,24 @@ You can only restore a workflow that was deleted within the last 30 days before 
 Restore a workflow that has been deleted.
 You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
 
+### [Resume-MgEntitlementManagementAccessPackageAssignmentRequest](Resume-MgEntitlementManagementAccessPackageAssignmentRequest.md)
+In Azure AD entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
+It is performed on an accessPackageAssignmentRequest object whose **requestStatus** is in a `WaitingForCallback` state.
+
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
-An Azure Logic Apps system-assigned managed identity calls this API.
+In the default case an Azure Logic Apps system-assigned managed identity calls this API.
+For more information read about Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
-An Azure Logic Apps system-assigned managed identity calls this API.
+In the default case an Azure Logic Apps system-assigned managed identity calls this API.
+For more information read about Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
-An Azure Logic Apps system-assigned managed identity calls this API.
+In the default case an Azure Logic Apps system-assigned managed identity calls this API.
+For more information read about Lifecycle Workflows extensibility approach.
 
 ### [Select-MgEntitlementManagementAccessPackage](Select-MgEntitlementManagementAccessPackage.md)
 Select matching entitlement management accessPackage
@@ -1711,11 +1796,17 @@ Update the navigation property steps in identityGovernance
 ### [Update-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Update-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Update the navigation property customExtensionHandlers in identityGovernance
 
+### [Update-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionStageSetting](Update-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionStageSetting.md)
+Update the navigation property customExtensionStageSettings in identityGovernance
+
 ### [Update-MgEntitlementManagementAccessPackageAssignmentRequest](Update-MgEntitlementManagementAccessPackageAssignmentRequest.md)
 Invoke action reprocess
 
 ### [Update-MgEntitlementManagementAccessPackageCatalog](Update-MgEntitlementManagementAccessPackageCatalog.md)
 Update the navigation property accessPackageCatalogs in identityGovernance
+
+### [Update-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Update-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
+Update the navigation property accessPackageCustomWorkflowExtensions in identityGovernance
 
 ### [Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Update-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Update the navigation property customAccessPackageWorkflowExtensions in identityGovernance
@@ -1839,6 +1930,21 @@ Update the navigation property eligibilityScheduleInstances in identityGovernanc
 
 ### [Update-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Update-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
 Update the navigation property eligibilityScheduleRequests in identityGovernance
+
+### [Update-MgIdentityGovernanceRoleManagementAlert](Update-MgIdentityGovernanceRoleManagementAlert.md)
+Update the navigation property alerts in identityGovernance
+
+### [Update-MgIdentityGovernanceRoleManagementAlertConfiguration](Update-MgIdentityGovernanceRoleManagementAlertConfiguration.md)
+Update the navigation property alertConfigurations in identityGovernance
+
+### [Update-MgIdentityGovernanceRoleManagementAlertDefinition](Update-MgIdentityGovernanceRoleManagementAlertDefinition.md)
+Update the navigation property alertDefinitions in identityGovernance
+
+### [Update-MgIdentityGovernanceRoleManagementAlertIncident](Update-MgIdentityGovernanceRoleManagementAlertIncident.md)
+Update the navigation property alertIncidents in identityGovernance
+
+### [Update-MgIdentityGovernanceRoleManagementAlertOperation](Update-MgIdentityGovernanceRoleManagementAlertOperation.md)
+Update the navigation property operations in identityGovernance
 
 ### [Update-MgIdentityGovernanceTermOfUseAgreement](Update-MgIdentityGovernanceTermOfUseAgreement.md)
 Update the navigation property agreements in identityGovernance

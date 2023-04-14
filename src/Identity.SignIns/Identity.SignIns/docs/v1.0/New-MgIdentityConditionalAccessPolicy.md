@@ -391,11 +391,18 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy>: conditionalAccessPolicy
     - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludeGroups <String[]>]`: Group IDs excluded from scope of policy.
+      - `[ExcludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[ExternalTenants <IMicrosoftGraphConditionalAccessExternalTenants>]`: conditionalAccessExternalTenants
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[MembershipKind <String>]`: conditionalAccessExternalTenantsMembershipKind
+        - `[GuestOrExternalUserTypes <String>]`: conditionalAccessGuestOrExternalUserTypes
       - `[ExcludeRoles <String[]>]`: Role IDs excluded from scope of policy.
       - `[ExcludeUsers <String[]>]`: User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-      - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded, or All.
-      - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded, or All.
-      - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
+      - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded.
+      - `[IncludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
+      - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded.
+      - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: Specifies a display name for the conditionalAccessPolicy object.
@@ -462,11 +469,18 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet>: conditionalAccessCond
   - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExcludeGroups <String[]>]`: Group IDs excluded from scope of policy.
+    - `[ExcludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[ExternalTenants <IMicrosoftGraphConditionalAccessExternalTenants>]`: conditionalAccessExternalTenants
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[MembershipKind <String>]`: conditionalAccessExternalTenantsMembershipKind
+      - `[GuestOrExternalUserTypes <String>]`: conditionalAccessGuestOrExternalUserTypes
     - `[ExcludeRoles <String[]>]`: Role IDs excluded from scope of policy.
     - `[ExcludeUsers <String[]>]`: User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-    - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded, or All.
-    - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded, or All.
-    - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
+    - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded.
+    - `[IncludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
+    - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded.
+    - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
 
 GRANTCONTROLS <IMicrosoftGraphConditionalAccessGrantControls>: conditionalAccessGrantControls
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

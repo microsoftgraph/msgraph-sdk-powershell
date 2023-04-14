@@ -425,6 +425,7 @@ ACTIVATEDUSING <IMicrosoftGraphUnifiedRoleEligibilitySchedule1>: unifiedRoleElig
   - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
     - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
     - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
     - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -495,6 +496,7 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRoleAssignmentSchedule1>: unifiedRoleAssign
   - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
     - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
     - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
     - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -569,6 +571,7 @@ PRINCIPAL <IMicrosoftGraphDirectoryObject>: directoryObject
 ROLEDEFINITION <IMicrosoftGraphUnifiedRoleDefinition>: unifiedRoleDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
   - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
   - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
   - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.

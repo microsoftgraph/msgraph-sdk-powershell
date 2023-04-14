@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 2841c60f-1057-467f-8007-ab1645279169
+Module Guid: d8cf5cd1-cee0-4598-b950-6c27ad0bc746
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,6 +16,12 @@ Invoke action addApps
 
 ### [Add-MgDeviceManagementGroupPolicyUploadedDefinitionFileLanguageFile](Add-MgDeviceManagementGroupPolicyUploadedDefinitionFileLanguageFile.md)
 Invoke action addLanguageFiles
+
+### [Add-MgDeviceManagementVirtualEndpointProvisioningPolicy](Add-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
+Invoke action apply
+
+### [Add-MgDeviceManagementVirtualEndpointProvisioningPolicyConfig](Add-MgDeviceManagementVirtualEndpointProvisioningPolicyConfig.md)
+Invoke action applyConfig
 
 ### [Approve-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingApp](Approve-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingApp.md)
 Invoke action approveApps
@@ -214,6 +220,30 @@ Invoke action getDeviceManagementIntentSettingsReport
 ### [Get-MgDeviceManagementReportDeviceNonComplianceReport](Get-MgDeviceManagementReportDeviceNonComplianceReport.md)
 Invoke action getDeviceNonComplianceReport
 
+### [Get-MgDeviceManagementReportDevicePolicyComplianceReport](Get-MgDeviceManagementReportDevicePolicyComplianceReport.md)
+Invoke action getDevicePoliciesComplianceReport
+
+### [Get-MgDeviceManagementReportDevicePolicySettingComplianceReport](Get-MgDeviceManagementReportDevicePolicySettingComplianceReport.md)
+Invoke action getDevicePolicySettingsComplianceReport
+
+### [Get-MgDeviceManagementReportDeviceStatusByCompliacePolicyReport](Get-MgDeviceManagementReportDeviceStatusByCompliacePolicyReport.md)
+Invoke action getDeviceStatusByCompliacePolicyReport
+
+### [Get-MgDeviceManagementReportDeviceStatusByCompliancePolicySettingReport](Get-MgDeviceManagementReportDeviceStatusByCompliancePolicySettingReport.md)
+Invoke action getDeviceStatusByCompliancePolicySettingReport
+
+### [Get-MgDeviceManagementReportDeviceStatusByPolicyPlatformComplianceReport](Get-MgDeviceManagementReportDeviceStatusByPolicyPlatformComplianceReport.md)
+Invoke action getDevicesStatusByPolicyPlatformComplianceReport
+
+### [Get-MgDeviceManagementReportDeviceStatusBySettingReport](Get-MgDeviceManagementReportDeviceStatusBySettingReport.md)
+Invoke action getDevicesStatusBySettingReport
+
+### [Get-MgDeviceManagementReportDeviceStatusSummaryByCompliacePolicyReport](Get-MgDeviceManagementReportDeviceStatusSummaryByCompliacePolicyReport.md)
+Invoke action getDeviceStatusSummaryByCompliacePolicyReport
+
+### [Get-MgDeviceManagementReportDeviceStatusSummaryByCompliancePolicySettingReport](Get-MgDeviceManagementReportDeviceStatusSummaryByCompliancePolicySettingReport.md)
+Invoke action getDeviceStatusSummaryByCompliancePolicySettingsReport
+
 ### [Get-MgDeviceManagementReportDeviceWithoutCompliancePolicyReport](Get-MgDeviceManagementReportDeviceWithoutCompliancePolicyReport.md)
 Invoke action getDevicesWithoutCompliancePolicyReport
 
@@ -349,6 +379,9 @@ Set the review status of multiple Cloud PC devices with a single request that in
 
 ### [Invoke-MgBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus](Invoke-MgBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus.md)
 Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+
+### [Invoke-MgBulkDeviceManagementVirtualEndpointCloudPcResize](Invoke-MgBulkDeviceManagementVirtualEndpointCloudPcResize.md)
+Invoke action bulkResize
 
 ### [Invoke-MgBulkReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgBulkReprovisionDeviceManagementComanagedDeviceCloudPc.md)
 Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
@@ -501,11 +534,17 @@ Rotate BitLockerKeys
 ### [Invoke-MgRotateDeviceManagementComanagedDeviceFileVaultKey](Invoke-MgRotateDeviceManagementComanagedDeviceFileVaultKey.md)
 Invoke action rotateFileVaultKey
 
+### [Invoke-MgRotateDeviceManagementComanagedDeviceLocalAdminPassword](Invoke-MgRotateDeviceManagementComanagedDeviceLocalAdminPassword.md)
+Initiates a manual rotation for the local admin password on the device
+
 ### [Invoke-MgRotateDeviceManagementManagedDeviceBitLockerKey](Invoke-MgRotateDeviceManagementManagedDeviceBitLockerKey.md)
 Rotate BitLockerKeys
 
 ### [Invoke-MgRotateDeviceManagementManagedDeviceFileVaultKey](Invoke-MgRotateDeviceManagementManagedDeviceFileVaultKey.md)
 Invoke action rotateFileVaultKey
+
+### [Invoke-MgRotateDeviceManagementManagedDeviceLocalAdminPassword](Invoke-MgRotateDeviceManagementManagedDeviceLocalAdminPassword.md)
+Initiates a manual rotation for the local admin password on the device
 
 ### [Invoke-MgScanDeviceManagementComanagedDeviceWindowDefender](Invoke-MgScanDeviceManagementComanagedDeviceWindowDefender.md)
 Invoke action windowsDefenderScan
@@ -856,6 +895,15 @@ Trigger action on ConfigurationManager client
 ### [Start-MgDeviceManagementUserExperienceAnalyticDeviceScopeAction](Start-MgDeviceManagementUserExperienceAnalyticDeviceScopeAction.md)
 Invoke action triggerDeviceScopeAction
 
+### [Start-MgDeviceManagementVirtualEndpointCloudPc](Start-MgDeviceManagementVirtualEndpointCloudPc.md)
+Invoke action start
+
+### [Start-MgDeviceManagementVirtualEndpointCloudPcOff](Start-MgDeviceManagementVirtualEndpointCloudPcOff.md)
+Invoke action powerOff
+
+### [Start-MgDeviceManagementVirtualEndpointCloudPcOn](Start-MgDeviceManagementVirtualEndpointCloudPcOn.md)
+Invoke action powerOn
+
 ### [Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck](Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck.md)
 Run health checks on the cloudPcOnPremisesConnection object.
 This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
@@ -865,6 +913,9 @@ Remote help - End ACS session, Pubsub session and delete Remote help session
 
 ### [Stop-MgDeviceManagementManagedDeviceRemoteHelpSession](Stop-MgDeviceManagementManagedDeviceRemoteHelpSession.md)
 Remote help - End ACS session, Pubsub session and delete Remote help session
+
+### [Stop-MgDeviceManagementVirtualEndpointCloudPc](Stop-MgDeviceManagementVirtualEndpointCloudPc.md)
+Invoke action stop
 
 ### [Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod](Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod.md)
 End the grace period for a specific Cloud PC.
@@ -907,6 +958,9 @@ Invoke action validateFilter
 
 ### [Test-MgDeviceManagementDeviceCompliancePolicyComplianceScript](Test-MgDeviceManagementDeviceCompliancePolicyComplianceScript.md)
 Invoke action validateComplianceScript
+
+### [Test-MgDeviceManagementVirtualEndpointCloudPcBulkResize](Test-MgDeviceManagementVirtualEndpointCloudPcBulkResize.md)
+Invoke action validateBulkResize
 
 ### [Update-MgDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment](Update-MgDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment.md)
 Invoke action updateDeviceProfileAssignment

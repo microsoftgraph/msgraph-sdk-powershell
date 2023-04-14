@@ -16,18 +16,21 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserCalendar -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserCalendar -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserCalendar -CalendarId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendar -CalendarId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserCalendar -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendar -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -CalendarId
-key: id of calendar
+The unique identifier of calendar
 
 ```yaml
 Type: System.String
@@ -87,6 +90,21 @@ By default, this variable will be set in the global scope.
 Type: System.String
 Parameter Sets: List
 Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
 
 Required: False
 Position: Named
@@ -202,7 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -237,19 +255,19 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ICalendarIdentity>: Identity Parameter
-  - `[AttachmentId <String>]`: key: id of attachment
-  - `[CalendarGroupId <String>]`: key: id of calendarGroup
-  - `[CalendarId <String>]`: key: id of calendar
-  - `[CalendarPermissionId <String>]`: key: id of calendarPermission
-  - `[EventId <String>]`: key: id of event
-  - `[EventId1 <String>]`: key: id of event
-  - `[EventId2 <String>]`: key: id of event
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[GroupId <String>]`: key: id of group
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[PlaceId <String>]`: key: id of place
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[UserId <String>]`: key: id of user
+  - `[AttachmentId <String>]`: The unique identifier of attachment
+  - `[CalendarGroupId <String>]`: The unique identifier of calendarGroup
+  - `[CalendarId <String>]`: The unique identifier of calendar
+  - `[CalendarPermissionId <String>]`: The unique identifier of calendarPermission
+  - `[EventId <String>]`: The unique identifier of event
+  - `[EventId1 <String>]`: The unique identifier of event
+  - `[EventId2 <String>]`: The unique identifier of event
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[PlaceId <String>]`: The unique identifier of place
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

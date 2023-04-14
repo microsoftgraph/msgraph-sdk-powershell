@@ -12,26 +12,26 @@ Create new navigation property to extensions for groups
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgGroupConversationThreadPostExtension -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgGroupConversationThreadPostExtension -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgGroupConversationThreadPostExtension -InputObject <IGroupsIdentity> -BodyParameter <Hashtable>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgGroupConversationThreadPostExtension -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -49,7 +49,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -64,7 +64,7 @@ extension
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Create1, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -75,11 +75,11 @@ Accept wildcard characters: False
 ```
 
 ### -ConversationId
-key: id of conversation
+The unique identifier of conversation
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -90,11 +90,11 @@ Accept wildcard characters: False
 ```
 
 ### -ConversationThreadId
-key: id of conversationThread
+The unique identifier of conversationThread
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -105,11 +105,11 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-key: id of group
+The unique identifier of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -125,7 +125,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -141,7 +141,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -152,11 +152,11 @@ Accept wildcard characters: False
 ```
 
 ### -PostId
-key: id of post
+The unique identifier of post
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -220,51 +220,53 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
-  - `[AttachmentId <String>]`: key: id of attachment
-  - `[ContentTypeId <String>]`: key: id of contentType
-  - `[ConversationId <String>]`: key: id of conversation
-  - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[DirectorySettingId <String>]`: key: id of directorySetting
-  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
-  - `[DriveId <String>]`: key: id of drive
-  - `[DriveItemId <String>]`: key: id of driveItem
-  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[AttachmentId <String>]`: The unique identifier of attachment
+  - `[ContentTypeId <String>]`: The unique identifier of contentType
+  - `[ConversationId <String>]`: The unique identifier of conversation
+  - `[ConversationThreadId <String>]`: The unique identifier of conversationThread
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[DirectorySettingId <String>]`: The unique identifier of directorySetting
+  - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
+  - `[DriveId <String>]`: The unique identifier of drive
+  - `[DriveItemId <String>]`: The unique identifier of driveItem
+  - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
-  - `[EndpointId <String>]`: key: id of endpoint
-  - `[EventId <String>]`: key: id of event
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[GroupId <String>]`: key: id of group
-  - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
+  - `[EndpointId <String>]`: The unique identifier of endpoint
+  - `[EventId <String>]`: The unique identifier of event
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
-  - `[ListId <String>]`: key: id of list
+  - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
-  - `[ListItemId <String>]`: key: id of listItem
-  - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[MentionId <String>]`: key: id of mention
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[NotebookId <String>]`: key: id of notebook
-  - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[ListItemId <String>]`: The unique identifier of listItem
+  - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
+  - `[MentionId <String>]`: The unique identifier of mention
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[NotebookId <String>]`: The unique identifier of notebook
+  - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[PermissionId <String>]`: key: id of permission
-  - `[PostId <String>]`: key: id of post
-  - `[ProfilePhotoId <String>]`: key: id of profilePhoto
+  - `[PermissionId <String>]`: The unique identifier of permission
+  - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
+  - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
+  - `[PostId <String>]`: The unique identifier of post
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
   - `[Q <String>]`: Usage: q='{q}'
-  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
-  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[SiteId <String>]`: key: id of site
-  - `[SitePageId <String>]`: key: id of sitePage
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
+  - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[SiteId <String>]`: The unique identifier of site
+  - `[SitePageId <String>]`: The unique identifier of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
-  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
   - `[User <String>]`: Usage: User='{User}'
-  - `[UserId <String>]`: key: id of user
-  - `[WebPartId <String>]`: key: id of webPart
+  - `[UserId <String>]`: The unique identifier of user
+  - `[WebPartId <String>]`: The unique identifier of webPart
 
 ## RELATED LINKS
 

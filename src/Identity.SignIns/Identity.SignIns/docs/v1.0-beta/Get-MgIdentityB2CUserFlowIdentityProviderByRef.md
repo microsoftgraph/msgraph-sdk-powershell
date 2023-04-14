@@ -41,7 +41,7 @@ Accept wildcard characters: False
 ```
 
 ### -B2CIdentityUserFlowId
-key: id of b2cIdentityUserFlow
+The unique identifier of b2cIdentityUserFlow
 
 ```yaml
 Type: System.String

@@ -23,7 +23,7 @@ Update-MgPolicyDefaultAppManagementPolicy [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgPolicyDefaultAppManagementPolicy -BodyParameter <IMicrosoftGraphTenantAppManagementPolicy>
+Update-MgPolicyDefaultAppManagementPolicy -BodyParameter <IMicrosoftGraphTenantAppManagementPolicy1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -118,7 +118,7 @@ tenantAppManagementPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy1
 Parameter Sets: Update
 Aliases:
 
@@ -276,7 +276,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy1
 
 ## OUTPUTS
 
@@ -299,10 +299,10 @@ APPLICATIONRESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>: appManageme
     - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
   - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
     - `[MaxLifetime <TimeSpan?>]`: 
-    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
     - `[RestrictionType <String>]`: appCredentialRestrictionType
 
-BODYPARAMETER <IMicrosoftGraphTenantAppManagementPolicy>: tenantAppManagementPolicy
+BODYPARAMETER <IMicrosoftGraphTenantAppManagementPolicy1>: tenantAppManagementPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -316,7 +316,7 @@ BODYPARAMETER <IMicrosoftGraphTenantAppManagementPolicy>: tenantAppManagementPol
       - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
     - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
       - `[MaxLifetime <TimeSpan?>]`: 
-      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
       - `[RestrictionType <String>]`: appCredentialRestrictionType
   - `[IsEnabled <Boolean?>]`: Denotes whether the policy is enabled. Default value is false.
   - `[ServicePrincipalRestrictions <IMicrosoftGraphAppManagementConfiguration>]`: appManagementConfiguration
@@ -329,7 +329,7 @@ SERVICEPRINCIPALRESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>: appMan
     - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
   - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
     - `[MaxLifetime <TimeSpan?>]`: 
-    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
     - `[RestrictionType <String>]`: appCredentialRestrictionType
 
 ## RELATED LINKS

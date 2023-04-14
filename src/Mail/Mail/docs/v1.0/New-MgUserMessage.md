@@ -8,12 +8,10 @@ schema: 2.0.0
 # New-MgUserMessage
 
 ## SYNOPSIS
-Create a draft of a new message in either JSON or MIME format.
-When using JSON format, you can:\n- Include an attachment to the **message**.\n- Update the draft later to add content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
-By default, this operation saves the draft in the Drafts folder.
-Send the draft message in a subsequent operation.
-Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## SYNTAX
 
@@ -70,12 +68,10 @@ New-MgUserMessage -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-Create a draft of a new message in either JSON or MIME format.
-When using JSON format, you can:\n- Include an attachment to the **message**.\n- Update the draft later to add content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
-By default, this operation saves the draft in the Drafts folder.
-Send the draft message in a subsequent operation.
-Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## EXAMPLES
 
@@ -724,7 +720,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -918,18 +914,18 @@ FROM <IMicrosoftGraphRecipient>: recipient
     - `[Name <String>]`: The display name of the person or entity.
 
 INPUTOBJECT <IMailIdentity>: Identity Parameter
-  - `[AttachmentId <String>]`: key: id of attachment
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[InferenceClassificationOverrideId <String>]`: key: id of inferenceClassificationOverride
-  - `[MailFolderId <String>]`: key: id of mailFolder
-  - `[MailFolderId1 <String>]`: key: id of mailFolder
-  - `[MentionId <String>]`: key: id of mention
-  - `[MessageId <String>]`: key: id of message
-  - `[MessageRuleId <String>]`: key: id of messageRule
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[UserConfigurationId <String>]`: key: id of userConfiguration
-  - `[UserId <String>]`: key: id of user
+  - `[AttachmentId <String>]`: The unique identifier of attachment
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[InferenceClassificationOverrideId <String>]`: The unique identifier of inferenceClassificationOverride
+  - `[MailFolderId <String>]`: The unique identifier of mailFolder
+  - `[MailFolderId1 <String>]`: The unique identifier of mailFolder
+  - `[MentionId <String>]`: The unique identifier of mention
+  - `[MessageId <String>]`: The unique identifier of message
+  - `[MessageRuleId <String>]`: The unique identifier of messageRule
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[UserConfigurationId <String>]`: The unique identifier of userConfiguration
+  - `[UserId <String>]`: The unique identifier of user
 
 INTERNETMESSAGEHEADERS <IMicrosoftGraphInternetMessageHeader[]>: .
   - `[Name <String>]`: Represents the key in a key-value pair.

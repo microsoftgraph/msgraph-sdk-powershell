@@ -14,14 +14,16 @@ Invoke function delta
 
 ### Delta (Default)
 ```
-Get-MgDriveListItemDelta -DriveId <String> [-Count] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
+Get-MgDriveListItemDelta -DriveId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Delta1
 ```
-Get-MgDriveListItemDelta -DriveId <String> -Token <String> [-Count] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
+Get-MgDriveListItemDelta -DriveId <String> -Token <String> [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
@@ -43,12 +45,12 @@ Invoke function delta
 
 ## PARAMETERS
 
-### -Count
-Include count of items
+### -All
+List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: Delta, Delta1
 Aliases:
 
 Required: False
@@ -58,8 +60,39 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: DeltaViaIdentity, DeltaViaIdentity1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: Delta, Delta1
+Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DriveId
-key: id of drive
+The unique identifier of drive
 
 ```yaml
 Type: System.String
@@ -101,6 +134,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: System.Int32
+Parameter Sets: Delta, Delta1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -215,30 +263,30 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IFilesIdentity>: Identity Parameter
-  - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
-  - `[ColumnLinkId <String>]`: key: id of columnLink
-  - `[ContentTypeId <String>]`: key: id of contentType
-  - `[ContentTypeId1 <String>]`: key: id of contentType
-  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
-  - `[DriveId <String>]`: key: id of drive
-  - `[DriveItemId <String>]`: key: id of driveItem
-  - `[DriveItemId1 <String>]`: key: id of driveItem
-  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
+  - `[ColumnLinkId <String>]`: The unique identifier of columnLink
+  - `[ContentTypeId <String>]`: The unique identifier of contentType
+  - `[ContentTypeId1 <String>]`: The unique identifier of contentType
+  - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
+  - `[DriveId <String>]`: The unique identifier of drive
+  - `[DriveItemId <String>]`: The unique identifier of driveItem
+  - `[DriveItemId1 <String>]`: The unique identifier of driveItem
+  - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
-  - `[GroupId <String>]`: key: id of group
+  - `[GroupId <String>]`: The unique identifier of group
   - `[Interval <String>]`: Usage: interval='{interval}'
-  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
-  - `[ListItemId <String>]`: key: id of listItem
-  - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[PermissionId <String>]`: key: id of permission
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
+  - `[ListItemId <String>]`: The unique identifier of listItem
+  - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
+  - `[PermissionId <String>]`: The unique identifier of permission
   - `[Q <String>]`: Usage: q='{q}'
-  - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
-  - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
+  - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
+  - `[SharedDriveItemId <String>]`: The unique identifier of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
-  - `[SubscriptionId <String>]`: key: id of subscription
-  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[SubscriptionId <String>]`: The unique identifier of subscription
+  - `[ThumbnailSetId <String>]`: The unique identifier of thumbnailSet
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UserId <String>]`: key: id of user
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

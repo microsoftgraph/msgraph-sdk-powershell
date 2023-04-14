@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: ee247273-b836-4a7b-b508-32f60c1c3958
+Module Guid: f4b4c495-c680-4076-8636-abdd2ffadce2
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -122,6 +122,9 @@ Retrieve the properties and relationships of contract object.
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
+### [Get-MgContractDelta](Get-MgContractDelta.md)
+Invoke function delta
+
 ### [Get-MgContractMemberGroup](Get-MgContractMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -184,6 +187,13 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgDeviceRegisteredUserByRef](Get-MgDeviceRegisteredUserByRef.md)
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
+Supports $expand.
+
 ### [Get-MgDeviceTransitiveMemberOf](Get-MgDeviceTransitiveMemberOf.md)
 Groups and administrative units that the device is a member of.
 This operation is transitive.
@@ -226,6 +236,9 @@ The following entities support extension properties:\n+ user\n+ group\n+ adminis
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
+### [Get-MgDirectoryDeletedItemDelta](Get-MgDirectoryDeletedItemDelta.md)
+Invoke function delta
+
 ### [Get-MgDirectoryDeletedItemMemberGroup](Get-MgDirectoryDeletedItemMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -237,6 +250,9 @@ This function is transitive.
 
 ### [Get-MgDirectoryFederationConfiguration](Get-MgDirectoryFederationConfiguration.md)
 Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+
+### [Get-MgDirectoryOnPremisSynchronization](Get-MgDirectoryOnPremisSynchronization.md)
+A container for on-premises directory synchronization functionalities that are available for the organization.
 
 ### [Get-MgDirectoryRole](Get-MgDirectoryRole.md)
 Retrieve the properties of a directoryRole object.
@@ -286,6 +302,9 @@ Retrieve the properties and relationships of a directoryroletemplate object.
 ### [Get-MgDirectoryRoleTemplateById](Get-MgDirectoryRoleTemplateById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
+
+### [Get-MgDirectoryRoleTemplateDelta](Get-MgDirectoryRoleTemplateDelta.md)
+Invoke function delta
 
 ### [Get-MgDirectoryRoleTemplateMemberGroup](Get-MgDirectoryRoleTemplateMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -387,8 +406,182 @@ Get a specific commercial subscription that an organization has acquired.
 ### [Get-MgUserScopedRoleMemberOf](Get-MgUserScopedRoleMemberOf.md)
 Get scopedRoleMemberOf from users
 
+### [Group-MgContactGetMemberOfAs](Group-MgContactGetMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgContactGetTransitiveMemberOfAs](Group-MgContactGetTransitiveMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgContactListMemberOfAs](Group-MgContactListMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgContactListTransitiveMemberOfAs](Group-MgContactListTransitiveMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgDeviceGetMemberOfAs](Group-MgDeviceGetMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgDeviceGetTransitiveMemberOfAs](Group-MgDeviceGetTransitiveMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgDeviceListMemberOfAs](Group-MgDeviceListMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgDeviceListTransitiveMemberOfAs](Group-MgDeviceListTransitiveMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgDirectoryAdministrativeUnitGetMemberAs](Group-MgDirectoryAdministrativeUnitGetMemberAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgDirectoryAdministrativeUnitListMemberAs](Group-MgDirectoryAdministrativeUnitListMemberAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgDirectoryGetDeletedItemAs](Group-MgDirectoryGetDeletedItemAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgDirectoryListDeletedItemAs](Group-MgDirectoryListDeletedItemAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgDirectoryRoleGetMemberAs](Group-MgDirectoryRoleGetMemberAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgDirectoryRoleListMemberAs](Group-MgDirectoryRoleListMemberAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsContactGetDirectReportUser](Invoke-MgAsContactGetDirectReportUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsContactGetMemberOfAdministrativeUnit](Invoke-MgAsContactGetMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsContactGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsContactGetTransitiveMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsContactListDirectReportUser](Invoke-MgAsContactListDirectReportUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsContactListMemberOfAdministrativeUnit](Invoke-MgAsContactListMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsContactListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsContactListTransitiveMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDeviceGetMemberOfAdministrativeUnit](Invoke-MgAsDeviceGetMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsDeviceGetRegisteredOwnerAppRoleAssignment](Invoke-MgAsDeviceGetRegisteredOwnerAppRoleAssignment.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
+
+### [Invoke-MgAsDeviceGetRegisteredOwnerEndpoint](Invoke-MgAsDeviceGetRegisteredOwnerEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsDeviceGetRegisteredOwnerUser](Invoke-MgAsDeviceGetRegisteredOwnerUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsDeviceGetRegisteredUser](Invoke-MgAsDeviceGetRegisteredUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsDeviceGetRegisteredUserAppRoleAssignment](Invoke-MgAsDeviceGetRegisteredUserAppRoleAssignment.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
+
+### [Invoke-MgAsDeviceGetRegisteredUserEndpoint](Invoke-MgAsDeviceGetRegisteredUserEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsDeviceGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsDeviceGetTransitiveMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsDeviceListMemberOfAdministrativeUnit](Invoke-MgAsDeviceListMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDeviceListRegisteredOwnerAppRoleAssignment](Invoke-MgAsDeviceListRegisteredOwnerAppRoleAssignment.md)
+Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDeviceListRegisteredOwnerEndpoint](Invoke-MgAsDeviceListRegisteredOwnerEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDeviceListRegisteredOwnerUser](Invoke-MgAsDeviceListRegisteredOwnerUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDeviceListRegisteredUser](Invoke-MgAsDeviceListRegisteredUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDeviceListRegisteredUserAppRoleAssignment](Invoke-MgAsDeviceListRegisteredUserAppRoleAssignment.md)
+Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDeviceListRegisteredUserEndpoint](Invoke-MgAsDeviceListRegisteredUserEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDeviceListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsDeviceListTransitiveMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDirectoryAdministrativeUnitGetMemberApplication](Invoke-MgAsDirectoryAdministrativeUnitGetMemberApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsDirectoryAdministrativeUnitGetMemberDevice](Invoke-MgAsDirectoryAdministrativeUnitGetMemberDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Invoke-MgAsDirectoryAdministrativeUnitGetMemberUser](Invoke-MgAsDirectoryAdministrativeUnitGetMemberUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsDirectoryAdministrativeUnitListMemberApplication](Invoke-MgAsDirectoryAdministrativeUnitListMemberApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDirectoryAdministrativeUnitListMemberDevice](Invoke-MgAsDirectoryAdministrativeUnitListMemberDevice.md)
+Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDirectoryAdministrativeUnitListMemberUser](Invoke-MgAsDirectoryAdministrativeUnitListMemberUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDirectoryGetDeletedItemApplication](Invoke-MgAsDirectoryGetDeletedItemApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsDirectoryGetDeletedItemUser](Invoke-MgAsDirectoryGetDeletedItemUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsDirectoryListDeletedItemApplication](Invoke-MgAsDirectoryListDeletedItemApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDirectoryListDeletedItemUser](Invoke-MgAsDirectoryListDeletedItemUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDirectoryRoleGetMemberApplication](Invoke-MgAsDirectoryRoleGetMemberApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsDirectoryRoleGetMemberDevice](Invoke-MgAsDirectoryRoleGetMemberDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Invoke-MgAsDirectoryRoleGetMemberUser](Invoke-MgAsDirectoryRoleGetMemberUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsDirectoryRoleListMemberApplication](Invoke-MgAsDirectoryRoleListMemberApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDirectoryRoleListMemberDevice](Invoke-MgAsDirectoryRoleListMemberDevice.md)
+Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsDirectoryRoleListMemberUser](Invoke-MgAsDirectoryRoleListMemberUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
 ### [Invoke-MgAvailableDirectoryFederationConfigurationProviderType](Invoke-MgAvailableDirectoryFederationConfigurationProviderType.md)
 Invoke function availableProviderTypes
+
+### [Invoke-MgContactDirectoryAdministrativeUnitGetMemberAsOrg](Invoke-MgContactDirectoryAdministrativeUnitGetMemberAsOrg.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Invoke-MgContactDirectoryAdministrativeUnitListMemberAsOrg](Invoke-MgContactDirectoryAdministrativeUnitListMemberAsOrg.md)
+Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgContactDirectoryRoleGetMemberAsOrg](Invoke-MgContactDirectoryRoleGetMemberAsOrg.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Invoke-MgContactDirectoryRoleListMemberAsOrg](Invoke-MgContactDirectoryRoleListMemberAsOrg.md)
+Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgContactGetDirectReportAsOrg](Invoke-MgContactGetDirectReportAsOrg.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Invoke-MgContactListDirectReportAsOrg](Invoke-MgContactListDirectReportAsOrg.md)
+Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
 
 ### [Invoke-MgForceDomainDelete](Invoke-MgForceDomainDelete.md)
 Deletes a domain using an asynchronous long-running operation.
@@ -398,6 +591,30 @@ To verify deletion of a domain, you can perform a get domain operation.
 
 ### [Invoke-MgPromoteDomain](Invoke-MgPromoteDomain.md)
 Invoke action promote
+
+### [Invoke-MgServiceDeviceGetRegisteredOwner](Invoke-MgServiceDeviceGetRegisteredOwner.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceDeviceGetRegisteredUser](Invoke-MgServiceDeviceGetRegisteredUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceDeviceListRegisteredOwner](Invoke-MgServiceDeviceListRegisteredOwner.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceDeviceListRegisteredUser](Invoke-MgServiceDeviceListRegisteredUser.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceDirectoryAdministrativeUnitGetMember](Invoke-MgServiceDirectoryAdministrativeUnitGetMember.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceDirectoryAdministrativeUnitListMember](Invoke-MgServiceDirectoryAdministrativeUnitListMember.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceDirectoryRoleGetMember](Invoke-MgServiceDirectoryRoleGetMember.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceDirectoryRoleListMember](Invoke-MgServiceDirectoryRoleListMember.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
 
 ### [New-MgContact](New-MgContact.md)
 Add new entity to contacts
@@ -413,6 +630,9 @@ Create new navigation property to extensions for devices
 
 ### [New-MgDeviceRegisteredOwnerByRef](New-MgDeviceRegisteredOwnerByRef.md)
 Create new navigation property ref to registeredOwners for devices
+
+### [New-MgDeviceRegisteredUserByRef](New-MgDeviceRegisteredUserByRef.md)
+Create new navigation property ref to registeredUsers for devices
 
 ### [New-MgDirectoryAdministrativeUnit](New-MgDirectoryAdministrativeUnit.md)
 Use this API to create a new administrativeUnit.
@@ -433,6 +653,9 @@ Create new navigation property to deletedItems for directory
 
 ### [New-MgDirectoryFederationConfiguration](New-MgDirectoryFederationConfiguration.md)
 Create new navigation property to federationConfigurations for directory
+
+### [New-MgDirectoryOnPremisSynchronization](New-MgDirectoryOnPremisSynchronization.md)
+Create new navigation property to onPremisesSynchronization for directory
 
 ### [New-MgDirectoryRole](New-MgDirectoryRole.md)
 Activate a directory role.
@@ -501,6 +724,9 @@ Delete navigation property extensions for devices
 ### [Remove-MgDeviceRegisteredOwnerByRef](Remove-MgDeviceRegisteredOwnerByRef.md)
 Delete ref of navigation property registeredOwners for devices
 
+### [Remove-MgDeviceRegisteredUserByRef](Remove-MgDeviceRegisteredUserByRef.md)
+Delete ref of navigation property registeredUsers for devices
+
 ### [Remove-MgDirectoryAdministrativeUnit](Remove-MgDirectoryAdministrativeUnit.md)
 Delete navigation property administrativeUnits for directory
 
@@ -518,6 +744,9 @@ Delete navigation property deletedItems for directory
 
 ### [Remove-MgDirectoryFederationConfiguration](Remove-MgDirectoryFederationConfiguration.md)
 Delete navigation property federationConfigurations for directory
+
+### [Remove-MgDirectoryOnPremisSynchronization](Remove-MgDirectoryOnPremisSynchronization.md)
+Delete navigation property onPremisesSynchronization for directory
 
 ### [Remove-MgDirectoryRole](Remove-MgDirectoryRole.md)
 Delete entity from directoryRoles
@@ -716,6 +945,9 @@ Update the navigation property deletedItems in directory
 
 ### [Update-MgDirectoryFederationConfiguration](Update-MgDirectoryFederationConfiguration.md)
 Update the navigation property federationConfigurations in directory
+
+### [Update-MgDirectoryOnPremisSynchronization](Update-MgDirectoryOnPremisSynchronization.md)
+Update the navigation property onPremisesSynchronization in directory
 
 ### [Update-MgDirectoryRole](Update-MgDirectoryRole.md)
 Update entity in directoryRoles

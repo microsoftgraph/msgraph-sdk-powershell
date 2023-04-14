@@ -14,8 +14,9 @@ Update the properties of a lifecycleManagementSettings object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgIdentityGovernanceLifecycleWorkflowSetting [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-WorkflowScheduleIntervalInHours <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgIdentityGovernanceLifecycleWorkflowSetting [-AdditionalProperties <Hashtable>]
+ [-EmailSettings <IMicrosoftGraphEmailSettings>] [-Id <String>] [-WorkflowScheduleIntervalInHours <Int32>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -73,6 +74,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -EmailSettings
+emailSettings
+To construct, please use Get-Help -Online and see NOTES section for EMAILSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailSettings
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -178,7 +195,16 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings>: lifecycleManagementSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[EmailSettings <IMicrosoftGraphEmailSettings>]`: emailSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[SenderDomain <String>]`: Specifies the domain that should be used when sending email notifications. This domain must be verified in order to be used. We recommend that you use a domain that has the appropriate DNS records to facilitate email validation, like SPF, DKIM, DMARC, and MX, because this then complies with the RFC compliance for sending and receiving email. For details, see Learn more about Exchange Online Email Routing.
+    - `[UseCompanyBranding <Boolean?>]`: Specifies if the organization’s banner logo should be included in email notifications. The banner logo will replace the Microsoft logo at the top of the email notification. If true the banner logo will be taken from the tenant’s branding settings. This value can only be set to true if the organizationalBranding bannerLogo property is set.
   - `[WorkflowScheduleIntervalInHours <Int32?>]`: The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
+
+EMAILSETTINGS <IMicrosoftGraphEmailSettings>: emailSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[SenderDomain <String>]`: Specifies the domain that should be used when sending email notifications. This domain must be verified in order to be used. We recommend that you use a domain that has the appropriate DNS records to facilitate email validation, like SPF, DKIM, DMARC, and MX, because this then complies with the RFC compliance for sending and receiving email. For details, see Learn more about Exchange Online Email Routing.
+  - `[UseCompanyBranding <Boolean?>]`: Specifies if the organization’s banner logo should be included in email notifications. The banner logo will replace the Microsoft logo at the top of the email notification. If true the banner logo will be taken from the tenant’s branding settings. This value can only be set to true if the organizationalBranding bannerLogo property is set.
 
 ## RELATED LINKS
 

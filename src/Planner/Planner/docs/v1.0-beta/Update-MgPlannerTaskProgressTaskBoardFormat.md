@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerTaskId
-key: id of plannerTask
+The unique identifier of plannerTask
 
 ```yaml
 Type: System.String
@@ -242,14 +242,14 @@ BODYPARAMETER <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1>: plannerProgr
   - `[OrderHint <String>]`: Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
-  - `[GroupId <String>]`: key: id of group
-  - `[PlannerBucketId <String>]`: key: id of plannerBucket
-  - `[PlannerDeltaId <String>]`: key: id of plannerDelta
-  - `[PlannerPlanId <String>]`: key: id of plannerPlan
-  - `[PlannerRosterId <String>]`: key: id of plannerRoster
-  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
-  - `[PlannerTaskId <String>]`: key: id of plannerTask
-  - `[UserId <String>]`: key: id of user
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
+  - `[PlannerDeltaId <String>]`: The unique identifier of plannerDelta
+  - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
+  - `[PlannerRosterId <String>]`: The unique identifier of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: The unique identifier of plannerRosterMember
+  - `[PlannerTaskId <String>]`: The unique identifier of plannerTask
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

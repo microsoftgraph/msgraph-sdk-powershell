@@ -8,8 +8,9 @@ schema: 2.0.0
 # New-MgUserEventInstanceExceptionOccurrenceAttachment
 
 ## SYNOPSIS
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ## SYNTAX
 
@@ -40,8 +41,9 @@ New-MgUserEventInstanceExceptionOccurrenceAttachment -InputObject <ICalendarIden
 ```
 
 ## DESCRIPTION
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ## EXAMPLES
 
@@ -94,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventId
-key: id of event
+The unique identifier of event
 
 ```yaml
 Type: System.String
@@ -109,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventId1
-key: id of event
+The unique identifier of event
 
 ```yaml
 Type: System.String
@@ -124,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventId2
-key: id of event
+The unique identifier of event
 
 ```yaml
 Type: System.String
@@ -232,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -309,19 +311,19 @@ BODYPARAMETER <IMicrosoftGraphAttachment>: attachment
   - `[Size <Int32?>]`: The length of the attachment in bytes.
 
 INPUTOBJECT <ICalendarIdentity>: Identity Parameter
-  - `[AttachmentId <String>]`: key: id of attachment
-  - `[CalendarGroupId <String>]`: key: id of calendarGroup
-  - `[CalendarId <String>]`: key: id of calendar
-  - `[CalendarPermissionId <String>]`: key: id of calendarPermission
-  - `[EventId <String>]`: key: id of event
-  - `[EventId1 <String>]`: key: id of event
-  - `[EventId2 <String>]`: key: id of event
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[GroupId <String>]`: key: id of group
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[PlaceId <String>]`: key: id of place
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[UserId <String>]`: key: id of user
+  - `[AttachmentId <String>]`: The unique identifier of attachment
+  - `[CalendarGroupId <String>]`: The unique identifier of calendarGroup
+  - `[CalendarId <String>]`: The unique identifier of calendar
+  - `[CalendarPermissionId <String>]`: The unique identifier of calendarPermission
+  - `[EventId <String>]`: The unique identifier of event
+  - `[EventId1 <String>]`: The unique identifier of event
+  - `[EventId2 <String>]`: The unique identifier of event
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[PlaceId <String>]`: The unique identifier of place
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

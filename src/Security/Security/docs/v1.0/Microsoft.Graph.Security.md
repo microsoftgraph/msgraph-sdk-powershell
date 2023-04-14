@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 81b10cc5-55bd-4d74-b961-37560f368cdf
+Module Guid: 588c81cc-99bb-436e-89a8-bec7412bae28
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -39,6 +39,9 @@ For details, see Close a case.
 
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
 Get alerts from security
+
+### [Get-MgSecurityAlertV2](Get-MgSecurityAlertV2.md)
+A collection of alerts in Microsoft 365 Defender.
 
 ### [Get-MgSecurityAttackSimulation](Get-MgSecurityAttackSimulation.md)
 Get attackSimulation from security
@@ -135,6 +138,21 @@ Get secureScores from security
 ### [Get-MgSecuritySecureScoreControlProfile](Get-MgSecuritySecureScoreControlProfile.md)
 Get secureScoreControlProfiles from security
 
+### [Get-MgSecurityTrigger](Get-MgSecurityTrigger.md)
+Get triggers from security
+
+### [Get-MgSecurityTriggerRetentionEvent](Get-MgSecurityTriggerRetentionEvent.md)
+Get retentionEvents from security
+
+### [Get-MgSecurityTriggerRetentionEventType](Get-MgSecurityTriggerRetentionEventType.md)
+Specifies the event that will start the retention period for labels that use this event type when an event is created.
+
+### [Get-MgSecurityTriggerType](Get-MgSecurityTriggerType.md)
+Get triggerTypes from security
+
+### [Get-MgSecurityTriggerTypeRetentionEventType](Get-MgSecurityTriggerTypeRetentionEventType.md)
+Get retentionEventTypes from security
+
 ### [Initialize-MgSecurityCaseEdiscoveryCaseCustodian](Initialize-MgSecurityCaseEdiscoveryCaseCustodian.md)
 Activate a custodian that has been released from a case to make them part of the case again.
 For details, see Manage custodians in an eDiscovery (Premium) case.
@@ -152,6 +170,9 @@ For details, see Reopen a closed case.
 
 ### [New-MgSecurityAlert](New-MgSecurityAlert.md)
 Create new navigation property to alerts for security
+
+### [New-MgSecurityAlertV2](New-MgSecurityAlertV2.md)
+Create new navigation property to alerts_v2 for security
 
 ### [New-MgSecurityAttackSimulation](New-MgSecurityAttackSimulation.md)
 Create new navigation property to simulations for security
@@ -207,12 +228,21 @@ Create new navigation property to secureScores for security
 ### [New-MgSecuritySecureScoreControlProfile](New-MgSecuritySecureScoreControlProfile.md)
 Create new navigation property to secureScoreControlProfiles for security
 
+### [New-MgSecurityTriggerRetentionEvent](New-MgSecurityTriggerRetentionEvent.md)
+Create new navigation property to retentionEvents for security
+
+### [New-MgSecurityTriggerTypeRetentionEventType](New-MgSecurityTriggerTypeRetentionEventType.md)
+Create new navigation property to retentionEventTypes for security
+
 ### [Publish-MgSecurityCaseEdiscoveryCaseCustodian](Publish-MgSecurityCaseEdiscoveryCaseCustodian.md)
 Release a custodian from a case.
 For details, see Release a custodian from a case.
 
 ### [Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Release the non-custodial data source from the case.
+
+### [Remove-MgSecurityAlertV2](Remove-MgSecurityAlertV2.md)
+Delete navigation property alerts_v2 for security
 
 ### [Remove-MgSecurityAttackSimulation](Remove-MgSecurityAttackSimulation.md)
 Delete navigation property attackSimulation for security
@@ -284,6 +314,18 @@ Delete navigation property secureScores for security
 ### [Remove-MgSecuritySecureScoreControlProfile](Remove-MgSecuritySecureScoreControlProfile.md)
 Delete navigation property secureScoreControlProfiles for security
 
+### [Remove-MgSecurityTrigger](Remove-MgSecurityTrigger.md)
+Delete navigation property triggers for security
+
+### [Remove-MgSecurityTriggerRetentionEvent](Remove-MgSecurityTriggerRetentionEvent.md)
+Delete navigation property retentionEvents for security
+
+### [Remove-MgSecurityTriggerType](Remove-MgSecurityTriggerType.md)
+Delete navigation property triggerTypes for security
+
+### [Remove-MgSecurityTriggerTypeRetentionEventType](Remove-MgSecurityTriggerTypeRetentionEventType.md)
+Delete navigation property retentionEventTypes for security
+
 ### [Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault.md)
 Reset a caseSettings object to the default values.
 
@@ -292,6 +334,9 @@ Invoke action runHuntingQuery
 
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
 Update the navigation property alerts in security
+
+### [Update-MgSecurityAlertV2](Update-MgSecurityAlertV2.md)
+Update the navigation property alerts_v2 in security
 
 ### [Update-MgSecurityAttackSimulationAutomation](Update-MgSecurityAttackSimulationAutomation.md)
 Update the navigation property simulationAutomations in security
@@ -355,4 +400,16 @@ Update the navigation property secureScores in security
 
 ### [Update-MgSecuritySecureScoreControlProfile](Update-MgSecuritySecureScoreControlProfile.md)
 Update the navigation property secureScoreControlProfiles in security
+
+### [Update-MgSecurityTrigger](Update-MgSecurityTrigger.md)
+Update the navigation property triggers in security
+
+### [Update-MgSecurityTriggerRetentionEvent](Update-MgSecurityTriggerRetentionEvent.md)
+Update the navigation property retentionEvents in security
+
+### [Update-MgSecurityTriggerType](Update-MgSecurityTriggerType.md)
+Update the navigation property triggerTypes in security
+
+### [Update-MgSecurityTriggerTypeRetentionEventType](Update-MgSecurityTriggerTypeRetentionEventType.md)
+Update the navigation property retentionEventTypes in security
 

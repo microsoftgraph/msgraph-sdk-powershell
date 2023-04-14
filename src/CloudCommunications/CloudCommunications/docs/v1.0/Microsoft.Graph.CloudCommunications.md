@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 66e008c9-7e43-4042-a1f7-fb9598449159
+Module Guid: e4b40999-3c1f-4d1d-87aa-9d800112875b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -94,8 +94,7 @@ The bot is expected to answer, reject, or redirect the call before the call time
 The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.
 
 ### [Invoke-MgCreateOrGetCommunicationOnlineMeeting](Invoke-MgCreateOrGetCommunicationOnlineMeeting.md)
-Create an onlineMeeting object with a custom specified external ID.
-If the external ID already exists, this API will return the onlineMeeting object with that external ID.
+Create new navigation property to onlineMeetings for communications
 
 ### [Invoke-MgInviteCommunicationCallParticipant](Invoke-MgInviteCommunicationCallParticipant.md)
 Invite participants to the active call.
@@ -189,7 +188,8 @@ Create new navigation property to participants for communications
 Create new navigation property to sessions for communications
 
 ### [New-MgCommunicationOnlineMeeting](New-MgCommunicationOnlineMeeting.md)
-Create new navigation property to onlineMeetings for communications
+Create an onlineMeeting object with a custom specified external ID.
+If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 
 ### [New-MgCommunicationOnlineMeetingAttendanceReport](New-MgCommunicationOnlineMeetingAttendanceReport.md)
 Create new navigation property to attendanceReports for communications

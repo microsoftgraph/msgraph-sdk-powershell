@@ -12,13 +12,13 @@ Invoke action query
 
 ## SYNTAX
 
-### QueryExpanded1 (Default)
+### QueryExpanded (Default)
 ```
-Invoke-MgQuerySearch [-AdditionalProperties <Hashtable>] [-Requests <IMicrosoftGraphSearchRequest1[]>]
+Invoke-MgQuerySearch [-AdditionalProperties <Hashtable>] [-Requests <IMicrosoftGraphSearchRequest[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Query1
+### Query
 ```
 Invoke-MgQuerySearch
  -BodyParameter <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema1>
@@ -37,7 +37,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Query1
+Parameter Sets: Query
 Aliases:
 
 Required: True
@@ -68,8 +68,8 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for REQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchRequest1[]
-Parameter Sets: QueryExpanded1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchRequest[]
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -119,7 +119,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchResponse1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchResponse
 
 ## NOTES
 
@@ -132,7 +132,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Requests <IMicrosoftGraphSearchRequest1[]>]`: 
+  - `[Requests <IMicrosoftGraphSearchRequest[]>]`: 
     - `[AggregationFilters <String[]>]`: 
     - `[Aggregations <IMicrosoftGraphAggregationOption[]>]`: 
       - `[BucketDefinition <IMicrosoftGraphBucketAggregationDefinition>]`: bucketAggregationDefinition
@@ -154,19 +154,24 @@ BODYPARAMETER <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentAppli
     - `[Query <IMicrosoftGraphSearchQuery>]`: searchQuery
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[QueryString <String>]`: The search query containing the search terms. Required.
+      - `[QueryTemplate <String>]`: 
     - `[QueryAlterationOptions <IMicrosoftGraphSearchAlterationOptions>]`: searchAlterationOptions
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[EnableModification <Boolean?>]`: Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.
       - `[EnableSuggestion <Boolean?>]`: Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
+    - `[Region <String>]`: 
     - `[ResultTemplateOptions <IMicrosoftGraphResultTemplateOption>]`: resultTemplateOption
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[EnableResultTemplate <Boolean?>]`: Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
+    - `[SharePointOneDriveOptions <IMicrosoftGraphSharePointOneDriveOptions>]`: sharePointOneDriveOptions
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IncludeContent <String>]`: searchContent
     - `[Size <Int32?>]`: 
     - `[SortProperties <IMicrosoftGraphSortProperty[]>]`: 
       - `[IsDescending <Boolean?>]`: True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
       - `[Name <String>]`: The name of the property to sort on. Required.
 
-REQUESTS <IMicrosoftGraphSearchRequest1[]>: .
+REQUESTS <IMicrosoftGraphSearchRequest[]>: .
   - `[AggregationFilters <String[]>]`: 
   - `[Aggregations <IMicrosoftGraphAggregationOption[]>]`: 
     - `[BucketDefinition <IMicrosoftGraphBucketAggregationDefinition>]`: bucketAggregationDefinition
@@ -188,13 +193,18 @@ REQUESTS <IMicrosoftGraphSearchRequest1[]>: .
   - `[Query <IMicrosoftGraphSearchQuery>]`: searchQuery
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[QueryString <String>]`: The search query containing the search terms. Required.
+    - `[QueryTemplate <String>]`: 
   - `[QueryAlterationOptions <IMicrosoftGraphSearchAlterationOptions>]`: searchAlterationOptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EnableModification <Boolean?>]`: Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.
     - `[EnableSuggestion <Boolean?>]`: Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
+  - `[Region <String>]`: 
   - `[ResultTemplateOptions <IMicrosoftGraphResultTemplateOption>]`: resultTemplateOption
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EnableResultTemplate <Boolean?>]`: Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
+  - `[SharePointOneDriveOptions <IMicrosoftGraphSharePointOneDriveOptions>]`: sharePointOneDriveOptions
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IncludeContent <String>]`: searchContent
   - `[Size <Int32?>]`: 
   - `[SortProperties <IMicrosoftGraphSortProperty[]>]`: 
     - `[IsDescending <Boolean?>]`: True if the sort order is descending. Default is false, with the sort order as ascending. Optional.

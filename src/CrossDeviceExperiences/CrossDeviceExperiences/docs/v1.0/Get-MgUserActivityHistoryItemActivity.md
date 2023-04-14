@@ -34,7 +34,7 @@ NavigationProperty/Containment; navigation property to the associated activity.
 ## PARAMETERS
 
 ### -ActivityHistoryItemId
-key: id of activityHistoryItem
+The unique identifier of activityHistoryItem
 
 ```yaml
 Type: System.String
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserActivityId
-key: id of userActivity
+The unique identifier of userActivity
 
 ```yaml
 Type: System.String
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -145,14 +145,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ICrossDeviceExperiencesIdentity>: Identity Parameter
-  - `[ActivityHistoryItemId <String>]`: key: id of activityHistoryItem
-  - `[CommandId <String>]`: key: id of command
-  - `[DeviceId <String>]`: key: id of device
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[UsageRightId <String>]`: key: id of usageRight
-  - `[UserActivityId <String>]`: key: id of userActivity
-  - `[UserId <String>]`: key: id of user
+  - `[ActivityHistoryItemId <String>]`: The unique identifier of activityHistoryItem
+  - `[CommandId <String>]`: The unique identifier of command
+  - `[DeviceId <String>]`: The unique identifier of device
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[UsageRightId <String>]`: The unique identifier of usageRight
+  - `[UserActivityId <String>]`: The unique identifier of userActivity
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

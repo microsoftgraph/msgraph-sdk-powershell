@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
-Field indicating the app name of the source that is sending the linkedResource.
+The app name of the source that sends the linkedResource.
 
 ```yaml
 Type: System.String
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Field indicating the title of the linkedResource.
+The title of the linkedResource.
 
 ```yaml
 Type: System.String
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalId
-Id of the object that is associated with this task on the third-party/partner system.
+ID of the object that is associated with this task on the third-party/partner system.
 
 ```yaml
 Type: System.String
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -LinkedResourceId
-key: id of linkedResource
+The unique identifier of linkedResource
 
 ```yaml
 Type: System.String
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -TodoTaskId
-key: id of todoTask
+The unique identifier of todoTask
 
 ```yaml
 Type: System.String
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 ```
 
 ### -TodoTaskListId
-key: id of todoTaskList
+The unique identifier of todoTaskList
 
 ```yaml
 Type: System.String
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -317,32 +317,32 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphLinkedResource>: linkedResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-  - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-  - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+  - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+  - `[DisplayName <String>]`: The title of the linkedResource.
+  - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
   - `[WebUrl <String>]`: Deep link to the linkedResource.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
-  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
-  - `[AttachmentId <String>]`: key: id of attachment
-  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
-  - `[ChecklistItemId <String>]`: key: id of checklistItem
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[LinkedResourceId <String>]`: key: id of linkedResource
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
-  - `[OutlookCategoryId <String>]`: key: id of outlookCategory
-  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[ProfilePhotoId <String>]`: key: id of profilePhoto
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[TodoTaskId <String>]`: key: id of todoTask
-  - `[TodoTaskListId <String>]`: key: id of todoTaskList
-  - `[UserId <String>]`: key: id of user
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentId <String>]`: The unique identifier of attachment
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[NotificationId <String>]`: The unique identifier of notification
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: d9036b88-60a8-4fcd-9635-0b024f35b22f
+Module Guid: 668b514f-45a8-42f0-962e-312899c6dfe1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -131,7 +131,7 @@ Nullable.
 Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgApplicationSynchronization](Get-MgApplicationSynchronization.md)
-Get synchronization from applications
+Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 
 ### [Get-MgApplicationSynchronizationAccessToken](Get-MgApplicationSynchronizationAccessToken.md)
 Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
@@ -170,7 +170,8 @@ List the tokenLifetimePolicy objects that are assigned to an application or serv
 List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 
 ### [Get-MgApplicationUserOwnedObject](Get-MgApplicationUserOwnedObject.md)
-Invoke action getUserOwnedObjects
+Retrieve a list of recently deleted application and group objects owned by the specified user.
+This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgGroupAppRoleAssignment](Get-MgGroupAppRoleAssignment.md)
 Represents the app roles a group has been granted for an application.
@@ -350,7 +351,7 @@ Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count 
 Get a list of single sign-on credentials using a password for a user or group.
 
 ### [Get-MgServicePrincipalSynchronization](Get-MgServicePrincipalSynchronization.md)
-Get synchronization from servicePrincipals
+Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 
 ### [Get-MgServicePrincipalSynchronizationAccessToken](Get-MgServicePrincipalSynchronizationAccessToken.md)
 Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
@@ -385,11 +386,78 @@ Supports $expand.
 Get transitiveMemberOf from servicePrincipals
 
 ### [Get-MgServicePrincipalUserOwnedObject](Get-MgServicePrincipalUserOwnedObject.md)
-Invoke action getUserOwnedObjects
+Retrieve a list of recently deleted application and group objects owned by the specified user.
+This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgUserAppRoleAssignment](Get-MgUserAppRoleAssignment.md)
 Represents the app roles a user has been granted for an application.
 Supports $expand.
+
+### [Group-MgServicePrincipalGetMemberOfAs](Group-MgServicePrincipalGetMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgServicePrincipalGetOwnedObjectAs](Group-MgServicePrincipalGetOwnedObjectAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgServicePrincipalGetTransitiveMemberOfAs](Group-MgServicePrincipalGetTransitiveMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgServicePrincipalListMemberOfAs](Group-MgServicePrincipalListMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgServicePrincipalListOwnedObjectAs](Group-MgServicePrincipalListOwnedObjectAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgServicePrincipalListTransitiveMemberOfAs](Group-MgServicePrincipalListTransitiveMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsApplicationGetOwnerEndpoint](Invoke-MgAsApplicationGetOwnerEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsApplicationGetOwnerUser](Invoke-MgAsApplicationGetOwnerUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsApplicationListOwnerEndpoint](Invoke-MgAsApplicationListOwnerEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsApplicationListOwnerUser](Invoke-MgAsApplicationListOwnerUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalGetMemberOfAdministrativeUnit](Invoke-MgAsServicePrincipalGetMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsServicePrincipalGetOwnedObjectApplication](Invoke-MgAsServicePrincipalGetOwnedObjectApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsServicePrincipalGetOwnedObjectEndpoint](Invoke-MgAsServicePrincipalGetOwnedObjectEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsServicePrincipalGetOwnerEndpoint](Invoke-MgAsServicePrincipalGetOwnerEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsServicePrincipalGetOwnerUser](Invoke-MgAsServicePrincipalGetOwnerUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsServicePrincipalGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsServicePrincipalGetTransitiveMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsServicePrincipalListMemberOfAdministrativeUnit](Invoke-MgAsServicePrincipalListMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnedObjectApplication](Invoke-MgAsServicePrincipalListOwnedObjectApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnedObjectEndpoint](Invoke-MgAsServicePrincipalListOwnedObjectEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnerEndpoint](Invoke-MgAsServicePrincipalListOwnerEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListOwnerUser](Invoke-MgAsServicePrincipalListOwnerUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsServicePrincipalListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsServicePrincipalListTransitiveMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
 
 ### [Invoke-MgFilterApplicationSynchronizationJobSchemaOperator](Invoke-MgFilterApplicationSynchronizationJobSchemaOperator.md)
 Invoke function filterOperators
@@ -436,6 +504,30 @@ For more information about expressions, see Writing Expressions for Attribute Ma
 Parse a given string expression into an attributeMappingSource object.
 For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
 
+### [Invoke-MgServiceApplicationGetOwner](Invoke-MgServiceApplicationGetOwner.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceApplicationListOwner](Invoke-MgServiceApplicationListOwner.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServicePrincipalGetCreatedObject](Invoke-MgServicePrincipalGetCreatedObject.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServicePrincipalGetOwnedObject](Invoke-MgServicePrincipalGetOwnedObject.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServicePrincipalGetOwner](Invoke-MgServicePrincipalGetOwner.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServicePrincipalListCreatedObject](Invoke-MgServicePrincipalListCreatedObject.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServicePrincipalListOwnedObject](Invoke-MgServicePrincipalListOwnedObject.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServicePrincipalListOwner](Invoke-MgServicePrincipalListOwner.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
 ### [New-MgApplication](New-MgApplication.md)
 Create a new application object.
 
@@ -461,6 +553,7 @@ Call Start job to start synchronization.
 ### [New-MgApplicationSynchronizationJobOnDemand](New-MgApplicationSynchronizationJobOnDemand.md)
 Select a user and provision the account on-demand.
 The rate limit for this API is 5 requests per 10 seconds.
+No user or group will be provisioned on-demand that would not have been provisioned through the regular provisioning cycles.
 
 ### [New-MgApplicationSynchronizationJobSchemaDirectory](New-MgApplicationSynchronizationJobSchemaDirectory.md)
 Create new navigation property to directories for applications
@@ -475,7 +568,7 @@ Create new navigation property to directories for applications
 Create new navigation property ref to tokenIssuancePolicies for applications
 
 ### [New-MgApplicationTokenLifetimePolicyByRef](New-MgApplicationTokenLifetimePolicyByRef.md)
-Assign a tokenLifetimePolicy to an application or servicePrincipal.
+Create new navigation property ref to tokenLifetimePolicies for applications
 
 ### [New-MgGroupAppRoleAssignment](New-MgGroupAppRoleAssignment.md)
 Use this API to assign an app role to a security group.
@@ -569,6 +662,7 @@ Call Start job to start synchronization.
 ### [New-MgServicePrincipalSynchronizationJobOnDemand](New-MgServicePrincipalSynchronizationJobOnDemand.md)
 Select a user and provision the account on-demand.
 The rate limit for this API is 5 requests per 10 seconds.
+No user or group will be provisioned on-demand that would not have been provisioned through the regular provisioning cycles.
 
 ### [New-MgServicePrincipalSynchronizationJobSchemaDirectory](New-MgServicePrincipalSynchronizationJobSchemaDirectory.md)
 Create new navigation property to directories for servicePrincipals
@@ -752,6 +846,9 @@ Update the ref of navigation property connectorGroup in applications
 The main logo for the application.
 Not nullable.
 
+### [Set-MgApplicationSynchronizationSecret](Set-MgApplicationSynchronizationSecret.md)
+Update property secrets value.
+
 ### [Set-MgApplicationVerifiedPublisher](Set-MgApplicationVerifiedPublisher.md)
 Set the the verifiedPublisher on an application.
 For more information, including prerequisites to setting a verified publisher, see Publisher verification.
@@ -759,6 +856,9 @@ For more information, including prerequisites to setting a verified publisher, s
 ### [Set-MgOnPremisePublishingProfileConnectorGroupApplicationLogo](Set-MgOnPremisePublishingProfileConnectorGroupApplicationLogo.md)
 The main logo for the application.
 Not nullable.
+
+### [Set-MgServicePrincipalSynchronizationSecret](Set-MgServicePrincipalSynchronizationSecret.md)
+Update property secrets value.
 
 ### [Start-MgApplicationSynchronizationJob](Start-MgApplicationSynchronizationJob.md)
 Start an existing synchronization job.

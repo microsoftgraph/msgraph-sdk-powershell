@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrolment
-Module Guid: 2b701c94-3ce3-404b-a3b8-da94c2b5affd
+Module Guid: edf821c2-b986-4387-b35d-ba6886ca9da4
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.enrolment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -32,6 +32,12 @@ Get roleManagement
 
 ### [Get-MgRoleManagementDirectory](Get-MgRoleManagementDirectory.md)
 Get directory from roleManagement
+
+### [Get-MgRoleManagementDirectoryResourceNamespace](Get-MgRoleManagementDirectoryResourceNamespace.md)
+Get resourceNamespaces from roleManagement
+
+### [Get-MgRoleManagementDirectoryResourceNamespaceResourceAction](Get-MgRoleManagementDirectoryResourceNamespaceResourceAction.md)
+Get resourceActions from roleManagement
 
 ### [Get-MgRoleManagementDirectoryRoleAssignment](Get-MgRoleManagementDirectoryRoleAssignment.md)
 Resource to grant access to users or groups.
@@ -143,6 +149,12 @@ Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagement](Get-MgRoleManagementEntitlementManagement.md)
 Container for roles and assignments for entitlement management resources.
+
+### [Get-MgRoleManagementEntitlementManagementResourceNamespace](Get-MgRoleManagementEntitlementManagementResourceNamespace.md)
+Get resourceNamespaces from roleManagement
+
+### [Get-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction](Get-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction.md)
+Get resourceActions from roleManagement
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignment](Get-MgRoleManagementEntitlementManagementRoleAssignment.md)
 Resource to grant access to users or groups.
@@ -300,6 +312,12 @@ Create new navigation property to importedWindowsAutopilotDeviceIdentities for d
 ### [New-MgDeviceManagementWindowAutopilotDeviceIdentity](New-MgDeviceManagementWindowAutopilotDeviceIdentity.md)
 Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
 
+### [New-MgRoleManagementDirectoryResourceNamespace](New-MgRoleManagementDirectoryResourceNamespace.md)
+Create new navigation property to resourceNamespaces for roleManagement
+
+### [New-MgRoleManagementDirectoryResourceNamespaceResourceAction](New-MgRoleManagementDirectoryResourceNamespaceResourceAction.md)
+Create new navigation property to resourceActions for roleManagement
+
 ### [New-MgRoleManagementDirectoryRoleAssignment](New-MgRoleManagementDirectoryRoleAssignment.md)
 Create a new unifiedRoleAssignment object.
 
@@ -330,6 +348,12 @@ Create new navigation property to roleEligibilityScheduleInstances for roleManag
 ### [New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
 In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
 This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+
+### [New-MgRoleManagementEntitlementManagementResourceNamespace](New-MgRoleManagementEntitlementManagementResourceNamespace.md)
+Create new navigation property to resourceNamespaces for roleManagement
+
+### [New-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction](New-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction.md)
+Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignment](New-MgRoleManagementEntitlementManagementRoleAssignment.md)
 Create a new unifiedRoleAssignment object.
@@ -380,6 +404,12 @@ Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
 ### [Remove-MgRoleManagementDirectory](Remove-MgRoleManagementDirectory.md)
 Delete navigation property directory for roleManagement
 
+### [Remove-MgRoleManagementDirectoryResourceNamespace](Remove-MgRoleManagementDirectoryResourceNamespace.md)
+Delete navigation property resourceNamespaces for roleManagement
+
+### [Remove-MgRoleManagementDirectoryResourceNamespaceResourceAction](Remove-MgRoleManagementDirectoryResourceNamespaceResourceAction.md)
+Delete navigation property resourceActions for roleManagement
+
 ### [Remove-MgRoleManagementDirectoryRoleAssignment](Remove-MgRoleManagementDirectoryRoleAssignment.md)
 Delete navigation property roleAssignments for roleManagement
 
@@ -412,6 +442,12 @@ Delete navigation property roleEligibilityScheduleRequests for roleManagement
 
 ### [Remove-MgRoleManagementEntitlementManagement](Remove-MgRoleManagementEntitlementManagement.md)
 Delete navigation property entitlementManagement for roleManagement
+
+### [Remove-MgRoleManagementEntitlementManagementResourceNamespace](Remove-MgRoleManagementEntitlementManagementResourceNamespace.md)
+Delete navigation property resourceNamespaces for roleManagement
+
+### [Remove-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction](Remove-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction.md)
+Delete navigation property resourceActions for roleManagement
 
 ### [Remove-MgRoleManagementEntitlementManagementRoleAssignment](Remove-MgRoleManagementEntitlementManagementRoleAssignment.md)
 Delete navigation property roleAssignments for roleManagement
@@ -477,6 +513,12 @@ Update roleManagement
 ### [Update-MgRoleManagementDirectory](Update-MgRoleManagementDirectory.md)
 Update the navigation property directory in roleManagement
 
+### [Update-MgRoleManagementDirectoryResourceNamespace](Update-MgRoleManagementDirectoryResourceNamespace.md)
+Update the navigation property resourceNamespaces in roleManagement
+
+### [Update-MgRoleManagementDirectoryResourceNamespaceResourceAction](Update-MgRoleManagementDirectoryResourceNamespaceResourceAction.md)
+Update the navigation property resourceActions in roleManagement
+
 ### [Update-MgRoleManagementDirectoryRoleAssignment](Update-MgRoleManagementDirectoryRoleAssignment.md)
 Update the navigation property roleAssignments in roleManagement
 
@@ -509,6 +551,12 @@ Update the navigation property roleEligibilityScheduleRequests in roleManagement
 
 ### [Update-MgRoleManagementEntitlementManagement](Update-MgRoleManagementEntitlementManagement.md)
 Update the navigation property entitlementManagement in roleManagement
+
+### [Update-MgRoleManagementEntitlementManagementResourceNamespace](Update-MgRoleManagementEntitlementManagementResourceNamespace.md)
+Update the navigation property resourceNamespaces in roleManagement
+
+### [Update-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction](Update-MgRoleManagementEntitlementManagementResourceNamespaceResourceAction.md)
+Update the navigation property resourceActions in roleManagement
 
 ### [Update-MgRoleManagementEntitlementManagementRoleAssignment](Update-MgRoleManagementEntitlementManagementRoleAssignment.md)
 Update the navigation property roleAssignments in roleManagement

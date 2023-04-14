@@ -55,7 +55,7 @@ This example extends the filter in example 1 to return access roles whose displa
 ## PARAMETERS
 
 ### -AccessPackageCatalogId
-key: id of accessPackageCatalog
+The unique identifier of accessPackageCatalog
 
 ```yaml
 Type: System.String

@@ -28,7 +28,7 @@ Supports $expand.
 ## PARAMETERS
 
 ### -AdministrativeUnitId
-key: id of administrativeUnit
+The unique identifier of administrativeUnit
 
 ```yaml
 Type: System.String

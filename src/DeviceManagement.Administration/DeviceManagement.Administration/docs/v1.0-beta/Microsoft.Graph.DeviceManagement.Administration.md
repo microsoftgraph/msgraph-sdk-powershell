@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: ce186d0a-752e-4edd-8b54-c53385bb0424
+Module Guid: 678ef567-c6df-4fa3-b19c-e1cad0db0b26
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -260,7 +260,10 @@ Cloud PC provisioning policy.
 A defined collection of provisioning policy assignments.
 Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned.
 Returned only on $expand.
-See an example of getting the assignments relationship.
+For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
+
+### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUser](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUser.md)
+Get assignedUsers from deviceManagement
 
 ### [Get-MgDeviceManagementVirtualEndpointReport](Get-MgDeviceManagementVirtualEndpointReport.md)
 Cloud PC related reports.
@@ -272,7 +275,7 @@ The export jobs created for downloading reports.
 Cloud PC service plans.
 
 ### [Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan](Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
-Get sharedUseServicePlans from deviceManagement
+Cloud PC shared-use service plans.
 
 ### [Get-MgDeviceManagementVirtualEndpointSnapshot](Get-MgDeviceManagementVirtualEndpointSnapshot.md)
 Cloud PC snapshots.

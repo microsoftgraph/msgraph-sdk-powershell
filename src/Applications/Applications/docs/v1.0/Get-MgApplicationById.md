@@ -13,13 +13,13 @@ Some common uses for this function are to:
 
 ## SYNTAX
 
-### GetExpanded (Default)
+### GetExpanded1 (Default)
 ```
 Get-MgApplicationById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Types <String[]>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgApplicationById
  -BodyParameter <IPaths1Hl8AmeApplicationsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
@@ -64,7 +64,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: GetExpanded
+Parameter Sets: GetExpanded1
 Aliases:
 
 Required: False
@@ -80,7 +80,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Hl8AmeApplicationsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: GetExpanded
+Parameter Sets: GetExpanded1
 Aliases:
 
 Required: False
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: GetExpanded
+Parameter Sets: GetExpanded1
 Aliases:
 
 Required: False

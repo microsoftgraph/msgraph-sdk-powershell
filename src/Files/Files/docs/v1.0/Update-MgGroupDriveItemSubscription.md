@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClientState
-Optional.
+Required.
 Specifies the value of the clientState property sent by the service in each change notification.
 The maximum length is 128 characters.
 The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -DriveId
-key: id of drive
+The unique identifier of drive
 
 ```yaml
 Type: System.String
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -DriveItemId
-key: id of driveItem
+The unique identifier of driveItem
 
 ```yaml
 Type: System.String
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-key: id of group
+The unique identifier of group
 
 ```yaml
 Type: System.String
@@ -431,7 +431,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
-key: id of subscription
+The unique identifier of subscription
 
 ```yaml
 Type: System.String
@@ -503,7 +503,7 @@ BODYPARAMETER <IMicrosoftGraphSubscription>: subscription
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
   - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-  - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+  - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
   - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
   - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
   - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -517,30 +517,30 @@ BODYPARAMETER <IMicrosoftGraphSubscription>: subscription
   - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
 
 INPUTOBJECT <IFilesIdentity>: Identity Parameter
-  - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
-  - `[ColumnLinkId <String>]`: key: id of columnLink
-  - `[ContentTypeId <String>]`: key: id of contentType
-  - `[ContentTypeId1 <String>]`: key: id of contentType
-  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
-  - `[DriveId <String>]`: key: id of drive
-  - `[DriveItemId <String>]`: key: id of driveItem
-  - `[DriveItemId1 <String>]`: key: id of driveItem
-  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
+  - `[ColumnLinkId <String>]`: The unique identifier of columnLink
+  - `[ContentTypeId <String>]`: The unique identifier of contentType
+  - `[ContentTypeId1 <String>]`: The unique identifier of contentType
+  - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
+  - `[DriveId <String>]`: The unique identifier of drive
+  - `[DriveItemId <String>]`: The unique identifier of driveItem
+  - `[DriveItemId1 <String>]`: The unique identifier of driveItem
+  - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
-  - `[GroupId <String>]`: key: id of group
+  - `[GroupId <String>]`: The unique identifier of group
   - `[Interval <String>]`: Usage: interval='{interval}'
-  - `[ItemActivityStatId <String>]`: key: id of itemActivityStat
-  - `[ListItemId <String>]`: key: id of listItem
-  - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[PermissionId <String>]`: key: id of permission
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
+  - `[ListItemId <String>]`: The unique identifier of listItem
+  - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
+  - `[PermissionId <String>]`: The unique identifier of permission
   - `[Q <String>]`: Usage: q='{q}'
-  - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
-  - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
+  - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
+  - `[SharedDriveItemId <String>]`: The unique identifier of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
-  - `[SubscriptionId <String>]`: key: id of subscription
-  - `[ThumbnailSetId <String>]`: key: id of thumbnailSet
+  - `[SubscriptionId <String>]`: The unique identifier of subscription
+  - `[ThumbnailSetId <String>]`: The unique identifier of thumbnailSet
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UserId <String>]`: key: id of user
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

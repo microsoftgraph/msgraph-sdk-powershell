@@ -12,39 +12,39 @@ Update the navigation property connections in external
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgExternalConnection -ExternalConnectionId <String> [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphExternalConnectorsConfiguration>] [-Description <String>]
  [-Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>] [-Id <String>]
- [-Items <IMicrosoftGraphExternalConnectorsExternalItem1[]>] [-Name <String>]
+ [-Items <IMicrosoftGraphExternalConnectorsExternalItem[]>] [-Name <String>]
  [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
- [-Schema <IMicrosoftGraphExternalConnectorsSchema1>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Schema <IMicrosoftGraphExternalConnectorsSchema>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Update1
+### Update
 ```
 Update-MgExternalConnection -ExternalConnectionId <String>
  -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
 Update-MgExternalConnection -InputObject <ISearchIdentity>
  -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
 Update-MgExternalConnection -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphExternalConnectorsConfiguration>] [-Description <String>]
  [-Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>] [-Id <String>]
- [-Items <IMicrosoftGraphExternalConnectorsExternalItem1[]>] [-Name <String>]
+ [-Items <IMicrosoftGraphExternalConnectorsExternalItem[]>] [-Name <String>]
  [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
- [-Schema <IMicrosoftGraphExternalConnectorsSchema1>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Schema <IMicrosoftGraphExternalConnectorsSchema>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -73,7 +73,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -89,7 +89,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection1
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -105,7 +105,7 @@ To construct, please use Get-Help -Online and see NOTES section for CONFIGURATIO
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConfiguration
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -121,7 +121,7 @@ Optional.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -132,11 +132,11 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalConnectionId
-key: id of externalConnection
+The unique identifier of externalConnection
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -152,7 +152,7 @@ To construct, please use Get-Help -Online and see NOTES section for GROUPS prope
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalGroup[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -168,7 +168,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -184,7 +184,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -199,8 +199,8 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ITEMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalItem1[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalItem[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -217,7 +217,7 @@ Required.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -233,7 +233,7 @@ To construct, please use Get-Help -Online and see NOTES section for OPERATIONS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionOperation[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -263,8 +263,8 @@ schema
 To construct, please use Get-Help -Online and see NOTES section for SCHEMA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsSchema1
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsSchema
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -279,7 +279,7 @@ connectionState
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -356,9 +356,9 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalConnection1>: externalCo
     - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Type <String>]`: identityType
-  - `[Items <IMicrosoftGraphExternalConnectorsExternalItem1[]>]`: 
+  - `[Items <IMicrosoftGraphExternalConnectorsExternalItem[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Acl <IMicrosoftGraphExternalConnectorsAcl1[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
+    - `[Acl <IMicrosoftGraphExternalConnectorsAcl[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
       - `[AccessType <String>]`: accessType
       - `[Type <String>]`: aclType
       - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
@@ -387,7 +387,7 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalConnection1>: externalCo
       - `[Message <String>]`: A non-localized message for the developer.
       - `[Target <String>]`: The target of the error.
     - `[Status <String>]`: connectionOperationStatus
-  - `[Schema <IMicrosoftGraphExternalConnectorsSchema1>]`: schema
+  - `[Schema <IMicrosoftGraphExternalConnectorsSchema>]`: schema
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[BaseType <String>]`: Must be set to microsoft.graph.externalConnector.externalItem. Required.
@@ -415,19 +415,28 @@ GROUPS <IMicrosoftGraphExternalConnectorsExternalGroup[]>: .
     - `[Type <String>]`: identityType
 
 INPUTOBJECT <ISearchIdentity>: Identity Parameter
-  - `[AcronymId <String>]`: key: id of acronym
-  - `[BookmarkId <String>]`: key: id of bookmark
-  - `[ConnectionOperationId <String>]`: key: id of connectionOperation
-  - `[ExternalActivityId <String>]`: key: id of externalActivity
-  - `[ExternalConnectionId <String>]`: key: id of externalConnection
-  - `[ExternalGroupId <String>]`: key: id of externalGroup
-  - `[ExternalItemId <String>]`: key: id of externalItem
-  - `[IdentityId <String>]`: key: id of identity
-  - `[QnaId <String>]`: key: id of qna
+  - `[AcronymId <String>]`: The unique identifier of acronym
+  - `[BookmarkId <String>]`: The unique identifier of bookmark
+  - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
+  - `[ExternalActivityId <String>]`: The unique identifier of externalActivity
+  - `[ExternalConnectionId <String>]`: The unique identifier of externalConnection
+  - `[ExternalGroupId <String>]`: The unique identifier of externalGroup
+  - `[ExternalItemId <String>]`: The unique identifier of externalItem
+  - `[IdentityId <String>]`: The unique identifier of identity
+  - `[InboundFlowId <String>]`: The unique identifier of inboundFlow
+  - `[IndustryDataConnectorId <String>]`: The unique identifier of industryDataConnector
+  - `[IndustryDataRunActivityId <String>]`: The unique identifier of industryDataRunActivity
+  - `[IndustryDataRunId <String>]`: The unique identifier of industryDataRun
+  - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
+  - `[QnaId <String>]`: The unique identifier of qna
+  - `[ReferenceDefinitionId <String>]`: The unique identifier of referenceDefinition
+  - `[RoleGroupId <String>]`: The unique identifier of roleGroup
+  - `[SourceSystemDefinitionId <String>]`: The unique identifier of sourceSystemDefinition
+  - `[YearTimePeriodDefinitionId <String>]`: The unique identifier of yearTimePeriodDefinition
 
-ITEMS <IMicrosoftGraphExternalConnectorsExternalItem1[]>: .
+ITEMS <IMicrosoftGraphExternalConnectorsExternalItem[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Acl <IMicrosoftGraphExternalConnectorsAcl1[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
+  - `[Acl <IMicrosoftGraphExternalConnectorsAcl[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
     - `[AccessType <String>]`: accessType
     - `[Type <String>]`: aclType
     - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
@@ -457,7 +466,7 @@ OPERATIONS <IMicrosoftGraphExternalConnectorsConnectionOperation[]>: .
     - `[Target <String>]`: The target of the error.
   - `[Status <String>]`: connectionOperationStatus
 
-SCHEMA <IMicrosoftGraphExternalConnectorsSchema1>: schema
+SCHEMA <IMicrosoftGraphExternalConnectorsSchema>: schema
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[BaseType <String>]`: Must be set to microsoft.graph.externalConnector.externalItem. Required.

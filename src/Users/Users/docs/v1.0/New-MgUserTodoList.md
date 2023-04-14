@@ -202,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -330,9 +330,9 @@ BODYPARAMETER <IMicrosoftGraphTodoTaskList>: todoTaskList
     - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-      - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-      - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+      - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+      - `[DisplayName <String>]`: The title of the linkedResource.
+      - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
       - `[WebUrl <String>]`: Deep link to the linkedResource.
     - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -362,26 +362,26 @@ EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defin
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
-  - `[AttachmentBaseId <String>]`: key: id of attachmentBase
-  - `[AttachmentId <String>]`: key: id of attachment
-  - `[AttachmentSessionId <String>]`: key: id of attachmentSession
-  - `[ChecklistItemId <String>]`: key: id of checklistItem
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[LinkedResourceId <String>]`: key: id of linkedResource
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
-  - `[OutlookCategoryId <String>]`: key: id of outlookCategory
-  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[ProfilePhotoId <String>]`: key: id of profilePhoto
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[TodoTaskId <String>]`: key: id of todoTask
-  - `[TodoTaskListId <String>]`: key: id of todoTaskList
-  - `[UserId <String>]`: key: id of user
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentId <String>]`: The unique identifier of attachment
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[NotificationId <String>]`: The unique identifier of notification
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
+  - `[UserId <String>]`: The unique identifier of user
 
 TASKS <IMicrosoftGraphTodoTask[]>: The tasks in this task list. Read-only. Nullable.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -422,9 +422,9 @@ TASKS <IMicrosoftGraphTodoTask[]>: The tasks in this task list. Read-only. Nulla
   - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
   - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-    - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-    - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+    - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+    - `[DisplayName <String>]`: The title of the linkedResource.
+    - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
     - `[WebUrl <String>]`: Deep link to the linkedResource.
   - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

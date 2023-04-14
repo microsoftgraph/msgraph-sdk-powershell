@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CrossDeviceExperiences
-Module Guid: ee10532b-c2da-4a8b-942a-31a0a8949150
+Module Guid: ecb0edba-8f48-42f8-9820-509a300b77e6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
@@ -63,6 +63,13 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgUserDeviceRegisteredUserByRef](Get-MgUserDeviceRegisteredUserByRef.md)
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
+Supports $expand.
+
 ### [Get-MgUserDeviceTransitiveMemberOf](Get-MgUserDeviceTransitiveMemberOf.md)
 Groups and administrative units that this device is a member of.
 This operation is transitive.
@@ -70,6 +77,66 @@ Supports $expand.
 
 ### [Get-MgUserDeviceUsageRights](Get-MgUserDeviceUsageRights.md)
 Represents the usage rights a device has been granted.
+
+### [Group-MgUserDeviceGetMemberOfAs](Group-MgUserDeviceGetMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgUserDeviceGetTransitiveMemberOfAs](Group-MgUserDeviceGetTransitiveMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgUserDeviceListMemberOfAs](Group-MgUserDeviceListMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgUserDeviceListTransitiveMemberOfAs](Group-MgUserDeviceListTransitiveMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserDeviceGetMemberOfAdministrativeUnit](Invoke-MgAsUserDeviceGetMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsUserDeviceGetRegisteredOwnerEndpoint](Invoke-MgAsUserDeviceGetRegisteredOwnerEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsUserDeviceGetRegisteredOwnerUser](Invoke-MgAsUserDeviceGetRegisteredOwnerUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsUserDeviceGetRegisteredUser](Invoke-MgAsUserDeviceGetRegisteredUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsUserDeviceGetRegisteredUserEndpoint](Invoke-MgAsUserDeviceGetRegisteredUserEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsUserDeviceGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsUserDeviceGetTransitiveMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsUserDeviceListMemberOfAdministrativeUnit](Invoke-MgAsUserDeviceListMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserDeviceListRegisteredOwnerEndpoint](Invoke-MgAsUserDeviceListRegisteredOwnerEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserDeviceListRegisteredOwnerUser](Invoke-MgAsUserDeviceListRegisteredOwnerUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserDeviceListRegisteredUser](Invoke-MgAsUserDeviceListRegisteredUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserDeviceListRegisteredUserEndpoint](Invoke-MgAsUserDeviceListRegisteredUserEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserDeviceListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsUserDeviceListTransitiveMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceUserDeviceGetRegisteredOwner](Invoke-MgServiceUserDeviceGetRegisteredOwner.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceUserDeviceGetRegisteredUser](Invoke-MgServiceUserDeviceGetRegisteredUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceUserDeviceListRegisteredOwner](Invoke-MgServiceUserDeviceListRegisteredOwner.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceUserDeviceListRegisteredUser](Invoke-MgServiceUserDeviceListRegisteredUser.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
 
 ### [New-MgUserActivity](New-MgUserActivity.md)
 Create new navigation property to activities for users
@@ -88,6 +155,9 @@ Create new navigation property to extensions for users
 
 ### [New-MgUserDeviceRegisteredOwnerByRef](New-MgUserDeviceRegisteredOwnerByRef.md)
 Create new navigation property ref to registeredOwners for users
+
+### [New-MgUserDeviceRegisteredUserByRef](New-MgUserDeviceRegisteredUserByRef.md)
+Create new navigation property ref to registeredUsers for users
 
 ### [New-MgUserDeviceUsageRights](New-MgUserDeviceUsageRights.md)
 Create new navigation property to usageRights for users
@@ -109,6 +179,9 @@ Delete navigation property extensions for users
 
 ### [Remove-MgUserDeviceRegisteredOwnerByRef](Remove-MgUserDeviceRegisteredOwnerByRef.md)
 Delete ref of navigation property registeredOwners for users
+
+### [Remove-MgUserDeviceRegisteredUserByRef](Remove-MgUserDeviceRegisteredUserByRef.md)
+Delete ref of navigation property registeredUsers for users
 
 ### [Remove-MgUserDeviceUsageRights](Remove-MgUserDeviceUsageRights.md)
 Delete navigation property usageRights for users

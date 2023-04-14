@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetectedAppId
-key: id of detectedApp
+The unique identifier of detectedApp
 
 ```yaml
 Type: System.String
@@ -959,7 +959,7 @@ BODYPARAMETER <IMicrosoftGraphDetectedApp>: A managed or unmanaged app that is i
         - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
       - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-      - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+      - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
       - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
       - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
       - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -1263,7 +1263,7 @@ BODYPARAMETER <IMicrosoftGraphDetectedApp>: A managed or unmanaged app that is i
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
             - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-            - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+            - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
             - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
             - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
             - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -1764,7 +1764,7 @@ BODYPARAMETER <IMicrosoftGraphDetectedApp>: A managed or unmanaged app that is i
       - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
       - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
       - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-      - `[EmployeeLeaveDateTime <DateTime?>]`: 
+      - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
       - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -2072,7 +2072,7 @@ BODYPARAMETER <IMicrosoftGraphDetectedApp>: A managed or unmanaged app that is i
               - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
             - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-          - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+          - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
           - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
           - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
           - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -2403,7 +2403,7 @@ BODYPARAMETER <IMicrosoftGraphDetectedApp>: A managed or unmanaged app that is i
           - `[OwnersCount <Int32?>]`: Count of owners in a team.
         - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+          - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
           - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
           - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
           - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -2722,6 +2722,10 @@ BODYPARAMETER <IMicrosoftGraphDetectedApp>: A managed or unmanaged app that is i
         - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
         - `[Subject <String>]`: The subject of the online meeting.
         - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+        - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+          - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
       - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
       - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2816,6 +2820,12 @@ BODYPARAMETER <IMicrosoftGraphDetectedApp>: A managed or unmanaged app that is i
               - `[StartTime <String>]`: Start time for the time range.
             - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
       - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+      - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+        - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+        - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+        - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
       - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
       - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
       - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -2875,9 +2885,9 @@ BODYPARAMETER <IMicrosoftGraphDetectedApp>: A managed or unmanaged app that is i
             - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
             - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-              - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-              - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-              - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+              - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+              - `[DisplayName <String>]`: The title of the linkedResource.
+              - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
               - `[WebUrl <String>]`: Deep link to the linkedResource.
             - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
             - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -2895,137 +2905,137 @@ BODYPARAMETER <IMicrosoftGraphDetectedApp>: A managed or unmanaged app that is i
   - `[Version <String>]`: Version of the discovered application. Read-only
 
 INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
-  - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: key: id of advancedThreatProtectionOnboardingDeviceSettingState
-  - `[AndroidForWorkAppConfigurationSchemaId <String>]`: key: id of androidForWorkAppConfigurationSchema
-  - `[AndroidManagedStoreAppConfigurationSchemaId <String>]`: key: id of androidManagedStoreAppConfigurationSchema
-  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
-  - `[DataSharingConsentId <String>]`: key: id of dataSharingConsent
-  - `[DetectedAppId <String>]`: key: id of detectedApp
-  - `[DeviceAndAppManagementAssignmentFilterId <String>]`: key: id of deviceAndAppManagementAssignmentFilter
-  - `[DeviceCategoryId <String>]`: key: id of deviceCategory
-  - `[DeviceComplianceActionItemId <String>]`: key: id of deviceComplianceActionItem
-  - `[DeviceComplianceDeviceStatusId <String>]`: key: id of deviceComplianceDeviceStatus
-  - `[DeviceCompliancePolicyAssignmentId <String>]`: key: id of deviceCompliancePolicyAssignment
-  - `[DeviceCompliancePolicyId <String>]`: key: id of deviceCompliancePolicy
-  - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: key: id of deviceCompliancePolicySettingStateSummary
-  - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
-  - `[DeviceComplianceScheduledActionForRuleId <String>]`: key: id of deviceComplianceScheduledActionForRule
-  - `[DeviceComplianceSettingStateId <String>]`: key: id of deviceComplianceSettingState
-  - `[DeviceComplianceUserStatusId <String>]`: key: id of deviceComplianceUserStatus
-  - `[DeviceConfigurationAssignmentId <String>]`: key: id of deviceConfigurationAssignment
-  - `[DeviceConfigurationConflictSummaryId <String>]`: key: id of deviceConfigurationConflictSummary
-  - `[DeviceConfigurationDeviceStatusId <String>]`: key: id of deviceConfigurationDeviceStatus
-  - `[DeviceConfigurationGroupAssignmentId <String>]`: key: id of deviceConfigurationGroupAssignment
-  - `[DeviceConfigurationId <String>]`: key: id of deviceConfiguration
-  - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
-  - `[DeviceConfigurationUserStatusId <String>]`: key: id of deviceConfigurationUserStatus
-  - `[DeviceHealthScriptAssignmentId <String>]`: key: id of deviceHealthScriptAssignment
-  - `[DeviceHealthScriptDeviceStateId <String>]`: key: id of deviceHealthScriptDeviceState
-  - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
-  - `[DeviceId <String>]`: key: deviceId of deviceHealthScriptPolicyState
-  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
-  - `[DeviceManagementComplianceActionItemId <String>]`: key: id of deviceManagementComplianceActionItem
-  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
-  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: key: id of deviceManagementComplianceScheduledActionForRule
-  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: key: id of deviceManagementConfigurationPolicyAssignment
-  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
-  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: key: id of deviceManagementConfigurationPolicyTemplate
-  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: key: id of deviceManagementConfigurationSettingDefinition
-  - `[DeviceManagementConfigurationSettingId <String>]`: key: id of deviceManagementConfigurationSetting
-  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: key: id of deviceManagementConfigurationSettingTemplate
-  - `[DeviceManagementDerivedCredentialSettingsId <String>]`: key: id of deviceManagementDerivedCredentialSettings
-  - `[DeviceManagementIntentAssignmentId <String>]`: key: id of deviceManagementIntentAssignment
-  - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: key: id of deviceManagementIntentDeviceSettingStateSummary
-  - `[DeviceManagementIntentDeviceStateId <String>]`: key: id of deviceManagementIntentDeviceState
-  - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
-  - `[DeviceManagementIntentSettingCategoryId <String>]`: key: id of deviceManagementIntentSettingCategory
-  - `[DeviceManagementIntentUserStateId <String>]`: key: id of deviceManagementIntentUserState
-  - `[DeviceManagementResourceAccessProfileAssignmentId <String>]`: key: id of deviceManagementResourceAccessProfileAssignment
-  - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
-  - `[DeviceManagementScriptAssignmentId <String>]`: key: id of deviceManagementScriptAssignment
-  - `[DeviceManagementScriptDeviceStateId <String>]`: key: id of deviceManagementScriptDeviceState
-  - `[DeviceManagementScriptGroupAssignmentId <String>]`: key: id of deviceManagementScriptGroupAssignment
-  - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript
-  - `[DeviceManagementScriptUserStateId <String>]`: key: id of deviceManagementScriptUserState
-  - `[DeviceManagementSettingCategoryId <String>]`: key: id of deviceManagementSettingCategory
-  - `[DeviceManagementSettingDefinitionId <String>]`: key: id of deviceManagementSettingDefinition
-  - `[DeviceManagementSettingInstanceId <String>]`: key: id of deviceManagementSettingInstance
-  - `[DeviceManagementTemplateId <String>]`: key: id of deviceManagementTemplate
-  - `[DeviceManagementTemplateId1 <String>]`: key: id of deviceManagementTemplate
-  - `[DeviceManagementTemplateSettingCategoryId <String>]`: key: id of deviceManagementTemplateSettingCategory
-  - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
-  - `[DeviceShellScriptId <String>]`: key: id of deviceShellScript
-  - `[EmbeddedSimActivationCodePoolAssignmentId <String>]`: key: id of embeddedSIMActivationCodePoolAssignment
-  - `[EmbeddedSimActivationCodePoolId <String>]`: key: id of embeddedSIMActivationCodePool
-  - `[EmbeddedSimDeviceStateId <String>]`: key: id of embeddedSIMDeviceState
-  - `[GroupPolicyConfigurationAssignmentId <String>]`: key: id of groupPolicyConfigurationAssignment
-  - `[GroupPolicyConfigurationId <String>]`: key: id of groupPolicyConfiguration
-  - `[GroupPolicyDefinitionValueId <String>]`: key: id of groupPolicyDefinitionValue
-  - `[GroupPolicyPresentationValueId <String>]`: key: id of groupPolicyPresentationValue
-  - `[Id <String>]`: key: id of deviceHealthScriptPolicyState
-  - `[LocalizedNotificationMessageId <String>]`: key: id of localizedNotificationMessage
-  - `[MacOSSoftwareUpdateAccountSummaryId <String>]`: key: id of macOSSoftwareUpdateAccountSummary
-  - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: key: id of macOSSoftwareUpdateCategorySummary
-  - `[MacOSSoftwareUpdateStateSummaryId <String>]`: key: id of macOSSoftwareUpdateStateSummary
-  - `[MalwareStateForWindowsDeviceId <String>]`: key: id of malwareStateForWindowsDevice
-  - `[ManagedDeviceEncryptionStateId <String>]`: key: id of managedDeviceEncryptionState
-  - `[ManagedDeviceId <String>]`: key: id of managedDevice
-  - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
-  - `[MicrosoftTunnelConfigurationId <String>]`: key: id of microsoftTunnelConfiguration
-  - `[MicrosoftTunnelHealthThresholdId <String>]`: key: id of microsoftTunnelHealthThreshold
-  - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
-  - `[MicrosoftTunnelServerLogCollectionResponseId <String>]`: key: id of microsoftTunnelServerLogCollectionResponse
-  - `[MicrosoftTunnelSiteId <String>]`: key: id of microsoftTunnelSite
-  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
-  - `[NotificationMessageTemplateId <String>]`: key: id of notificationMessageTemplate
-  - `[PolicyId <String>]`: key: policyId of deviceHealthScriptPolicyState
-  - `[RemoteActionAuditId <String>]`: key: id of remoteActionAudit
-  - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
-  - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
-  - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
-  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
-  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
-  - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
-  - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
-  - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
-  - `[UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
-  - `[UserExperienceAnalyticsAppHealthApplicationPerformanceId <String>]`: key: id of userExperienceAnalyticsAppHealthApplicationPerformance
-  - `[UserExperienceAnalyticsAppHealthDeviceModelPerformanceId <String>]`: key: id of userExperienceAnalyticsAppHealthDeviceModelPerformance
-  - `[UserExperienceAnalyticsAppHealthDevicePerformanceDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthDevicePerformanceDetails
-  - `[UserExperienceAnalyticsAppHealthDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsAppHealthDevicePerformance
-  - `[UserExperienceAnalyticsAppHealthOSVersionPerformanceId <String>]`: key: id of userExperienceAnalyticsAppHealthOSVersionPerformance
-  - `[UserExperienceAnalyticsBaselineId <String>]`: key: id of userExperienceAnalyticsBaseline
-  - `[UserExperienceAnalyticsBatteryHealthAppImpactId <String>]`: key: id of userExperienceAnalyticsBatteryHealthAppImpact
-  - `[UserExperienceAnalyticsBatteryHealthDeviceAppImpactId <String>]`: key: id of userExperienceAnalyticsBatteryHealthDeviceAppImpact
-  - `[UserExperienceAnalyticsBatteryHealthDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthDevicePerformance
-  - `[UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryId <String>]`: key: id of userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
-  - `[UserExperienceAnalyticsBatteryHealthModelPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthModelPerformance
-  - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: key: id of userExperienceAnalyticsBatteryHealthOsPerformance
-  - `[UserExperienceAnalyticsCategoryId <String>]`: key: id of userExperienceAnalyticsCategory
-  - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: key: id of userExperienceAnalyticsDevicePerformance
-  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: key: id of userExperienceAnalyticsDeviceScope
-  - `[UserExperienceAnalyticsDeviceScoresId <String>]`: key: id of userExperienceAnalyticsDeviceScores
-  - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: key: id of userExperienceAnalyticsDeviceStartupHistory
-  - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcess
-  - `[UserExperienceAnalyticsDeviceStartupProcessPerformanceId <String>]`: key: id of userExperienceAnalyticsDeviceStartupProcessPerformance
-  - `[UserExperienceAnalyticsDeviceTimelineEventId <String>]`: key: id of userExperienceAnalyticsDeviceTimelineEvent
-  - `[UserExperienceAnalyticsDeviceWithoutCloudIdentityId <String>]`: key: id of userExperienceAnalyticsDeviceWithoutCloudIdentity
-  - `[UserExperienceAnalyticsImpactingProcessId <String>]`: key: id of userExperienceAnalyticsImpactingProcess
-  - `[UserExperienceAnalyticsMetricHistoryId <String>]`: key: id of userExperienceAnalyticsMetricHistory
-  - `[UserExperienceAnalyticsMetricId <String>]`: key: id of userExperienceAnalyticsMetric
-  - `[UserExperienceAnalyticsModelScoresId <String>]`: key: id of userExperienceAnalyticsModelScores
-  - `[UserExperienceAnalyticsNotAutopilotReadyDeviceId <String>]`: key: id of userExperienceAnalyticsNotAutopilotReadyDevice
-  - `[UserExperienceAnalyticsRemoteConnectionId <String>]`: key: id of userExperienceAnalyticsRemoteConnection
-  - `[UserExperienceAnalyticsResourcePerformanceId <String>]`: key: id of userExperienceAnalyticsResourcePerformance
-  - `[UserExperienceAnalyticsScoreHistoryId <String>]`: key: id of userExperienceAnalyticsScoreHistory
-  - `[UserExperienceAnalyticsWorkFromAnywhereDeviceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereDevice
-  - `[UserExperienceAnalyticsWorkFromAnywhereMetricId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereMetric
-  - `[UserExperienceAnalyticsWorkFromAnywhereModelPerformanceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereModelPerformance
-  - `[WindowsDeviceMalwareStateId <String>]`: key: id of windowsDeviceMalwareState
-  - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: key: id of windowsInformationProtectionAppLearningSummary
-  - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: key: id of windowsInformationProtectionNetworkLearningSummary
-  - `[WindowsMalwareInformationId <String>]`: key: id of windowsMalwareInformation
+  - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState
+  - `[AndroidForWorkAppConfigurationSchemaId <String>]`: The unique identifier of androidForWorkAppConfigurationSchema
+  - `[AndroidManagedStoreAppConfigurationSchemaId <String>]`: The unique identifier of androidManagedStoreAppConfigurationSchema
+  - `[AppLogCollectionRequestId <String>]`: The unique identifier of appLogCollectionRequest
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: The unique identifier of assignmentFilterEvaluationStatusDetails
+  - `[DataSharingConsentId <String>]`: The unique identifier of dataSharingConsent
+  - `[DetectedAppId <String>]`: The unique identifier of detectedApp
+  - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The unique identifier of deviceAndAppManagementAssignmentFilter
+  - `[DeviceCategoryId <String>]`: The unique identifier of deviceCategory
+  - `[DeviceComplianceActionItemId <String>]`: The unique identifier of deviceComplianceActionItem
+  - `[DeviceComplianceDeviceStatusId <String>]`: The unique identifier of deviceComplianceDeviceStatus
+  - `[DeviceCompliancePolicyAssignmentId <String>]`: The unique identifier of deviceCompliancePolicyAssignment
+  - `[DeviceCompliancePolicyId <String>]`: The unique identifier of deviceCompliancePolicy
+  - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: The unique identifier of deviceCompliancePolicySettingStateSummary
+  - `[DeviceCompliancePolicyStateId <String>]`: The unique identifier of deviceCompliancePolicyState
+  - `[DeviceComplianceScheduledActionForRuleId <String>]`: The unique identifier of deviceComplianceScheduledActionForRule
+  - `[DeviceComplianceSettingStateId <String>]`: The unique identifier of deviceComplianceSettingState
+  - `[DeviceComplianceUserStatusId <String>]`: The unique identifier of deviceComplianceUserStatus
+  - `[DeviceConfigurationAssignmentId <String>]`: The unique identifier of deviceConfigurationAssignment
+  - `[DeviceConfigurationConflictSummaryId <String>]`: The unique identifier of deviceConfigurationConflictSummary
+  - `[DeviceConfigurationDeviceStatusId <String>]`: The unique identifier of deviceConfigurationDeviceStatus
+  - `[DeviceConfigurationGroupAssignmentId <String>]`: The unique identifier of deviceConfigurationGroupAssignment
+  - `[DeviceConfigurationId <String>]`: The unique identifier of deviceConfiguration
+  - `[DeviceConfigurationStateId <String>]`: The unique identifier of deviceConfigurationState
+  - `[DeviceConfigurationUserStatusId <String>]`: The unique identifier of deviceConfigurationUserStatus
+  - `[DeviceHealthScriptAssignmentId <String>]`: The unique identifier of deviceHealthScriptAssignment
+  - `[DeviceHealthScriptDeviceStateId <String>]`: The unique identifier of deviceHealthScriptDeviceState
+  - `[DeviceHealthScriptId <String>]`: The unique identifier of deviceHealthScript
+  - `[DeviceId <String>]`: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+  - `[DeviceLogCollectionResponseId <String>]`: The unique identifier of deviceLogCollectionResponse
+  - `[DeviceManagementComplianceActionItemId <String>]`: The unique identifier of deviceManagementComplianceActionItem
+  - `[DeviceManagementCompliancePolicyId <String>]`: The unique identifier of deviceManagementCompliancePolicy
+  - `[DeviceManagementComplianceScheduledActionForRuleId <String>]`: The unique identifier of deviceManagementComplianceScheduledActionForRule
+  - `[DeviceManagementConfigurationPolicyAssignmentId <String>]`: The unique identifier of deviceManagementConfigurationPolicyAssignment
+  - `[DeviceManagementConfigurationPolicyId <String>]`: The unique identifier of deviceManagementConfigurationPolicy
+  - `[DeviceManagementConfigurationPolicyTemplateId <String>]`: The unique identifier of deviceManagementConfigurationPolicyTemplate
+  - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: The unique identifier of deviceManagementConfigurationSettingDefinition
+  - `[DeviceManagementConfigurationSettingId <String>]`: The unique identifier of deviceManagementConfigurationSetting
+  - `[DeviceManagementConfigurationSettingTemplateId <String>]`: The unique identifier of deviceManagementConfigurationSettingTemplate
+  - `[DeviceManagementDerivedCredentialSettingsId <String>]`: The unique identifier of deviceManagementDerivedCredentialSettings
+  - `[DeviceManagementIntentAssignmentId <String>]`: The unique identifier of deviceManagementIntentAssignment
+  - `[DeviceManagementIntentDeviceSettingStateSummaryId <String>]`: The unique identifier of deviceManagementIntentDeviceSettingStateSummary
+  - `[DeviceManagementIntentDeviceStateId <String>]`: The unique identifier of deviceManagementIntentDeviceState
+  - `[DeviceManagementIntentId <String>]`: The unique identifier of deviceManagementIntent
+  - `[DeviceManagementIntentSettingCategoryId <String>]`: The unique identifier of deviceManagementIntentSettingCategory
+  - `[DeviceManagementIntentUserStateId <String>]`: The unique identifier of deviceManagementIntentUserState
+  - `[DeviceManagementResourceAccessProfileAssignmentId <String>]`: The unique identifier of deviceManagementResourceAccessProfileAssignment
+  - `[DeviceManagementResourceAccessProfileBaseId <String>]`: The unique identifier of deviceManagementResourceAccessProfileBase
+  - `[DeviceManagementScriptAssignmentId <String>]`: The unique identifier of deviceManagementScriptAssignment
+  - `[DeviceManagementScriptDeviceStateId <String>]`: The unique identifier of deviceManagementScriptDeviceState
+  - `[DeviceManagementScriptGroupAssignmentId <String>]`: The unique identifier of deviceManagementScriptGroupAssignment
+  - `[DeviceManagementScriptId <String>]`: The unique identifier of deviceManagementScript
+  - `[DeviceManagementScriptUserStateId <String>]`: The unique identifier of deviceManagementScriptUserState
+  - `[DeviceManagementSettingCategoryId <String>]`: The unique identifier of deviceManagementSettingCategory
+  - `[DeviceManagementSettingDefinitionId <String>]`: The unique identifier of deviceManagementSettingDefinition
+  - `[DeviceManagementSettingInstanceId <String>]`: The unique identifier of deviceManagementSettingInstance
+  - `[DeviceManagementTemplateId <String>]`: The unique identifier of deviceManagementTemplate
+  - `[DeviceManagementTemplateId1 <String>]`: The unique identifier of deviceManagementTemplate
+  - `[DeviceManagementTemplateSettingCategoryId <String>]`: The unique identifier of deviceManagementTemplateSettingCategory
+  - `[DeviceManagementTroubleshootingEventId <String>]`: The unique identifier of deviceManagementTroubleshootingEvent
+  - `[DeviceShellScriptId <String>]`: The unique identifier of deviceShellScript
+  - `[EmbeddedSimActivationCodePoolAssignmentId <String>]`: The unique identifier of embeddedSIMActivationCodePoolAssignment
+  - `[EmbeddedSimActivationCodePoolId <String>]`: The unique identifier of embeddedSIMActivationCodePool
+  - `[EmbeddedSimDeviceStateId <String>]`: The unique identifier of embeddedSIMDeviceState
+  - `[GroupPolicyConfigurationAssignmentId <String>]`: The unique identifier of groupPolicyConfigurationAssignment
+  - `[GroupPolicyConfigurationId <String>]`: The unique identifier of groupPolicyConfiguration
+  - `[GroupPolicyDefinitionValueId <String>]`: The unique identifier of groupPolicyDefinitionValue
+  - `[GroupPolicyPresentationValueId <String>]`: The unique identifier of groupPolicyPresentationValue
+  - `[Id <String>]`: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+  - `[LocalizedNotificationMessageId <String>]`: The unique identifier of localizedNotificationMessage
+  - `[MacOSSoftwareUpdateAccountSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateAccountSummary
+  - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
+  - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
+  - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
+  - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
+  - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
+  - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState
+  - `[MicrosoftTunnelConfigurationId <String>]`: The unique identifier of microsoftTunnelConfiguration
+  - `[MicrosoftTunnelHealthThresholdId <String>]`: The unique identifier of microsoftTunnelHealthThreshold
+  - `[MicrosoftTunnelServerId <String>]`: The unique identifier of microsoftTunnelServer
+  - `[MicrosoftTunnelServerLogCollectionResponseId <String>]`: The unique identifier of microsoftTunnelServerLogCollectionResponse
+  - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
+  - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
+  - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
+  - `[PolicyId <String>]`: Property in multi-part unique identifier of deviceHealthScriptPolicyState
+  - `[RemoteActionAuditId <String>]`: The unique identifier of remoteActionAudit
+  - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
+  - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
+  - `[SettingStateDeviceSummaryId <String>]`: The unique identifier of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: The unique identifier of userExperienceAnalyticsAnomaly
+  - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
+  - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
+  - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
+  - `[UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
+  - `[UserExperienceAnalyticsAppHealthApplicationPerformanceId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthApplicationPerformance
+  - `[UserExperienceAnalyticsAppHealthDeviceModelPerformanceId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthDeviceModelPerformance
+  - `[UserExperienceAnalyticsAppHealthDevicePerformanceDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthDevicePerformanceDetails
+  - `[UserExperienceAnalyticsAppHealthDevicePerformanceId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthDevicePerformance
+  - `[UserExperienceAnalyticsAppHealthOSVersionPerformanceId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthOSVersionPerformance
+  - `[UserExperienceAnalyticsBaselineId <String>]`: The unique identifier of userExperienceAnalyticsBaseline
+  - `[UserExperienceAnalyticsBatteryHealthAppImpactId <String>]`: The unique identifier of userExperienceAnalyticsBatteryHealthAppImpact
+  - `[UserExperienceAnalyticsBatteryHealthDeviceAppImpactId <String>]`: The unique identifier of userExperienceAnalyticsBatteryHealthDeviceAppImpact
+  - `[UserExperienceAnalyticsBatteryHealthDevicePerformanceId <String>]`: The unique identifier of userExperienceAnalyticsBatteryHealthDevicePerformance
+  - `[UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryId <String>]`: The unique identifier of userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
+  - `[UserExperienceAnalyticsBatteryHealthModelPerformanceId <String>]`: The unique identifier of userExperienceAnalyticsBatteryHealthModelPerformance
+  - `[UserExperienceAnalyticsBatteryHealthOSPerformanceId <String>]`: The unique identifier of userExperienceAnalyticsBatteryHealthOsPerformance
+  - `[UserExperienceAnalyticsCategoryId <String>]`: The unique identifier of userExperienceAnalyticsCategory
+  - `[UserExperienceAnalyticsDevicePerformanceId <String>]`: The unique identifier of userExperienceAnalyticsDevicePerformance
+  - `[UserExperienceAnalyticsDeviceScopeId <String>]`: The unique identifier of userExperienceAnalyticsDeviceScope
+  - `[UserExperienceAnalyticsDeviceScoresId <String>]`: The unique identifier of userExperienceAnalyticsDeviceScores
+  - `[UserExperienceAnalyticsDeviceStartupHistoryId <String>]`: The unique identifier of userExperienceAnalyticsDeviceStartupHistory
+  - `[UserExperienceAnalyticsDeviceStartupProcessId <String>]`: The unique identifier of userExperienceAnalyticsDeviceStartupProcess
+  - `[UserExperienceAnalyticsDeviceStartupProcessPerformanceId <String>]`: The unique identifier of userExperienceAnalyticsDeviceStartupProcessPerformance
+  - `[UserExperienceAnalyticsDeviceTimelineEventId <String>]`: The unique identifier of userExperienceAnalyticsDeviceTimelineEvent
+  - `[UserExperienceAnalyticsDeviceWithoutCloudIdentityId <String>]`: The unique identifier of userExperienceAnalyticsDeviceWithoutCloudIdentity
+  - `[UserExperienceAnalyticsImpactingProcessId <String>]`: The unique identifier of userExperienceAnalyticsImpactingProcess
+  - `[UserExperienceAnalyticsMetricHistoryId <String>]`: The unique identifier of userExperienceAnalyticsMetricHistory
+  - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of userExperienceAnalyticsMetric
+  - `[UserExperienceAnalyticsModelScoresId <String>]`: The unique identifier of userExperienceAnalyticsModelScores
+  - `[UserExperienceAnalyticsNotAutopilotReadyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsNotAutopilotReadyDevice
+  - `[UserExperienceAnalyticsRemoteConnectionId <String>]`: The unique identifier of userExperienceAnalyticsRemoteConnection
+  - `[UserExperienceAnalyticsResourcePerformanceId <String>]`: The unique identifier of userExperienceAnalyticsResourcePerformance
+  - `[UserExperienceAnalyticsScoreHistoryId <String>]`: The unique identifier of userExperienceAnalyticsScoreHistory
+  - `[UserExperienceAnalyticsWorkFromAnywhereDeviceId <String>]`: The unique identifier of userExperienceAnalyticsWorkFromAnywhereDevice
+  - `[UserExperienceAnalyticsWorkFromAnywhereMetricId <String>]`: The unique identifier of userExperienceAnalyticsWorkFromAnywhereMetric
+  - `[UserExperienceAnalyticsWorkFromAnywhereModelPerformanceId <String>]`: The unique identifier of userExperienceAnalyticsWorkFromAnywhereModelPerformance
+  - `[WindowsDeviceMalwareStateId <String>]`: The unique identifier of windowsDeviceMalwareState
+  - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: The unique identifier of windowsInformationProtectionAppLearningSummary
+  - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: The unique identifier of windowsInformationProtectionNetworkLearningSummary
+  - `[WindowsMalwareInformationId <String>]`: The unique identifier of windowsMalwareInformation
 
 MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The devices that have the discovered application installed
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3672,7 +3682,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The devices that have the disco
       - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
     - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
+    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
     - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
     - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -3976,7 +3986,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The devices that have the disco
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
           - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+          - `[ClientState <String>]`: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
           - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
@@ -4477,7 +4487,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The devices that have the disco
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[EmployeeLeaveDateTime <DateTime?>]`: 
+    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -4785,7 +4795,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The devices that have the disco
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread. Returned by default.
           - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
           - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
-        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
         - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         - `[DisplayName <String>]`: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -5116,7 +5126,7 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The devices that have the disco
         - `[OwnersCount <Int32?>]`: Count of owners in a team.
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+        - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
         - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
         - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
         - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
@@ -5435,6 +5445,10 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The devices that have the disco
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5529,6 +5543,12 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The devices that have the disco
             - `[StartTime <String>]`: Start time for the time range.
           - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
     - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+    - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
+      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
     - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
     - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
     - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -5588,9 +5608,9 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice[]>: The devices that have the disco
           - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
           - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
-            - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
-            - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+            - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
+            - `[DisplayName <String>]`: The title of the linkedResource.
+            - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.
             - `[WebUrl <String>]`: Deep link to the linkedResource.
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone

@@ -12,7 +12,7 @@ Update the navigation property noncustodialDataSources in security
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId <String>
  -EdiscoveryNoncustodialDataSourceId <String> [-AdditionalProperties <Hashtable>]
@@ -21,7 +21,7 @@ Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId <Str
  [-ReleasedDateTime <DateTime>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId <String>
  -EdiscoveryNoncustodialDataSourceId <String>
@@ -29,14 +29,14 @@ Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId <Str
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -InputObject <ISecurityIdentity>
  -BodyParameter <IMicrosoftGraphSecurityEdiscoveryNoncustodialDataSource> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
@@ -57,7 +57,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -73,7 +73,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryNoncustodialDataSource
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -88,7 +88,7 @@ Created date and time of the dataSourceContainer entity.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -104,7 +104,7 @@ To construct, please use Get-Help -Online and see NOTES section for DATASOURCE p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDataSource
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -119,7 +119,7 @@ Display name of the dataSourceContainer entity.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -130,11 +130,11 @@ Accept wildcard characters: False
 ```
 
 ### -EdiscoveryCaseId
-key: id of ediscoveryCase
+The unique identifier of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -145,11 +145,11 @@ Accept wildcard characters: False
 ```
 
 ### -EdiscoveryNoncustodialDataSourceId
-key: id of ediscoveryNoncustodialDataSource
+The unique identifier of ediscoveryNoncustodialDataSource
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -164,7 +164,7 @@ dataSourceHoldStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -180,7 +180,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -196,7 +196,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -211,7 +211,7 @@ ediscoveryIndexOperation
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -226,7 +226,7 @@ Last modified date and time of the dataSourceContainer.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -256,7 +256,7 @@ Date and time that the dataSourceContainer was released from the case.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -271,7 +271,7 @@ dataSourceContainerStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -388,50 +388,62 @@ DATASOURCE <IMicrosoftGraphSecurityDataSource>: dataSource
   - `[HoldStatus <String>]`: dataSourceHoldStatus
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
-  - `[AlertId <String>]`: key: id of alert
-  - `[AttackSimulationOperationId <String>]`: key: id of attackSimulationOperation
-  - `[AuthoredNoteId <String>]`: key: id of authoredNote
-  - `[CaseOperationId <String>]`: key: id of caseOperation
-  - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
-  - `[DataSourceId <String>]`: key: id of dataSource
-  - `[DispositionReviewStageId <String>]`: key: id of dispositionReviewStage
-  - `[DomainSecurityProfileId <String>]`: key: id of domainSecurityProfile
-  - `[EdiscoveryCaseId <String>]`: key: id of ediscoveryCase
-  - `[EdiscoveryCustodianId <String>]`: key: id of ediscoveryCustodian
-  - `[EdiscoveryFileId <String>]`: key: id of ediscoveryFile
-  - `[EdiscoveryHoldPolicyId <String>]`: key: id of ediscoveryHoldPolicy
-  - `[EdiscoveryNoncustodialDataSourceId <String>]`: key: id of ediscoveryNoncustodialDataSource
-  - `[EdiscoveryReviewSetId <String>]`: key: id of ediscoveryReviewSet
-  - `[EdiscoveryReviewSetQueryId <String>]`: key: id of ediscoveryReviewSetQuery
-  - `[EdiscoveryReviewTagId <String>]`: key: id of ediscoveryReviewTag
-  - `[EdiscoveryReviewTagId1 <String>]`: key: id of ediscoveryReviewTag
-  - `[EdiscoverySearchId <String>]`: key: id of ediscoverySearch
-  - `[EmailThreatSubmissionId <String>]`: key: id of emailThreatSubmission
-  - `[EmailThreatSubmissionPolicyId <String>]`: key: id of emailThreatSubmissionPolicy
-  - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
-  - `[FileThreatSubmissionId <String>]`: key: id of fileThreatSubmission
-  - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
-  - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
-  - `[IncidentId <String>]`: key: id of incident
-  - `[PayloadId <String>]`: key: id of payload
-  - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
-  - `[RetentionEventId <String>]`: key: id of retentionEvent
-  - `[RetentionEventTypeId <String>]`: key: id of retentionEventType
-  - `[RetentionLabelId <String>]`: key: id of retentionLabel
-  - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
-  - `[SecureScoreId <String>]`: key: id of secureScore
-  - `[SecurityActionId <String>]`: key: id of securityAction
-  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
-  - `[SimulationAutomationId <String>]`: key: id of simulationAutomation
-  - `[SimulationAutomationRunId <String>]`: key: id of simulationAutomationRun
-  - `[SimulationId <String>]`: key: id of simulation
-  - `[SiteSourceId <String>]`: key: id of siteSource
-  - `[SubjectRightsRequestId <String>]`: key: id of subjectRightsRequest
-  - `[TiIndicatorId <String>]`: key: id of tiIndicator
-  - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
-  - `[UrlThreatSubmissionId <String>]`: key: id of urlThreatSubmission
-  - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
-  - `[UserSourceId <String>]`: key: id of userSource
+  - `[AlertId <String>]`: The unique identifier of alert
+  - `[ArticleId <String>]`: The unique identifier of article
+  - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
+  - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation
+  - `[AuthoredNoteId <String>]`: The unique identifier of authoredNote
+  - `[CaseOperationId <String>]`: The unique identifier of caseOperation
+  - `[CloudAppSecurityProfileId <String>]`: The unique identifier of cloudAppSecurityProfile
+  - `[DataSourceId <String>]`: The unique identifier of dataSource
+  - `[DispositionReviewStageId <String>]`: The unique identifier of dispositionReviewStage
+  - `[DomainSecurityProfileId <String>]`: The unique identifier of domainSecurityProfile
+  - `[EdiscoveryCaseId <String>]`: The unique identifier of ediscoveryCase
+  - `[EdiscoveryCustodianId <String>]`: The unique identifier of ediscoveryCustodian
+  - `[EdiscoveryFileId <String>]`: The unique identifier of ediscoveryFile
+  - `[EdiscoveryHoldPolicyId <String>]`: The unique identifier of ediscoveryHoldPolicy
+  - `[EdiscoveryNoncustodialDataSourceId <String>]`: The unique identifier of ediscoveryNoncustodialDataSource
+  - `[EdiscoveryReviewSetId <String>]`: The unique identifier of ediscoveryReviewSet
+  - `[EdiscoveryReviewSetQueryId <String>]`: The unique identifier of ediscoveryReviewSetQuery
+  - `[EdiscoveryReviewTagId <String>]`: The unique identifier of ediscoveryReviewTag
+  - `[EdiscoveryReviewTagId1 <String>]`: The unique identifier of ediscoveryReviewTag
+  - `[EdiscoverySearchId <String>]`: The unique identifier of ediscoverySearch
+  - `[EmailThreatSubmissionId <String>]`: The unique identifier of emailThreatSubmission
+  - `[EmailThreatSubmissionPolicyId <String>]`: The unique identifier of emailThreatSubmissionPolicy
+  - `[FileSecurityProfileId <String>]`: The unique identifier of fileSecurityProfile
+  - `[FileThreatSubmissionId <String>]`: The unique identifier of fileThreatSubmission
+  - `[HostComponentId <String>]`: The unique identifier of hostComponent
+  - `[HostCookieId <String>]`: The unique identifier of hostCookie
+  - `[HostId <String>]`: The unique identifier of host
+  - `[HostSecurityProfileId <String>]`: The unique identifier of hostSecurityProfile
+  - `[HostTrackerId <String>]`: The unique identifier of hostTracker
+  - `[IPSecurityProfileId <String>]`: The unique identifier of ipSecurityProfile
+  - `[IncidentId <String>]`: The unique identifier of incident
+  - `[IntelligenceProfileId <String>]`: The unique identifier of intelligenceProfile
+  - `[IntelligenceProfileIndicatorId <String>]`: The unique identifier of intelligenceProfileIndicator
+  - `[PassiveDnsRecordId <String>]`: The unique identifier of passiveDnsRecord
+  - `[PayloadId <String>]`: The unique identifier of payload
+  - `[ProviderTenantSettingId <String>]`: The unique identifier of providerTenantSetting
+  - `[RetentionEventId <String>]`: The unique identifier of retentionEvent
+  - `[RetentionEventTypeId <String>]`: The unique identifier of retentionEventType
+  - `[RetentionLabelId <String>]`: The unique identifier of retentionLabel
+  - `[SecureScoreControlProfileId <String>]`: The unique identifier of secureScoreControlProfile
+  - `[SecureScoreId <String>]`: The unique identifier of secureScore
+  - `[SecurityActionId <String>]`: The unique identifier of securityAction
+  - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
+  - `[SimulationAutomationId <String>]`: The unique identifier of simulationAutomation
+  - `[SimulationAutomationRunId <String>]`: The unique identifier of simulationAutomationRun
+  - `[SimulationId <String>]`: The unique identifier of simulation
+  - `[SiteSourceId <String>]`: The unique identifier of siteSource
+  - `[SubjectRightsRequestId <String>]`: The unique identifier of subjectRightsRequest
+  - `[TiIndicatorId <String>]`: The unique identifier of tiIndicator
+  - `[UnifiedGroupSourceId <String>]`: The unique identifier of unifiedGroupSource
+  - `[UrlThreatSubmissionId <String>]`: The unique identifier of urlThreatSubmission
+  - `[UserId <String>]`: The unique identifier of user
+  - `[UserSecurityProfileId <String>]`: The unique identifier of userSecurityProfile
+  - `[UserSourceId <String>]`: The unique identifier of userSource
+  - `[VulnerabilityComponentId <String>]`: The unique identifier of vulnerabilityComponent
+  - `[VulnerabilityId <String>]`: The unique identifier of vulnerability
 
 ## RELATED LINKS
 

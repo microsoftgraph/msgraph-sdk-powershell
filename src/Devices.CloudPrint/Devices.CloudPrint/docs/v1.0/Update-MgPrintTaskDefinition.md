@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -PrintTaskDefinitionId
-key: id of printTaskDefinition
+The unique identifier of printTaskDefinition
 
 ```yaml
 Type: System.String
@@ -287,17 +287,17 @@ CREATEDBY <IMicrosoftGraphAppIdentity>: appIdentity
   - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: key: id of group
-  - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintOperationId <String>]`: key: id of printOperation
-  - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
-  - `[PrintServiceId <String>]`: key: id of printService
-  - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
-  - `[PrintTaskId <String>]`: key: id of printTask
-  - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[UserId <String>]`: key: id of user
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[PrintConnectorId <String>]`: The unique identifier of printConnector
+  - `[PrintOperationId <String>]`: The unique identifier of printOperation
+  - `[PrintServiceEndpointId <String>]`: The unique identifier of printServiceEndpoint
+  - `[PrintServiceId <String>]`: The unique identifier of printService
+  - `[PrintTaskDefinitionId <String>]`: The unique identifier of printTaskDefinition
+  - `[PrintTaskId <String>]`: The unique identifier of printTask
+  - `[PrintTaskTriggerId <String>]`: The unique identifier of printTaskTrigger
+  - `[PrinterId <String>]`: The unique identifier of printer
+  - `[PrinterShareId <String>]`: The unique identifier of printerShare
+  - `[UserId <String>]`: The unique identifier of user
 
 TASKS <IMicrosoftGraphPrintTask1[]>: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

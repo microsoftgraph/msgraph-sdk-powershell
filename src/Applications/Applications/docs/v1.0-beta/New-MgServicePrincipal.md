@@ -17,7 +17,7 @@ Create a new servicePrincipal object.
 New-MgServicePrincipal [-AccountEnabled] [-AddIns <IMicrosoftGraphAddIn[]>]
  [-AdditionalProperties <Hashtable>] [-AlternativeNames <String[]>] [-AppDescription <String>]
  [-AppDisplayName <String>] [-AppId <String>] [-ApplicationTemplateId <String>]
- [-AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>] [-AppOwnerOrganizationId <String>]
+ [-AppManagementPolicies <IMicrosoftGraphAppManagementPolicy1[]>] [-AppOwnerOrganizationId <String>]
  [-AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment1[]>] [-AppRoleAssignmentRequired]
  [-AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>] [-AppRoles <IMicrosoftGraphAppRole[]>]
  [-ClaimsMappingPolicies <IMicrosoftGraphClaimsMappingPolicy1[]>]
@@ -211,7 +211,7 @@ The appManagementPolicy applied to this service principal.
 To construct, please use Get-Help -Online and see NOTES section for APPMANAGEMENTPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -984,7 +984,7 @@ Accept wildcard characters: False
 ### -Tags
 Custom strings that can be used to categorize and identify the service principal.
 Not nullable.
-Supports $filter (eq, not, ge, le, startsWith).
+The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
 
 ```yaml
 Type: System.String[]
@@ -1139,7 +1139,7 @@ ADDINS <IMicrosoftGraphAddIn[]>: Defines custom behavior that a consuming servic
     - `[Value <String>]`: Value for the key-value pair.
   - `[Type <String>]`: 
 
-APPMANAGEMENTPOLICIES <IMicrosoftGraphAppManagementPolicy[]>: The appManagementPolicy applied to this service principal.
+APPMANAGEMENTPOLICIES <IMicrosoftGraphAppManagementPolicy1[]>: The appManagementPolicy applied to this service principal.
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -1156,7 +1156,7 @@ APPMANAGEMENTPOLICIES <IMicrosoftGraphAppManagementPolicy[]>: The appManagementP
       - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
     - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
       - `[MaxLifetime <TimeSpan?>]`: 
-      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
       - `[RestrictionType <String>]`: appCredentialRestrictionType
 
 APPROLEASSIGNEDTO <IMicrosoftGraphAppRoleAssignment1[]>: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
@@ -1203,7 +1203,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipal1>: servicePrincipal
   - `[AppDescription <String>]`: The description exposed by the associated application.
   - `[AppDisplayName <String>]`: The display name exposed by the associated application.
   - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
-  - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
+  - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy1[]>]`: The appManagementPolicy applied to this service principal.
     - `[Description <String>]`: Description for this policy. Required.
     - `[DisplayName <String>]`: Display name for this policy. Required.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -1220,7 +1220,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipal1>: servicePrincipal
         - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
       - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
         - `[MaxLifetime <TimeSpan?>]`: 
-        - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+        - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
         - `[RestrictionType <String>]`: appCredentialRestrictionType
   - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
   - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
@@ -1406,7 +1406,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipal1>: servicePrincipal
             - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
             - `[Name <String>]`: 
             - `[SupportedApis <String[]>]`: 
-          - `[ReadOnly <Boolean?>]`: 
+          - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
           - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
         - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
           - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
@@ -1470,9 +1470,9 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipal1>: servicePrincipal
           - `[CountImportedReferenceDeltas <Int64?>]`: Count of imported delta-changes pertaining to reference changes.
           - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Code <String>]`: 
-            - `[Message <String>]`: 
-            - `[TenantActionable <Boolean?>]`: 
+            - `[Code <String>]`: The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
+            - `[Message <String>]`: The error message. For example, Policy permitting auto-redemption of invitations not configured.
+            - `[TenantActionable <Boolean?>]`: The action to take to resolve the error. For example, false.
           - `[State <String>]`: synchronizationTaskExecutionResult
           - `[TimeBegan <DateTime?>]`: Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[TimeEnded <DateTime?>]`: Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -1494,8 +1494,8 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipal1>: servicePrincipal
         - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-          - `[Key <String>]`: Key.
-          - `[Value <Int64?>]`: Value.
+          - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+          - `[Value <Int64?>]`: Total number of synchronized objects.
         - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
       - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
         - `[Name <String>]`: Name for this key-value pair
@@ -1513,7 +1513,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipal1>: servicePrincipal
       - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
       - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
       - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
-  - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+  - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
   - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
   - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy1[]>]`: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
@@ -1710,7 +1710,7 @@ SYNCHRONIZATION <IMicrosoftGraphSynchronization>: synchronization
           - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
           - `[Name <String>]`: 
           - `[SupportedApis <String[]>]`: 
-        - `[ReadOnly <Boolean?>]`: 
+        - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
         - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
       - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
         - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
@@ -1774,9 +1774,9 @@ SYNCHRONIZATION <IMicrosoftGraphSynchronization>: synchronization
         - `[CountImportedReferenceDeltas <Int64?>]`: Count of imported delta-changes pertaining to reference changes.
         - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Code <String>]`: 
-          - `[Message <String>]`: 
-          - `[TenantActionable <Boolean?>]`: 
+          - `[Code <String>]`: The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
+          - `[Message <String>]`: The error message. For example, Policy permitting auto-redemption of invitations not configured.
+          - `[TenantActionable <Boolean?>]`: The action to take to resolve the error. For example, false.
         - `[State <String>]`: synchronizationTaskExecutionResult
         - `[TimeBegan <DateTime?>]`: Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[TimeEnded <DateTime?>]`: Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -1798,8 +1798,8 @@ SYNCHRONIZATION <IMicrosoftGraphSynchronization>: synchronization
       - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-        - `[Key <String>]`: Key.
-        - `[Value <Int64?>]`: Value.
+        - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+        - `[Value <Int64?>]`: Total number of synchronized objects.
       - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
     - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
       - `[Name <String>]`: Name for this key-value pair

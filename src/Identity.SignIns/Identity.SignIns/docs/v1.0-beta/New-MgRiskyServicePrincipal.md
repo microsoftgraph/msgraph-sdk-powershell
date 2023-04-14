@@ -16,8 +16,9 @@ Create new navigation property to riskyServicePrincipals for identityProtection
 ```
 New-MgRiskyServicePrincipal [-AccountEnabled] [-AdditionalProperties <Hashtable>] [-AppId <String>]
  [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]>] [-Id <String>]
- [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
- [-RiskState <String>] [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsEnabled] [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>]
+ [-RiskLevel <String>] [-RiskState <String>] [-ServicePrincipalType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -142,6 +143,21 @@ Read-only.
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsEnabled
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -308,6 +324,7 @@ BODYPARAMETER <IMicrosoftGraphRiskyServicePrincipal1>: riskyServicePrincipal
     - `[AppId <String>]`: The globally unique identifier for the associated application (its appId property), if any.
     - `[DisplayName <String>]`: The display name for the service principal.
     - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]>]`: Represents the risk history of Azure AD service principals.
+    - `[IsEnabled <Boolean?>]`: 
     - `[IsProcessing <Boolean?>]`: Indicates whether Azure AD is currently processing the service principal's risky state.
     - `[RiskDetail <String>]`: riskDetail
     - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
@@ -321,6 +338,7 @@ BODYPARAMETER <IMicrosoftGraphRiskyServicePrincipal1>: riskyServicePrincipal
       - `[RiskEventTypes <String[]>]`: 
     - `[InitiatedBy <String>]`: The identifier of the actor of the operation.
     - `[ServicePrincipalId <String>]`: The identifier of the service principal.
+  - `[IsEnabled <Boolean?>]`: 
   - `[IsProcessing <Boolean?>]`: Indicates whether Azure AD is currently processing the service principal's risky state.
   - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
@@ -333,6 +351,7 @@ HISTORY <IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]>: Represents the ris
   - `[AppId <String>]`: The globally unique identifier for the associated application (its appId property), if any.
   - `[DisplayName <String>]`: The display name for the service principal.
   - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]>]`: Represents the risk history of Azure AD service principals.
+  - `[IsEnabled <Boolean?>]`: 
   - `[IsProcessing <Boolean?>]`: Indicates whether Azure AD is currently processing the service principal's risky state.
   - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).

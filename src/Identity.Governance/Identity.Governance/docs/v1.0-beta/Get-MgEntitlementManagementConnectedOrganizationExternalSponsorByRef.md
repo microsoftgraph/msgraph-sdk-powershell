@@ -43,7 +43,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectedOrganizationId
-key: id of connectedOrganization
+The unique identifier of connectedOrganization
 
 ```yaml
 Type: System.String

@@ -99,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -DepOnboardingSettingId
-key: id of depOnboardingSetting
+The unique identifier of depOnboardingSetting
 
 ```yaml
 Type: System.String
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnrollmentProfileId
-key: id of enrollmentProfile
+The unique identifier of enrollmentProfile
 
 ```yaml
 Type: System.String
@@ -314,41 +314,41 @@ BODYPARAMETER <IMicrosoftGraphEnrollmentProfile>: The enrollmentProfile resource
   - `[RequiresUserAuthentication <Boolean?>]`: Indicates if the profile requires user authentication
 
 INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
-  - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
-  - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
-  - `[AppScopeId <String>]`: key: id of appScope
-  - `[AppleEnrollmentProfileAssignmentId <String>]`: key: id of appleEnrollmentProfileAssignment
-  - `[AppleUserInitiatedEnrollmentProfileId <String>]`: key: id of appleUserInitiatedEnrollmentProfile
-  - `[ApprovalId <String>]`: key: id of approval
-  - `[ApprovalStepId <String>]`: key: id of approvalStep
-  - `[DepOnboardingSettingId <String>]`: key: id of depOnboardingSetting
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceManagementAutopilotEventId <String>]`: key: id of deviceManagementAutopilotEvent
-  - `[DeviceManagementAutopilotPolicyStatusDetailId <String>]`: key: id of deviceManagementAutopilotPolicyStatusDetail
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
-  - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
-  - `[ImportedAppleDeviceIdentityId <String>]`: key: id of importedAppleDeviceIdentity
-  - `[ImportedDeviceIdentityId <String>]`: key: id of importedDeviceIdentity
-  - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: key: id of importedWindowsAutopilotDeviceIdentity
+  - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: The unique identifier of androidDeviceOwnerEnrollmentProfile
+  - `[AndroidForWorkEnrollmentProfileId <String>]`: The unique identifier of androidForWorkEnrollmentProfile
+  - `[AppScopeId <String>]`: The unique identifier of appScope
+  - `[AppleEnrollmentProfileAssignmentId <String>]`: The unique identifier of appleEnrollmentProfileAssignment
+  - `[AppleUserInitiatedEnrollmentProfileId <String>]`: The unique identifier of appleUserInitiatedEnrollmentProfile
+  - `[ApprovalId <String>]`: The unique identifier of approval
+  - `[ApprovalStepId <String>]`: The unique identifier of approvalStep
+  - `[DepOnboardingSettingId <String>]`: The unique identifier of depOnboardingSetting
+  - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
+  - `[DeviceManagementAutopilotEventId <String>]`: The unique identifier of deviceManagementAutopilotEvent
+  - `[DeviceManagementAutopilotPolicyStatusDetailId <String>]`: The unique identifier of deviceManagementAutopilotPolicyStatusDetail
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[EnrollmentConfigurationAssignmentId <String>]`: The unique identifier of enrollmentConfigurationAssignment
+  - `[EnrollmentProfileId <String>]`: The unique identifier of enrollmentProfile
+  - `[ImportedAppleDeviceIdentityId <String>]`: The unique identifier of importedAppleDeviceIdentity
+  - `[ImportedDeviceIdentityId <String>]`: The unique identifier of importedDeviceIdentity
+  - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of importedWindowsAutopilotDeviceIdentity
   - `[On <String>]`: Usage: on='{on}'
-  - `[UnifiedRbacResourceActionId <String>]`: key: id of unifiedRbacResourceAction
-  - `[UnifiedRbacResourceNamespaceId <String>]`: key: id of unifiedRbacResourceNamespace
-  - `[UnifiedRoleAssignmentId <String>]`: key: id of unifiedRoleAssignment
-  - `[UnifiedRoleAssignmentMultipleId <String>]`: key: id of unifiedRoleAssignmentMultiple
-  - `[UnifiedRoleAssignmentScheduleId <String>]`: key: id of unifiedRoleAssignmentSchedule
-  - `[UnifiedRoleAssignmentScheduleInstanceId <String>]`: key: id of unifiedRoleAssignmentScheduleInstance
-  - `[UnifiedRoleAssignmentScheduleRequestId <String>]`: key: id of unifiedRoleAssignmentScheduleRequest
-  - `[UnifiedRoleDefinitionId <String>]`: key: id of unifiedRoleDefinition
-  - `[UnifiedRoleDefinitionId1 <String>]`: key: id of unifiedRoleDefinition
-  - `[UnifiedRoleEligibilityScheduleId <String>]`: key: id of unifiedRoleEligibilitySchedule
-  - `[UnifiedRoleEligibilityScheduleInstanceId <String>]`: key: id of unifiedRoleEligibilityScheduleInstance
-  - `[UnifiedRoleEligibilityScheduleRequestId <String>]`: key: id of unifiedRoleEligibilityScheduleRequest
-  - `[WindowsAutopilotDeploymentProfileAssignmentId <String>]`: key: id of windowsAutopilotDeploymentProfileAssignment
-  - `[WindowsAutopilotDeploymentProfileId <String>]`: key: id of windowsAutopilotDeploymentProfile
-  - `[WindowsAutopilotDeviceIdentityId <String>]`: key: id of windowsAutopilotDeviceIdentity
-  - `[WindowsFeatureUpdateProfileAssignmentId <String>]`: key: id of windowsFeatureUpdateProfileAssignment
-  - `[WindowsFeatureUpdateProfileId <String>]`: key: id of windowsFeatureUpdateProfile
+  - `[UnifiedRbacResourceActionId <String>]`: The unique identifier of unifiedRbacResourceAction
+  - `[UnifiedRbacResourceNamespaceId <String>]`: The unique identifier of unifiedRbacResourceNamespace
+  - `[UnifiedRoleAssignmentId <String>]`: The unique identifier of unifiedRoleAssignment
+  - `[UnifiedRoleAssignmentMultipleId <String>]`: The unique identifier of unifiedRoleAssignmentMultiple
+  - `[UnifiedRoleAssignmentScheduleId <String>]`: The unique identifier of unifiedRoleAssignmentSchedule
+  - `[UnifiedRoleAssignmentScheduleInstanceId <String>]`: The unique identifier of unifiedRoleAssignmentScheduleInstance
+  - `[UnifiedRoleAssignmentScheduleRequestId <String>]`: The unique identifier of unifiedRoleAssignmentScheduleRequest
+  - `[UnifiedRoleDefinitionId <String>]`: The unique identifier of unifiedRoleDefinition
+  - `[UnifiedRoleDefinitionId1 <String>]`: The unique identifier of unifiedRoleDefinition
+  - `[UnifiedRoleEligibilityScheduleId <String>]`: The unique identifier of unifiedRoleEligibilitySchedule
+  - `[UnifiedRoleEligibilityScheduleInstanceId <String>]`: The unique identifier of unifiedRoleEligibilityScheduleInstance
+  - `[UnifiedRoleEligibilityScheduleRequestId <String>]`: The unique identifier of unifiedRoleEligibilityScheduleRequest
+  - `[WindowsAutopilotDeploymentProfileAssignmentId <String>]`: The unique identifier of windowsAutopilotDeploymentProfileAssignment
+  - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile
+  - `[WindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of windowsAutopilotDeviceIdentity
+  - `[WindowsFeatureUpdateProfileAssignmentId <String>]`: The unique identifier of windowsFeatureUpdateProfileAssignment
+  - `[WindowsFeatureUpdateProfileId <String>]`: The unique identifier of windowsFeatureUpdateProfile
 
 ## RELATED LINKS
 

@@ -25,7 +25,9 @@ Update-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String> [-Addition
  [-JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>] [-JoinWebUrl <String>]
  [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
  [-Participants <IMicrosoftGraphMeetingParticipants>] [-RecordAutomatically] [-StartDateTime <DateTime>]
- [-Subject <String>] [-VideoTeleconferenceId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Subject <String>] [-VideoTeleconferenceId <String>]
+ [-WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
@@ -53,7 +55,9 @@ Update-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-Additio
  [-JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>] [-JoinWebUrl <String>]
  [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
  [-Participants <IMicrosoftGraphMeetingParticipants>] [-RecordAutomatically] [-StartDateTime <DateTime>]
- [-Subject <String>] [-VideoTeleconferenceId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Subject <String>] [-VideoTeleconferenceId <String>]
+ [-WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -453,7 +457,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnlineMeetingId
-key: id of onlineMeeting
+The unique identifier of onlineMeeting
 
 ```yaml
 Type: System.String
@@ -544,7 +548,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -564,6 +568,22 @@ Read-only.
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WatermarkProtection
+watermarkProtectionValues
+To construct, please use Get-Help -Online and see NOTES section for WATERMARKPROTECTION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWatermarkProtectionValues
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -741,6 +761,10 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting>: onlineMeeting
   - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
   - `[Subject <String>]`: The subject of the online meeting.
   - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+  - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+    - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
 
 BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings>: broadcastMeetingSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -762,20 +786,22 @@ CHATINFO <IMicrosoftGraphChatInfo>: chatInfo
   - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
-  - `[AttendanceRecordId <String>]`: key: id of attendanceRecord
-  - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
-  - `[CallId <String>]`: key: id of call
-  - `[CallRecordId <String>]`: key: id of callRecord
-  - `[CallTranscriptId <String>]`: key: id of callTranscript
-  - `[CommsOperationId <String>]`: key: id of commsOperation
-  - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
-  - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
-  - `[MeetingRegistrationQuestionId <String>]`: key: id of meetingRegistrationQuestion
-  - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
-  - `[ParticipantId <String>]`: key: id of participant
-  - `[PresenceId <String>]`: key: id of presence
-  - `[SessionId <String>]`: key: id of session
-  - `[UserId <String>]`: key: id of user
+  - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
+  - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
+  - `[CallId <String>]`: The unique identifier of call
+  - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
+  - `[CommsOperationId <String>]`: The unique identifier of commsOperation
+  - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
+  - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
+  - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
+  - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
+  - `[ParticipantId <String>]`: The unique identifier of participant
+  - `[PresenceId <String>]`: The unique identifier of presence
+  - `[SessionId <String>]`: The unique identifier of session
+  - `[ToDateTime <DateTime?>]`: Usage: toDateTime={toDateTime}
+  - `[UserId <String>]`: The unique identifier of user
 
 JOININFORMATION <IMicrosoftGraphItemBody>: itemBody
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -807,6 +833,11 @@ PARTICIPANTS <IMicrosoftGraphMeetingParticipants>: meetingParticipants
     - `[Role <String>]`: onlineMeetingRole
     - `[Upn <String>]`: User principal name of the participant.
   - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
+
+WATERMARKPROTECTION <IMicrosoftGraphWatermarkProtectionValues>: watermarkProtectionValues
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+  - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
 
 ## RELATED LINKS
 

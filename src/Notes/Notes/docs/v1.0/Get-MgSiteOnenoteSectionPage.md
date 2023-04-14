@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnenoteSectionId
-key: id of onenoteSection
+The unique identifier of onenoteSection
 
 ```yaml
 Type: System.String
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -SiteId
-key: id of site
+The unique identifier of site
 
 ```yaml
 Type: System.String
@@ -217,7 +217,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage
 
 ## NOTES
 

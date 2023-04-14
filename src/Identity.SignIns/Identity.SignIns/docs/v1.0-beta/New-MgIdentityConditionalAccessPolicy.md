@@ -398,7 +398,7 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy1>: conditionalAccessPolicy
     - `[ServicePrincipalRiskLevels <String[]>]`: Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
     - `[SignInRiskLevels <String[]>]`: Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     - `[UserRiskLevels <String[]>]`: User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-    - `[Users <IMicrosoftGraphConditionalAccessUsers1>]`: conditionalAccessUsers
+    - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludeGroups <String[]>]`: Group IDs excluded from scope of policy.
       - `[ExcludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
@@ -409,10 +409,10 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy1>: conditionalAccessPolicy
         - `[GuestOrExternalUserTypes <String>]`: conditionalAccessGuestOrExternalUserTypes
       - `[ExcludeRoles <String[]>]`: Role IDs excluded from scope of policy.
       - `[ExcludeUsers <String[]>]`: User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-      - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded, or All.
+      - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded.
       - `[IncludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
-      - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded, or All.
-      - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
+      - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded.
+      - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
   - `[Description <String>]`: Not used.
   - `[DisplayName <String>]`: Specifies a display name for the conditionalAccessPolicy object.
@@ -453,6 +453,9 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy1>: conditionalAccessPolicy
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
       - `[Mode <String>]`: persistentBrowserSessionMode
+    - `[SecureSignInSession <IMicrosoftGraphSecureSignInSessionControl>]`: secureSignInSessionControl
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
     - `[SignInFrequency <IMicrosoftGraphSignInFrequencySessionControl>]`: signInFrequencySessionControl
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
@@ -502,7 +505,7 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet1>: conditionalAccessCon
   - `[ServicePrincipalRiskLevels <String[]>]`: Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
   - `[SignInRiskLevels <String[]>]`: Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
   - `[UserRiskLevels <String[]>]`: User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-  - `[Users <IMicrosoftGraphConditionalAccessUsers1>]`: conditionalAccessUsers
+  - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExcludeGroups <String[]>]`: Group IDs excluded from scope of policy.
     - `[ExcludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
@@ -513,10 +516,10 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet1>: conditionalAccessCon
       - `[GuestOrExternalUserTypes <String>]`: conditionalAccessGuestOrExternalUserTypes
     - `[ExcludeRoles <String[]>]`: Role IDs excluded from scope of policy.
     - `[ExcludeUsers <String[]>]`: User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-    - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded, or All.
+    - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded.
     - `[IncludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
-    - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded, or All.
-    - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
+    - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded.
+    - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
 
 GRANTCONTROLS <IMicrosoftGraphConditionalAccessGrantControls1>: conditionalAccessGrantControls
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -555,6 +558,9 @@ SESSIONCONTROLS <IMicrosoftGraphConditionalAccessSessionControls1>: conditionalA
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
     - `[Mode <String>]`: persistentBrowserSessionMode
+  - `[SecureSignInSession <IMicrosoftGraphSecureSignInSessionControl>]`: secureSignInSessionControl
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
   - `[SignInFrequency <IMicrosoftGraphSignInFrequencySessionControl>]`: signInFrequencySessionControl
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.

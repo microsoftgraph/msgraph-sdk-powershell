@@ -414,7 +414,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -519,8 +519,8 @@ ACCOUNT <IMicrosoftGraphUserAccountInformation[]>: .
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -549,8 +549,8 @@ ADDRESSES <IMicrosoftGraphItemAddress[]>: Represents details of addresses associ
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -587,8 +587,8 @@ ANNIVERSARIES <IMicrosoftGraphPersonAnnualEvent[]>: Represents the details of me
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -613,8 +613,8 @@ AWARDS <IMicrosoftGraphPersonAward[]>: Represents the details of awards or honor
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -645,8 +645,8 @@ BODYPARAMETER <IMicrosoftGraphProfile>: profile
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1015,8 +1015,8 @@ CERTIFICATIONS <IMicrosoftGraphPersonCertification[]>: Represents the details of
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1048,8 +1048,8 @@ EDUCATIONALACTIVITIES <IMicrosoftGraphEducationalActivity[]>: Represents data th
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1099,8 +1099,8 @@ EMAILS <IMicrosoftGraphItemEmail[]>: Represents detailed information about email
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1120,31 +1120,31 @@ EMAILS <IMicrosoftGraphItemEmail[]>: Represents detailed information about email
   - `[Type <String>]`: emailType
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
-  - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
-  - `[EducationalActivityId <String>]`: key: id of educationalActivity
-  - `[ItemAddressId <String>]`: key: id of itemAddress
-  - `[ItemEmailId <String>]`: key: id of itemEmail
-  - `[ItemPatentId <String>]`: key: id of itemPatent
-  - `[ItemPhoneId <String>]`: key: id of itemPhone
-  - `[ItemPublicationId <String>]`: key: id of itemPublication
-  - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnnotationId <String>]`: key: id of personAnnotation
-  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
-  - `[PersonAwardId <String>]`: key: id of personAward
-  - `[PersonCertificationId <String>]`: key: id of personCertification
-  - `[PersonId <String>]`: key: id of person
-  - `[PersonInterestId <String>]`: key: id of personInterest
-  - `[PersonNameId <String>]`: key: id of personName
-  - `[PersonWebsiteId <String>]`: key: id of personWebsite
-  - `[ProjectParticipationId <String>]`: key: id of projectParticipation
-  - `[SharedInsightId <String>]`: key: id of sharedInsight
-  - `[SkillProficiencyId <String>]`: key: id of skillProficiency
-  - `[TrendingId <String>]`: key: id of trending
-  - `[UsedInsightId <String>]`: key: id of usedInsight
-  - `[UserAccountInformationId <String>]`: key: id of userAccountInformation
-  - `[UserId <String>]`: key: id of user
-  - `[WebAccountId <String>]`: key: id of webAccount
-  - `[WorkPositionId <String>]`: key: id of workPosition
+  - `[ActivityStatisticsId <String>]`: The unique identifier of activityStatistics
+  - `[EducationalActivityId <String>]`: The unique identifier of educationalActivity
+  - `[ItemAddressId <String>]`: The unique identifier of itemAddress
+  - `[ItemEmailId <String>]`: The unique identifier of itemEmail
+  - `[ItemPatentId <String>]`: The unique identifier of itemPatent
+  - `[ItemPhoneId <String>]`: The unique identifier of itemPhone
+  - `[ItemPublicationId <String>]`: The unique identifier of itemPublication
+  - `[LanguageProficiencyId <String>]`: The unique identifier of languageProficiency
+  - `[PersonAnnotationId <String>]`: The unique identifier of personAnnotation
+  - `[PersonAnnualEventId <String>]`: The unique identifier of personAnnualEvent
+  - `[PersonAwardId <String>]`: The unique identifier of personAward
+  - `[PersonCertificationId <String>]`: The unique identifier of personCertification
+  - `[PersonId <String>]`: The unique identifier of person
+  - `[PersonInterestId <String>]`: The unique identifier of personInterest
+  - `[PersonNameId <String>]`: The unique identifier of personName
+  - `[PersonWebsiteId <String>]`: The unique identifier of personWebsite
+  - `[ProjectParticipationId <String>]`: The unique identifier of projectParticipation
+  - `[SharedInsightId <String>]`: The unique identifier of sharedInsight
+  - `[SkillProficiencyId <String>]`: The unique identifier of skillProficiency
+  - `[TrendingId <String>]`: The unique identifier of trending
+  - `[UsedInsightId <String>]`: The unique identifier of usedInsight
+  - `[UserAccountInformationId <String>]`: The unique identifier of userAccountInformation
+  - `[UserId <String>]`: The unique identifier of user
+  - `[WebAccountId <String>]`: The unique identifier of webAccount
+  - `[WorkPositionId <String>]`: The unique identifier of workPosition
 
 INTERESTS <IMicrosoftGraphPersonInterest[]>: Provides detailed information about interests the user has associated with themselves in various services.
   - `[AllowedAudiences <String>]`: allowedAudiences
@@ -1152,8 +1152,8 @@ INTERESTS <IMicrosoftGraphPersonInterest[]>: Provides detailed information about
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1181,8 +1181,8 @@ LANGUAGES <IMicrosoftGraphLanguageProficiency[]>: Represents detailed informatio
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1211,8 +1211,8 @@ NAMES <IMicrosoftGraphPersonName[]>: Represents the names a user has added to th
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1251,8 +1251,8 @@ NOTES <IMicrosoftGraphPersonAnnotation[]>: Represents notes that a user has adde
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1280,8 +1280,8 @@ PATENTS <IMicrosoftGraphItemPatent[]>: Represents patents that a user has added 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1310,8 +1310,8 @@ PHONES <IMicrosoftGraphItemPhone[]>: Represents detailed information about phone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1336,8 +1336,8 @@ POSITIONS <IMicrosoftGraphWorkPosition[]>: Represents detailed information about
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1390,8 +1390,8 @@ PROJECTS <IMicrosoftGraphProjectParticipation[]>: Represents detailed informatio
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1447,8 +1447,8 @@ PUBLICATIONS <IMicrosoftGraphItemPublication[]>: Represents details of any publi
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1476,8 +1476,8 @@ SKILLS <IMicrosoftGraphSkillProficiency[]>: Represents detailed information abou
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1505,8 +1505,8 @@ WEBACCOUNTS <IMicrosoftGraphWebAccount[]>: Represents web accounts the user has 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -1537,8 +1537,8 @@ WEBSITES <IMicrosoftGraphPersonWebsite[]>: Represents detailed information about
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.

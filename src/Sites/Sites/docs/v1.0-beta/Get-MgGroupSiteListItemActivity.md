@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-key: id of group
+The unique identifier of group
 
 ```yaml
 Type: System.String
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListId
-key: id of list
+The unique identifier of list
 
 ```yaml
 Type: System.String
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListItemId
-key: id of listItem
+The unique identifier of listItem
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -SiteId
-key: id of site
+The unique identifier of site
 
 ```yaml
 Type: System.String

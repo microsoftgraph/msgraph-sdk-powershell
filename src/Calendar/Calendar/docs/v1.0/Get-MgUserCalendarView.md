@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -CalendarId
-key: id of calendar
+The unique identifier of calendar
 
 ```yaml
 Type: System.String
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String

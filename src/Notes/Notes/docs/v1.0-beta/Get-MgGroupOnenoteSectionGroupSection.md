@@ -99,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-key: id of group
+The unique identifier of group
 
 ```yaml
 Type: System.String
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -SectionGroupId
-key: id of sectionGroup
+The unique identifier of sectionGroup
 
 ```yaml
 Type: System.String

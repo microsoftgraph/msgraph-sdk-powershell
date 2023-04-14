@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Compliance
-Module Guid: 7f423c3c-e717-4d7d-b367-e640598b3cb3
+Module Guid: 146d4e15-0545-4c0c-8d9f-ce9f572689bf
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -141,6 +141,12 @@ For details, see Manage custodians in an Advanced eDiscovery case.
 
 ### [Invoke-MgAsComplianceEdiscoveryCaseTagHierarchy](Invoke-MgAsComplianceEdiscoveryCaseTagHierarchy.md)
 Invoke function asHierarchy
+
+### [Invoke-MgCaseComplianceEdiscoveryCaseGetOperation](Invoke-MgCaseComplianceEdiscoveryCaseGetOperation.md)
+Get the item of type microsoft.graph.ediscovery.caseOperation as microsoft.graph.ediscovery.caseExportOperation
+
+### [Invoke-MgCaseComplianceEdiscoveryCaseListOperation](Invoke-MgCaseComplianceEdiscoveryCaseListOperation.md)
+Get the items of type microsoft.graph.ediscovery.caseExportOperation in the microsoft.graph.ediscovery.caseOperation collection
 
 ### [Invoke-MgEstimateComplianceEdiscoveryCaseSourceCollectionStatistics](Invoke-MgEstimateComplianceEdiscoveryCaseSourceCollectionStatistics.md)
 Run an estimate of the number of emails and documents in the source collection.

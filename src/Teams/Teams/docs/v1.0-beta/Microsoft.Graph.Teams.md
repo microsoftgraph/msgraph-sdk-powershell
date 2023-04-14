@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: ec060e8a-a328-428d-8349-7db0b54b021f
+Module Guid: cb4f7f62-38b6-4c96-8505-7f901aaf4bbd
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -190,6 +190,9 @@ A collection of permissions granted to apps for the chat.
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
+### [Get-MgChatPermissionGrantDelta](Get-MgChatPermissionGrantDelta.md)
+Invoke function delta
+
 ### [Get-MgChatPermissionGrantMemberGroup](Get-MgChatPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -198,7 +201,8 @@ This function is transitive.
 Invoke action getMemberObjects
 
 ### [Get-MgChatPermissionGrantUserOwnedObject](Get-MgChatPermissionGrantUserOwnedObject.md)
-Invoke action getUserOwnedObjects
+Retrieve a list of recently deleted application and group objects owned by the specified user.
+This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgChatPinnedMessage](Get-MgChatPinnedMessage.md)
 A collection of all the pinned messages in the chat.
@@ -378,10 +382,10 @@ The template this team was created from.
 See available templates.
 
 ### [Get-MgGroupTeamTemplateDefinition](Get-MgGroupTeamTemplateDefinition.md)
-Get templateDefinition from groups
+Generic representation of a team template definition for a team with a specific structure and configuration.
 
 ### [Get-MgTeam](Get-MgTeam.md)
-Retrieve the properties and relationships of the specified team.
+Get entity from teams by key
 
 ### [Get-MgTeamChannel](Get-MgTeamChannel.md)
 The collection of channels and messages associated with the team.
@@ -463,6 +467,9 @@ A collection of permissions granted to apps to access the team.
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
+### [Get-MgTeamPermissionGrantDelta](Get-MgTeamPermissionGrantDelta.md)
+Invoke function delta
+
 ### [Get-MgTeamPermissionGrantMemberGroup](Get-MgTeamPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -471,7 +478,8 @@ This function is transitive.
 Invoke action getMemberObjects
 
 ### [Get-MgTeamPermissionGrantUserOwnedObject](Get-MgTeamPermissionGrantUserOwnedObject.md)
-Invoke action getUserOwnedObjects
+Retrieve a list of recently deleted application and group objects owned by the specified user.
+This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgTeamPhoto](Get-MgTeamPhoto.md)
 The team photo.
@@ -573,7 +581,7 @@ The template this team was created from.
 See available templates.
 
 ### [Get-MgTeamTemplateDefinition](Get-MgTeamTemplateDefinition.md)
-Get templateDefinition from teams
+Generic representation of a team template definition for a team with a specific structure and configuration.
 
 ### [Get-MgTeamwork](Get-MgTeamwork.md)
 Get teamwork
@@ -786,28 +794,28 @@ For each shift, openshift and timeOff instance in the specified time range, the 
 The **notifyTeam** parameter further specifies which employees can view the item.
 
 ### [Invoke-MgSoftChatMessageDelete](Invoke-MgSoftChatMessageDelete.md)
-Delete a single message or a message reply in a channel or a chat.
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftChatMessageReplyDelete](Invoke-MgSoftChatMessageReplyDelete.md)
-Delete a single message or a message reply in a channel or a chat.
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamChannelMessageDelete](Invoke-MgSoftTeamChannelMessageDelete.md)
-Delete a single message or a message reply in a channel or a chat.
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamChannelMessageReplyDelete](Invoke-MgSoftTeamChannelMessageReplyDelete.md)
-Delete a single message or a message reply in a channel or a chat.
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamPrimaryChannelMessageDelete](Invoke-MgSoftTeamPrimaryChannelMessageDelete.md)
-Delete a single message or a message reply in a channel or a chat.
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete](Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete.md)
-Delete a single message or a message reply in a channel or a chat.
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamworkDeletedTeamChannelMessageDelete](Invoke-MgSoftTeamworkDeletedTeamChannelMessageDelete.md)
-Delete a single message or a message reply in a channel or a chat.
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamworkDeletedTeamChannelMessageReplyDelete](Invoke-MgSoftTeamworkDeletedTeamChannelMessageReplyDelete.md)
-Delete a single message or a message reply in a channel or a chat.
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgUnarchiveTeam](Invoke-MgUnarchiveTeam.md)
 Restore an archived team.
@@ -1542,14 +1550,29 @@ Update media content for the navigation property hostedContent in appCatalogs
 ### [Set-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent](Set-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent.md)
 Update media content for the navigation property hostedContent in appCatalogs
 
+### [Set-MgChatMessageHostedContent](Set-MgChatMessageHostedContent.md)
+Update media content for the navigation property hostedContents in chats
+
 ### [Set-MgChatMessageReaction](Set-MgChatMessageReaction.md)
 Invoke action setReaction
+
+### [Set-MgChatMessageReplyHostedContent](Set-MgChatMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in chats
 
 ### [Set-MgChatMessageReplyReaction](Set-MgChatMessageReplyReaction.md)
 Invoke action setReaction
 
+### [Set-MgGroupTeam](Set-MgGroupTeam.md)
+Update the navigation property team in groups
+
 ### [Set-MgGroupTeamChannelFileFolderContent](Set-MgGroupTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
+
+### [Set-MgGroupTeamChannelMessageHostedContent](Set-MgGroupTeamChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in groups
+
+### [Set-MgGroupTeamChannelMessageReplyHostedContent](Set-MgGroupTeamChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in groups
 
 ### [Set-MgGroupTeamPhotoContent](Set-MgGroupTeamPhotoContent.md)
 Update media content for the navigation property photo in groups
@@ -1557,14 +1580,26 @@ Update media content for the navigation property photo in groups
 ### [Set-MgGroupTeamPrimaryChannelFileFolderContent](Set-MgGroupTeamPrimaryChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgGroupTeamPrimaryChannelMessageHostedContent](Set-MgGroupTeamPrimaryChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in groups
+
+### [Set-MgGroupTeamPrimaryChannelMessageReplyHostedContent](Set-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in groups
+
 ### [Set-MgGroupTeamSchedule](Set-MgGroupTeamSchedule.md)
 Update the navigation property schedule in groups
 
 ### [Set-MgTeamChannelFileFolderContent](Set-MgTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgTeamChannelMessageHostedContent](Set-MgTeamChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in teams
+
 ### [Set-MgTeamChannelMessageReaction](Set-MgTeamChannelMessageReaction.md)
 Invoke action setReaction
+
+### [Set-MgTeamChannelMessageReplyHostedContent](Set-MgTeamChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in teams
 
 ### [Set-MgTeamChannelMessageReplyReaction](Set-MgTeamChannelMessageReplyReaction.md)
 Invoke action setReaction
@@ -1575,8 +1610,14 @@ Update media content for the navigation property photo in teams
 ### [Set-MgTeamPrimaryChannelFileFolderContent](Set-MgTeamPrimaryChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgTeamPrimaryChannelMessageHostedContent](Set-MgTeamPrimaryChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in teams
+
 ### [Set-MgTeamPrimaryChannelMessageReaction](Set-MgTeamPrimaryChannelMessageReaction.md)
 Invoke action setReaction
+
+### [Set-MgTeamPrimaryChannelMessageReplyHostedContent](Set-MgTeamPrimaryChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in teams
 
 ### [Set-MgTeamPrimaryChannelMessageReplyReaction](Set-MgTeamPrimaryChannelMessageReplyReaction.md)
 Invoke action setReaction
@@ -1587,11 +1628,23 @@ Update the navigation property schedule in teams
 ### [Set-MgTeamworkDeletedTeamChannelFileFolderContent](Set-MgTeamworkDeletedTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgTeamworkDeletedTeamChannelMessageHostedContent](Set-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in teamwork
+
 ### [Set-MgTeamworkDeletedTeamChannelMessageReaction](Set-MgTeamworkDeletedTeamChannelMessageReaction.md)
 Invoke action setReaction
 
+### [Set-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](Set-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in teamwork
+
 ### [Set-MgTeamworkDeletedTeamChannelMessageReplyReaction](Set-MgTeamworkDeletedTeamChannelMessageReplyReaction.md)
 Invoke action setReaction
+
+### [Set-MgUserChatMessageHostedContent](Set-MgUserChatMessageHostedContent.md)
+Update media content for the navigation property hostedContents in users
+
+### [Set-MgUserChatMessageReplyHostedContent](Set-MgUserChatMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in users
 
 ### [Start-MgTeamScheduleTimeCardBreak](Start-MgTeamScheduleTimeCardBreak.md)
 Start a break in a specific timeCard.
@@ -1626,28 +1679,28 @@ If one or more properties fail multiple validations, only the property with the 
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
 ### [Undo-MgChatMessageReplySoftDelete](Undo-MgChatMessageReplySoftDelete.md)
-Undo soft deletion of a single message or a message reply in a channel or a chat.
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgChatMessageSoftDelete](Undo-MgChatMessageSoftDelete.md)
-Undo soft deletion of a single message or a message reply in a channel or a chat.
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamChannelMessageReplySoftDelete](Undo-MgTeamChannelMessageReplySoftDelete.md)
-Undo soft deletion of a single message or a message reply in a channel or a chat.
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamChannelMessageSoftDelete](Undo-MgTeamChannelMessageSoftDelete.md)
-Undo soft deletion of a single message or a message reply in a channel or a chat.
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamPrimaryChannelMessageReplySoftDelete](Undo-MgTeamPrimaryChannelMessageReplySoftDelete.md)
-Undo soft deletion of a single message or a message reply in a channel or a chat.
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamPrimaryChannelMessageSoftDelete](Undo-MgTeamPrimaryChannelMessageSoftDelete.md)
-Undo soft deletion of a single message or a message reply in a channel or a chat.
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete](Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete.md)
-Undo soft deletion of a single message or a message reply in a channel or a chat.
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete](Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete.md)
-Undo soft deletion of a single message or a message reply in a channel or a chat.
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Update-MgAppCatalogTeamApp](Update-MgAppCatalogTeamApp.md)
 Update the navigation property teamsApps in appCatalogs
@@ -1702,11 +1755,6 @@ Update the navigation property pinnedMessages in chats
 
 ### [Update-MgChatTab](Update-MgChatTab.md)
 Update the navigation property tabs in chats
-
-### [Update-MgGroupTeam](Update-MgGroupTeam.md)
-Create a new team from a group.
-In order to create a team, the group must have a least one owner.
-If the group was created less than 15 minutes ago, it's possible for the Create team call to fail with a 404 error code due to replication delays.\nThe recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
 
 ### [Update-MgGroupTeamChannel](Update-MgGroupTeamChannel.md)
 Update the navigation property channels in groups

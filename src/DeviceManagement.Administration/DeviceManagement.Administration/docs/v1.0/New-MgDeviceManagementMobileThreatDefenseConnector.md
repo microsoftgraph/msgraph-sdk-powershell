@@ -53,8 +53,8 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPartnerToCollectIosApplicationMetadata
-When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices.
-When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices.
+When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices.
+When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices.
 Default value is FALSE.
 
 ```yaml
@@ -70,8 +70,8 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPartnerToCollectIosPersonalApplicationMetadata
-When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices.
-When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices.
+When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices.
+When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices.
 Default value is FALSE.
 
 ```yaml
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -AndroidDeviceBlockedOnMissingPartnerData
-For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -AndroidEnabled
-For Android, set whether data from the data sync partner should be used during compliance evaluations
+For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -117,8 +117,8 @@ Accept wildcard characters: False
 ```
 
 ### -AndroidMobileApplicationManagementEnabled
-When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices.
-When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices.
+When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices.
+When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices.
 Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
 Default value is FALSE.
 
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Entity which represents a connection to Mobile threat defense partner.
+Entity which represents a connection to Mobile Threat Defense partner.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -167,7 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -IosDeviceBlockedOnMissingPartnerData
-For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -IosEnabled
-For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
+For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -197,8 +197,8 @@ Accept wildcard characters: False
 ```
 
 ### -IosMobileApplicationManagementEnabled
-When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices.
-When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices.
+When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices.
+When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices.
 Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
 Default value is FALSE.
 
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastHeartbeatDateTime
-DateTime of last Heartbeat recieved from the Data Sync Partner
+DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
 
 ```yaml
 Type: System.DateTime
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -PartnerUnsupportedOSVersionBlocked
-Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -292,8 +292,8 @@ Accept wildcard characters: False
 ```
 
 ### -WindowsDeviceBlockedOnMissingPartnerData
-When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows.
-When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows.
+When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows.
+When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows.
 Default value is FALSE.
 
 ```yaml
@@ -309,8 +309,8 @@ Accept wildcard characters: False
 ```
 
 ### -WindowsEnabled
-When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows.
-When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows.
+When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows.
+When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows.
 Default value is FALSE.
 
 ```yaml
@@ -376,24 +376,24 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphMobileThreatDefenseConnector1>: Entity which represents a connection to Mobile threat defense partner.
+BODYPARAMETER <IMicrosoftGraphMobileThreatDefenseConnector1>: Entity which represents a connection to Mobile Threat Defense partner.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AllowPartnerToCollectIosApplicationMetadata <Boolean?>]`: When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
-  - `[AllowPartnerToCollectIosPersonalApplicationMetadata <Boolean?>]`: When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
-  - `[AndroidDeviceBlockedOnMissingPartnerData <Boolean?>]`: For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-  - `[AndroidEnabled <Boolean?>]`: For Android, set whether data from the data sync partner should be used during compliance evaluations
-  - `[AndroidMobileApplicationManagementEnabled <Boolean?>]`: When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
-  - `[IosDeviceBlockedOnMissingPartnerData <Boolean?>]`: For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-  - `[IosEnabled <Boolean?>]`: For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
-  - `[IosMobileApplicationManagementEnabled <Boolean?>]`: When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
-  - `[LastHeartbeatDateTime <DateTime?>]`: DateTime of last Heartbeat recieved from the Data Sync Partner
+  - `[AllowPartnerToCollectIosApplicationMetadata <Boolean?>]`: When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+  - `[AllowPartnerToCollectIosPersonalApplicationMetadata <Boolean?>]`: When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
+  - `[AndroidDeviceBlockedOnMissingPartnerData <Boolean?>]`: For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+  - `[AndroidEnabled <Boolean?>]`: For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+  - `[AndroidMobileApplicationManagementEnabled <Boolean?>]`: When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+  - `[IosDeviceBlockedOnMissingPartnerData <Boolean?>]`: For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+  - `[IosEnabled <Boolean?>]`: For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+  - `[IosMobileApplicationManagementEnabled <Boolean?>]`: When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+  - `[LastHeartbeatDateTime <DateTime?>]`: DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
   - `[MicrosoftDefenderForEndpointAttachEnabled <Boolean?>]`: When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.
   - `[PartnerState <MobileThreatPartnerTenantState?>]`: Partner state of this tenant.
   - `[PartnerUnresponsivenessThresholdInDays <Int32?>]`: Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
-  - `[PartnerUnsupportedOSVersionBlocked <Boolean?>]`: Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
-  - `[WindowsDeviceBlockedOnMissingPartnerData <Boolean?>]`: When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
-  - `[WindowsEnabled <Boolean?>]`: When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.
+  - `[PartnerUnsupportedOSVersionBlocked <Boolean?>]`: Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
+  - `[WindowsDeviceBlockedOnMissingPartnerData <Boolean?>]`: When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.
+  - `[WindowsEnabled <Boolean?>]`: When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.
 
 ## RELATED LINKS
 
