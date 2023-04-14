@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: 84ae3966-3cd2-4cd4-82b4-9875e86022a9
+Module Guid: fc46c77a-4762-4cec-948a-dfb322a680f6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -38,6 +38,9 @@ Read-only.
 Nullable.
 Returns a collection of the specified buckets
 
+### [Get-MgPlannerBucketDelta](Get-MgPlannerBucketDelta.md)
+Invoke function delta
+
 ### [Get-MgPlannerBucketTask](Get-MgPlannerBucketTask.md)
 Retrieve a list of plannerTask objects associated to a plannerBucket object.
 
@@ -48,6 +51,9 @@ Returns a collection of the specified plans
 
 ### [Get-MgPlannerPlanBucket](Get-MgPlannerPlanBucket.md)
 Retrieve a list of plannerBucket objects contained by a plannerPlan object.
+
+### [Get-MgPlannerPlanDelta](Get-MgPlannerPlanDelta.md)
+Invoke function delta
 
 ### [Get-MgPlannerPlanDetail](Get-MgPlannerPlanDetail.md)
 Retrieve the properties and relationships of a **plannerPlanDetails** object.
@@ -76,6 +82,9 @@ Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFor
 
 ### [Get-MgPlannerTaskBucketTaskBoardFormat](Get-MgPlannerTaskBucketTaskBoardFormat.md)
 Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+
+### [Get-MgPlannerTaskDelta](Get-MgPlannerTaskDelta.md)
+Invoke function delta
 
 ### [Get-MgPlannerTaskDetail](Get-MgPlannerTaskDetail.md)
 Retrieve the properties and relationships of a **plannerTaskDetails** object.

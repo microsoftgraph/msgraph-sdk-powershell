@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -MobilityManagementPolicyId
-key: id of mobilityManagementPolicy
+The unique identifier of mobilityManagementPolicy
 
 ```yaml
 Type: System.String

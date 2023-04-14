@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 0b30ee40-14fc-4ef3-a51b-73a7d5c11861
+Module Guid: 4874deb6-4400-4810-a62e-13e559e3d9b9
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -72,6 +72,9 @@ Delete navigation property operations for external
 ### [Remove-MgExternalConnectionSchema](Remove-MgExternalConnectionSchema.md)
 Delete navigation property schema for external
 
+### [Set-MgExternalConnectionItem](Set-MgExternalConnectionItem.md)
+Update the navigation property items in external
+
 ### [Update-MgExternal](Update-MgExternal.md)
 Update external
 
@@ -83,9 +86,6 @@ Update the navigation property groups in external
 
 ### [Update-MgExternalConnectionGroupMember](Update-MgExternalConnectionGroupMember.md)
 Update the navigation property members in external
-
-### [Update-MgExternalConnectionItem](Update-MgExternalConnectionItem.md)
-Update the navigation property items in external
 
 ### [Update-MgExternalConnectionOperation](Update-MgExternalConnectionOperation.md)
 Update the navigation property operations in external

@@ -63,7 +63,8 @@ Accept wildcard characters: False
 ```
 
 ### -Tenants
-.
+The collection of external Azure AD tenants that the user has shared profile data with.
+Read-only.
 To construct, please use Get-Help -Online and see NOTES section for TENANTS properties and create a hash table.
 
 ```yaml
@@ -79,7 +80,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-.
+The object id of the external user.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -146,12 +148,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphOutboundSharedUserProfile>: outboundSharedUserProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
-    - `[TenantId <String>]`: 
-  - `[UserId <String>]`: 
+  - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+    - `[TenantId <String>]`: The identifier of the Azure AD tenant. Read-only. Key.
+  - `[UserId <String>]`: The object id of the external user. Read-only.
 
-TENANTS <IMicrosoftGraphTenantReference[]>: .
-  - `[TenantId <String>]`: 
+TENANTS <IMicrosoftGraphTenantReference[]>: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+  - `[TenantId <String>]`: The identifier of the Azure AD tenant. Read-only. Key.
 
 ## RELATED LINKS
 

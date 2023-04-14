@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: a3004618-00ab-4401-b90e-066f3f72ef11
+Module Guid: db29820a-4e43-42c9-b11f-f4867faef4d6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -231,6 +231,90 @@ Nullable.
 The transitive reports for a user.
 Read-only.
 
+### [Group-MgUserGetMemberOfAs](Group-MgUserGetMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgUserGetOwnedObjectAs](Group-MgUserGetOwnedObjectAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgUserGetTransitiveMemberOfAs](Group-MgUserGetTransitiveMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgUserListMemberOfAs](Group-MgUserListMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgUserListOwnedObjectAs](Group-MgUserListOwnedObjectAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgUserListTransitiveMemberOfAs](Group-MgUserListTransitiveMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserGetDirectReportUser](Invoke-MgAsUserGetDirectReportUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsUserGetMemberOfAdministrativeUnit](Invoke-MgAsUserGetMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsUserGetOwnedDevice](Invoke-MgAsUserGetOwnedDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Invoke-MgAsUserGetOwnedDeviceEndpoint](Invoke-MgAsUserGetOwnedDeviceEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsUserGetOwnedObjectApplication](Invoke-MgAsUserGetOwnedObjectApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsUserGetRegisteredDevice](Invoke-MgAsUserGetRegisteredDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Invoke-MgAsUserGetRegisteredDeviceEndpoint](Invoke-MgAsUserGetRegisteredDeviceEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Invoke-MgAsUserGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsUserGetTransitiveMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsUserListDirectReportUser](Invoke-MgAsUserListDirectReportUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserListMemberOfAdministrativeUnit](Invoke-MgAsUserListMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserListOwnedDevice](Invoke-MgAsUserListOwnedDevice.md)
+Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserListOwnedDeviceEndpoint](Invoke-MgAsUserListOwnedDeviceEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserListOwnedObjectApplication](Invoke-MgAsUserListOwnedObjectApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserListRegisteredDevice](Invoke-MgAsUserListRegisteredDevice.md)
+Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserListRegisteredDeviceEndpoint](Invoke-MgAsUserListRegisteredDeviceEndpoint.md)
+Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsUserListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsUserListTransitiveMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgContactUserGetDirectReportAsOrg](Invoke-MgContactUserGetDirectReportAsOrg.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Invoke-MgContactUserListDirectReportAsOrg](Invoke-MgContactUserListDirectReportAsOrg.md)
+Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceUserGetCreatedObject](Invoke-MgServiceUserGetCreatedObject.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceUserGetOwnedObject](Invoke-MgServiceUserGetOwnedObject.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceUserListCreatedObject](Invoke-MgServiceUserListCreatedObject.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceUserListOwnedObject](Invoke-MgServiceUserListOwnedObject.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
 ### [New-MgUser](New-MgUser.md)
 Create a new user.\nThe request body contains the user to create.
 At a minimum, you must specify the required properties for the user.
@@ -411,6 +495,9 @@ Delete navigation property multiValueExtendedProperties for users
 
 ### [Remove-MgUserOutlookTaskSingleValueExtendedProperty](Remove-MgUserOutlookTaskSingleValueExtendedProperty.md)
 Delete navigation property singleValueExtendedProperties for users
+
+### [Remove-MgUserPhoto](Remove-MgUserPhoto.md)
+Delete navigation property photo for users
 
 ### [Remove-MgUserSetting](Remove-MgUserSetting.md)
 Delete navigation property settings for users

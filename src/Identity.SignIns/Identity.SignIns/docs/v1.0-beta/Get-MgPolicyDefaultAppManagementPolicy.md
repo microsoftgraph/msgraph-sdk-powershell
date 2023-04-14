@@ -70,7 +70,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantAppManagementPolicy1
 
 ## NOTES
 

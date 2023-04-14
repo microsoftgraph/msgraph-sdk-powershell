@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 7c96d5fb-e0c2-4c96-b262-227030bac7ff
+Module Guid: 41257c42-040d-4111-91a8-282e96a313d1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -148,6 +148,12 @@ Device configuration states for this device.
 
 ### [Get-MgUserManagedDeviceUser](Get-MgUserManagedDeviceUser.md)
 The primary users associated with the managed device.
+
+### [Invoke-MgLobDeviceAppMgtGetMobileApp](Invoke-MgLobDeviceAppMgtGetMobileApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
+
+### [Invoke-MgLobDeviceAppMgtListMobileApp](Invoke-MgLobDeviceAppMgtListMobileApp.md)
+Get the items of type microsoft.graph.managedMobileLobApp in the microsoft.graph.mobileApp collection
 
 ### [Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp](Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp.md)
 Invoke action targetApps

@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -UpdatePolicyId
-key: id of updatePolicy
+The unique identifier of updatePolicy
 
 ```yaml
 Type: System.String
@@ -301,12 +301,12 @@ BODYPARAMETER <IMicrosoftGraphWindowsUpdatesComplianceChange>: complianceChange
         - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
-  - `[CatalogEntryId <String>]`: key: id of catalogEntry
-  - `[ComplianceChangeId <String>]`: key: id of complianceChange
-  - `[DeploymentId <String>]`: key: id of deployment
-  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
-  - `[UpdatableAssetId <String>]`: key: id of updatableAsset
-  - `[UpdatePolicyId <String>]`: key: id of updatePolicy
+  - `[CatalogEntryId <String>]`: The unique identifier of catalogEntry
+  - `[ComplianceChangeId <String>]`: The unique identifier of complianceChange
+  - `[DeploymentId <String>]`: The unique identifier of deployment
+  - `[ResourceConnectionId <String>]`: The unique identifier of resourceConnection
+  - `[UpdatableAssetId <String>]`: The unique identifier of updatableAsset
+  - `[UpdatePolicyId <String>]`: The unique identifier of updatePolicy
 
 UPDATEPOLICY <IMicrosoftGraphWindowsUpdatesUpdatePolicy>: updatePolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

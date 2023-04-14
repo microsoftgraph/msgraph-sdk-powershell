@@ -171,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeploymentId
-key: id of deployment
+The unique identifier of deployment
 
 ```yaml
 Type: System.String
@@ -411,12 +411,12 @@ BODYPARAMETER <IMicrosoftGraphWindowsUpdatesDeployment>: deployment
     - `[RequestedValue <String>]`: requestedDeploymentStateValue
 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
-  - `[CatalogEntryId <String>]`: key: id of catalogEntry
-  - `[ComplianceChangeId <String>]`: key: id of complianceChange
-  - `[DeploymentId <String>]`: key: id of deployment
-  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
-  - `[UpdatableAssetId <String>]`: key: id of updatableAsset
-  - `[UpdatePolicyId <String>]`: key: id of updatePolicy
+  - `[CatalogEntryId <String>]`: The unique identifier of catalogEntry
+  - `[ComplianceChangeId <String>]`: The unique identifier of complianceChange
+  - `[DeploymentId <String>]`: The unique identifier of deployment
+  - `[ResourceConnectionId <String>]`: The unique identifier of resourceConnection
+  - `[UpdatableAssetId <String>]`: The unique identifier of updatableAsset
+  - `[UpdatePolicyId <String>]`: The unique identifier of updatePolicy
 
 SETTINGS <IMicrosoftGraphWindowsUpdatesDeploymentSettings>: deploymentSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

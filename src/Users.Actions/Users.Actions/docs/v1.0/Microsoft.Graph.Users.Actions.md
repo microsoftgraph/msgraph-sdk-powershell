@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: d579c3ad-f66b-4a27-935c-53e0d9dd108e
+Module Guid: 2bcc5e4d-6d3d-426c-8e88-2c35e49a480f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -552,7 +552,12 @@ Delete user from shared Apple device
 Request remote assistance
 
 ### [Reset-MgUserAuthenticationMethodPassword](Reset-MgUserAuthenticationMethodPassword.md)
-Invoke action resetPassword
+Reset a user's password, represented by a password authentication method object.
+This can only be done by an administrator with appropriate permissions and cannot be performed on a user's own account.
+This flow writes the new password to Azure Active Directory and pushes it to on-premises Active Directory if configured using password writeback.
+The admin can either provide a new password or have the system generate one.
+The user is prompted to change their password on their next sign in.
+This reset is a long-running operation and will return a **Location** header with a link where the caller can periodically check for the status of the reset operation.
 
 ### [Reset-MgUserManagedDevicePasscode](Reset-MgUserManagedDevicePasscode.md)
 Reset passcode

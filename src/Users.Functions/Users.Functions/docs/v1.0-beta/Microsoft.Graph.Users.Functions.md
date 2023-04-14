@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: ae4d97ce-584e-4ad3-ba83-509ba5695241
+Module Guid: b1d316cf-9e60-4d6c-b355-72dba7824afd
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -41,11 +41,17 @@ Invoke function delta
 ### [Get-MgUserChatMessageReplyDelta](Get-MgUserChatMessageReplyDelta.md)
 Invoke function delta
 
+### [Get-MgUserChatPermissionGrantDelta](Get-MgUserChatPermissionGrantDelta.md)
+Invoke function delta
+
 ### [Get-MgUserCloudPcConnectivityHistory](Get-MgUserCloudPcConnectivityHistory.md)
 Invoke function getCloudPcConnectivityHistory
 
 ### [Get-MgUserCloudPcLaunchInfo](Get-MgUserCloudPcLaunchInfo.md)
 Invoke function getCloudPcLaunchInfo
+
+### [Get-MgUserCloudPcProvisionedCloudPC](Get-MgUserCloudPcProvisionedCloudPC.md)
+Invoke function getProvisionedCloudPCs
 
 ### [Get-MgUserCloudPcShiftWorkCloudPcAccessState](Get-MgUserCloudPcShiftWorkCloudPcAccessState.md)
 Invoke function getShiftWorkCloudPcAccessState
@@ -199,6 +205,21 @@ This allows you to maintain and synchronize a local store of a user's messages w
 Invoke function getRecentNotebooks
 
 ### [Get-MgUserPlannerAllDelta](Get-MgUserPlannerAllDelta.md)
+Invoke function delta
+
+### [Get-MgUserPlannerPlanBucketDelta](Get-MgUserPlannerPlanBucketDelta.md)
+Invoke function delta
+
+### [Get-MgUserPlannerPlanBucketTaskDelta](Get-MgUserPlannerPlanBucketTaskDelta.md)
+Invoke function delta
+
+### [Get-MgUserPlannerPlanDelta](Get-MgUserPlannerPlanDelta.md)
+Invoke function delta
+
+### [Get-MgUserPlannerPlanTaskDelta](Get-MgUserPlannerPlanTaskDelta.md)
+Invoke function delta
+
+### [Get-MgUserPlannerTaskDelta](Get-MgUserPlannerTaskDelta.md)
 Invoke function delta
 
 ### [Get-MgUserTodoListDelta](Get-MgUserTodoListDelta.md)

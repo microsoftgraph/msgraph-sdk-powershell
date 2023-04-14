@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -FeatureRolloutPolicyId
-key: id of featureRolloutPolicy
+The unique identifier of featureRolloutPolicy
 
 ```yaml
 Type: System.String

@@ -15,7 +15,8 @@ Create new navigation property to authenticationMethodConfigurations for policie
 ### CreateExpanded1 (Default)
 ```
 New-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExcludeTargets <IMicrosoftGraphExcludeTarget[]>] [-Id <String>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create1
@@ -59,6 +60,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ExcludeTargets
+Groups of users that are excluded from a policy.
+To construct, please use Get-Help -Online and see NOTES section for EXCLUDETARGETS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExcludeTarget[]
+Parameter Sets: CreateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -147,7 +164,14 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAuthenticationMethodConfiguration>: authenticationMethodConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Groups of users that are excluded from a policy.
+    - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
+    - `[TargetType <String>]`: authenticationMethodTargetType
   - `[State <String>]`: authenticationMethodState
+
+EXCLUDETARGETS <IMicrosoftGraphExcludeTarget[]>: Groups of users that are excluded from a policy.
+  - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
+  - `[TargetType <String>]`: authenticationMethodTargetType
 
 ## RELATED LINKS
 

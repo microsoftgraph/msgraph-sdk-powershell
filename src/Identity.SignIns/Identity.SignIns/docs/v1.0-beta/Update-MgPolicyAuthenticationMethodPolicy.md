@@ -15,7 +15,7 @@ Update the properties of an authenticationMethodsPolicy object.
 ### UpdateExpanded (Default)
 ```
 Update-MgPolicyAuthenticationMethodPolicy [-AdditionalProperties <Hashtable>]
- [-AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration1[]>]
+ [-AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration[]>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-PolicyMigrationState <String>] [-PolicyVersion <String>] [-ReconfirmationInDays <Int32>]
  [-RegistrationEnforcement <IMicrosoftGraphRegistrationEnforcement>] [-PassThru] [-Confirm] [-WhatIf]
@@ -24,7 +24,7 @@ Update-MgPolicyAuthenticationMethodPolicy [-AdditionalProperties <Hashtable>]
 
 ### Update
 ```
-Update-MgPolicyAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphAuthenticationMethodsPolicy1>
+Update-MgPolicyAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphAuthenticationMethodsPolicy>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -82,7 +82,7 @@ Automatically expanded on GET /policies/authenticationMethodsPolicy.
 To construct, please use Get-Help -Online and see NOTES section for AUTHENTICATIONMETHODCONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -98,7 +98,7 @@ authenticationMethodsPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -111,6 +111,7 @@ Accept wildcard characters: False
 
 ### -Description
 A description of the policy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -126,6 +127,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 The name of the policy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -157,6 +159,7 @@ Accept wildcard characters: False
 
 ### -LastModifiedDateTime
 The date and time of the last update to the policy.
+Read-only.
 
 ```yaml
 Type: System.DateTime
@@ -202,6 +205,7 @@ Accept wildcard characters: False
 
 ### -PolicyVersion
 The version of the policy in use.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -216,7 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReconfirmationInDays
-Days before the user will be asked to reconfirm their method.
+.
 
 ```yaml
 Type: System.Int32
@@ -282,7 +286,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodsPolicy
 
 ## OUTPUTS
 
@@ -297,28 +301,28 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-AUTHENTICATIONMETHODCONFIGURATIONS <IMicrosoftGraphAuthenticationMethodConfiguration1[]>: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+AUTHENTICATIONMETHODCONFIGURATIONS <IMicrosoftGraphAuthenticationMethodConfiguration[]>: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Groups of users that are excluded from a policy.
     - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
     - `[TargetType <String>]`: authenticationMethodTargetType
   - `[State <String>]`: authenticationMethodState
 
-BODYPARAMETER <IMicrosoftGraphAuthenticationMethodsPolicy1>: authenticationMethodsPolicy
+BODYPARAMETER <IMicrosoftGraphAuthenticationMethodsPolicy>: authenticationMethodsPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration1[]>]`: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+  - `[AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration[]>]`: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Groups of users that are excluded from a policy.
       - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
       - `[TargetType <String>]`: authenticationMethodTargetType
     - `[State <String>]`: authenticationMethodState
-  - `[Description <String>]`: A description of the policy.
-  - `[DisplayName <String>]`: The name of the policy.
-  - `[LastModifiedDateTime <DateTime?>]`: The date and time of the last update to the policy.
+  - `[Description <String>]`: A description of the policy. Read-only.
+  - `[DisplayName <String>]`: The name of the policy. Read-only.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time of the last update to the policy. Read-only.
   - `[PolicyMigrationState <String>]`: authenticationMethodsPolicyMigrationState
-  - `[PolicyVersion <String>]`: The version of the policy in use.
-  - `[ReconfirmationInDays <Int32?>]`: Days before the user will be asked to reconfirm their method.
+  - `[PolicyVersion <String>]`: The version of the policy in use. Read-only.
+  - `[ReconfirmationInDays <Int32?>]`: 
   - `[RegistrationEnforcement <IMicrosoftGraphRegistrationEnforcement>]`: registrationEnforcement
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AuthenticationMethodsRegistrationCampaign <IMicrosoftGraphAuthenticationMethodsRegistrationCampaign>]`: authenticationMethodsRegistrationCampaign

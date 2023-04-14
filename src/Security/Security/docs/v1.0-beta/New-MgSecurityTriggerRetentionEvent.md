@@ -373,7 +373,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityRetentionEvent>: retentionEvent
     - `[Status <String>]`: eventPropagationStatus
     - `[StatusInformation <String>]`: Additional information about the status of the event creation request.
   - `[EventQueries <IMicrosoftGraphSecurityEventQuery[]>]`: Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
-    - `[Query <String>]`: 
+    - `[Query <String>]`: Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
     - `[QueryType <String>]`: queryType
   - `[EventStatus <IMicrosoftGraphSecurityRetentionEventStatus>]`: retentionEventStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -423,7 +423,7 @@ EVENTPROPAGATIONRESULTS <IMicrosoftGraphSecurityEventPropagationResult[]>: .
   - `[StatusInformation <String>]`: Additional information about the status of the event creation request.
 
 EVENTQUERIES <IMicrosoftGraphSecurityEventQuery[]>: Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
-  - `[Query <String>]`: 
+  - `[Query <String>]`: Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
   - `[QueryType <String>]`: queryType
 
 EVENTSTATUS <IMicrosoftGraphSecurityRetentionEventStatus>: retentionEventStatus

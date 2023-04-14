@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 7c96d5fb-e0c2-4c96-b262-227030bac7ff
+Module Guid: 41257c42-040d-4111-91a8-282e96a313d1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -335,6 +335,12 @@ Invoke action hasPayloadLinks
 ### [Invoke-MgHasDeviceAppMgtTargetedManagedAppConfigurationPayloadLink](Invoke-MgHasDeviceAppMgtTargetedManagedAppConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
 
+### [Invoke-MgLobDeviceAppMgtGetMobileApp](Invoke-MgLobDeviceAppMgtGetMobileApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
+
+### [Invoke-MgLobDeviceAppMgtListMobileApp](Invoke-MgLobDeviceAppMgtListMobileApp.md)
+Get the items of type microsoft.graph.managedMobileLobApp in the microsoft.graph.mobileApp collection
+
 ### [Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp](Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp.md)
 Invoke action targetApps
 
@@ -535,6 +541,9 @@ Create new navigation property to deviceCompliancePolicyStates for users
 
 ### [New-MgUserManagedDeviceConfigurationState](New-MgUserManagedDeviceConfigurationState.md)
 Create new navigation property to deviceConfigurationStates for users
+
+### [New-MgUserManagedDeviceHealthScriptState](New-MgUserManagedDeviceHealthScriptState.md)
+Create new navigation property to deviceHealthScriptStates for users
 
 ### [New-MgUserManagedDeviceLogCollectionResponse](New-MgUserManagedDeviceLogCollectionResponse.md)
 Create new navigation property to logCollectionRequests for users
@@ -778,6 +787,9 @@ Delete navigation property deviceCompliancePolicyStates for users
 
 ### [Remove-MgUserManagedDeviceConfigurationState](Remove-MgUserManagedDeviceConfigurationState.md)
 Delete navigation property deviceConfigurationStates for users
+
+### [Remove-MgUserManagedDeviceHealthScriptState](Remove-MgUserManagedDeviceHealthScriptState.md)
+Delete navigation property deviceHealthScriptStates for users
 
 ### [Remove-MgUserManagedDeviceLogCollectionResponse](Remove-MgUserManagedDeviceLogCollectionResponse.md)
 Delete navigation property logCollectionRequests for users
@@ -1087,6 +1099,9 @@ Update the navigation property deviceCompliancePolicyStates in users
 
 ### [Update-MgUserManagedDeviceConfigurationState](Update-MgUserManagedDeviceConfigurationState.md)
 Update the navigation property deviceConfigurationStates in users
+
+### [Update-MgUserManagedDeviceHealthScriptState](Update-MgUserManagedDeviceHealthScriptState.md)
+Update the navigation property deviceHealthScriptStates in users
 
 ### [Update-MgUserManagedDeviceLogCollectionResponse](Update-MgUserManagedDeviceLogCollectionResponse.md)
 Update the navigation property logCollectionRequests in users

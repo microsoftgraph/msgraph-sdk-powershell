@@ -26,7 +26,7 @@ Get accessPackageResourceScopes from identityGovernance
 ## PARAMETERS
 
 ### -AccessPackageCatalogId
-key: id of accessPackageCatalog
+The unique identifier of accessPackageCatalog
 
 ```yaml
 Type: System.String

@@ -1022,14 +1022,14 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement>: Singleton entity that acts a
     - `[Status <DeviceAppManagementTaskStatus?>]`: Device app management task status.
   - `[EnterpriseCodeSigningCertificates <IMicrosoftGraphEnterpriseCodeSigningCertificate[]>]`: The Windows Enterprise Code Signing Certificate.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Content <Byte[]>]`: The Windows Enterprise Code-Signing Certificate in the raw data format.
-    - `[ExpirationDateTime <DateTime?>]`: The Cert Expiration Date.
-    - `[Issuer <String>]`: The Issuer value for the cert.
-    - `[IssuerName <String>]`: The Issuer Name for the cert.
+    - `[Content <Byte[]>]`: The Windows Enterprise Code-Signing Certificate in the raw data format. Set to null once certificate has been uploaded and other properties have been populated.
+    - `[ExpirationDateTime <DateTime?>]`: The cert expiration date and time (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+    - `[Issuer <String>]`: The issuer value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+    - `[IssuerName <String>]`: The issuer name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
     - `[Status <String>]`: certificateStatus
-    - `[Subject <String>]`: The Subject Value for the cert.
-    - `[SubjectName <String>]`: The Subject Name for the cert.
-    - `[UploadDateTime <DateTime?>]`: The date time of CodeSigning Cert when it is uploaded.
+    - `[Subject <String>]`: The subject value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+    - `[SubjectName <String>]`: The subject name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+    - `[UploadDateTime <DateTime?>]`: The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
   - `[IosLobAppProvisioningConfigurations <IMicrosoftGraphIosLobAppProvisioningConfiguration[]>]`: The IOS Lob App Provisioning Configurations.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Assignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>]`: The associated group assignments for IosLobAppProvisioningConfiguration.
@@ -1442,6 +1442,43 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement>: Singleton entity that acts a
     - `[UploadDateTime <DateTime?>]`: The Type of the CodeSigning Cert as Symantec Cert.
   - `[TargetedManagedAppConfigurations <IMicrosoftGraphTargetedManagedAppConfiguration1[]>]`: Targeted managed app configurations.
     - `[CustomSettings <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
+    - `[Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]`: List of settings contained in this App Configuration policy
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions. This property is read-only.
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[AccessTypes <String>]`: deviceManagementConfigurationSettingAccessTypes
+        - `[Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>]`: deviceManagementConfigurationSettingApplicability
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Description <String>]`: description of the setting
+          - `[DeviceMode <DeviceManagementConfigurationDeviceMode?>]`: Describes applicability for the mode the device is in
+          - `[Platform <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
+          - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
+        - `[BaseUri <String>]`: Base CSP Path
+        - `[CategoryId <String>]`: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+        - `[Description <String>]`: Description of the item
+        - `[DisplayName <String>]`: Display name of the item
+        - `[HelpText <String>]`: Help text of the item
+        - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at
+        - `[Keywords <String[]>]`: Tokens which to search settings on
+        - `[Name <String>]`: Name of the item
+        - `[Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>]`: deviceManagementConfigurationSettingOccurrence
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[MaxDeviceOccurrence <Int32?>]`: Maximum times setting can be set on device.
+          - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
+        - `[OffsetUri <String>]`: Offset CSP Path from Base
+        - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
+          - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
+        - `[RootDefinitionId <String>]`: Root setting definition if the setting is a child setting.
+        - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
+        - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX
+        - `[Version <String>]`: Item Version
+        - `[Visibility <DeviceManagementConfigurationSettingVisibility?>]`: Supported setting types
+      - `[SettingInstance <IMicrosoftGraphDeviceManagementConfigurationSettingInstance>]`: Setting instance within policy
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[SettingDefinitionId <String>]`: Setting Definition Id
+        - `[SettingInstanceTemplateReference <IMicrosoftGraphDeviceManagementConfigurationSettingInstanceTemplateReference>]`: Setting instance template reference information
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[SettingInstanceTemplateId <String>]`: Setting instance template id
     - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
     - `[Description <String>]`: The policy's description.
     - `[DisplayName <String>]`: Policy display name.
@@ -1755,14 +1792,14 @@ DEVICEAPPMANAGEMENTTASKS <IMicrosoftGraphDeviceAppManagementTask[]>: Device app 
 
 ENTERPRISECODESIGNINGCERTIFICATES <IMicrosoftGraphEnterpriseCodeSigningCertificate[]>: The Windows Enterprise Code Signing Certificate.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Content <Byte[]>]`: The Windows Enterprise Code-Signing Certificate in the raw data format.
-  - `[ExpirationDateTime <DateTime?>]`: The Cert Expiration Date.
-  - `[Issuer <String>]`: The Issuer value for the cert.
-  - `[IssuerName <String>]`: The Issuer Name for the cert.
+  - `[Content <Byte[]>]`: The Windows Enterprise Code-Signing Certificate in the raw data format. Set to null once certificate has been uploaded and other properties have been populated.
+  - `[ExpirationDateTime <DateTime?>]`: The cert expiration date and time (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+  - `[Issuer <String>]`: The issuer value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+  - `[IssuerName <String>]`: The issuer name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
   - `[Status <String>]`: certificateStatus
-  - `[Subject <String>]`: The Subject Value for the cert.
-  - `[SubjectName <String>]`: The Subject Name for the cert.
-  - `[UploadDateTime <DateTime?>]`: The date time of CodeSigning Cert when it is uploaded.
+  - `[Subject <String>]`: The subject value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+  - `[SubjectName <String>]`: The subject name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+  - `[UploadDateTime <DateTime?>]`: The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 
 IOSLOBAPPPROVISIONINGCONFIGURATIONS <IMicrosoftGraphIosLobAppProvisioningConfiguration[]>: The IOS Lob App Provisioning Configurations.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -2262,6 +2299,43 @@ TARGETEDMANAGEDAPPCONFIGURATIONS <IMicrosoftGraphTargetedManagedAppConfiguration
   - `[CustomSettings <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair
+  - `[Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]`: List of settings contained in this App Configuration policy
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions. This property is read-only.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AccessTypes <String>]`: deviceManagementConfigurationSettingAccessTypes
+      - `[Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>]`: deviceManagementConfigurationSettingApplicability
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Description <String>]`: description of the setting
+        - `[DeviceMode <DeviceManagementConfigurationDeviceMode?>]`: Describes applicability for the mode the device is in
+        - `[Platform <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
+        - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
+      - `[BaseUri <String>]`: Base CSP Path
+      - `[CategoryId <String>]`: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+      - `[Description <String>]`: Description of the item
+      - `[DisplayName <String>]`: Display name of the item
+      - `[HelpText <String>]`: Help text of the item
+      - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at
+      - `[Keywords <String[]>]`: Tokens which to search settings on
+      - `[Name <String>]`: Name of the item
+      - `[Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>]`: deviceManagementConfigurationSettingOccurrence
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[MaxDeviceOccurrence <Int32?>]`: Maximum times setting can be set on device.
+        - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
+      - `[OffsetUri <String>]`: Offset CSP Path from Base
+      - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
+        - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
+      - `[RootDefinitionId <String>]`: Root setting definition if the setting is a child setting.
+      - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
+      - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX
+      - `[Version <String>]`: Item Version
+      - `[Visibility <DeviceManagementConfigurationSettingVisibility?>]`: Supported setting types
+    - `[SettingInstance <IMicrosoftGraphDeviceManagementConfigurationSettingInstance>]`: Setting instance within policy
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[SettingDefinitionId <String>]`: Setting Definition Id
+      - `[SettingInstanceTemplateReference <IMicrosoftGraphDeviceManagementConfigurationSettingInstanceTemplateReference>]`: Setting instance template reference information
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[SettingInstanceTemplateId <String>]`: Setting instance template id
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.
   - `[DisplayName <String>]`: Policy display name.

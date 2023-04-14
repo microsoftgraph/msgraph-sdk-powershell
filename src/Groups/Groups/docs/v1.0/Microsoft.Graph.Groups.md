@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: ff835420-1489-4281-8bc7-9a7bd0cb7771
+Module Guid: a7b304c6-0a02-4887-b401-0dd97eb07684
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -301,6 +301,9 @@ The following entities support extension properties:\n+ user\n+ group\n+ adminis
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
+### [Get-MgGroupPermissionGrantDelta](Get-MgGroupPermissionGrantDelta.md)
+Invoke function delta
+
 ### [Get-MgGroupPermissionGrantMemberGroup](Get-MgGroupPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -408,6 +411,42 @@ Grant users access to a link represented by a [permission][].
 ### [Grant-MgGroupSitePermission](Grant-MgGroupSitePermission.md)
 Grant users access to a link represented by a [permission][].
 
+### [Group-MgGroupGetMemberAs](Group-MgGroupGetMemberAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgGroupGetMemberOfAs](Group-MgGroupGetMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgGroupGetMemberWithLicenseErrorAs](Group-MgGroupGetMemberWithLicenseErrorAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgGroupGetOwnerAs](Group-MgGroupGetOwnerAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgGroupGetTransitiveMemberAs](Group-MgGroupGetTransitiveMemberAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgGroupGetTransitiveMemberOfAs](Group-MgGroupGetTransitiveMemberOfAs.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Group-MgGroupListMemberAs](Group-MgGroupListMemberAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgGroupListMemberOfAs](Group-MgGroupListMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgGroupListMemberWithLicenseErrorAs](Group-MgGroupListMemberWithLicenseErrorAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgGroupListOwnerAs](Group-MgGroupListOwnerAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgGroupListTransitiveMemberAs](Group-MgGroupListTransitiveMemberAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
+### [Group-MgGroupListTransitiveMemberOfAs](Group-MgGroupListTransitiveMemberOfAs.md)
+Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+
 ### [Invoke-MgAcceptGroupCalendarEvent](Invoke-MgAcceptGroupCalendarEvent.md)
 Accept the specified event in a user calendar.
 
@@ -424,6 +463,90 @@ Tentatively accept the specified event in a user calendar.
 If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
+### [Invoke-MgAsGroupGetMemberApplication](Invoke-MgAsGroupGetMemberApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsGroupGetMemberDevice](Invoke-MgAsGroupGetMemberDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Invoke-MgAsGroupGetMemberOfAdministrativeUnit](Invoke-MgAsGroupGetMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsGroupGetMemberUser](Invoke-MgAsGroupGetMemberUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsGroupGetMemberWithLicenseErrorApplication](Invoke-MgAsGroupGetMemberWithLicenseErrorApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsGroupGetMemberWithLicenseErrorDevice](Invoke-MgAsGroupGetMemberWithLicenseErrorDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Invoke-MgAsGroupGetMemberWithLicenseErrorUser](Invoke-MgAsGroupGetMemberWithLicenseErrorUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsGroupGetOwnerApplication](Invoke-MgAsGroupGetOwnerApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsGroupGetOwnerDevice](Invoke-MgAsGroupGetOwnerDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Invoke-MgAsGroupGetOwnerUser](Invoke-MgAsGroupGetOwnerUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsGroupGetTransitiveMemberApplication](Invoke-MgAsGroupGetTransitiveMemberApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Invoke-MgAsGroupGetTransitiveMemberDevice](Invoke-MgAsGroupGetTransitiveMemberDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Invoke-MgAsGroupGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsGroupGetTransitiveMemberOfAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Invoke-MgAsGroupGetTransitiveMemberUser](Invoke-MgAsGroupGetTransitiveMemberUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Invoke-MgAsGroupListMemberApplication](Invoke-MgAsGroupListMemberApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListMemberDevice](Invoke-MgAsGroupListMemberDevice.md)
+Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListMemberOfAdministrativeUnit](Invoke-MgAsGroupListMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListMemberUser](Invoke-MgAsGroupListMemberUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListMemberWithLicenseErrorApplication](Invoke-MgAsGroupListMemberWithLicenseErrorApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListMemberWithLicenseErrorDevice](Invoke-MgAsGroupListMemberWithLicenseErrorDevice.md)
+Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListMemberWithLicenseErrorUser](Invoke-MgAsGroupListMemberWithLicenseErrorUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListOwnerApplication](Invoke-MgAsGroupListOwnerApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListOwnerDevice](Invoke-MgAsGroupListOwnerDevice.md)
+Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListOwnerUser](Invoke-MgAsGroupListOwnerUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListTransitiveMemberApplication](Invoke-MgAsGroupListTransitiveMemberApplication.md)
+Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListTransitiveMemberDevice](Invoke-MgAsGroupListTransitiveMemberDevice.md)
+Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsGroupListTransitiveMemberOfAdministrativeUnit.md)
+Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgAsGroupListTransitiveMemberUser](Invoke-MgAsGroupListTransitiveMemberUser.md)
+Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+
 ### [Invoke-MgCalendarGroupCalendar](Invoke-MgCalendarGroupCalendar.md)
 Invoke function allowedCalendarSharingRoles
 
@@ -438,6 +561,30 @@ Check out a **driveItem** resource to prevent others from editing the document, 
 
 ### [Invoke-MgCheckoutGroupDriveRoot](Invoke-MgCheckoutGroupDriveRoot.md)
 Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+
+### [Invoke-MgContactGroupGetMemberAsOrg](Invoke-MgContactGroupGetMemberAsOrg.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Invoke-MgContactGroupGetMemberWithLicenseErrorAsOrg](Invoke-MgContactGroupGetMemberWithLicenseErrorAsOrg.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Invoke-MgContactGroupGetOwnerAsOrg](Invoke-MgContactGroupGetOwnerAsOrg.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Invoke-MgContactGroupGetTransitiveMemberAsOrg](Invoke-MgContactGroupGetTransitiveMemberAsOrg.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Invoke-MgContactGroupListMemberAsOrg](Invoke-MgContactGroupListMemberAsOrg.md)
+Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgContactGroupListMemberWithLicenseErrorAsOrg](Invoke-MgContactGroupListMemberWithLicenseErrorAsOrg.md)
+Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgContactGroupListOwnerAsOrg](Invoke-MgContactGroupListOwnerAsOrg.md)
+Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgContactGroupListTransitiveMemberAsOrg](Invoke-MgContactGroupListTransitiveMemberAsOrg.md)
+Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
 
 ### [Invoke-MgDeclineGroupCalendarEvent](Invoke-MgDeclineGroupCalendarEvent.md)
 Decline invitation to the specified event in a user calendar.
@@ -529,30 +676,60 @@ Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ### [Invoke-MgReplyGroupConversationThread](Invoke-MgReplyGroupConversationThread.md)
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgReplyGroupConversationThreadPostInReplyTo](Invoke-MgReplyGroupConversationThreadPostInReplyTo.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgReplyGroupThreadPostInReplyTo](Invoke-MgReplyGroupThreadPostInReplyTo.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
+
+### [Invoke-MgServiceGroupGetMember](Invoke-MgServiceGroupGetMember.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceGroupGetMemberWithLicenseError](Invoke-MgServiceGroupGetMemberWithLicenseError.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceGroupGetOwner](Invoke-MgServiceGroupGetOwner.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceGroupGetTransitiveMember](Invoke-MgServiceGroupGetTransitiveMember.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Invoke-MgServiceGroupListMember](Invoke-MgServiceGroupListMember.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceGroupListMemberWithLicenseError](Invoke-MgServiceGroupListMemberWithLicenseError.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceGroupListOwner](Invoke-MgServiceGroupListOwner.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+
+### [Invoke-MgServiceGroupListTransitiveMember](Invoke-MgServiceGroupListTransitiveMember.md)
+Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
 
 ### [Invoke-MgSnoozeGroupCalendarEventReminder](Invoke-MgSnoozeGroupCalendarEventReminder.md)
 Postpone a reminder for an event in a user calendar until a new time.
@@ -803,6 +980,9 @@ Delete ref of navigation property owners for groups
 
 ### [Remove-MgGroupPermissionGrant](Remove-MgGroupPermissionGrant.md)
 Delete navigation property permissionGrants for groups
+
+### [Remove-MgGroupPhoto](Remove-MgGroupPhoto.md)
+Delete navigation property photo for groups
 
 ### [Remove-MgGroupRejectedSenderByRef](Remove-MgGroupRejectedSenderByRef.md)
 Delete ref of navigation property rejectedSenders for groups

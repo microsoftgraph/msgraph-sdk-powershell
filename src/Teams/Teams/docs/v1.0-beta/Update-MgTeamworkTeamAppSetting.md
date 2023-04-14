@@ -29,7 +29,7 @@ Update the properties of a teamsAppSettings object.
 
 ## EXAMPLES
 
-### Example 1: Using the Update-MgTeamworkTeamAppSetting Cmdlet
+### Example 1: Enable installation of apps that require resource-specific consent in chats/meetings
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -43,7 +43,6 @@ This example shows how to use the Update-MgTeamworkTeamAppSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Allow Teams users to request admins for access to certain Teams Apps
-
 ```powershell
 Import-Module Microsoft.Graph.Teams
 $params = @{
@@ -75,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowUserRequestsForAppAccess
-.
+Indicates whether Teams users are allowed to request admins access to certain Teams apps.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -207,7 +206,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTeamsAppSettings>: teamsAppSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AllowUserRequestsForAppAccess <Boolean?>]`: 
+  - `[AllowUserRequestsForAppAccess <Boolean?>]`: Indicates whether Teams users are allowed to request admins access to certain Teams apps.
   - `[IsChatResourceSpecificConsentEnabled <Boolean?>]`: Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
 
 ## RELATED LINKS

@@ -12,13 +12,13 @@ Update multiple alerts in one request instead of multiple requests.
 
 ## SYNTAX
 
-### UpdateExpanded2 (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgSecurityAlertMultiple [-AdditionalProperties <Hashtable>] [-Value <IMicrosoftGraphAlert[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update2
+### Update1
 ```
 Update-MgSecurityAlertMultiple
  -BodyParameter <IPaths1Ehzqn7SecurityAlertsMicrosoftGraphUpdatealertsPostRequestbodyContentApplicationJsonSchema>
@@ -71,7 +71,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded2
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False
@@ -87,7 +87,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Ehzqn7SecurityAlertsMicrosoftGraphUpdatealertsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Update2
+Parameter Sets: Update1
 Aliases:
 
 Required: True
@@ -103,7 +103,7 @@ To construct, please use Get-Help -Online and see NOTES section for VALUE proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert[]
-Parameter Sets: UpdateExpanded2
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False

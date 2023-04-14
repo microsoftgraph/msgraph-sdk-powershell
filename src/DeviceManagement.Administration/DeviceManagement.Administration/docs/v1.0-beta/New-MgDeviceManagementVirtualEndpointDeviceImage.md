@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The image's display name.
+The display name of the image.
 
 ```yaml
 Type: System.String
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ### -LastModifiedDateTime
 The data and time that the image was last modified.
 The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
-For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -147,8 +147,8 @@ Accept wildcard characters: False
 ```
 
 ### -OperatingSystem
-The image's operating system.
-For example: Windows 10 Enterprise.
+The operating system of the image.
+For example, Windows 10 Enterprise.
 
 ```yaml
 Type: System.String
@@ -163,8 +163,8 @@ Accept wildcard characters: False
 ```
 
 ### -OSBuildNumber
-The image's OS build version.
-For example: 1909.
+The OS build version of the image.
+For example, 1909.
 
 ```yaml
 Type: System.String
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ### -SourceImageResourceId
 The ID of the source image resource on Azure.
-Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.
+Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
 
 ```yaml
 Type: System.String
@@ -241,7 +241,7 @@ Accept wildcard characters: False
 
 ### -Version
 The image version.
-For example: 0.0.1, 1.5.13.
+For example, 0.0.1 and 1.5.13.
 
 ```yaml
 Type: System.String
@@ -309,16 +309,16 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphCloudPcDeviceImage>: cloudPcDeviceImage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[DisplayName <String>]`: The image's display name.
+  - `[DisplayName <String>]`: The display name of the image.
   - `[ExpirationDate <DateTime?>]`: The date the image became unavailable.
-  - `[LastModifiedDateTime <DateTime?>]`: The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-  - `[OSBuildNumber <String>]`: The image's OS build version. For example: 1909.
+  - `[LastModifiedDateTime <DateTime?>]`: The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+  - `[OSBuildNumber <String>]`: The OS build version of the image. For example, 1909.
   - `[OSStatus <String>]`: cloudPcDeviceImageOsStatus
-  - `[OperatingSystem <String>]`: The image's operating system. For example: Windows 10 Enterprise.
-  - `[SourceImageResourceId <String>]`: The ID of the source image resource on Azure. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.
+  - `[OperatingSystem <String>]`: The operating system of the image. For example, Windows 10 Enterprise.
+  - `[SourceImageResourceId <String>]`: The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
   - `[Status <String>]`: cloudPcDeviceImageStatus
   - `[StatusDetails <String>]`: cloudPcDeviceImageStatusDetails
-  - `[Version <String>]`: The image version. For example: 0.0.1, 1.5.13.
+  - `[Version <String>]`: The image version. For example, 0.0.1 and 1.5.13.
 
 ## RELATED LINKS
 

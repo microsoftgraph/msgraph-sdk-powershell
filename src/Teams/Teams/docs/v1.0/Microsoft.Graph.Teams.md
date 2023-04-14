@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: ec060e8a-a328-428d-8349-7db0b54b021f
+Module Guid: cb4f7f62-38b6-4c96-8505-7f901aaf4bbd
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -27,6 +27,10 @@ The response provides details about which memberships could and couldn't be crea
 Add multiple members in a single request to a team.
 The response provides details about which memberships could and couldn't be created.
 
+### [Add-MgTeamworkDeletedTeamChannelMember](Add-MgTeamworkDeletedTeamChannelMember.md)
+Add multiple members in a single request to a team.
+The response provides details about which memberships could and couldn't be created.
+
 ### [Complete-MgTeamChannelMigration](Complete-MgTeamChannelMigration.md)
 Complete the message migration process by removing `migration mode` from a channel in a team.
 `Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process.
@@ -40,6 +44,12 @@ After a **completeMigration** request is made, you cannot import additional mess
 You can add members to the team after the request returns a successful response.
 
 ### [Complete-MgTeamPrimaryChannelMigration](Complete-MgTeamPrimaryChannelMigration.md)
+Complete the message migration process by removing `migration mode` from a channel in a team.
+`Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process.
+After a **completeMigration** request is made, you cannot import additional messages into the team.
+You can add members to the team after the request returns a successful response.
+
+### [Complete-MgTeamworkDeletedTeamChannelMigration](Complete-MgTeamworkDeletedTeamChannelMigration.md)
 Complete the message migration process by removing `migration mode` from a channel in a team.
 `Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process.
 After a **completeMigration** request is made, you cannot import additional messages into the team.
@@ -280,7 +290,7 @@ The template this team was created from.
 See available templates.
 
 ### [Get-MgTeam](Get-MgTeam.md)
-Retrieve the properties and relationships of the specified team.
+Get entity from teams by key
 
 ### [Get-MgTeamChannel](Get-MgTeamChannel.md)
 The collection of channels and messages associated with the team.
@@ -450,6 +460,59 @@ See available templates.
 ### [Get-MgTeamwork](Get-MgTeamwork.md)
 Get teamwork
 
+### [Get-MgTeamworkDeletedTeam](Get-MgTeamworkDeletedTeam.md)
+The deleted team.
+
+### [Get-MgTeamworkDeletedTeamChannel](Get-MgTeamworkDeletedTeamChannel.md)
+The channels that are either shared with this deleted team or created in this deleted team.
+
+### [Get-MgTeamworkDeletedTeamChannelFileFolder](Get-MgTeamworkDeletedTeamChannelFileFolder.md)
+Get the metadata for the location where the files of a channel are stored.
+
+### [Get-MgTeamworkDeletedTeamChannelFileFolderContent](Get-MgTeamworkDeletedTeamChannelFileFolderContent.md)
+The content stream, if the item represents a file.
+
+### [Get-MgTeamworkDeletedTeamChannelMember](Get-MgTeamworkDeletedTeamChannelMember.md)
+A collection of membership records associated with the channel.
+
+### [Get-MgTeamworkDeletedTeamChannelMessage](Get-MgTeamworkDeletedTeamChannelMessage.md)
+A collection of all the messages in the channel.
+A navigation property.
+Nullable.
+
+### [Get-MgTeamworkDeletedTeamChannelMessageDelta](Get-MgTeamworkDeletedTeamChannelMessageDelta.md)
+Invoke function delta
+
+### [Get-MgTeamworkDeletedTeamChannelMessageHostedContent](Get-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+
+### [Get-MgTeamworkDeletedTeamChannelMessageReply](Get-MgTeamworkDeletedTeamChannelMessageReply.md)
+Replies for a specified message.
+Supports $expand for channel messages.
+
+### [Get-MgTeamworkDeletedTeamChannelMessageReplyDelta](Get-MgTeamworkDeletedTeamChannelMessageReplyDelta.md)
+Invoke function delta
+
+### [Get-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](Get-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+
+### [Get-MgTeamworkDeletedTeamChannelSharedWithTeam](Get-MgTeamworkDeletedTeamChannelSharedWithTeam.md)
+A collection of teams with which a channel is shared.
+
+### [Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember](Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember.md)
+A collection of team members who have access to the shared channel.
+
+### [Get-MgTeamworkDeletedTeamChannelTab](Get-MgTeamworkDeletedTeamChannelTab.md)
+A collection of all the tabs in the channel.
+A navigation property.
+
+### [Get-MgTeamworkDeletedTeamChannelTabTeamApp](Get-MgTeamworkDeletedTeamChannelTabTeamApp.md)
+The application that is linked to the tab.
+This cannot be changed after tab creation.
+
+### [Get-MgTeamworkDeletedTeamMessage](Get-MgTeamworkDeletedTeamMessage.md)
+Invoke function getAllMessages
+
 ### [Get-MgTeamworkWorkforceIntegration](Get-MgTeamworkWorkforceIntegration.md)
 Get workforceIntegrations from teamwork
 
@@ -536,6 +599,9 @@ Invoke function doesUserHaveAccess
 ### [Invoke-MgHaveTeamPrimaryChannel](Invoke-MgHaveTeamPrimaryChannel.md)
 Invoke function doesUserHaveAccess
 
+### [Invoke-MgHaveTeamworkDeletedTeamChannel](Invoke-MgHaveTeamworkDeletedTeamChannel.md)
+Invoke function doesUserHaveAccess
+
 ### [Invoke-MgMarkChatReadForUser](Invoke-MgMarkChatReadForUser.md)
 Mark a chat as read for a user.
 
@@ -564,6 +630,12 @@ Invoke action softDelete
 Invoke action softDelete
 
 ### [Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete](Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftTeamworkDeletedTeamChannelMessageDelete](Invoke-MgSoftTeamworkDeletedTeamChannelMessageDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftTeamworkDeletedTeamChannelMessageReplyDelete](Invoke-MgSoftTeamworkDeletedTeamChannelMessageReplyDelete.md)
 Invoke action softDelete
 
 ### [Invoke-MgUnarchiveTeam](Invoke-MgUnarchiveTeam.md)
@@ -620,6 +692,7 @@ If you're creating a private channel, you can add a maximum of 200 members.
 
 ### [New-MgGroupTeamChannelMember](New-MgGroupTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
 Send a new chatMessage in the specified channel.
@@ -650,6 +723,7 @@ Create new navigation property to operations for groups
 
 ### [New-MgGroupTeamPrimaryChannelMember](New-MgGroupTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
 Send a new chatMessage in the specified channel.
@@ -720,6 +794,7 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### [New-MgTeamChannelMember](New-MgTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
 Send a new chatMessage in the specified channel.
@@ -756,6 +831,7 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### [New-MgTeamPrimaryChannelMember](New-MgTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
 Send a new chatMessage in the specified channel.
@@ -808,6 +884,40 @@ Create a standard tag for members in a team.
 
 ### [New-MgTeamTagMember](New-MgTeamTagMember.md)
 Create a new teamworkTagMember object in a team.
+
+### [New-MgTeamworkDeletedTeam](New-MgTeamworkDeletedTeam.md)
+Create new navigation property to deletedTeams for teamwork
+
+### [New-MgTeamworkDeletedTeamChannel](New-MgTeamworkDeletedTeamChannel.md)
+Create new navigation property to channels for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelEmail](New-MgTeamworkDeletedTeamChannelEmail.md)
+Provision an email address for a channel.
+Microsoft Teams doesn't automatically provision an email address for a **channel** by default.
+To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one.
+To remove the email address of a **channel**, use the removeEmail method.
+
+### [New-MgTeamworkDeletedTeamChannelMember](New-MgTeamworkDeletedTeamChannelMember.md)
+Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+
+### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
+Send a new chatMessage in the specified channel.
+
+### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Create new navigation property to hostedContents for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelMessageReply](New-MgTeamworkDeletedTeamChannelMessageReply.md)
+Send a new reply to a chatMessage in a specified channel.
+
+### [New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Create new navigation property to hostedContents for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelSharedWithTeam](New-MgTeamworkDeletedTeamChannelSharedWithTeam.md)
+Create new navigation property to sharedWithTeams for teamwork
+
+### [New-MgTeamworkDeletedTeamChannelTab](New-MgTeamworkDeletedTeamChannelTab.md)
+Create new navigation property to tabs for teamwork
 
 ### [New-MgTeamworkWorkforceIntegration](New-MgTeamworkWorkforceIntegration.md)
 Create a new workforceIntegration object.\nYou can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
@@ -1065,6 +1175,37 @@ Delete navigation property tags for teams
 ### [Remove-MgTeamTagMember](Remove-MgTeamTagMember.md)
 Delete navigation property members for teams
 
+### [Remove-MgTeamworkDeletedTeam](Remove-MgTeamworkDeletedTeam.md)
+Delete navigation property deletedTeams for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannel](Remove-MgTeamworkDeletedTeamChannel.md)
+Delete navigation property channels for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelEmail](Remove-MgTeamworkDeletedTeamChannelEmail.md)
+Remove the email address of a channel.
+You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
+
+### [Remove-MgTeamworkDeletedTeamChannelMember](Remove-MgTeamworkDeletedTeamChannelMember.md)
+Delete navigation property members for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelMessage](Remove-MgTeamworkDeletedTeamChannelMessage.md)
+Delete navigation property messages for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelMessageHostedContent](Remove-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Delete navigation property hostedContents for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelMessageReply](Remove-MgTeamworkDeletedTeamChannelMessageReply.md)
+Delete navigation property replies for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](Remove-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Delete navigation property hostedContents for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelSharedWithTeam](Remove-MgTeamworkDeletedTeamChannelSharedWithTeam.md)
+Delete navigation property sharedWithTeams for teamwork
+
+### [Remove-MgTeamworkDeletedTeamChannelTab](Remove-MgTeamworkDeletedTeamChannelTab.md)
+Delete navigation property tabs for teamwork
+
 ### [Remove-MgTeamworkWorkforceIntegration](Remove-MgTeamworkWorkforceIntegration.md)
 Delete navigation property workforceIntegrations for teamwork
 
@@ -1118,8 +1259,23 @@ For more details about sending notifications and the requirements for doing so, 
 ### [Send-MgTeamworkActivityNotificationToRecipient](Send-MgTeamworkActivityNotificationToRecipient.md)
 Invoke action sendActivityNotificationToRecipients
 
+### [Set-MgChatMessageHostedContent](Set-MgChatMessageHostedContent.md)
+Update media content for the navigation property hostedContents in chats
+
+### [Set-MgChatMessageReplyHostedContent](Set-MgChatMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in chats
+
+### [Set-MgGroupTeam](Set-MgGroupTeam.md)
+Update the navigation property team in groups
+
 ### [Set-MgGroupTeamChannelFileFolderContent](Set-MgGroupTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
+
+### [Set-MgGroupTeamChannelMessageHostedContent](Set-MgGroupTeamChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in groups
+
+### [Set-MgGroupTeamChannelMessageReplyHostedContent](Set-MgGroupTeamChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in groups
 
 ### [Set-MgGroupTeamPhotoContent](Set-MgGroupTeamPhotoContent.md)
 Update media content for the navigation property photo in groups
@@ -1127,11 +1283,23 @@ Update media content for the navigation property photo in groups
 ### [Set-MgGroupTeamPrimaryChannelFileFolderContent](Set-MgGroupTeamPrimaryChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgGroupTeamPrimaryChannelMessageHostedContent](Set-MgGroupTeamPrimaryChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in groups
+
+### [Set-MgGroupTeamPrimaryChannelMessageReplyHostedContent](Set-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in groups
+
 ### [Set-MgGroupTeamSchedule](Set-MgGroupTeamSchedule.md)
 Update the navigation property schedule in groups
 
 ### [Set-MgTeamChannelFileFolderContent](Set-MgTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
+
+### [Set-MgTeamChannelMessageHostedContent](Set-MgTeamChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in teams
+
+### [Set-MgTeamChannelMessageReplyHostedContent](Set-MgTeamChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in teams
 
 ### [Set-MgTeamPhotoContent](Set-MgTeamPhotoContent.md)
 Update media content for the navigation property photo in teams
@@ -1139,8 +1307,29 @@ Update media content for the navigation property photo in teams
 ### [Set-MgTeamPrimaryChannelFileFolderContent](Set-MgTeamPrimaryChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgTeamPrimaryChannelMessageHostedContent](Set-MgTeamPrimaryChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in teams
+
+### [Set-MgTeamPrimaryChannelMessageReplyHostedContent](Set-MgTeamPrimaryChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in teams
+
 ### [Set-MgTeamSchedule](Set-MgTeamSchedule.md)
 Update the navigation property schedule in teams
+
+### [Set-MgTeamworkDeletedTeamChannelFileFolderContent](Set-MgTeamworkDeletedTeamChannelFileFolderContent.md)
+The content stream, if the item represents a file.
+
+### [Set-MgTeamworkDeletedTeamChannelMessageHostedContent](Set-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Update media content for the navigation property hostedContents in teamwork
+
+### [Set-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](Set-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in teamwork
+
+### [Set-MgUserChatMessageHostedContent](Set-MgUserChatMessageHostedContent.md)
+Update media content for the navigation property hostedContents in users
+
+### [Set-MgUserChatMessageReplyHostedContent](Set-MgUserChatMessageReplyHostedContent.md)
+Update media content for the navigation property hostedContents in users
 
 ### [Undo-MgChatMessageReplySoftDelete](Undo-MgChatMessageReplySoftDelete.md)
 Invoke action undoSoftDelete
@@ -1158,6 +1347,12 @@ Invoke action undoSoftDelete
 Invoke action undoSoftDelete
 
 ### [Undo-MgTeamPrimaryChannelMessageSoftDelete](Undo-MgTeamPrimaryChannelMessageSoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete](Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete](Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete.md)
 Invoke action undoSoftDelete
 
 ### [Update-MgAppCatalogTeamApp](Update-MgAppCatalogTeamApp.md)
@@ -1195,12 +1390,6 @@ Update the navigation property pinnedMessages in chats
 
 ### [Update-MgChatTab](Update-MgChatTab.md)
 Update the navigation property tabs in chats
-
-### [Update-MgGroupTeam](Update-MgGroupTeam.md)
-Create a new team under a group.
-In order to create a team, the group must have a least one owner.
-If the group was created less than 15 minutes ago, it's possible for the Create team call to fail with a 404 error code due to replication delays.
-\nThe recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
 
 ### [Update-MgGroupTeamChannel](Update-MgGroupTeamChannel.md)
 Update the navigation property channels in groups
@@ -1384,6 +1573,33 @@ Update the navigation property members in teams
 
 ### [Update-MgTeamwork](Update-MgTeamwork.md)
 Update teamwork
+
+### [Update-MgTeamworkDeletedTeam](Update-MgTeamworkDeletedTeam.md)
+Update the navigation property deletedTeams in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannel](Update-MgTeamworkDeletedTeamChannel.md)
+Update the navigation property channels in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMember](Update-MgTeamworkDeletedTeamChannelMember.md)
+Update the navigation property members in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMessage](Update-MgTeamworkDeletedTeamChannelMessage.md)
+Update the navigation property messages in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMessageHostedContent](Update-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
+Update the navigation property hostedContents in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMessageReply](Update-MgTeamworkDeletedTeamChannelMessageReply.md)
+Update the navigation property replies in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](Update-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
+Update the navigation property hostedContents in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelSharedWithTeam](Update-MgTeamworkDeletedTeamChannelSharedWithTeam.md)
+Update the navigation property sharedWithTeams in teamwork
+
+### [Update-MgTeamworkDeletedTeamChannelTab](Update-MgTeamworkDeletedTeamChannelTab.md)
+Update the navigation property tabs in teamwork
 
 ### [Update-MgTeamworkWorkforceIntegration](Update-MgTeamworkWorkforceIntegration.md)
 Update the navigation property workforceIntegrations in teamwork

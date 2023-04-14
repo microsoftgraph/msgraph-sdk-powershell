@@ -64,7 +64,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name displayed in the address book for teh user at the time when the sharing record was created.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -79,7 +80,8 @@ Accept wildcard characters: False
 ```
 
 ### -HomeTenantId
-.
+The home tenant id of the external user.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -94,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-.
+The object id of the external user.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -109,7 +112,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-.
+The user principal name (UPN) of the external user.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -176,10 +180,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphInboundSharedUserProfile>: inboundSharedUserProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: 
-  - `[HomeTenantId <String>]`: 
-  - `[UserId <String>]`: 
-  - `[UserPrincipalName <String>]`: 
+  - `[DisplayName <String>]`: The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
+  - `[HomeTenantId <String>]`: The home tenant id of the external user. Read-only.
+  - `[UserId <String>]`: The object id of the external user. Read-only.
+  - `[UserPrincipalName <String>]`: The user principal name (UPN) of the external user. Read-only.
 
 ## RELATED LINKS
 

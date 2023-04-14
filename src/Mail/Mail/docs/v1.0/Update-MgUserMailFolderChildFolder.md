@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -MailFolderId
-key: id of mailFolder
+The unique identifier of mailFolder
 
 ```yaml
 Type: System.String
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -MailFolderId1
-key: id of mailFolder
+The unique identifier of mailFolder
 
 ```yaml
 Type: System.String
@@ -340,7 +340,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -673,18 +673,18 @@ CHILDFOLDERS <IMicrosoftGraphMailFolder[]>: The collection of child folders in t
   - `[UnreadItemCount <Int32?>]`: The number of items in the mailFolder marked as unread.
 
 INPUTOBJECT <IMailIdentity>: Identity Parameter
-  - `[AttachmentId <String>]`: key: id of attachment
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[InferenceClassificationOverrideId <String>]`: key: id of inferenceClassificationOverride
-  - `[MailFolderId <String>]`: key: id of mailFolder
-  - `[MailFolderId1 <String>]`: key: id of mailFolder
-  - `[MentionId <String>]`: key: id of mention
-  - `[MessageId <String>]`: key: id of message
-  - `[MessageRuleId <String>]`: key: id of messageRule
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[UserConfigurationId <String>]`: key: id of userConfiguration
-  - `[UserId <String>]`: key: id of user
+  - `[AttachmentId <String>]`: The unique identifier of attachment
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[InferenceClassificationOverrideId <String>]`: The unique identifier of inferenceClassificationOverride
+  - `[MailFolderId <String>]`: The unique identifier of mailFolder
+  - `[MailFolderId1 <String>]`: The unique identifier of mailFolder
+  - `[MentionId <String>]`: The unique identifier of mention
+  - `[MessageId <String>]`: The unique identifier of message
+  - `[MessageRuleId <String>]`: The unique identifier of messageRule
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[UserConfigurationId <String>]`: The unique identifier of userConfiguration
+  - `[UserId <String>]`: The unique identifier of user
 
 MESSAGERULES <IMicrosoftGraphMessageRule[]>: The collection of rules that apply to the user's Inbox folder.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

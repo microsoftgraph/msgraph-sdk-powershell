@@ -15,14 +15,14 @@ Create new navigation property to onPremisesSynchronization for directory
 ### CreateExpanded (Default)
 ```
 New-MgDirectoryOnPremisSynchronization [-AdditionalProperties <Hashtable>]
- [-Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]
+ [-Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration1>]
  [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryOnPremisSynchronization -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization>
+New-MgDirectoryOnPremisSynchronization -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -53,7 +53,7 @@ onPremisesDirectorySynchronization
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization1
 Parameter Sets: Create
 Aliases:
 
@@ -69,7 +69,7 @@ onPremisesDirectorySynchronizationConfiguration
 To construct, please use Get-Help -Online and see NOTES section for CONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -148,11 +148,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization1
 
 ## NOTES
 
@@ -163,10 +163,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphOnPremisesDirectorySynchronization>: onPremisesDirectorySynchronization
+BODYPARAMETER <IMicrosoftGraphOnPremisesDirectorySynchronization1>: onPremisesDirectorySynchronization
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]`: onPremisesDirectorySynchronizationConfiguration
+  - `[Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration1>]`: onPremisesDirectorySynchronizationConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AccidentalDeletionPrevention <IMicrosoftGraphOnPremisesAccidentalDeletionPrevention>]`: onPremisesAccidentalDeletionPrevention
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -196,7 +196,7 @@ BODYPARAMETER <IMicrosoftGraphOnPremisesDirectorySynchronization>: onPremisesDir
     - `[UserForcePasswordChangeOnLogonEnabled <Boolean?>]`: Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
     - `[UserWritebackEnabled <Boolean?>]`: Used to indicate that user writeback is enabled.
 
-CONFIGURATION <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>: onPremisesDirectorySynchronizationConfiguration
+CONFIGURATION <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration1>: onPremisesDirectorySynchronizationConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AccidentalDeletionPrevention <IMicrosoftGraphOnPremisesAccidentalDeletionPrevention>]`: onPremisesAccidentalDeletionPrevention
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

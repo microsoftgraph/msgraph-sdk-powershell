@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -DirectoryRoleId
-key: id of directoryRole
+The unique identifier of directoryRole
 
 ```yaml
 Type: System.String
