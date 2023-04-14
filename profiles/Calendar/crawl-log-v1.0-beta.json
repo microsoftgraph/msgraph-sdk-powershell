@@ -913,6 +913,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Calendar.yml"
     },
+    "/places/{place-id}/microsoft.graph.room": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Calendar.yml"
+    },
+    "/places/microsoft.graph.room": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Calendar.yml"
+    },
     "/users/{user-id}/calendar": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Calendar.yml"

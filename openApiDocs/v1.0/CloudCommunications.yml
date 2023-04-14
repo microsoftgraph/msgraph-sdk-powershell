@@ -23,9 +23,8 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - calls
                 - callRecords
+                - calls
                 - onlineMeetings
                 - presences
               type: string
@@ -40,8 +39,8 @@ paths:
             items:
               enum:
                 - '*'
-                - calls
                 - callRecords
+                - calls
                 - onlineMeetings
                 - presences
               type: string
@@ -2844,10 +2843,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
@@ -3035,6 +3034,8 @@ paths:
                 - subject desc
                 - videoTeleconferenceId
                 - videoTeleconferenceId desc
+                - watermarkProtection
+                - watermarkProtection desc
               type: string
         - name: $select
           in: query
@@ -3070,6 +3071,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - attendanceReports
               type: string
         - name: $expand
@@ -3165,6 +3167,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - attendanceReports
               type: string
         - name: $expand
@@ -4309,6 +4312,8 @@ paths:
                 - subject desc
                 - videoTeleconferenceId
                 - videoTeleconferenceId desc
+                - watermarkProtection
+                - watermarkProtection desc
               type: string
         - name: $select
           in: query
@@ -4344,6 +4349,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - attendanceReports
               type: string
         - name: $expand
@@ -4460,6 +4466,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - attendanceReports
               type: string
         - name: $expand
@@ -5352,33 +5359,31 @@ paths:
 components:
   schemas:
     microsoft.graph.cloudCommunications:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: cloudCommunications
-          type: object
-          properties:
-            calls:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.call'
-              x-ms-navigationProperty: true
-            callRecords:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
-              x-ms-navigationProperty: true
-            onlineMeetings:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-              x-ms-navigationProperty: true
-            presences:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.presence'
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
+      title: cloudCommunications
+      type: object
+      properties:
+        callRecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+          x-ms-navigationProperty: true
+        calls:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.call'
+          x-ms-navigationProperty: true
+        onlineMeetings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+          x-ms-navigationProperty: true
+        presences:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.presence'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
     microsoft.graph.callRecords.callRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5989,6 +5994,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             attendanceReports:
               type: array
               items:
@@ -6589,6 +6596,20 @@ components:
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.attendanceInterval:

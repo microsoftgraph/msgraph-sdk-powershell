@@ -8705,6 +8705,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   /education/schools:
     get:
@@ -14942,6 +14948,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   /education/users/microsoft.graph.delta():
     get:
@@ -18620,6 +18632,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
               description: The results of every partner agent's installation status on Cloud PC.
+            powerState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -18851,7 +18865,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity''s tags property.Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -23133,6 +23147,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -23685,6 +23701,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcPowerState:
+      title: cloudPcPowerState
+      enum:
+        - running
+        - poweredOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -23713,6 +23736,8 @@ components:
         - restoring
         - pendingProvision
         - unknownFutureValue
+        - movingRegion
+        - resizePendingLicense
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -28094,6 +28119,11 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            metadataContent:
+              type: string
+              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -30544,6 +30574,17 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30576,6 +30617,8 @@ components:
           properties:
             allowedInstallationScopes:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             azureADAppId:
               type: string
               description: The WebApplicationInfo.Id from the Teams app manifest.
@@ -31827,7 +31870,7 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         decisionHistoriesForReviewersEnabled:
           type: boolean
           description: 'Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).'
@@ -31838,7 +31881,7 @@ components:
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+          description: 'Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -33046,23 +33089,28 @@ components:
       properties:
         nextInSeriesTaskId:
           type: string
+          description: 'The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.'
           nullable: true
         occurrenceId:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
           format: int32
         previousInSeriesTaskId:
           type: string
+          description: The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
           nullable: true
         recurrenceStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         schedule:
           $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
         seriesId:
           type: string
+          description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
@@ -35058,6 +35106,18 @@ components:
         - moderators
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          description: The name of the resource-specific permission.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -35074,6 +35134,14 @@ components:
         - personal
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -36585,6 +36653,7 @@ components:
         nextOccurrenceDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The next date for this schedule. When a new task is instantiated to continue the recurrence series, this date is used for the dueDateTime of the new plannerTask. Auto-generated by the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         pattern:
@@ -36592,6 +36661,7 @@ components:
         patternStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date for the recurrence pattern. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -37043,15 +37113,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -37364,6 +37434,13 @@ components:
       enum:
         - pin
         - reuse
+      type: string
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
       type: string
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
@@ -38805,11 +38882,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
           nullable: true
         value:
           type: integer
-          description: Value.
+          description: Total number of synchronized objects.
           format: int64
       additionalProperties:
         type: object
@@ -39322,15 +39399,15 @@ components:
       properties:
         code:
           type: string
-          description: The error code.
+          description: 'The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.'
           nullable: true
         message:
           type: string
-          description: The error message.
+          description: 'The error message. For example, Policy permitting auto-redemption of invitations not configured.'
           nullable: true
         tenantActionable:
           type: boolean
-          description: The action to take to resolve the error.
+          description: 'The action to take to resolve the error. For example, false.'
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:

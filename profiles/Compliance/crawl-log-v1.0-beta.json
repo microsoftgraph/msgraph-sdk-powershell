@@ -177,6 +177,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Compliance.yml"
     },
+    "/compliance/ediscovery/cases/{case-id}/operations/{caseOperation-id}/microsoft.graph.ediscovery.caseExportOperation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Compliance.yml"
+    },
+    "/compliance/ediscovery/cases/{case-id}/operations/microsoft.graph.ediscovery.caseExportOperation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Compliance.yml"
+    },
     "/compliance/ediscovery/cases/{case-id}/reviewSets": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Compliance.yml"

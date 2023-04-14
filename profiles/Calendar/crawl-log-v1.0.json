@@ -385,6 +385,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Calendar.yml"
     },
+    "/places/{place-id}/microsoft.graph.room": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Calendar.yml"
+    },
+    "/places/microsoft.graph.room": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Calendar.yml"
+    },
     "/users/{user-id}/calendar": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Calendar.yml"

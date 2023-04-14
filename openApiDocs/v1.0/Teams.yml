@@ -1814,11 +1814,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -2268,6 +2268,95 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - chats.chatMessage
+      summary: Get media content for the navigation property hostedContents from chats
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: chats.messages_GetHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - chats.chatMessage
+      summary: Update media content for the navigation property hostedContents in chats
+      operationId: chats.messages_SetHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -3006,6 +3095,111 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - chats.chatMessage
+      summary: Get media content for the navigation property hostedContents from chats
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: chats.messages.replies_GetHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - chats.chatMessage
+      summary: Update media content for the navigation property hostedContents in chats
+      operationId: chats.messages.replies_SetHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -4418,15 +4612,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - groups.team
-      summary: Create team from group
-      description: "Create a new team under a group. In order to create a team, the group must have a least one owner. If the group was created less than 15 minutes ago, it's possible for the Create team call to fail with a 404 error code due to replication delays. \nThe recommended pattern is to retry the Create team call three times, with a 10 second delay between calls."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-teams?view=graph-rest-1.0
-      operationId: groups_UpdateTeam
+      summary: Update the navigation property team in groups
+      operationId: groups_SetTeam
       parameters:
         - name: group-id
           in: path
@@ -5218,11 +5408,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: groups.team.channels_CreateMembers
       parameters:
         - name: group-id
@@ -6092,6 +6282,111 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - groups.team
+      summary: Get media content for the navigation property hostedContents from groups
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: groups.team.channels.messages_GetHostedContentsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.team
+      summary: Update media content for the navigation property hostedContents in groups
+      operationId: groups.team.channels.messages_SetHostedContentsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/team/channels/{channel-id}/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -6846,6 +7141,127 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - groups.team
+      summary: Get media content for the navigation property hostedContents from groups
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: groups.team.channels.messages.replies_GetHostedContentsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.team
+      summary: Update media content for the navigation property hostedContents in groups
+      operationId: groups.team.channels.messages.replies_SetHostedContentsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -9391,11 +9807,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: groups.team.primaryChannel_CreateMembers
       parameters:
         - name: group-id
@@ -10153,6 +10569,95 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/primaryChannel/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - groups.team
+      summary: Get media content for the navigation property hostedContents from groups
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: groups.team.primaryChannel.messages_GetHostedContentsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.team
+      summary: Update media content for the navigation property hostedContents in groups
+      operationId: groups.team.primaryChannel.messages_SetHostedContentsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/team/primaryChannel/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -10827,6 +11332,111 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - groups.team
+      summary: Get media content for the navigation property hostedContents from groups
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: groups.team.primaryChannel.messages.replies_GetHostedContentsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.team
+      summary: Update media content for the navigation property hostedContents in groups
+      operationId: groups.team.primaryChannel.messages.replies_SetHostedContentsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -15489,11 +16099,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: teams.channels_CreateMembers
       parameters:
         - name: team-id
@@ -16427,6 +17037,111 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.channel
+      summary: Get media content for the navigation property hostedContents from teams
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: teams.channels.messages_GetHostedContentsContent
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.channel
+      summary: Update media content for the navigation property hostedContents in teams
+      operationId: teams.channels.messages_SetHostedContentsContent
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -17255,6 +17970,127 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.channel
+      summary: Get media content for the navigation property hostedContents from teams
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: teams.channels.messages.replies_GetHostedContentsContent
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.channel
+      summary: Update media content for the navigation property hostedContents in teams
+      operationId: teams.channels.messages.replies_SetHostedContentsContent
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -20769,11 +21605,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: teams.primaryChannel_CreateMembers
       parameters:
         - name: team-id
@@ -21587,6 +22423,95 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.channel
+      summary: Get media content for the navigation property hostedContents from teams
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: teams.primaryChannel.messages_GetHostedContentsContent
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.channel
+      summary: Update media content for the navigation property hostedContents in teams
+      operationId: teams.primaryChannel.messages_SetHostedContentsContent
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -22319,6 +23244,111 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.channel
+      summary: Get media content for the navigation property hostedContents from teams
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: teams.primaryChannel.messages.replies_GetHostedContentsContent
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.channel
+      summary: Update media content for the navigation property hostedContents in teams
+      operationId: teams.primaryChannel.messages.replies_SetHostedContentsContent
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -27538,11 +28568,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: teamwork.deletedTeams.channels_CreateMembers
       parameters:
         - name: deletedTeam-id
@@ -28476,6 +29506,111 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get media content for the navigation property hostedContents from teamwork
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: teamwork.deletedTeams.channels.messages_GetHostedContentsContent
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update media content for the navigation property hostedContents in teamwork
+      operationId: teamwork.deletedTeams.channels.messages_SetHostedContentsContent
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -29304,6 +30439,127 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get media content for the navigation property hostedContents from teamwork
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: teamwork.deletedTeams.channels.messages.replies_GetHostedContentsContent
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update media content for the navigation property hostedContents in teamwork
+      operationId: teamwork.deletedTeams.channels.messages.replies_SetHostedContentsContent
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -32484,11 +33740,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: users.chats_CreateMessages
       parameters:
         - name: user-id
@@ -33010,6 +34266,111 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - users.chat
+      summary: Get media content for the navigation property hostedContents from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: users.chats.messages_GetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.chat
+      summary: Update media content for the navigation property hostedContents in users
+      operationId: users.chats.messages_SetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -33770,6 +35131,127 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - users.chat
+      summary: Get media content for the navigation property hostedContents from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: users.chats.messages.replies_GetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.chat
+      summary: Update media content for the navigation property hostedContents in users
+      operationId: users.chats.messages.replies_SetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -35668,11 +37150,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_CreateMembers
       parameters:
         - name: user-id
@@ -36654,6 +38136,127 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - users.team
+      summary: Get media content for the navigation property hostedContents from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: users.joinedTeams.channels.messages_GetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.team
+      summary: Update media content for the navigation property hostedContents in users
+      operationId: users.joinedTeams.channels.messages_SetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -37488,6 +39091,143 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - users.team
+      summary: Get media content for the navigation property hostedContents from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: users.joinedTeams.channels.messages.replies_GetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.team
+      summary: Update media content for the navigation property hostedContents in users
+      operationId: users.joinedTeams.channels.messages.replies_SetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -40393,11 +42133,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_CreateMembers
       parameters:
         - name: user-id
@@ -41267,6 +43007,111 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - users.team
+      summary: Get media content for the navigation property hostedContents from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: users.joinedTeams.primaryChannel.messages_GetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.team
+      summary: Update media content for the navigation property hostedContents in users
+      operationId: users.joinedTeams.primaryChannel.messages_SetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -42021,6 +43866,127 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - users.team
+      summary: Get media content for the navigation property hostedContents from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      operationId: users.joinedTeams.primaryChannel.messages.replies_GetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.team
+      summary: Update media content for the navigation property hostedContents in users
+      operationId: users.joinedTeams.primaryChannel.messages.replies_SetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -51219,6 +53185,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -53276,6 +55244,32 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          description: Request identifier of the last non-interactive sign-in performed by this user.
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.assignedPlan:
       title: assignedPlan
       type: object
@@ -54727,6 +56721,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             attendanceReports:
               type: array
               items:
@@ -57380,6 +59376,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -59623,15 +61633,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string

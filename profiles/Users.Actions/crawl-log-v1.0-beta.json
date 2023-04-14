@@ -1245,6 +1245,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
+    "/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.powerOff": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.powerOn": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
     "/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.reboot": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
@@ -1274,6 +1282,14 @@
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/cloudPCs/microsoft.graph.bulkResize": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/cloudPCs/microsoft.graph.validateBulkResize": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
