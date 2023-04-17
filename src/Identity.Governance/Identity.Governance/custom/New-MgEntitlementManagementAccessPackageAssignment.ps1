@@ -155,11 +155,6 @@ begin {
     $notDelivered = 0
     $nonUsers = 0
 
-    if ($null -eq $StartDate  -or $StartDate.Length -eq 0) {
-        $now = Get-Date
-        $ts = Get-Date $now.ToUniversalTime() -format "s"
-        $StartDate = $ts + "Z"
-    }
 
     if ($null -eq $Justification) {
         $Justification = ""
