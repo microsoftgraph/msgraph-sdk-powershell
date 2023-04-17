@@ -23,7 +23,7 @@ function Start-Generator {
 
     $GraphMapping = @{
         "v1.0" = "examples\v1.0"
-        "beta" = "examples\v1.0-beta"
+        #"beta" = "examples\v1.0-beta"
     }
     if ($GenerationMode -eq "auto") {
         $GraphMapping.Keys | ForEach-Object {
@@ -131,7 +131,7 @@ function Get-ExternalDocsUrl {
         [System.Object] $Method = "GET",
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
     )
-
+    if(-not($HandWrittenCommands -contains $Command)){
     if ($GenerationMode -eq "manual") {
 
         if (-not([string]::IsNullOrEmpty($ManualExternalDocsUrl))) {
@@ -185,6 +185,7 @@ function Get-ExternalDocsUrl {
             }
         }
     }
+}
 
 }
 function Start-WebScrapping {
@@ -214,7 +215,7 @@ function Start-WebScrapping {
         if ($checkPowershell.Contains('lang-powershell')) {
             $result = $node.InnerHtml
             $result = $result.Replace('&quot;', '"')
-            $ExampleList.Add($result)
+            $L = $ExampleList.Add($result)
         }
     }
     foreach ($header in $headers) {
@@ -222,7 +223,7 @@ function Start-WebScrapping {
         
         if ($checkPowershell.Contains('Example')) {
             $result = $header.InnerHtml
-            $HeaderList.Add($result)
+            $A = $HeaderList.Add($result)
         }
         
     }
@@ -245,7 +246,7 @@ function Update-ExampleFile {
     ) 
     
     $Content = Get-Content -Path $ExampleFile
-    $SearchText = "{{ Add description here }}"
+    $SearchText = "Example"
     $SearchTextForNewImports = "{{ Add description here }}"
     $ReplaceEverything = $False
     if ($HeaderList.Count -eq 0) {
@@ -282,20 +283,6 @@ function Update-ExampleFile {
                 $wrongExamplesCount++
             }
         }
-        git config --global user.email "timwamalwa@gmail.com"
-        git config --global user.name "Timothy Wamalwa"
-        git add $ExampleFile
-        git commit -m "Examples update on  $ExampleFile-$GraphProfile" 
-    }
-    else {
-        if ($headCount -ne $exampleCount) {
-            Write-Host "Mismatch in Title and Snippet count i.e Title ="$headerList.Count " Snippet = "$exampleList.Count 
-        }
-        else {
-            Write-Host "No examples found from the reference docs"
-        }
-            
-        
     }
     if($wrongExamplesCount -gt 0){
         Write-Host "Logging this as an anormally Command " $Command "External Docs" $ExternalDocUrl
@@ -318,7 +305,10 @@ function Update-ExampleFile {
             "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" | Out-File -FilePath $ExamplesToBeReviewed -Append -Encoding ASCII
         }
     }
-        
+    # git config --global user.email "timwamalwa@gmail.com"
+    # git config --global user.name "Timothy Wamalwa"
+    # git add $ExampleFile
+    # git commit -m "Examples update on  $ExampleFile-$GraphProfile"   
 }
 Import-Csv $HandWrittenDocPath | 
 ForEach-Object{
