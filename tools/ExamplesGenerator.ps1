@@ -2,7 +2,13 @@
 # Licensed under the MIT License.
 Param(
     $ModulesToGenerate = @(),
-    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc")
+    $HandWrittenCommands = @(),
+    [hashtable]$V1CommandList= @{},
+    [hashtable]$BetaCommandList= @{},
+    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
+    [string] $HandWrittenDocPath = (Join-Path $PSScriptRoot "..\examplesreport\HandWrittenExamplesByContentDeveloper.csv"),
+    [string] $ExamplesToBeReviewed = (Join-Path $PSScriptRoot "..\examplesreport\ExamplesToBeReviewed.csv"),
+    $MetaDataJsonFile = (Join-Path $PSScriptRoot "../src/Authentication/Authentication/custom/common/MgCommandMetadata.json")
 )
 function Start-Generator {
     Param(
@@ -85,23 +91,18 @@ function Get-Files {
                 if ($ModuleManifestFileContent | Select-String -pattern $Command) {
                 
                     #Extract URI path
-                    $Uripaths = Find-MgGraphCommand -Command $Command
                     $UriPath = $null
-                    if (-not([string]::IsNullOrEmpty($Uripaths))) {
-                        if ($Uripaths.APIVersion.Contains($GraphProfile)) {
-                            if ($Uripaths.Length -gt 1) {
-                                $UriPath = $UriPaths.URI[0].ToString() 
-                            }
-                            else {
-                                $UriPath = $UriPaths.URI.ToString() 
-                            } 
-                        }
-               
-                        if ($UriPath) {
-                            $Method = $UriPaths.Method
-                            Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $UriPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method -Module $Module
-                        }
+                    if($GraphProfile -eq "beta"){
+                        $UriPath = $BetaCommandList[$Command]
+                    }else{
+                        $UriPath = $V1CommandList[$Command]
                     }
+                        
+                    if ($UriPath) {
+                        $Method = $UriPaths.Method
+                        Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $UriPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method -Module $Module
+                    }
+                    
                 }
 
             }
@@ -135,7 +136,7 @@ function Get-ExternalDocsUrl {
 
         if (-not([string]::IsNullOrEmpty($ManualExternalDocsUrl))) {
     
-            Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ManualExternalDocsUrl -Command $Command -GraphProfilePath $GraphProfilePath
+            Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ManualExternalDocsUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath
         }
 
     }
@@ -177,7 +178,7 @@ function Get-ExternalDocsUrl {
                         $externalDocUrl = $path[$UriPath].put.externalDocs.url 
                     }
                     if (-not([string]::IsNullOrEmpty($externalDocUrl))) {
-                        Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $externalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath
+                        Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $externalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath
                     }
             
                 }
@@ -194,6 +195,7 @@ function Start-WebScrapping {
         [string] $ExternalDocUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell",
         [ValidateNotNullOrEmpty()]
         [string] $Command = "Get-MgUser",
+        [string] $UriPath,
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
     ) 
     $ExampleFile = "$GraphProfilePath/$Command.md"
@@ -225,7 +227,7 @@ function Start-WebScrapping {
         
     }
   
-    Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $ExampleList -ExampleFile $ExampleFile -Description $Description
+    Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $ExampleList -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $ExternalDocUrl -UriPath $UriPath
 }
 
 function Update-ExampleFile {
@@ -235,42 +237,50 @@ function Update-ExampleFile {
         [System.Collections.ArrayList] $HeaderList,
         [System.Collections.ArrayList] $ExampleList,
         [string] $ExampleFile,
-        [string] $Description
+        [string] $UriPath,
+        [string] $Description,
+        [string] $Command = "Get-MgUser",
+        [ValidateNotNullOrEmpty()]
+        [string] $ExternalDocUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell"
     ) 
     
     $Content = Get-Content -Path $ExampleFile
     $SearchText = "{{ Add description here }}"
+    $SearchTextForNewImports = "{{ Add description here }}"
     $ReplaceEverything = $False
     if ($HeaderList.Count -eq 0) {
         for ($d = 0; $d -lt $ExampleList.Count; $d++) {
             $sum = $d + 1
-            $HeaderList.Add("Example " + $sum + ": Code snippet".Trim())
+            $HL = $HeaderList.Add("Example " + $sum + ": Code snippet".Trim())
         }
     }
     if ($HeaderList.Count -ne $ExampleList.Count) {
         $HeaderList.Clear()
         for ($d = 0; $d -lt $ExampleList.Count; $d++) {
             $sum = $d + 1
-            $HeaderList.Add("Example " + $sum + ": Code snippet".Trim())
+            $H = $HeaderList.Add("Example " + $sum + ": Code snippet".Trim())
         }
     }
-    if ($Content | Select-String -pattern $SearchText) {
+    if (($Content | Select-String -pattern $SearchText) -or ($Content | Select-String -pattern $SearchTextForNewImports)) {
         $ReplaceEverything = $True
-        #Start-Sleep 5
-       
     }
 
     $headCount = $HeaderList.Count
-    $exampleCount = $ExampleList.Count   
+    $exampleCount = $ExampleList.Count
+    $wrongExamplesCount = 0;   
     if ($ReplaceEverything -and $exampleCount -gt 0 -and $headCount -eq $exampleCount) {
         Clear-Content $ExampleFile -Force
         for ($d = 0; $d -lt $headerList.Count; $d++) { 
             $codeValue = $exampleList[$d].Trim()
+            if($codeValue.Contains($Command)){
             $titleValue = "### " + $headerList[$d].Trim()
             $code = "``````powershell`r$codeValue`r`n``````"
 	
             $totalText = "$titleValue`r`n`n$code`r`n$description`r`n"
             Add-Content -Path $ExampleFile -Value $totalText
+            }else{    
+                $wrongExamplesCount++
+            }
         }
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
@@ -287,7 +297,52 @@ function Update-ExampleFile {
             
         
     }
+    if($wrongExamplesCount -gt 0){
+        Write-Host "Logging this as an anormally Command " $Command "External Docs" $ExternalDocUrl
+        $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
+
+        Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
+        #Log api path api version and equivalent external doc url giving wron examples
+
+        #Create file if it doesn't exist
+        if (-not (Test-Path $ExamplesToBeReviewed)) {
+            "Command, ExternalDocsUrl, ApiVersion, OpenApiPath" | Out-File -FilePath  $ExamplesToBeReviewed -Encoding ASCII
+        }
+
+        $File = Get-Content $ExamplesToBeReviewed
+        $containsWord = $File | % { $_ -match "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" }
+        if ($containsWord -contains $true) {
+            #Skip adding to csv
+        }
+        else {
+            "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" | Out-File -FilePath $ExamplesToBeReviewed -Append -Encoding ASCII
+        }
+    }
         
+}
+Import-Csv $HandWrittenDocPath | 
+ForEach-Object{
+    $HandWrittenCommands += $_.CmdletName
+}
+$JsonContent = Get-Content -Path $MetaDataJsonFile
+$DeserializedContent = $JsonContent | ConvertFrom-Json
+foreach($Data in $DeserializedContent)
+{
+    if($Data.ApiVersion -eq "beta")
+    {
+        
+        if((-not($Data.Variants[0].Contains("List")))){
+            $Beta = $BetaCommandList.Add($Data.Command, $Data.Uri)        
+        }   
+    }
+
+    if($Data.ApiVersion -eq "v1.0")
+    {
+        
+        if((-not($Data.Variants[0].Contains("List")))){
+            $V1 = $V1CommandList.Add($Data.Command, $Data.Uri)        
+        }   
+    }
 }
 if (!(Get-Module "powershell-yaml" -ListAvailable -ErrorAction SilentlyContinue)) {
     Install-Module "powershell-yaml" -AcceptLicense -Scope CurrentUser -Force
