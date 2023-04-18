@@ -79,7 +79,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
-      operationId: external_ListConnections
+      operationId: external_ListConnection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -160,7 +160,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
-      operationId: external_CreateConnections
+      operationId: external_CreateConnection
       requestBody:
         description: New navigation property
         content:
@@ -183,7 +183,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connections from external
-      operationId: external_GetConnections
+      operationId: external_GetConnection
       parameters:
         - name: externalConnection-id
           in: path
@@ -243,7 +243,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property connections in external
-      operationId: external_UpdateConnections
+      operationId: external_UpdateConnection
       parameters:
         - name: externalConnection-id
           in: path
@@ -274,7 +274,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property connections for external
-      operationId: external_DeleteConnections
+      operationId: external_DeleteConnection
       parameters:
         - name: externalConnection-id
           in: path
@@ -301,7 +301,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      operationId: external.connection_ListGroups
+      operationId: external.connection_ListGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -378,7 +378,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
-      operationId: external.connection_CreateGroups
+      operationId: external.connection_CreateGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -410,7 +410,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      operationId: external.connection_GetGroups
+      operationId: external.connection_GetGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -470,7 +470,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property groups in external
-      operationId: external.connection_UpdateGroups
+      operationId: external.connection_UpdateGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -509,7 +509,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property groups for external
-      operationId: external.connection_DeleteGroups
+      operationId: external.connection_DeleteGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -545,7 +545,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
-      operationId: external.connection.group_ListMembers
+      operationId: external.connection.group_ListMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -625,7 +625,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
-      operationId: external.connection.group_CreateMembers
+      operationId: external.connection.group_CreateMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -666,7 +666,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
-      operationId: external.connection.group_GetMembers
+      operationId: external.connection.group_GetMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -731,7 +731,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property members in external
-      operationId: external.connection.group_UpdateMembers
+      operationId: external.connection.group_UpdateMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -778,7 +778,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property members for external
-      operationId: external.connection.group_DeleteMembers
+      operationId: external.connection.group_DeleteMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -873,7 +873,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get items from external
-      operationId: external.connection_ListItems
+      operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -947,7 +947,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to items for external
-      operationId: external.connection_CreateItems
+      operationId: external.connection_CreateItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -979,7 +979,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get items from external
-      operationId: external.connection_GetItems
+      operationId: external.connection_GetItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -1038,7 +1038,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property items in external
-      operationId: external.connection_SetItems
+      operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -1077,7 +1077,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property items for external
-      operationId: external.connection_DeleteItems
+      operationId: external.connection_DeleteItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -1134,7 +1134,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      operationId: external.connection_ListOperations
+      operationId: external.connection_ListOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1205,7 +1205,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to operations for external
-      operationId: external.connection_CreateOperations
+      operationId: external.connection_CreateOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1237,7 +1237,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      operationId: external.connection_GetOperations
+      operationId: external.connection_GetOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1295,7 +1295,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property operations in external
-      operationId: external.connection_UpdateOperations
+      operationId: external.connection_UpdateOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1334,7 +1334,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property operations for external
-      operationId: external.connection_DeleteOperations
+      operationId: external.connection_DeleteOperation
       parameters:
         - name: externalConnection-id
           in: path

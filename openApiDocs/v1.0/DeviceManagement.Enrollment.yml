@@ -12,7 +12,7 @@ paths:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Get conditionalAccessSettings from deviceManagement
       description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-      operationId: deviceManagement_GetConditionalAccessSettings
+      operationId: deviceManagement_GetConditionalAccessSetting
       parameters:
         - name: $select
           in: query
@@ -56,7 +56,7 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Update the navigation property conditionalAccessSettings in deviceManagement
-      operationId: deviceManagement_UpdateConditionalAccessSettings
+      operationId: deviceManagement_UpdateConditionalAccessSetting
       requestBody:
         description: New navigation property values
         content:
@@ -78,7 +78,7 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Delete navigation property conditionalAccessSettings for deviceManagement
-      operationId: deviceManagement_DeleteConditionalAccessSettings
+      operationId: deviceManagement_DeleteConditionalAccessSetting
       parameters:
         - name: If-Match
           in: header
@@ -98,7 +98,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
       description: The list of device enrollment configurations
-      operationId: deviceManagement_ListDeviceEnrollmentConfigurations
+      operationId: deviceManagement_ListDeviceEnrollmentConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -175,7 +175,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
-      operationId: deviceManagement_CreateDeviceEnrollmentConfigurations
+      operationId: deviceManagement_CreateDeviceEnrollmentConfiguration
       requestBody:
         description: New navigation property
         content:
@@ -199,7 +199,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
       description: The list of device enrollment configurations
-      operationId: deviceManagement_GetDeviceEnrollmentConfigurations
+      operationId: deviceManagement_GetDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -255,7 +255,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Update the navigation property deviceEnrollmentConfigurations in deviceManagement
-      operationId: deviceManagement_UpdateDeviceEnrollmentConfigurations
+      operationId: deviceManagement_UpdateDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -286,7 +286,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Delete navigation property deviceEnrollmentConfigurations for deviceManagement
-      operationId: deviceManagement_DeleteDeviceEnrollmentConfigurations
+      operationId: deviceManagement_DeleteDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -314,7 +314,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfiguration_ListAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_ListAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -382,7 +382,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfiguration_CreateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_CreateAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -415,7 +415,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfiguration_GetAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_GetAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -472,7 +472,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfiguration_UpdateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_UpdateAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -511,7 +511,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfiguration_DeleteAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_DeleteAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -583,7 +583,7 @@ paths:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
       description: Collection of imported Windows autopilot devices.
-      operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -661,7 +661,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement_CreateImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_CreateImportedWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property
         content:
@@ -685,7 +685,7 @@ paths:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
       description: Collection of imported Windows autopilot devices.
-      operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentity
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
@@ -740,7 +740,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Update the navigation property importedWindowsAutopilotDeviceIdentities in deviceManagement
-      operationId: deviceManagement_UpdateImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_UpdateImportedWindowsAutopilotDeviceIdentity
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
@@ -771,7 +771,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Delete navigation property importedWindowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement_DeleteImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_DeleteImportedWindowsAutopilotDeviceIdentity
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
@@ -813,7 +813,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
       description: The Windows autopilot device identities contained collection.
-      operationId: deviceManagement_ListWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_ListWindowsAutopilotDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -918,7 +918,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement_CreateWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_CreateWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property
         content:
@@ -942,7 +942,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
       description: The Windows autopilot device identities contained collection.
-      operationId: deviceManagement_GetWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_GetWindowsAutopilotDeviceIdentity
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -1006,7 +1006,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
-      operationId: deviceManagement_UpdateWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_UpdateWindowsAutopilotDeviceIdentity
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -1037,7 +1037,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement_DeleteWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_DeleteWindowsAutopilotDeviceIdentity
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path

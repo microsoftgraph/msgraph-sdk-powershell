@@ -152,7 +152,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement_ListHealthOverviews
+      operationId: admin.serviceAnnouncement_ListHealthOverview
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -217,7 +217,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to healthOverviews for admin
-      operationId: admin.serviceAnnouncement_CreateHealthOverviews
+      operationId: admin.serviceAnnouncement_CreateHealthOverview
       requestBody:
         description: New navigation property
         content:
@@ -241,7 +241,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
       description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
-      operationId: admin.serviceAnnouncement_GetHealthOverviews
+      operationId: admin.serviceAnnouncement_GetHealthOverview
       parameters:
         - name: serviceHealth-id
           in: path
@@ -293,7 +293,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property healthOverviews in admin
-      operationId: admin.serviceAnnouncement_UpdateHealthOverviews
+      operationId: admin.serviceAnnouncement_UpdateHealthOverview
       parameters:
         - name: serviceHealth-id
           in: path
@@ -324,7 +324,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property healthOverviews for admin
-      operationId: admin.serviceAnnouncement_DeleteHealthOverviews
+      operationId: admin.serviceAnnouncement_DeleteHealthOverview
       parameters:
         - name: serviceHealth-id
           in: path
@@ -352,7 +352,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get issues from admin
       description: 'A collection of issues that happened on the service, with detailed information for each issue.'
-      operationId: admin.serviceAnnouncement.healthOverview_ListIssues
+      operationId: admin.serviceAnnouncement.healthOverview_ListIssue
       parameters:
         - name: serviceHealth-id
           in: path
@@ -459,7 +459,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to issues for admin
-      operationId: admin.serviceAnnouncement.healthOverview_CreateIssues
+      operationId: admin.serviceAnnouncement.healthOverview_CreateIssue
       parameters:
         - name: serviceHealth-id
           in: path
@@ -492,7 +492,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get issues from admin
       description: 'A collection of issues that happened on the service, with detailed information for each issue.'
-      operationId: admin.serviceAnnouncement.healthOverview_GetIssues
+      operationId: admin.serviceAnnouncement.healthOverview_GetIssue
       parameters:
         - name: serviceHealth-id
           in: path
@@ -562,7 +562,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property issues in admin
-      operationId: admin.serviceAnnouncement.healthOverview_UpdateIssues
+      operationId: admin.serviceAnnouncement.healthOverview_UpdateIssue
       parameters:
         - name: serviceHealth-id
           in: path
@@ -601,7 +601,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property issues for admin
-      operationId: admin.serviceAnnouncement.healthOverview_DeleteIssues
+      operationId: admin.serviceAnnouncement.healthOverview_DeleteIssue
       parameters:
         - name: serviceHealth-id
           in: path
@@ -716,7 +716,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement_ListIssues
+      operationId: admin.serviceAnnouncement_ListIssue
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -815,7 +815,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to issues for admin
-      operationId: admin.serviceAnnouncement_CreateIssues
+      operationId: admin.serviceAnnouncement_CreateIssue
       requestBody:
         description: New navigation property
         content:
@@ -839,7 +839,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get issues from admin
       description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
-      operationId: admin.serviceAnnouncement_GetIssues
+      operationId: admin.serviceAnnouncement_GetIssue
       parameters:
         - name: serviceHealthIssue-id
           in: path
@@ -901,7 +901,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property issues in admin
-      operationId: admin.serviceAnnouncement_UpdateIssues
+      operationId: admin.serviceAnnouncement_UpdateIssue
       parameters:
         - name: serviceHealthIssue-id
           in: path
@@ -932,7 +932,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property issues for admin
-      operationId: admin.serviceAnnouncement_DeleteIssues
+      operationId: admin.serviceAnnouncement_DeleteIssue
       parameters:
         - name: serviceHealthIssue-id
           in: path
@@ -1009,7 +1009,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement_ListMessages
+      operationId: admin.serviceAnnouncement_ListMessage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1113,7 +1113,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to messages for admin
-      operationId: admin.serviceAnnouncement_CreateMessages
+      operationId: admin.serviceAnnouncement_CreateMessage
       requestBody:
         description: New navigation property
         content:
@@ -1137,7 +1137,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get messages from admin
       description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
-      operationId: admin.serviceAnnouncement_GetMessages
+      operationId: admin.serviceAnnouncement_GetMessage
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1202,7 +1202,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property messages in admin
-      operationId: admin.serviceAnnouncement_UpdateMessages
+      operationId: admin.serviceAnnouncement_UpdateMessage
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1233,7 +1233,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property messages for admin
-      operationId: admin.serviceAnnouncement_DeleteMessages
+      operationId: admin.serviceAnnouncement_DeleteMessage
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1264,7 +1264,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.message_ListAttachments
+      operationId: admin.serviceAnnouncement.message_ListAttachment
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1344,7 +1344,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to attachments for admin
-      operationId: admin.serviceAnnouncement.message_CreateAttachments
+      operationId: admin.serviceAnnouncement.message_CreateAttachment
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1377,7 +1377,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
       description: A collection of serviceAnnouncementAttachments.
-      operationId: admin.serviceAnnouncement.message_GetAttachments
+      operationId: admin.serviceAnnouncement.message_GetAttachment
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1438,7 +1438,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property attachments in admin
-      operationId: admin.serviceAnnouncement.message_UpdateAttachments
+      operationId: admin.serviceAnnouncement.message_UpdateAttachment
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1477,7 +1477,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property attachments for admin
-      operationId: admin.serviceAnnouncement.message_DeleteAttachments
+      operationId: admin.serviceAnnouncement.message_DeleteAttachment
       parameters:
         - name: serviceUpdateMessage-id
           in: path
@@ -1942,7 +1942,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience.exclusion_addMembers
+      operationId: admin.window.update.deploymentAudience.exclusion_addMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2040,7 +2040,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience.exclusion_removeMembers
+      operationId: admin.window.update.deploymentAudience.exclusion_removeMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2134,7 +2134,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.deploymentAudience.exclusion_enrollAssets
+      operationId: admin.window.update.deploymentAudience.exclusion_enrollAsset
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2212,7 +2212,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.deploymentAudience.exclusion_unenrollAssets
+      operationId: admin.window.update.deploymentAudience.exclusion_unenrollAsset
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2294,7 +2294,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience.member_addMembers
+      operationId: admin.window.update.deploymentAudience.member_addMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2392,7 +2392,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience.member_removeMembers
+      operationId: admin.window.update.deploymentAudience.member_removeMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2486,7 +2486,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.deploymentAudience.member_enrollAssets
+      operationId: admin.window.update.deploymentAudience.member_enrollAsset
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2564,7 +2564,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.deploymentAudience.member_unenrollAssets
+      operationId: admin.window.update.deploymentAudience.member_unenrollAsset
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2755,7 +2755,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience.exclusion_addMembers
+      operationId: admin.window.update.deployment.audience.exclusion_addMember
       parameters:
         - name: deployment-id
           in: path
@@ -2853,7 +2853,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience.exclusion_removeMembers
+      operationId: admin.window.update.deployment.audience.exclusion_removeMember
       parameters:
         - name: deployment-id
           in: path
@@ -2947,7 +2947,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.deployment.audience.exclusion_enrollAssets
+      operationId: admin.window.update.deployment.audience.exclusion_enrollAsset
       parameters:
         - name: deployment-id
           in: path
@@ -3025,7 +3025,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.deployment.audience.exclusion_unenrollAssets
+      operationId: admin.window.update.deployment.audience.exclusion_unenrollAsset
       parameters:
         - name: deployment-id
           in: path
@@ -3107,7 +3107,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience.member_addMembers
+      operationId: admin.window.update.deployment.audience.member_addMember
       parameters:
         - name: deployment-id
           in: path
@@ -3205,7 +3205,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience.member_removeMembers
+      operationId: admin.window.update.deployment.audience.member_removeMember
       parameters:
         - name: deployment-id
           in: path
@@ -3299,7 +3299,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.deployment.audience.member_enrollAssets
+      operationId: admin.window.update.deployment.audience.member_enrollAsset
       parameters:
         - name: deployment-id
           in: path
@@ -3377,7 +3377,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.deployment.audience.member_unenrollAssets
+      operationId: admin.window.update.deployment.audience.member_unenrollAsset
       parameters:
         - name: deployment-id
           in: path
@@ -3568,7 +3568,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatableAsset_addMembers
+      operationId: admin.window.update.updatableAsset_addMember
       parameters:
         - name: updatableAsset-id
           in: path
@@ -3650,7 +3650,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatableAsset_removeMembers
+      operationId: admin.window.update.updatableAsset_removeMember
       parameters:
         - name: updatableAsset-id
           in: path
@@ -3728,7 +3728,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.updatableAsset_enrollAssets
+      operationId: admin.window.update.updatableAsset_enrollAsset
       requestBody:
         description: Action parameters
         content:
@@ -3788,7 +3788,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.updatableAsset_unenrollAssets
+      operationId: admin.window.update.updatableAsset_unenrollAsset
       requestBody:
         description: Action parameters
         content:
@@ -3852,7 +3852,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience.exclusion_addMembers
+      operationId: admin.window.update.updatePolicy.audience.exclusion_addMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -3950,7 +3950,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience.exclusion_removeMembers
+      operationId: admin.window.update.updatePolicy.audience.exclusion_removeMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -4044,7 +4044,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.updatePolicy.audience.exclusion_enrollAssets
+      operationId: admin.window.update.updatePolicy.audience.exclusion_enrollAsset
       parameters:
         - name: updatePolicy-id
           in: path
@@ -4122,7 +4122,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.updatePolicy.audience.exclusion_unenrollAssets
+      operationId: admin.window.update.updatePolicy.audience.exclusion_unenrollAsset
       parameters:
         - name: updatePolicy-id
           in: path
@@ -4204,7 +4204,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience.member_addMembers
+      operationId: admin.window.update.updatePolicy.audience.member_addMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -4302,7 +4302,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience.member_removeMembers
+      operationId: admin.window.update.updatePolicy.audience.member_removeMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -4396,7 +4396,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.updatePolicy.audience.member_enrollAssets
+      operationId: admin.window.update.updatePolicy.audience.member_enrollAsset
       parameters:
         - name: updatePolicy-id
           in: path
@@ -4474,7 +4474,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.updatePolicy.audience.member_unenrollAssets
+      operationId: admin.window.update.updatePolicy.audience.member_unenrollAsset
       parameters:
         - name: updatePolicy-id
           in: path

@@ -85,7 +85,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryaudit-list?view=graph-rest-1.0
-      operationId: auditLog_ListDirectoryAudits
+      operationId: auditLog_ListDirectoryAudit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -178,7 +178,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Create new navigation property to directoryAudits for auditLogs
-      operationId: auditLog_CreateDirectoryAudits
+      operationId: auditLog_CreateDirectoryAudit
       requestBody:
         description: New navigation property
         content:
@@ -201,7 +201,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
-      operationId: auditLog_GetDirectoryAudits
+      operationId: auditLog_GetDirectoryAudit
       parameters:
         - name: directoryAudit-id
           in: path
@@ -261,7 +261,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Update the navigation property directoryAudits in auditLogs
-      operationId: auditLog_UpdateDirectoryAudits
+      operationId: auditLog_UpdateDirectoryAudit
       parameters:
         - name: directoryAudit-id
           in: path
@@ -292,7 +292,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Delete navigation property directoryAudits for auditLogs
-      operationId: auditLog_DeleteDirectoryAudits
+      operationId: auditLog_DeleteDirectoryAudit
       parameters:
         - name: directoryAudit-id
           in: path
@@ -885,7 +885,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/signin-list?view=graph-rest-1.0
-      operationId: auditLog_ListSignIns
+      operationId: auditLog_ListSignIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -968,6 +968,8 @@ paths:
                 - isTenantRestricted desc
                 - location
                 - location desc
+                - managedServiceIdentity
+                - managedServiceIdentity desc
                 - mfaDetail
                 - mfaDetail desc
                 - networkLocationDetails
@@ -1074,6 +1076,7 @@ paths:
                 - isInteractive
                 - isTenantRestricted
                 - location
+                - managedServiceIdentity
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
@@ -1131,7 +1134,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Create new navigation property to signIns for auditLogs
-      operationId: auditLog_CreateSignIns
+      operationId: auditLog_CreateSignIn
       requestBody:
         description: New navigation property
         content:
@@ -1154,7 +1157,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
-      operationId: auditLog_GetSignIns
+      operationId: auditLog_GetSignIn
       parameters:
         - name: signIn-id
           in: path
@@ -1207,6 +1210,7 @@ paths:
                 - isInteractive
                 - isTenantRestricted
                 - location
+                - managedServiceIdentity
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
@@ -1265,7 +1269,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Update the navigation property signIns in auditLogs
-      operationId: auditLog_UpdateSignIns
+      operationId: auditLog_UpdateSignIn
       parameters:
         - name: signIn-id
           in: path
@@ -1296,7 +1300,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Delete navigation property signIns for auditLogs
-      operationId: auditLog_DeleteSignIns
+      operationId: auditLog_DeleteSignIn
       parameters:
         - name: signIn-id
           in: path
@@ -1400,7 +1404,7 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Get reports from deviceManagement
       description: Reports singleton
-      operationId: deviceManagement_GetReports
+      operationId: deviceManagement_GetReport
       parameters:
         - name: $select
           in: query
@@ -1444,7 +1448,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property reports in deviceManagement
-      operationId: deviceManagement_UpdateReports
+      operationId: deviceManagement_UpdateReport
       requestBody:
         description: New navigation property values
         content:
@@ -1466,7 +1470,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property reports for deviceManagement
-      operationId: deviceManagement_DeleteReports
+      operationId: deviceManagement_DeleteReport
       parameters:
         - name: If-Match
           in: header
@@ -1486,7 +1490,7 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
       description: Entity representing the configuration of a cached report
-      operationId: deviceManagement.report_ListCachedReportConfigurations
+      operationId: deviceManagement.report_ListCachedReportConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1567,7 +1571,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to cachedReportConfigurations for deviceManagement
-      operationId: deviceManagement.report_CreateCachedReportConfigurations
+      operationId: deviceManagement.report_CreateCachedReportConfiguration
       requestBody:
         description: New navigation property
         content:
@@ -1591,7 +1595,7 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
       description: Entity representing the configuration of a cached report
-      operationId: deviceManagement.report_GetCachedReportConfigurations
+      operationId: deviceManagement.report_GetCachedReportConfiguration
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
           in: path
@@ -1647,7 +1651,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property cachedReportConfigurations in deviceManagement
-      operationId: deviceManagement.report_UpdateCachedReportConfigurations
+      operationId: deviceManagement.report_UpdateCachedReportConfiguration
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
           in: path
@@ -1678,7 +1682,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property cachedReportConfigurations for deviceManagement
-      operationId: deviceManagement.report_DeleteCachedReportConfigurations
+      operationId: deviceManagement.report_DeleteCachedReportConfiguration
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
           in: path
@@ -1720,7 +1724,7 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
       description: Entity representing a job to export a report
-      operationId: deviceManagement.report_ListExportJobs
+      operationId: deviceManagement.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1807,7 +1811,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to exportJobs for deviceManagement
-      operationId: deviceManagement.report_CreateExportJobs
+      operationId: deviceManagement.report_CreateExportJob
       requestBody:
         description: New navigation property
         content:
@@ -1831,7 +1835,7 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
       description: Entity representing a job to export a report
-      operationId: deviceManagement.report_GetExportJobs
+      operationId: deviceManagement.report_GetExportJob
       parameters:
         - name: deviceManagementExportJob-id
           in: path
@@ -1889,7 +1893,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property exportJobs in deviceManagement
-      operationId: deviceManagement.report_UpdateExportJobs
+      operationId: deviceManagement.report_UpdateExportJob
       parameters:
         - name: deviceManagementExportJob-id
           in: path
@@ -1920,7 +1924,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property exportJobs for deviceManagement
-      operationId: deviceManagement.report_DeleteExportJobs
+      operationId: deviceManagement.report_DeleteExportJob
       parameters:
         - name: deviceManagementExportJob-id
           in: path
@@ -2278,7 +2282,7 @@ paths:
         - reports.authenticationMethodsRoot
       summary: Get authenticationMethods from reports
       description: Container for navigation properties for Azure AD authentication methods resources.
-      operationId: report_GetAuthenticationMethods
+      operationId: report_GetAuthenticationMethod
       parameters:
         - name: $select
           in: query
@@ -2320,7 +2324,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property authenticationMethods in reports
-      operationId: report_UpdateAuthenticationMethods
+      operationId: report_UpdateAuthenticationMethod
       requestBody:
         description: New navigation property values
         content:
@@ -2342,7 +2346,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property authenticationMethods for reports
-      operationId: report_DeleteAuthenticationMethods
+      operationId: report_DeleteAuthenticationMethod
       parameters:
         - name: If-Match
           in: header
@@ -2459,7 +2463,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-1.0
-      operationId: report.authenticationMethod_ListUserRegistrationDetails
+      operationId: report.authenticationMethod_ListUserRegistrationDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2552,7 +2556,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Create new navigation property to userRegistrationDetails for reports
-      operationId: report.authenticationMethod_CreateUserRegistrationDetails
+      operationId: report.authenticationMethod_CreateUserRegistrationDetail
       requestBody:
         description: New navigation property
         content:
@@ -2576,7 +2580,7 @@ paths:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
       description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
-      operationId: report.authenticationMethod_GetUserRegistrationDetails
+      operationId: report.authenticationMethod_GetUserRegistrationDetail
       parameters:
         - name: userRegistrationDetails-id
           in: path
@@ -2636,7 +2640,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property userRegistrationDetails in reports
-      operationId: report.authenticationMethod_UpdateUserRegistrationDetails
+      operationId: report.authenticationMethod_UpdateUserRegistrationDetail
       parameters:
         - name: userRegistrationDetails-id
           in: path
@@ -2667,7 +2671,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property userRegistrationDetails for reports
-      operationId: report.authenticationMethod_DeleteUserRegistrationDetails
+      operationId: report.authenticationMethod_DeleteUserRegistrationDetail
       parameters:
         - name: userRegistrationDetails-id
           in: path
@@ -2712,7 +2716,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-1.0
-      operationId: report_ListCredentialUserRegistrationDetails
+      operationId: report_ListCredentialUserRegistrationDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2790,7 +2794,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Create new navigation property to credentialUserRegistrationDetails for reports
-      operationId: report_CreateCredentialUserRegistrationDetails
+      operationId: report_CreateCredentialUserRegistrationDetail
       requestBody:
         description: New navigation property
         content:
@@ -2814,7 +2818,7 @@ paths:
         - reports.credentialUserRegistrationDetails
       summary: Get credentialUserRegistrationDetails from reports
       description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-      operationId: report_GetCredentialUserRegistrationDetails
+      operationId: report_GetCredentialUserRegistrationDetail
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
@@ -2869,7 +2873,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Update the navigation property credentialUserRegistrationDetails in reports
-      operationId: report_UpdateCredentialUserRegistrationDetails
+      operationId: report_UpdateCredentialUserRegistrationDetail
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
@@ -2900,7 +2904,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Delete navigation property credentialUserRegistrationDetails for reports
-      operationId: report_DeleteCredentialUserRegistrationDetails
+      operationId: report_DeleteCredentialUserRegistrationDetail
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
@@ -4219,7 +4223,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getAttackSimulationRepeatOffenders
-      operationId: report_getAttackSimulationRepeatOffenders
+      operationId: report_getAttackSimulationRepeatOffender
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4422,7 +4426,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getBrowserDistributionUserCounts
-      operationId: report_getBrowserDistributionUserCounts
+      operationId: report_getBrowserDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -4452,7 +4456,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getBrowserUserCounts
-      operationId: report_getBrowserUserCounts
+      operationId: report_getBrowserUserCount
       parameters:
         - name: period
           in: path
@@ -4663,7 +4667,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailActivityCounts
-      operationId: report_getEmailActivityCounts
+      operationId: report_getEmailActivityCount
       parameters:
         - name: period
           in: path
@@ -4693,7 +4697,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailActivityUserCounts
-      operationId: report_getEmailActivityUserCounts
+      operationId: report_getEmailActivityUserCount
       parameters:
         - name: period
           in: path
@@ -4785,7 +4789,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageAppsUserCounts
-      operationId: report_getEmailAppUsageAppsUserCounts
+      operationId: report_getEmailAppUsageAppsUserCount
       parameters:
         - name: period
           in: path
@@ -4815,7 +4819,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageUserCounts
-      operationId: report_getEmailAppUsageUserCounts
+      operationId: report_getEmailAppUsageUserCount
       parameters:
         - name: period
           in: path
@@ -4907,7 +4911,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageVersionsUserCounts
-      operationId: report_getEmailAppUsageVersionsUserCounts
+      operationId: report_getEmailAppUsageVersionsUserCount
       parameters:
         - name: period
           in: path
@@ -4937,7 +4941,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getFormsUserActivityCounts
-      operationId: report_getFormsUserActivityCounts
+      operationId: report_getFormsUserActivityCount
       parameters:
         - name: period
           in: path
@@ -4967,7 +4971,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getFormsUserActivityUserCounts
-      operationId: report_getFormsUserActivityUserCounts
+      operationId: report_getFormsUserActivityUserCount
       parameters:
         - name: period
           in: path
@@ -5059,7 +5063,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getGroupArchivedPrintJobs
-      operationId: report_getGroupArchivedPrintJobs
+      operationId: report_getGroupArchivedPrintJob
       parameters:
         - name: groupId
           in: path
@@ -5122,7 +5126,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getM365AppPlatformUserCounts
-      operationId: report_getM365AppPlatformUserCounts
+      operationId: report_getM365AppPlatformUserCount
       parameters:
         - name: period
           in: path
@@ -5152,7 +5156,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getM365AppUserCounts
-      operationId: report_getM365AppUserCounts
+      operationId: report_getM365AppUserCount
       parameters:
         - name: period
           in: path
@@ -5274,7 +5278,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getMailboxUsageMailboxCounts
-      operationId: report_getMailboxUsageMailboxCounts
+      operationId: report_getMailboxUsageMailboxCount
       parameters:
         - name: period
           in: path
@@ -5304,7 +5308,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getMailboxUsageQuotaStatusMailboxCounts
-      operationId: report_getMailboxUsageQuotaStatusMailboxCounts
+      operationId: report_getMailboxUsageQuotaStatusMailboxCount
       parameters:
         - name: period
           in: path
@@ -5364,7 +5368,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActivationCounts
-      operationId: report_getOffice365ActivationCounts
+      operationId: report_getOffice365ActivationCount
       responses:
         2XX:
           description: Success
@@ -5386,7 +5390,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActivationsUserCounts
-      operationId: report_getOffice365ActivationsUserCounts
+      operationId: report_getOffice365ActivationsUserCount
       responses:
         2XX:
           description: Success
@@ -5430,7 +5434,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActiveUserCounts
-      operationId: report_getOffice365ActiveUserCounts
+      operationId: report_getOffice365ActiveUserCount
       parameters:
         - name: period
           in: path
@@ -5810,7 +5814,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityCounts
-      operationId: report_getOffice365GroupsActivityCounts
+      operationId: report_getOffice365GroupsActivityCount
       parameters:
         - name: period
           in: path
@@ -6169,7 +6173,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityFileCounts
-      operationId: report_getOffice365GroupsActivityFileCounts
+      operationId: report_getOffice365GroupsActivityFileCount
       parameters:
         - name: period
           in: path
@@ -6252,7 +6256,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityGroupCounts
-      operationId: report_getOffice365GroupsActivityGroupCounts
+      operationId: report_getOffice365GroupsActivityGroupCount
       parameters:
         - name: period
           in: path
@@ -6418,7 +6422,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ServicesUserCounts
-      operationId: report_getOffice365ServicesUserCounts
+      operationId: report_getOffice365ServicesUserCount
       parameters:
         - name: period
           in: path
@@ -6534,7 +6538,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveActivityFileCounts
-      operationId: report_getOneDriveActivityFileCounts
+      operationId: report_getOneDriveActivityFileCount
       parameters:
         - name: period
           in: path
@@ -6564,7 +6568,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveActivityUserCounts
-      operationId: report_getOneDriveActivityUserCounts
+      operationId: report_getOneDriveActivityUserCount
       parameters:
         - name: period
           in: path
@@ -6656,7 +6660,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveUsageAccountCounts
-      operationId: report_getOneDriveUsageAccountCounts
+      operationId: report_getOneDriveUsageAccountCount
       parameters:
         - name: period
           in: path
@@ -6748,7 +6752,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveUsageFileCounts
-      operationId: report_getOneDriveUsageFileCounts
+      operationId: report_getOneDriveUsageFileCount
       parameters:
         - name: period
           in: path
@@ -6808,7 +6812,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getPrinterArchivedPrintJobs
-      operationId: report_getPrinterArchivedPrintJobs
+      operationId: report_getPrinterArchivedPrintJob
       parameters:
         - name: printerId
           in: path
@@ -6972,7 +6976,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityFileCounts
-      operationId: report_getSharePointActivityFileCounts
+      operationId: report_getSharePointActivityFileCount
       parameters:
         - name: period
           in: path
@@ -7002,7 +7006,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityPages
-      operationId: report_getSharePointActivityPages
+      operationId: report_getSharePointActivityPage
       parameters:
         - name: period
           in: path
@@ -7032,7 +7036,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityUserCounts
-      operationId: report_getSharePointActivityUserCounts
+      operationId: report_getSharePointActivityUserCount
       parameters:
         - name: period
           in: path
@@ -7186,7 +7190,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsageFileCounts
-      operationId: report_getSharePointSiteUsageFileCounts
+      operationId: report_getSharePointSiteUsageFileCount
       parameters:
         - name: period
           in: path
@@ -7216,7 +7220,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsagePages
-      operationId: report_getSharePointSiteUsagePages
+      operationId: report_getSharePointSiteUsagePage
       parameters:
         - name: period
           in: path
@@ -7246,7 +7250,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsageSiteCounts
-      operationId: report_getSharePointSiteUsageSiteCounts
+      operationId: report_getSharePointSiteUsageSiteCount
       parameters:
         - name: period
           in: path
@@ -7306,7 +7310,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessActivityCounts
-      operationId: report_getSkypeGraphFPreBusinessActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessActivityCount
       parameters:
         - name: period
           in: path
@@ -7336,7 +7340,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessActivityUserCounts
-      operationId: report_getSkypeGraphFPreBusinessActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessActivityUserCount
       parameters:
         - name: period
           in: path
@@ -7428,7 +7432,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
-      operationId: report_getSkypeGraphFPreBusinessDeviceUsageDistributionUserCounts
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -7458,7 +7462,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserCounts
-      operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserCounts
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserCount
       parameters:
         - name: period
           in: path
@@ -7550,7 +7554,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityCounts
-      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityCount
       parameters:
         - name: period
           in: path
@@ -7580,7 +7584,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
-      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityMinuteCounts
+      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityMinuteCount
       parameters:
         - name: period
           in: path
@@ -7610,7 +7614,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityUserCounts
-      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityUserCount
       parameters:
         - name: period
           in: path
@@ -7640,7 +7644,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityCounts
-      operationId: report_getSkypeGraphFPreBusinessParticipantActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessParticipantActivityCount
       parameters:
         - name: period
           in: path
@@ -7670,7 +7674,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityMinuteCounts
-      operationId: report_getSkypeGraphFPreBusinessParticipantActivityMinuteCounts
+      operationId: report_getSkypeGraphFPreBusinessParticipantActivityMinuteCount
       parameters:
         - name: period
           in: path
@@ -7700,7 +7704,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityUserCounts
-      operationId: report_getSkypeGraphFPreBusinessParticipantActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessParticipantActivityUserCount
       parameters:
         - name: period
           in: path
@@ -7730,7 +7734,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityCounts
-      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityCount
       parameters:
         - name: period
           in: path
@@ -7760,7 +7764,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
-      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCounts
+      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCount
       parameters:
         - name: period
           in: path
@@ -7790,7 +7794,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
-      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityUserCount
       parameters:
         - name: period
           in: path
@@ -7820,7 +7824,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageDistributionTotalUserCounts
-      operationId: report_getTeamsDeviceUsageDistributionTotalUserCounts
+      operationId: report_getTeamsDeviceUsageDistributionTotalUserCount
       parameters:
         - name: period
           in: path
@@ -7850,7 +7854,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageDistributionUserCounts
-      operationId: report_getTeamsDeviceUsageDistributionUserCounts
+      operationId: report_getTeamsDeviceUsageDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -7880,7 +7884,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageTotalUserCounts
-      operationId: report_getTeamsDeviceUsageTotalUserCounts
+      operationId: report_getTeamsDeviceUsageTotalUserCount
       parameters:
         - name: period
           in: path
@@ -7910,7 +7914,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageUserCounts
-      operationId: report_getTeamsDeviceUsageUserCounts
+      operationId: report_getTeamsDeviceUsageUserCount
       parameters:
         - name: period
           in: path
@@ -8002,7 +8006,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsTeamActivityCounts
-      operationId: report_getTeamsTeamActivityCounts
+      operationId: report_getTeamsTeamActivityCount
       parameters:
         - name: period
           in: path
@@ -8094,7 +8098,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsTeamActivityDistributionCounts
-      operationId: report_getTeamsTeamActivityDistributionCounts
+      operationId: report_getTeamsTeamActivityDistributionCount
       parameters:
         - name: period
           in: path
@@ -8124,7 +8128,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsTeamCounts
-      operationId: report_getTeamsTeamCounts
+      operationId: report_getTeamsTeamCount
       parameters:
         - name: period
           in: path
@@ -8154,7 +8158,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityCounts
-      operationId: report_getTeamsUserActivityCounts
+      operationId: report_getTeamsUserActivityCount
       parameters:
         - name: period
           in: path
@@ -8184,7 +8188,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityDistributionTotalUserCounts
-      operationId: report_getTeamsUserActivityDistributionTotalUserCounts
+      operationId: report_getTeamsUserActivityDistributionTotalUserCount
       parameters:
         - name: period
           in: path
@@ -8214,7 +8218,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityDistributionUserCounts
-      operationId: report_getTeamsUserActivityDistributionUserCounts
+      operationId: report_getTeamsUserActivityDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -8244,7 +8248,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityTotalCounts
-      operationId: report_getTeamsUserActivityTotalCounts
+      operationId: report_getTeamsUserActivityTotalCount
       parameters:
         - name: period
           in: path
@@ -8274,7 +8278,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityTotalDistributionCounts
-      operationId: report_getTeamsUserActivityTotalDistributionCounts
+      operationId: report_getTeamsUserActivityTotalDistributionCount
       parameters:
         - name: period
           in: path
@@ -8304,7 +8308,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityTotalUserCounts
-      operationId: report_getTeamsUserActivityTotalUserCounts
+      operationId: report_getTeamsUserActivityTotalUserCount
       parameters:
         - name: period
           in: path
@@ -8334,7 +8338,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityUserCounts
-      operationId: report_getTeamsUserActivityUserCounts
+      operationId: report_getTeamsUserActivityUserCount
       parameters:
         - name: period
           in: path
@@ -8426,7 +8430,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getUserArchivedPrintJobs
-      operationId: report_getUserArchivedPrintJobs
+      operationId: report_getUserArchivedPrintJob
       parameters:
         - name: userId
           in: path
@@ -8489,7 +8493,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerActivityCounts
-      operationId: report_getYammerActivityCounts
+      operationId: report_getYammerActivityCount
       parameters:
         - name: period
           in: path
@@ -8519,7 +8523,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerActivityUserCounts
-      operationId: report_getYammerActivityUserCounts
+      operationId: report_getYammerActivityUserCount
       parameters:
         - name: period
           in: path
@@ -8611,7 +8615,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerDeviceUsageDistributionUserCounts
-      operationId: report_getYammerDeviceUsageDistributionUserCounts
+      operationId: report_getYammerDeviceUsageDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -8641,7 +8645,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerDeviceUsageUserCounts
-      operationId: report_getYammerDeviceUsageUserCounts
+      operationId: report_getYammerDeviceUsageUserCount
       parameters:
         - name: period
           in: path
@@ -8733,7 +8737,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerGroupsActivityCounts
-      operationId: report_getYammerGroupsActivityCounts
+      operationId: report_getYammerGroupsActivityCount
       parameters:
         - name: period
           in: path
@@ -8825,7 +8829,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerGroupsActivityGroupCounts
-      operationId: report_getYammerGroupsActivityGroupCounts
+      operationId: report_getYammerGroupsActivityGroupCount
       parameters:
         - name: period
           in: path
@@ -8856,7 +8860,7 @@ paths:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentDetails
       description: Metadata for Enrollment abandonment details report
-      operationId: report_managedDeviceEnrollmentAbandonmentDetails
+      operationId: report_managedDeviceEnrollmentAbandonmentDetail
       parameters:
         - name: skip
           in: path
@@ -8967,7 +8971,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: report_managedDeviceEnrollmentFailureDetails
+      operationId: report_managedDeviceEnrollmentFailureDetail
       responses:
         2XX:
           description: Success
@@ -8983,7 +8987,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: report_managedDeviceEnrollmentFailureDetails
+      operationId: report_managedDeviceEnrollmentFailureDetail
       parameters:
         - name: skip
           in: path
@@ -9039,7 +9043,7 @@ paths:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureTrends
       description: Metadata for the enrollment failure trends report
-      operationId: report_managedDeviceEnrollmentFailureTrends
+      operationId: report_managedDeviceEnrollmentFailureTrend
       responses:
         2XX:
           description: Success
@@ -9055,7 +9059,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: report_managedDeviceEnrollmentTopFailures
+      operationId: report_managedDeviceEnrollmentTopFailure
       responses:
         2XX:
           description: Success
@@ -9071,7 +9075,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: report_managedDeviceEnrollmentTopFailures
+      operationId: report_managedDeviceEnrollmentTopFailure
       parameters:
         - name: period
           in: path
@@ -10178,7 +10182,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getAttackSimulationRepeatOffenders
-      operationId: report.security_getAttackSimulationRepeatOffenders
+      operationId: report.security_getAttackSimulationRepeatOffender
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10287,7 +10291,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/reportroot-list-usercredentialusagedetails?view=graph-rest-1.0
-      operationId: report_ListUserCredentialUsageDetails
+      operationId: report_ListUserCredentialUsageDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10365,7 +10369,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Create new navigation property to userCredentialUsageDetails for reports
-      operationId: report_CreateUserCredentialUsageDetails
+      operationId: report_CreateUserCredentialUsageDetail
       requestBody:
         description: New navigation property
         content:
@@ -10389,7 +10393,7 @@ paths:
         - reports.userCredentialUsageDetails
       summary: Get userCredentialUsageDetails from reports
       description: Represents the self-service password reset (SSPR) usage for a given tenant.
-      operationId: report_GetUserCredentialUsageDetails
+      operationId: report_GetUserCredentialUsageDetail
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
@@ -10444,7 +10448,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Update the navigation property userCredentialUsageDetails in reports
-      operationId: report_UpdateUserCredentialUsageDetails
+      operationId: report_UpdateUserCredentialUsageDetail
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
@@ -10475,7 +10479,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Delete navigation property userCredentialUsageDetails for reports
-      operationId: report_DeleteUserCredentialUsageDetails
+      operationId: report_DeleteUserCredentialUsageDetail
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
@@ -10790,6 +10794,8 @@ components:
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
+            managedServiceIdentity:
+              $ref: '#/components/schemas/microsoft.graph.managedIdentity'
             mfaDetail:
               $ref: '#/components/schemas/microsoft.graph.mfaDetail'
             networkLocationDetails:
@@ -12192,11 +12198,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -12618,6 +12624,18 @@ components:
           type: string
           description: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedIdentity:
+      title: managedIdentity
+      type: object
+      properties:
+        associatedResourceId:
+          type: string
+          description: The ARM resource ID of the Azure resource associated with the managed identity used for sign in.
+          nullable: true
+        msiType:
+          $ref: '#/components/schemas/microsoft.graph.msiType'
       additionalProperties:
         type: object
     microsoft.graph.mfaDetail:
@@ -13468,6 +13486,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.msiType:
+      title: msiType
+      enum:
+        - none
+        - userAssigned
+        - systemAssigned
+        - unknownFutureValue
+      type: string
     microsoft.graph.networkType:
       title: networkType
       enum:

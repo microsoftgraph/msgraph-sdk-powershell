@@ -385,7 +385,7 @@ paths:
         - admin.adminWindows
       summary: Get windows from admin
       description: A container for all Windows administrator functionalities. Read-only.
-      operationId: admin_GetWindows
+      operationId: admin_GetWindow
       parameters:
         - name: $select
           in: query
@@ -427,7 +427,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property windows in admin
-      operationId: admin_UpdateWindows
+      operationId: admin_UpdateWindow
       requestBody:
         description: New navigation property values
         content:
@@ -449,7 +449,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property windows for admin
-      operationId: admin_DeleteWindows
+      operationId: admin_DeleteWindow
       parameters:
         - name: If-Match
           in: header
@@ -469,7 +469,7 @@ paths:
         - admin.adminWindows
       summary: Get updates from admin
       description: Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
-      operationId: admin.window_GetUpdates
+      operationId: admin.window_GetUpdate
       parameters:
         - name: $select
           in: query
@@ -521,7 +521,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property updates in admin
-      operationId: admin.window_UpdateUpdates
+      operationId: admin.window_UpdateUpdate
       requestBody:
         description: New navigation property values
         content:
@@ -543,7 +543,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property updates for admin
-      operationId: admin.window_DeleteUpdates
+      operationId: admin.window_DeleteUpdate
       parameters:
         - name: If-Match
           in: header
@@ -650,7 +650,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-catalog-list-entries?view=graph-rest-1.0
-      operationId: admin.window.update.catalog_ListEntries
+      operationId: admin.window.update.catalog_ListEntry
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -716,7 +716,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Create new navigation property to entries for admin
-      operationId: admin.window.update.catalog_CreateEntries
+      operationId: admin.window.update.catalog_CreateEntry
       requestBody:
         description: New navigation property
         content:
@@ -740,7 +740,7 @@ paths:
         - admin.adminWindows
       summary: Get entries from admin
       description: Lists the content that you can approve for deployment. Read-only.
-      operationId: admin.window.update.catalog_GetEntries
+      operationId: admin.window.update.catalog_GetEntry
       parameters:
         - name: catalogEntry-id
           in: path
@@ -791,7 +791,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property entries in admin
-      operationId: admin.window.update.catalog_UpdateEntries
+      operationId: admin.window.update.catalog_UpdateEntry
       parameters:
         - name: catalogEntry-id
           in: path
@@ -822,7 +822,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property entries for admin
-      operationId: admin.window.update.catalog_DeleteEntries
+      operationId: admin.window.update.catalog_DeleteEntry
       parameters:
         - name: catalogEntry-id
           in: path
@@ -867,7 +867,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-deploymentaudiences?view=graph-rest-1.0
-      operationId: admin.window.update_ListDeploymentAudiences
+      operationId: admin.window.update_ListDeploymentAudience
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -935,7 +935,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-deploymentaudiences?view=graph-rest-1.0
-      operationId: admin.window.update_CreateDeploymentAudiences
+      operationId: admin.window.update_CreateDeploymentAudience
       requestBody:
         description: New navigation property
         content:
@@ -959,7 +959,7 @@ paths:
         - admin.adminWindows
       summary: Get deploymentAudiences from admin
       description: The set of updatableAsset resources to which a deployment can apply.
-      operationId: admin.window.update_GetDeploymentAudiences
+      operationId: admin.window.update_GetDeploymentAudience
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1012,7 +1012,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property deploymentAudiences in admin
-      operationId: admin.window.update_UpdateDeploymentAudiences
+      operationId: admin.window.update_UpdateDeploymentAudience
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1043,7 +1043,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property deploymentAudiences for admin
-      operationId: admin.window.update_DeleteDeploymentAudiences
+      operationId: admin.window.update_DeleteDeploymentAudience
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1074,7 +1074,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-exclusions?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience_ListExclusions
+      operationId: admin.window.update.deploymentAudience_ListExclusion
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1139,7 +1139,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Create new navigation property to exclusions for admin
-      operationId: admin.window.update.deploymentAudience_CreateExclusions
+      operationId: admin.window.update.deploymentAudience_CreateExclusion
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1172,7 +1172,7 @@ paths:
         - admin.adminWindows
       summary: Get exclusions from admin
       description: Specifies the assets to exclude from the audience.
-      operationId: admin.window.update.deploymentAudience_GetExclusions
+      operationId: admin.window.update.deploymentAudience_GetExclusion
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1228,7 +1228,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property exclusions in admin
-      operationId: admin.window.update.deploymentAudience_UpdateExclusions
+      operationId: admin.window.update.deploymentAudience_UpdateExclusion
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1267,7 +1267,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property exclusions for admin
-      operationId: admin.window.update.deploymentAudience_DeleteExclusions
+      operationId: admin.window.update.deploymentAudience_DeleteExclusion
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1306,7 +1306,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience.exclusion_addMembers
+      operationId: admin.window.update.deploymentAudience.exclusion_addMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1404,7 +1404,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience.exclusion_removeMembers
+      operationId: admin.window.update.deploymentAudience.exclusion_removeMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1520,7 +1520,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.deploymentAudience.exclusion_enrollAssets
+      operationId: admin.window.update.deploymentAudience.exclusion_enrollAsset
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1598,7 +1598,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.deploymentAudience.exclusion_unenrollAssets
+      operationId: admin.window.update.deploymentAudience.exclusion_unenrollAsset
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1680,7 +1680,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-members?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience_ListMembers
+      operationId: admin.window.update.deploymentAudience_ListMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1745,7 +1745,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Create new navigation property to members for admin
-      operationId: admin.window.update.deploymentAudience_CreateMembers
+      operationId: admin.window.update.deploymentAudience_CreateMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1778,7 +1778,7 @@ paths:
         - admin.adminWindows
       summary: Get members from admin
       description: Specifies the assets to include in the audience.
-      operationId: admin.window.update.deploymentAudience_GetMembers
+      operationId: admin.window.update.deploymentAudience_GetMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1834,7 +1834,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property members in admin
-      operationId: admin.window.update.deploymentAudience_UpdateMembers
+      operationId: admin.window.update.deploymentAudience_UpdateMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1873,7 +1873,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property members for admin
-      operationId: admin.window.update.deploymentAudience_DeleteMembers
+      operationId: admin.window.update.deploymentAudience_DeleteMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -1912,7 +1912,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience.member_addMembers
+      operationId: admin.window.update.deploymentAudience.member_addMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2010,7 +2010,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.deploymentAudience.member_removeMembers
+      operationId: admin.window.update.deploymentAudience.member_removeMember
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2126,7 +2126,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.deploymentAudience.member_enrollAssets
+      operationId: admin.window.update.deploymentAudience.member_enrollAsset
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2204,7 +2204,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.deploymentAudience.member_unenrollAssets
+      operationId: admin.window.update.deploymentAudience.member_unenrollAsset
       parameters:
         - name: deploymentAudience-id
           in: path
@@ -2409,7 +2409,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-deployments?view=graph-rest-1.0
-      operationId: admin.window.update_ListDeployments
+      operationId: admin.window.update_ListDeployment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2487,7 +2487,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-deployments?view=graph-rest-1.0
-      operationId: admin.window.update_CreateDeployments
+      operationId: admin.window.update_CreateDeployment
       requestBody:
         description: New navigation property
         content:
@@ -2511,7 +2511,7 @@ paths:
         - admin.adminWindows
       summary: Get deployments from admin
       description: Deployments created using the deployment service.
-      operationId: admin.window.update_GetDeployments
+      operationId: admin.window.update_GetDeployment
       parameters:
         - name: deployment-id
           in: path
@@ -2566,7 +2566,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property deployments in admin
-      operationId: admin.window.update_UpdateDeployments
+      operationId: admin.window.update_UpdateDeployment
       parameters:
         - name: deployment-id
           in: path
@@ -2597,7 +2597,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property deployments for admin
-      operationId: admin.window.update_DeleteDeployments
+      operationId: admin.window.update_DeleteDeployment
       parameters:
         - name: deployment-id
           in: path
@@ -2740,7 +2740,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-exclusions?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience_ListExclusions
+      operationId: admin.window.update.deployment.audience_ListExclusion
       parameters:
         - name: deployment-id
           in: path
@@ -2805,7 +2805,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Create new navigation property to exclusions for admin
-      operationId: admin.window.update.deployment.audience_CreateExclusions
+      operationId: admin.window.update.deployment.audience_CreateExclusion
       parameters:
         - name: deployment-id
           in: path
@@ -2838,7 +2838,7 @@ paths:
         - admin.adminWindows
       summary: Get exclusions from admin
       description: Specifies the assets to exclude from the audience.
-      operationId: admin.window.update.deployment.audience_GetExclusions
+      operationId: admin.window.update.deployment.audience_GetExclusion
       parameters:
         - name: deployment-id
           in: path
@@ -2894,7 +2894,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property exclusions in admin
-      operationId: admin.window.update.deployment.audience_UpdateExclusions
+      operationId: admin.window.update.deployment.audience_UpdateExclusion
       parameters:
         - name: deployment-id
           in: path
@@ -2933,7 +2933,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property exclusions for admin
-      operationId: admin.window.update.deployment.audience_DeleteExclusions
+      operationId: admin.window.update.deployment.audience_DeleteExclusion
       parameters:
         - name: deployment-id
           in: path
@@ -2972,7 +2972,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience.exclusion_addMembers
+      operationId: admin.window.update.deployment.audience.exclusion_addMember
       parameters:
         - name: deployment-id
           in: path
@@ -3070,7 +3070,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience.exclusion_removeMembers
+      operationId: admin.window.update.deployment.audience.exclusion_removeMember
       parameters:
         - name: deployment-id
           in: path
@@ -3186,7 +3186,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.deployment.audience.exclusion_enrollAssets
+      operationId: admin.window.update.deployment.audience.exclusion_enrollAsset
       parameters:
         - name: deployment-id
           in: path
@@ -3264,7 +3264,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.deployment.audience.exclusion_unenrollAssets
+      operationId: admin.window.update.deployment.audience.exclusion_unenrollAsset
       parameters:
         - name: deployment-id
           in: path
@@ -3346,7 +3346,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-members?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience_ListMembers
+      operationId: admin.window.update.deployment.audience_ListMember
       parameters:
         - name: deployment-id
           in: path
@@ -3411,7 +3411,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Create new navigation property to members for admin
-      operationId: admin.window.update.deployment.audience_CreateMembers
+      operationId: admin.window.update.deployment.audience_CreateMember
       parameters:
         - name: deployment-id
           in: path
@@ -3444,7 +3444,7 @@ paths:
         - admin.adminWindows
       summary: Get members from admin
       description: Specifies the assets to include in the audience.
-      operationId: admin.window.update.deployment.audience_GetMembers
+      operationId: admin.window.update.deployment.audience_GetMember
       parameters:
         - name: deployment-id
           in: path
@@ -3500,7 +3500,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property members in admin
-      operationId: admin.window.update.deployment.audience_UpdateMembers
+      operationId: admin.window.update.deployment.audience_UpdateMember
       parameters:
         - name: deployment-id
           in: path
@@ -3539,7 +3539,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property members for admin
-      operationId: admin.window.update.deployment.audience_DeleteMembers
+      operationId: admin.window.update.deployment.audience_DeleteMember
       parameters:
         - name: deployment-id
           in: path
@@ -3578,7 +3578,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience.member_addMembers
+      operationId: admin.window.update.deployment.audience.member_addMember
       parameters:
         - name: deployment-id
           in: path
@@ -3676,7 +3676,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.deployment.audience.member_removeMembers
+      operationId: admin.window.update.deployment.audience.member_removeMember
       parameters:
         - name: deployment-id
           in: path
@@ -3792,7 +3792,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.deployment.audience.member_enrollAssets
+      operationId: admin.window.update.deployment.audience.member_enrollAsset
       parameters:
         - name: deployment-id
           in: path
@@ -3870,7 +3870,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.deployment.audience.member_unenrollAssets
+      operationId: admin.window.update.deployment.audience.member_unenrollAsset
       parameters:
         - name: deployment-id
           in: path
@@ -4075,7 +4075,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-resourceconnections?view=graph-rest-1.0
-      operationId: admin.window.update_ListResourceConnections
+      operationId: admin.window.update_ListResourceConnection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4139,7 +4139,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-1.0
-      operationId: admin.window.update_CreateResourceConnections
+      operationId: admin.window.update_CreateResourceConnection
       requestBody:
         description: New navigation property
         content:
@@ -4163,7 +4163,7 @@ paths:
         - admin.adminWindows
       summary: Get resourceConnections from admin
       description: Service connections to external resources such as analytics workspaces.
-      operationId: admin.window.update_GetResourceConnections
+      operationId: admin.window.update_GetResourceConnection
       parameters:
         - name: resourceConnection-id
           in: path
@@ -4212,7 +4212,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property resourceConnections in admin
-      operationId: admin.window.update_UpdateResourceConnections
+      operationId: admin.window.update_UpdateResourceConnection
       parameters:
         - name: resourceConnection-id
           in: path
@@ -4243,7 +4243,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property resourceConnections for admin
-      operationId: admin.window.update_DeleteResourceConnections
+      operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
           in: path
@@ -4288,7 +4288,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-updatableassets?view=graph-rest-1.0
-      operationId: admin.window.update_ListUpdatableAssets
+      operationId: admin.window.update_ListUpdatableAsset
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4349,7 +4349,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-updatableassets-updatableassetgroup?view=graph-rest-1.0
-      operationId: admin.window.update_CreateUpdatableAssets
+      operationId: admin.window.update_CreateUpdatableAsset
       requestBody:
         description: New navigation property
         content:
@@ -4373,7 +4373,7 @@ paths:
         - admin.adminWindows
       summary: Get updatableAssets from admin
       description: Assets registered with the deployment service that can receive updates.
-      operationId: admin.window.update_GetUpdatableAssets
+      operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
           in: path
@@ -4421,7 +4421,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property updatableAssets in admin
-      operationId: admin.window.update_UpdateUpdatableAssets
+      operationId: admin.window.update_UpdateUpdatableAsset
       parameters:
         - name: updatableAsset-id
           in: path
@@ -4452,7 +4452,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property updatableAssets for admin
-      operationId: admin.window.update_DeleteUpdatableAssets
+      operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
           in: path
@@ -4483,7 +4483,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatableAsset_addMembers
+      operationId: admin.window.update.updatableAsset_addMember
       parameters:
         - name: updatableAsset-id
           in: path
@@ -4565,7 +4565,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatableAsset_removeMembers
+      operationId: admin.window.update.updatableAsset_removeMember
       parameters:
         - name: updatableAsset-id
           in: path
@@ -4657,7 +4657,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.updatableAsset_enrollAssets
+      operationId: admin.window.update.updatableAsset_enrollAsset
       requestBody:
         description: Action parameters
         content:
@@ -4717,7 +4717,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.updatableAsset_unenrollAssets
+      operationId: admin.window.update.updatableAsset_unenrollAsset
       requestBody:
         description: Action parameters
         content:
@@ -4781,7 +4781,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-updatepolicies?view=graph-rest-1.0
-      operationId: admin.window.update_ListUpdatePolicies
+      operationId: admin.window.update_ListUpdatePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4855,7 +4855,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-updatepolicies?view=graph-rest-1.0
-      operationId: admin.window.update_CreateUpdatePolicies
+      operationId: admin.window.update_CreateUpdatePolicy
       requestBody:
         description: New navigation property
         content:
@@ -4879,7 +4879,7 @@ paths:
         - admin.adminWindows
       summary: Get updatePolicies from admin
       description: A collection of policies for approving the deployment of different content to an audience over time.
-      operationId: admin.window.update_GetUpdatePolicies
+      operationId: admin.window.update_GetUpdatePolicy
       parameters:
         - name: updatePolicy-id
           in: path
@@ -4934,7 +4934,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property updatePolicies in admin
-      operationId: admin.window.update_UpdateUpdatePolicies
+      operationId: admin.window.update_UpdateUpdatePolicy
       parameters:
         - name: updatePolicy-id
           in: path
@@ -4965,7 +4965,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property updatePolicies for admin
-      operationId: admin.window.update_DeleteUpdatePolicies
+      operationId: admin.window.update_DeleteUpdatePolicy
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5108,7 +5108,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-exclusions?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience_ListExclusions
+      operationId: admin.window.update.updatePolicy.audience_ListExclusion
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5173,7 +5173,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Create new navigation property to exclusions for admin
-      operationId: admin.window.update.updatePolicy.audience_CreateExclusions
+      operationId: admin.window.update.updatePolicy.audience_CreateExclusion
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5206,7 +5206,7 @@ paths:
         - admin.adminWindows
       summary: Get exclusions from admin
       description: Specifies the assets to exclude from the audience.
-      operationId: admin.window.update.updatePolicy.audience_GetExclusions
+      operationId: admin.window.update.updatePolicy.audience_GetExclusion
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5262,7 +5262,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property exclusions in admin
-      operationId: admin.window.update.updatePolicy.audience_UpdateExclusions
+      operationId: admin.window.update.updatePolicy.audience_UpdateExclusion
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5301,7 +5301,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property exclusions for admin
-      operationId: admin.window.update.updatePolicy.audience_DeleteExclusions
+      operationId: admin.window.update.updatePolicy.audience_DeleteExclusion
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5340,7 +5340,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience.exclusion_addMembers
+      operationId: admin.window.update.updatePolicy.audience.exclusion_addMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5438,7 +5438,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience.exclusion_removeMembers
+      operationId: admin.window.update.updatePolicy.audience.exclusion_removeMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5554,7 +5554,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.updatePolicy.audience.exclusion_enrollAssets
+      operationId: admin.window.update.updatePolicy.audience.exclusion_enrollAsset
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5632,7 +5632,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.updatePolicy.audience.exclusion_unenrollAssets
+      operationId: admin.window.update.updatePolicy.audience.exclusion_unenrollAsset
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5714,7 +5714,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-members?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience_ListMembers
+      operationId: admin.window.update.updatePolicy.audience_ListMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5779,7 +5779,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Create new navigation property to members for admin
-      operationId: admin.window.update.updatePolicy.audience_CreateMembers
+      operationId: admin.window.update.updatePolicy.audience_CreateMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5812,7 +5812,7 @@ paths:
         - admin.adminWindows
       summary: Get members from admin
       description: Specifies the assets to include in the audience.
-      operationId: admin.window.update.updatePolicy.audience_GetMembers
+      operationId: admin.window.update.updatePolicy.audience_GetMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5868,7 +5868,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property members in admin
-      operationId: admin.window.update.updatePolicy.audience_UpdateMembers
+      operationId: admin.window.update.updatePolicy.audience_UpdateMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5907,7 +5907,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property members for admin
-      operationId: admin.window.update.updatePolicy.audience_DeleteMembers
+      operationId: admin.window.update.updatePolicy.audience_DeleteMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -5946,7 +5946,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience.member_addMembers
+      operationId: admin.window.update.updatePolicy.audience.member_addMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -6044,7 +6044,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy.audience.member_removeMembers
+      operationId: admin.window.update.updatePolicy.audience.member_removeMember
       parameters:
         - name: updatePolicy-id
           in: path
@@ -6160,7 +6160,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      operationId: admin.window.update.updatePolicy.audience.member_enrollAssets
+      operationId: admin.window.update.updatePolicy.audience.member_enrollAsset
       parameters:
         - name: updatePolicy-id
           in: path
@@ -6238,7 +6238,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      operationId: admin.window.update.updatePolicy.audience.member_unenrollAssets
+      operationId: admin.window.update.updatePolicy.audience.member_unenrollAsset
       parameters:
         - name: updatePolicy-id
           in: path
@@ -6429,7 +6429,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-list-compliancechanges?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy_ListComplianceChanges
+      operationId: admin.window.update.updatePolicy_ListComplianceChange
       parameters:
         - name: updatePolicy-id
           in: path
@@ -6509,7 +6509,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-post-compliancechanges-contentapproval?view=graph-rest-1.0
-      operationId: admin.window.update.updatePolicy_CreateComplianceChanges
+      operationId: admin.window.update.updatePolicy_CreateComplianceChange
       parameters:
         - name: updatePolicy-id
           in: path
@@ -6542,7 +6542,7 @@ paths:
         - admin.adminWindows
       summary: Get complianceChanges from admin
       description: Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
-      operationId: admin.window.update.updatePolicy_GetComplianceChanges
+      operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id
           in: path
@@ -6603,7 +6603,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Update the navigation property complianceChanges in admin
-      operationId: admin.window.update.updatePolicy_UpdateComplianceChanges
+      operationId: admin.window.update.updatePolicy_UpdateComplianceChange
       parameters:
         - name: updatePolicy-id
           in: path
@@ -6642,7 +6642,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete navigation property complianceChanges for admin
-      operationId: admin.window.update.updatePolicy_DeleteComplianceChanges
+      operationId: admin.window.update.updatePolicy_DeleteComplianceChange
       parameters:
         - name: updatePolicy-id
           in: path

@@ -223,7 +223,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: directoryObject_checkMemberGroups
+      operationId: directoryObject_checkMemberGroup
       parameters:
         - name: directoryObject-id
           in: path
@@ -275,7 +275,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryObject_checkMemberObjects
+      operationId: directoryObject_checkMemberObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -331,7 +331,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: directoryObject_getMemberGroups
+      operationId: directoryObject_getMemberGroup
       parameters:
         - name: directoryObject-id
           in: path
@@ -383,7 +383,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getMemberObjects
-      operationId: directoryObject_getMemberObjects
+      operationId: directoryObject_getMemberObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -488,7 +488,7 @@ paths:
       tags:
         - directoryObjects.Functions
       summary: Invoke function delta
-      operationId: directoryObject_delta
+      operationId: directoryObject_deltum
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -559,7 +559,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: directoryObject_getGraphBPreIds
+      operationId: directoryObject_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -612,7 +612,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
-      operationId: directoryObject_getUserOwnedObjects
+      operationId: directoryObject_getUserOwnedObject
       requestBody:
         description: Action parameters
         content:
@@ -648,7 +648,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: directoryObject_validateProperties
+      operationId: directoryObject_validateProperty
       requestBody:
         description: Action parameters
         content:

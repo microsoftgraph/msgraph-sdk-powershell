@@ -64,7 +64,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action scheduleActionsForRules
-      operationId: deviceManagement.deviceCompliancePolicy_scheduleActionsGraphFPreRules
+      operationId: deviceManagement.deviceCompliancePolicy_scheduleActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -721,7 +721,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.managedDevice_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.managedDevice_windowsDefenderUpdateSignature
       parameters:
         - name: managedDevice-id
           in: path
@@ -1353,7 +1353,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceManagementIntentPerSettingContributingProfiles
-      operationId: deviceManagement.report_getDeviceManagementIntentPerSettingContributingProfiles
+      operationId: deviceManagement.report_getDeviceManagementIntentPerSettingContributingProfile
       requestBody:
         description: Action parameters
         content:
@@ -1998,7 +1998,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getReportFilters
-      operationId: deviceManagement.report_getReportFilters
+      operationId: deviceManagement.report_getReportFilter
       requestBody:
         description: Action parameters
         content:
@@ -2203,7 +2203,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
       description: Updates properties on Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentity_updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_updateDeviceProperty
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path

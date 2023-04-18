@@ -293,7 +293,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
-      operationId: bookingBusiness_ListAppointments
+      operationId: bookingBusiness_ListAppointment
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -470,7 +470,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
-      operationId: bookingBusiness_CreateAppointments
+      operationId: bookingBusiness_CreateAppointment
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -503,7 +503,7 @@ paths:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
       description: All the appointments of this business. Read-only. Nullable.
-      operationId: bookingBusiness_GetAppointments
+      operationId: bookingBusiness_GetAppointment
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -595,7 +595,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Update the navigation property appointments in bookingBusinesses
-      operationId: bookingBusiness_UpdateAppointments
+      operationId: bookingBusiness_UpdateAppointment
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -634,7 +634,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Delete navigation property appointments for bookingBusinesses
-      operationId: bookingBusiness_DeleteAppointments
+      operationId: bookingBusiness_DeleteAppointment
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1217,7 +1217,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
-      operationId: bookingBusiness_ListCustomers
+      operationId: bookingBusiness_ListCustomer
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1298,7 +1298,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
-      operationId: bookingBusiness_CreateCustomers
+      operationId: bookingBusiness_CreateCustomer
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1331,7 +1331,7 @@ paths:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
       description: All the customers of this business. Read-only. Nullable.
-      operationId: bookingBusiness_GetCustomers
+      operationId: bookingBusiness_GetCustomer
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1391,7 +1391,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Update the navigation property customers in bookingBusinesses
-      operationId: bookingBusiness_UpdateCustomers
+      operationId: bookingBusiness_UpdateCustomer
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1430,7 +1430,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Delete navigation property customers for bookingBusinesses
-      operationId: bookingBusiness_DeleteCustomers
+      operationId: bookingBusiness_DeleteCustomer
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1491,7 +1491,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
-      operationId: bookingBusiness_ListCustomQuestions
+      operationId: bookingBusiness_ListCustomQuestion
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1565,7 +1565,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Create new navigation property to customQuestions for bookingBusinesses
-      operationId: bookingBusiness_CreateCustomQuestions
+      operationId: bookingBusiness_CreateCustomQuestion
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1598,7 +1598,7 @@ paths:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
       description: All the custom questions of this business. Read-only. Nullable.
-      operationId: bookingBusiness_GetCustomQuestions
+      operationId: bookingBusiness_GetCustomQuestion
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1657,7 +1657,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Update the navigation property customQuestions in bookingBusinesses
-      operationId: bookingBusiness_UpdateCustomQuestions
+      operationId: bookingBusiness_UpdateCustomQuestion
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1696,7 +1696,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Delete navigation property customQuestions for bookingBusinesses
-      operationId: bookingBusiness_DeleteCustomQuestions
+      operationId: bookingBusiness_DeleteCustomQuestion
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1867,7 +1867,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
-      operationId: bookingBusiness_ListServices
+      operationId: bookingBusiness_ListService
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1999,7 +1999,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
-      operationId: bookingBusiness_CreateServices
+      operationId: bookingBusiness_CreateService
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2032,7 +2032,7 @@ paths:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
       description: All the services offered by this business. Read-only. Nullable.
-      operationId: bookingBusiness_GetServices
+      operationId: bookingBusiness_GetService
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2109,7 +2109,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Update the navigation property services in bookingBusinesses
-      operationId: bookingBusiness_UpdateServices
+      operationId: bookingBusiness_UpdateService
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2148,7 +2148,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Delete navigation property services for bookingBusinesses
-      operationId: bookingBusiness_DeleteServices
+      operationId: bookingBusiness_DeleteService
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2209,7 +2209,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
-      operationId: bookingBusiness_ListStaffMembers
+      operationId: bookingBusiness_ListStaffMember
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2308,7 +2308,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
-      operationId: bookingBusiness_CreateStaffMembers
+      operationId: bookingBusiness_CreateStaffMember
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2341,7 +2341,7 @@ paths:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
       description: All the staff members that provide services in this business. Read-only. Nullable.
-      operationId: bookingBusiness_GetStaffMembers
+      operationId: bookingBusiness_GetStaffMember
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2407,7 +2407,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Update the navigation property staffMembers in bookingBusinesses
-      operationId: bookingBusiness_UpdateStaffMembers
+      operationId: bookingBusiness_UpdateStaffMember
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2446,7 +2446,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Delete navigation property staffMembers for bookingBusinesses
-      operationId: bookingBusiness_DeleteStaffMembers
+      operationId: bookingBusiness_DeleteStaffMember
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2797,7 +2797,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0
-      operationId: solution_ListBusinessScenarios
+      operationId: solution_ListBusinessScenario
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2881,7 +2881,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0
-      operationId: solution_CreateBusinessScenarios
+      operationId: solution_CreateBusinessScenario
       requestBody:
         description: New navigation property
         content:
@@ -2904,7 +2904,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get businessScenarios from solutions
-      operationId: solution_GetBusinessScenarios
+      operationId: solution_GetBusinessScenario
       parameters:
         - name: businessScenario-id
           in: path
@@ -2961,7 +2961,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update the navigation property businessScenarios in solutions
-      operationId: solution_UpdateBusinessScenarios
+      operationId: solution_UpdateBusinessScenario
       parameters:
         - name: businessScenario-id
           in: path
@@ -2992,7 +2992,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Delete navigation property businessScenarios for solutions
-      operationId: solution_DeleteBusinessScenarios
+      operationId: solution_DeleteBusinessScenario
       parameters:
         - name: businessScenario-id
           in: path
@@ -3302,7 +3302,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-1.0
-      operationId: solution.businessScenario.planner.planConfiguration_ListLocalizations
+      operationId: solution.businessScenario.planner.planConfiguration_ListLocalization
       parameters:
         - name: businessScenario-id
           in: path
@@ -3380,7 +3380,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-1.0
-      operationId: solution.businessScenario.planner.planConfiguration_CreateLocalizations
+      operationId: solution.businessScenario.planner.planConfiguration_CreateLocalization
       parameters:
         - name: businessScenario-id
           in: path
@@ -3413,7 +3413,7 @@ paths:
         - solutions.businessScenario
       summary: Get localizations from solutions
       description: Localized names for the plan configuration.
-      operationId: solution.businessScenario.planner.planConfiguration_GetLocalizations
+      operationId: solution.businessScenario.planner.planConfiguration_GetLocalization
       parameters:
         - name: businessScenario-id
           in: path
@@ -3472,7 +3472,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update the navigation property localizations in solutions
-      operationId: solution.businessScenario.planner.planConfiguration_UpdateLocalizations
+      operationId: solution.businessScenario.planner.planConfiguration_UpdateLocalization
       parameters:
         - name: businessScenario-id
           in: path
@@ -3511,7 +3511,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Delete navigation property localizations for solutions
-      operationId: solution.businessScenario.planner.planConfiguration_DeleteLocalizations
+      operationId: solution.businessScenario.planner.planConfiguration_DeleteLocalization
       parameters:
         - name: businessScenario-id
           in: path
@@ -3687,7 +3687,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-1.0
-      operationId: solution.businessScenario.planner_ListTasks
+      operationId: solution.businessScenario.planner_ListTask
       parameters:
         - name: businessScenario-id
           in: path
@@ -3839,7 +3839,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-1.0
-      operationId: solution.businessScenario.planner_CreateTasks
+      operationId: solution.businessScenario.planner_CreateTask
       parameters:
         - name: businessScenario-id
           in: path
@@ -3872,7 +3872,7 @@ paths:
         - solutions.businessScenario
       summary: Get tasks from solutions
       description: The Planner tasks for the scenario.
-      operationId: solution.businessScenario.planner_GetTasks
+      operationId: solution.businessScenario.planner_GetTask
       parameters:
         - name: businessScenario-id
           in: path
@@ -3961,7 +3961,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update the navigation property tasks in solutions
-      operationId: solution.businessScenario.planner_UpdateTasks
+      operationId: solution.businessScenario.planner_UpdateTask
       parameters:
         - name: businessScenario-id
           in: path
@@ -4000,7 +4000,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Delete navigation property tasks for solutions
-      operationId: solution.businessScenario.planner_DeleteTasks
+      operationId: solution.businessScenario.planner_DeleteTask
       parameters:
         - name: businessScenario-id
           in: path

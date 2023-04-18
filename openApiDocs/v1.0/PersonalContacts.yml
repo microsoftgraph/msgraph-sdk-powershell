@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
-      operationId: user_ListContactFolders
+      operationId: user_ListContactFolder
       parameters:
         - name: user-id
           in: path
@@ -97,7 +97,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
-      operationId: user_CreateContactFolders
+      operationId: user_CreateContactFolder
       parameters:
         - name: user-id
           in: path
@@ -130,7 +130,7 @@ paths:
         - users.contactFolder
       summary: Get contactFolders from users
       description: The user's contacts folders. Read-only. Nullable.
-      operationId: user_GetContactFolders
+      operationId: user_GetContactFolder
       parameters:
         - name: user-id
           in: path
@@ -196,7 +196,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property contactFolders in users
-      operationId: user_UpdateContactFolders
+      operationId: user_UpdateContactFolder
       parameters:
         - name: user-id
           in: path
@@ -235,7 +235,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property contactFolders for users
-      operationId: user_DeleteContactFolders
+      operationId: user_DeleteContactFolder
       parameters:
         - name: user-id
           in: path
@@ -274,7 +274,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
-      operationId: user.contactFolder_ListChildFolders
+      operationId: user.contactFolder_ListChildFolder
       parameters:
         - name: user-id
           in: path
@@ -364,7 +364,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
-      operationId: user.contactFolder_CreateChildFolders
+      operationId: user.contactFolder_CreateChildFolder
       parameters:
         - name: user-id
           in: path
@@ -405,7 +405,7 @@ paths:
         - users.contactFolder
       summary: Get childFolders from users
       description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-      operationId: user.contactFolder_GetChildFolders
+      operationId: user.contactFolder_GetChildFolder
       parameters:
         - name: user-id
           in: path
@@ -479,7 +479,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property childFolders in users
-      operationId: user.contactFolder_UpdateChildFolders
+      operationId: user.contactFolder_UpdateChildFolder
       parameters:
         - name: user-id
           in: path
@@ -526,7 +526,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property childFolders for users
-      operationId: user.contactFolder_DeleteChildFolders
+      operationId: user.contactFolder_DeleteChildFolder
       parameters:
         - name: user-id
           in: path
@@ -573,7 +573,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
-      operationId: user.contactFolder.childFolder_ListContacts
+      operationId: user.contactFolder.childFolder_ListContact
       parameters:
         - name: user-id
           in: path
@@ -776,7 +776,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
-      operationId: user.contactFolder.childFolder_CreateContacts
+      operationId: user.contactFolder.childFolder_CreateContact
       parameters:
         - name: user-id
           in: path
@@ -825,7 +825,7 @@ paths:
         - users.contactFolder
       summary: Get contacts from users
       description: The contacts in the folder. Navigation property. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder_GetContacts
+      operationId: user.contactFolder.childFolder_GetContact
       parameters:
         - name: user-id
           in: path
@@ -942,7 +942,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property contacts in users
-      operationId: user.contactFolder.childFolder_UpdateContacts
+      operationId: user.contactFolder.childFolder_UpdateContact
       parameters:
         - name: user-id
           in: path
@@ -997,7 +997,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property contacts for users
-      operationId: user.contactFolder.childFolder_DeleteContacts
+      operationId: user.contactFolder.childFolder_DeleteContact
       parameters:
         - name: user-id
           in: path
@@ -1049,7 +1049,7 @@ paths:
         - users.contactFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder.contact_ListExtensions
+      operationId: user.contactFolder.childFolder.contact_ListExtension
       parameters:
         - name: user-id
           in: path
@@ -1137,7 +1137,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to extensions for users
-      operationId: user.contactFolder.childFolder.contact_CreateExtensions
+      operationId: user.contactFolder.childFolder.contact_CreateExtension
       parameters:
         - name: user-id
           in: path
@@ -1194,7 +1194,7 @@ paths:
         - users.contactFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder.contact_GetExtensions
+      operationId: user.contactFolder.childFolder.contact_GetExtension
       parameters:
         - name: user-id
           in: path
@@ -1274,7 +1274,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property extensions in users
-      operationId: user.contactFolder.childFolder.contact_UpdateExtensions
+      operationId: user.contactFolder.childFolder.contact_UpdateExtension
       parameters:
         - name: user-id
           in: path
@@ -1337,7 +1337,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property extensions for users
-      operationId: user.contactFolder.childFolder.contact_DeleteExtensions
+      operationId: user.contactFolder.childFolder.contact_DeleteExtension
       parameters:
         - name: user-id
           in: path
@@ -1442,7 +1442,7 @@ paths:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder.contact_ListMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -1534,7 +1534,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.contactFolder.childFolder.contact_CreateMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -1591,7 +1591,7 @@ paths:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder.contact_GetMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -1672,7 +1672,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.contactFolder.childFolder.contact_UpdateMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -1735,7 +1735,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.contactFolder.childFolder.contact_DeleteMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2062,7 +2062,7 @@ paths:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder.contact_ListSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2154,7 +2154,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.contactFolder.childFolder.contact_CreateSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2211,7 +2211,7 @@ paths:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder.contact_GetSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2292,7 +2292,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.contactFolder.childFolder.contact_UpdateSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2355,7 +2355,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.contactFolder.childFolder.contact_DeleteSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder.contact_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2498,7 +2498,7 @@ paths:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder_ListMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2582,7 +2582,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.contactFolder.childFolder_CreateMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2631,7 +2631,7 @@ paths:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder_GetMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2704,7 +2704,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.contactFolder.childFolder_UpdateMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2759,7 +2759,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.contactFolder.childFolder_DeleteMultiValueExtendedProperties
+      operationId: user.contactFolder.childFolder_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2849,7 +2849,7 @@ paths:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder_ListSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2933,7 +2933,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.contactFolder.childFolder_CreateSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -2982,7 +2982,7 @@ paths:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-      operationId: user.contactFolder.childFolder_GetSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3055,7 +3055,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.contactFolder.childFolder_UpdateSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3110,7 +3110,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.contactFolder.childFolder_DeleteSingleValueExtendedProperties
+      operationId: user.contactFolder.childFolder_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3232,7 +3232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
-      operationId: user.contactFolder_ListContacts
+      operationId: user.contactFolder_ListContact
       parameters:
         - name: user-id
           in: path
@@ -3427,7 +3427,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
-      operationId: user.contactFolder_CreateContacts
+      operationId: user.contactFolder_CreateContact
       parameters:
         - name: user-id
           in: path
@@ -3468,7 +3468,7 @@ paths:
         - users.contactFolder
       summary: Get contacts from users
       description: The contacts in the folder. Navigation property. Read-only. Nullable.
-      operationId: user.contactFolder_GetContacts
+      operationId: user.contactFolder_GetContact
       parameters:
         - name: user-id
           in: path
@@ -3577,7 +3577,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property contacts in users
-      operationId: user.contactFolder_UpdateContacts
+      operationId: user.contactFolder_UpdateContact
       parameters:
         - name: user-id
           in: path
@@ -3624,7 +3624,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property contacts for users
-      operationId: user.contactFolder_DeleteContacts
+      operationId: user.contactFolder_DeleteContact
       parameters:
         - name: user-id
           in: path
@@ -3668,7 +3668,7 @@ paths:
         - users.contactFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.contact_ListExtensions
+      operationId: user.contactFolder.contact_ListExtension
       parameters:
         - name: user-id
           in: path
@@ -3748,7 +3748,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to extensions for users
-      operationId: user.contactFolder.contact_CreateExtensions
+      operationId: user.contactFolder.contact_CreateExtension
       parameters:
         - name: user-id
           in: path
@@ -3797,7 +3797,7 @@ paths:
         - users.contactFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.contact_GetExtensions
+      operationId: user.contactFolder.contact_GetExtension
       parameters:
         - name: user-id
           in: path
@@ -3869,7 +3869,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property extensions in users
-      operationId: user.contactFolder.contact_UpdateExtensions
+      operationId: user.contactFolder.contact_UpdateExtension
       parameters:
         - name: user-id
           in: path
@@ -3924,7 +3924,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property extensions for users
-      operationId: user.contactFolder.contact_DeleteExtensions
+      operationId: user.contactFolder.contact_DeleteExtension
       parameters:
         - name: user-id
           in: path
@@ -4013,7 +4013,7 @@ paths:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.contact_ListMultiValueExtendedProperties
+      operationId: user.contactFolder.contact_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4097,7 +4097,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.contactFolder.contact_CreateMultiValueExtendedProperties
+      operationId: user.contactFolder.contact_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4146,7 +4146,7 @@ paths:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.contact_GetMultiValueExtendedProperties
+      operationId: user.contactFolder.contact_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4219,7 +4219,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.contactFolder.contact_UpdateMultiValueExtendedProperties
+      operationId: user.contactFolder.contact_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4274,7 +4274,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.contactFolder.contact_DeleteMultiValueExtendedProperties
+      operationId: user.contactFolder.contact_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4553,7 +4553,7 @@ paths:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.contact_ListSingleValueExtendedProperties
+      operationId: user.contactFolder.contact_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4637,7 +4637,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.contactFolder.contact_CreateSingleValueExtendedProperties
+      operationId: user.contactFolder.contact_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4686,7 +4686,7 @@ paths:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contactFolder.contact_GetSingleValueExtendedProperties
+      operationId: user.contactFolder.contact_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4759,7 +4759,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.contactFolder.contact_UpdateSingleValueExtendedProperties
+      operationId: user.contactFolder.contact_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4814,7 +4814,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.contactFolder.contact_DeleteSingleValueExtendedProperties
+      operationId: user.contactFolder.contact_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4933,7 +4933,7 @@ paths:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-      operationId: user.contactFolder_ListMultiValueExtendedProperties
+      operationId: user.contactFolder_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5009,7 +5009,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.contactFolder_CreateMultiValueExtendedProperties
+      operationId: user.contactFolder_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5050,7 +5050,7 @@ paths:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-      operationId: user.contactFolder_GetMultiValueExtendedProperties
+      operationId: user.contactFolder_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5115,7 +5115,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.contactFolder_UpdateMultiValueExtendedProperties
+      operationId: user.contactFolder_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5162,7 +5162,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.contactFolder_DeleteMultiValueExtendedProperties
+      operationId: user.contactFolder_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5236,7 +5236,7 @@ paths:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-      operationId: user.contactFolder_ListSingleValueExtendedProperties
+      operationId: user.contactFolder_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5312,7 +5312,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.contactFolder_CreateSingleValueExtendedProperties
+      operationId: user.contactFolder_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5353,7 +5353,7 @@ paths:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-      operationId: user.contactFolder_GetSingleValueExtendedProperties
+      operationId: user.contactFolder_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5418,7 +5418,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.contactFolder_UpdateSingleValueExtendedProperties
+      operationId: user.contactFolder_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5465,7 +5465,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.contactFolder_DeleteSingleValueExtendedProperties
+      operationId: user.contactFolder_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -5563,7 +5563,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
-      operationId: user_ListContacts
+      operationId: user_ListContact
       parameters:
         - name: user-id
           in: path
@@ -5751,7 +5751,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
-      operationId: user_CreateContacts
+      operationId: user_CreateContact
       parameters:
         - name: user-id
           in: path
@@ -5784,7 +5784,7 @@ paths:
         - users.contact
       summary: Get contacts from users
       description: The user's contacts. Read-only. Nullable.
-      operationId: user_GetContacts
+      operationId: user_GetContact
       parameters:
         - name: user-id
           in: path
@@ -5885,7 +5885,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property contacts in users
-      operationId: user_UpdateContacts
+      operationId: user_UpdateContact
       parameters:
         - name: user-id
           in: path
@@ -5924,7 +5924,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property contacts for users
-      operationId: user_DeleteContacts
+      operationId: user_DeleteContact
       parameters:
         - name: user-id
           in: path
@@ -5960,7 +5960,7 @@ paths:
         - users.contact
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: user.contact_ListExtensions
+      operationId: user.contact_ListExtension
       parameters:
         - name: user-id
           in: path
@@ -6032,7 +6032,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to extensions for users
-      operationId: user.contact_CreateExtensions
+      operationId: user.contact_CreateExtension
       parameters:
         - name: user-id
           in: path
@@ -6073,7 +6073,7 @@ paths:
         - users.contact
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: user.contact_GetExtensions
+      operationId: user.contact_GetExtension
       parameters:
         - name: user-id
           in: path
@@ -6137,7 +6137,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property extensions in users
-      operationId: user.contact_UpdateExtensions
+      operationId: user.contact_UpdateExtension
       parameters:
         - name: user-id
           in: path
@@ -6184,7 +6184,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property extensions for users
-      operationId: user.contact_DeleteExtensions
+      operationId: user.contact_DeleteExtension
       parameters:
         - name: user-id
           in: path
@@ -6257,7 +6257,7 @@ paths:
         - users.contact
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contact_ListMultiValueExtendedProperties
+      operationId: user.contact_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -6333,7 +6333,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.contact_CreateMultiValueExtendedProperties
+      operationId: user.contact_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -6374,7 +6374,7 @@ paths:
         - users.contact
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contact_GetMultiValueExtendedProperties
+      operationId: user.contact_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -6439,7 +6439,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.contact_UpdateMultiValueExtendedProperties
+      operationId: user.contact_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -6486,7 +6486,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.contact_DeleteMultiValueExtendedProperties
+      operationId: user.contact_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -6717,7 +6717,7 @@ paths:
         - users.contact
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contact_ListSingleValueExtendedProperties
+      operationId: user.contact_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -6793,7 +6793,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.contact_CreateSingleValueExtendedProperties
+      operationId: user.contact_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -6834,7 +6834,7 @@ paths:
         - users.contact
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-      operationId: user.contact_GetSingleValueExtendedProperties
+      operationId: user.contact_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -6899,7 +6899,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.contact_UpdateSingleValueExtendedProperties
+      operationId: user.contact_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -6946,7 +6946,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.contact_DeleteSingleValueExtendedProperties
+      operationId: user.contact_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path

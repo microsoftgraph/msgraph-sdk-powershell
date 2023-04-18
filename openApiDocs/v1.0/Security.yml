@@ -96,7 +96,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0
-      operationId: security_ListAlerts
+      operationId: security_ListAlert
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -270,7 +270,7 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts for security
-      operationId: security_CreateAlerts
+      operationId: security_CreateAlert
       requestBody:
         description: New navigation property
         content:
@@ -610,7 +610,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
-      operationId: security_GetAlerts
+      operationId: security_GetAlert
       parameters:
         - name: alert-id
           in: path
@@ -697,7 +697,7 @@ paths:
       tags:
         - security.alert
       summary: Update the navigation property alerts in security
-      operationId: security_UpdateAlerts
+      operationId: security_UpdateAlert
       parameters:
         - name: alert-id
           in: path
@@ -832,7 +832,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulationautomations?view=graph-rest-1.0
-      operationId: security.attackSimulation_ListSimulationAutomations
+      operationId: security.attackSimulation_ListSimulationAutomation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -918,7 +918,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to simulationAutomations for security
-      operationId: security.attackSimulation_CreateSimulationAutomations
+      operationId: security.attackSimulation_CreateSimulationAutomation
       requestBody:
         description: New navigation property
         content:
@@ -942,7 +942,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get simulationAutomations from security
       description: Represents simulation automation created to run on a tenant.
-      operationId: security.attackSimulation_GetSimulationAutomations
+      operationId: security.attackSimulation_GetSimulationAutomation
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1001,7 +1001,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property simulationAutomations in security
-      operationId: security.attackSimulation_UpdateSimulationAutomations
+      operationId: security.attackSimulation_UpdateSimulationAutomation
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1032,7 +1032,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property simulationAutomations for security
-      operationId: security.attackSimulation_DeleteSimulationAutomations
+      operationId: security.attackSimulation_DeleteSimulationAutomation
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1063,7 +1063,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-1.0
-      operationId: security.attackSimulation.simulationAutomation_ListRuns
+      operationId: security.attackSimulation.simulationAutomation_ListRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1140,7 +1140,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to runs for security
-      operationId: security.attackSimulation.simulationAutomation_CreateRuns
+      operationId: security.attackSimulation.simulationAutomation_CreateRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1173,7 +1173,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get runs from security
       description: A collection of simulation automation runs.
-      operationId: security.attackSimulation.simulationAutomation_GetRuns
+      operationId: security.attackSimulation.simulationAutomation_GetRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1233,7 +1233,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property runs in security
-      operationId: security.attackSimulation.simulationAutomation_UpdateRuns
+      operationId: security.attackSimulation.simulationAutomation_UpdateRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1272,7 +1272,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property runs for security
-      operationId: security.attackSimulation.simulationAutomation_DeleteRuns
+      operationId: security.attackSimulation.simulationAutomation_DeleteRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1347,7 +1347,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0
-      operationId: security.attackSimulation_ListSimulations
+      operationId: security.attackSimulation_ListSimulation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1449,7 +1449,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to simulations for security
-      operationId: security.attackSimulation_CreateSimulations
+      operationId: security.attackSimulation_CreateSimulation
       requestBody:
         description: New navigation property
         content:
@@ -1473,7 +1473,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get simulations from security
       description: Represents an attack simulation training campaign in a tenant.
-      operationId: security.attackSimulation_GetSimulations
+      operationId: security.attackSimulation_GetSimulation
       parameters:
         - name: simulation-id
           in: path
@@ -1536,7 +1536,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property simulations in security
-      operationId: security.attackSimulation_UpdateSimulations
+      operationId: security.attackSimulation_UpdateSimulation
       parameters:
         - name: simulation-id
           in: path
@@ -1567,7 +1567,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property simulations for security
-      operationId: security.attackSimulation_DeleteSimulations
+      operationId: security.attackSimulation_DeleteSimulation
       parameters:
         - name: simulation-id
           in: path
@@ -1608,7 +1608,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get cases from security
-      operationId: security_GetCases
+      operationId: security_GetCase
       parameters:
         - name: $select
           in: query
@@ -1650,7 +1650,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property cases in security
-      operationId: security_UpdateCases
+      operationId: security_UpdateCase
       requestBody:
         description: New navigation property values
         content:
@@ -1672,7 +1672,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property cases for security
-      operationId: security_DeleteCases
+      operationId: security_DeleteCase
       parameters:
         - name: If-Match
           in: header
@@ -1695,7 +1695,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-casesroot-list-ediscoverycases?view=graph-rest-1.0
-      operationId: security.case_ListEdiscoveryCases
+      operationId: security.case_ListEdiscoveryCase
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1797,7 +1797,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-casesroot-post-ediscoverycases?view=graph-rest-1.0
-      operationId: security.case_CreateEdiscoveryCases
+      operationId: security.case_CreateEdiscoveryCase
       requestBody:
         description: New navigation property
         content:
@@ -1820,7 +1820,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get ediscoveryCases from security
-      operationId: security.case_GetEdiscoveryCases
+      operationId: security.case_GetEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -1891,7 +1891,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property ediscoveryCases in security
-      operationId: security.case_UpdateEdiscoveryCases
+      operationId: security.case_UpdateEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -1922,7 +1922,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property ediscoveryCases for security
-      operationId: security.case_DeleteEdiscoveryCases
+      operationId: security.case_DeleteEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -1953,7 +1953,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-custodians?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListCustodians
+      operationId: security.case.ediscoveryCase_ListCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2054,7 +2054,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-custodians?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateCustodians
+      operationId: security.case.ediscoveryCase_CreateCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2087,7 +2087,7 @@ paths:
         - security.casesRoot
       summary: Get custodians from security
       description: Returns a list of case ediscoveryCustodian objects for this case.
-      operationId: security.case.ediscoveryCase_GetCustodians
+      operationId: security.case.ediscoveryCase_GetCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2159,7 +2159,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property custodians in security
-      operationId: security.case.ediscoveryCase_UpdateCustodians
+      operationId: security.case.ediscoveryCase_UpdateCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2198,7 +2198,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property custodians for security
-      operationId: security.case.ediscoveryCase_DeleteCustodians
+      operationId: security.case.ediscoveryCase_DeleteCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2470,7 +2470,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_ListSiteSources
+      operationId: security.case.ediscoveryCase.custodian_ListSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2561,7 +2561,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-sitesources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_CreateSiteSources
+      operationId: security.case.ediscoveryCase.custodian_CreateSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2602,7 +2602,7 @@ paths:
         - security.casesRoot
       summary: Get siteSources from security
       description: Data source entity for SharePoint sites associated with the custodian.
-      operationId: security.case.ediscoveryCase.custodian_GetSiteSources
+      operationId: security.case.ediscoveryCase.custodian_GetSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2672,7 +2672,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property siteSources in security
-      operationId: security.case.ediscoveryCase.custodian_UpdateSiteSources
+      operationId: security.case.ediscoveryCase.custodian_UpdateSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2719,7 +2719,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property siteSources for security
-      operationId: security.case.ediscoveryCase.custodian_DeleteSiteSources
+      operationId: security.case.ediscoveryCase.custodian_DeleteSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2908,7 +2908,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-unifiedgroupsources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_ListUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_ListUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3002,7 +3002,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-unifiedgroupsources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_CreateUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_CreateUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3043,7 +3043,7 @@ paths:
         - security.casesRoot
       summary: Get unifiedGroupSources from security
       description: Data source entity for groups associated with the custodian.
-      operationId: security.case.ediscoveryCase.custodian_GetUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_GetUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3114,7 +3114,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property unifiedGroupSources in security
-      operationId: security.case.ediscoveryCase.custodian_UpdateUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_UpdateUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3161,7 +3161,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property unifiedGroupSources for security
-      operationId: security.case.ediscoveryCase.custodian_DeleteUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_DeleteUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3397,7 +3397,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-usersources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_ListUserSources
+      operationId: security.case.ediscoveryCase.custodian_ListUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3495,7 +3495,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-usersources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_CreateUserSources
+      operationId: security.case.ediscoveryCase.custodian_CreateUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3536,7 +3536,7 @@ paths:
         - security.casesRoot
       summary: Get userSources from security
       description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-      operationId: security.case.ediscoveryCase.custodian_GetUserSources
+      operationId: security.case.ediscoveryCase.custodian_GetUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3607,7 +3607,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property userSources in security
-      operationId: security.case.ediscoveryCase.custodian_UpdateUserSources
+      operationId: security.case.ediscoveryCase.custodian_UpdateUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3654,7 +3654,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property userSources for security
-      operationId: security.case.ediscoveryCase.custodian_DeleteUserSources
+      operationId: security.case.ediscoveryCase.custodian_DeleteUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3872,7 +3872,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialDataSources from security
       description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
-      operationId: security.case.ediscoveryCase_ListNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_ListNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3963,7 +3963,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-noncustodialdatasources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_CreateNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3996,7 +3996,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialDataSources from security
       description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
-      operationId: security.case.ediscoveryCase_GetNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_GetNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4062,7 +4062,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property noncustodialDataSources in security
-      operationId: security.case.ediscoveryCase_UpdateNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_UpdateNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4101,7 +4101,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property noncustodialDataSources for security
-      operationId: security.case.ediscoveryCase_DeleteNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_DeleteNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4566,7 +4566,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-operations?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListOperations
+      operationId: security.case.ediscoveryCase_ListOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4652,7 +4652,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create new navigation property to operations for security
-      operationId: security.case.ediscoveryCase_CreateOperations
+      operationId: security.case.ediscoveryCase_CreateOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4685,7 +4685,7 @@ paths:
         - security.casesRoot
       summary: Get operations from security
       description: Returns a list of case caseOperation objects for this case.
-      operationId: security.case.ediscoveryCase_GetOperations
+      operationId: security.case.ediscoveryCase_GetOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4748,7 +4748,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property operations in security
-      operationId: security.case.ediscoveryCase_UpdateOperations
+      operationId: security.case.ediscoveryCase_UpdateOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4787,7 +4787,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property operations for security
-      operationId: security.case.ediscoveryCase_DeleteOperations
+      operationId: security.case.ediscoveryCase_DeleteOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4848,7 +4848,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-reviewsets?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListReviewSets
+      operationId: security.case.ediscoveryCase_ListReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4928,7 +4928,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-reviewsets?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateReviewSets
+      operationId: security.case.ediscoveryCase_CreateReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4961,7 +4961,7 @@ paths:
         - security.casesRoot
       summary: Get reviewSets from security
       description: Returns a list of eDiscoveryReviewSet objects in the case.
-      operationId: security.case.ediscoveryCase_GetReviewSets
+      operationId: security.case.ediscoveryCase_GetReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5022,7 +5022,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property reviewSets in security
-      operationId: security.case.ediscoveryCase_UpdateReviewSets
+      operationId: security.case.ediscoveryCase_UpdateReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5061,7 +5061,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property reviewSets for security
-      operationId: security.case.ediscoveryCase_DeleteReviewSets
+      operationId: security.case.ediscoveryCase_DeleteReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5147,7 +5147,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-list-queries?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.reviewSet_ListQueries
+      operationId: security.case.ediscoveryCase.reviewSet_ListQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5245,7 +5245,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-post-queries?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.reviewSet_CreateQueries
+      operationId: security.case.ediscoveryCase.reviewSet_CreateQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5286,7 +5286,7 @@ paths:
         - security.casesRoot
       summary: Get queries from security
       description: Represents queries within the review set.
-      operationId: security.case.ediscoveryCase.reviewSet_GetQueries
+      operationId: security.case.ediscoveryCase.reviewSet_GetQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5357,7 +5357,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property queries in security
-      operationId: security.case.ediscoveryCase.reviewSet_UpdateQueries
+      operationId: security.case.ediscoveryCase.reviewSet_UpdateQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5404,7 +5404,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property queries for security
-      operationId: security.case.ediscoveryCase.reviewSet_DeleteQueries
+      operationId: security.case.ediscoveryCase.reviewSet_DeleteQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5451,7 +5451,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-applytags?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.reviewSet.query_applyTags
+      operationId: security.case.ediscoveryCase.reviewSet.query_applyTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5562,7 +5562,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-searches?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListSearches
+      operationId: security.case.ediscoveryCase_ListSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5665,7 +5665,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-searches?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateSearches
+      operationId: security.case.ediscoveryCase_CreateSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5698,7 +5698,7 @@ paths:
         - security.casesRoot
       summary: Get searches from security
       description: Returns a list of eDiscoverySearch objects associated with this case.
-      operationId: security.case.ediscoveryCase_GetSearches
+      operationId: security.case.ediscoveryCase_GetSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5772,7 +5772,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property searches in security
-      operationId: security.case.ediscoveryCase_UpdateSearches
+      operationId: security.case.ediscoveryCase_UpdateSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5811,7 +5811,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property searches for security
-      operationId: security.case.ediscoveryCase_DeleteSearches
+      operationId: security.case.ediscoveryCase_DeleteSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5850,7 +5850,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-additionalsources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.search_ListAdditionalSources
+      operationId: security.case.ediscoveryCase.search_ListAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5939,7 +5939,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-post-additionalsources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.search_CreateAdditionalSources
+      operationId: security.case.ediscoveryCase.search_CreateAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5980,7 +5980,7 @@ paths:
         - security.casesRoot
       summary: Get additionalSources from security
       description: Adds an additional source to the eDiscovery search.
-      operationId: security.case.ediscoveryCase.search_GetAdditionalSources
+      operationId: security.case.ediscoveryCase.search_GetAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6048,7 +6048,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property additionalSources in security
-      operationId: security.case.ediscoveryCase.search_UpdateAdditionalSources
+      operationId: security.case.ediscoveryCase.search_UpdateAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6095,7 +6095,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property additionalSources for security
-      operationId: security.case.ediscoveryCase.search_DeleteAdditionalSources
+      operationId: security.case.ediscoveryCase.search_DeleteAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6241,7 +6241,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-custodiansources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.search_ListCustodianSources
+      operationId: security.case.ediscoveryCase.search_ListCustodianSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6328,7 +6328,7 @@ paths:
         - security.casesRoot
       summary: Get custodianSources from security
       description: Custodian sources that are included in the eDiscovery search.
-      operationId: security.case.ediscoveryCase.search_GetCustodianSources
+      operationId: security.case.ediscoveryCase.search_GetCustodianSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6507,7 +6507,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-estimatestatistics?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.search_estimateStatistics
+      operationId: security.case.ediscoveryCase.search_estimateStatistic
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6580,7 +6580,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialSources from security
       description: noncustodialDataSource sources that are included in the eDiscovery search
-      operationId: security.case.ediscoveryCase.search_ListNoncustodialSources
+      operationId: security.case.ediscoveryCase.search_ListNoncustodialSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6677,7 +6677,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialSources from security
       description: noncustodialDataSource sources that are included in the eDiscovery search
-      operationId: security.case.ediscoveryCase.search_GetNoncustodialSources
+      operationId: security.case.ediscoveryCase.search_GetNoncustodialSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6808,7 +6808,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-get?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_GetSettings
+      operationId: security.case.ediscoveryCase_GetSetting
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6863,7 +6863,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-update?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_UpdateSettings
+      operationId: security.case.ediscoveryCase_UpdateSetting
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6894,7 +6894,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property settings for security
-      operationId: security.case.ediscoveryCase_DeleteSettings
+      operationId: security.case.ediscoveryCase_DeleteSetting
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6950,7 +6950,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-tags?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListTags
+      operationId: security.case.ediscoveryCase_ListTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7038,7 +7038,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-tags?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateTags
+      operationId: security.case.ediscoveryCase_CreateTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7071,7 +7071,7 @@ paths:
         - security.casesRoot
       summary: Get tags from security
       description: Returns a list of ediscoveryReviewTag objects associated to this case.
-      operationId: security.case.ediscoveryCase_GetTags
+      operationId: security.case.ediscoveryCase_GetTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7136,7 +7136,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property tags in security
-      operationId: security.case.ediscoveryCase_UpdateTags
+      operationId: security.case.ediscoveryCase_UpdateTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7175,7 +7175,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property tags for security
-      operationId: security.case.ediscoveryCase_DeleteTags
+      operationId: security.case.ediscoveryCase_DeleteTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7211,7 +7211,7 @@ paths:
         - security.casesRoot
       summary: Get childTags from security
       description: Returns the tags that are a child of a tag.
-      operationId: security.case.ediscoveryCase.tag_ListChildTags
+      operationId: security.case.ediscoveryCase.tag_ListChildTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7305,7 +7305,7 @@ paths:
         - security.casesRoot
       summary: Get childTags from security
       description: Returns the tags that are a child of a tag.
-      operationId: security.case.ediscoveryCase.tag_GetChildTags
+      operationId: security.case.ediscoveryCase.tag_GetChildTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7602,7 +7602,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-list-incidents?view=graph-rest-1.0
-      operationId: security_ListIncidents
+      operationId: security_ListIncident
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7700,7 +7700,7 @@ paths:
       tags:
         - security.incident
       summary: Create new navigation property to incidents for security
-      operationId: security_CreateIncidents
+      operationId: security_CreateIncident
       requestBody:
         description: New navigation property
         content:
@@ -7724,7 +7724,7 @@ paths:
         - security.incident
       summary: Get incidents from security
       description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
-      operationId: security_GetIncidents
+      operationId: security_GetIncident
       parameters:
         - name: incident-id
           in: path
@@ -7787,7 +7787,7 @@ paths:
       tags:
         - security.incident
       summary: Update the navigation property incidents in security
-      operationId: security_UpdateIncidents
+      operationId: security_UpdateIncident
       parameters:
         - name: incident-id
           in: path
@@ -7818,7 +7818,7 @@ paths:
       tags:
         - security.incident
       summary: Delete navigation property incidents for security
-      operationId: security_DeleteIncidents
+      operationId: security_DeleteIncident
       parameters:
         - name: incident-id
           in: path
@@ -7846,7 +7846,7 @@ paths:
         - security.incident
       summary: Get alerts from security
       description: The list of related alerts. Supports $expand.
-      operationId: security.incident_ListAlerts
+      operationId: security.incident_ListAlert
       parameters:
         - name: incident-id
           in: path
@@ -7997,7 +7997,7 @@ paths:
         - security.incident
       summary: Get alerts from security
       description: The list of related alerts. Supports $expand.
-      operationId: security.incident_GetAlerts
+      operationId: security.incident_GetAlert
       parameters:
         - name: incident-id
           in: path
@@ -8151,7 +8151,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0
-      operationId: security_ListSecureScoreControlProfiles
+      operationId: security_ListSecureScoreControlProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8265,7 +8265,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Create new navigation property to secureScoreControlProfiles for security
-      operationId: security_CreateSecureScoreControlProfiles
+      operationId: security_CreateSecureScoreControlProfile
       requestBody:
         description: New navigation property
         content:
@@ -8288,7 +8288,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Get secureScoreControlProfiles from security
-      operationId: security_GetSecureScoreControlProfiles
+      operationId: security_GetSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -8355,7 +8355,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Update the navigation property secureScoreControlProfiles in security
-      operationId: security_UpdateSecureScoreControlProfiles
+      operationId: security_UpdateSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -8386,7 +8386,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Delete navigation property secureScoreControlProfiles for security
-      operationId: security_DeleteSecureScoreControlProfiles
+      operationId: security_DeleteSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -8431,7 +8431,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0
-      operationId: security_ListSecureScores
+      operationId: security_ListSecureScore
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8518,7 +8518,7 @@ paths:
       tags:
         - security.secureScore
       summary: Create new navigation property to secureScores for security
-      operationId: security_CreateSecureScores
+      operationId: security_CreateSecureScore
       requestBody:
         description: New navigation property
         content:
@@ -8541,7 +8541,7 @@ paths:
       tags:
         - security.secureScore
       summary: Get secureScores from security
-      operationId: security_GetSecureScores
+      operationId: security_GetSecureScore
       parameters:
         - name: secureScore-id
           in: path
@@ -8599,7 +8599,7 @@ paths:
       tags:
         - security.secureScore
       summary: Update the navigation property secureScores in security
-      operationId: security_UpdateSecureScores
+      operationId: security_UpdateSecureScore
       parameters:
         - name: secureScore-id
           in: path
@@ -8630,7 +8630,7 @@ paths:
       tags:
         - security.secureScore
       summary: Delete navigation property secureScores for security
-      operationId: security_DeleteSecureScores
+      operationId: security_DeleteSecureScore
       parameters:
         - name: secureScore-id
           in: path
@@ -8671,7 +8671,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Get triggers from security
-      operationId: security_GetTriggers
+      operationId: security_GetTrigger
       parameters:
         - name: $select
           in: query
@@ -8713,7 +8713,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Update the navigation property triggers in security
-      operationId: security_UpdateTriggers
+      operationId: security_UpdateTrigger
       requestBody:
         description: New navigation property values
         content:
@@ -8735,7 +8735,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Delete navigation property triggers for security
-      operationId: security_DeleteTriggers
+      operationId: security_DeleteTrigger
       parameters:
         - name: If-Match
           in: header
@@ -8754,7 +8754,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Get retentionEvents from security
-      operationId: security.trigger_ListRetentionEvents
+      operationId: security.trigger_ListRetentionEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8846,7 +8846,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Create new navigation property to retentionEvents for security
-      operationId: security.trigger_CreateRetentionEvents
+      operationId: security.trigger_CreateRetentionEvent
       requestBody:
         description: New navigation property
         content:
@@ -8869,7 +8869,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Get retentionEvents from security
-      operationId: security.trigger_GetRetentionEvents
+      operationId: security.trigger_GetRetentionEvent
       parameters:
         - name: retentionEvent-id
           in: path
@@ -8930,7 +8930,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Update the navigation property retentionEvents in security
-      operationId: security.trigger_UpdateRetentionEvents
+      operationId: security.trigger_UpdateRetentionEvent
       parameters:
         - name: retentionEvent-id
           in: path
@@ -8961,7 +8961,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Delete navigation property retentionEvents for security
-      operationId: security.trigger_DeleteRetentionEvents
+      operationId: security.trigger_DeleteRetentionEvent
       parameters:
         - name: retentionEvent-id
           in: path
@@ -9058,7 +9058,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Get triggerTypes from security
-      operationId: security_GetTriggerTypes
+      operationId: security_GetTriggerType
       parameters:
         - name: $select
           in: query
@@ -9100,7 +9100,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Update the navigation property triggerTypes in security
-      operationId: security_UpdateTriggerTypes
+      operationId: security_UpdateTriggerType
       requestBody:
         description: New navigation property values
         content:
@@ -9122,7 +9122,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Delete navigation property triggerTypes for security
-      operationId: security_DeleteTriggerTypes
+      operationId: security_DeleteTriggerType
       parameters:
         - name: If-Match
           in: header
@@ -9141,7 +9141,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Get retentionEventTypes from security
-      operationId: security.triggerType_ListRetentionEventTypes
+      operationId: security.triggerType_ListRetentionEventType
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9216,7 +9216,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Create new navigation property to retentionEventTypes for security
-      operationId: security.triggerType_CreateRetentionEventTypes
+      operationId: security.triggerType_CreateRetentionEventType
       requestBody:
         description: New navigation property
         content:
@@ -9239,7 +9239,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Get retentionEventTypes from security
-      operationId: security.triggerType_GetRetentionEventTypes
+      operationId: security.triggerType_GetRetentionEventType
       parameters:
         - name: retentionEventType-id
           in: path
@@ -9293,7 +9293,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Update the navigation property retentionEventTypes in security
-      operationId: security.triggerType_UpdateRetentionEventTypes
+      operationId: security.triggerType_UpdateRetentionEventType
       parameters:
         - name: retentionEventType-id
           in: path
@@ -9324,7 +9324,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Delete navigation property retentionEventTypes for security
-      operationId: security.triggerType_DeleteRetentionEventTypes
+      operationId: security.triggerType_DeleteRetentionEventType
       parameters:
         - name: retentionEventType-id
           in: path
@@ -16502,11 +16502,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -18210,6 +18212,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             attendanceReports:
               type: array
               items:
@@ -19775,6 +19779,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
               description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.'
+            messageHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             policyViolation:
@@ -21519,6 +21527,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22578,6 +22600,20 @@ components:
           type: string
           description: 'String used to represent the mention. For example, a user''s display name, a team name.'
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageHistoryItem:
+      title: chatMessageHistoryItem
+      type: object
+      properties:
+        actions:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageActions'
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        reaction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
       additionalProperties:
         type: object
     microsoft.graph.chatMessageType:
@@ -23964,6 +24000,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentity'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageActions:
+      title: chatMessageActions
+      enum:
+        - reactionAdded
+        - reactionRemoved
+        - actionUndefined
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:

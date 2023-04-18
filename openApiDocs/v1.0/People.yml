@@ -11,7 +11,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get insights from users
-      operationId: user_GetInsights
+      operationId: user_GetInsight
       parameters:
         - name: user-id
           in: path
@@ -65,7 +65,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property insights in users
-      operationId: user_UpdateInsights
+      operationId: user_UpdateInsight
       parameters:
         - name: user-id
           in: path
@@ -96,7 +96,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property insights for users
-      operationId: user_DeleteInsights
+      operationId: user_DeleteInsight
       parameters:
         - name: user-id
           in: path
@@ -1174,7 +1174,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
-      operationId: user_ListPeople
+      operationId: user_ListPerson
       parameters:
         - name: user-id
           in: path
@@ -1286,7 +1286,7 @@ paths:
         - users.person
       summary: Get people from users
       description: People that are relevant to the user. Read-only. Nullable.
-      operationId: user_GetPeople
+      operationId: user_GetPerson
       parameters:
         - name: user-id
           in: path

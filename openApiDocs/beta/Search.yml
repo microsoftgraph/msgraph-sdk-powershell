@@ -81,7 +81,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
-      operationId: external_ListConnections
+      operationId: external_ListConnection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -182,7 +182,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
-      operationId: external_CreateConnections
+      operationId: external_CreateConnection
       requestBody:
         description: New navigation property
         content:
@@ -205,7 +205,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connections from external
-      operationId: external_GetConnections
+      operationId: external_GetConnection
       parameters:
         - name: externalConnection-id
           in: path
@@ -273,7 +273,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property connections in external
-      operationId: external_UpdateConnections
+      operationId: external_UpdateConnection
       parameters:
         - name: externalConnection-id
           in: path
@@ -304,7 +304,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property connections for external
-      operationId: external_DeleteConnections
+      operationId: external_DeleteConnection
       parameters:
         - name: externalConnection-id
           in: path
@@ -331,7 +331,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      operationId: external.connection_ListGroups
+      operationId: external.connection_ListGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -408,7 +408,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
-      operationId: external.connection_CreateGroups
+      operationId: external.connection_CreateGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -440,7 +440,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      operationId: external.connection_GetGroups
+      operationId: external.connection_GetGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -500,7 +500,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property groups in external
-      operationId: external.connection_UpdateGroups
+      operationId: external.connection_UpdateGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -539,7 +539,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property groups for external
-      operationId: external.connection_DeleteGroups
+      operationId: external.connection_DeleteGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -575,7 +575,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
-      operationId: external.connection.group_ListMembers
+      operationId: external.connection.group_ListMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -655,7 +655,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
-      operationId: external.connection.group_CreateMembers
+      operationId: external.connection.group_CreateMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -696,7 +696,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
-      operationId: external.connection.group_GetMembers
+      operationId: external.connection.group_GetMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -761,7 +761,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property members in external
-      operationId: external.connection.group_UpdateMembers
+      operationId: external.connection.group_UpdateMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -808,7 +808,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property members for external
-      operationId: external.connection.group_DeleteMembers
+      operationId: external.connection.group_DeleteMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -903,7 +903,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get items from external
-      operationId: external.connection_ListItems
+      operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -979,7 +979,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to items for external
-      operationId: external.connection_CreateItems
+      operationId: external.connection_CreateItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -1011,7 +1011,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get items from external
-      operationId: external.connection_GetItems
+      operationId: external.connection_GetItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -1072,7 +1072,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property items in external
-      operationId: external.connection_SetItems
+      operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -1111,7 +1111,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property items for external
-      operationId: external.connection_DeleteItems
+      operationId: external.connection_DeleteItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -1147,7 +1147,7 @@ paths:
         - external.externalConnection
       summary: Get activities from external
       description: Write-only property. Returns results.
-      operationId: external.connection.item_ListActivities
+      operationId: external.connection.item_ListActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1228,7 +1228,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to activities for external
-      operationId: external.connection.item_CreateActivities
+      operationId: external.connection.item_CreateActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1269,7 +1269,7 @@ paths:
         - external.externalConnection
       summary: Get activities from external
       description: Write-only property. Returns results.
-      operationId: external.connection.item_GetActivities
+      operationId: external.connection.item_GetActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1337,7 +1337,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property activities in external
-      operationId: external.connection.item_UpdateActivities
+      operationId: external.connection.item_UpdateActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1384,7 +1384,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property activities for external
-      operationId: external.connection.item_DeleteActivities
+      operationId: external.connection.item_DeleteActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1524,7 +1524,7 @@ paths:
       tags:
         - external.Actions
       summary: Invoke action addActivities
-      operationId: external.connection.item_addActivities
+      operationId: external.connection.item_addActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1607,7 +1607,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      operationId: external.connection_ListOperations
+      operationId: external.connection_ListOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1678,7 +1678,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to operations for external
-      operationId: external.connection_CreateOperations
+      operationId: external.connection_CreateOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1710,7 +1710,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      operationId: external.connection_GetOperations
+      operationId: external.connection_GetOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1768,7 +1768,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property operations in external
-      operationId: external.connection_UpdateOperations
+      operationId: external.connection_UpdateOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1807,7 +1807,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property operations for external
-      operationId: external.connection_DeleteOperations
+      operationId: external.connection_DeleteOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1868,7 +1868,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0
-      operationId: external.connection_GetQuota
+      operationId: external.connection_GetQuotum
       parameters:
         - name: externalConnection-id
           in: path
@@ -1917,7 +1917,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property quota in external
-      operationId: external.connection_UpdateQuota
+      operationId: external.connection_UpdateQuotum
       parameters:
         - name: externalConnection-id
           in: path
@@ -1948,7 +1948,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property quota for external
-      operationId: external.connection_DeleteQuota
+      operationId: external.connection_DeleteQuotum
       parameters:
         - name: externalConnection-id
           in: path
@@ -2161,12 +2161,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List azureDataLakeConnectors
-      description: Get a list of the azureDataLakeConnector objects and their properties.
+      summary: List industryDataConnectors
+      description: Get the industryDataConnector resources from the **dataConnector** navigation property.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
-      operationId: external.industryData_ListDataConnectors
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
+      operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2232,7 +2232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
-      operationId: external.industryData_CreateDataConnectors
+      operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
         content:
@@ -2256,7 +2256,7 @@ paths:
         - external.industryDataRoot
       summary: Get dataConnectors from external
       description: Set of connectors for importing data from source systems.
-      operationId: external.industryData_GetDataConnectors
+      operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2307,7 +2307,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property dataConnectors in external
-      operationId: external.industryData_UpdateDataConnectors
+      operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2338,7 +2338,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property dataConnectors for external
-      operationId: external.industryData_DeleteDataConnectors
+      operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2456,12 +2456,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List inboundFlows
-      description: Get a list of the inboundFlow objects and their properties.
+      summary: List inboundFileFlows
+      description: Get a list of the inboundFileFlow objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
-      operationId: external.industryData_ListInboundFlows
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
+      operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2536,12 +2536,12 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFlow
-      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an **inboundFlow**:'
+      summary: Create inboundFileFlow
+      description: 'Create a new inboundFileFlow object. The following prerequisite resources are required when you create an **inboundFileFlow**:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
-      operationId: external.industryData_CreateInboundFlows
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
         content:
@@ -2565,7 +2565,7 @@ paths:
         - external.industryDataRoot
       summary: Get inboundFlows from external
       description: Set of data import flow activities to bring data into the canonical store via a connector.
-      operationId: external.industryData_GetInboundFlows
+      operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2622,7 +2622,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property inboundFlows in external
-      operationId: external.industryData_UpdateInboundFlows
+      operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2653,7 +2653,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property inboundFlows for external
-      operationId: external.industryData_DeleteInboundFlows
+      operationId: external.industryData_DeleteInboundFlow
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2805,7 +2805,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0
-      operationId: external.industryData_ListOperations
+      operationId: external.industryData_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2877,7 +2877,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create new navigation property to operations for external
-      operationId: external.industryData_CreateOperations
+      operationId: external.industryData_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -2901,7 +2901,7 @@ paths:
         - external.industryDataRoot
       summary: Get operations from external
       description: Set of ephemeral operations that the system runs currently. Read-only.
-      operationId: external.industryData_GetOperations
+      operationId: external.industryData_GetOperation
       parameters:
         - name: longRunningOperation-id
           in: path
@@ -2954,7 +2954,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property operations in external
-      operationId: external.industryData_UpdateOperations
+      operationId: external.industryData_UpdateOperation
       parameters:
         - name: longRunningOperation-id
           in: path
@@ -2985,7 +2985,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property operations for external
-      operationId: external.industryData_DeleteOperations
+      operationId: external.industryData_DeleteOperation
       parameters:
         - name: longRunningOperation-id
           in: path
@@ -3030,7 +3030,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
-      operationId: external.industryData_ListReferenceDefinitions
+      operationId: external.industryData_ListReferenceDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3108,7 +3108,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create new navigation property to referenceDefinitions for external
-      operationId: external.industryData_CreateReferenceDefinitions
+      operationId: external.industryData_CreateReferenceDefinition
       requestBody:
         description: New navigation property
         content:
@@ -3132,7 +3132,7 @@ paths:
         - external.industryDataRoot
       summary: Get referenceDefinitions from external
       description: Set of user modifiable system picker types.
-      operationId: external.industryData_GetReferenceDefinitions
+      operationId: external.industryData_GetReferenceDefinition
       parameters:
         - name: referenceDefinition-id
           in: path
@@ -3187,7 +3187,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property referenceDefinitions in external
-      operationId: external.industryData_UpdateReferenceDefinitions
+      operationId: external.industryData_UpdateReferenceDefinition
       parameters:
         - name: referenceDefinition-id
           in: path
@@ -3218,7 +3218,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property referenceDefinitions for external
-      operationId: external.industryData_DeleteReferenceDefinitions
+      operationId: external.industryData_DeleteReferenceDefinition
       parameters:
         - name: referenceDefinition-id
           in: path
@@ -3263,7 +3263,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
-      operationId: external.industryData_ListRoleGroups
+      operationId: external.industryData_ListRoleGroup
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3326,7 +3326,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create new navigation property to roleGroups for external
-      operationId: external.industryData_CreateRoleGroups
+      operationId: external.industryData_CreateRoleGroup
       requestBody:
         description: New navigation property
         content:
@@ -3350,7 +3350,7 @@ paths:
         - external.industryDataRoot
       summary: Get roleGroups from external
       description: Set of groups of individual roles that makes role-based admin simpler.
-      operationId: external.industryData_GetRoleGroups
+      operationId: external.industryData_GetRoleGroup
       parameters:
         - name: roleGroup-id
           in: path
@@ -3400,7 +3400,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property roleGroups in external
-      operationId: external.industryData_UpdateRoleGroups
+      operationId: external.industryData_UpdateRoleGroup
       parameters:
         - name: roleGroup-id
           in: path
@@ -3431,7 +3431,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property roleGroups for external
-      operationId: external.industryData_DeleteRoleGroups
+      operationId: external.industryData_DeleteRoleGroup
       parameters:
         - name: roleGroup-id
           in: path
@@ -3476,7 +3476,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
-      operationId: external.industryData_ListRuns
+      operationId: external.industryData_ListRun
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3552,7 +3552,7 @@ paths:
         - external.industryDataRoot
       summary: Get runs from external
       description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
-      operationId: external.industryData_GetRuns
+      operationId: external.industryData_GetRun
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3609,7 +3609,7 @@ paths:
         - external.industryDataRoot
       summary: Get activities from external
       description: The set of activities performed during the run.
-      operationId: external.industryData.run_ListActivities
+      operationId: external.industryData.run_ListActivity
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3687,7 +3687,7 @@ paths:
         - external.industryDataRoot
       summary: Get activities from external
       description: The set of activities performed during the run.
-      operationId: external.industryData.run_GetActivities
+      operationId: external.industryData.run_GetActivity
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3831,7 +3831,7 @@ paths:
       tags:
         - external.Functions
       summary: Invoke function getStatistics
-      operationId: external.industryData.run_getStatistics
+      operationId: external.industryData.run_getStatistic
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3870,7 +3870,7 @@ paths:
       tags:
         - external.Functions
       summary: Invoke function getStatistics
-      operationId: external.industryData.run_getStatistics
+      operationId: external.industryData.run_getStatistic
       responses:
         2XX:
           description: Success
@@ -3890,7 +3890,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-1.0
-      operationId: external.industryData_ListSourceSystems
+      operationId: external.industryData_ListSourceSystem
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3960,7 +3960,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-1.0
-      operationId: external.industryData_CreateSourceSystems
+      operationId: external.industryData_CreateSourceSystem
       requestBody:
         description: New navigation property
         content:
@@ -3984,7 +3984,7 @@ paths:
         - external.industryDataRoot
       summary: Get sourceSystems from external
       description: Set of source definitions that represents real-world external systems.
-      operationId: external.industryData_GetSourceSystems
+      operationId: external.industryData_GetSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
           in: path
@@ -4035,7 +4035,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property sourceSystems in external
-      operationId: external.industryData_UpdateSourceSystems
+      operationId: external.industryData_UpdateSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
           in: path
@@ -4066,7 +4066,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property sourceSystems for external
-      operationId: external.industryData_DeleteSourceSystems
+      operationId: external.industryData_DeleteSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
           in: path
@@ -4111,7 +4111,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
-      operationId: external.industryData_ListYears
+      operationId: external.industryData_ListYear
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4184,7 +4184,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
-      operationId: external.industryData_CreateYears
+      operationId: external.industryData_CreateYear
       requestBody:
         description: New navigation property
         content:
@@ -4208,7 +4208,7 @@ paths:
         - external.industryDataRoot
       summary: Get years from external
       description: Set of years represented in the system.
-      operationId: external.industryData_GetYears
+      operationId: external.industryData_GetYear
       parameters:
         - name: yearTimePeriodDefinition-id
           in: path
@@ -4260,7 +4260,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property years in external
-      operationId: external.industryData_UpdateYears
+      operationId: external.industryData_UpdateYear
       parameters:
         - name: yearTimePeriodDefinition-id
           in: path
@@ -4291,7 +4291,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property years for external
-      operationId: external.industryData_DeleteYears
+      operationId: external.industryData_DeleteYear
       parameters:
         - name: yearTimePeriodDefinition-id
           in: path
@@ -4405,7 +4405,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
-      operationId: search_ListAcronyms
+      operationId: search_ListAcronym
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4487,7 +4487,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
-      operationId: search_CreateAcronyms
+      operationId: search_CreateAcronym
       requestBody:
         description: New navigation property
         content:
@@ -4511,7 +4511,7 @@ paths:
         - search.acronym
       summary: Get acronyms from search
       description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
-      operationId: search_GetAcronyms
+      operationId: search_GetAcronym
       parameters:
         - name: acronym-id
           in: path
@@ -4566,7 +4566,7 @@ paths:
       tags:
         - search.acronym
       summary: Update the navigation property acronyms in search
-      operationId: search_UpdateAcronyms
+      operationId: search_UpdateAcronym
       parameters:
         - name: acronym-id
           in: path
@@ -4597,7 +4597,7 @@ paths:
       tags:
         - search.acronym
       summary: Delete navigation property acronyms for search
-      operationId: search_DeleteAcronyms
+      operationId: search_DeleteAcronym
       parameters:
         - name: acronym-id
           in: path
@@ -4642,7 +4642,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
-      operationId: search_ListBookmarks
+      operationId: search_ListBookmark
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4751,7 +4751,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
-      operationId: search_CreateBookmarks
+      operationId: search_CreateBookmark
       requestBody:
         description: New navigation property
         content:
@@ -4775,7 +4775,7 @@ paths:
         - search.bookmark
       summary: Get bookmarks from search
       description: Administrative answer in Microsoft Search results for common search queries in an organization.
-      operationId: search_GetBookmarks
+      operationId: search_GetBookmark
       parameters:
         - name: bookmark-id
           in: path
@@ -4839,7 +4839,7 @@ paths:
       tags:
         - search.bookmark
       summary: Update the navigation property bookmarks in search
-      operationId: search_UpdateBookmarks
+      operationId: search_UpdateBookmark
       parameters:
         - name: bookmark-id
           in: path
@@ -4870,7 +4870,7 @@ paths:
       tags:
         - search.bookmark
       summary: Delete navigation property bookmarks for search
-      operationId: search_DeleteBookmarks
+      operationId: search_DeleteBookmark
       parameters:
         - name: bookmark-id
           in: path
@@ -4962,7 +4962,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
-      operationId: search_ListQnas
+      operationId: search_ListQna
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5065,7 +5065,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
-      operationId: search_CreateQnas
+      operationId: search_CreateQna
       requestBody:
         description: New navigation property
         content:
@@ -5089,7 +5089,7 @@ paths:
         - search.qna
       summary: Get qnas from search
       description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-      operationId: search_GetQnas
+      operationId: search_GetQna
       parameters:
         - name: qna-id
           in: path
@@ -5151,7 +5151,7 @@ paths:
       tags:
         - search.qna
       summary: Update the navigation property qnas in search
-      operationId: search_UpdateQnas
+      operationId: search_UpdateQna
       parameters:
         - name: qna-id
           in: path
@@ -5182,7 +5182,7 @@ paths:
       tags:
         - search.qna
       summary: Delete navigation property qnas for search
-      operationId: search_DeleteQnas
+      operationId: search_DeleteQna
       parameters:
         - name: qna-id
           in: path
@@ -6165,6 +6165,8 @@ components:
         name:
           type: string
           description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
+        rankingHint:
+          $ref: '#/components/schemas/microsoft.graph.externalConnectors.rankingHint'
         type:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.propertyType'
       additionalProperties:
@@ -7000,6 +7002,14 @@ components:
         - containerName
         - containerUrl
       type: string
+    microsoft.graph.externalConnectors.rankingHint:
+      title: rankingHint
+      type: object
+      properties:
+        importanceScore:
+          $ref: '#/components/schemas/microsoft.graph.externalConnectors.importanceScore'
+      additionalProperties:
+        type: object
     microsoft.graph.externalConnectors.propertyType:
       title: propertyType
       enum:
@@ -7244,6 +7254,15 @@ components:
           $ref: '#/components/schemas/microsoft.graph.binaryOperator'
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.importanceScore:
+      title: importanceScore
+      enum:
+        - low
+        - medium
+        - high
+        - veryHigh
+        - unknownFutureValue
+      type: string
     microsoft.graph.search.identity:
       title: identity
       type: object

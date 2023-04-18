@@ -12,7 +12,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get managedTenants from tenantRelationships
       description: The operations available to interact with the multi-tenant management platform.
-      operationId: tenantRelationship_GetManagedTenants
+      operationId: tenantRelationship_GetManagedTenant
       parameters:
         - name: $select
           in: query
@@ -126,7 +126,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedTenants in tenantRelationships
-      operationId: tenantRelationship_UpdateManagedTenants
+      operationId: tenantRelationship_UpdateManagedTenant
       requestBody:
         description: New navigation property values
         content:
@@ -148,7 +148,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedTenants for tenantRelationships
-      operationId: tenantRelationship_DeleteManagedTenants
+      operationId: tenantRelationship_DeleteManagedTenant
       parameters:
         - name: If-Match
           in: header
@@ -171,7 +171,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-aggregatedpolicycompliances?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListAggregatedPolicyCompliances
+      operationId: tenantRelationship.managedTenant_ListAggregatedPolicyCompliance
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -261,7 +261,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to aggregatedPolicyCompliances for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateAggregatedPolicyCompliances
+      operationId: tenantRelationship.managedTenant_CreateAggregatedPolicyCompliance
       requestBody:
         description: New navigation property
         content:
@@ -285,7 +285,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get aggregatedPolicyCompliances from tenantRelationships
       description: Aggregate view of device compliance policies across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetAggregatedPolicyCompliances
+      operationId: tenantRelationship.managedTenant_GetAggregatedPolicyCompliance
       parameters:
         - name: aggregatedPolicyCompliance-id
           in: path
@@ -344,7 +344,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property aggregatedPolicyCompliances in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateAggregatedPolicyCompliances
+      operationId: tenantRelationship.managedTenant_UpdateAggregatedPolicyCompliance
       parameters:
         - name: aggregatedPolicyCompliance-id
           in: path
@@ -375,7 +375,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property aggregatedPolicyCompliances for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteAggregatedPolicyCompliances
+      operationId: tenantRelationship.managedTenant_DeleteAggregatedPolicyCompliance
       parameters:
         - name: aggregatedPolicyCompliance-id
           in: path
@@ -416,7 +416,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get appPerformances from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListAppPerformances
+      operationId: tenantRelationship.managedTenant_ListAppPerformance
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -503,7 +503,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to appPerformances for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateAppPerformances
+      operationId: tenantRelationship.managedTenant_CreateAppPerformance
       requestBody:
         description: New navigation property
         content:
@@ -526,7 +526,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get appPerformances from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetAppPerformances
+      operationId: tenantRelationship.managedTenant_GetAppPerformance
       parameters:
         - name: appPerformance-id
           in: path
@@ -584,7 +584,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property appPerformances in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateAppPerformances
+      operationId: tenantRelationship.managedTenant_UpdateAppPerformance
       parameters:
         - name: appPerformance-id
           in: path
@@ -615,7 +615,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property appPerformances for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteAppPerformances
+      operationId: tenantRelationship.managedTenant_DeleteAppPerformance
       parameters:
         - name: appPerformance-id
           in: path
@@ -657,7 +657,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get auditEvents from tenantRelationships
       description: The collection of audit events across managed tenants.
-      operationId: tenantRelationship.managedTenant_ListAuditEvents
+      operationId: tenantRelationship.managedTenant_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -753,7 +753,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to auditEvents for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateAuditEvents
+      operationId: tenantRelationship.managedTenant_CreateAuditEvent
       requestBody:
         description: New navigation property
         content:
@@ -777,7 +777,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get auditEvents from tenantRelationships
       description: The collection of audit events across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetAuditEvents
+      operationId: tenantRelationship.managedTenant_GetAuditEvent
       parameters:
         - name: auditEvent-id
           in: path
@@ -838,7 +838,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property auditEvents in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateAuditEvents
+      operationId: tenantRelationship.managedTenant_UpdateAuditEvent
       parameters:
         - name: auditEvent-id
           in: path
@@ -869,7 +869,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property auditEvents for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteAuditEvents
+      operationId: tenantRelationship.managedTenant_DeleteAuditEvent
       parameters:
         - name: auditEvent-id
           in: path
@@ -914,7 +914,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListCloudPcConnections
+      operationId: tenantRelationship.managedTenant_ListCloudPcConnection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -986,7 +986,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to cloudPcConnections for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateCloudPcConnections
+      operationId: tenantRelationship.managedTenant_CreateCloudPcConnection
       requestBody:
         description: New navigation property
         content:
@@ -1010,7 +1010,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get cloudPcConnections from tenantRelationships
       description: The collection of cloud PC connections across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetCloudPcConnections
+      operationId: tenantRelationship.managedTenant_GetCloudPcConnection
       parameters:
         - name: cloudPcConnection-id
           in: path
@@ -1063,7 +1063,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property cloudPcConnections in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateCloudPcConnections
+      operationId: tenantRelationship.managedTenant_UpdateCloudPcConnection
       parameters:
         - name: cloudPcConnection-id
           in: path
@@ -1094,7 +1094,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property cloudPcConnections for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteCloudPcConnections
+      operationId: tenantRelationship.managedTenant_DeleteCloudPcConnection
       parameters:
         - name: cloudPcConnection-id
           in: path
@@ -1139,7 +1139,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcdevices?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListCloudPcDevices
+      operationId: tenantRelationship.managedTenant_ListCloudPcDevice
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1232,7 +1232,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to cloudPcDevices for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateCloudPcDevices
+      operationId: tenantRelationship.managedTenant_CreateCloudPcDevice
       requestBody:
         description: New navigation property
         content:
@@ -1256,7 +1256,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get cloudPcDevices from tenantRelationships
       description: The collection of cloud PC devices across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetCloudPcDevices
+      operationId: tenantRelationship.managedTenant_GetCloudPcDevice
       parameters:
         - name: cloudPcDevice-id
           in: path
@@ -1316,7 +1316,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property cloudPcDevices in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateCloudPcDevices
+      operationId: tenantRelationship.managedTenant_UpdateCloudPcDevice
       parameters:
         - name: cloudPcDevice-id
           in: path
@@ -1347,7 +1347,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property cloudPcDevices for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteCloudPcDevices
+      operationId: tenantRelationship.managedTenant_DeleteCloudPcDevice
       parameters:
         - name: cloudPcDevice-id
           in: path
@@ -1677,7 +1677,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-conditionalaccesspolicycoverages?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListConditionalAccessPolicyCoverages
+      operationId: tenantRelationship.managedTenant_ListConditionalAccessPolicyCoverage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1746,7 +1746,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateConditionalAccessPolicyCoverages
+      operationId: tenantRelationship.managedTenant_CreateConditionalAccessPolicyCoverage
       requestBody:
         description: New navigation property
         content:
@@ -1770,7 +1770,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get conditionalAccessPolicyCoverages from tenantRelationships
       description: Aggregate view of conditional access policy coverage across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetConditionalAccessPolicyCoverages
+      operationId: tenantRelationship.managedTenant_GetConditionalAccessPolicyCoverage
       parameters:
         - name: conditionalAccessPolicyCoverage-id
           in: path
@@ -1822,7 +1822,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property conditionalAccessPolicyCoverages in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateConditionalAccessPolicyCoverages
+      operationId: tenantRelationship.managedTenant_UpdateConditionalAccessPolicyCoverage
       parameters:
         - name: conditionalAccessPolicyCoverage-id
           in: path
@@ -1853,7 +1853,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property conditionalAccessPolicyCoverages for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteConditionalAccessPolicyCoverages
+      operationId: tenantRelationship.managedTenant_DeleteConditionalAccessPolicyCoverage
       parameters:
         - name: conditionalAccessPolicyCoverage-id
           in: path
@@ -1898,7 +1898,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-credentialuserregistrationssummaries?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListCredentialUserRegistrationsSummaries
+      operationId: tenantRelationship.managedTenant_ListCredentialUserRegistrationsSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1988,7 +1988,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateCredentialUserRegistrationsSummaries
+      operationId: tenantRelationship.managedTenant_CreateCredentialUserRegistrationsSummary
       requestBody:
         description: New navigation property
         content:
@@ -2012,7 +2012,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get credentialUserRegistrationsSummaries from tenantRelationships
       description: Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetCredentialUserRegistrationsSummaries
+      operationId: tenantRelationship.managedTenant_GetCredentialUserRegistrationsSummary
       parameters:
         - name: credentialUserRegistrationsSummary-id
           in: path
@@ -2071,7 +2071,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateCredentialUserRegistrationsSummaries
+      operationId: tenantRelationship.managedTenant_UpdateCredentialUserRegistrationsSummary
       parameters:
         - name: credentialUserRegistrationsSummary-id
           in: path
@@ -2102,7 +2102,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteCredentialUserRegistrationsSummaries
+      operationId: tenantRelationship.managedTenant_DeleteCredentialUserRegistrationsSummary
       parameters:
         - name: credentialUserRegistrationsSummary-id
           in: path
@@ -2143,7 +2143,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get deviceAppPerformances from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListDeviceAppPerformances
+      operationId: tenantRelationship.managedTenant_ListDeviceAppPerformance
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2248,7 +2248,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to deviceAppPerformances for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateDeviceAppPerformances
+      operationId: tenantRelationship.managedTenant_CreateDeviceAppPerformance
       requestBody:
         description: New navigation property
         content:
@@ -2271,7 +2271,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get deviceAppPerformances from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetDeviceAppPerformances
+      operationId: tenantRelationship.managedTenant_GetDeviceAppPerformance
       parameters:
         - name: deviceAppPerformance-id
           in: path
@@ -2335,7 +2335,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property deviceAppPerformances in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateDeviceAppPerformances
+      operationId: tenantRelationship.managedTenant_UpdateDeviceAppPerformance
       parameters:
         - name: deviceAppPerformance-id
           in: path
@@ -2366,7 +2366,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property deviceAppPerformances for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteDeviceAppPerformances
+      operationId: tenantRelationship.managedTenant_DeleteDeviceAppPerformance
       parameters:
         - name: deviceAppPerformance-id
           in: path
@@ -2411,7 +2411,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-devicecompliancepolicysettingstatesummary?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListDeviceCompliancePolicySettingStateSummaries
+      operationId: tenantRelationship.managedTenant_ListDeviceCompliancePolicySettingStateSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2507,7 +2507,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateDeviceCompliancePolicySettingStateSummaries
+      operationId: tenantRelationship.managedTenant_CreateDeviceCompliancePolicySettingStateSummary
       requestBody:
         description: New navigation property
         content:
@@ -2531,7 +2531,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get deviceCompliancePolicySettingStateSummaries from tenantRelationships
       description: Summary information for device compliance policy setting states across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetDeviceCompliancePolicySettingStateSummaries
+      operationId: tenantRelationship.managedTenant_GetDeviceCompliancePolicySettingStateSummary
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
@@ -2592,7 +2592,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property deviceCompliancePolicySettingStateSummaries in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateDeviceCompliancePolicySettingStateSummaries
+      operationId: tenantRelationship.managedTenant_UpdateDeviceCompliancePolicySettingStateSummary
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
@@ -2623,7 +2623,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property deviceCompliancePolicySettingStateSummaries for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteDeviceCompliancePolicySettingStateSummaries
+      operationId: tenantRelationship.managedTenant_DeleteDeviceCompliancePolicySettingStateSummary
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
@@ -2664,7 +2664,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get deviceHealthStatuses from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListDeviceHealthStatuses
+      operationId: tenantRelationship.managedTenant_ListDeviceHealthStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2766,7 +2766,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to deviceHealthStatuses for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateDeviceHealthStatuses
+      operationId: tenantRelationship.managedTenant_CreateDeviceHealthStatus
       requestBody:
         description: New navigation property
         content:
@@ -2789,7 +2789,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get deviceHealthStatuses from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetDeviceHealthStatuses
+      operationId: tenantRelationship.managedTenant_GetDeviceHealthStatus
       parameters:
         - name: deviceHealthStatus-id
           in: path
@@ -2852,7 +2852,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property deviceHealthStatuses in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateDeviceHealthStatuses
+      operationId: tenantRelationship.managedTenant_UpdateDeviceHealthStatus
       parameters:
         - name: deviceHealthStatus-id
           in: path
@@ -2883,7 +2883,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property deviceHealthStatuses for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteDeviceHealthStatuses
+      operationId: tenantRelationship.managedTenant_DeleteDeviceHealthStatus
       parameters:
         - name: deviceHealthStatus-id
           in: path
@@ -2928,7 +2928,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliances?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListManagedDeviceCompliances
+      operationId: tenantRelationship.managedTenant_ListManagedDeviceCompliance
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3027,7 +3027,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managedDeviceCompliances for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagedDeviceCompliances
+      operationId: tenantRelationship.managedTenant_CreateManagedDeviceCompliance
       requestBody:
         description: New navigation property
         content:
@@ -3051,7 +3051,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get managedDeviceCompliances from tenantRelationships
       description: The collection of compliance for managed devices across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetManagedDeviceCompliances
+      operationId: tenantRelationship.managedTenant_GetManagedDeviceCompliance
       parameters:
         - name: managedDeviceCompliance-id
           in: path
@@ -3113,7 +3113,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedDeviceCompliances in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagedDeviceCompliances
+      operationId: tenantRelationship.managedTenant_UpdateManagedDeviceCompliance
       parameters:
         - name: managedDeviceCompliance-id
           in: path
@@ -3144,7 +3144,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedDeviceCompliances for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagedDeviceCompliances
+      operationId: tenantRelationship.managedTenant_DeleteManagedDeviceCompliance
       parameters:
         - name: managedDeviceCompliance-id
           in: path
@@ -3189,7 +3189,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliancetrends?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListManagedDeviceComplianceTrends
+      operationId: tenantRelationship.managedTenant_ListManagedDeviceComplianceTrend
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3273,7 +3273,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managedDeviceComplianceTrends for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagedDeviceComplianceTrends
+      operationId: tenantRelationship.managedTenant_CreateManagedDeviceComplianceTrend
       requestBody:
         description: New navigation property
         content:
@@ -3297,7 +3297,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get managedDeviceComplianceTrends from tenantRelationships
       description: Trend insights for device compliance across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetManagedDeviceComplianceTrends
+      operationId: tenantRelationship.managedTenant_GetManagedDeviceComplianceTrend
       parameters:
         - name: managedDeviceComplianceTrend-id
           in: path
@@ -3354,7 +3354,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedDeviceComplianceTrends in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagedDeviceComplianceTrends
+      operationId: tenantRelationship.managedTenant_UpdateManagedDeviceComplianceTrend
       parameters:
         - name: managedDeviceComplianceTrend-id
           in: path
@@ -3385,7 +3385,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedDeviceComplianceTrends for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagedDeviceComplianceTrends
+      operationId: tenantRelationship.managedTenant_DeleteManagedDeviceComplianceTrend
       parameters:
         - name: managedDeviceComplianceTrend-id
           in: path
@@ -3426,7 +3426,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantAlertLogs from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagedTenantAlertLogs
+      operationId: tenantRelationship.managedTenant_ListManagedTenantAlertLog
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3500,7 +3500,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managedTenantAlertLogs for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagedTenantAlertLogs
+      operationId: tenantRelationship.managedTenant_CreateManagedTenantAlertLog
       requestBody:
         description: New navigation property
         content:
@@ -3523,7 +3523,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantAlertLogs from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagedTenantAlertLogs
+      operationId: tenantRelationship.managedTenant_GetManagedTenantAlertLog
       parameters:
         - name: managedTenantAlertLog-id
           in: path
@@ -3578,7 +3578,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedTenantAlertLogs in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagedTenantAlertLogs
+      operationId: tenantRelationship.managedTenant_UpdateManagedTenantAlertLog
       parameters:
         - name: managedTenantAlertLog-id
           in: path
@@ -3609,7 +3609,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedTenantAlertLogs for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagedTenantAlertLogs
+      operationId: tenantRelationship.managedTenant_DeleteManagedTenantAlertLog
       parameters:
         - name: managedTenantAlertLog-id
           in: path
@@ -3722,7 +3722,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantAlertRuleDefinitions from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagedTenantAlertRuleDefinitions
+      operationId: tenantRelationship.managedTenant_ListManagedTenantAlertRuleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3799,7 +3799,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managedTenantAlertRuleDefinitions for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagedTenantAlertRuleDefinitions
+      operationId: tenantRelationship.managedTenant_CreateManagedTenantAlertRuleDefinition
       requestBody:
         description: New navigation property
         content:
@@ -3822,7 +3822,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantAlertRuleDefinitions from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagedTenantAlertRuleDefinitions
+      operationId: tenantRelationship.managedTenant_GetManagedTenantAlertRuleDefinition
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
@@ -3878,7 +3878,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedTenantAlertRuleDefinitions in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagedTenantAlertRuleDefinitions
+      operationId: tenantRelationship.managedTenant_UpdateManagedTenantAlertRuleDefinition
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
@@ -3909,7 +3909,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedTenantAlertRuleDefinitions for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagedTenantAlertRuleDefinitions
+      operationId: tenantRelationship.managedTenant_DeleteManagedTenantAlertRuleDefinition
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
@@ -3936,7 +3936,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get alertRules from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlertRuleDefinition_ListAlertRules
+      operationId: tenantRelationship.managedTenant.managedTenantAlertRuleDefinition_ListAlertRule
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
@@ -4045,7 +4045,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get alertRules from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlertRuleDefinition_GetAlertRules
+      operationId: tenantRelationship.managedTenant.managedTenantAlertRuleDefinition_GetAlertRule
       parameters:
         - name: managedTenantAlertRuleDefinition-id
           in: path
@@ -4155,7 +4155,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantAlertRules from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagedTenantAlertRules
+      operationId: tenantRelationship.managedTenant_ListManagedTenantAlertRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4255,7 +4255,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managedTenantAlertRules for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagedTenantAlertRules
+      operationId: tenantRelationship.managedTenant_CreateManagedTenantAlertRule
       requestBody:
         description: New navigation property
         content:
@@ -4278,7 +4278,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantAlertRules from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagedTenantAlertRules
+      operationId: tenantRelationship.managedTenant_GetManagedTenantAlertRule
       parameters:
         - name: managedTenantAlertRule-id
           in: path
@@ -4343,7 +4343,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedTenantAlertRules in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagedTenantAlertRules
+      operationId: tenantRelationship.managedTenant_UpdateManagedTenantAlertRule
       parameters:
         - name: managedTenantAlertRule-id
           in: path
@@ -4374,7 +4374,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedTenantAlertRules for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagedTenantAlertRules
+      operationId: tenantRelationship.managedTenant_DeleteManagedTenantAlertRule
       parameters:
         - name: managedTenantAlertRule-id
           in: path
@@ -4401,7 +4401,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get alerts from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlertRule_ListAlerts
+      operationId: tenantRelationship.managedTenant.managedTenantAlertRule_ListAlert
       parameters:
         - name: managedTenantAlertRule-id
           in: path
@@ -4520,7 +4520,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get alerts from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlertRule_GetAlerts
+      operationId: tenantRelationship.managedTenant.managedTenantAlertRule_GetAlert
       parameters:
         - name: managedTenantAlertRule-id
           in: path
@@ -4693,7 +4693,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantAlerts from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagedTenantAlerts
+      operationId: tenantRelationship.managedTenant_ListManagedTenantAlert
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4803,7 +4803,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managedTenantAlerts for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagedTenantAlerts
+      operationId: tenantRelationship.managedTenant_CreateManagedTenantAlert
       requestBody:
         description: New navigation property
         content:
@@ -4826,7 +4826,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantAlerts from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagedTenantAlerts
+      operationId: tenantRelationship.managedTenant_GetManagedTenantAlert
       parameters:
         - name: managedTenantAlert-id
           in: path
@@ -4897,7 +4897,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedTenantAlerts in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagedTenantAlerts
+      operationId: tenantRelationship.managedTenant_UpdateManagedTenantAlert
       parameters:
         - name: managedTenantAlert-id
           in: path
@@ -4928,7 +4928,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedTenantAlerts for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagedTenantAlerts
+      operationId: tenantRelationship.managedTenant_DeleteManagedTenantAlert
       parameters:
         - name: managedTenantAlert-id
           in: path
@@ -4955,7 +4955,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get alertLogs from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlert_ListAlertLogs
+      operationId: tenantRelationship.managedTenant.managedTenantAlert_ListAlertLog
       parameters:
         - name: managedTenantAlert-id
           in: path
@@ -5038,7 +5038,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get alertLogs from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlert_GetAlertLogs
+      operationId: tenantRelationship.managedTenant.managedTenantAlert_GetAlertLog
       parameters:
         - name: managedTenantAlert-id
           in: path
@@ -5190,7 +5190,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get apiNotifications from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlert_ListApiNotifications
+      operationId: tenantRelationship.managedTenant.managedTenantAlert_ListApiNotification
       parameters:
         - name: managedTenantAlert-id
           in: path
@@ -5282,7 +5282,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get apiNotifications from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlert_GetApiNotifications
+      operationId: tenantRelationship.managedTenant.managedTenantAlert_GetApiNotification
       parameters:
         - name: managedTenantAlert-id
           in: path
@@ -5371,7 +5371,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get emailNotifications from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlert_ListEmailNotifications
+      operationId: tenantRelationship.managedTenant.managedTenantAlert_ListEmailNotification
       parameters:
         - name: managedTenantAlert-id
           in: path
@@ -5460,7 +5460,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get emailNotifications from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managedTenantAlert_GetEmailNotifications
+      operationId: tenantRelationship.managedTenant.managedTenantAlert_GetEmailNotification
       parameters:
         - name: managedTenantAlert-id
           in: path
@@ -5562,7 +5562,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantApiNotifications from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagedTenantApiNotifications
+      operationId: tenantRelationship.managedTenant_ListManagedTenantApiNotification
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5645,7 +5645,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managedTenantApiNotifications for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagedTenantApiNotifications
+      operationId: tenantRelationship.managedTenant_CreateManagedTenantApiNotification
       requestBody:
         description: New navigation property
         content:
@@ -5668,7 +5668,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantApiNotifications from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagedTenantApiNotifications
+      operationId: tenantRelationship.managedTenant_GetManagedTenantApiNotification
       parameters:
         - name: managedTenantApiNotification-id
           in: path
@@ -5726,7 +5726,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedTenantApiNotifications in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagedTenantApiNotifications
+      operationId: tenantRelationship.managedTenant_UpdateManagedTenantApiNotification
       parameters:
         - name: managedTenantApiNotification-id
           in: path
@@ -5757,7 +5757,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedTenantApiNotifications for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagedTenantApiNotifications
+      operationId: tenantRelationship.managedTenant_DeleteManagedTenantApiNotification
       parameters:
         - name: managedTenantApiNotification-id
           in: path
@@ -5870,7 +5870,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantEmailNotifications from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagedTenantEmailNotifications
+      operationId: tenantRelationship.managedTenant_ListManagedTenantEmailNotification
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5950,7 +5950,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managedTenantEmailNotifications for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagedTenantEmailNotifications
+      operationId: tenantRelationship.managedTenant_CreateManagedTenantEmailNotification
       requestBody:
         description: New navigation property
         content:
@@ -5973,7 +5973,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantEmailNotifications from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagedTenantEmailNotifications
+      operationId: tenantRelationship.managedTenant_GetManagedTenantEmailNotification
       parameters:
         - name: managedTenantEmailNotification-id
           in: path
@@ -6030,7 +6030,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedTenantEmailNotifications in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagedTenantEmailNotifications
+      operationId: tenantRelationship.managedTenant_UpdateManagedTenantEmailNotification
       parameters:
         - name: managedTenantEmailNotification-id
           in: path
@@ -6061,7 +6061,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedTenantEmailNotifications for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagedTenantEmailNotifications
+      operationId: tenantRelationship.managedTenant_DeleteManagedTenantEmailNotification
       parameters:
         - name: managedTenantEmailNotification-id
           in: path
@@ -6174,7 +6174,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantTicketingEndpoints from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagedTenantTicketingEndpoints
+      operationId: tenantRelationship.managedTenant_ListManagedTenantTicketingEndpoint
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6252,7 +6252,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managedTenantTicketingEndpoints for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagedTenantTicketingEndpoints
+      operationId: tenantRelationship.managedTenant_CreateManagedTenantTicketingEndpoint
       requestBody:
         description: New navigation property
         content:
@@ -6275,7 +6275,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedTenantTicketingEndpoints from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagedTenantTicketingEndpoints
+      operationId: tenantRelationship.managedTenant_GetManagedTenantTicketingEndpoint
       parameters:
         - name: managedTenantTicketingEndpoint-id
           in: path
@@ -6330,7 +6330,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managedTenantTicketingEndpoints in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagedTenantTicketingEndpoints
+      operationId: tenantRelationship.managedTenant_UpdateManagedTenantTicketingEndpoint
       parameters:
         - name: managedTenantTicketingEndpoint-id
           in: path
@@ -6361,7 +6361,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managedTenantTicketingEndpoints for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagedTenantTicketingEndpoints
+      operationId: tenantRelationship.managedTenant_DeleteManagedTenantTicketingEndpoint
       parameters:
         - name: managedTenantTicketingEndpoint-id
           in: path
@@ -6406,7 +6406,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactions?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListManagementActions
+      operationId: tenantRelationship.managedTenant_ListManagementAction
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6481,7 +6481,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managementActions for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagementActions
+      operationId: tenantRelationship.managedTenant_CreateManagementAction
       requestBody:
         description: New navigation property
         content:
@@ -6505,7 +6505,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get managementActions from tenantRelationships
       description: The collection of baseline management actions across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetManagementActions
+      operationId: tenantRelationship.managedTenant_GetManagementAction
       parameters:
         - name: managementAction-id
           in: path
@@ -6559,7 +6559,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managementActions in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagementActions
+      operationId: tenantRelationship.managedTenant_UpdateManagementAction
       parameters:
         - name: managementAction-id
           in: path
@@ -6590,7 +6590,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managementActions for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagementActions
+      operationId: tenantRelationship.managedTenant_DeleteManagementAction
       parameters:
         - name: managementAction-id
           in: path
@@ -6635,7 +6635,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactiontenantdeploymentstatuses?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListManagementActionTenantDeploymentStatuses
+      operationId: tenantRelationship.managedTenant_ListManagementActionTenantDeploymentStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6701,7 +6701,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagementActionTenantDeploymentStatuses
+      operationId: tenantRelationship.managedTenant_CreateManagementActionTenantDeploymentStatus
       requestBody:
         description: New navigation property
         content:
@@ -6725,7 +6725,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get managementActionTenantDeploymentStatuses from tenantRelationships
       description: The tenant level status of management actions across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetManagementActionTenantDeploymentStatuses
+      operationId: tenantRelationship.managedTenant_GetManagementActionTenantDeploymentStatus
       parameters:
         - name: managementActionTenantDeploymentStatus-id
           in: path
@@ -6776,7 +6776,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managementActionTenantDeploymentStatuses in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagementActionTenantDeploymentStatuses
+      operationId: tenantRelationship.managedTenant_UpdateManagementActionTenantDeploymentStatus
       parameters:
         - name: managementActionTenantDeploymentStatus-id
           in: path
@@ -6807,7 +6807,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managementActionTenantDeploymentStatuses for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagementActionTenantDeploymentStatuses
+      operationId: tenantRelationship.managedTenant_DeleteManagementActionTenantDeploymentStatus
       parameters:
         - name: managementActionTenantDeploymentStatus-id
           in: path
@@ -6852,7 +6852,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementintents?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListManagementIntents
+      operationId: tenantRelationship.managedTenant_ListManagementIntent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6918,7 +6918,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managementIntents for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagementIntents
+      operationId: tenantRelationship.managedTenant_CreateManagementIntent
       requestBody:
         description: New navigation property
         content:
@@ -6942,7 +6942,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get managementIntents from tenantRelationships
       description: The collection of baseline management intents across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetManagementIntents
+      operationId: tenantRelationship.managedTenant_GetManagementIntent
       parameters:
         - name: managementIntent-id
           in: path
@@ -6993,7 +6993,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managementIntents in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagementIntents
+      operationId: tenantRelationship.managedTenant_UpdateManagementIntent
       parameters:
         - name: managementIntent-id
           in: path
@@ -7024,7 +7024,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managementIntents for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagementIntents
+      operationId: tenantRelationship.managedTenant_DeleteManagementIntent
       parameters:
         - name: managementIntent-id
           in: path
@@ -7065,7 +7065,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateCollections from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagementTemplateCollections
+      operationId: tenantRelationship.managedTenant_ListManagementTemplateCollection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7142,7 +7142,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managementTemplateCollections for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagementTemplateCollections
+      operationId: tenantRelationship.managedTenant_CreateManagementTemplateCollection
       requestBody:
         description: New navigation property
         content:
@@ -7165,7 +7165,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateCollections from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagementTemplateCollections
+      operationId: tenantRelationship.managedTenant_GetManagementTemplateCollection
       parameters:
         - name: managementTemplateCollection-id
           in: path
@@ -7221,7 +7221,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managementTemplateCollections in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateCollections
+      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateCollection
       parameters:
         - name: managementTemplateCollection-id
           in: path
@@ -7252,7 +7252,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managementTemplateCollections for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateCollections
+      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateCollection
       parameters:
         - name: managementTemplateCollection-id
           in: path
@@ -7279,7 +7279,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplates from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplateCollection_ListManagementTemplates
+      operationId: tenantRelationship.managedTenant.managementTemplateCollection_ListManagementTemplate
       parameters:
         - name: managementTemplateCollection-id
           in: path
@@ -7391,7 +7391,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplates from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplateCollection_GetManagementTemplates
+      operationId: tenantRelationship.managedTenant.managementTemplateCollection_GetManagementTemplate
       parameters:
         - name: managementTemplateCollection-id
           in: path
@@ -7502,7 +7502,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateCollectionTenantSummaries from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagementTemplateCollectionTenantSummaries
+      operationId: tenantRelationship.managedTenant_ListManagementTemplateCollectionTenantSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7616,7 +7616,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managementTemplateCollectionTenantSummaries for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagementTemplateCollectionTenantSummaries
+      operationId: tenantRelationship.managedTenant_CreateManagementTemplateCollectionTenantSummary
       requestBody:
         description: New navigation property
         content:
@@ -7639,7 +7639,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateCollectionTenantSummaries from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagementTemplateCollectionTenantSummaries
+      operationId: tenantRelationship.managedTenant_GetManagementTemplateCollectionTenantSummary
       parameters:
         - name: managementTemplateCollectionTenantSummary-id
           in: path
@@ -7706,7 +7706,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managementTemplateCollectionTenantSummaries in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateCollectionTenantSummaries
+      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateCollectionTenantSummary
       parameters:
         - name: managementTemplateCollectionTenantSummary-id
           in: path
@@ -7737,7 +7737,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managementTemplateCollectionTenantSummaries for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateCollectionTenantSummaries
+      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateCollectionTenantSummary
       parameters:
         - name: managementTemplateCollectionTenantSummary-id
           in: path
@@ -7782,7 +7782,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementtemplates?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListManagementTemplates
+      operationId: tenantRelationship.managedTenant_ListManagementTemplate
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7885,7 +7885,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managementTemplates for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagementTemplates
+      operationId: tenantRelationship.managedTenant_CreateManagementTemplate
       requestBody:
         description: New navigation property
         content:
@@ -7909,7 +7909,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get managementTemplates from tenantRelationships
       description: The collection of baseline management templates across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetManagementTemplates
+      operationId: tenantRelationship.managedTenant_GetManagementTemplate
       parameters:
         - name: managementTemplate-id
           in: path
@@ -7975,7 +7975,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managementTemplates in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagementTemplates
+      operationId: tenantRelationship.managedTenant_UpdateManagementTemplate
       parameters:
         - name: managementTemplate-id
           in: path
@@ -8006,7 +8006,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managementTemplates for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagementTemplates
+      operationId: tenantRelationship.managedTenant_DeleteManagementTemplate
       parameters:
         - name: managementTemplate-id
           in: path
@@ -8033,7 +8033,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateCollections from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplate_ListManagementTemplateCollections
+      operationId: tenantRelationship.managedTenant.managementTemplate_ListManagementTemplateCollection
       parameters:
         - name: managementTemplate-id
           in: path
@@ -8119,7 +8119,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateCollections from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplate_GetManagementTemplateCollections
+      operationId: tenantRelationship.managedTenant.managementTemplate_GetManagementTemplateCollection
       parameters:
         - name: managementTemplate-id
           in: path
@@ -8206,7 +8206,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateSteps from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplate_ListManagementTemplateSteps
+      operationId: tenantRelationship.managedTenant.managementTemplate_ListManagementTemplateStep
       parameters:
         - name: managementTemplate-id
           in: path
@@ -8305,7 +8305,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateSteps from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplate_GetManagementTemplateSteps
+      operationId: tenantRelationship.managedTenant.managementTemplate_GetManagementTemplateStep
       parameters:
         - name: managementTemplate-id
           in: path
@@ -8413,7 +8413,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateSteps from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagementTemplateSteps
+      operationId: tenantRelationship.managedTenant_ListManagementTemplateStep
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8503,7 +8503,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managementTemplateSteps for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagementTemplateSteps
+      operationId: tenantRelationship.managedTenant_CreateManagementTemplateStep
       requestBody:
         description: New navigation property
         content:
@@ -8526,7 +8526,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateSteps from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagementTemplateSteps
+      operationId: tenantRelationship.managedTenant_GetManagementTemplateStep
       parameters:
         - name: managementTemplateStep-id
           in: path
@@ -8589,7 +8589,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managementTemplateSteps in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateSteps
+      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateStep
       parameters:
         - name: managementTemplateStep-id
           in: path
@@ -8620,7 +8620,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managementTemplateSteps for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateSteps
+      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateStep
       parameters:
         - name: managementTemplateStep-id
           in: path
@@ -8777,7 +8777,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get versions from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplateStep_ListVersions
+      operationId: tenantRelationship.managedTenant.managementTemplateStep_ListVersion
       parameters:
         - name: managementTemplateStep-id
           in: path
@@ -8873,7 +8873,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get versions from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplateStep_GetVersions
+      operationId: tenantRelationship.managedTenant.managementTemplateStep_GetVersion
       parameters:
         - name: managementTemplateStep-id
           in: path
@@ -8980,7 +8980,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateStepTenantSummaries from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagementTemplateStepTenantSummaries
+      operationId: tenantRelationship.managedTenant_ListManagementTemplateStepTenantSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9082,7 +9082,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managementTemplateStepTenantSummaries for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagementTemplateStepTenantSummaries
+      operationId: tenantRelationship.managedTenant_CreateManagementTemplateStepTenantSummary
       requestBody:
         description: New navigation property
         content:
@@ -9105,7 +9105,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateStepTenantSummaries from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagementTemplateStepTenantSummaries
+      operationId: tenantRelationship.managedTenant_GetManagementTemplateStepTenantSummary
       parameters:
         - name: managementTemplateStepTenantSummary-id
           in: path
@@ -9168,7 +9168,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managementTemplateStepTenantSummaries in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateStepTenantSummaries
+      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateStepTenantSummary
       parameters:
         - name: managementTemplateStepTenantSummary-id
           in: path
@@ -9199,7 +9199,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managementTemplateStepTenantSummaries for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateStepTenantSummaries
+      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateStepTenantSummary
       parameters:
         - name: managementTemplateStepTenantSummary-id
           in: path
@@ -9240,7 +9240,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateStepVersions from tenantRelationships
-      operationId: tenantRelationship.managedTenant_ListManagementTemplateStepVersions
+      operationId: tenantRelationship.managedTenant_ListManagementTemplateStepVersion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9327,7 +9327,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to managementTemplateStepVersions for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateManagementTemplateStepVersions
+      operationId: tenantRelationship.managedTenant_CreateManagementTemplateStepVersion
       requestBody:
         description: New navigation property
         content:
@@ -9350,7 +9350,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplateStepVersions from tenantRelationships
-      operationId: tenantRelationship.managedTenant_GetManagementTemplateStepVersions
+      operationId: tenantRelationship.managedTenant_GetManagementTemplateStepVersion
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
@@ -9412,7 +9412,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property managementTemplateStepVersions in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateStepVersions
+      operationId: tenantRelationship.managedTenant_UpdateManagementTemplateStepVersion
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
@@ -9443,7 +9443,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property managementTemplateStepVersions for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateStepVersions
+      operationId: tenantRelationship.managedTenant_DeleteManagementTemplateStepVersion
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
@@ -9534,7 +9534,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get deployments from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_ListDeployments
+      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_ListDeployment
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
@@ -9622,7 +9622,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to deployments for tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_CreateDeployments
+      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_CreateDeployment
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
@@ -9654,7 +9654,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get deployments from tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_GetDeployments
+      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_GetDeployment
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
@@ -9719,7 +9719,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property deployments in tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_UpdateDeployments
+      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_UpdateDeployment
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
@@ -9758,7 +9758,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property deployments for tenantRelationships
-      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_DeleteDeployments
+      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion_DeleteDeployment
       parameters:
         - name: managementTemplateStepVersion-id
           in: path
@@ -9968,7 +9968,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-myroles?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListMyRoles
+      operationId: tenantRelationship.managedTenant_ListMyRole
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10028,7 +10028,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to myRoles for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateMyRoles
+      operationId: tenantRelationship.managedTenant_CreateMyRole
       requestBody:
         description: New navigation property
         content:
@@ -10052,7 +10052,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get myRoles from tenantRelationships
       description: The collection of role assignments to a signed-in user for a managed tenant.
-      operationId: tenantRelationship.managedTenant_GetMyRoles
+      operationId: tenantRelationship.managedTenant_GetMyRole
       parameters:
         - name: myRole-tenantId
           in: path
@@ -10101,7 +10101,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property myRoles in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateMyRoles
+      operationId: tenantRelationship.managedTenant_UpdateMyRole
       parameters:
         - name: myRole-tenantId
           in: path
@@ -10132,7 +10132,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property myRoles for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteMyRoles
+      operationId: tenantRelationship.managedTenant_DeleteMyRole
       parameters:
         - name: myRole-tenantId
           in: path
@@ -10177,7 +10177,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantgroups?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListTenantGroups
+      operationId: tenantRelationship.managedTenant_ListTenantGroup
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10249,7 +10249,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to tenantGroups for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateTenantGroups
+      operationId: tenantRelationship.managedTenant_CreateTenantGroup
       requestBody:
         description: New navigation property
         content:
@@ -10273,7 +10273,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get tenantGroups from tenantRelationships
       description: The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-      operationId: tenantRelationship.managedTenant_GetTenantGroups
+      operationId: tenantRelationship.managedTenant_GetTenantGroup
       parameters:
         - name: tenantGroup-id
           in: path
@@ -10326,7 +10326,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property tenantGroups in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateTenantGroups
+      operationId: tenantRelationship.managedTenant_UpdateTenantGroup
       parameters:
         - name: tenantGroup-id
           in: path
@@ -10357,7 +10357,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property tenantGroups for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteTenantGroups
+      operationId: tenantRelationship.managedTenant_DeleteTenantGroup
       parameters:
         - name: tenantGroup-id
           in: path
@@ -10402,7 +10402,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenants?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListTenants
+      operationId: tenantRelationship.managedTenant_ListTenant
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10477,7 +10477,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to tenants for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateTenants
+      operationId: tenantRelationship.managedTenant_CreateTenant
       requestBody:
         description: New navigation property
         content:
@@ -10501,7 +10501,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get tenants from tenantRelationships
       description: The collection of tenants associated with the managing entity.
-      operationId: tenantRelationship.managedTenant_GetTenants
+      operationId: tenantRelationship.managedTenant_GetTenant
       parameters:
         - name: tenant-id
           in: path
@@ -10555,7 +10555,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property tenants in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateTenants
+      operationId: tenantRelationship.managedTenant_UpdateTenant
       parameters:
         - name: tenant-id
           in: path
@@ -10586,7 +10586,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property tenants for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteTenants
+      operationId: tenantRelationship.managedTenant_DeleteTenant
       parameters:
         - name: tenant-id
           in: path
@@ -11097,7 +11097,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenanttags?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListTenantTags
+      operationId: tenantRelationship.managedTenant_ListTenantTag
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11182,7 +11182,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-post-tenanttags?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_CreateTenantTags
+      operationId: tenantRelationship.managedTenant_CreateTenantTag
       requestBody:
         description: New navigation property
         content:
@@ -11206,7 +11206,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get tenantTags from tenantRelationships
       description: The collection of tenant tags across managed tenants.
-      operationId: tenantRelationship.managedTenant_GetTenantTags
+      operationId: tenantRelationship.managedTenant_GetTenantTag
       parameters:
         - name: tenantTag-id
           in: path
@@ -11262,7 +11262,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property tenantTags in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateTenantTags
+      operationId: tenantRelationship.managedTenant_UpdateTenantTag
       parameters:
         - name: tenantTag-id
           in: path
@@ -11293,7 +11293,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property tenantTags for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteTenantTags
+      operationId: tenantRelationship.managedTenant_DeleteTenantTag
       parameters:
         - name: tenantTag-id
           in: path
@@ -11338,7 +11338,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsdevicemalwarestates?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListWindowsDeviceMalwareStates
+      operationId: tenantRelationship.managedTenant_ListWindowsDeviceMalwareState
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11443,7 +11443,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to windowsDeviceMalwareStates for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateWindowsDeviceMalwareStates
+      operationId: tenantRelationship.managedTenant_CreateWindowsDeviceMalwareState
       requestBody:
         description: New navigation property
         content:
@@ -11467,7 +11467,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get windowsDeviceMalwareStates from tenantRelationships
       description: 'The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
-      operationId: tenantRelationship.managedTenant_GetWindowsDeviceMalwareStates
+      operationId: tenantRelationship.managedTenant_GetWindowsDeviceMalwareState
       parameters:
         - name: windowsDeviceMalwareState-id
           in: path
@@ -11531,7 +11531,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property windowsDeviceMalwareStates in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateWindowsDeviceMalwareStates
+      operationId: tenantRelationship.managedTenant_UpdateWindowsDeviceMalwareState
       parameters:
         - name: windowsDeviceMalwareState-id
           in: path
@@ -11562,7 +11562,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property windowsDeviceMalwareStates for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteWindowsDeviceMalwareStates
+      operationId: tenantRelationship.managedTenant_DeleteWindowsDeviceMalwareState
       parameters:
         - name: windowsDeviceMalwareState-id
           in: path
@@ -11607,7 +11607,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsprotectionstates?view=graph-rest-1.0
-      operationId: tenantRelationship.managedTenant_ListWindowsProtectionStates
+      operationId: tenantRelationship.managedTenant_ListWindowsProtectionState
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11739,7 +11739,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create new navigation property to windowsProtectionStates for tenantRelationships
-      operationId: tenantRelationship.managedTenant_CreateWindowsProtectionStates
+      operationId: tenantRelationship.managedTenant_CreateWindowsProtectionState
       requestBody:
         description: New navigation property
         content:
@@ -11763,7 +11763,7 @@ paths:
         - tenantRelationships.managedTenant
       summary: Get windowsProtectionStates from tenantRelationships
       description: 'The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
-      operationId: tenantRelationship.managedTenant_GetWindowsProtectionStates
+      operationId: tenantRelationship.managedTenant_GetWindowsProtectionState
       parameters:
         - name: windowsProtectionState-id
           in: path
@@ -11836,7 +11836,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update the navigation property windowsProtectionStates in tenantRelationships
-      operationId: tenantRelationship.managedTenant_UpdateWindowsProtectionStates
+      operationId: tenantRelationship.managedTenant_UpdateWindowsProtectionState
       parameters:
         - name: windowsProtectionState-id
           in: path
@@ -11867,7 +11867,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete navigation property windowsProtectionStates for tenantRelationships
-      operationId: tenantRelationship.managedTenant_DeleteWindowsProtectionStates
+      operationId: tenantRelationship.managedTenant_DeleteWindowsProtectionState
       parameters:
         - name: windowsProtectionState-id
           in: path

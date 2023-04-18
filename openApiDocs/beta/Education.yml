@@ -87,7 +87,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationroot-list-classes?view=graph-rest-1.0
-      operationId: education_ListClasses
+      operationId: education_ListClass
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -200,7 +200,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationroot-post-classes?view=graph-rest-1.0
-      operationId: education_CreateClasses
+      operationId: education_CreateClass
       requestBody:
         description: New navigation property
         content:
@@ -223,7 +223,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get classes from education
-      operationId: education_GetClasses
+      operationId: education_GetClass
       parameters:
         - name: educationClass-id
           in: path
@@ -299,7 +299,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property classes in education
-      operationId: education_UpdateClasses
+      operationId: education_UpdateClass
       parameters:
         - name: educationClass-id
           in: path
@@ -330,7 +330,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property classes for education
-      operationId: education_DeleteClasses
+      operationId: education_DeleteClass
       parameters:
         - name: educationClass-id
           in: path
@@ -361,7 +361,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationclass-list-categories?view=graph-rest-1.0
-      operationId: education.class_ListAssignmentCategories
+      operationId: education.class_ListAssignmentCategory
       parameters:
         - name: educationClass-id
           in: path
@@ -433,7 +433,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-1.0
-      operationId: education.class_CreateAssignmentCategories
+      operationId: education.class_CreateAssignmentCategory
       parameters:
         - name: educationClass-id
           in: path
@@ -466,7 +466,7 @@ paths:
         - education.educationClass
       summary: Get assignmentCategories from education
       description: All categories associated with this class. Nullable.
-      operationId: education.class_GetAssignmentCategories
+      operationId: education.class_GetAssignmentCategory
       parameters:
         - name: educationClass-id
           in: path
@@ -523,7 +523,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property assignmentCategories in education
-      operationId: education.class_UpdateAssignmentCategories
+      operationId: education.class_UpdateAssignmentCategory
       parameters:
         - name: educationClass-id
           in: path
@@ -562,7 +562,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property assignmentCategories for education
-      operationId: education.class_DeleteAssignmentCategories
+      operationId: education.class_DeleteAssignmentCategory
       parameters:
         - name: educationClass-id
           in: path
@@ -619,7 +619,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.class.assignmentCategory_delta
+      operationId: education.class.assignmentCategory_deltum
       parameters:
         - name: educationClass-id
           in: path
@@ -698,7 +698,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignmentdefaults-get?view=graph-rest-1.0
-      operationId: education.class_GetAssignmentDefaults
+      operationId: education.class_GetAssignmentDefault
       parameters:
         - name: educationClass-id
           in: path
@@ -754,7 +754,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignmentdefaults-update?view=graph-rest-1.0
-      operationId: education.class_UpdateAssignmentDefaults
+      operationId: education.class_UpdateAssignmentDefault
       parameters:
         - name: educationClass-id
           in: path
@@ -785,7 +785,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property assignmentDefaults for education
-      operationId: education.class_DeleteAssignmentDefaults
+      operationId: education.class_DeleteAssignmentDefault
       parameters:
         - name: educationClass-id
           in: path
@@ -816,7 +816,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationclass-list-assignments?view=graph-rest-1.0
-      operationId: education.class_ListAssignments
+      operationId: education.class_ListAssignment
       parameters:
         - name: educationClass-id
           in: path
@@ -959,7 +959,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationclass-post-assignments?view=graph-rest-1.0
-      operationId: education.class_CreateAssignments
+      operationId: education.class_CreateAssignment
       parameters:
         - name: educationClass-id
           in: path
@@ -992,7 +992,7 @@ paths:
         - education.educationClass
       summary: Get assignments from education
       description: All assignments associated with this class. Nullable.
-      operationId: education.class_GetAssignments
+      operationId: education.class_GetAssignment
       parameters:
         - name: educationClass-id
           in: path
@@ -1078,7 +1078,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property assignments in education
-      operationId: education.class_UpdateAssignments
+      operationId: education.class_UpdateAssignment
       parameters:
         - name: educationClass-id
           in: path
@@ -1117,7 +1117,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property assignments for education
-      operationId: education.class_DeleteAssignments
+      operationId: education.class_DeleteAssignment
       parameters:
         - name: educationClass-id
           in: path
@@ -1156,7 +1156,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
-      operationId: education.class.assignment_ListCategories
+      operationId: education.class.assignment_ListCategory
       parameters:
         - name: educationClass-id
           in: path
@@ -1232,7 +1232,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to categories for education
-      operationId: education.class.assignment_CreateCategories
+      operationId: education.class.assignment_CreateCategory
       parameters:
         - name: educationClass-id
           in: path
@@ -1272,7 +1272,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete ref of navigation property categories for education
-      operationId: education.class.assignment_DeleteCategoriesGraphBPreRef
+      operationId: education.class.assignment_DeleteCategoryGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -1356,7 +1356,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
-      operationId: education.class.assignment_ListCategoriesGraphBPreRef
+      operationId: education.class.assignment_ListCategoryGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -1407,7 +1407,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property ref to categories for education
-      operationId: education.class.assignment_CreateCategoriesGraphBPreRef
+      operationId: education.class.assignment_CreateCategoryGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -1438,7 +1438,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.class.assignment.category_delta
+      operationId: education.class.assignment.category_deltum
       parameters:
         - name: educationClass-id
           in: path
@@ -1636,7 +1636,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
-      operationId: education.class.assignment_ListResources
+      operationId: education.class.assignment_ListResource
       parameters:
         - name: educationClass-id
           in: path
@@ -1719,7 +1719,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0
-      operationId: education.class.assignment_CreateResources
+      operationId: education.class.assignment_CreateResource
       parameters:
         - name: educationClass-id
           in: path
@@ -1760,7 +1760,7 @@ paths:
         - education.educationClass
       summary: Get resources from education
       description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-      operationId: education.class.assignment_GetResources
+      operationId: education.class.assignment_GetResource
       parameters:
         - name: educationClass-id
           in: path
@@ -1826,7 +1826,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property resources in education
-      operationId: education.class.assignment_UpdateResources
+      operationId: education.class.assignment_UpdateResource
       parameters:
         - name: educationClass-id
           in: path
@@ -1873,7 +1873,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property resources for education
-      operationId: education.class.assignment_DeleteResources
+      operationId: education.class.assignment_DeleteResource
       parameters:
         - name: educationClass-id
           in: path
@@ -2194,7 +2194,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
-      operationId: education.class.assignment_ListSubmissions
+      operationId: education.class.assignment_ListSubmission
       parameters:
         - name: educationClass-id
           in: path
@@ -2309,7 +2309,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to submissions for education
-      operationId: education.class.assignment_CreateSubmissions
+      operationId: education.class.assignment_CreateSubmission
       parameters:
         - name: educationClass-id
           in: path
@@ -2350,7 +2350,7 @@ paths:
         - education.educationClass
       summary: Get submissions from education
       description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
-      operationId: education.class.assignment_GetSubmissions
+      operationId: education.class.assignment_GetSubmission
       parameters:
         - name: educationClass-id
           in: path
@@ -2432,7 +2432,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property submissions in education
-      operationId: education.class.assignment_UpdateSubmissions
+      operationId: education.class.assignment_UpdateSubmission
       parameters:
         - name: educationClass-id
           in: path
@@ -2479,7 +2479,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property submissions for education
-      operationId: education.class.assignment_DeleteSubmissions
+      operationId: education.class.assignment_DeleteSubmission
       parameters:
         - name: educationClass-id
           in: path
@@ -2751,7 +2751,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
-      operationId: education.class.assignment.submission_ListOutcomes
+      operationId: education.class.assignment.submission_ListOutcome
       parameters:
         - name: educationClass-id
           in: path
@@ -2842,7 +2842,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationfeedbackresourceoutcome-post-outcomes?view=graph-rest-1.0
-      operationId: education.class.assignment.submission_CreateOutcomes
+      operationId: education.class.assignment.submission_CreateOutcome
       parameters:
         - name: educationClass-id
           in: path
@@ -2890,7 +2890,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get outcomes from education
-      operationId: education.class.assignment.submission_GetOutcomes
+      operationId: education.class.assignment.submission_GetOutcome
       parameters:
         - name: educationClass-id
           in: path
@@ -2964,7 +2964,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property outcomes in education
-      operationId: education.class.assignment.submission_UpdateOutcomes
+      operationId: education.class.assignment.submission_UpdateOutcome
       parameters:
         - name: educationClass-id
           in: path
@@ -3019,7 +3019,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property outcomes for education
-      operationId: education.class.assignment.submission_DeleteOutcomes
+      operationId: education.class.assignment.submission_DeleteOutcome
       parameters:
         - name: educationClass-id
           in: path
@@ -3112,7 +3112,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
-      operationId: education.class.assignment.submission_ListResources
+      operationId: education.class.assignment.submission_ListResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3203,7 +3203,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsubmission-post-resources?view=graph-rest-1.0
-      operationId: education.class.assignment.submission_CreateResources
+      operationId: education.class.assignment.submission_CreateResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3251,7 +3251,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
-      operationId: education.class.assignment.submission_GetResources
+      operationId: education.class.assignment.submission_GetResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3325,7 +3325,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property resources in education
-      operationId: education.class.assignment.submission_UpdateResources
+      operationId: education.class.assignment.submission_UpdateResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3380,7 +3380,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property resources for education
-      operationId: education.class.assignment.submission_DeleteResources
+      operationId: education.class.assignment.submission_DeleteResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3469,7 +3469,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get submittedResources from education
-      operationId: education.class.assignment.submission_ListSubmittedResources
+      operationId: education.class.assignment.submission_ListSubmittedResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3556,7 +3556,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to submittedResources for education
-      operationId: education.class.assignment.submission_CreateSubmittedResources
+      operationId: education.class.assignment.submission_CreateSubmittedResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3604,7 +3604,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get submittedResources from education
-      operationId: education.class.assignment.submission_GetSubmittedResources
+      operationId: education.class.assignment.submission_GetSubmittedResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3678,7 +3678,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property submittedResources in education
-      operationId: education.class.assignment.submission_UpdateSubmittedResources
+      operationId: education.class.assignment.submission_UpdateSubmittedResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3733,7 +3733,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property submittedResources for education
-      operationId: education.class.assignment.submission_DeleteSubmittedResources
+      operationId: education.class.assignment.submission_DeleteSubmittedResource
       parameters:
         - name: educationClass-id
           in: path
@@ -3874,7 +3874,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.class.assignment_delta
+      operationId: education.class.assignment_deltum
       parameters:
         - name: educationClass-id
           in: path
@@ -4020,7 +4020,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignmentsettings-get?view=graph-rest-1.0
-      operationId: education.class_GetAssignmentSettings
+      operationId: education.class_GetAssignmentSetting
       parameters:
         - name: educationClass-id
           in: path
@@ -4073,7 +4073,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-1.0
-      operationId: education.class_UpdateAssignmentSettings
+      operationId: education.class_UpdateAssignmentSetting
       parameters:
         - name: educationClass-id
           in: path
@@ -4104,7 +4104,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property assignmentSettings for education
-      operationId: education.class_DeleteAssignmentSettings
+      operationId: education.class_DeleteAssignmentSetting
       parameters:
         - name: educationClass-id
           in: path
@@ -4192,6 +4192,7 @@ paths:
                 - resourceProvisioningOptions
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - writebackConfiguration
@@ -4295,7 +4296,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
-      operationId: education.class_ListMembers
+      operationId: education.class_ListMember
       parameters:
         - name: educationClass-id
           in: path
@@ -4469,7 +4470,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete ref of navigation property members for education
-      operationId: education.class_DeleteMembersGraphBPreRef
+      operationId: education.class_DeleteMemberGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4537,7 +4538,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
-      operationId: education.class_ListMembersGraphBPreRef
+      operationId: education.class_ListMemberGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4642,7 +4643,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property ref to members for education
-      operationId: education.class_CreateMembersGraphBPreRef
+      operationId: education.class_CreateMemberGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -4669,7 +4670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationclass-list-schools?view=graph-rest-1.0
-      operationId: education.class_ListSchools
+      operationId: education.class_ListSchool
       parameters:
         - name: educationClass-id
           in: path
@@ -4787,7 +4788,7 @@ paths:
         - education.educationClass
       summary: Get schools from education
       description: All schools that this class is associated with. Nullable.
-      operationId: education.class_GetSchools
+      operationId: education.class_GetSchool
       parameters:
         - name: educationClass-id
           in: path
@@ -4891,7 +4892,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0
-      operationId: education.class_ListTeachers
+      operationId: education.class_ListTeacher
       parameters:
         - name: educationClass-id
           in: path
@@ -5065,7 +5066,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete ref of navigation property teachers for education
-      operationId: education.class_DeleteTeachersGraphBPreRef
+      operationId: education.class_DeleteTeacherGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -5133,7 +5134,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0
-      operationId: education.class_ListTeachersGraphBPreRef
+      operationId: education.class_ListTeacherGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -5238,7 +5239,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property ref to teachers for education
-      operationId: education.class_CreateTeachersGraphBPreRef
+      operationId: education.class_CreateTeacherGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
@@ -5275,7 +5276,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.class_delta
+      operationId: education.class_deltum
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5512,7 +5513,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-1.0
-      operationId: education.me_ListAssignments
+      operationId: education.me_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5643,7 +5644,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to assignments for education
-      operationId: education.me_CreateAssignments
+      operationId: education.me_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -5667,7 +5668,7 @@ paths:
         - education.educationUser
       summary: Get assignments from education
       description: List of assignments for the user. Nullable.
-      operationId: education.me_GetAssignments
+      operationId: education.me_GetAssignment
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5745,7 +5746,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property assignments in education
-      operationId: education.me_UpdateAssignments
+      operationId: education.me_UpdateAssignment
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5776,7 +5777,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property assignments for education
-      operationId: education.me_DeleteAssignments
+      operationId: education.me_DeleteAssignment
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5807,7 +5808,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
-      operationId: education.me.assignment_ListCategories
+      operationId: education.me.assignment_ListCategory
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5875,7 +5876,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to categories for education
-      operationId: education.me.assignment_CreateCategories
+      operationId: education.me.assignment_CreateCategory
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5907,7 +5908,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property categories for education
-      operationId: education.me.assignment_DeleteCategoriesGraphBPreRef
+      operationId: education.me.assignment_DeleteCategoryGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
@@ -5975,7 +5976,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
-      operationId: education.me.assignment_ListCategoriesGraphBPreRef
+      operationId: education.me.assignment_ListCategoryGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6018,7 +6019,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to categories for education
-      operationId: education.me.assignment_CreateCategoriesGraphBPreRef
+      operationId: education.me.assignment_CreateCategoryGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6041,7 +6042,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.me.assignment.category_delta
+      operationId: education.me.assignment.category_deltum
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6207,7 +6208,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
-      operationId: education.me.assignment_ListResources
+      operationId: education.me.assignment_ListResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6282,7 +6283,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0
-      operationId: education.me.assignment_CreateResources
+      operationId: education.me.assignment_CreateResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6315,7 +6316,7 @@ paths:
         - education.educationUser
       summary: Get resources from education
       description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-      operationId: education.me.assignment_GetResources
+      operationId: education.me.assignment_GetResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6373,7 +6374,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
-      operationId: education.me.assignment_UpdateResources
+      operationId: education.me.assignment_UpdateResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6412,7 +6413,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
-      operationId: education.me.assignment_DeleteResources
+      operationId: education.me.assignment_DeleteResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6669,7 +6670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
-      operationId: education.me.assignment_ListSubmissions
+      operationId: education.me.assignment_ListSubmission
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6776,7 +6777,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submissions for education
-      operationId: education.me.assignment_CreateSubmissions
+      operationId: education.me.assignment_CreateSubmission
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6809,7 +6810,7 @@ paths:
         - education.educationUser
       summary: Get submissions from education
       description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
-      operationId: education.me.assignment_GetSubmissions
+      operationId: education.me.assignment_GetSubmission
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6883,7 +6884,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submissions in education
-      operationId: education.me.assignment_UpdateSubmissions
+      operationId: education.me.assignment_UpdateSubmission
       parameters:
         - name: educationAssignment-id
           in: path
@@ -6922,7 +6923,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submissions for education
-      operationId: education.me.assignment_DeleteSubmissions
+      operationId: education.me.assignment_DeleteSubmission
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7146,7 +7147,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
-      operationId: education.me.assignment.submission_ListOutcomes
+      operationId: education.me.assignment.submission_ListOutcome
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7229,7 +7230,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationfeedbackresourceoutcome-post-outcomes?view=graph-rest-1.0
-      operationId: education.me.assignment.submission_CreateOutcomes
+      operationId: education.me.assignment.submission_CreateOutcome
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7269,7 +7270,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      operationId: education.me.assignment.submission_GetOutcomes
+      operationId: education.me.assignment.submission_GetOutcome
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7335,7 +7336,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property outcomes in education
-      operationId: education.me.assignment.submission_UpdateOutcomes
+      operationId: education.me.assignment.submission_UpdateOutcome
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7382,7 +7383,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property outcomes for education
-      operationId: education.me.assignment.submission_DeleteOutcomes
+      operationId: education.me.assignment.submission_DeleteOutcome
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7459,7 +7460,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
-      operationId: education.me.assignment.submission_ListResources
+      operationId: education.me.assignment.submission_ListResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7542,7 +7543,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsubmission-post-resources?view=graph-rest-1.0
-      operationId: education.me.assignment.submission_CreateResources
+      operationId: education.me.assignment.submission_CreateResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7582,7 +7583,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      operationId: education.me.assignment.submission_GetResources
+      operationId: education.me.assignment.submission_GetResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7648,7 +7649,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
-      operationId: education.me.assignment.submission_UpdateResources
+      operationId: education.me.assignment.submission_UpdateResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7695,7 +7696,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
-      operationId: education.me.assignment.submission_DeleteResources
+      operationId: education.me.assignment.submission_DeleteResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7768,7 +7769,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      operationId: education.me.assignment.submission_ListSubmittedResources
+      operationId: education.me.assignment.submission_ListSubmittedResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7847,7 +7848,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submittedResources for education
-      operationId: education.me.assignment.submission_CreateSubmittedResources
+      operationId: education.me.assignment.submission_CreateSubmittedResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7887,7 +7888,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      operationId: education.me.assignment.submission_GetSubmittedResources
+      operationId: education.me.assignment.submission_GetSubmittedResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -7953,7 +7954,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submittedResources in education
-      operationId: education.me.assignment.submission_UpdateSubmittedResources
+      operationId: education.me.assignment.submission_UpdateSubmittedResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -8000,7 +8001,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submittedResources for education
-      operationId: education.me.assignment.submission_DeleteSubmittedResources
+      operationId: education.me.assignment.submission_DeleteSubmittedResource
       parameters:
         - name: educationAssignment-id
           in: path
@@ -8109,7 +8110,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.me.assignment_delta
+      operationId: education.me.assignment_deltum
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8247,7 +8248,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0
-      operationId: education.me_ListClasses
+      operationId: education.me_ListClass
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8358,7 +8359,7 @@ paths:
         - education.educationUser
       summary: Get classes from education
       description: Classes to which the user belongs. Nullable.
-      operationId: education.me_GetClasses
+      operationId: education.me_GetClass
       parameters:
         - name: educationClass-id
           in: path
@@ -8453,7 +8454,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-1.0
-      operationId: education.me_ListRubrics
+      operationId: education.me_ListRubric
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8541,7 +8542,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-1.0
-      operationId: education.me_CreateRubrics
+      operationId: education.me_CreateRubric
       requestBody:
         description: New navigation property
         content:
@@ -8565,7 +8566,7 @@ paths:
         - education.educationUser
       summary: Get rubrics from education
       description: 'When set, the grading rubric attached to the assignment.'
-      operationId: education.me_GetRubrics
+      operationId: education.me_GetRubric
       parameters:
         - name: educationRubric-id
           in: path
@@ -8622,7 +8623,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property rubrics in education
-      operationId: education.me_UpdateRubrics
+      operationId: education.me_UpdateRubric
       parameters:
         - name: educationRubric-id
           in: path
@@ -8653,7 +8654,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property rubrics for education
-      operationId: education.me_DeleteRubrics
+      operationId: education.me_DeleteRubric
       parameters:
         - name: educationRubric-id
           in: path
@@ -8698,7 +8699,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-list-schools?view=graph-rest-1.0
-      operationId: education.me_ListSchools
+      operationId: education.me_ListSchool
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8808,7 +8809,7 @@ paths:
         - education.educationUser
       summary: Get schools from education
       description: Schools to which the user belongs. Nullable.
-      operationId: education.me_GetSchools
+      operationId: education.me_GetSchool
       parameters:
         - name: educationSchool-id
           in: path
@@ -8893,7 +8894,7 @@ paths:
         - education.educationUser
       summary: Get taughtClasses from education
       description: Classes for which the user is a teacher.
-      operationId: education.me_ListTaughtClasses
+      operationId: education.me_ListTaughtClass
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9004,7 +9005,7 @@ paths:
         - education.educationUser
       summary: Get taughtClasses from education
       description: Classes for which the user is a teacher.
-      operationId: education.me_GetTaughtClasses
+      operationId: education.me_GetTaughtClass
       parameters:
         - name: educationClass-id
           in: path
@@ -9172,6 +9173,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -9350,6 +9352,89 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  /education/me/user/mailboxSettings:
+    get:
+      tags:
+        - education.educationUser
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: education.me.user_GetMailboxSetting
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+    patch:
+      tags:
+        - education.educationUser
+      summary: Update property mailboxSettings value.
+      operationId: education.me.user_UpdateMailboxSetting
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   /education/schools:
     get:
       tags:
@@ -9359,7 +9444,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationroot-list-schools?view=graph-rest-1.0
-      operationId: education_ListSchools
+      operationId: education_ListSchool
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9471,7 +9556,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationroot-post-schools?view=graph-rest-1.0
-      operationId: education_CreateSchools
+      operationId: education_CreateSchool
       requestBody:
         description: New navigation property
         content:
@@ -9494,7 +9579,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get schools from education
-      operationId: education_GetSchools
+      operationId: education_GetSchool
       parameters:
         - name: educationSchool-id
           in: path
@@ -9563,7 +9648,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Update the navigation property schools in education
-      operationId: education_UpdateSchools
+      operationId: education_UpdateSchool
       parameters:
         - name: educationSchool-id
           in: path
@@ -9594,7 +9679,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Delete navigation property schools for education
-      operationId: education_DeleteSchools
+      operationId: education_DeleteSchool
       parameters:
         - name: educationSchool-id
           in: path
@@ -9720,7 +9805,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
-      operationId: education.school_ListClasses
+      operationId: education.school_ListClass
       parameters:
         - name: educationSchool-id
           in: path
@@ -9838,7 +9923,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Delete ref of navigation property classes for education
-      operationId: education.school_DeleteClassesGraphBPreRef
+      operationId: education.school_DeleteClassGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9906,7 +9991,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
-      operationId: education.school_ListClassesGraphBPreRef
+      operationId: education.school_ListClassGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9971,7 +10056,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Create new navigation property ref to classes for education
-      operationId: education.school_CreateClassesGraphBPreRef
+      operationId: education.school_CreateClassGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -9998,7 +10083,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
-      operationId: education.school_ListUsers
+      operationId: education.school_ListUser
       parameters:
         - name: educationSchool-id
           in: path
@@ -10172,7 +10257,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Delete ref of navigation property users for education
-      operationId: education.school_DeleteUsersGraphBPreRef
+      operationId: education.school_DeleteUserGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -10240,7 +10325,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
-      operationId: education.school_ListUsersGraphBPreRef
+      operationId: education.school_ListUserGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -10345,7 +10430,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Create new navigation property ref to users for education
-      operationId: education.school_CreateUsersGraphBPreRef
+      operationId: education.school_CreateUserGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
@@ -10382,7 +10467,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.school_delta
+      operationId: education.school_deltum
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10498,7 +10583,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-list?view=graph-rest-1.0
-      operationId: education_ListSynchronizationProfiles
+      operationId: education_ListSynchronizationProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10580,7 +10665,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Create new navigation property to synchronizationProfiles for education
-      operationId: education_CreateSynchronizationProfiles
+      operationId: education_CreateSynchronizationProfile
       requestBody:
         description: New navigation property
         content:
@@ -10603,7 +10688,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get synchronizationProfiles from education
-      operationId: education_GetSynchronizationProfiles
+      operationId: education_GetSynchronizationProfile
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
@@ -10662,7 +10747,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Update the navigation property synchronizationProfiles in education
-      operationId: education_UpdateSynchronizationProfiles
+      operationId: education_UpdateSynchronizationProfile
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
@@ -10693,7 +10778,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Delete navigation property synchronizationProfiles for education
-      operationId: education_DeleteSynchronizationProfiles
+      operationId: education_DeleteSynchronizationProfile
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
@@ -10724,7 +10809,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-1.0
-      operationId: education.synchronizationProfile_ListErrors
+      operationId: education.synchronizationProfile_ListError
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
@@ -10807,7 +10892,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Create new navigation property to errors for education
-      operationId: education.synchronizationProfile_CreateErrors
+      operationId: education.synchronizationProfile_CreateError
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
@@ -10840,7 +10925,7 @@ paths:
         - education.educationSynchronizationProfile
       summary: Get errors from education
       description: All errors associated with this synchronization profile.
-      operationId: education.synchronizationProfile_GetErrors
+      operationId: education.synchronizationProfile_GetError
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
@@ -10902,7 +10987,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Update the navigation property errors in education
-      operationId: education.synchronizationProfile_UpdateErrors
+      operationId: education.synchronizationProfile_UpdateError
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
@@ -10941,7 +11026,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Delete navigation property errors for education
-      operationId: education.synchronizationProfile_DeleteErrors
+      operationId: education.synchronizationProfile_DeleteError
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
@@ -11279,7 +11364,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationroot-list-users?view=graph-rest-1.0
-      operationId: education_ListUsers
+      operationId: education_ListUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11448,7 +11533,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationroot-post-users?view=graph-rest-1.0
-      operationId: education_CreateUsers
+      operationId: education_CreateUser
       requestBody:
         description: New navigation property
         content:
@@ -11471,7 +11556,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get users from education
-      operationId: education_GetUsers
+      operationId: education_GetUser
       parameters:
         - name: educationUser-id
           in: path
@@ -11563,7 +11648,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property users in education
-      operationId: education_UpdateUsers
+      operationId: education_UpdateUser
       parameters:
         - name: educationUser-id
           in: path
@@ -11594,7 +11679,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property users for education
-      operationId: education_DeleteUsers
+      operationId: education_DeleteUser
       parameters:
         - name: educationUser-id
           in: path
@@ -11625,7 +11710,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-1.0
-      operationId: education.user_ListAssignments
+      operationId: education.user_ListAssignment
       parameters:
         - name: educationUser-id
           in: path
@@ -11764,7 +11849,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to assignments for education
-      operationId: education.user_CreateAssignments
+      operationId: education.user_CreateAssignment
       parameters:
         - name: educationUser-id
           in: path
@@ -11797,7 +11882,7 @@ paths:
         - education.educationUser
       summary: Get assignments from education
       description: List of assignments for the user. Nullable.
-      operationId: education.user_GetAssignments
+      operationId: education.user_GetAssignment
       parameters:
         - name: educationUser-id
           in: path
@@ -11883,7 +11968,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property assignments in education
-      operationId: education.user_UpdateAssignments
+      operationId: education.user_UpdateAssignment
       parameters:
         - name: educationUser-id
           in: path
@@ -11922,7 +12007,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property assignments for education
-      operationId: education.user_DeleteAssignments
+      operationId: education.user_DeleteAssignment
       parameters:
         - name: educationUser-id
           in: path
@@ -11961,7 +12046,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
-      operationId: education.user.assignment_ListCategories
+      operationId: education.user.assignment_ListCategory
       parameters:
         - name: educationUser-id
           in: path
@@ -12037,7 +12122,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to categories for education
-      operationId: education.user.assignment_CreateCategories
+      operationId: education.user.assignment_CreateCategory
       parameters:
         - name: educationUser-id
           in: path
@@ -12077,7 +12162,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property categories for education
-      operationId: education.user.assignment_DeleteCategoriesGraphBPreRef
+      operationId: education.user.assignment_DeleteCategoryGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -12161,7 +12246,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
-      operationId: education.user.assignment_ListCategoriesGraphBPreRef
+      operationId: education.user.assignment_ListCategoryGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -12212,7 +12297,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to categories for education
-      operationId: education.user.assignment_CreateCategoriesGraphBPreRef
+      operationId: education.user.assignment_CreateCategoryGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
@@ -12243,7 +12328,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.user.assignment.category_delta
+      operationId: education.user.assignment.category_deltum
       parameters:
         - name: educationUser-id
           in: path
@@ -12441,7 +12526,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
-      operationId: education.user.assignment_ListResources
+      operationId: education.user.assignment_ListResource
       parameters:
         - name: educationUser-id
           in: path
@@ -12524,7 +12609,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0
-      operationId: education.user.assignment_CreateResources
+      operationId: education.user.assignment_CreateResource
       parameters:
         - name: educationUser-id
           in: path
@@ -12565,7 +12650,7 @@ paths:
         - education.educationUser
       summary: Get resources from education
       description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-      operationId: education.user.assignment_GetResources
+      operationId: education.user.assignment_GetResource
       parameters:
         - name: educationUser-id
           in: path
@@ -12631,7 +12716,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
-      operationId: education.user.assignment_UpdateResources
+      operationId: education.user.assignment_UpdateResource
       parameters:
         - name: educationUser-id
           in: path
@@ -12678,7 +12763,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
-      operationId: education.user.assignment_DeleteResources
+      operationId: education.user.assignment_DeleteResource
       parameters:
         - name: educationUser-id
           in: path
@@ -12999,7 +13084,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
-      operationId: education.user.assignment_ListSubmissions
+      operationId: education.user.assignment_ListSubmission
       parameters:
         - name: educationUser-id
           in: path
@@ -13114,7 +13199,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submissions for education
-      operationId: education.user.assignment_CreateSubmissions
+      operationId: education.user.assignment_CreateSubmission
       parameters:
         - name: educationUser-id
           in: path
@@ -13155,7 +13240,7 @@ paths:
         - education.educationUser
       summary: Get submissions from education
       description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
-      operationId: education.user.assignment_GetSubmissions
+      operationId: education.user.assignment_GetSubmission
       parameters:
         - name: educationUser-id
           in: path
@@ -13237,7 +13322,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submissions in education
-      operationId: education.user.assignment_UpdateSubmissions
+      operationId: education.user.assignment_UpdateSubmission
       parameters:
         - name: educationUser-id
           in: path
@@ -13284,7 +13369,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submissions for education
-      operationId: education.user.assignment_DeleteSubmissions
+      operationId: education.user.assignment_DeleteSubmission
       parameters:
         - name: educationUser-id
           in: path
@@ -13556,7 +13641,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
-      operationId: education.user.assignment.submission_ListOutcomes
+      operationId: education.user.assignment.submission_ListOutcome
       parameters:
         - name: educationUser-id
           in: path
@@ -13647,7 +13732,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationfeedbackresourceoutcome-post-outcomes?view=graph-rest-1.0
-      operationId: education.user.assignment.submission_CreateOutcomes
+      operationId: education.user.assignment.submission_CreateOutcome
       parameters:
         - name: educationUser-id
           in: path
@@ -13695,7 +13780,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      operationId: education.user.assignment.submission_GetOutcomes
+      operationId: education.user.assignment.submission_GetOutcome
       parameters:
         - name: educationUser-id
           in: path
@@ -13769,7 +13854,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property outcomes in education
-      operationId: education.user.assignment.submission_UpdateOutcomes
+      operationId: education.user.assignment.submission_UpdateOutcome
       parameters:
         - name: educationUser-id
           in: path
@@ -13824,7 +13909,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property outcomes for education
-      operationId: education.user.assignment.submission_DeleteOutcomes
+      operationId: education.user.assignment.submission_DeleteOutcome
       parameters:
         - name: educationUser-id
           in: path
@@ -13917,7 +14002,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
-      operationId: education.user.assignment.submission_ListResources
+      operationId: education.user.assignment.submission_ListResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14008,7 +14093,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationsubmission-post-resources?view=graph-rest-1.0
-      operationId: education.user.assignment.submission_CreateResources
+      operationId: education.user.assignment.submission_CreateResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14056,7 +14141,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      operationId: education.user.assignment.submission_GetResources
+      operationId: education.user.assignment.submission_GetResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14130,7 +14215,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
-      operationId: education.user.assignment.submission_UpdateResources
+      operationId: education.user.assignment.submission_UpdateResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14185,7 +14270,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
-      operationId: education.user.assignment.submission_DeleteResources
+      operationId: education.user.assignment.submission_DeleteResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14274,7 +14359,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      operationId: education.user.assignment.submission_ListSubmittedResources
+      operationId: education.user.assignment.submission_ListSubmittedResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14361,7 +14446,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submittedResources for education
-      operationId: education.user.assignment.submission_CreateSubmittedResources
+      operationId: education.user.assignment.submission_CreateSubmittedResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14409,7 +14494,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      operationId: education.user.assignment.submission_GetSubmittedResources
+      operationId: education.user.assignment.submission_GetSubmittedResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14483,7 +14568,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submittedResources in education
-      operationId: education.user.assignment.submission_UpdateSubmittedResources
+      operationId: education.user.assignment.submission_UpdateSubmittedResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14538,7 +14623,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submittedResources for education
-      operationId: education.user.assignment.submission_DeleteSubmittedResources
+      operationId: education.user.assignment.submission_DeleteSubmittedResource
       parameters:
         - name: educationUser-id
           in: path
@@ -14679,7 +14764,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.user.assignment_delta
+      operationId: education.user.assignment_deltum
       parameters:
         - name: educationUser-id
           in: path
@@ -14825,7 +14910,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0
-      operationId: education.user_ListClasses
+      operationId: education.user_ListClass
       parameters:
         - name: educationUser-id
           in: path
@@ -14944,7 +15029,7 @@ paths:
         - education.educationUser
       summary: Get classes from education
       description: Classes to which the user belongs. Nullable.
-      operationId: education.user_GetClasses
+      operationId: education.user_GetClass
       parameters:
         - name: educationUser-id
           in: path
@@ -15055,7 +15140,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-1.0
-      operationId: education.user_ListRubrics
+      operationId: education.user_ListRubric
       parameters:
         - name: educationUser-id
           in: path
@@ -15151,7 +15236,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-1.0
-      operationId: education.user_CreateRubrics
+      operationId: education.user_CreateRubric
       parameters:
         - name: educationUser-id
           in: path
@@ -15184,7 +15269,7 @@ paths:
         - education.educationUser
       summary: Get rubrics from education
       description: 'When set, the grading rubric attached to the assignment.'
-      operationId: education.user_GetRubrics
+      operationId: education.user_GetRubric
       parameters:
         - name: educationUser-id
           in: path
@@ -15249,7 +15334,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property rubrics in education
-      operationId: education.user_UpdateRubrics
+      operationId: education.user_UpdateRubric
       parameters:
         - name: educationUser-id
           in: path
@@ -15288,7 +15373,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property rubrics for education
-      operationId: education.user_DeleteRubrics
+      operationId: education.user_DeleteRubric
       parameters:
         - name: educationUser-id
           in: path
@@ -15349,7 +15434,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/educationuser-list-schools?view=graph-rest-1.0
-      operationId: education.user_ListSchools
+      operationId: education.user_ListSchool
       parameters:
         - name: educationUser-id
           in: path
@@ -15467,7 +15552,7 @@ paths:
         - education.educationUser
       summary: Get schools from education
       description: Schools to which the user belongs. Nullable.
-      operationId: education.user_GetSchools
+      operationId: education.user_GetSchool
       parameters:
         - name: educationUser-id
           in: path
@@ -15568,7 +15653,7 @@ paths:
         - education.educationUser
       summary: Get taughtClasses from education
       description: Classes for which the user is a teacher.
-      operationId: education.user_ListTaughtClasses
+      operationId: education.user_ListTaughtClass
       parameters:
         - name: educationUser-id
           in: path
@@ -15687,7 +15772,7 @@ paths:
         - education.educationUser
       summary: Get taughtClasses from education
       description: Classes for which the user is a teacher.
-      operationId: education.user_GetTaughtClasses
+      operationId: education.user_GetTaughtClass
       parameters:
         - name: educationUser-id
           in: path
@@ -15879,6 +15964,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -16057,6 +16143,106 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/user/mailboxSettings':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: education.user_GetMailboxSetting
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+    patch:
+      tags:
+        - education.educationUser
+      summary: Update property mailboxSettings value.
+      operationId: education.user_UpdateMailboxSetting
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   /education/users/$count:
     get:
       tags:
@@ -16076,7 +16262,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.user_delta
+      operationId: education.user_deltum
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -16833,6 +17019,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -17505,6 +17695,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -17901,6 +18095,40 @@ components:
               $ref: '#/components/schemas/microsoft.graph.todo'
           additionalProperties:
             type: object
+    microsoft.graph.mailboxSettings:
+      title: mailboxSettings
+      type: object
+      properties:
+        archiveFolder:
+          type: string
+          description: Folder ID of an archive folder for the user. Read-only.
+          nullable: true
+        automaticRepliesSetting:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
+        dateFormat:
+          type: string
+          description: The date format for the user's mailbox.
+          nullable: true
+        delegateMeetingMessageDeliveryOptions:
+          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
+        language:
+          $ref: '#/components/schemas/microsoft.graph.localeInfo'
+        timeFormat:
+          type: string
+          description: The time format for the user's mailbox.
+          nullable: true
+        timeZone:
+          type: string
+          description: The default time zone for the user's mailbox.
+          nullable: true
+        userPurpose:
+          $ref: '#/components/schemas/microsoft.graph.userPurpose'
+        userPurposeV2:
+          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
+        workingHours:
+          $ref: '#/components/schemas/microsoft.graph.workingHours'
+      additionalProperties:
+        type: object
     microsoft.graph.administrativeUnit:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -18352,6 +18580,23 @@ components:
         value:
           type: string
           description: Value of the property causing the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -19629,40 +19874,6 @@ components:
           type: string
           description: Ninth customizable extension attribute.
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.mailboxSettings:
-      title: mailboxSettings
-      type: object
-      properties:
-        archiveFolder:
-          type: string
-          description: Folder ID of an archive folder for the user. Read-only.
-          nullable: true
-        automaticRepliesSetting:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
-        dateFormat:
-          type: string
-          description: The date format for the user's mailbox.
-          nullable: true
-        delegateMeetingMessageDeliveryOptions:
-          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
-        language:
-          $ref: '#/components/schemas/microsoft.graph.localeInfo'
-        timeFormat:
-          type: string
-          description: The time format for the user's mailbox.
-          nullable: true
-        timeZone:
-          type: string
-          description: The default time zone for the user's mailbox.
-          nullable: true
-        userPurpose:
-          $ref: '#/components/schemas/microsoft.graph.userPurpose'
-        userPurposeV2:
-          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
-        workingHours:
-          $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
     microsoft.graph.userPrint:
@@ -22428,6 +22639,97 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.automaticRepliesSetting:
+      title: automaticRepliesSetting
+      type: object
+      properties:
+        externalAudience:
+          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
+        externalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        internalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        scheduledEndDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        scheduledStartDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.delegateMeetingMessageDeliveryOptions:
+      title: delegateMeetingMessageDeliveryOptions
+      enum:
+        - sendToDelegateAndInformationToPrincipal
+        - sendToDelegateAndPrincipal
+        - sendToDelegateOnly
+      type: string
+    microsoft.graph.localeInfo:
+      title: localeInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
+          nullable: true
+        locale:
+          type: string
+          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userPurpose:
+      title: userPurpose
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+        - unknownFutureValue
+      type: string
+    microsoft.graph.mailboxRecipientType:
+      title: mailboxRecipientType
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+      type: string
+    microsoft.graph.workingHours:
+      title: workingHours
+      type: object
+      properties:
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: The days of the week on which the user works.
+        endTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user stops working.
+          format: time
+          nullable: true
+        startTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user starts working.
+          format: time
+          nullable: true
+        timeZone:
+          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
+      additionalProperties:
+        type: object
     microsoft.graph.educationSynchronizationDataProvider:
       title: educationSynchronizationDataProvider
       type: object
@@ -23343,6 +23645,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -24480,11 +24784,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -24502,6 +24808,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -24518,6 +24825,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -24555,97 +24863,6 @@ components:
         - other
         - unknownFutureValue
       type: string
-    microsoft.graph.automaticRepliesSetting:
-      title: automaticRepliesSetting
-      type: object
-      properties:
-        externalAudience:
-          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
-        externalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        internalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        scheduledEndDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        scheduledStartDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        status:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
-      additionalProperties:
-        type: object
-    microsoft.graph.delegateMeetingMessageDeliveryOptions:
-      title: delegateMeetingMessageDeliveryOptions
-      enum:
-        - sendToDelegateAndInformationToPrincipal
-        - sendToDelegateAndPrincipal
-        - sendToDelegateOnly
-      type: string
-    microsoft.graph.localeInfo:
-      title: localeInfo
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
-          nullable: true
-        locale:
-          type: string
-          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.userPurpose:
-      title: userPurpose
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-        - unknownFutureValue
-      type: string
-    microsoft.graph.mailboxRecipientType:
-      title: mailboxRecipientType
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-      type: string
-    microsoft.graph.workingHours:
-      title: workingHours
-      type: object
-      properties:
-        daysOfWeek:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: The days of the week on which the user works.
-        endTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user stops working.
-          format: time
-          nullable: true
-        startTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user starts working.
-          format: time
-          nullable: true
-        timeZone:
-          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
-      additionalProperties:
-        type: object
     microsoft.graph.printerShare:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.printerBase'
@@ -25287,12 +25504,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -29778,6 +29997,41 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.externalAudienceScope:
+      title: externalAudienceScope
+      enum:
+        - none
+        - contactsOnly
+        - all
+      type: string
+    microsoft.graph.automaticRepliesStatus:
+      title: automaticRepliesStatus
+      enum:
+        - disabled
+        - alwaysEnabled
+        - scheduled
+      type: string
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.timeZoneBase:
+      title: timeZoneBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -30616,6 +30870,29 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.workbookWorksheet'
               description: Represents a collection of worksheets associated with the workbook. Read-only.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
           additionalProperties:
             type: object
     microsoft.graph.subscription:
@@ -32068,41 +32345,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.externalAudienceScope:
-      title: externalAudienceScope
-      enum:
-        - none
-        - contactsOnly
-        - all
-      type: string
-    microsoft.graph.automaticRepliesStatus:
-      title: automaticRepliesStatus
-      enum:
-        - disabled
-        - alwaysEnabled
-        - scheduled
-      type: string
-    microsoft.graph.dayOfWeek:
-      title: dayOfWeek
-      enum:
-        - sunday
-        - monday
-        - tuesday
-        - wednesday
-        - thursday
-        - friday
-        - saturday
-      type: string
-    microsoft.graph.timeZoneBase:
-      title: timeZoneBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.printerBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32456,11 +32698,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -35706,6 +35948,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -38443,6 +38708,15 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessAction:
       title: accessAction
       type: object
@@ -40001,11 +40275,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
           nullable: true
         value:
           type: integer
-          description: Value.
+          description: Total number of synchronized objects.
           format: int64
       additionalProperties:
         type: object
@@ -40013,9 +40287,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -40518,15 +40796,15 @@ components:
       properties:
         code:
           type: string
-          description: The error code.
+          description: 'The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.'
           nullable: true
         message:
           type: string
-          description: The error message.
+          description: 'The error message. For example, Policy permitting auto-redemption of invitations not configured.'
           nullable: true
         tenantActionable:
           type: boolean
-          description: The action to take to resolve the error.
+          description: 'The action to take to resolve the error. For example, false.'
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:
@@ -40548,6 +40826,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object

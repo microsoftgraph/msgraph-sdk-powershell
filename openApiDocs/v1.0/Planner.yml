@@ -131,7 +131,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0
-      operationId: group.planner_ListPlans
+      operationId: group.planner_ListPlan
       parameters:
         - name: group-id
           in: path
@@ -217,7 +217,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to plans for groups
-      operationId: group.planner_CreatePlans
+      operationId: group.planner_CreatePlan
       parameters:
         - name: group-id
           in: path
@@ -250,7 +250,7 @@ paths:
         - groups.plannerGroup
       summary: Get plans from groups
       description: Read-only. Nullable. Returns the plannerPlans owned by the group.
-      operationId: group.planner_GetPlans
+      operationId: group.planner_GetPlan
       parameters:
         - name: group-id
           in: path
@@ -317,7 +317,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property plans in groups
-      operationId: group.planner_UpdatePlans
+      operationId: group.planner_UpdatePlan
       parameters:
         - name: group-id
           in: path
@@ -356,7 +356,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property plans for groups
-      operationId: group.planner_DeletePlans
+      operationId: group.planner_DeletePlan
       parameters:
         - name: group-id
           in: path
@@ -395,7 +395,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
-      operationId: group.planner.plan_ListBuckets
+      operationId: group.planner.plan_ListBucket
       parameters:
         - name: group-id
           in: path
@@ -479,7 +479,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to buckets for groups
-      operationId: group.planner.plan_CreateBuckets
+      operationId: group.planner.plan_CreateBucket
       parameters:
         - name: group-id
           in: path
@@ -520,7 +520,7 @@ paths:
         - groups.plannerGroup
       summary: Get buckets from groups
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: group.planner.plan_GetBuckets
+      operationId: group.planner.plan_GetBucket
       parameters:
         - name: group-id
           in: path
@@ -589,7 +589,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property buckets in groups
-      operationId: group.planner.plan_UpdateBuckets
+      operationId: group.planner.plan_UpdateBucket
       parameters:
         - name: group-id
           in: path
@@ -636,7 +636,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property buckets for groups
-      operationId: group.planner.plan_DeleteBuckets
+      operationId: group.planner.plan_DeleteBucket
       parameters:
         - name: group-id
           in: path
@@ -683,7 +683,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
-      operationId: group.planner.plan.bucket_ListTasks
+      operationId: group.planner.plan.bucket_ListTask
       parameters:
         - name: group-id
           in: path
@@ -835,7 +835,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to tasks for groups
-      operationId: group.planner.plan.bucket_CreateTasks
+      operationId: group.planner.plan.bucket_CreateTask
       parameters:
         - name: group-id
           in: path
@@ -884,7 +884,7 @@ paths:
         - groups.plannerGroup
       summary: Get tasks from groups
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: group.planner.plan.bucket_GetTasks
+      operationId: group.planner.plan.bucket_GetTask
       parameters:
         - name: group-id
           in: path
@@ -985,7 +985,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property tasks in groups
-      operationId: group.planner.plan.bucket_UpdateTasks
+      operationId: group.planner.plan.bucket_UpdateTask
       parameters:
         - name: group-id
           in: path
@@ -1040,7 +1040,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property tasks for groups
-      operationId: group.planner.plan.bucket_DeleteTasks
+      operationId: group.planner.plan.bucket_DeleteTask
       parameters:
         - name: group-id
           in: path
@@ -1482,7 +1482,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: group.planner.plan.bucket.task_GetDetails
+      operationId: group.planner.plan.bucket.task_GetDetail
       parameters:
         - name: group-id
           in: path
@@ -1561,7 +1561,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: group.planner.plan.bucket.task_UpdateDetails
+      operationId: group.planner.plan.bucket.task_UpdateDetail
       parameters:
         - name: group-id
           in: path
@@ -1623,7 +1623,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      operationId: group.planner.plan.bucket.task_DeleteDetails
+      operationId: group.planner.plan.bucket.task_DeleteDetail
       parameters:
         - name: group-id
           in: path
@@ -1939,7 +1939,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
-      operationId: group.planner.plan_GetDetails
+      operationId: group.planner.plan_GetDetail
       parameters:
         - name: group-id
           in: path
@@ -2000,7 +2000,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
-      operationId: group.planner.plan_UpdateDetails
+      operationId: group.planner.plan_UpdateDetail
       parameters:
         - name: group-id
           in: path
@@ -2046,7 +2046,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      operationId: group.planner.plan_DeleteDetails
+      operationId: group.planner.plan_DeleteDetail
       parameters:
         - name: group-id
           in: path
@@ -2085,7 +2085,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
-      operationId: group.planner.plan_ListTasks
+      operationId: group.planner.plan_ListTask
       parameters:
         - name: group-id
           in: path
@@ -2229,7 +2229,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to tasks for groups
-      operationId: group.planner.plan_CreateTasks
+      operationId: group.planner.plan_CreateTask
       parameters:
         - name: group-id
           in: path
@@ -2270,7 +2270,7 @@ paths:
         - groups.plannerGroup
       summary: Get tasks from groups
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: group.planner.plan_GetTasks
+      operationId: group.planner.plan_GetTask
       parameters:
         - name: group-id
           in: path
@@ -2363,7 +2363,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property tasks in groups
-      operationId: group.planner.plan_UpdateTasks
+      operationId: group.planner.plan_UpdateTask
       parameters:
         - name: group-id
           in: path
@@ -2410,7 +2410,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property tasks for groups
-      operationId: group.planner.plan_DeleteTasks
+      operationId: group.planner.plan_DeleteTask
       parameters:
         - name: group-id
           in: path
@@ -2796,7 +2796,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: group.planner.plan.task_GetDetails
+      operationId: group.planner.plan.task_GetDetail
       parameters:
         - name: group-id
           in: path
@@ -2867,7 +2867,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: group.planner.plan.task_UpdateDetails
+      operationId: group.planner.plan.task_UpdateDetail
       parameters:
         - name: group-id
           in: path
@@ -2921,7 +2921,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      operationId: group.planner.plan.task_DeleteDetails
+      operationId: group.planner.plan.task_DeleteDetail
       parameters:
         - name: group-id
           in: path
@@ -3258,7 +3258,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0
-      operationId: planner_ListBuckets
+      operationId: planner_ListBucket
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3330,7 +3330,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/planner-post-buckets?view=graph-rest-1.0
-      operationId: planner_CreateBuckets
+      operationId: planner_CreateBucket
       requestBody:
         description: New navigation property
         content:
@@ -3354,7 +3354,7 @@ paths:
         - planner.plannerBucket
       summary: Get buckets from planner
       description: Read-only. Nullable. Returns a collection of the specified buckets
-      operationId: planner_GetBuckets
+      operationId: planner_GetBucket
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3407,7 +3407,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property buckets in planner
-      operationId: planner_UpdateBuckets
+      operationId: planner_UpdateBucket
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3445,7 +3445,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property buckets for planner
-      operationId: planner_DeleteBuckets
+      operationId: planner_DeleteBucket
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3476,7 +3476,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
-      operationId: planner.bucket_ListTasks
+      operationId: planner.bucket_ListTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3612,7 +3612,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Create new navigation property to tasks for planner
-      operationId: planner.bucket_CreateTasks
+      operationId: planner.bucket_CreateTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3645,7 +3645,7 @@ paths:
         - planner.plannerBucket
       summary: Get tasks from planner
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: planner.bucket_GetTasks
+      operationId: planner.bucket_GetTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3730,7 +3730,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property tasks in planner
-      operationId: planner.bucket_UpdateTasks
+      operationId: planner.bucket_UpdateTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3769,7 +3769,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property tasks for planner
-      operationId: planner.bucket_DeleteTasks
+      operationId: planner.bucket_DeleteTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4099,7 +4099,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: planner.bucket.task_GetDetails
+      operationId: planner.bucket.task_GetDetail
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4162,7 +4162,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: planner.bucket.task_UpdateDetails
+      operationId: planner.bucket.task_UpdateDetail
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4208,7 +4208,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property details for planner
-      operationId: planner.bucket.task_DeleteDetails
+      operationId: planner.bucket.task_DeleteDetail
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4428,7 +4428,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0
-      operationId: planner_ListPlans
+      operationId: planner_ListPlan
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4510,7 +4510,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/planner-post-plans?view=graph-rest-1.0
-      operationId: planner_CreatePlans
+      operationId: planner_CreatePlan
       requestBody:
         description: New navigation property
         content:
@@ -4534,7 +4534,7 @@ paths:
         - planner.plannerPlan
       summary: Get plans from planner
       description: Read-only. Nullable. Returns a collection of the specified plans
-      operationId: planner_GetPlans
+      operationId: planner_GetPlan
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4593,7 +4593,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property plans in planner
-      operationId: planner_UpdatePlans
+      operationId: planner_UpdatePlan
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4624,7 +4624,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property plans for planner
-      operationId: planner_DeletePlans
+      operationId: planner_DeletePlan
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4655,7 +4655,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
-      operationId: planner.plan_ListBuckets
+      operationId: planner.plan_ListBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4731,7 +4731,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to buckets for planner
-      operationId: planner.plan_CreateBuckets
+      operationId: planner.plan_CreateBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4764,7 +4764,7 @@ paths:
         - planner.plannerPlan
       summary: Get buckets from planner
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: planner.plan_GetBuckets
+      operationId: planner.plan_GetBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4825,7 +4825,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property buckets in planner
-      operationId: planner.plan_UpdateBuckets
+      operationId: planner.plan_UpdateBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4864,7 +4864,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property buckets for planner
-      operationId: planner.plan_DeleteBuckets
+      operationId: planner.plan_DeleteBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4903,7 +4903,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
-      operationId: planner.plan.bucket_ListTasks
+      operationId: planner.plan.bucket_ListTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5047,7 +5047,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to tasks for planner
-      operationId: planner.plan.bucket_CreateTasks
+      operationId: planner.plan.bucket_CreateTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5088,7 +5088,7 @@ paths:
         - planner.plannerPlan
       summary: Get tasks from planner
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: planner.plan.bucket_GetTasks
+      operationId: planner.plan.bucket_GetTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5181,7 +5181,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property tasks in planner
-      operationId: planner.plan.bucket_UpdateTasks
+      operationId: planner.plan.bucket_UpdateTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5228,7 +5228,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property tasks for planner
-      operationId: planner.plan.bucket_DeleteTasks
+      operationId: planner.plan.bucket_DeleteTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5614,7 +5614,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: planner.plan.bucket.task_GetDetails
+      operationId: planner.plan.bucket.task_GetDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5685,7 +5685,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: planner.plan.bucket.task_UpdateDetails
+      operationId: planner.plan.bucket.task_UpdateDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5739,7 +5739,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      operationId: planner.plan.bucket.task_DeleteDetails
+      operationId: planner.plan.bucket.task_DeleteDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6007,7 +6007,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
-      operationId: planner.plan_GetDetails
+      operationId: planner.plan_GetDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6060,7 +6060,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
-      operationId: planner.plan_UpdateDetails
+      operationId: planner.plan_UpdateDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6098,7 +6098,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      operationId: planner.plan_DeleteDetails
+      operationId: planner.plan_DeleteDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6129,7 +6129,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
-      operationId: planner.plan_ListTasks
+      operationId: planner.plan_ListTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6265,7 +6265,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to tasks for planner
-      operationId: planner.plan_CreateTasks
+      operationId: planner.plan_CreateTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6298,7 +6298,7 @@ paths:
         - planner.plannerPlan
       summary: Get tasks from planner
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: planner.plan_GetTasks
+      operationId: planner.plan_GetTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6383,7 +6383,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property tasks in planner
-      operationId: planner.plan_UpdateTasks
+      operationId: planner.plan_UpdateTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6422,7 +6422,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property tasks for planner
-      operationId: planner.plan_DeleteTasks
+      operationId: planner.plan_DeleteTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6752,7 +6752,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: planner.plan.task_GetDetails
+      operationId: planner.plan.task_GetDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6815,7 +6815,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: planner.plan.task_UpdateDetails
+      operationId: planner.plan.task_UpdateDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6861,7 +6861,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      operationId: planner.plan.task_DeleteDetails
+      operationId: planner.plan.task_DeleteDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -7081,7 +7081,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-1.0
-      operationId: planner_ListTasks
+      operationId: planner_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7213,7 +7213,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/planner-post-tasks?view=graph-rest-1.0
-      operationId: planner_CreateTasks
+      operationId: planner_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -7237,7 +7237,7 @@ paths:
         - planner.plannerTask
       summary: Get tasks from planner
       description: Read-only. Nullable. Returns a collection of the specified tasks
-      operationId: planner_GetTasks
+      operationId: planner_GetTask
       parameters:
         - name: plannerTask-id
           in: path
@@ -7314,7 +7314,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property tasks in planner
-      operationId: planner_UpdateTasks
+      operationId: planner_UpdateTask
       parameters:
         - name: plannerTask-id
           in: path
@@ -7352,7 +7352,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property tasks for planner
-      operationId: planner_DeleteTasks
+      operationId: planner_DeleteTask
       parameters:
         - name: plannerTask-id
           in: path
@@ -7626,7 +7626,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: planner.task_GetDetails
+      operationId: planner.task_GetDetail
       parameters:
         - name: plannerTask-id
           in: path
@@ -7681,7 +7681,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: planner.task_UpdateDetails
+      operationId: planner.task_UpdateDetail
       parameters:
         - name: plannerTask-id
           in: path
@@ -7719,7 +7719,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property details for planner
-      operationId: planner.task_DeleteDetails
+      operationId: planner.task_DeleteDetail
       parameters:
         - name: plannerTask-id
           in: path
@@ -8003,7 +8003,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0
-      operationId: user.planner_ListPlans
+      operationId: user.planner_ListPlan
       parameters:
         - name: user-id
           in: path
@@ -8089,7 +8089,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to plans for users
-      operationId: user.planner_CreatePlans
+      operationId: user.planner_CreatePlan
       parameters:
         - name: user-id
           in: path
@@ -8122,7 +8122,7 @@ paths:
         - users.plannerUser
       summary: Get plans from users
       description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
-      operationId: user.planner_GetPlans
+      operationId: user.planner_GetPlan
       parameters:
         - name: user-id
           in: path
@@ -8189,7 +8189,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property plans in users
-      operationId: user.planner_UpdatePlans
+      operationId: user.planner_UpdatePlan
       parameters:
         - name: user-id
           in: path
@@ -8228,7 +8228,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property plans for users
-      operationId: user.planner_DeletePlans
+      operationId: user.planner_DeletePlan
       parameters:
         - name: user-id
           in: path
@@ -8267,7 +8267,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
-      operationId: user.planner.plan_ListBuckets
+      operationId: user.planner.plan_ListBucket
       parameters:
         - name: user-id
           in: path
@@ -8351,7 +8351,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to buckets for users
-      operationId: user.planner.plan_CreateBuckets
+      operationId: user.planner.plan_CreateBucket
       parameters:
         - name: user-id
           in: path
@@ -8392,7 +8392,7 @@ paths:
         - users.plannerUser
       summary: Get buckets from users
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: user.planner.plan_GetBuckets
+      operationId: user.planner.plan_GetBucket
       parameters:
         - name: user-id
           in: path
@@ -8461,7 +8461,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property buckets in users
-      operationId: user.planner.plan_UpdateBuckets
+      operationId: user.planner.plan_UpdateBucket
       parameters:
         - name: user-id
           in: path
@@ -8508,7 +8508,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property buckets for users
-      operationId: user.planner.plan_DeleteBuckets
+      operationId: user.planner.plan_DeleteBucket
       parameters:
         - name: user-id
           in: path
@@ -8555,7 +8555,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
-      operationId: user.planner.plan.bucket_ListTasks
+      operationId: user.planner.plan.bucket_ListTask
       parameters:
         - name: user-id
           in: path
@@ -8707,7 +8707,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      operationId: user.planner.plan.bucket_CreateTasks
+      operationId: user.planner.plan.bucket_CreateTask
       parameters:
         - name: user-id
           in: path
@@ -8756,7 +8756,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: user.planner.plan.bucket_GetTasks
+      operationId: user.planner.plan.bucket_GetTask
       parameters:
         - name: user-id
           in: path
@@ -8857,7 +8857,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      operationId: user.planner.plan.bucket_UpdateTasks
+      operationId: user.planner.plan.bucket_UpdateTask
       parameters:
         - name: user-id
           in: path
@@ -8912,7 +8912,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      operationId: user.planner.plan.bucket_DeleteTasks
+      operationId: user.planner.plan.bucket_DeleteTask
       parameters:
         - name: user-id
           in: path
@@ -9354,7 +9354,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: user.planner.plan.bucket.task_GetDetails
+      operationId: user.planner.plan.bucket.task_GetDetail
       parameters:
         - name: user-id
           in: path
@@ -9433,7 +9433,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: user.planner.plan.bucket.task_UpdateDetails
+      operationId: user.planner.plan.bucket.task_UpdateDetail
       parameters:
         - name: user-id
           in: path
@@ -9495,7 +9495,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: user.planner.plan.bucket.task_DeleteDetails
+      operationId: user.planner.plan.bucket.task_DeleteDetail
       parameters:
         - name: user-id
           in: path
@@ -9811,7 +9811,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
-      operationId: user.planner.plan_GetDetails
+      operationId: user.planner.plan_GetDetail
       parameters:
         - name: user-id
           in: path
@@ -9872,7 +9872,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
-      operationId: user.planner.plan_UpdateDetails
+      operationId: user.planner.plan_UpdateDetail
       parameters:
         - name: user-id
           in: path
@@ -9918,7 +9918,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: user.planner.plan_DeleteDetails
+      operationId: user.planner.plan_DeleteDetail
       parameters:
         - name: user-id
           in: path
@@ -9957,7 +9957,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
-      operationId: user.planner.plan_ListTasks
+      operationId: user.planner.plan_ListTask
       parameters:
         - name: user-id
           in: path
@@ -10101,7 +10101,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      operationId: user.planner.plan_CreateTasks
+      operationId: user.planner.plan_CreateTask
       parameters:
         - name: user-id
           in: path
@@ -10142,7 +10142,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: user.planner.plan_GetTasks
+      operationId: user.planner.plan_GetTask
       parameters:
         - name: user-id
           in: path
@@ -10235,7 +10235,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      operationId: user.planner.plan_UpdateTasks
+      operationId: user.planner.plan_UpdateTask
       parameters:
         - name: user-id
           in: path
@@ -10282,7 +10282,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      operationId: user.planner.plan_DeleteTasks
+      operationId: user.planner.plan_DeleteTask
       parameters:
         - name: user-id
           in: path
@@ -10668,7 +10668,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: user.planner.plan.task_GetDetails
+      operationId: user.planner.plan.task_GetDetail
       parameters:
         - name: user-id
           in: path
@@ -10739,7 +10739,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: user.planner.plan.task_UpdateDetails
+      operationId: user.planner.plan.task_UpdateDetail
       parameters:
         - name: user-id
           in: path
@@ -10793,7 +10793,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: user.planner.plan.task_DeleteDetails
+      operationId: user.planner.plan.task_DeleteDetail
       parameters:
         - name: user-id
           in: path
@@ -11061,7 +11061,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0
-      operationId: user.planner_ListTasks
+      operationId: user.planner_ListTask
       parameters:
         - name: user-id
           in: path
@@ -11197,7 +11197,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      operationId: user.planner_CreateTasks
+      operationId: user.planner_CreateTask
       parameters:
         - name: user-id
           in: path
@@ -11230,7 +11230,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. Returns the plannerPlans shared with the user.
-      operationId: user.planner_GetTasks
+      operationId: user.planner_GetTask
       parameters:
         - name: user-id
           in: path
@@ -11315,7 +11315,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      operationId: user.planner_UpdateTasks
+      operationId: user.planner_UpdateTask
       parameters:
         - name: user-id
           in: path
@@ -11354,7 +11354,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      operationId: user.planner_DeleteTasks
+      operationId: user.planner_DeleteTask
       parameters:
         - name: user-id
           in: path
@@ -11684,7 +11684,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: user.planner.task_GetDetails
+      operationId: user.planner.task_GetDetail
       parameters:
         - name: user-id
           in: path
@@ -11747,7 +11747,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: user.planner.task_UpdateDetails
+      operationId: user.planner.task_UpdateDetail
       parameters:
         - name: user-id
           in: path
@@ -11793,7 +11793,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: user.planner.task_DeleteDetails
+      operationId: user.planner.task_DeleteDetail
       parameters:
         - name: user-id
           in: path

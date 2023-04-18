@@ -11,7 +11,7 @@ paths:
       tags:
         - financials.financials
       summary: Get financials
-      operationId: financial_GetFinancials
+      operationId: financial_GetFinancial
       parameters:
         - name: $select
           in: query
@@ -52,7 +52,7 @@ paths:
       tags:
         - financials.financials
       summary: Update financials
-      operationId: financial_UpdateFinancials
+      operationId: financial_UpdateFinancial
       requestBody:
         description: New property values
         content:
@@ -75,7 +75,7 @@ paths:
       tags:
         - financials.company
       summary: Get companies from financials
-      operationId: financial_ListCompanies
+      operationId: financial_ListCompany
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -215,7 +215,7 @@ paths:
       tags:
         - financials.company
       summary: Get companies from financials
-      operationId: financial_GetCompanies
+      operationId: financial_GetCompany
       parameters:
         - name: company-id
           in: path
@@ -338,7 +338,7 @@ paths:
       tags:
         - financials.company
       summary: Get accounts from financials
-      operationId: financial.company_ListAccounts
+      operationId: financial.company_ListAccount
       parameters:
         - name: company-id
           in: path
@@ -422,7 +422,7 @@ paths:
       tags:
         - financials.company
       summary: Get accounts from financials
-      operationId: financial.company_GetAccounts
+      operationId: financial.company_GetAccount
       parameters:
         - name: company-id
           in: path
@@ -1179,7 +1179,7 @@ paths:
       tags:
         - financials.company
       summary: Get countriesRegions from financials
-      operationId: financial.company_ListCountriesRegions
+      operationId: financial.company_ListCountriesRegion
       parameters:
         - name: company-id
           in: path
@@ -1256,7 +1256,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to countriesRegions for financials
-      operationId: financial.company_CreateCountriesRegions
+      operationId: financial.company_CreateCountriesRegion
       parameters:
         - name: company-id
           in: path
@@ -1288,7 +1288,7 @@ paths:
       tags:
         - financials.company
       summary: Get countriesRegions from financials
-      operationId: financial.company_GetCountriesRegions
+      operationId: financial.company_GetCountriesRegion
       parameters:
         - name: company-id
           in: path
@@ -1348,7 +1348,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property countriesRegions in financials
-      operationId: financial.company_UpdateCountriesRegions
+      operationId: financial.company_UpdateCountriesRegion
       parameters:
         - name: company-id
           in: path
@@ -1387,7 +1387,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property countriesRegions for financials
-      operationId: financial.company_DeleteCountriesRegions
+      operationId: financial.company_DeleteCountriesRegion
       parameters:
         - name: company-id
           in: path
@@ -1444,7 +1444,7 @@ paths:
       tags:
         - financials.company
       summary: Get currencies from financials
-      operationId: financial.company_ListCurrencies
+      operationId: financial.company_ListCurrency
       parameters:
         - name: company-id
           in: path
@@ -1527,7 +1527,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to currencies for financials
-      operationId: financial.company_CreateCurrencies
+      operationId: financial.company_CreateCurrency
       parameters:
         - name: company-id
           in: path
@@ -1559,7 +1559,7 @@ paths:
       tags:
         - financials.company
       summary: Get currencies from financials
-      operationId: financial.company_GetCurrencies
+      operationId: financial.company_GetCurrency
       parameters:
         - name: company-id
           in: path
@@ -1621,7 +1621,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property currencies in financials
-      operationId: financial.company_UpdateCurrencies
+      operationId: financial.company_UpdateCurrency
       parameters:
         - name: company-id
           in: path
@@ -1660,7 +1660,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property currencies for financials
-      operationId: financial.company_DeleteCurrencies
+      operationId: financial.company_DeleteCurrency
       parameters:
         - name: company-id
           in: path
@@ -1717,7 +1717,7 @@ paths:
       tags:
         - financials.company
       summary: Get customerPaymentJournals from financials
-      operationId: financial.company_ListCustomerPaymentJournals
+      operationId: financial.company_ListCustomerPaymentJournal
       parameters:
         - name: company-id
           in: path
@@ -1801,7 +1801,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to customerPaymentJournals for financials
-      operationId: financial.company_CreateCustomerPaymentJournals
+      operationId: financial.company_CreateCustomerPaymentJournal
       parameters:
         - name: company-id
           in: path
@@ -1833,7 +1833,7 @@ paths:
       tags:
         - financials.company
       summary: Get customerPaymentJournals from financials
-      operationId: financial.company_GetCustomerPaymentJournals
+      operationId: financial.company_GetCustomerPaymentJournal
       parameters:
         - name: company-id
           in: path
@@ -1898,7 +1898,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property customerPaymentJournals in financials
-      operationId: financial.company_UpdateCustomerPaymentJournals
+      operationId: financial.company_UpdateCustomerPaymentJournal
       parameters:
         - name: company-id
           in: path
@@ -1937,7 +1937,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property customerPaymentJournals for financials
-      operationId: financial.company_DeleteCustomerPaymentJournals
+      operationId: financial.company_DeleteCustomerPaymentJournal
       parameters:
         - name: company-id
           in: path
@@ -2035,7 +2035,7 @@ paths:
       tags:
         - financials.company
       summary: Get customerPayments from financials
-      operationId: financial.company.customerPaymentJournal_ListCustomerPayments
+      operationId: financial.company.customerPaymentJournal_ListCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -2152,7 +2152,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to customerPayments for financials
-      operationId: financial.company.customerPaymentJournal_CreateCustomerPayments
+      operationId: financial.company.customerPaymentJournal_CreateCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -2192,7 +2192,7 @@ paths:
       tags:
         - financials.company
       summary: Get customerPayments from financials
-      operationId: financial.company.customerPaymentJournal_GetCustomerPayments
+      operationId: financial.company.customerPaymentJournal_GetCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -2272,7 +2272,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property customerPayments in financials
-      operationId: financial.company.customerPaymentJournal_UpdateCustomerPayments
+      operationId: financial.company.customerPaymentJournal_UpdateCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -2319,7 +2319,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property customerPayments for financials
-      operationId: financial.company.customerPaymentJournal_DeleteCustomerPayments
+      operationId: financial.company.customerPaymentJournal_DeleteCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -3698,7 +3698,7 @@ paths:
       tags:
         - financials.company
       summary: Get customerPayments from financials
-      operationId: financial.company_ListCustomerPayments
+      operationId: financial.company_ListCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -3807,7 +3807,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to customerPayments for financials
-      operationId: financial.company_CreateCustomerPayments
+      operationId: financial.company_CreateCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -3839,7 +3839,7 @@ paths:
       tags:
         - financials.company
       summary: Get customerPayments from financials
-      operationId: financial.company_GetCustomerPayments
+      operationId: financial.company_GetCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -3911,7 +3911,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property customerPayments in financials
-      operationId: financial.company_UpdateCustomerPayments
+      operationId: financial.company_UpdateCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -3950,7 +3950,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property customerPayments for financials
-      operationId: financial.company_DeleteCustomerPayments
+      operationId: financial.company_DeleteCustomerPayment
       parameters:
         - name: company-id
           in: path
@@ -5107,7 +5107,7 @@ paths:
       tags:
         - financials.company
       summary: Get customers from financials
-      operationId: financial.company_ListCustomers
+      operationId: financial.company_ListCustomer
       parameters:
         - name: company-id
           in: path
@@ -5236,7 +5236,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to customers for financials
-      operationId: financial.company_CreateCustomers
+      operationId: financial.company_CreateCustomer
       parameters:
         - name: company-id
           in: path
@@ -5268,7 +5268,7 @@ paths:
       tags:
         - financials.company
       summary: Get customers from financials
-      operationId: financial.company_GetCustomers
+      operationId: financial.company_GetCustomer
       parameters:
         - name: company-id
           in: path
@@ -5352,7 +5352,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property customers in financials
-      operationId: financial.company_UpdateCustomers
+      operationId: financial.company_UpdateCustomer
       parameters:
         - name: company-id
           in: path
@@ -5391,7 +5391,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property customers for financials
-      operationId: financial.company_DeleteCustomers
+      operationId: financial.company_DeleteCustomer
       parameters:
         - name: company-id
           in: path
@@ -6390,7 +6390,7 @@ paths:
       tags:
         - financials.company
       summary: Get dimensions from financials
-      operationId: financial.company_ListDimensions
+      operationId: financial.company_ListDimension
       parameters:
         - name: company-id
           in: path
@@ -6467,7 +6467,7 @@ paths:
       tags:
         - financials.company
       summary: Get dimensions from financials
-      operationId: financial.company_GetDimensions
+      operationId: financial.company_GetDimension
       parameters:
         - name: company-id
           in: path
@@ -6529,7 +6529,7 @@ paths:
       tags:
         - financials.company
       summary: Get dimensionValues from financials
-      operationId: financial.company.dimension_ListDimensionValues
+      operationId: financial.company.dimension_ListDimensionValue
       parameters:
         - name: company-id
           in: path
@@ -6612,7 +6612,7 @@ paths:
       tags:
         - financials.company
       summary: Get dimensionValues from financials
-      operationId: financial.company.dimension_GetDimensionValues
+      operationId: financial.company.dimension_GetDimensionValue
       parameters:
         - name: company-id
           in: path
@@ -6732,7 +6732,7 @@ paths:
       tags:
         - financials.company
       summary: Get dimensionValues from financials
-      operationId: financial.company_ListDimensionValues
+      operationId: financial.company_ListDimensionValue
       parameters:
         - name: company-id
           in: path
@@ -6807,7 +6807,7 @@ paths:
       tags:
         - financials.company
       summary: Get dimensionValues from financials
-      operationId: financial.company_GetDimensionValues
+      operationId: financial.company_GetDimensionValue
       parameters:
         - name: company-id
           in: path
@@ -6889,7 +6889,7 @@ paths:
       tags:
         - financials.company
       summary: Get employees from financials
-      operationId: financial.company_ListEmployees
+      operationId: financial.company_ListEmployee
       parameters:
         - name: company-id
           in: path
@@ -7007,7 +7007,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to employees for financials
-      operationId: financial.company_CreateEmployees
+      operationId: financial.company_CreateEmployee
       parameters:
         - name: company-id
           in: path
@@ -7039,7 +7039,7 @@ paths:
       tags:
         - financials.company
       summary: Get employees from financials
-      operationId: financial.company_GetEmployees
+      operationId: financial.company_GetEmployee
       parameters:
         - name: company-id
           in: path
@@ -7114,7 +7114,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property employees in financials
-      operationId: financial.company_UpdateEmployees
+      operationId: financial.company_UpdateEmployee
       parameters:
         - name: company-id
           in: path
@@ -7153,7 +7153,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property employees for financials
-      operationId: financial.company_DeleteEmployees
+      operationId: financial.company_DeleteEmployee
       parameters:
         - name: company-id
           in: path
@@ -7613,7 +7613,7 @@ paths:
       tags:
         - financials.company
       summary: Get generalLedgerEntries from financials
-      operationId: financial.company_ListGeneralLedgerEntries
+      operationId: financial.company_ListGeneralLedgerEntry
       parameters:
         - name: company-id
           in: path
@@ -7708,7 +7708,7 @@ paths:
       tags:
         - financials.company
       summary: Get generalLedgerEntries from financials
-      operationId: financial.company_GetGeneralLedgerEntries
+      operationId: financial.company_GetGeneralLedgerEntry
       parameters:
         - name: company-id
           in: path
@@ -7861,7 +7861,7 @@ paths:
       tags:
         - financials.company
       summary: Get itemCategories from financials
-      operationId: financial.company_ListItemCategories
+      operationId: financial.company_ListItemCategory
       parameters:
         - name: company-id
           in: path
@@ -7935,7 +7935,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to itemCategories for financials
-      operationId: financial.company_CreateItemCategories
+      operationId: financial.company_CreateItemCategory
       parameters:
         - name: company-id
           in: path
@@ -7967,7 +7967,7 @@ paths:
       tags:
         - financials.company
       summary: Get itemCategories from financials
-      operationId: financial.company_GetItemCategories
+      operationId: financial.company_GetItemCategory
       parameters:
         - name: company-id
           in: path
@@ -8026,7 +8026,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property itemCategories in financials
-      operationId: financial.company_UpdateItemCategories
+      operationId: financial.company_UpdateItemCategory
       parameters:
         - name: company-id
           in: path
@@ -8065,7 +8065,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property itemCategories for financials
-      operationId: financial.company_DeleteItemCategories
+      operationId: financial.company_DeleteItemCategory
       parameters:
         - name: company-id
           in: path
@@ -8122,7 +8122,7 @@ paths:
       tags:
         - financials.company
       summary: Get items from financials
-      operationId: financial.company_ListItems
+      operationId: financial.company_ListItem
       parameters:
         - name: company-id
           in: path
@@ -8236,7 +8236,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to items for financials
-      operationId: financial.company_CreateItems
+      operationId: financial.company_CreateItem
       parameters:
         - name: company-id
           in: path
@@ -8268,7 +8268,7 @@ paths:
       tags:
         - financials.company
       summary: Get items from financials
-      operationId: financial.company_GetItems
+      operationId: financial.company_GetItem
       parameters:
         - name: company-id
           in: path
@@ -8343,7 +8343,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property items in financials
-      operationId: financial.company_UpdateItems
+      operationId: financial.company_UpdateItem
       parameters:
         - name: company-id
           in: path
@@ -8382,7 +8382,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property items for financials
-      operationId: financial.company_DeleteItems
+      operationId: financial.company_DeleteItem
       parameters:
         - name: company-id
           in: path
@@ -8975,7 +8975,7 @@ paths:
       tags:
         - financials.company
       summary: Get journalLines from financials
-      operationId: financial.company_ListJournalLines
+      operationId: financial.company_ListJournalLine
       parameters:
         - name: company-id
           in: path
@@ -9075,7 +9075,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to journalLines for financials
-      operationId: financial.company_CreateJournalLines
+      operationId: financial.company_CreateJournalLine
       parameters:
         - name: company-id
           in: path
@@ -9107,7 +9107,7 @@ paths:
       tags:
         - financials.company
       summary: Get journalLines from financials
-      operationId: financial.company_GetJournalLines
+      operationId: financial.company_GetJournalLine
       parameters:
         - name: company-id
           in: path
@@ -9176,7 +9176,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property journalLines in financials
-      operationId: financial.company_UpdateJournalLines
+      operationId: financial.company_UpdateJournalLine
       parameters:
         - name: company-id
           in: path
@@ -9215,7 +9215,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property journalLines for financials
-      operationId: financial.company_DeleteJournalLines
+      operationId: financial.company_DeleteJournalLine
       parameters:
         - name: company-id
           in: path
@@ -9335,7 +9335,7 @@ paths:
       tags:
         - financials.company
       summary: Get journals from financials
-      operationId: financial.company_ListJournals
+      operationId: financial.company_ListJournal
       parameters:
         - name: company-id
           in: path
@@ -9419,7 +9419,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to journals for financials
-      operationId: financial.company_CreateJournals
+      operationId: financial.company_CreateJournal
       parameters:
         - name: company-id
           in: path
@@ -9451,7 +9451,7 @@ paths:
       tags:
         - financials.company
       summary: Get journals from financials
-      operationId: financial.company_GetJournals
+      operationId: financial.company_GetJournal
       parameters:
         - name: company-id
           in: path
@@ -9516,7 +9516,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property journals in financials
-      operationId: financial.company_UpdateJournals
+      operationId: financial.company_UpdateJournal
       parameters:
         - name: company-id
           in: path
@@ -9555,7 +9555,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property journals for financials
-      operationId: financial.company_DeleteJournals
+      operationId: financial.company_DeleteJournal
       parameters:
         - name: company-id
           in: path
@@ -9653,7 +9653,7 @@ paths:
       tags:
         - financials.company
       summary: Get journalLines from financials
-      operationId: financial.company.journal_ListJournalLines
+      operationId: financial.company.journal_ListJournalLine
       parameters:
         - name: company-id
           in: path
@@ -9761,7 +9761,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to journalLines for financials
-      operationId: financial.company.journal_CreateJournalLines
+      operationId: financial.company.journal_CreateJournalLine
       parameters:
         - name: company-id
           in: path
@@ -9801,7 +9801,7 @@ paths:
       tags:
         - financials.company
       summary: Get journalLines from financials
-      operationId: financial.company.journal_GetJournalLines
+      operationId: financial.company.journal_GetJournalLine
       parameters:
         - name: company-id
           in: path
@@ -9878,7 +9878,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property journalLines in financials
-      operationId: financial.company.journal_UpdateJournalLines
+      operationId: financial.company.journal_UpdateJournalLine
       parameters:
         - name: company-id
           in: path
@@ -9925,7 +9925,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property journalLines for financials
-      operationId: financial.company.journal_DeleteJournalLines
+      operationId: financial.company.journal_DeleteJournalLine
       parameters:
         - name: company-id
           in: path
@@ -10120,7 +10120,7 @@ paths:
       tags:
         - financials.company
       summary: Get paymentMethods from financials
-      operationId: financial.company_ListPaymentMethods
+      operationId: financial.company_ListPaymentMethod
       parameters:
         - name: company-id
           in: path
@@ -10194,7 +10194,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to paymentMethods for financials
-      operationId: financial.company_CreatePaymentMethods
+      operationId: financial.company_CreatePaymentMethod
       parameters:
         - name: company-id
           in: path
@@ -10226,7 +10226,7 @@ paths:
       tags:
         - financials.company
       summary: Get paymentMethods from financials
-      operationId: financial.company_GetPaymentMethods
+      operationId: financial.company_GetPaymentMethod
       parameters:
         - name: company-id
           in: path
@@ -10285,7 +10285,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property paymentMethods in financials
-      operationId: financial.company_UpdatePaymentMethods
+      operationId: financial.company_UpdatePaymentMethod
       parameters:
         - name: company-id
           in: path
@@ -10324,7 +10324,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property paymentMethods for financials
-      operationId: financial.company_DeletePaymentMethods
+      operationId: financial.company_DeletePaymentMethod
       parameters:
         - name: company-id
           in: path
@@ -10381,7 +10381,7 @@ paths:
       tags:
         - financials.company
       summary: Get paymentTerms from financials
-      operationId: financial.company_ListPaymentTerms
+      operationId: financial.company_ListPaymentTerm
       parameters:
         - name: company-id
           in: path
@@ -10467,7 +10467,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to paymentTerms for financials
-      operationId: financial.company_CreatePaymentTerms
+      operationId: financial.company_CreatePaymentTerm
       parameters:
         - name: company-id
           in: path
@@ -10499,7 +10499,7 @@ paths:
       tags:
         - financials.company
       summary: Get paymentTerms from financials
-      operationId: financial.company_GetPaymentTerms
+      operationId: financial.company_GetPaymentTerm
       parameters:
         - name: company-id
           in: path
@@ -10562,7 +10562,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property paymentTerms in financials
-      operationId: financial.company_UpdatePaymentTerms
+      operationId: financial.company_UpdatePaymentTerm
       parameters:
         - name: company-id
           in: path
@@ -10601,7 +10601,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property paymentTerms for financials
-      operationId: financial.company_DeletePaymentTerms
+      operationId: financial.company_DeletePaymentTerm
       parameters:
         - name: company-id
           in: path
@@ -10997,7 +10997,7 @@ paths:
       tags:
         - financials.company
       summary: Get purchaseInvoiceLines from financials
-      operationId: financial.company_ListPurchaseInvoiceLines
+      operationId: financial.company_ListPurchaseInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -11130,7 +11130,7 @@ paths:
       tags:
         - financials.company
       summary: Get purchaseInvoiceLines from financials
-      operationId: financial.company_GetPurchaseInvoiceLines
+      operationId: financial.company_GetPurchaseInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -11211,7 +11211,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property purchaseInvoiceLines in financials
-      operationId: financial.company_UpdatePurchaseInvoiceLines
+      operationId: financial.company_UpdatePurchaseInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -12021,7 +12021,7 @@ paths:
       tags:
         - financials.company
       summary: Get purchaseInvoices from financials
-      operationId: financial.company_ListPurchaseInvoices
+      operationId: financial.company_ListPurchaseInvoice
       parameters:
         - name: company-id
           in: path
@@ -12171,7 +12171,7 @@ paths:
       tags:
         - financials.company
       summary: Get purchaseInvoices from financials
-      operationId: financial.company_GetPurchaseInvoices
+      operationId: financial.company_GetPurchaseInvoice
       parameters:
         - name: company-id
           in: path
@@ -12259,7 +12259,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property purchaseInvoices in financials
-      operationId: financial.company_UpdatePurchaseInvoices
+      operationId: financial.company_UpdatePurchaseInvoice
       parameters:
         - name: company-id
           in: path
@@ -12464,7 +12464,7 @@ paths:
       tags:
         - financials.company
       summary: Get purchaseInvoiceLines from financials
-      operationId: financial.company.purchaseInvoice_ListPurchaseInvoiceLines
+      operationId: financial.company.purchaseInvoice_ListPurchaseInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -12605,7 +12605,7 @@ paths:
       tags:
         - financials.company
       summary: Get purchaseInvoiceLines from financials
-      operationId: financial.company.purchaseInvoice_GetPurchaseInvoiceLines
+      operationId: financial.company.purchaseInvoice_GetPurchaseInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -12694,7 +12694,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property purchaseInvoiceLines in financials
-      operationId: financial.company.purchaseInvoice_UpdatePurchaseInvoiceLines
+      operationId: financial.company.purchaseInvoice_UpdatePurchaseInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -14624,7 +14624,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesCreditMemoLines from financials
-      operationId: financial.company_ListSalesCreditMemoLines
+      operationId: financial.company_ListSalesCreditMemoLine
       parameters:
         - name: company-id
           in: path
@@ -14760,7 +14760,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesCreditMemoLines from financials
-      operationId: financial.company_GetSalesCreditMemoLines
+      operationId: financial.company_GetSalesCreditMemoLine
       parameters:
         - name: company-id
           in: path
@@ -14842,7 +14842,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesCreditMemoLines in financials
-      operationId: financial.company_UpdateSalesCreditMemoLines
+      operationId: financial.company_UpdateSalesCreditMemoLine
       parameters:
         - name: company-id
           in: path
@@ -15652,7 +15652,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesCreditMemos from financials
-      operationId: financial.company_ListSalesCreditMemos
+      operationId: financial.company_ListSalesCreditMemo
       parameters:
         - name: company-id
           in: path
@@ -15810,7 +15810,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesCreditMemos from financials
-      operationId: financial.company_GetSalesCreditMemos
+      operationId: financial.company_GetSalesCreditMemo
       parameters:
         - name: company-id
           in: path
@@ -15902,7 +15902,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesCreditMemos in financials
-      operationId: financial.company_UpdateSalesCreditMemos
+      operationId: financial.company_UpdateSalesCreditMemo
       parameters:
         - name: company-id
           in: path
@@ -17315,7 +17315,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesCreditMemoLines from financials
-      operationId: financial.company.salesCreditMemo_ListSalesCreditMemoLines
+      operationId: financial.company.salesCreditMemo_ListSalesCreditMemoLine
       parameters:
         - name: company-id
           in: path
@@ -17459,7 +17459,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesCreditMemoLines from financials
-      operationId: financial.company.salesCreditMemo_GetSalesCreditMemoLines
+      operationId: financial.company.salesCreditMemo_GetSalesCreditMemoLine
       parameters:
         - name: company-id
           in: path
@@ -17549,7 +17549,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesCreditMemoLines in financials
-      operationId: financial.company.salesCreditMemo_UpdateSalesCreditMemoLines
+      operationId: financial.company.salesCreditMemo_UpdateSalesCreditMemoLine
       parameters:
         - name: company-id
           in: path
@@ -18517,7 +18517,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesInvoiceLines from financials
-      operationId: financial.company_ListSalesInvoiceLines
+      operationId: financial.company_ListSalesInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -18653,7 +18653,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesInvoiceLines from financials
-      operationId: financial.company_GetSalesInvoiceLines
+      operationId: financial.company_GetSalesInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -18735,7 +18735,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesInvoiceLines in financials
-      operationId: financial.company_UpdateSalesInvoiceLines
+      operationId: financial.company_UpdateSalesInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -19545,7 +19545,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesInvoices from financials
-      operationId: financial.company_ListSalesInvoices
+      operationId: financial.company_ListSalesInvoice
       parameters:
         - name: company-id
           in: path
@@ -19720,7 +19720,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesInvoices from financials
-      operationId: financial.company_GetSalesInvoices
+      operationId: financial.company_GetSalesInvoice
       parameters:
         - name: company-id
           in: path
@@ -19819,7 +19819,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesInvoices in financials
-      operationId: financial.company_UpdateSalesInvoices
+      operationId: financial.company_UpdateSalesInvoice
       parameters:
         - name: company-id
           in: path
@@ -21377,7 +21377,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesInvoiceLines from financials
-      operationId: financial.company.salesInvoice_ListSalesInvoiceLines
+      operationId: financial.company.salesInvoice_ListSalesInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -21521,7 +21521,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesInvoiceLines from financials
-      operationId: financial.company.salesInvoice_GetSalesInvoiceLines
+      operationId: financial.company.salesInvoice_GetSalesInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -21611,7 +21611,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesInvoiceLines in financials
-      operationId: financial.company.salesInvoice_UpdateSalesInvoiceLines
+      operationId: financial.company.salesInvoice_UpdateSalesInvoiceLine
       parameters:
         - name: company-id
           in: path
@@ -22712,7 +22712,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesOrderLines from financials
-      operationId: financial.company_ListSalesOrderLines
+      operationId: financial.company_ListSalesOrderLine
       parameters:
         - name: company-id
           in: path
@@ -22860,7 +22860,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesOrderLines from financials
-      operationId: financial.company_GetSalesOrderLines
+      operationId: financial.company_GetSalesOrderLine
       parameters:
         - name: company-id
           in: path
@@ -22946,7 +22946,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesOrderLines in financials
-      operationId: financial.company_UpdateSalesOrderLines
+      operationId: financial.company_UpdateSalesOrderLine
       parameters:
         - name: company-id
           in: path
@@ -23756,7 +23756,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesOrders from financials
-      operationId: financial.company_ListSalesOrders
+      operationId: financial.company_ListSalesOrder
       parameters:
         - name: company-id
           in: path
@@ -23923,7 +23923,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesOrders from financials
-      operationId: financial.company_GetSalesOrders
+      operationId: financial.company_GetSalesOrder
       parameters:
         - name: company-id
           in: path
@@ -24018,7 +24018,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesOrders in financials
-      operationId: financial.company_UpdateSalesOrders
+      operationId: financial.company_UpdateSalesOrder
       parameters:
         - name: company-id
           in: path
@@ -25431,7 +25431,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesOrderLines from financials
-      operationId: financial.company.salesOrder_ListSalesOrderLines
+      operationId: financial.company.salesOrder_ListSalesOrderLine
       parameters:
         - name: company-id
           in: path
@@ -25587,7 +25587,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesOrderLines from financials
-      operationId: financial.company.salesOrder_GetSalesOrderLines
+      operationId: financial.company.salesOrder_GetSalesOrderLine
       parameters:
         - name: company-id
           in: path
@@ -25681,7 +25681,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesOrderLines in financials
-      operationId: financial.company.salesOrder_UpdateSalesOrderLines
+      operationId: financial.company.salesOrder_UpdateSalesOrderLine
       parameters:
         - name: company-id
           in: path
@@ -26649,7 +26649,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesQuoteLines from financials
-      operationId: financial.company_ListSalesQuoteLines
+      operationId: financial.company_ListSalesQuoteLine
       parameters:
         - name: company-id
           in: path
@@ -26779,7 +26779,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesQuoteLines from financials
-      operationId: financial.company_GetSalesQuoteLines
+      operationId: financial.company_GetSalesQuoteLine
       parameters:
         - name: company-id
           in: path
@@ -26859,7 +26859,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesQuoteLines in financials
-      operationId: financial.company_UpdateSalesQuoteLines
+      operationId: financial.company_UpdateSalesQuoteLine
       parameters:
         - name: company-id
           in: path
@@ -27669,7 +27669,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesQuotes from financials
-      operationId: financial.company_ListSalesQuotes
+      operationId: financial.company_ListSalesQuote
       parameters:
         - name: company-id
           in: path
@@ -27838,7 +27838,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesQuotes from financials
-      operationId: financial.company_GetSalesQuotes
+      operationId: financial.company_GetSalesQuote
       parameters:
         - name: company-id
           in: path
@@ -27935,7 +27935,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesQuotes in financials
-      operationId: financial.company_UpdateSalesQuotes
+      operationId: financial.company_UpdateSalesQuote
       parameters:
         - name: company-id
           in: path
@@ -29406,7 +29406,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesQuoteLines from financials
-      operationId: financial.company.salesQuote_ListSalesQuoteLines
+      operationId: financial.company.salesQuote_ListSalesQuoteLine
       parameters:
         - name: company-id
           in: path
@@ -29544,7 +29544,7 @@ paths:
       tags:
         - financials.company
       summary: Get salesQuoteLines from financials
-      operationId: financial.company.salesQuote_GetSalesQuoteLines
+      operationId: financial.company.salesQuote_GetSalesQuoteLine
       parameters:
         - name: company-id
           in: path
@@ -29632,7 +29632,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property salesQuoteLines in financials
-      operationId: financial.company.salesQuote_UpdateSalesQuoteLines
+      operationId: financial.company.salesQuote_UpdateSalesQuoteLine
       parameters:
         - name: company-id
           in: path
@@ -30733,7 +30733,7 @@ paths:
       tags:
         - financials.company
       summary: Get shipmentMethods from financials
-      operationId: financial.company_ListShipmentMethods
+      operationId: financial.company_ListShipmentMethod
       parameters:
         - name: company-id
           in: path
@@ -30807,7 +30807,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to shipmentMethods for financials
-      operationId: financial.company_CreateShipmentMethods
+      operationId: financial.company_CreateShipmentMethod
       parameters:
         - name: company-id
           in: path
@@ -30839,7 +30839,7 @@ paths:
       tags:
         - financials.company
       summary: Get shipmentMethods from financials
-      operationId: financial.company_GetShipmentMethods
+      operationId: financial.company_GetShipmentMethod
       parameters:
         - name: company-id
           in: path
@@ -30898,7 +30898,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property shipmentMethods in financials
-      operationId: financial.company_UpdateShipmentMethods
+      operationId: financial.company_UpdateShipmentMethod
       parameters:
         - name: company-id
           in: path
@@ -30937,7 +30937,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property shipmentMethods for financials
-      operationId: financial.company_DeleteShipmentMethods
+      operationId: financial.company_DeleteShipmentMethod
       parameters:
         - name: company-id
           in: path
@@ -30994,7 +30994,7 @@ paths:
       tags:
         - financials.company
       summary: Get taxAreas from financials
-      operationId: financial.company_ListTaxAreas
+      operationId: financial.company_ListTaxArea
       parameters:
         - name: company-id
           in: path
@@ -31071,7 +31071,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to taxAreas for financials
-      operationId: financial.company_CreateTaxAreas
+      operationId: financial.company_CreateTaxArea
       parameters:
         - name: company-id
           in: path
@@ -31103,7 +31103,7 @@ paths:
       tags:
         - financials.company
       summary: Get taxAreas from financials
-      operationId: financial.company_GetTaxAreas
+      operationId: financial.company_GetTaxArea
       parameters:
         - name: company-id
           in: path
@@ -31163,7 +31163,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property taxAreas in financials
-      operationId: financial.company_UpdateTaxAreas
+      operationId: financial.company_UpdateTaxArea
       parameters:
         - name: company-id
           in: path
@@ -31202,7 +31202,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property taxAreas for financials
-      operationId: financial.company_DeleteTaxAreas
+      operationId: financial.company_DeleteTaxArea
       parameters:
         - name: company-id
           in: path
@@ -31259,7 +31259,7 @@ paths:
       tags:
         - financials.company
       summary: Get taxGroups from financials
-      operationId: financial.company_ListTaxGroups
+      operationId: financial.company_ListTaxGroup
       parameters:
         - name: company-id
           in: path
@@ -31336,7 +31336,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to taxGroups for financials
-      operationId: financial.company_CreateTaxGroups
+      operationId: financial.company_CreateTaxGroup
       parameters:
         - name: company-id
           in: path
@@ -31368,7 +31368,7 @@ paths:
       tags:
         - financials.company
       summary: Get taxGroups from financials
-      operationId: financial.company_GetTaxGroups
+      operationId: financial.company_GetTaxGroup
       parameters:
         - name: company-id
           in: path
@@ -31428,7 +31428,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property taxGroups in financials
-      operationId: financial.company_UpdateTaxGroups
+      operationId: financial.company_UpdateTaxGroup
       parameters:
         - name: company-id
           in: path
@@ -31467,7 +31467,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property taxGroups for financials
-      operationId: financial.company_DeleteTaxGroups
+      operationId: financial.company_DeleteTaxGroup
       parameters:
         - name: company-id
           in: path
@@ -31789,7 +31789,7 @@ paths:
       tags:
         - financials.company
       summary: Get vendors from financials
-      operationId: financial.company_ListVendors
+      operationId: financial.company_ListVendor
       parameters:
         - name: company-id
           in: path
@@ -31907,7 +31907,7 @@ paths:
       tags:
         - financials.company
       summary: Create new navigation property to vendors for financials
-      operationId: financial.company_CreateVendors
+      operationId: financial.company_CreateVendor
       parameters:
         - name: company-id
           in: path
@@ -31939,7 +31939,7 @@ paths:
       tags:
         - financials.company
       summary: Get vendors from financials
-      operationId: financial.company_GetVendors
+      operationId: financial.company_GetVendor
       parameters:
         - name: company-id
           in: path
@@ -32018,7 +32018,7 @@ paths:
       tags:
         - financials.company
       summary: Update the navigation property vendors in financials
-      operationId: financial.company_UpdateVendors
+      operationId: financial.company_UpdateVendor
       parameters:
         - name: company-id
           in: path
@@ -32057,7 +32057,7 @@ paths:
       tags:
         - financials.company
       summary: Delete navigation property vendors for financials
-      operationId: financial.company_DeleteVendors
+      operationId: financial.company_DeleteVendor
       parameters:
         - name: company-id
           in: path

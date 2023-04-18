@@ -133,7 +133,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
-      operationId: group.onenote_ListNotebooks
+      operationId: group.onenote_ListNotebook
       parameters:
         - name: group-id
           in: path
@@ -242,7 +242,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
-      operationId: group.onenote_CreateNotebooks
+      operationId: group.onenote_CreateNotebook
       parameters:
         - name: group-id
           in: path
@@ -275,7 +275,7 @@ paths:
         - groups.onenote
       summary: Get notebooks from groups
       description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-      operationId: group.onenote_GetNotebooks
+      operationId: group.onenote_GetNotebook
       parameters:
         - name: group-id
           in: path
@@ -347,7 +347,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property notebooks in groups
-      operationId: group.onenote_UpdateNotebooks
+      operationId: group.onenote_UpdateNotebook
       parameters:
         - name: group-id
           in: path
@@ -386,7 +386,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property notebooks for groups
-      operationId: group.onenote_DeleteNotebooks
+      operationId: group.onenote_DeleteNotebook
       parameters:
         - name: group-id
           in: path
@@ -425,7 +425,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
-      operationId: group.onenote.notebook_ListSectionGroups
+      operationId: group.onenote.notebook_ListSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -534,7 +534,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
-      operationId: group.onenote.notebook_CreateSectionGroups
+      operationId: group.onenote.notebook_CreateSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -575,7 +575,7 @@ paths:
         - groups.onenote
       summary: Get sectionGroups from groups
       description: The section groups in the notebook. Read-only. Nullable.
-      operationId: group.onenote.notebook_GetSectionGroups
+      operationId: group.onenote.notebook_GetSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -655,7 +655,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property sectionGroups in groups
-      operationId: group.onenote.notebook_UpdateSectionGroups
+      operationId: group.onenote.notebook_UpdateSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -702,7 +702,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property sectionGroups for groups
-      operationId: group.onenote.notebook_DeleteSectionGroups
+      operationId: group.onenote.notebook_DeleteSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -913,7 +913,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
-      operationId: group.onenote.notebook.sectionGroup_ListSectionGroups
+      operationId: group.onenote.notebook.sectionGroup_ListSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -1028,7 +1028,7 @@ paths:
         - groups.onenote
       summary: Get sectionGroups from groups
       description: The section groups in the section. Read-only. Nullable.
-      operationId: group.onenote.notebook.sectionGroup_GetSectionGroups
+      operationId: group.onenote.notebook.sectionGroup_GetSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -1159,7 +1159,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
-      operationId: group.onenote.notebook.sectionGroup_ListSections
+      operationId: group.onenote.notebook.sectionGroup_ListSection
       parameters:
         - name: group-id
           in: path
@@ -1277,7 +1277,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
-      operationId: group.onenote.notebook.sectionGroup_CreateSections
+      operationId: group.onenote.notebook.sectionGroup_CreateSection
       parameters:
         - name: group-id
           in: path
@@ -1326,7 +1326,7 @@ paths:
         - groups.onenote
       summary: Get sections from groups
       description: The sections in the section group. Read-only. Nullable.
-      operationId: group.onenote.notebook.sectionGroup_GetSections
+      operationId: group.onenote.notebook.sectionGroup_GetSection
       parameters:
         - name: group-id
           in: path
@@ -1413,7 +1413,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property sections in groups
-      operationId: group.onenote.notebook.sectionGroup_UpdateSections
+      operationId: group.onenote.notebook.sectionGroup_UpdateSection
       parameters:
         - name: group-id
           in: path
@@ -1468,7 +1468,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property sections for groups
-      operationId: group.onenote.notebook.sectionGroup_DeleteSections
+      operationId: group.onenote.notebook.sectionGroup_DeleteSection
       parameters:
         - name: group-id
           in: path
@@ -1520,7 +1520,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: group.onenote.notebook.sectionGroup.section_ListPages
+      operationId: group.onenote.notebook.sectionGroup.section_ListPage
       parameters:
         - name: group-id
           in: path
@@ -1646,7 +1646,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create new navigation property to pages for groups
-      operationId: group.onenote.notebook.sectionGroup.section_CreatePages
+      operationId: group.onenote.notebook.sectionGroup.section_CreatePage
       parameters:
         - name: group-id
           in: path
@@ -1703,7 +1703,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: group.onenote.notebook.sectionGroup.section_GetPages
+      operationId: group.onenote.notebook.sectionGroup.section_GetPage
       parameters:
         - name: group-id
           in: path
@@ -1798,7 +1798,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property pages in groups
-      operationId: group.onenote.notebook.sectionGroup.section_UpdatePages
+      operationId: group.onenote.notebook.sectionGroup.section_UpdatePage
       parameters:
         - name: group-id
           in: path
@@ -1861,7 +1861,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property pages for groups
-      operationId: group.onenote.notebook.sectionGroup.section_DeletePages
+      operationId: group.onenote.notebook.sectionGroup.section_DeletePage
       parameters:
         - name: group-id
           in: path
@@ -2537,7 +2537,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
-      operationId: group.onenote.notebook_ListSections
+      operationId: group.onenote.notebook_ListSection
       parameters:
         - name: group-id
           in: path
@@ -2647,7 +2647,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
-      operationId: group.onenote.notebook_CreateSections
+      operationId: group.onenote.notebook_CreateSection
       parameters:
         - name: group-id
           in: path
@@ -2688,7 +2688,7 @@ paths:
         - groups.onenote
       summary: Get sections from groups
       description: The sections in the notebook. Read-only. Nullable.
-      operationId: group.onenote.notebook_GetSections
+      operationId: group.onenote.notebook_GetSection
       parameters:
         - name: group-id
           in: path
@@ -2767,7 +2767,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property sections in groups
-      operationId: group.onenote.notebook_UpdateSections
+      operationId: group.onenote.notebook_UpdateSection
       parameters:
         - name: group-id
           in: path
@@ -2814,7 +2814,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property sections for groups
-      operationId: group.onenote.notebook_DeleteSections
+      operationId: group.onenote.notebook_DeleteSection
       parameters:
         - name: group-id
           in: path
@@ -2858,7 +2858,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: group.onenote.notebook.section_ListPages
+      operationId: group.onenote.notebook.section_ListPage
       parameters:
         - name: group-id
           in: path
@@ -2976,7 +2976,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create new navigation property to pages for groups
-      operationId: group.onenote.notebook.section_CreatePages
+      operationId: group.onenote.notebook.section_CreatePage
       parameters:
         - name: group-id
           in: path
@@ -3025,7 +3025,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: group.onenote.notebook.section_GetPages
+      operationId: group.onenote.notebook.section_GetPage
       parameters:
         - name: group-id
           in: path
@@ -3112,7 +3112,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property pages in groups
-      operationId: group.onenote.notebook.section_UpdatePages
+      operationId: group.onenote.notebook.section_UpdatePage
       parameters:
         - name: group-id
           in: path
@@ -3167,7 +3167,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property pages for groups
-      operationId: group.onenote.notebook.section_DeletePages
+      operationId: group.onenote.notebook.section_DeletePage
       parameters:
         - name: group-id
           in: path
@@ -3760,7 +3760,7 @@ paths:
         - groups.onenote
       summary: Get operations from groups
       description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
-      operationId: group.onenote_ListOperations
+      operationId: group.onenote_ListOperation
       parameters:
         - name: group-id
           in: path
@@ -3846,7 +3846,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create new navigation property to operations for groups
-      operationId: group.onenote_CreateOperations
+      operationId: group.onenote_CreateOperation
       parameters:
         - name: group-id
           in: path
@@ -3879,7 +3879,7 @@ paths:
         - groups.onenote
       summary: Get operations from groups
       description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
-      operationId: group.onenote_GetOperations
+      operationId: group.onenote_GetOperation
       parameters:
         - name: group-id
           in: path
@@ -3942,7 +3942,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property operations in groups
-      operationId: group.onenote_UpdateOperations
+      operationId: group.onenote_UpdateOperation
       parameters:
         - name: group-id
           in: path
@@ -3981,7 +3981,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property operations for groups
-      operationId: group.onenote_DeleteOperations
+      operationId: group.onenote_DeleteOperation
       parameters:
         - name: group-id
           in: path
@@ -4039,7 +4039,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: group.onenote_ListPages
+      operationId: group.onenote_ListPage
       parameters:
         - name: group-id
           in: path
@@ -4141,7 +4141,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create new navigation property to pages for groups
-      operationId: group.onenote_CreatePages
+      operationId: group.onenote_CreatePage
       parameters:
         - name: group-id
           in: path
@@ -4174,7 +4174,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: group.onenote_GetPages
+      operationId: group.onenote_GetPage
       parameters:
         - name: group-id
           in: path
@@ -4245,7 +4245,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property pages in groups
-      operationId: group.onenote_UpdatePages
+      operationId: group.onenote_UpdatePage
       parameters:
         - name: group-id
           in: path
@@ -4284,7 +4284,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property pages for groups
-      operationId: group.onenote_DeletePages
+      operationId: group.onenote_DeletePage
       parameters:
         - name: group-id
           in: path
@@ -4565,7 +4565,7 @@ paths:
         - groups.onenote
       summary: Get resources from groups
       description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
-      operationId: group.onenote_ListResources
+      operationId: group.onenote_ListResource
       parameters:
         - name: group-id
           in: path
@@ -4639,7 +4639,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create new navigation property to resources for groups
-      operationId: group.onenote_CreateResources
+      operationId: group.onenote_CreateResource
       parameters:
         - name: group-id
           in: path
@@ -4672,7 +4672,7 @@ paths:
         - groups.onenote
       summary: Get resources from groups
       description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
-      operationId: group.onenote_GetResources
+      operationId: group.onenote_GetResource
       parameters:
         - name: group-id
           in: path
@@ -4731,7 +4731,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property resources in groups
-      operationId: group.onenote_UpdateResources
+      operationId: group.onenote_UpdateResource
       parameters:
         - name: group-id
           in: path
@@ -4770,7 +4770,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property resources for groups
-      operationId: group.onenote_DeleteResources
+      operationId: group.onenote_DeleteResource
       parameters:
         - name: group-id
           in: path
@@ -4905,7 +4905,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
-      operationId: group.onenote_ListSectionGroups
+      operationId: group.onenote_ListSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -5002,7 +5002,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create new navigation property to sectionGroups for groups
-      operationId: group.onenote_CreateSectionGroups
+      operationId: group.onenote_CreateSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -5035,7 +5035,7 @@ paths:
         - groups.onenote
       summary: Get sectionGroups from groups
       description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: group.onenote_GetSectionGroups
+      operationId: group.onenote_GetSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -5107,7 +5107,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property sectionGroups in groups
-      operationId: group.onenote_UpdateSectionGroups
+      operationId: group.onenote_UpdateSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -5146,7 +5146,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property sectionGroups for groups
-      operationId: group.onenote_DeleteSectionGroups
+      operationId: group.onenote_DeleteSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -5333,7 +5333,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
-      operationId: group.onenote.sectionGroup_ListSectionGroups
+      operationId: group.onenote.sectionGroup_ListSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -5440,7 +5440,7 @@ paths:
         - groups.onenote
       summary: Get sectionGroups from groups
       description: The section groups in the section. Read-only. Nullable.
-      operationId: group.onenote.sectionGroup_GetSectionGroups
+      operationId: group.onenote.sectionGroup_GetSectionGroup
       parameters:
         - name: group-id
           in: path
@@ -5555,7 +5555,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
-      operationId: group.onenote.sectionGroup_ListSections
+      operationId: group.onenote.sectionGroup_ListSection
       parameters:
         - name: group-id
           in: path
@@ -5665,7 +5665,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
-      operationId: group.onenote.sectionGroup_CreateSections
+      operationId: group.onenote.sectionGroup_CreateSection
       parameters:
         - name: group-id
           in: path
@@ -5706,7 +5706,7 @@ paths:
         - groups.onenote
       summary: Get sections from groups
       description: The sections in the section group. Read-only. Nullable.
-      operationId: group.onenote.sectionGroup_GetSections
+      operationId: group.onenote.sectionGroup_GetSection
       parameters:
         - name: group-id
           in: path
@@ -5785,7 +5785,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property sections in groups
-      operationId: group.onenote.sectionGroup_UpdateSections
+      operationId: group.onenote.sectionGroup_UpdateSection
       parameters:
         - name: group-id
           in: path
@@ -5832,7 +5832,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property sections for groups
-      operationId: group.onenote.sectionGroup_DeleteSections
+      operationId: group.onenote.sectionGroup_DeleteSection
       parameters:
         - name: group-id
           in: path
@@ -5876,7 +5876,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: group.onenote.sectionGroup.section_ListPages
+      operationId: group.onenote.sectionGroup.section_ListPage
       parameters:
         - name: group-id
           in: path
@@ -5994,7 +5994,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create new navigation property to pages for groups
-      operationId: group.onenote.sectionGroup.section_CreatePages
+      operationId: group.onenote.sectionGroup.section_CreatePage
       parameters:
         - name: group-id
           in: path
@@ -6043,7 +6043,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: group.onenote.sectionGroup.section_GetPages
+      operationId: group.onenote.sectionGroup.section_GetPage
       parameters:
         - name: group-id
           in: path
@@ -6130,7 +6130,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property pages in groups
-      operationId: group.onenote.sectionGroup.section_UpdatePages
+      operationId: group.onenote.sectionGroup.section_UpdatePage
       parameters:
         - name: group-id
           in: path
@@ -6185,7 +6185,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property pages for groups
-      operationId: group.onenote.sectionGroup.section_DeletePages
+      operationId: group.onenote.sectionGroup.section_DeletePage
       parameters:
         - name: group-id
           in: path
@@ -6781,7 +6781,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
-      operationId: group.onenote_ListSections
+      operationId: group.onenote_ListSection
       parameters:
         - name: group-id
           in: path
@@ -6879,7 +6879,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create new navigation property to sections for groups
-      operationId: group.onenote_CreateSections
+      operationId: group.onenote_CreateSection
       parameters:
         - name: group-id
           in: path
@@ -6912,7 +6912,7 @@ paths:
         - groups.onenote
       summary: Get sections from groups
       description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: group.onenote_GetSections
+      operationId: group.onenote_GetSection
       parameters:
         - name: group-id
           in: path
@@ -6983,7 +6983,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property sections in groups
-      operationId: group.onenote_UpdateSections
+      operationId: group.onenote_UpdateSection
       parameters:
         - name: group-id
           in: path
@@ -7022,7 +7022,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property sections for groups
-      operationId: group.onenote_DeleteSections
+      operationId: group.onenote_DeleteSection
       parameters:
         - name: group-id
           in: path
@@ -7058,7 +7058,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: group.onenote.section_ListPages
+      operationId: group.onenote.section_ListPage
       parameters:
         - name: group-id
           in: path
@@ -7168,7 +7168,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create new navigation property to pages for groups
-      operationId: group.onenote.section_CreatePages
+      operationId: group.onenote.section_CreatePage
       parameters:
         - name: group-id
           in: path
@@ -7209,7 +7209,7 @@ paths:
         - groups.onenote
       summary: Get pages from groups
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: group.onenote.section_GetPages
+      operationId: group.onenote.section_GetPage
       parameters:
         - name: group-id
           in: path
@@ -7288,7 +7288,7 @@ paths:
       tags:
         - groups.onenote
       summary: Update the navigation property pages in groups
-      operationId: group.onenote.section_UpdatePages
+      operationId: group.onenote.section_UpdatePage
       parameters:
         - name: group-id
           in: path
@@ -7335,7 +7335,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete navigation property pages for groups
-      operationId: group.onenote.section_DeletePages
+      operationId: group.onenote.section_DeletePage
       parameters:
         - name: group-id
           in: path
@@ -7955,7 +7955,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
-      operationId: site.onenote_ListNotebooks
+      operationId: site.onenote_ListNotebook
       parameters:
         - name: site-id
           in: path
@@ -8064,7 +8064,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
-      operationId: site.onenote_CreateNotebooks
+      operationId: site.onenote_CreateNotebook
       parameters:
         - name: site-id
           in: path
@@ -8097,7 +8097,7 @@ paths:
         - sites.onenote
       summary: Get notebooks from sites
       description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-      operationId: site.onenote_GetNotebooks
+      operationId: site.onenote_GetNotebook
       parameters:
         - name: site-id
           in: path
@@ -8169,7 +8169,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property notebooks in sites
-      operationId: site.onenote_UpdateNotebooks
+      operationId: site.onenote_UpdateNotebook
       parameters:
         - name: site-id
           in: path
@@ -8208,7 +8208,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property notebooks for sites
-      operationId: site.onenote_DeleteNotebooks
+      operationId: site.onenote_DeleteNotebook
       parameters:
         - name: site-id
           in: path
@@ -8247,7 +8247,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
-      operationId: site.onenote.notebook_ListSectionGroups
+      operationId: site.onenote.notebook_ListSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -8356,7 +8356,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
-      operationId: site.onenote.notebook_CreateSectionGroups
+      operationId: site.onenote.notebook_CreateSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -8397,7 +8397,7 @@ paths:
         - sites.onenote
       summary: Get sectionGroups from sites
       description: The section groups in the notebook. Read-only. Nullable.
-      operationId: site.onenote.notebook_GetSectionGroups
+      operationId: site.onenote.notebook_GetSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -8477,7 +8477,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property sectionGroups in sites
-      operationId: site.onenote.notebook_UpdateSectionGroups
+      operationId: site.onenote.notebook_UpdateSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -8524,7 +8524,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property sectionGroups for sites
-      operationId: site.onenote.notebook_DeleteSectionGroups
+      operationId: site.onenote.notebook_DeleteSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -8735,7 +8735,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
-      operationId: site.onenote.notebook.sectionGroup_ListSectionGroups
+      operationId: site.onenote.notebook.sectionGroup_ListSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -8850,7 +8850,7 @@ paths:
         - sites.onenote
       summary: Get sectionGroups from sites
       description: The section groups in the section. Read-only. Nullable.
-      operationId: site.onenote.notebook.sectionGroup_GetSectionGroups
+      operationId: site.onenote.notebook.sectionGroup_GetSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -8981,7 +8981,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
-      operationId: site.onenote.notebook.sectionGroup_ListSections
+      operationId: site.onenote.notebook.sectionGroup_ListSection
       parameters:
         - name: site-id
           in: path
@@ -9099,7 +9099,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
-      operationId: site.onenote.notebook.sectionGroup_CreateSections
+      operationId: site.onenote.notebook.sectionGroup_CreateSection
       parameters:
         - name: site-id
           in: path
@@ -9148,7 +9148,7 @@ paths:
         - sites.onenote
       summary: Get sections from sites
       description: The sections in the section group. Read-only. Nullable.
-      operationId: site.onenote.notebook.sectionGroup_GetSections
+      operationId: site.onenote.notebook.sectionGroup_GetSection
       parameters:
         - name: site-id
           in: path
@@ -9235,7 +9235,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property sections in sites
-      operationId: site.onenote.notebook.sectionGroup_UpdateSections
+      operationId: site.onenote.notebook.sectionGroup_UpdateSection
       parameters:
         - name: site-id
           in: path
@@ -9290,7 +9290,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property sections for sites
-      operationId: site.onenote.notebook.sectionGroup_DeleteSections
+      operationId: site.onenote.notebook.sectionGroup_DeleteSection
       parameters:
         - name: site-id
           in: path
@@ -9342,7 +9342,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: site.onenote.notebook.sectionGroup.section_ListPages
+      operationId: site.onenote.notebook.sectionGroup.section_ListPage
       parameters:
         - name: site-id
           in: path
@@ -9468,7 +9468,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create new navigation property to pages for sites
-      operationId: site.onenote.notebook.sectionGroup.section_CreatePages
+      operationId: site.onenote.notebook.sectionGroup.section_CreatePage
       parameters:
         - name: site-id
           in: path
@@ -9525,7 +9525,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: site.onenote.notebook.sectionGroup.section_GetPages
+      operationId: site.onenote.notebook.sectionGroup.section_GetPage
       parameters:
         - name: site-id
           in: path
@@ -9620,7 +9620,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property pages in sites
-      operationId: site.onenote.notebook.sectionGroup.section_UpdatePages
+      operationId: site.onenote.notebook.sectionGroup.section_UpdatePage
       parameters:
         - name: site-id
           in: path
@@ -9683,7 +9683,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property pages for sites
-      operationId: site.onenote.notebook.sectionGroup.section_DeletePages
+      operationId: site.onenote.notebook.sectionGroup.section_DeletePage
       parameters:
         - name: site-id
           in: path
@@ -10359,7 +10359,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
-      operationId: site.onenote.notebook_ListSections
+      operationId: site.onenote.notebook_ListSection
       parameters:
         - name: site-id
           in: path
@@ -10469,7 +10469,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
-      operationId: site.onenote.notebook_CreateSections
+      operationId: site.onenote.notebook_CreateSection
       parameters:
         - name: site-id
           in: path
@@ -10510,7 +10510,7 @@ paths:
         - sites.onenote
       summary: Get sections from sites
       description: The sections in the notebook. Read-only. Nullable.
-      operationId: site.onenote.notebook_GetSections
+      operationId: site.onenote.notebook_GetSection
       parameters:
         - name: site-id
           in: path
@@ -10589,7 +10589,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property sections in sites
-      operationId: site.onenote.notebook_UpdateSections
+      operationId: site.onenote.notebook_UpdateSection
       parameters:
         - name: site-id
           in: path
@@ -10636,7 +10636,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property sections for sites
-      operationId: site.onenote.notebook_DeleteSections
+      operationId: site.onenote.notebook_DeleteSection
       parameters:
         - name: site-id
           in: path
@@ -10680,7 +10680,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: site.onenote.notebook.section_ListPages
+      operationId: site.onenote.notebook.section_ListPage
       parameters:
         - name: site-id
           in: path
@@ -10798,7 +10798,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create new navigation property to pages for sites
-      operationId: site.onenote.notebook.section_CreatePages
+      operationId: site.onenote.notebook.section_CreatePage
       parameters:
         - name: site-id
           in: path
@@ -10847,7 +10847,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: site.onenote.notebook.section_GetPages
+      operationId: site.onenote.notebook.section_GetPage
       parameters:
         - name: site-id
           in: path
@@ -10934,7 +10934,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property pages in sites
-      operationId: site.onenote.notebook.section_UpdatePages
+      operationId: site.onenote.notebook.section_UpdatePage
       parameters:
         - name: site-id
           in: path
@@ -10989,7 +10989,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property pages for sites
-      operationId: site.onenote.notebook.section_DeletePages
+      operationId: site.onenote.notebook.section_DeletePage
       parameters:
         - name: site-id
           in: path
@@ -11582,7 +11582,7 @@ paths:
         - sites.onenote
       summary: Get operations from sites
       description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
-      operationId: site.onenote_ListOperations
+      operationId: site.onenote_ListOperation
       parameters:
         - name: site-id
           in: path
@@ -11668,7 +11668,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create new navigation property to operations for sites
-      operationId: site.onenote_CreateOperations
+      operationId: site.onenote_CreateOperation
       parameters:
         - name: site-id
           in: path
@@ -11701,7 +11701,7 @@ paths:
         - sites.onenote
       summary: Get operations from sites
       description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
-      operationId: site.onenote_GetOperations
+      operationId: site.onenote_GetOperation
       parameters:
         - name: site-id
           in: path
@@ -11764,7 +11764,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property operations in sites
-      operationId: site.onenote_UpdateOperations
+      operationId: site.onenote_UpdateOperation
       parameters:
         - name: site-id
           in: path
@@ -11803,7 +11803,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property operations for sites
-      operationId: site.onenote_DeleteOperations
+      operationId: site.onenote_DeleteOperation
       parameters:
         - name: site-id
           in: path
@@ -11861,7 +11861,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: site.onenote_ListPages
+      operationId: site.onenote_ListPage
       parameters:
         - name: site-id
           in: path
@@ -11963,7 +11963,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create new navigation property to pages for sites
-      operationId: site.onenote_CreatePages
+      operationId: site.onenote_CreatePage
       parameters:
         - name: site-id
           in: path
@@ -11996,7 +11996,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: site.onenote_GetPages
+      operationId: site.onenote_GetPage
       parameters:
         - name: site-id
           in: path
@@ -12067,7 +12067,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property pages in sites
-      operationId: site.onenote_UpdatePages
+      operationId: site.onenote_UpdatePage
       parameters:
         - name: site-id
           in: path
@@ -12106,7 +12106,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property pages for sites
-      operationId: site.onenote_DeletePages
+      operationId: site.onenote_DeletePage
       parameters:
         - name: site-id
           in: path
@@ -12387,7 +12387,7 @@ paths:
         - sites.onenote
       summary: Get resources from sites
       description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
-      operationId: site.onenote_ListResources
+      operationId: site.onenote_ListResource
       parameters:
         - name: site-id
           in: path
@@ -12461,7 +12461,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create new navigation property to resources for sites
-      operationId: site.onenote_CreateResources
+      operationId: site.onenote_CreateResource
       parameters:
         - name: site-id
           in: path
@@ -12494,7 +12494,7 @@ paths:
         - sites.onenote
       summary: Get resources from sites
       description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
-      operationId: site.onenote_GetResources
+      operationId: site.onenote_GetResource
       parameters:
         - name: site-id
           in: path
@@ -12553,7 +12553,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property resources in sites
-      operationId: site.onenote_UpdateResources
+      operationId: site.onenote_UpdateResource
       parameters:
         - name: site-id
           in: path
@@ -12592,7 +12592,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property resources for sites
-      operationId: site.onenote_DeleteResources
+      operationId: site.onenote_DeleteResource
       parameters:
         - name: site-id
           in: path
@@ -12727,7 +12727,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
-      operationId: site.onenote_ListSectionGroups
+      operationId: site.onenote_ListSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -12824,7 +12824,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create new navigation property to sectionGroups for sites
-      operationId: site.onenote_CreateSectionGroups
+      operationId: site.onenote_CreateSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -12857,7 +12857,7 @@ paths:
         - sites.onenote
       summary: Get sectionGroups from sites
       description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: site.onenote_GetSectionGroups
+      operationId: site.onenote_GetSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -12929,7 +12929,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property sectionGroups in sites
-      operationId: site.onenote_UpdateSectionGroups
+      operationId: site.onenote_UpdateSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -12968,7 +12968,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property sectionGroups for sites
-      operationId: site.onenote_DeleteSectionGroups
+      operationId: site.onenote_DeleteSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -13155,7 +13155,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
-      operationId: site.onenote.sectionGroup_ListSectionGroups
+      operationId: site.onenote.sectionGroup_ListSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -13262,7 +13262,7 @@ paths:
         - sites.onenote
       summary: Get sectionGroups from sites
       description: The section groups in the section. Read-only. Nullable.
-      operationId: site.onenote.sectionGroup_GetSectionGroups
+      operationId: site.onenote.sectionGroup_GetSectionGroup
       parameters:
         - name: site-id
           in: path
@@ -13377,7 +13377,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
-      operationId: site.onenote.sectionGroup_ListSections
+      operationId: site.onenote.sectionGroup_ListSection
       parameters:
         - name: site-id
           in: path
@@ -13487,7 +13487,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
-      operationId: site.onenote.sectionGroup_CreateSections
+      operationId: site.onenote.sectionGroup_CreateSection
       parameters:
         - name: site-id
           in: path
@@ -13528,7 +13528,7 @@ paths:
         - sites.onenote
       summary: Get sections from sites
       description: The sections in the section group. Read-only. Nullable.
-      operationId: site.onenote.sectionGroup_GetSections
+      operationId: site.onenote.sectionGroup_GetSection
       parameters:
         - name: site-id
           in: path
@@ -13607,7 +13607,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property sections in sites
-      operationId: site.onenote.sectionGroup_UpdateSections
+      operationId: site.onenote.sectionGroup_UpdateSection
       parameters:
         - name: site-id
           in: path
@@ -13654,7 +13654,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property sections for sites
-      operationId: site.onenote.sectionGroup_DeleteSections
+      operationId: site.onenote.sectionGroup_DeleteSection
       parameters:
         - name: site-id
           in: path
@@ -13698,7 +13698,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: site.onenote.sectionGroup.section_ListPages
+      operationId: site.onenote.sectionGroup.section_ListPage
       parameters:
         - name: site-id
           in: path
@@ -13816,7 +13816,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create new navigation property to pages for sites
-      operationId: site.onenote.sectionGroup.section_CreatePages
+      operationId: site.onenote.sectionGroup.section_CreatePage
       parameters:
         - name: site-id
           in: path
@@ -13865,7 +13865,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: site.onenote.sectionGroup.section_GetPages
+      operationId: site.onenote.sectionGroup.section_GetPage
       parameters:
         - name: site-id
           in: path
@@ -13952,7 +13952,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property pages in sites
-      operationId: site.onenote.sectionGroup.section_UpdatePages
+      operationId: site.onenote.sectionGroup.section_UpdatePage
       parameters:
         - name: site-id
           in: path
@@ -14007,7 +14007,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property pages for sites
-      operationId: site.onenote.sectionGroup.section_DeletePages
+      operationId: site.onenote.sectionGroup.section_DeletePage
       parameters:
         - name: site-id
           in: path
@@ -14603,7 +14603,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
-      operationId: site.onenote_ListSections
+      operationId: site.onenote_ListSection
       parameters:
         - name: site-id
           in: path
@@ -14701,7 +14701,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create new navigation property to sections for sites
-      operationId: site.onenote_CreateSections
+      operationId: site.onenote_CreateSection
       parameters:
         - name: site-id
           in: path
@@ -14734,7 +14734,7 @@ paths:
         - sites.onenote
       summary: Get sections from sites
       description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: site.onenote_GetSections
+      operationId: site.onenote_GetSection
       parameters:
         - name: site-id
           in: path
@@ -14805,7 +14805,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property sections in sites
-      operationId: site.onenote_UpdateSections
+      operationId: site.onenote_UpdateSection
       parameters:
         - name: site-id
           in: path
@@ -14844,7 +14844,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property sections for sites
-      operationId: site.onenote_DeleteSections
+      operationId: site.onenote_DeleteSection
       parameters:
         - name: site-id
           in: path
@@ -14880,7 +14880,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: site.onenote.section_ListPages
+      operationId: site.onenote.section_ListPage
       parameters:
         - name: site-id
           in: path
@@ -14990,7 +14990,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create new navigation property to pages for sites
-      operationId: site.onenote.section_CreatePages
+      operationId: site.onenote.section_CreatePage
       parameters:
         - name: site-id
           in: path
@@ -15031,7 +15031,7 @@ paths:
         - sites.onenote
       summary: Get pages from sites
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: site.onenote.section_GetPages
+      operationId: site.onenote.section_GetPage
       parameters:
         - name: site-id
           in: path
@@ -15110,7 +15110,7 @@ paths:
       tags:
         - sites.onenote
       summary: Update the navigation property pages in sites
-      operationId: site.onenote.section_UpdatePages
+      operationId: site.onenote.section_UpdatePage
       parameters:
         - name: site-id
           in: path
@@ -15157,7 +15157,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete navigation property pages for sites
-      operationId: site.onenote.section_DeletePages
+      operationId: site.onenote.section_DeletePage
       parameters:
         - name: site-id
           in: path
@@ -15795,7 +15795,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
-      operationId: user.onenote_ListNotebooks
+      operationId: user.onenote_ListNotebook
       parameters:
         - name: user-id
           in: path
@@ -15910,7 +15910,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
-      operationId: user.onenote_CreateNotebooks
+      operationId: user.onenote_CreateNotebook
       parameters:
         - name: user-id
           in: path
@@ -15949,7 +15949,7 @@ paths:
         - users.onenote
       summary: Get notebooks from users
       description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-      operationId: user.onenote_GetNotebooks
+      operationId: user.onenote_GetNotebook
       parameters:
         - name: user-id
           in: path
@@ -16027,7 +16027,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property notebooks in users
-      operationId: user.onenote_UpdateNotebooks
+      operationId: user.onenote_UpdateNotebook
       parameters:
         - name: user-id
           in: path
@@ -16072,7 +16072,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property notebooks for users
-      operationId: user.onenote_DeleteNotebooks
+      operationId: user.onenote_DeleteNotebook
       parameters:
         - name: user-id
           in: path
@@ -16117,7 +16117,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
-      operationId: user.onenote.notebook_ListSectionGroups
+      operationId: user.onenote.notebook_ListSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -16232,7 +16232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
-      operationId: user.onenote.notebook_CreateSectionGroups
+      operationId: user.onenote.notebook_CreateSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -16279,7 +16279,7 @@ paths:
         - users.onenote
       summary: Get sectionGroups from users
       description: The section groups in the notebook. Read-only. Nullable.
-      operationId: user.onenote.notebook_GetSectionGroups
+      operationId: user.onenote.notebook_GetSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -16365,7 +16365,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property sectionGroups in users
-      operationId: user.onenote.notebook_UpdateSectionGroups
+      operationId: user.onenote.notebook_UpdateSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -16418,7 +16418,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property sectionGroups for users
-      operationId: user.onenote.notebook_DeleteSectionGroups
+      operationId: user.onenote.notebook_DeleteSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -16647,7 +16647,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
-      operationId: user.onenote.notebook.sectionGroup_ListSectionGroups
+      operationId: user.onenote.notebook.sectionGroup_ListSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -16768,7 +16768,7 @@ paths:
         - users.onenote
       summary: Get sectionGroups from users
       description: The section groups in the section. Read-only. Nullable.
-      operationId: user.onenote.notebook.sectionGroup_GetSectionGroups
+      operationId: user.onenote.notebook.sectionGroup_GetSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -16911,7 +16911,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
-      operationId: user.onenote.notebook.sectionGroup_ListSections
+      operationId: user.onenote.notebook.sectionGroup_ListSection
       parameters:
         - name: user-id
           in: path
@@ -17035,7 +17035,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
-      operationId: user.onenote.notebook.sectionGroup_CreateSections
+      operationId: user.onenote.notebook.sectionGroup_CreateSection
       parameters:
         - name: user-id
           in: path
@@ -17090,7 +17090,7 @@ paths:
         - users.onenote
       summary: Get sections from users
       description: The sections in the section group. Read-only. Nullable.
-      operationId: user.onenote.notebook.sectionGroup_GetSections
+      operationId: user.onenote.notebook.sectionGroup_GetSection
       parameters:
         - name: user-id
           in: path
@@ -17183,7 +17183,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property sections in users
-      operationId: user.onenote.notebook.sectionGroup_UpdateSections
+      operationId: user.onenote.notebook.sectionGroup_UpdateSection
       parameters:
         - name: user-id
           in: path
@@ -17244,7 +17244,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property sections for users
-      operationId: user.onenote.notebook.sectionGroup_DeleteSections
+      operationId: user.onenote.notebook.sectionGroup_DeleteSection
       parameters:
         - name: user-id
           in: path
@@ -17302,7 +17302,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: user.onenote.notebook.sectionGroup.section_ListPages
+      operationId: user.onenote.notebook.sectionGroup.section_ListPage
       parameters:
         - name: user-id
           in: path
@@ -17434,7 +17434,7 @@ paths:
       tags:
         - users.onenote
       summary: Create new navigation property to pages for users
-      operationId: user.onenote.notebook.sectionGroup.section_CreatePages
+      operationId: user.onenote.notebook.sectionGroup.section_CreatePage
       parameters:
         - name: user-id
           in: path
@@ -17497,7 +17497,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: user.onenote.notebook.sectionGroup.section_GetPages
+      operationId: user.onenote.notebook.sectionGroup.section_GetPage
       parameters:
         - name: user-id
           in: path
@@ -17598,7 +17598,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property pages in users
-      operationId: user.onenote.notebook.sectionGroup.section_UpdatePages
+      operationId: user.onenote.notebook.sectionGroup.section_UpdatePage
       parameters:
         - name: user-id
           in: path
@@ -17667,7 +17667,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property pages for users
-      operationId: user.onenote.notebook.sectionGroup.section_DeletePages
+      operationId: user.onenote.notebook.sectionGroup.section_DeletePage
       parameters:
         - name: user-id
           in: path
@@ -18403,7 +18403,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
-      operationId: user.onenote.notebook_ListSections
+      operationId: user.onenote.notebook_ListSection
       parameters:
         - name: user-id
           in: path
@@ -18519,7 +18519,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
-      operationId: user.onenote.notebook_CreateSections
+      operationId: user.onenote.notebook_CreateSection
       parameters:
         - name: user-id
           in: path
@@ -18566,7 +18566,7 @@ paths:
         - users.onenote
       summary: Get sections from users
       description: The sections in the notebook. Read-only. Nullable.
-      operationId: user.onenote.notebook_GetSections
+      operationId: user.onenote.notebook_GetSection
       parameters:
         - name: user-id
           in: path
@@ -18651,7 +18651,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property sections in users
-      operationId: user.onenote.notebook_UpdateSections
+      operationId: user.onenote.notebook_UpdateSection
       parameters:
         - name: user-id
           in: path
@@ -18704,7 +18704,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property sections for users
-      operationId: user.onenote.notebook_DeleteSections
+      operationId: user.onenote.notebook_DeleteSection
       parameters:
         - name: user-id
           in: path
@@ -18754,7 +18754,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: user.onenote.notebook.section_ListPages
+      operationId: user.onenote.notebook.section_ListPage
       parameters:
         - name: user-id
           in: path
@@ -18878,7 +18878,7 @@ paths:
       tags:
         - users.onenote
       summary: Create new navigation property to pages for users
-      operationId: user.onenote.notebook.section_CreatePages
+      operationId: user.onenote.notebook.section_CreatePage
       parameters:
         - name: user-id
           in: path
@@ -18933,7 +18933,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: user.onenote.notebook.section_GetPages
+      operationId: user.onenote.notebook.section_GetPage
       parameters:
         - name: user-id
           in: path
@@ -19026,7 +19026,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property pages in users
-      operationId: user.onenote.notebook.section_UpdatePages
+      operationId: user.onenote.notebook.section_UpdatePage
       parameters:
         - name: user-id
           in: path
@@ -19087,7 +19087,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property pages for users
-      operationId: user.onenote.notebook.section_DeletePages
+      operationId: user.onenote.notebook.section_DeletePage
       parameters:
         - name: user-id
           in: path
@@ -19740,7 +19740,7 @@ paths:
         - users.onenote
       summary: Get operations from users
       description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
-      operationId: user.onenote_ListOperations
+      operationId: user.onenote_ListOperation
       parameters:
         - name: user-id
           in: path
@@ -19832,7 +19832,7 @@ paths:
       tags:
         - users.onenote
       summary: Create new navigation property to operations for users
-      operationId: user.onenote_CreateOperations
+      operationId: user.onenote_CreateOperation
       parameters:
         - name: user-id
           in: path
@@ -19871,7 +19871,7 @@ paths:
         - users.onenote
       summary: Get operations from users
       description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
-      operationId: user.onenote_GetOperations
+      operationId: user.onenote_GetOperation
       parameters:
         - name: user-id
           in: path
@@ -19940,7 +19940,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property operations in users
-      operationId: user.onenote_UpdateOperations
+      operationId: user.onenote_UpdateOperation
       parameters:
         - name: user-id
           in: path
@@ -19985,7 +19985,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property operations for users
-      operationId: user.onenote_DeleteOperations
+      operationId: user.onenote_DeleteOperation
       parameters:
         - name: user-id
           in: path
@@ -20055,7 +20055,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: user.onenote_ListPages
+      operationId: user.onenote_ListPage
       parameters:
         - name: user-id
           in: path
@@ -20163,7 +20163,7 @@ paths:
       tags:
         - users.onenote
       summary: Create new navigation property to pages for users
-      operationId: user.onenote_CreatePages
+      operationId: user.onenote_CreatePage
       parameters:
         - name: user-id
           in: path
@@ -20202,7 +20202,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: user.onenote_GetPages
+      operationId: user.onenote_GetPage
       parameters:
         - name: user-id
           in: path
@@ -20279,7 +20279,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property pages in users
-      operationId: user.onenote_UpdatePages
+      operationId: user.onenote_UpdatePage
       parameters:
         - name: user-id
           in: path
@@ -20324,7 +20324,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property pages for users
-      operationId: user.onenote_DeletePages
+      operationId: user.onenote_DeletePage
       parameters:
         - name: user-id
           in: path
@@ -20641,7 +20641,7 @@ paths:
         - users.onenote
       summary: Get resources from users
       description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
-      operationId: user.onenote_ListResources
+      operationId: user.onenote_ListResource
       parameters:
         - name: user-id
           in: path
@@ -20721,7 +20721,7 @@ paths:
       tags:
         - users.onenote
       summary: Create new navigation property to resources for users
-      operationId: user.onenote_CreateResources
+      operationId: user.onenote_CreateResource
       parameters:
         - name: user-id
           in: path
@@ -20760,7 +20760,7 @@ paths:
         - users.onenote
       summary: Get resources from users
       description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
-      operationId: user.onenote_GetResources
+      operationId: user.onenote_GetResource
       parameters:
         - name: user-id
           in: path
@@ -20825,7 +20825,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property resources in users
-      operationId: user.onenote_UpdateResources
+      operationId: user.onenote_UpdateResource
       parameters:
         - name: user-id
           in: path
@@ -20870,7 +20870,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property resources for users
-      operationId: user.onenote_DeleteResources
+      operationId: user.onenote_DeleteResource
       parameters:
         - name: user-id
           in: path
@@ -21029,7 +21029,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
-      operationId: user.onenote_ListSectionGroups
+      operationId: user.onenote_ListSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -21132,7 +21132,7 @@ paths:
       tags:
         - users.onenote
       summary: Create new navigation property to sectionGroups for users
-      operationId: user.onenote_CreateSectionGroups
+      operationId: user.onenote_CreateSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -21171,7 +21171,7 @@ paths:
         - users.onenote
       summary: Get sectionGroups from users
       description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: user.onenote_GetSectionGroups
+      operationId: user.onenote_GetSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -21249,7 +21249,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property sectionGroups in users
-      operationId: user.onenote_UpdateSectionGroups
+      operationId: user.onenote_UpdateSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -21294,7 +21294,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property sectionGroups for users
-      operationId: user.onenote_DeleteSectionGroups
+      operationId: user.onenote_DeleteSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -21499,7 +21499,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
-      operationId: user.onenote.sectionGroup_ListSectionGroups
+      operationId: user.onenote.sectionGroup_ListSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -21612,7 +21612,7 @@ paths:
         - users.onenote
       summary: Get sectionGroups from users
       description: The section groups in the section. Read-only. Nullable.
-      operationId: user.onenote.sectionGroup_GetSectionGroups
+      operationId: user.onenote.sectionGroup_GetSectionGroup
       parameters:
         - name: user-id
           in: path
@@ -21739,7 +21739,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
-      operationId: user.onenote.sectionGroup_ListSections
+      operationId: user.onenote.sectionGroup_ListSection
       parameters:
         - name: user-id
           in: path
@@ -21855,7 +21855,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
-      operationId: user.onenote.sectionGroup_CreateSections
+      operationId: user.onenote.sectionGroup_CreateSection
       parameters:
         - name: user-id
           in: path
@@ -21902,7 +21902,7 @@ paths:
         - users.onenote
       summary: Get sections from users
       description: The sections in the section group. Read-only. Nullable.
-      operationId: user.onenote.sectionGroup_GetSections
+      operationId: user.onenote.sectionGroup_GetSection
       parameters:
         - name: user-id
           in: path
@@ -21987,7 +21987,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property sections in users
-      operationId: user.onenote.sectionGroup_UpdateSections
+      operationId: user.onenote.sectionGroup_UpdateSection
       parameters:
         - name: user-id
           in: path
@@ -22040,7 +22040,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property sections for users
-      operationId: user.onenote.sectionGroup_DeleteSections
+      operationId: user.onenote.sectionGroup_DeleteSection
       parameters:
         - name: user-id
           in: path
@@ -22090,7 +22090,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: user.onenote.sectionGroup.section_ListPages
+      operationId: user.onenote.sectionGroup.section_ListPage
       parameters:
         - name: user-id
           in: path
@@ -22214,7 +22214,7 @@ paths:
       tags:
         - users.onenote
       summary: Create new navigation property to pages for users
-      operationId: user.onenote.sectionGroup.section_CreatePages
+      operationId: user.onenote.sectionGroup.section_CreatePage
       parameters:
         - name: user-id
           in: path
@@ -22269,7 +22269,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: user.onenote.sectionGroup.section_GetPages
+      operationId: user.onenote.sectionGroup.section_GetPage
       parameters:
         - name: user-id
           in: path
@@ -22362,7 +22362,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property pages in users
-      operationId: user.onenote.sectionGroup.section_UpdatePages
+      operationId: user.onenote.sectionGroup.section_UpdatePage
       parameters:
         - name: user-id
           in: path
@@ -22423,7 +22423,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property pages for users
-      operationId: user.onenote.sectionGroup.section_DeletePages
+      operationId: user.onenote.sectionGroup.section_DeletePage
       parameters:
         - name: user-id
           in: path
@@ -23079,7 +23079,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
-      operationId: user.onenote_ListSections
+      operationId: user.onenote_ListSection
       parameters:
         - name: user-id
           in: path
@@ -23183,7 +23183,7 @@ paths:
       tags:
         - users.onenote
       summary: Create new navigation property to sections for users
-      operationId: user.onenote_CreateSections
+      operationId: user.onenote_CreateSection
       parameters:
         - name: user-id
           in: path
@@ -23222,7 +23222,7 @@ paths:
         - users.onenote
       summary: Get sections from users
       description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      operationId: user.onenote_GetSections
+      operationId: user.onenote_GetSection
       parameters:
         - name: user-id
           in: path
@@ -23299,7 +23299,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property sections in users
-      operationId: user.onenote_UpdateSections
+      operationId: user.onenote_UpdateSection
       parameters:
         - name: user-id
           in: path
@@ -23344,7 +23344,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property sections for users
-      operationId: user.onenote_DeleteSections
+      operationId: user.onenote_DeleteSection
       parameters:
         - name: user-id
           in: path
@@ -23386,7 +23386,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: user.onenote.section_ListPages
+      operationId: user.onenote.section_ListPage
       parameters:
         - name: user-id
           in: path
@@ -23502,7 +23502,7 @@ paths:
       tags:
         - users.onenote
       summary: Create new navigation property to pages for users
-      operationId: user.onenote.section_CreatePages
+      operationId: user.onenote.section_CreatePage
       parameters:
         - name: user-id
           in: path
@@ -23549,7 +23549,7 @@ paths:
         - users.onenote
       summary: Get pages from users
       description: The collection of pages in the section.  Read-only. Nullable.
-      operationId: user.onenote.section_GetPages
+      operationId: user.onenote.section_GetPage
       parameters:
         - name: user-id
           in: path
@@ -23634,7 +23634,7 @@ paths:
       tags:
         - users.onenote
       summary: Update the navigation property pages in users
-      operationId: user.onenote.section_UpdatePages
+      operationId: user.onenote.section_UpdatePage
       parameters:
         - name: user-id
           in: path
@@ -23687,7 +23687,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete navigation property pages for users
-      operationId: user.onenote.section_DeletePages
+      operationId: user.onenote.section_DeletePage
       parameters:
         - name: user-id
           in: path

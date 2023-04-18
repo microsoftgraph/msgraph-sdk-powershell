@@ -125,7 +125,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0
-      operationId: security_ListAlerts
+      operationId: security_ListAlert
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -299,7 +299,7 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts for security
-      operationId: security_CreateAlerts
+      operationId: security_CreateAlert
       requestBody:
         description: New navigation property
         content:
@@ -644,7 +644,7 @@ paths:
         - security.alert
       summary: Get alerts from security
       description: Notifications for suspicious or potential security issues in a customer’s tenant.
-      operationId: security_GetAlerts
+      operationId: security_GetAlert
       parameters:
         - name: alert-id
           in: path
@@ -731,7 +731,7 @@ paths:
       tags:
         - security.alert
       summary: Update the navigation property alerts in security
-      operationId: security_UpdateAlerts
+      operationId: security_UpdateAlert
       parameters:
         - name: alert-id
           in: path
@@ -781,7 +781,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-1.0
-      operationId: security.alert_updateAlerts
+      operationId: security.alert_updateAlert
       requestBody:
         description: Action parameters
         content:
@@ -916,7 +916,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get operations from security
       description: Represents an attack simulation training operation.
-      operationId: security.attackSimulation_ListOperations
+      operationId: security.attackSimulation_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -997,7 +997,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to operations for security
-      operationId: security.attackSimulation_CreateOperations
+      operationId: security.attackSimulation_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -1021,7 +1021,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get operations from security
       description: Represents an attack simulation training operation.
-      operationId: security.attackSimulation_GetOperations
+      operationId: security.attackSimulation_GetOperation
       parameters:
         - name: attackSimulationOperation-id
           in: path
@@ -1077,7 +1077,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property operations in security
-      operationId: security.attackSimulation_UpdateOperations
+      operationId: security.attackSimulation_UpdateOperation
       parameters:
         - name: attackSimulationOperation-id
           in: path
@@ -1108,7 +1108,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property operations for security
-      operationId: security.attackSimulation_DeleteOperations
+      operationId: security.attackSimulation_DeleteOperation
       parameters:
         - name: attackSimulationOperation-id
           in: path
@@ -1153,7 +1153,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-payloads?view=graph-rest-1.0
-      operationId: security.attackSimulation_ListPayloads
+      operationId: security.attackSimulation_ListPayload
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1276,7 +1276,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to payloads for security
-      operationId: security.attackSimulation_CreatePayloads
+      operationId: security.attackSimulation_CreatePayload
       requestBody:
         description: New navigation property
         content:
@@ -1300,7 +1300,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get payloads from security
       description: Represents an attack simulation training campaign payload in a tenant.
-      operationId: security.attackSimulation_GetPayloads
+      operationId: security.attackSimulation_GetPayload
       parameters:
         - name: payload-id
           in: path
@@ -1370,7 +1370,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property payloads in security
-      operationId: security.attackSimulation_UpdatePayloads
+      operationId: security.attackSimulation_UpdatePayload
       parameters:
         - name: payload-id
           in: path
@@ -1401,7 +1401,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property payloads for security
-      operationId: security.attackSimulation_DeletePayloads
+      operationId: security.attackSimulation_DeletePayload
       parameters:
         - name: payload-id
           in: path
@@ -1446,7 +1446,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulationautomations?view=graph-rest-1.0
-      operationId: security.attackSimulation_ListSimulationAutomations
+      operationId: security.attackSimulation_ListSimulationAutomation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1532,7 +1532,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to simulationAutomations for security
-      operationId: security.attackSimulation_CreateSimulationAutomations
+      operationId: security.attackSimulation_CreateSimulationAutomation
       requestBody:
         description: New navigation property
         content:
@@ -1556,7 +1556,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get simulationAutomations from security
       description: Represents simulation automation created to run on a tenant.
-      operationId: security.attackSimulation_GetSimulationAutomations
+      operationId: security.attackSimulation_GetSimulationAutomation
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1615,7 +1615,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property simulationAutomations in security
-      operationId: security.attackSimulation_UpdateSimulationAutomations
+      operationId: security.attackSimulation_UpdateSimulationAutomation
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1646,7 +1646,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property simulationAutomations for security
-      operationId: security.attackSimulation_DeleteSimulationAutomations
+      operationId: security.attackSimulation_DeleteSimulationAutomation
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1677,7 +1677,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-1.0
-      operationId: security.attackSimulation.simulationAutomation_ListRuns
+      operationId: security.attackSimulation.simulationAutomation_ListRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1754,7 +1754,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to runs for security
-      operationId: security.attackSimulation.simulationAutomation_CreateRuns
+      operationId: security.attackSimulation.simulationAutomation_CreateRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1787,7 +1787,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get runs from security
       description: A collection of simulation automation runs.
-      operationId: security.attackSimulation.simulationAutomation_GetRuns
+      operationId: security.attackSimulation.simulationAutomation_GetRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1847,7 +1847,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property runs in security
-      operationId: security.attackSimulation.simulationAutomation_UpdateRuns
+      operationId: security.attackSimulation.simulationAutomation_UpdateRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1886,7 +1886,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property runs for security
-      operationId: security.attackSimulation.simulationAutomation_DeleteRuns
+      operationId: security.attackSimulation.simulationAutomation_DeleteRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1961,7 +1961,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0
-      operationId: security.attackSimulation_ListSimulations
+      operationId: security.attackSimulation_ListSimulation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2078,7 +2078,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attacksimulationroot-post-simulation?view=graph-rest-1.0
-      operationId: security.attackSimulation_CreateSimulations
+      operationId: security.attackSimulation_CreateSimulation
       requestBody:
         description: New navigation property
         content:
@@ -2102,7 +2102,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get simulations from security
       description: Represents an attack simulation training campaign in a tenant.
-      operationId: security.attackSimulation_GetSimulations
+      operationId: security.attackSimulation_GetSimulation
       parameters:
         - name: simulation-id
           in: path
@@ -2170,7 +2170,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property simulations in security
-      operationId: security.attackSimulation_UpdateSimulations
+      operationId: security.attackSimulation_UpdateSimulation
       parameters:
         - name: simulation-id
           in: path
@@ -2201,7 +2201,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property simulations for security
-      operationId: security.attackSimulation_DeleteSimulations
+      operationId: security.attackSimulation_DeleteSimulation
       parameters:
         - name: simulation-id
           in: path
@@ -2314,7 +2314,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get cases from security
-      operationId: security_GetCases
+      operationId: security_GetCase
       parameters:
         - name: $select
           in: query
@@ -2356,7 +2356,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property cases in security
-      operationId: security_UpdateCases
+      operationId: security_UpdateCase
       requestBody:
         description: New navigation property values
         content:
@@ -2378,7 +2378,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property cases for security
-      operationId: security_DeleteCases
+      operationId: security_DeleteCase
       parameters:
         - name: If-Match
           in: header
@@ -2401,7 +2401,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-casesroot-list-ediscoverycases?view=graph-rest-1.0
-      operationId: security.case_ListEdiscoveryCases
+      operationId: security.case_ListEdiscoveryCase
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2505,7 +2505,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-casesroot-post-ediscoverycases?view=graph-rest-1.0
-      operationId: security.case_CreateEdiscoveryCases
+      operationId: security.case_CreateEdiscoveryCase
       requestBody:
         description: New navigation property
         content:
@@ -2528,7 +2528,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get ediscoveryCases from security
-      operationId: security.case_GetEdiscoveryCases
+      operationId: security.case_GetEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2601,7 +2601,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property ediscoveryCases in security
-      operationId: security.case_UpdateEdiscoveryCases
+      operationId: security.case_UpdateEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2632,7 +2632,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property ediscoveryCases for security
-      operationId: security.case_DeleteEdiscoveryCases
+      operationId: security.case_DeleteEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2663,7 +2663,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-custodians?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListCustodians
+      operationId: security.case.ediscoveryCase_ListCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2764,7 +2764,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-custodians?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateCustodians
+      operationId: security.case.ediscoveryCase_CreateCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2797,7 +2797,7 @@ paths:
         - security.casesRoot
       summary: Get custodians from security
       description: Returns a list of case ediscoveryCustodian objects for this case.
-      operationId: security.case.ediscoveryCase_GetCustodians
+      operationId: security.case.ediscoveryCase_GetCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2869,7 +2869,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property custodians in security
-      operationId: security.case.ediscoveryCase_UpdateCustodians
+      operationId: security.case.ediscoveryCase_UpdateCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2908,7 +2908,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property custodians for security
-      operationId: security.case.ediscoveryCase_DeleteCustodians
+      operationId: security.case.ediscoveryCase_DeleteCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3180,7 +3180,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_ListSiteSources
+      operationId: security.case.ediscoveryCase.custodian_ListSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3271,7 +3271,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-sitesources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_CreateSiteSources
+      operationId: security.case.ediscoveryCase.custodian_CreateSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3312,7 +3312,7 @@ paths:
         - security.casesRoot
       summary: Get siteSources from security
       description: Data source entity for SharePoint sites associated with the custodian.
-      operationId: security.case.ediscoveryCase.custodian_GetSiteSources
+      operationId: security.case.ediscoveryCase.custodian_GetSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3382,7 +3382,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property siteSources in security
-      operationId: security.case.ediscoveryCase.custodian_UpdateSiteSources
+      operationId: security.case.ediscoveryCase.custodian_UpdateSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3429,7 +3429,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property siteSources for security
-      operationId: security.case.ediscoveryCase.custodian_DeleteSiteSources
+      operationId: security.case.ediscoveryCase.custodian_DeleteSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3621,7 +3621,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-unifiedgroupsources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_ListUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_ListUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3715,7 +3715,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-unifiedgroupsources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_CreateUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_CreateUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3756,7 +3756,7 @@ paths:
         - security.casesRoot
       summary: Get unifiedGroupSources from security
       description: Data source entity for groups associated with the custodian.
-      operationId: security.case.ediscoveryCase.custodian_GetUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_GetUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3827,7 +3827,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property unifiedGroupSources in security
-      operationId: security.case.ediscoveryCase.custodian_UpdateUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_UpdateUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3874,7 +3874,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property unifiedGroupSources for security
-      operationId: security.case.ediscoveryCase.custodian_DeleteUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_DeleteUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3991,6 +3991,7 @@ paths:
                 - resourceProvisioningOptions
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - writebackConfiguration
@@ -4124,7 +4125,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-usersources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_ListUserSources
+      operationId: security.case.ediscoveryCase.custodian_ListUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4222,7 +4223,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-usersources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.custodian_CreateUserSources
+      operationId: security.case.ediscoveryCase.custodian_CreateUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4263,7 +4264,7 @@ paths:
         - security.casesRoot
       summary: Get userSources from security
       description: Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-      operationId: security.case.ediscoveryCase.custodian_GetUserSources
+      operationId: security.case.ediscoveryCase.custodian_GetUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4334,7 +4335,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property userSources in security
-      operationId: security.case.ediscoveryCase.custodian_UpdateUserSources
+      operationId: security.case.ediscoveryCase.custodian_UpdateUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4381,7 +4382,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property userSources for security
-      operationId: security.case.ediscoveryCase.custodian_DeleteUserSources
+      operationId: security.case.ediscoveryCase.custodian_DeleteUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4560,7 +4561,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-legalholds?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListLegalHolds
+      operationId: security.case.ediscoveryCase_ListLegalHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4663,7 +4664,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-legalholds?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateLegalHolds
+      operationId: security.case.ediscoveryCase_CreateLegalHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4696,7 +4697,7 @@ paths:
         - security.casesRoot
       summary: Get legalHolds from security
       description: Returns a list of case eDiscoveryHoldPolicy objects for this case.
-      operationId: security.case.ediscoveryCase_GetLegalHolds
+      operationId: security.case.ediscoveryCase_GetLegalHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4766,7 +4767,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property legalHolds in security
-      operationId: security.case.ediscoveryCase_UpdateLegalHolds
+      operationId: security.case.ediscoveryCase_UpdateLegalHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4805,7 +4806,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property legalHolds for security
-      operationId: security.case.ediscoveryCase_DeleteLegalHolds
+      operationId: security.case.ediscoveryCase_DeleteLegalHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4841,7 +4842,7 @@ paths:
         - security.casesRoot
       summary: Get siteSources from security
       description: Data sources that represent SharePoint sites.
-      operationId: security.case.ediscoveryCase.legalHold_ListSiteSources
+      operationId: security.case.ediscoveryCase.legalHold_ListSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4932,7 +4933,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryholdpolicy-post-sitesources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.legalHold_CreateSiteSources
+      operationId: security.case.ediscoveryCase.legalHold_CreateSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4973,7 +4974,7 @@ paths:
         - security.casesRoot
       summary: Get siteSources from security
       description: Data sources that represent SharePoint sites.
-      operationId: security.case.ediscoveryCase.legalHold_GetSiteSources
+      operationId: security.case.ediscoveryCase.legalHold_GetSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5043,7 +5044,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property siteSources in security
-      operationId: security.case.ediscoveryCase.legalHold_UpdateSiteSources
+      operationId: security.case.ediscoveryCase.legalHold_UpdateSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5090,7 +5091,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property siteSources for security
-      operationId: security.case.ediscoveryCase.legalHold_DeleteSiteSources
+      operationId: security.case.ediscoveryCase.legalHold_DeleteSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5279,7 +5280,7 @@ paths:
         - security.casesRoot
       summary: Get userSources from security
       description: Data sources that represent Exchange mailboxes.
-      operationId: security.case.ediscoveryCase.legalHold_ListUserSources
+      operationId: security.case.ediscoveryCase.legalHold_ListUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5377,7 +5378,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryholdpolicy-post-usersources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.legalHold_CreateUserSources
+      operationId: security.case.ediscoveryCase.legalHold_CreateUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5418,7 +5419,7 @@ paths:
         - security.casesRoot
       summary: Get userSources from security
       description: Data sources that represent Exchange mailboxes.
-      operationId: security.case.ediscoveryCase.legalHold_GetUserSources
+      operationId: security.case.ediscoveryCase.legalHold_GetUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5489,7 +5490,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property userSources in security
-      operationId: security.case.ediscoveryCase.legalHold_UpdateUserSources
+      operationId: security.case.ediscoveryCase.legalHold_UpdateUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5536,7 +5537,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property userSources for security
-      operationId: security.case.ediscoveryCase.legalHold_DeleteUserSources
+      operationId: security.case.ediscoveryCase.legalHold_DeleteUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5682,7 +5683,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialDataSources from security
       description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
-      operationId: security.case.ediscoveryCase_ListNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_ListNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5773,7 +5774,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-noncustodialdatasources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_CreateNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5806,7 +5807,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialDataSources from security
       description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
-      operationId: security.case.ediscoveryCase_GetNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_GetNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5872,7 +5873,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property noncustodialDataSources in security
-      operationId: security.case.ediscoveryCase_UpdateNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_UpdateNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5911,7 +5912,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property noncustodialDataSources for security
-      operationId: security.case.ediscoveryCase_DeleteNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_DeleteNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6384,7 +6385,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-operations?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListOperations
+      operationId: security.case.ediscoveryCase_ListOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6470,7 +6471,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create new navigation property to operations for security
-      operationId: security.case.ediscoveryCase_CreateOperations
+      operationId: security.case.ediscoveryCase_CreateOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6503,7 +6504,7 @@ paths:
         - security.casesRoot
       summary: Get operations from security
       description: Returns a list of case caseOperation objects for this case.
-      operationId: security.case.ediscoveryCase_GetOperations
+      operationId: security.case.ediscoveryCase_GetOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6566,7 +6567,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property operations in security
-      operationId: security.case.ediscoveryCase_UpdateOperations
+      operationId: security.case.ediscoveryCase_UpdateOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6605,7 +6606,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property operations for security
-      operationId: security.case.ediscoveryCase_DeleteOperations
+      operationId: security.case.ediscoveryCase_DeleteOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6666,7 +6667,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-reviewsets?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListReviewSets
+      operationId: security.case.ediscoveryCase_ListReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6748,7 +6749,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-reviewsets?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateReviewSets
+      operationId: security.case.ediscoveryCase_CreateReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6781,7 +6782,7 @@ paths:
         - security.casesRoot
       summary: Get reviewSets from security
       description: Returns a list of eDiscoveryReviewSet objects in the case.
-      operationId: security.case.ediscoveryCase_GetReviewSets
+      operationId: security.case.ediscoveryCase_GetReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6844,7 +6845,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property reviewSets in security
-      operationId: security.case.ediscoveryCase_UpdateReviewSets
+      operationId: security.case.ediscoveryCase_UpdateReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6883,7 +6884,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property reviewSets for security
-      operationId: security.case.ediscoveryCase_DeleteReviewSets
+      operationId: security.case.ediscoveryCase_DeleteReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6922,7 +6923,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-list-files?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.reviewSet_ListFiles
+      operationId: security.case.ediscoveryCase.reviewSet_ListFile
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7035,7 +7036,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create new navigation property to files for security
-      operationId: security.case.ediscoveryCase.reviewSet_CreateFiles
+      operationId: security.case.ediscoveryCase.reviewSet_CreateFile
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7076,7 +7077,7 @@ paths:
         - security.casesRoot
       summary: Get files from security
       description: Represents files within the review set.
-      operationId: security.case.ediscoveryCase.reviewSet_GetFiles
+      operationId: security.case.ediscoveryCase.reviewSet_GetFile
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7156,7 +7157,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property files in security
-      operationId: security.case.ediscoveryCase.reviewSet_UpdateFiles
+      operationId: security.case.ediscoveryCase.reviewSet_UpdateFile
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7203,7 +7204,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property files for security
-      operationId: security.case.ediscoveryCase.reviewSet_DeleteFiles
+      operationId: security.case.ediscoveryCase.reviewSet_DeleteFile
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7511,7 +7512,7 @@ paths:
         - security.casesRoot
       summary: Get tags from security
       description: Tags associated with the file.
-      operationId: security.case.ediscoveryCase.reviewSet.file_ListTags
+      operationId: security.case.ediscoveryCase.reviewSet.file_ListTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7613,7 +7614,7 @@ paths:
         - security.casesRoot
       summary: Get tags from security
       description: Tags associated with the file.
-      operationId: security.case.ediscoveryCase.reviewSet.file_GetTags
+      operationId: security.case.ediscoveryCase.reviewSet.file_GetTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7873,7 +7874,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-list-queries?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.reviewSet_ListQueries
+      operationId: security.case.ediscoveryCase.reviewSet_ListQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -7971,7 +7972,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-post-queries?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.reviewSet_CreateQueries
+      operationId: security.case.ediscoveryCase.reviewSet_CreateQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8012,7 +8013,7 @@ paths:
         - security.casesRoot
       summary: Get queries from security
       description: Represents queries within the review set.
-      operationId: security.case.ediscoveryCase.reviewSet_GetQueries
+      operationId: security.case.ediscoveryCase.reviewSet_GetQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8083,7 +8084,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property queries in security
-      operationId: security.case.ediscoveryCase.reviewSet_UpdateQueries
+      operationId: security.case.ediscoveryCase.reviewSet_UpdateQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8130,7 +8131,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property queries for security
-      operationId: security.case.ediscoveryCase.reviewSet_DeleteQueries
+      operationId: security.case.ediscoveryCase.reviewSet_DeleteQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8177,7 +8178,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-applytags?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.reviewSet.query_applyTags
+      operationId: security.case.ediscoveryCase.reviewSet.query_applyTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8478,7 +8479,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-searches?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListSearches
+      operationId: security.case.ediscoveryCase_ListSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8581,7 +8582,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-searches?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateSearches
+      operationId: security.case.ediscoveryCase_CreateSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8614,7 +8615,7 @@ paths:
         - security.casesRoot
       summary: Get searches from security
       description: Returns a list of eDiscoverySearch objects associated with this case.
-      operationId: security.case.ediscoveryCase_GetSearches
+      operationId: security.case.ediscoveryCase_GetSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8688,7 +8689,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property searches in security
-      operationId: security.case.ediscoveryCase_UpdateSearches
+      operationId: security.case.ediscoveryCase_UpdateSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8727,7 +8728,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property searches for security
-      operationId: security.case.ediscoveryCase_DeleteSearches
+      operationId: security.case.ediscoveryCase_DeleteSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8766,7 +8767,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-additionalsources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.search_ListAdditionalSources
+      operationId: security.case.ediscoveryCase.search_ListAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8855,7 +8856,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-post-additionalsources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.search_CreateAdditionalSources
+      operationId: security.case.ediscoveryCase.search_CreateAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8896,7 +8897,7 @@ paths:
         - security.casesRoot
       summary: Get additionalSources from security
       description: Adds an additional source to the eDiscovery search.
-      operationId: security.case.ediscoveryCase.search_GetAdditionalSources
+      operationId: security.case.ediscoveryCase.search_GetAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -8964,7 +8965,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property additionalSources in security
-      operationId: security.case.ediscoveryCase.search_UpdateAdditionalSources
+      operationId: security.case.ediscoveryCase.search_UpdateAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9011,7 +9012,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property additionalSources for security
-      operationId: security.case.ediscoveryCase.search_DeleteAdditionalSources
+      operationId: security.case.ediscoveryCase.search_DeleteAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9157,7 +9158,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-custodiansources?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.search_ListCustodianSources
+      operationId: security.case.ediscoveryCase.search_ListCustodianSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9244,7 +9245,7 @@ paths:
         - security.casesRoot
       summary: Get custodianSources from security
       description: Custodian sources that are included in the eDiscovery search.
-      operationId: security.case.ediscoveryCase.search_GetCustodianSources
+      operationId: security.case.ediscoveryCase.search_GetCustodianSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9423,7 +9424,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-estimatestatistics?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.search_estimateStatistics
+      operationId: security.case.ediscoveryCase.search_estimateStatistic
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9500,7 +9501,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialSources from security
       description: noncustodialDataSource sources that are included in the eDiscovery search
-      operationId: security.case.ediscoveryCase.search_ListNoncustodialSources
+      operationId: security.case.ediscoveryCase.search_ListNoncustodialSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9597,7 +9598,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialSources from security
       description: noncustodialDataSource sources that are included in the eDiscovery search
-      operationId: security.case.ediscoveryCase.search_GetNoncustodialSources
+      operationId: security.case.ediscoveryCase.search_GetNoncustodialSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9728,7 +9729,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-get?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_GetSettings
+      operationId: security.case.ediscoveryCase_GetSetting
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9783,7 +9784,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-update?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_UpdateSettings
+      operationId: security.case.ediscoveryCase_UpdateSetting
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9814,7 +9815,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property settings for security
-      operationId: security.case.ediscoveryCase_DeleteSettings
+      operationId: security.case.ediscoveryCase_DeleteSetting
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9870,7 +9871,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-tags?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_ListTags
+      operationId: security.case.ediscoveryCase_ListTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9958,7 +9959,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-tags?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase_CreateTags
+      operationId: security.case.ediscoveryCase_CreateTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9991,7 +9992,7 @@ paths:
         - security.casesRoot
       summary: Get tags from security
       description: Returns a list of ediscoveryReviewTag objects associated to this case.
-      operationId: security.case.ediscoveryCase_GetTags
+      operationId: security.case.ediscoveryCase_GetTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -10056,7 +10057,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property tags in security
-      operationId: security.case.ediscoveryCase_UpdateTags
+      operationId: security.case.ediscoveryCase_UpdateTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -10095,7 +10096,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property tags for security
-      operationId: security.case.ediscoveryCase_DeleteTags
+      operationId: security.case.ediscoveryCase_DeleteTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -10131,7 +10132,7 @@ paths:
         - security.casesRoot
       summary: Get childTags from security
       description: Returns the tags that are a child of a tag.
-      operationId: security.case.ediscoveryCase.tag_ListChildTags
+      operationId: security.case.ediscoveryCase.tag_ListChildTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -10225,7 +10226,7 @@ paths:
         - security.casesRoot
       summary: Get childTags from security
       description: Returns the tags that are a child of a tag.
-      operationId: security.case.ediscoveryCase.tag_GetChildTags
+      operationId: security.case.ediscoveryCase.tag_GetChildTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -10518,7 +10519,7 @@ paths:
       tags:
         - security.cloudAppSecurityProfile
       summary: Get cloudAppSecurityProfiles from security
-      operationId: security_ListCloudAppSecurityProfiles
+      operationId: security_ListCloudAppSecurityProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10626,7 +10627,7 @@ paths:
       tags:
         - security.cloudAppSecurityProfile
       summary: Create new navigation property to cloudAppSecurityProfiles for security
-      operationId: security_CreateCloudAppSecurityProfiles
+      operationId: security_CreateCloudAppSecurityProfile
       requestBody:
         description: New navigation property
         content:
@@ -10649,7 +10650,7 @@ paths:
       tags:
         - security.cloudAppSecurityProfile
       summary: Get cloudAppSecurityProfiles from security
-      operationId: security_GetCloudAppSecurityProfiles
+      operationId: security_GetCloudAppSecurityProfile
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
@@ -10714,7 +10715,7 @@ paths:
       tags:
         - security.cloudAppSecurityProfile
       summary: Update the navigation property cloudAppSecurityProfiles in security
-      operationId: security_UpdateCloudAppSecurityProfiles
+      operationId: security_UpdateCloudAppSecurityProfile
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
@@ -10745,7 +10746,7 @@ paths:
       tags:
         - security.cloudAppSecurityProfile
       summary: Delete navigation property cloudAppSecurityProfiles for security
-      operationId: security_DeleteCloudAppSecurityProfiles
+      operationId: security_DeleteCloudAppSecurityProfile
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
@@ -10786,7 +10787,7 @@ paths:
       tags:
         - security.domainSecurityProfile
       summary: Get domainSecurityProfiles from security
-      operationId: security_ListDomainSecurityProfiles
+      operationId: security_ListDomainSecurityProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10885,7 +10886,7 @@ paths:
       tags:
         - security.domainSecurityProfile
       summary: Create new navigation property to domainSecurityProfiles for security
-      operationId: security_CreateDomainSecurityProfiles
+      operationId: security_CreateDomainSecurityProfile
       requestBody:
         description: New navigation property
         content:
@@ -10908,7 +10909,7 @@ paths:
       tags:
         - security.domainSecurityProfile
       summary: Get domainSecurityProfiles from security
-      operationId: security_GetDomainSecurityProfiles
+      operationId: security_GetDomainSecurityProfile
       parameters:
         - name: domainSecurityProfile-id
           in: path
@@ -10970,7 +10971,7 @@ paths:
       tags:
         - security.domainSecurityProfile
       summary: Update the navigation property domainSecurityProfiles in security
-      operationId: security_UpdateDomainSecurityProfiles
+      operationId: security_UpdateDomainSecurityProfile
       parameters:
         - name: domainSecurityProfile-id
           in: path
@@ -11001,7 +11002,7 @@ paths:
       tags:
         - security.domainSecurityProfile
       summary: Delete navigation property domainSecurityProfiles for security
-      operationId: security_DeleteDomainSecurityProfiles
+      operationId: security_DeleteDomainSecurityProfile
       parameters:
         - name: domainSecurityProfile-id
           in: path
@@ -11042,7 +11043,7 @@ paths:
       tags:
         - security.fileSecurityProfile
       summary: Get fileSecurityProfiles from security
-      operationId: security_ListFileSecurityProfiles
+      operationId: security_ListFileSecurityProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11147,7 +11148,7 @@ paths:
       tags:
         - security.fileSecurityProfile
       summary: Create new navigation property to fileSecurityProfiles for security
-      operationId: security_CreateFileSecurityProfiles
+      operationId: security_CreateFileSecurityProfile
       requestBody:
         description: New navigation property
         content:
@@ -11170,7 +11171,7 @@ paths:
       tags:
         - security.fileSecurityProfile
       summary: Get fileSecurityProfiles from security
-      operationId: security_GetFileSecurityProfiles
+      operationId: security_GetFileSecurityProfile
       parameters:
         - name: fileSecurityProfile-id
           in: path
@@ -11234,7 +11235,7 @@ paths:
       tags:
         - security.fileSecurityProfile
       summary: Update the navigation property fileSecurityProfiles in security
-      operationId: security_UpdateFileSecurityProfiles
+      operationId: security_UpdateFileSecurityProfile
       parameters:
         - name: fileSecurityProfile-id
           in: path
@@ -11265,7 +11266,7 @@ paths:
       tags:
         - security.fileSecurityProfile
       summary: Delete navigation property fileSecurityProfiles for security
-      operationId: security_DeleteFileSecurityProfiles
+      operationId: security_DeleteFileSecurityProfile
       parameters:
         - name: fileSecurityProfile-id
           in: path
@@ -11306,7 +11307,7 @@ paths:
       tags:
         - security.hostSecurityProfile
       summary: Get hostSecurityProfiles from security
-      operationId: security_ListHostSecurityProfiles
+      operationId: security_ListHostSecurityProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11417,7 +11418,7 @@ paths:
       tags:
         - security.hostSecurityProfile
       summary: Create new navigation property to hostSecurityProfiles for security
-      operationId: security_CreateHostSecurityProfiles
+      operationId: security_CreateHostSecurityProfile
       requestBody:
         description: New navigation property
         content:
@@ -11440,7 +11441,7 @@ paths:
       tags:
         - security.hostSecurityProfile
       summary: Get hostSecurityProfiles from security
-      operationId: security_GetHostSecurityProfiles
+      operationId: security_GetHostSecurityProfile
       parameters:
         - name: hostSecurityProfile-id
           in: path
@@ -11506,7 +11507,7 @@ paths:
       tags:
         - security.hostSecurityProfile
       summary: Update the navigation property hostSecurityProfiles in security
-      operationId: security_UpdateHostSecurityProfiles
+      operationId: security_UpdateHostSecurityProfile
       parameters:
         - name: hostSecurityProfile-id
           in: path
@@ -11537,7 +11538,7 @@ paths:
       tags:
         - security.hostSecurityProfile
       summary: Delete navigation property hostSecurityProfiles for security
-      operationId: security_DeleteHostSecurityProfiles
+      operationId: security_DeleteHostSecurityProfile
       parameters:
         - name: hostSecurityProfile-id
           in: path
@@ -11582,7 +11583,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-list-incidents?view=graph-rest-1.0
-      operationId: security_ListIncidents
+      operationId: security_ListIncident
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11692,7 +11693,7 @@ paths:
       tags:
         - security.incident
       summary: Create new navigation property to incidents for security
-      operationId: security_CreateIncidents
+      operationId: security_CreateIncident
       requestBody:
         description: New navigation property
         content:
@@ -11716,7 +11717,7 @@ paths:
         - security.incident
       summary: Get incidents from security
       description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
-      operationId: security_GetIncidents
+      operationId: security_GetIncident
       parameters:
         - name: incident-id
           in: path
@@ -11783,7 +11784,7 @@ paths:
       tags:
         - security.incident
       summary: Update the navigation property incidents in security
-      operationId: security_UpdateIncidents
+      operationId: security_UpdateIncident
       parameters:
         - name: incident-id
           in: path
@@ -11814,7 +11815,7 @@ paths:
       tags:
         - security.incident
       summary: Delete navigation property incidents for security
-      operationId: security_DeleteIncidents
+      operationId: security_DeleteIncident
       parameters:
         - name: incident-id
           in: path
@@ -11842,7 +11843,7 @@ paths:
         - security.incident
       summary: Get alerts from security
       description: The list of related alerts. Supports $expand.
-      operationId: security.incident_ListAlerts
+      operationId: security.incident_ListAlert
       parameters:
         - name: incident-id
           in: path
@@ -11996,7 +11997,7 @@ paths:
         - security.incident
       summary: Get alerts from security
       description: The list of related alerts. Supports $expand.
-      operationId: security.incident_GetAlerts
+      operationId: security.incident_GetAlert
       parameters:
         - name: incident-id
           in: path
@@ -12207,7 +12208,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-informationprotectionpolicysetting-get?view=graph-rest-1.0
-      operationId: security.informationProtection_GetLabelPolicySettings
+      operationId: security.informationProtection_GetLabelPolicySetting
       parameters:
         - name: $select
           in: query
@@ -12251,7 +12252,7 @@ paths:
       tags:
         - security.informationProtection
       summary: Update the navigation property labelPolicySettings in security
-      operationId: security.informationProtection_UpdateLabelPolicySettings
+      operationId: security.informationProtection_UpdateLabelPolicySetting
       requestBody:
         description: New navigation property values
         content:
@@ -12273,7 +12274,7 @@ paths:
       tags:
         - security.informationProtection
       summary: Delete navigation property labelPolicySettings for security
-      operationId: security.informationProtection_DeleteLabelPolicySettings
+      operationId: security.informationProtection_DeleteLabelPolicySetting
       parameters:
         - name: If-Match
           in: header
@@ -12296,7 +12297,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-informationprotection-list-sensitivitylabels?view=graph-rest-1.0
-      operationId: security.informationProtection_ListSensitivityLabels
+      operationId: security.informationProtection_ListSensitivityLabel
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12382,7 +12383,7 @@ paths:
       tags:
         - security.informationProtection
       summary: Create new navigation property to sensitivityLabels for security
-      operationId: security.informationProtection_CreateSensitivityLabels
+      operationId: security.informationProtection_CreateSensitivityLabel
       requestBody:
         description: New navigation property
         content:
@@ -12406,7 +12407,7 @@ paths:
         - security.informationProtection
       summary: Get sensitivityLabels from security
       description: Read the Microsoft Purview Information Protection labels for the user or organization.
-      operationId: security.informationProtection_GetSensitivityLabels
+      operationId: security.informationProtection_GetSensitivityLabel
       parameters:
         - name: sensitivityLabel-id
           in: path
@@ -12465,7 +12466,7 @@ paths:
       tags:
         - security.informationProtection
       summary: Update the navigation property sensitivityLabels in security
-      operationId: security.informationProtection_UpdateSensitivityLabels
+      operationId: security.informationProtection_UpdateSensitivityLabel
       parameters:
         - name: sensitivityLabel-id
           in: path
@@ -12496,7 +12497,7 @@ paths:
       tags:
         - security.informationProtection
       summary: Delete navigation property sensitivityLabels for security
-      operationId: security.informationProtection_DeleteSensitivityLabels
+      operationId: security.informationProtection_DeleteSensitivityLabel
       parameters:
         - name: sensitivityLabel-id
           in: path
@@ -12706,7 +12707,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateclassificationresults?view=graph-rest-1.0
-      operationId: security.informationProtection.sensitivityLabel_evaluateClassificationResults
+      operationId: security.informationProtection.sensitivityLabel_evaluateClassificationResult
       requestBody:
         description: Action parameters
         content:
@@ -12830,7 +12831,7 @@ paths:
       tags:
         - security.ipSecurityProfile
       summary: Get ipSecurityProfiles from security
-      operationId: security_ListIpSecurityProfiles
+      operationId: security_ListIpSecurityProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12926,7 +12927,7 @@ paths:
       tags:
         - security.ipSecurityProfile
       summary: Create new navigation property to ipSecurityProfiles for security
-      operationId: security_CreateIpSecurityProfiles
+      operationId: security_CreateIpSecurityProfile
       requestBody:
         description: New navigation property
         content:
@@ -12949,7 +12950,7 @@ paths:
       tags:
         - security.ipSecurityProfile
       summary: Get ipSecurityProfiles from security
-      operationId: security_GetIpSecurityProfiles
+      operationId: security_GetIpSecurityProfile
       parameters:
         - name: ipSecurityProfile-id
           in: path
@@ -13010,7 +13011,7 @@ paths:
       tags:
         - security.ipSecurityProfile
       summary: Update the navigation property ipSecurityProfiles in security
-      operationId: security_UpdateIpSecurityProfiles
+      operationId: security_UpdateIpSecurityProfile
       parameters:
         - name: ipSecurityProfile-id
           in: path
@@ -13041,7 +13042,7 @@ paths:
       tags:
         - security.ipSecurityProfile
       summary: Delete navigation property ipSecurityProfiles for security
-      operationId: security_DeleteIpSecurityProfiles
+      operationId: security_DeleteIpSecurityProfile
       parameters:
         - name: ipSecurityProfile-id
           in: path
@@ -13082,7 +13083,7 @@ paths:
       tags:
         - security.labelsRoot
       summary: Get labels from security
-      operationId: security_GetLabels
+      operationId: security_GetLabel
       parameters:
         - name: $select
           in: query
@@ -13124,7 +13125,7 @@ paths:
       tags:
         - security.labelsRoot
       summary: Update the navigation property labels in security
-      operationId: security_UpdateLabels
+      operationId: security_UpdateLabel
       requestBody:
         description: New navigation property values
         content:
@@ -13146,7 +13147,7 @@ paths:
       tags:
         - security.labelsRoot
       summary: Delete navigation property labels for security
-      operationId: security_DeleteLabels
+      operationId: security_DeleteLabel
       parameters:
         - name: If-Match
           in: header
@@ -13169,7 +13170,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-retentionlabel-list?view=graph-rest-1.0
-      operationId: security.label_ListRetentionLabels
+      operationId: security.label_ListRetentionLabel
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13276,7 +13277,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-retentionlabel-post?view=graph-rest-1.0
-      operationId: security.label_CreateRetentionLabels
+      operationId: security.label_CreateRetentionLabel
       requestBody:
         description: New navigation property
         content:
@@ -13299,7 +13300,7 @@ paths:
       tags:
         - security.labelsRoot
       summary: Get retentionLabels from security
-      operationId: security.label_GetRetentionLabels
+      operationId: security.label_GetRetentionLabel
       parameters:
         - name: retentionLabel-id
           in: path
@@ -13365,7 +13366,7 @@ paths:
       tags:
         - security.labelsRoot
       summary: Update the navigation property retentionLabels in security
-      operationId: security.label_UpdateRetentionLabels
+      operationId: security.label_UpdateRetentionLabel
       parameters:
         - name: retentionLabel-id
           in: path
@@ -13396,7 +13397,7 @@ paths:
       tags:
         - security.labelsRoot
       summary: Delete navigation property retentionLabels for security
-      operationId: security.label_DeleteRetentionLabels
+      operationId: security.label_DeleteRetentionLabel
       parameters:
         - name: retentionLabel-id
           in: path
@@ -13424,7 +13425,7 @@ paths:
         - security.labelsRoot
       summary: Get dispositionReviewStages from security
       description: Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
-      operationId: security.label.retentionLabel_ListDispositionReviewStages
+      operationId: security.label.retentionLabel_ListDispositionReviewStage
       parameters:
         - name: retentionLabel-id
           in: path
@@ -13498,7 +13499,7 @@ paths:
       tags:
         - security.labelsRoot
       summary: Create new navigation property to dispositionReviewStages for security
-      operationId: security.label.retentionLabel_CreateDispositionReviewStages
+      operationId: security.label.retentionLabel_CreateDispositionReviewStage
       parameters:
         - name: retentionLabel-id
           in: path
@@ -13531,7 +13532,7 @@ paths:
         - security.labelsRoot
       summary: Get dispositionReviewStages from security
       description: Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
-      operationId: security.label.retentionLabel_GetDispositionReviewStages
+      operationId: security.label.retentionLabel_GetDispositionReviewStage
       parameters:
         - name: retentionLabel-id
           in: path
@@ -13590,7 +13591,7 @@ paths:
       tags:
         - security.labelsRoot
       summary: Update the navigation property dispositionReviewStages in security
-      operationId: security.label.retentionLabel_UpdateDispositionReviewStages
+      operationId: security.label.retentionLabel_UpdateDispositionReviewStage
       parameters:
         - name: retentionLabel-id
           in: path
@@ -13629,7 +13630,7 @@ paths:
       tags:
         - security.labelsRoot
       summary: Delete navigation property dispositionReviewStages for security
-      operationId: security.label.retentionLabel_DeleteDispositionReviewStages
+      operationId: security.label.retentionLabel_DeleteDispositionReviewStage
       parameters:
         - name: retentionLabel-id
           in: path
@@ -13784,7 +13785,7 @@ paths:
       tags:
         - security.providerTenantSetting
       summary: Get providerTenantSettings from security
-      operationId: security_ListProviderTenantSettings
+      operationId: security_ListProviderTenantSetting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13856,7 +13857,7 @@ paths:
       tags:
         - security.providerTenantSetting
       summary: Create new navigation property to providerTenantSettings for security
-      operationId: security_CreateProviderTenantSettings
+      operationId: security_CreateProviderTenantSetting
       requestBody:
         description: New navigation property
         content:
@@ -13879,7 +13880,7 @@ paths:
       tags:
         - security.providerTenantSetting
       summary: Get providerTenantSettings from security
-      operationId: security_GetProviderTenantSettings
+      operationId: security_GetProviderTenantSetting
       parameters:
         - name: providerTenantSetting-id
           in: path
@@ -13932,7 +13933,7 @@ paths:
       tags:
         - security.providerTenantSetting
       summary: Update the navigation property providerTenantSettings in security
-      operationId: security_UpdateProviderTenantSettings
+      operationId: security_UpdateProviderTenantSetting
       parameters:
         - name: providerTenantSetting-id
           in: path
@@ -13963,7 +13964,7 @@ paths:
       tags:
         - security.providerTenantSetting
       summary: Delete navigation property providerTenantSettings for security
-      operationId: security_DeleteProviderTenantSettings
+      operationId: security_DeleteProviderTenantSetting
       parameters:
         - name: providerTenantSetting-id
           in: path
@@ -14008,7 +14009,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/securescorecontrolprofiles-list?view=graph-rest-1.0
-      operationId: security_ListSecureScoreControlProfiles
+      operationId: security_ListSecureScoreControlProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14122,7 +14123,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Create new navigation property to secureScoreControlProfiles for security
-      operationId: security_CreateSecureScoreControlProfiles
+      operationId: security_CreateSecureScoreControlProfile
       requestBody:
         description: New navigation property
         content:
@@ -14145,7 +14146,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Get secureScoreControlProfiles from security
-      operationId: security_GetSecureScoreControlProfiles
+      operationId: security_GetSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -14212,7 +14213,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Update the navigation property secureScoreControlProfiles in security
-      operationId: security_UpdateSecureScoreControlProfiles
+      operationId: security_UpdateSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -14243,7 +14244,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Delete navigation property secureScoreControlProfiles for security
-      operationId: security_DeleteSecureScoreControlProfiles
+      operationId: security_DeleteSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -14288,7 +14289,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/securescores-list?view=graph-rest-1.0
-      operationId: security_ListSecureScores
+      operationId: security_ListSecureScore
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14375,7 +14376,7 @@ paths:
       tags:
         - security.secureScore
       summary: Create new navigation property to secureScores for security
-      operationId: security_CreateSecureScores
+      operationId: security_CreateSecureScore
       requestBody:
         description: New navigation property
         content:
@@ -14399,7 +14400,7 @@ paths:
         - security.secureScore
       summary: Get secureScores from security
       description: Measurements of tenants’ security posture to help protect them from threats.
-      operationId: security_GetSecureScores
+      operationId: security_GetSecureScore
       parameters:
         - name: secureScore-id
           in: path
@@ -14457,7 +14458,7 @@ paths:
       tags:
         - security.secureScore
       summary: Update the navigation property secureScores in security
-      operationId: security_UpdateSecureScores
+      operationId: security_UpdateSecureScore
       parameters:
         - name: secureScore-id
           in: path
@@ -14488,7 +14489,7 @@ paths:
       tags:
         - security.secureScore
       summary: Delete navigation property secureScores for security
-      operationId: security_DeleteSecureScores
+      operationId: security_DeleteSecureScore
       parameters:
         - name: secureScore-id
           in: path
@@ -14533,7 +14534,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/securityactions-list?view=graph-rest-1.0
-      operationId: security_ListSecurityActions
+      operationId: security_ListSecurityAction
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14636,7 +14637,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/securityactions-post?view=graph-rest-1.0
-      operationId: security_CreateSecurityActions
+      operationId: security_CreateSecurityAction
       requestBody:
         description: New navigation property
         content:
@@ -14659,7 +14660,7 @@ paths:
       tags:
         - security.securityAction
       summary: Get securityActions from security
-      operationId: security_GetSecurityActions
+      operationId: security_GetSecurityAction
       parameters:
         - name: securityAction-id
           in: path
@@ -14721,7 +14722,7 @@ paths:
       tags:
         - security.securityAction
       summary: Update the navigation property securityActions in security
-      operationId: security_UpdateSecurityActions
+      operationId: security_UpdateSecurityAction
       parameters:
         - name: securityAction-id
           in: path
@@ -14752,7 +14753,7 @@ paths:
       tags:
         - security.securityAction
       summary: Delete navigation property securityActions for security
-      operationId: security_DeleteSecurityActions
+      operationId: security_DeleteSecurityAction
       parameters:
         - name: securityAction-id
           in: path
@@ -14818,7 +14819,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get subjectRightsRequests from security
-      operationId: security_ListSubjectRightsRequests
+      operationId: security_ListSubjectRightsRequest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14955,7 +14956,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Create new navigation property to subjectRightsRequests for security
-      operationId: security_CreateSubjectRightsRequests
+      operationId: security_CreateSubjectRightsRequest
       requestBody:
         description: New navigation property
         content:
@@ -14978,7 +14979,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get subjectRightsRequests from security
-      operationId: security_GetSubjectRightsRequests
+      operationId: security_GetSubjectRightsRequest
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -15058,7 +15059,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Update the navigation property subjectRightsRequests in security
-      operationId: security_UpdateSubjectRightsRequests
+      operationId: security_UpdateSubjectRightsRequest
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -15089,7 +15090,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Delete navigation property subjectRightsRequests for security
-      operationId: security_DeleteSubjectRightsRequests
+      operationId: security_DeleteSubjectRightsRequest
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -15116,7 +15117,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get approvers from security
-      operationId: security.subjectRightsRequest_ListApprovers
+      operationId: security.subjectRightsRequest_ListApprover
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -15263,6 +15264,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -15377,6 +15380,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -15559,7 +15563,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get approvers from security
-      operationId: security.subjectRightsRequest_GetApprovers
+      operationId: security.subjectRightsRequest_GetApprover
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -15648,6 +15652,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -15826,6 +15831,122 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/security/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}/mailboxSettings':
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: security.subjectRightsRequest.approver_GetMailboxSetting
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+    patch:
+      tags:
+        - security.subjectRightsRequest
+      summary: Update property mailboxSettings value.
+      operationId: security.subjectRightsRequest.approver_UpdateMailboxSetting
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/approvers/$count':
     get:
       tags:
@@ -15859,7 +15980,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get collaborators from security
-      operationId: security.subjectRightsRequest_ListCollaborators
+      operationId: security.subjectRightsRequest_ListCollaborator
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -16006,6 +16127,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -16120,6 +16243,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -16302,7 +16426,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get collaborators from security
-      operationId: security.subjectRightsRequest_GetCollaborators
+      operationId: security.subjectRightsRequest_GetCollaborator
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -16391,6 +16515,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -16569,6 +16694,122 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}/mailboxSettings':
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: security.subjectRightsRequest.collaborator_GetMailboxSetting
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+    patch:
+      tags:
+        - security.subjectRightsRequest
+      summary: Update property mailboxSettings value.
+      operationId: security.subjectRightsRequest.collaborator_UpdateMailboxSetting
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/$count':
     get:
       tags:
@@ -16670,7 +16911,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0
-      operationId: security.subjectRightsRequest_ListNotes
+      operationId: security.subjectRightsRequest_ListNote
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -16748,7 +16989,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0
-      operationId: security.subjectRightsRequest_CreateNotes
+      operationId: security.subjectRightsRequest_CreateNote
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -16781,7 +17022,7 @@ paths:
         - security.subjectRightsRequest
       summary: Get notes from security
       description: List of notes associated with the request.
-      operationId: security.subjectRightsRequest_GetNotes
+      operationId: security.subjectRightsRequest_GetNote
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -16840,7 +17081,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Update the navigation property notes in security
-      operationId: security.subjectRightsRequest_UpdateNotes
+      operationId: security.subjectRightsRequest_UpdateNote
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -16879,7 +17120,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Delete navigation property notes for security
-      operationId: security.subjectRightsRequest_DeleteNotes
+      operationId: security.subjectRightsRequest_DeleteNote
       parameters:
         - name: subjectRightsRequest-id
           in: path
@@ -17149,7 +17390,7 @@ paths:
         - security.threatIntelligence
       summary: Get articleIndicators from security
       description: 'Refers to indicators of threat or compromise highlighted in an microsoft.graph.security.article.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_ListArticleIndicators
+      operationId: security.threatIntelligence_ListArticleIndicator
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -17211,7 +17452,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to articleIndicators for security
-      operationId: security.threatIntelligence_CreateArticleIndicators
+      operationId: security.threatIntelligence_CreateArticleIndicator
       requestBody:
         description: New navigation property
         content:
@@ -17235,7 +17476,7 @@ paths:
         - security.threatIntelligence
       summary: Get articleIndicators from security
       description: 'Refers to indicators of threat or compromise highlighted in an microsoft.graph.security.article.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_GetArticleIndicators
+      operationId: security.threatIntelligence_GetArticleIndicator
       parameters:
         - name: articleIndicator-id
           in: path
@@ -17286,7 +17527,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property articleIndicators in security
-      operationId: security.threatIntelligence_UpdateArticleIndicators
+      operationId: security.threatIntelligence_UpdateArticleIndicator
       parameters:
         - name: articleIndicator-id
           in: path
@@ -17317,7 +17558,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property articleIndicators for security
-      operationId: security.threatIntelligence_DeleteArticleIndicators
+      operationId: security.threatIntelligence_DeleteArticleIndicator
       parameters:
         - name: articleIndicator-id
           in: path
@@ -17362,7 +17603,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-article-list?view=graph-rest-1.0
-      operationId: security.threatIntelligence_ListArticles
+      operationId: security.threatIntelligence_ListArticle
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -17445,7 +17686,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to articles for security
-      operationId: security.threatIntelligence_CreateArticles
+      operationId: security.threatIntelligence_CreateArticle
       requestBody:
         description: New navigation property
         content:
@@ -17469,7 +17710,7 @@ paths:
         - security.threatIntelligence
       summary: Get articles from security
       description: A list of article objects.
-      operationId: security.threatIntelligence_GetArticles
+      operationId: security.threatIntelligence_GetArticle
       parameters:
         - name: article-id
           in: path
@@ -17527,7 +17768,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property articles in security
-      operationId: security.threatIntelligence_UpdateArticles
+      operationId: security.threatIntelligence_UpdateArticle
       parameters:
         - name: article-id
           in: path
@@ -17558,7 +17799,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property articles for security
-      operationId: security.threatIntelligence_DeleteArticles
+      operationId: security.threatIntelligence_DeleteArticle
       parameters:
         - name: article-id
           in: path
@@ -17589,7 +17830,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-article-list-indicators?view=graph-rest-1.0
-      operationId: security.threatIntelligence.article_ListIndicators
+      operationId: security.threatIntelligence.article_ListIndicator
       parameters:
         - name: article-id
           in: path
@@ -17661,7 +17902,7 @@ paths:
         - security.threatIntelligence
       summary: Get indicators from security
       description: Indicators related to this article.
-      operationId: security.threatIntelligence.article_GetIndicators
+      operationId: security.threatIntelligence.article_GetIndicator
       parameters:
         - name: article-id
           in: path
@@ -17758,7 +17999,7 @@ paths:
         - security.threatIntelligence
       summary: Get hostComponents from security
       description: 'Retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_ListHostComponents
+      operationId: security.threatIntelligence_ListHostComponent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -17832,7 +18073,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to hostComponents for security
-      operationId: security.threatIntelligence_CreateHostComponents
+      operationId: security.threatIntelligence_CreateHostComponent
       requestBody:
         description: New navigation property
         content:
@@ -17856,7 +18097,7 @@ paths:
         - security.threatIntelligence
       summary: Get hostComponents from security
       description: 'Retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_GetHostComponents
+      operationId: security.threatIntelligence_GetHostComponent
       parameters:
         - name: hostComponent-id
           in: path
@@ -17911,7 +18152,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property hostComponents in security
-      operationId: security.threatIntelligence_UpdateHostComponents
+      operationId: security.threatIntelligence_UpdateHostComponent
       parameters:
         - name: hostComponent-id
           in: path
@@ -17942,7 +18183,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property hostComponents for security
-      operationId: security.threatIntelligence_DeleteHostComponents
+      operationId: security.threatIntelligence_DeleteHostComponent
       parameters:
         - name: hostComponent-id
           in: path
@@ -18048,7 +18289,7 @@ paths:
         - security.threatIntelligence
       summary: Get hostCookies from security
       description: 'Retrieve details about microsoft.graph.security.hostCookie objects.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_ListHostCookies
+      operationId: security.threatIntelligence_ListHostCookie
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -18119,7 +18360,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to hostCookies for security
-      operationId: security.threatIntelligence_CreateHostCookies
+      operationId: security.threatIntelligence_CreateHostCookie
       requestBody:
         description: New navigation property
         content:
@@ -18143,7 +18384,7 @@ paths:
         - security.threatIntelligence
       summary: Get hostCookies from security
       description: 'Retrieve details about microsoft.graph.security.hostCookie objects.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_GetHostCookies
+      operationId: security.threatIntelligence_GetHostCookie
       parameters:
         - name: hostCookie-id
           in: path
@@ -18197,7 +18438,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property hostCookies in security
-      operationId: security.threatIntelligence_UpdateHostCookies
+      operationId: security.threatIntelligence_UpdateHostCookie
       parameters:
         - name: hostCookie-id
           in: path
@@ -18228,7 +18469,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property hostCookies for security
-      operationId: security.threatIntelligence_DeleteHostCookies
+      operationId: security.threatIntelligence_DeleteHostCookie
       parameters:
         - name: hostCookie-id
           in: path
@@ -18334,7 +18575,7 @@ paths:
         - security.threatIntelligence
       summary: Get hosts from security
       description: 'Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_ListHosts
+      operationId: security.threatIntelligence_ListHost
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -18409,7 +18650,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to hosts for security
-      operationId: security.threatIntelligence_CreateHosts
+      operationId: security.threatIntelligence_CreateHost
       requestBody:
         description: New navigation property
         content:
@@ -18433,7 +18674,7 @@ paths:
         - security.threatIntelligence
       summary: Get hosts from security
       description: 'Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_GetHosts
+      operationId: security.threatIntelligence_GetHost
       parameters:
         - name: host-id
           in: path
@@ -18495,7 +18736,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property hosts in security
-      operationId: security.threatIntelligence_UpdateHosts
+      operationId: security.threatIntelligence_UpdateHost
       parameters:
         - name: host-id
           in: path
@@ -18526,7 +18767,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property hosts for security
-      operationId: security.threatIntelligence_DeleteHosts
+      operationId: security.threatIntelligence_DeleteHost
       parameters:
         - name: host-id
           in: path
@@ -18557,7 +18798,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-host-list-components?view=graph-rest-1.0
-      operationId: security.threatIntelligence.host_ListComponents
+      operationId: security.threatIntelligence.host_ListComponent
       parameters:
         - name: host-id
           in: path
@@ -18641,7 +18882,7 @@ paths:
         - security.threatIntelligence
       summary: Get components from security
       description: The hostComponents that are associated with this host.
-      operationId: security.threatIntelligence.host_GetComponents
+      operationId: security.threatIntelligence.host_GetComponent
       parameters:
         - name: host-id
           in: path
@@ -18731,7 +18972,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-host-list-cookies?view=graph-rest-1.0
-      operationId: security.threatIntelligence.host_ListCookies
+      operationId: security.threatIntelligence.host_ListCookie
       parameters:
         - name: host-id
           in: path
@@ -18812,7 +19053,7 @@ paths:
         - security.threatIntelligence
       summary: Get cookies from security
       description: The hostCookies that are associated with this host.
-      operationId: security.threatIntelligence.host_GetCookies
+      operationId: security.threatIntelligence.host_GetCookie
       parameters:
         - name: host-id
           in: path
@@ -18901,7 +19142,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-host-list-passivedns?view=graph-rest-1.0
-      operationId: security.threatIntelligence.host_ListPassiveDns
+      operationId: security.threatIntelligence.host_ListPassiveDn
       parameters:
         - name: host-id
           in: path
@@ -18984,7 +19225,7 @@ paths:
         - security.threatIntelligence
       summary: Get passiveDns from security
       description: Passive DNS retrieval about this host.
-      operationId: security.threatIntelligence.host_GetPassiveDns
+      operationId: security.threatIntelligence.host_GetPassiveDn
       parameters:
         - name: host-id
           in: path
@@ -19362,7 +19603,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-host-list-trackers?view=graph-rest-1.0
-      operationId: security.threatIntelligence.host_ListTrackers
+      operationId: security.threatIntelligence.host_ListTracker
       parameters:
         - name: host-id
           in: path
@@ -19443,7 +19684,7 @@ paths:
         - security.threatIntelligence
       summary: Get trackers from security
       description: The hostTrackers that are associated with this host.
-      operationId: security.threatIntelligence.host_GetTrackers
+      operationId: security.threatIntelligence.host_GetTracker
       parameters:
         - name: host-id
           in: path
@@ -19543,7 +19784,7 @@ paths:
         - security.threatIntelligence
       summary: Get hostTrackers from security
       description: 'Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_ListHostTrackers
+      operationId: security.threatIntelligence_ListHostTracker
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -19614,7 +19855,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to hostTrackers for security
-      operationId: security.threatIntelligence_CreateHostTrackers
+      operationId: security.threatIntelligence_CreateHostTracker
       requestBody:
         description: New navigation property
         content:
@@ -19638,7 +19879,7 @@ paths:
         - security.threatIntelligence
       summary: Get hostTrackers from security
       description: 'Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_GetHostTrackers
+      operationId: security.threatIntelligence_GetHostTracker
       parameters:
         - name: hostTracker-id
           in: path
@@ -19692,7 +19933,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property hostTrackers in security
-      operationId: security.threatIntelligence_UpdateHostTrackers
+      operationId: security.threatIntelligence_UpdateHostTracker
       parameters:
         - name: hostTracker-id
           in: path
@@ -19723,7 +19964,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property hostTrackers for security
-      operationId: security.threatIntelligence_DeleteHostTrackers
+      operationId: security.threatIntelligence_DeleteHostTracker
       parameters:
         - name: hostTracker-id
           in: path
@@ -19828,7 +20069,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get intelligenceProfileIndicators from security
-      operationId: security.threatIntelligence_ListIntelligenceProfileIndicators
+      operationId: security.threatIntelligence_ListIntelligenceProfileIndicator
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -19896,7 +20137,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to intelligenceProfileIndicators for security
-      operationId: security.threatIntelligence_CreateIntelligenceProfileIndicators
+      operationId: security.threatIntelligence_CreateIntelligenceProfileIndicator
       requestBody:
         description: New navigation property
         content:
@@ -19919,7 +20160,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get intelligenceProfileIndicators from security
-      operationId: security.threatIntelligence_GetIntelligenceProfileIndicators
+      operationId: security.threatIntelligence_GetIntelligenceProfileIndicator
       parameters:
         - name: intelligenceProfileIndicator-id
           in: path
@@ -19972,7 +20213,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property intelligenceProfileIndicators in security
-      operationId: security.threatIntelligence_UpdateIntelligenceProfileIndicators
+      operationId: security.threatIntelligence_UpdateIntelligenceProfileIndicator
       parameters:
         - name: intelligenceProfileIndicator-id
           in: path
@@ -20003,7 +20244,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property intelligenceProfileIndicators for security
-      operationId: security.threatIntelligence_DeleteIntelligenceProfileIndicators
+      operationId: security.threatIntelligence_DeleteIntelligenceProfileIndicator
       parameters:
         - name: intelligenceProfileIndicator-id
           in: path
@@ -20048,7 +20289,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-intelligenceprofile-list?view=graph-rest-1.0
-      operationId: security.threatIntelligence_ListIntelProfiles
+      operationId: security.threatIntelligence_ListIntelProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -20134,7 +20375,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to intelProfiles for security
-      operationId: security.threatIntelligence_CreateIntelProfiles
+      operationId: security.threatIntelligence_CreateIntelProfile
       requestBody:
         description: New navigation property
         content:
@@ -20158,7 +20399,7 @@ paths:
         - security.threatIntelligence
       summary: Get intelProfiles from security
       description: A list of intelligenceProfile objects.
-      operationId: security.threatIntelligence_GetIntelProfiles
+      operationId: security.threatIntelligence_GetIntelProfile
       parameters:
         - name: intelligenceProfile-id
           in: path
@@ -20217,7 +20458,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property intelProfiles in security
-      operationId: security.threatIntelligence_UpdateIntelProfiles
+      operationId: security.threatIntelligence_UpdateIntelProfile
       parameters:
         - name: intelligenceProfile-id
           in: path
@@ -20248,7 +20489,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property intelProfiles for security
-      operationId: security.threatIntelligence_DeleteIntelProfiles
+      operationId: security.threatIntelligence_DeleteIntelProfile
       parameters:
         - name: intelligenceProfile-id
           in: path
@@ -20279,7 +20520,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-intelligenceprofile-list-indicators?view=graph-rest-1.0
-      operationId: security.threatIntelligence.intelProfile_ListIndicators
+      operationId: security.threatIntelligence.intelProfile_ListIndicator
       parameters:
         - name: intelligenceProfile-id
           in: path
@@ -20357,7 +20598,7 @@ paths:
         - security.threatIntelligence
       summary: Get indicators from security
       description: Includes an assemblage of high-fidelity network indicators of compromise.
-      operationId: security.threatIntelligence.intelProfile_GetIndicators
+      operationId: security.threatIntelligence.intelProfile_GetIndicator
       parameters:
         - name: intelligenceProfile-id
           in: path
@@ -20456,7 +20697,7 @@ paths:
         - security.threatIntelligence
       summary: Get passiveDnsRecords from security
       description: 'Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_ListPassiveDnsRecords
+      operationId: security.threatIntelligence_ListPassiveDnsRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -20529,7 +20770,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to passiveDnsRecords for security
-      operationId: security.threatIntelligence_CreatePassiveDnsRecords
+      operationId: security.threatIntelligence_CreatePassiveDnsRecord
       requestBody:
         description: New navigation property
         content:
@@ -20553,7 +20794,7 @@ paths:
         - security.threatIntelligence
       summary: Get passiveDnsRecords from security
       description: 'Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_GetPassiveDnsRecords
+      operationId: security.threatIntelligence_GetPassiveDnsRecord
       parameters:
         - name: passiveDnsRecord-id
           in: path
@@ -20609,7 +20850,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property passiveDnsRecords in security
-      operationId: security.threatIntelligence_UpdatePassiveDnsRecords
+      operationId: security.threatIntelligence_UpdatePassiveDnsRecord
       parameters:
         - name: passiveDnsRecord-id
           in: path
@@ -20640,7 +20881,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property passiveDnsRecords for security
-      operationId: security.threatIntelligence_DeletePassiveDnsRecords
+      operationId: security.threatIntelligence_DeletePassiveDnsRecord
       parameters:
         - name: passiveDnsRecord-id
           in: path
@@ -20796,7 +21037,7 @@ paths:
         - security.threatIntelligence
       summary: Get vulnerabilities from security
       description: 'Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_ListVulnerabilities
+      operationId: security.threatIntelligence_ListVulnerability
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -20902,7 +21143,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to vulnerabilities for security
-      operationId: security.threatIntelligence_CreateVulnerabilities
+      operationId: security.threatIntelligence_CreateVulnerability
       requestBody:
         description: New navigation property
         content:
@@ -20926,7 +21167,7 @@ paths:
         - security.threatIntelligence
       summary: Get vulnerabilities from security
       description: 'Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.'
-      operationId: security.threatIntelligence_GetVulnerabilities
+      operationId: security.threatIntelligence_GetVulnerability
       parameters:
         - name: vulnerability-id
           in: path
@@ -20993,7 +21234,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property vulnerabilities in security
-      operationId: security.threatIntelligence_UpdateVulnerabilities
+      operationId: security.threatIntelligence_UpdateVulnerability
       parameters:
         - name: vulnerability-id
           in: path
@@ -21024,7 +21265,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property vulnerabilities for security
-      operationId: security.threatIntelligence_DeleteVulnerabilities
+      operationId: security.threatIntelligence_DeleteVulnerability
       parameters:
         - name: vulnerability-id
           in: path
@@ -21052,7 +21293,7 @@ paths:
         - security.threatIntelligence
       summary: Get articles from security
       description: Articles related to this vulnerability.
-      operationId: security.threatIntelligence.vulnerability_ListArticles
+      operationId: security.threatIntelligence.vulnerability_ListArticle
       parameters:
         - name: vulnerability-id
           in: path
@@ -21145,7 +21386,7 @@ paths:
         - security.threatIntelligence
       summary: Get articles from security
       description: Articles related to this vulnerability.
-      operationId: security.threatIntelligence.vulnerability_GetArticles
+      operationId: security.threatIntelligence.vulnerability_GetArticle
       parameters:
         - name: vulnerability-id
           in: path
@@ -21238,7 +21479,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0
-      operationId: security.threatIntelligence.vulnerability_ListComponents
+      operationId: security.threatIntelligence.vulnerability_ListComponent
       parameters:
         - name: vulnerability-id
           in: path
@@ -21306,7 +21547,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Create new navigation property to components for security
-      operationId: security.threatIntelligence.vulnerability_CreateComponents
+      operationId: security.threatIntelligence.vulnerability_CreateComponent
       parameters:
         - name: vulnerability-id
           in: path
@@ -21339,7 +21580,7 @@ paths:
         - security.threatIntelligence
       summary: Get components from security
       description: Components related to this vulnerability article.
-      operationId: security.threatIntelligence.vulnerability_GetComponents
+      operationId: security.threatIntelligence.vulnerability_GetComponent
       parameters:
         - name: vulnerability-id
           in: path
@@ -21396,7 +21637,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Update the navigation property components in security
-      operationId: security.threatIntelligence.vulnerability_UpdateComponents
+      operationId: security.threatIntelligence.vulnerability_UpdateComponent
       parameters:
         - name: vulnerability-id
           in: path
@@ -21435,7 +21676,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Delete navigation property components for security
-      operationId: security.threatIntelligence.vulnerability_DeleteComponents
+      operationId: security.threatIntelligence.vulnerability_DeleteComponent
       parameters:
         - name: vulnerability-id
           in: path
@@ -21600,7 +21841,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-emailthreatsubmission-list?view=graph-rest-1.0
-      operationId: security.threatSubmission_ListEmailThreats
+      operationId: security.threatSubmission_ListEmailThreat
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -21718,7 +21959,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-emailthreatsubmission-post-emailthreats?view=graph-rest-1.0
-      operationId: security.threatSubmission_CreateEmailThreats
+      operationId: security.threatSubmission_CreateEmailThreat
       requestBody:
         description: New navigation property
         content:
@@ -21741,7 +21982,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Get emailThreats from security
-      operationId: security.threatSubmission_GetEmailThreats
+      operationId: security.threatSubmission_GetEmailThreat
       parameters:
         - name: emailThreatSubmission-id
           in: path
@@ -21808,7 +22049,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Update the navigation property emailThreats in security
-      operationId: security.threatSubmission_UpdateEmailThreats
+      operationId: security.threatSubmission_UpdateEmailThreat
       parameters:
         - name: emailThreatSubmission-id
           in: path
@@ -21839,7 +22080,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Delete navigation property emailThreats for security
-      operationId: security.threatSubmission_DeleteEmailThreats
+      operationId: security.threatSubmission_DeleteEmailThreat
       parameters:
         - name: emailThreatSubmission-id
           in: path
@@ -21884,7 +22125,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-list?view=graph-rest-1.0
-      operationId: security.threatSubmission_ListEmailThreatSubmissionPolicies
+      operationId: security.threatSubmission_ListEmailThreatSubmissionPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -21980,7 +22221,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Create new navigation property to emailThreatSubmissionPolicies for security
-      operationId: security.threatSubmission_CreateEmailThreatSubmissionPolicies
+      operationId: security.threatSubmission_CreateEmailThreatSubmissionPolicy
       requestBody:
         description: New navigation property
         content:
@@ -22003,7 +22244,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Get emailThreatSubmissionPolicies from security
-      operationId: security.threatSubmission_GetEmailThreatSubmissionPolicies
+      operationId: security.threatSubmission_GetEmailThreatSubmissionPolicy
       parameters:
         - name: emailThreatSubmissionPolicy-id
           in: path
@@ -22064,7 +22305,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Update the navigation property emailThreatSubmissionPolicies in security
-      operationId: security.threatSubmission_UpdateEmailThreatSubmissionPolicies
+      operationId: security.threatSubmission_UpdateEmailThreatSubmissionPolicy
       parameters:
         - name: emailThreatSubmissionPolicy-id
           in: path
@@ -22095,7 +22336,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Delete navigation property emailThreatSubmissionPolicies for security
-      operationId: security.threatSubmission_DeleteEmailThreatSubmissionPolicies
+      operationId: security.threatSubmission_DeleteEmailThreatSubmissionPolicy
       parameters:
         - name: emailThreatSubmissionPolicy-id
           in: path
@@ -22140,7 +22381,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-filethreatsubmission-list?view=graph-rest-1.0
-      operationId: security.threatSubmission_ListFileThreats
+      operationId: security.threatSubmission_ListFileThreat
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -22230,7 +22471,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Create new navigation property to fileThreats for security
-      operationId: security.threatSubmission_CreateFileThreats
+      operationId: security.threatSubmission_CreateFileThreat
       requestBody:
         description: New navigation property
         content:
@@ -22253,7 +22494,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Get fileThreats from security
-      operationId: security.threatSubmission_GetFileThreats
+      operationId: security.threatSubmission_GetFileThreat
       parameters:
         - name: fileThreatSubmission-id
           in: path
@@ -22312,7 +22553,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Update the navigation property fileThreats in security
-      operationId: security.threatSubmission_UpdateFileThreats
+      operationId: security.threatSubmission_UpdateFileThreat
       parameters:
         - name: fileThreatSubmission-id
           in: path
@@ -22343,7 +22584,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Delete navigation property fileThreats for security
-      operationId: security.threatSubmission_DeleteFileThreats
+      operationId: security.threatSubmission_DeleteFileThreat
       parameters:
         - name: fileThreatSubmission-id
           in: path
@@ -22388,7 +22629,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-urlthreatsubmission-list?view=graph-rest-1.0
-      operationId: security.threatSubmission_ListUrlThreats
+      operationId: security.threatSubmission_ListUrlThreat
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -22482,7 +22723,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-urlthreatsubmission-post-urlthreats?view=graph-rest-1.0
-      operationId: security.threatSubmission_CreateUrlThreats
+      operationId: security.threatSubmission_CreateUrlThreat
       requestBody:
         description: New navigation property
         content:
@@ -22505,7 +22746,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Get urlThreats from security
-      operationId: security.threatSubmission_GetUrlThreats
+      operationId: security.threatSubmission_GetUrlThreat
       parameters:
         - name: urlThreatSubmission-id
           in: path
@@ -22564,7 +22805,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Update the navigation property urlThreats in security
-      operationId: security.threatSubmission_UpdateUrlThreats
+      operationId: security.threatSubmission_UpdateUrlThreat
       parameters:
         - name: urlThreatSubmission-id
           in: path
@@ -22595,7 +22836,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Delete navigation property urlThreats for security
-      operationId: security.threatSubmission_DeleteUrlThreats
+      operationId: security.threatSubmission_DeleteUrlThreat
       parameters:
         - name: urlThreatSubmission-id
           in: path
@@ -22640,7 +22881,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/tiindicators-list?view=graph-rest-1.0
-      operationId: security_ListTiIndicators
+      operationId: security_ListTiIndicator
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -22875,7 +23116,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/tiindicators-post?view=graph-rest-1.0
-      operationId: security_CreateTiIndicators
+      operationId: security_CreateTiIndicator
       requestBody:
         description: New navigation property
         content:
@@ -22898,7 +23139,7 @@ paths:
       tags:
         - security.tiIndicator
       summary: Get tiIndicators from security
-      operationId: security_GetTiIndicators
+      operationId: security_GetTiIndicator
       parameters:
         - name: tiIndicator-id
           in: path
@@ -23004,7 +23245,7 @@ paths:
       tags:
         - security.tiIndicator
       summary: Update the navigation property tiIndicators in security
-      operationId: security_UpdateTiIndicators
+      operationId: security_UpdateTiIndicator
       parameters:
         - name: tiIndicator-id
           in: path
@@ -23035,7 +23276,7 @@ paths:
       tags:
         - security.tiIndicator
       summary: Delete navigation property tiIndicators for security
-      operationId: security_DeleteTiIndicators
+      operationId: security_DeleteTiIndicator
       parameters:
         - name: tiIndicator-id
           in: path
@@ -23080,7 +23321,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-1.0
-      operationId: security.tiIndicator_deleteTiIndicators
+      operationId: security.tiIndicator_deleteTiIndicator
       requestBody:
         description: Action parameters
         content:
@@ -23176,7 +23417,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0
-      operationId: security.tiIndicator_submitTiIndicators
+      operationId: security.tiIndicator_submitTiIndicator
       requestBody:
         description: Action parameters
         content:
@@ -23224,7 +23465,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
-      operationId: security.tiIndicator_updateTiIndicators
+      operationId: security.tiIndicator_updateTiIndicator
       requestBody:
         description: Action parameters
         content:
@@ -23268,7 +23509,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Get triggers from security
-      operationId: security_GetTriggers
+      operationId: security_GetTrigger
       parameters:
         - name: $select
           in: query
@@ -23310,7 +23551,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Update the navigation property triggers in security
-      operationId: security_UpdateTriggers
+      operationId: security_UpdateTrigger
       requestBody:
         description: New navigation property values
         content:
@@ -23332,7 +23573,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Delete navigation property triggers for security
-      operationId: security_DeleteTriggers
+      operationId: security_DeleteTrigger
       parameters:
         - name: If-Match
           in: header
@@ -23355,7 +23596,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0
-      operationId: security.trigger_ListRetentionEvents
+      operationId: security.trigger_ListRetentionEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -23451,7 +23692,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-retentionevent-post?view=graph-rest-1.0
-      operationId: security.trigger_CreateRetentionEvents
+      operationId: security.trigger_CreateRetentionEvent
       requestBody:
         description: New navigation property
         content:
@@ -23474,7 +23715,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Get retentionEvents from security
-      operationId: security.trigger_GetRetentionEvents
+      operationId: security.trigger_GetRetentionEvent
       parameters:
         - name: retentionEvent-id
           in: path
@@ -23535,7 +23776,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Update the navigation property retentionEvents in security
-      operationId: security.trigger_UpdateRetentionEvents
+      operationId: security.trigger_UpdateRetentionEvent
       parameters:
         - name: retentionEvent-id
           in: path
@@ -23566,7 +23807,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Delete navigation property retentionEvents for security
-      operationId: security.trigger_DeleteRetentionEvents
+      operationId: security.trigger_DeleteRetentionEvent
       parameters:
         - name: retentionEvent-id
           in: path
@@ -23663,7 +23904,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Get triggerTypes from security
-      operationId: security_GetTriggerTypes
+      operationId: security_GetTriggerType
       parameters:
         - name: $select
           in: query
@@ -23705,7 +23946,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Update the navigation property triggerTypes in security
-      operationId: security_UpdateTriggerTypes
+      operationId: security_UpdateTriggerType
       requestBody:
         description: New navigation property values
         content:
@@ -23727,7 +23968,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Delete navigation property triggerTypes for security
-      operationId: security_DeleteTriggerTypes
+      operationId: security_DeleteTriggerType
       parameters:
         - name: If-Match
           in: header
@@ -23750,7 +23991,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-retentioneventtype-list?view=graph-rest-1.0
-      operationId: security.triggerType_ListRetentionEventTypes
+      operationId: security.triggerType_ListRetentionEventType
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -23829,7 +24070,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-retentioneventtype-post?view=graph-rest-1.0
-      operationId: security.triggerType_CreateRetentionEventTypes
+      operationId: security.triggerType_CreateRetentionEventType
       requestBody:
         description: New navigation property
         content:
@@ -23852,7 +24093,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Get retentionEventTypes from security
-      operationId: security.triggerType_GetRetentionEventTypes
+      operationId: security.triggerType_GetRetentionEventType
       parameters:
         - name: retentionEventType-id
           in: path
@@ -23906,7 +24147,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Update the navigation property retentionEventTypes in security
-      operationId: security.triggerType_UpdateRetentionEventTypes
+      operationId: security.triggerType_UpdateRetentionEventType
       parameters:
         - name: retentionEventType-id
           in: path
@@ -23937,7 +24178,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Delete navigation property retentionEventTypes for security
-      operationId: security.triggerType_DeleteRetentionEventTypes
+      operationId: security.triggerType_DeleteRetentionEventType
       parameters:
         - name: retentionEventType-id
           in: path
@@ -23978,7 +24219,7 @@ paths:
       tags:
         - security.userSecurityProfile
       summary: Get userSecurityProfiles from security
-      operationId: security_ListUserSecurityProfiles
+      operationId: security_ListUserSecurityProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -24065,7 +24306,7 @@ paths:
       tags:
         - security.userSecurityProfile
       summary: Create new navigation property to userSecurityProfiles for security
-      operationId: security_CreateUserSecurityProfiles
+      operationId: security_CreateUserSecurityProfile
       requestBody:
         description: New navigation property
         content:
@@ -24088,7 +24329,7 @@ paths:
       tags:
         - security.userSecurityProfile
       summary: Get userSecurityProfiles from security
-      operationId: security_GetUserSecurityProfiles
+      operationId: security_GetUserSecurityProfile
       parameters:
         - name: userSecurityProfile-id
           in: path
@@ -24146,7 +24387,7 @@ paths:
       tags:
         - security.userSecurityProfile
       summary: Update the navigation property userSecurityProfiles in security
-      operationId: security_UpdateUserSecurityProfiles
+      operationId: security_UpdateUserSecurityProfile
       parameters:
         - name: userSecurityProfile-id
           in: path
@@ -24177,7 +24418,7 @@ paths:
       tags:
         - security.userSecurityProfile
       summary: Delete navigation property userSecurityProfiles for security
-      operationId: security_DeleteUserSecurityProfiles
+      operationId: security_DeleteUserSecurityProfile
       parameters:
         - name: userSecurityProfile-id
           in: path
@@ -25318,6 +25559,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -27181,6 +27426,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -27577,6 +27826,40 @@ components:
               $ref: '#/components/schemas/microsoft.graph.todo'
           additionalProperties:
             type: object
+    microsoft.graph.mailboxSettings:
+      title: mailboxSettings
+      type: object
+      properties:
+        archiveFolder:
+          type: string
+          description: Folder ID of an archive folder for the user. Read-only.
+          nullable: true
+        automaticRepliesSetting:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
+        dateFormat:
+          type: string
+          description: The date format for the user's mailbox.
+          nullable: true
+        delegateMeetingMessageDeliveryOptions:
+          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
+        language:
+          $ref: '#/components/schemas/microsoft.graph.localeInfo'
+        timeFormat:
+          type: string
+          description: The time format for the user's mailbox.
+          nullable: true
+        timeZone:
+          type: string
+          description: The default time zone for the user's mailbox.
+          nullable: true
+        userPurpose:
+          $ref: '#/components/schemas/microsoft.graph.userPurpose'
+        userPurposeV2:
+          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
+        workingHours:
+          $ref: '#/components/schemas/microsoft.graph.workingHours'
+      additionalProperties:
+        type: object
     microsoft.graph.authoredNote:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30512,6 +30795,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.groupWritebackConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
@@ -32128,40 +32428,6 @@ components:
           type: string
           description: 'The name of the service; for example, ''AccessControlS2S'''
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.mailboxSettings:
-      title: mailboxSettings
-      type: object
-      properties:
-        archiveFolder:
-          type: string
-          description: Folder ID of an archive folder for the user. Read-only.
-          nullable: true
-        automaticRepliesSetting:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
-        dateFormat:
-          type: string
-          description: The date format for the user's mailbox.
-          nullable: true
-        delegateMeetingMessageDeliveryOptions:
-          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
-        language:
-          $ref: '#/components/schemas/microsoft.graph.localeInfo'
-        timeFormat:
-          type: string
-          description: The time format for the user's mailbox.
-          nullable: true
-        timeZone:
-          type: string
-          description: The default time zone for the user's mailbox.
-          nullable: true
-        userPurpose:
-          $ref: '#/components/schemas/microsoft.graph.userPurpose'
-        userPurposeV2:
-          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
-        workingHours:
-          $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
     microsoft.graph.userPrint:
@@ -34898,6 +35164,97 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.automaticRepliesSetting:
+      title: automaticRepliesSetting
+      type: object
+      properties:
+        externalAudience:
+          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
+        externalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        internalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        scheduledEndDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        scheduledStartDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.delegateMeetingMessageDeliveryOptions:
+      title: delegateMeetingMessageDeliveryOptions
+      enum:
+        - sendToDelegateAndInformationToPrincipal
+        - sendToDelegateAndPrincipal
+        - sendToDelegateOnly
+      type: string
+    microsoft.graph.localeInfo:
+      title: localeInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
+          nullable: true
+        locale:
+          type: string
+          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userPurpose:
+      title: userPurpose
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+        - unknownFutureValue
+      type: string
+    microsoft.graph.mailboxRecipientType:
+      title: mailboxRecipientType
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+      type: string
+    microsoft.graph.workingHours:
+      title: workingHours
+      type: object
+      properties:
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: The days of the week on which the user works.
+        endTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user stops working.
+          format: time
+          nullable: true
+        startTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user starts working.
+          format: time
+          nullable: true
+        timeZone:
+          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
+      additionalProperties:
+        type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -35346,11 +35703,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -35368,6 +35727,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -35384,6 +35744,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -37480,6 +37841,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -38622,97 +38985,6 @@ components:
         - failed
         - unknownFutureValue
       type: string
-    microsoft.graph.automaticRepliesSetting:
-      title: automaticRepliesSetting
-      type: object
-      properties:
-        externalAudience:
-          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
-        externalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        internalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        scheduledEndDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        scheduledStartDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        status:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
-      additionalProperties:
-        type: object
-    microsoft.graph.delegateMeetingMessageDeliveryOptions:
-      title: delegateMeetingMessageDeliveryOptions
-      enum:
-        - sendToDelegateAndInformationToPrincipal
-        - sendToDelegateAndPrincipal
-        - sendToDelegateOnly
-      type: string
-    microsoft.graph.localeInfo:
-      title: localeInfo
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
-          nullable: true
-        locale:
-          type: string
-          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.userPurpose:
-      title: userPurpose
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-        - unknownFutureValue
-      type: string
-    microsoft.graph.mailboxRecipientType:
-      title: mailboxRecipientType
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-      type: string
-    microsoft.graph.workingHours:
-      title: workingHours
-      type: object
-      properties:
-        daysOfWeek:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: The days of the week on which the user works.
-        endTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user stops working.
-          format: time
-          nullable: true
-        startTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user starts working.
-          format: time
-          nullable: true
-        timeZone:
-          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
-      additionalProperties:
-        type: object
     microsoft.graph.printerShare:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.printerBase'
@@ -39214,12 +39486,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -43678,6 +43952,41 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.externalAudienceScope:
+      title: externalAudienceScope
+      enum:
+        - none
+        - contactsOnly
+        - all
+      type: string
+    microsoft.graph.automaticRepliesStatus:
+      title: automaticRepliesStatus
+      enum:
+        - disabled
+        - alwaysEnabled
+        - scheduled
+      type: string
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.timeZoneBase:
+      title: timeZoneBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -45316,6 +45625,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.thumbnailSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -45561,11 +45893,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -45944,41 +46276,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
-    microsoft.graph.externalAudienceScope:
-      title: externalAudienceScope
-      enum:
-        - none
-        - contactsOnly
-        - all
-      type: string
-    microsoft.graph.automaticRepliesStatus:
-      title: automaticRepliesStatus
-      enum:
-        - disabled
-        - alwaysEnabled
-        - scheduled
-      type: string
-    microsoft.graph.dayOfWeek:
-      title: dayOfWeek
-      enum:
-        - sunday
-        - monday
-        - tuesday
-        - wednesday
-        - thursday
-        - friday
-        - saturday
-      type: string
-    microsoft.graph.timeZoneBase:
-      title: timeZoneBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.printerBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -49811,6 +50108,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -53501,11 +53821,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
           nullable: true
         value:
           type: integer
-          description: Value.
+          description: Total number of synchronized objects.
           format: int64
       additionalProperties:
         type: object
@@ -53513,9 +53833,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -54018,15 +54342,15 @@ components:
       properties:
         code:
           type: string
-          description: The error code.
+          description: 'The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.'
           nullable: true
         message:
           type: string
-          description: The error message.
+          description: 'The error message. For example, Policy permitting auto-redemption of invitations not configured.'
           nullable: true
         tenantActionable:
           type: boolean
-          description: The action to take to resolve the error.
+          description: 'The action to take to resolve the error. For example, false.'
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:
@@ -54048,6 +54372,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object

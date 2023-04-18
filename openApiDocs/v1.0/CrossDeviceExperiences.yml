@@ -12,7 +12,7 @@ paths:
         - users.userActivity
       summary: Get activities from users
       description: The user's activities across devices. Read-only. Nullable.
-      operationId: user_ListActivities
+      operationId: user_ListActivity
       parameters:
         - name: user-id
           in: path
@@ -118,7 +118,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to activities for users
-      operationId: user_CreateActivities
+      operationId: user_CreateActivity
       parameters:
         - name: user-id
           in: path
@@ -151,7 +151,7 @@ paths:
         - users.userActivity
       summary: Get activities from users
       description: The user's activities across devices. Read-only. Nullable.
-      operationId: user_GetActivities
+      operationId: user_GetActivity
       parameters:
         - name: user-id
           in: path
@@ -222,7 +222,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property activities in users
-      operationId: user_UpdateActivities
+      operationId: user_UpdateActivity
       parameters:
         - name: user-id
           in: path
@@ -261,7 +261,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property activities for users
-      operationId: user_DeleteActivities
+      operationId: user_DeleteActivity
       parameters:
         - name: user-id
           in: path
@@ -297,7 +297,7 @@ paths:
         - users.userActivity
       summary: Get historyItems from users
       description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-      operationId: user.activity_ListHistoryItems
+      operationId: user.activity_ListHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -396,7 +396,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to historyItems for users
-      operationId: user.activity_CreateHistoryItems
+      operationId: user.activity_CreateHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -437,7 +437,7 @@ paths:
         - users.userActivity
       summary: Get historyItems from users
       description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-      operationId: user.activity_GetHistoryItems
+      operationId: user.activity_GetHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -511,7 +511,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property historyItems in users
-      operationId: user.activity_UpdateHistoryItems
+      operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -558,7 +558,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property historyItems for users
-      operationId: user.activity_DeleteHistoryItems
+      operationId: user.activity_DeleteHistoryItem
       parameters:
         - name: user-id
           in: path

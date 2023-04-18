@@ -11,7 +11,7 @@ paths:
       tags:
         - communications.cloudCommunications
       summary: Get communications
-      operationId: communication.cloudCommunication_GetCloudCommunications
+      operationId: communication.cloudCommunication_GetCloudCommunication
       parameters:
         - name: $select
           in: query
@@ -23,9 +23,8 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - calls
                 - callRecords
+                - calls
                 - onlineMeetings
                 - presences
               type: string
@@ -40,8 +39,8 @@ paths:
             items:
               enum:
                 - '*'
-                - calls
                 - callRecords
+                - calls
                 - onlineMeetings
                 - presences
               type: string
@@ -59,7 +58,7 @@ paths:
       tags:
         - communications.cloudCommunications
       summary: Update communications
-      operationId: communication.cloudCommunication_UpdateCloudCommunications
+      operationId: communication.cloudCommunication_UpdateCloudCommunication
       requestBody:
         description: New property values
         content:
@@ -82,7 +81,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get callRecords from communications
-      operationId: communication_ListCallRecords
+      operationId: communication_ListCallRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -168,7 +167,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to callRecords for communications
-      operationId: communication_CreateCallRecords
+      operationId: communication_CreateCallRecord
       requestBody:
         description: New navigation property
         content:
@@ -191,7 +190,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get callRecords from communications
-      operationId: communication_GetCallRecords
+      operationId: communication_GetCallRecord
       parameters:
         - name: callRecord-id
           in: path
@@ -250,7 +249,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property callRecords in communications
-      operationId: communication_UpdateCallRecords
+      operationId: communication_UpdateCallRecord
       parameters:
         - name: callRecord-id
           in: path
@@ -281,7 +280,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property callRecords for communications
-      operationId: communication_DeleteCallRecords
+      operationId: communication_DeleteCallRecord
       parameters:
         - name: callRecord-id
           in: path
@@ -312,7 +311,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/callrecords-session-list?view=graph-rest-1.0
-      operationId: communication.callRecord_ListSessions
+      operationId: communication.callRecord_ListSession
       parameters:
         - name: callRecord-id
           in: path
@@ -397,7 +396,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to sessions for communications
-      operationId: communication.callRecord_CreateSessions
+      operationId: communication.callRecord_CreateSession
       parameters:
         - name: callRecord-id
           in: path
@@ -430,7 +429,7 @@ paths:
         - communications.callRecord
       summary: Get sessions from communications
       description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
-      operationId: communication.callRecord_GetSessions
+      operationId: communication.callRecord_GetSession
       parameters:
         - name: callRecord-id
           in: path
@@ -494,7 +493,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property sessions in communications
-      operationId: communication.callRecord_UpdateSessions
+      operationId: communication.callRecord_UpdateSession
       parameters:
         - name: callRecord-id
           in: path
@@ -533,7 +532,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property sessions for communications
-      operationId: communication.callRecord_DeleteSessions
+      operationId: communication.callRecord_DeleteSession
       parameters:
         - name: callRecord-id
           in: path
@@ -569,7 +568,7 @@ paths:
         - communications.callRecord
       summary: Get segments from communications
       description: The list of segments involved in the session. Read-only. Nullable.
-      operationId: communication.callRecord.session_ListSegments
+      operationId: communication.callRecord.session_ListSegment
       parameters:
         - name: callRecord-id
           in: path
@@ -660,7 +659,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to segments for communications
-      operationId: communication.callRecord.session_CreateSegments
+      operationId: communication.callRecord.session_CreateSegment
       parameters:
         - name: callRecord-id
           in: path
@@ -701,7 +700,7 @@ paths:
         - communications.callRecord
       summary: Get segments from communications
       description: The list of segments involved in the session. Read-only. Nullable.
-      operationId: communication.callRecord.session_GetSegments
+      operationId: communication.callRecord.session_GetSegment
       parameters:
         - name: callRecord-id
           in: path
@@ -771,7 +770,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property segments in communications
-      operationId: communication.callRecord.session_UpdateSegments
+      operationId: communication.callRecord.session_UpdateSegment
       parameters:
         - name: callRecord-id
           in: path
@@ -818,7 +817,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property segments for communications
-      operationId: communication.callRecord.session_DeleteSegments
+      operationId: communication.callRecord.session_DeleteSegment
       parameters:
         - name: callRecord-id
           in: path
@@ -927,7 +926,7 @@ paths:
       tags:
         - communications.call
       summary: Get calls from communications
-      operationId: communication_ListCalls
+      operationId: communication_ListCall
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1056,7 +1055,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
-      operationId: communication_CreateCalls
+      operationId: communication_CreateCall
       requestBody:
         description: New navigation property
         content:
@@ -1079,7 +1078,7 @@ paths:
       tags:
         - communications.call
       summary: Get calls from communications
-      operationId: communication_GetCalls
+      operationId: communication_GetCall
       parameters:
         - name: call-id
           in: path
@@ -1155,7 +1154,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property calls in communications
-      operationId: communication_UpdateCalls
+      operationId: communication_UpdateCall
       parameters:
         - name: call-id
           in: path
@@ -1186,7 +1185,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property calls for communications
-      operationId: communication_DeleteCalls
+      operationId: communication_DeleteCall
       parameters:
         - name: call-id
           in: path
@@ -1213,7 +1212,7 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
-      operationId: communication.call_ListAudioRoutingGroups
+      operationId: communication.call_ListAudioRoutingGroup
       parameters:
         - name: call-id
           in: path
@@ -1287,7 +1286,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to audioRoutingGroups for communications
-      operationId: communication.call_CreateAudioRoutingGroups
+      operationId: communication.call_CreateAudioRoutingGroup
       parameters:
         - name: call-id
           in: path
@@ -1319,7 +1318,7 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
-      operationId: communication.call_GetAudioRoutingGroups
+      operationId: communication.call_GetAudioRoutingGroup
       parameters:
         - name: call-id
           in: path
@@ -1378,7 +1377,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property audioRoutingGroups in communications
-      operationId: communication.call_UpdateAudioRoutingGroups
+      operationId: communication.call_UpdateAudioRoutingGroup
       parameters:
         - name: call-id
           in: path
@@ -1417,7 +1416,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property audioRoutingGroups for communications
-      operationId: communication.call_DeleteAudioRoutingGroups
+      operationId: communication.call_DeleteAudioRoutingGroup
       parameters:
         - name: call-id
           in: path
@@ -1478,7 +1477,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
-      operationId: communication.call_ListContentSharingSessions
+      operationId: communication.call_ListContentSharingSession
       parameters:
         - name: call-id
           in: path
@@ -1543,7 +1542,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to contentSharingSessions for communications
-      operationId: communication.call_CreateContentSharingSessions
+      operationId: communication.call_CreateContentSharingSession
       parameters:
         - name: call-id
           in: path
@@ -1575,7 +1574,7 @@ paths:
       tags:
         - communications.call
       summary: Get contentSharingSessions from communications
-      operationId: communication.call_GetContentSharingSessions
+      operationId: communication.call_GetContentSharingSession
       parameters:
         - name: call-id
           in: path
@@ -1631,7 +1630,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property contentSharingSessions in communications
-      operationId: communication.call_UpdateContentSharingSessions
+      operationId: communication.call_UpdateContentSharingSession
       parameters:
         - name: call-id
           in: path
@@ -1670,7 +1669,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property contentSharingSessions for communications
-      operationId: communication.call_DeleteContentSharingSessions
+      operationId: communication.call_DeleteContentSharingSession
       parameters:
         - name: call-id
           in: path
@@ -2344,7 +2343,7 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      operationId: communication.call_ListOperations
+      operationId: communication.call_ListOperation
       parameters:
         - name: call-id
           in: path
@@ -2418,7 +2417,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to operations for communications
-      operationId: communication.call_CreateOperations
+      operationId: communication.call_CreateOperation
       parameters:
         - name: call-id
           in: path
@@ -2450,7 +2449,7 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
-      operationId: communication.call_GetOperations
+      operationId: communication.call_GetOperation
       parameters:
         - name: call-id
           in: path
@@ -2509,7 +2508,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property operations in communications
-      operationId: communication.call_UpdateOperations
+      operationId: communication.call_UpdateOperation
       parameters:
         - name: call-id
           in: path
@@ -2548,7 +2547,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property operations for communications
-      operationId: communication.call_DeleteOperations
+      operationId: communication.call_DeleteOperation
       parameters:
         - name: call-id
           in: path
@@ -2609,7 +2608,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
-      operationId: communication.call_ListParticipants
+      operationId: communication.call_ListParticipant
       parameters:
         - name: call-id
           in: path
@@ -2692,7 +2691,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to participants for communications
-      operationId: communication.call_CreateParticipants
+      operationId: communication.call_CreateParticipant
       parameters:
         - name: call-id
           in: path
@@ -2724,7 +2723,7 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
-      operationId: communication.call_GetParticipants
+      operationId: communication.call_GetParticipant
       parameters:
         - name: call-id
           in: path
@@ -2786,7 +2785,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property participants in communications
-      operationId: communication.call_UpdateParticipants
+      operationId: communication.call_UpdateParticipant
       parameters:
         - name: call-id
           in: path
@@ -2825,7 +2824,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property participants for communications
-      operationId: communication.call_DeleteParticipants
+      operationId: communication.call_DeleteParticipant
       parameters:
         - name: call-id
           in: path
@@ -3034,10 +3033,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -3174,7 +3173,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: communication_ListOnlineMeetings
+      operationId: communication_ListOnlineMeeting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3239,6 +3238,8 @@ paths:
                 - subject desc
                 - videoTeleconferenceId
                 - videoTeleconferenceId desc
+                - watermarkProtection
+                - watermarkProtection desc
               type: string
         - name: $select
           in: query
@@ -3274,6 +3275,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - attendanceReports
               type: string
         - name: $expand
@@ -3302,7 +3304,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to onlineMeetings for communications
-      operationId: communication_CreateOnlineMeetings
+      operationId: communication_CreateOnlineMeeting
       requestBody:
         description: New navigation property
         content:
@@ -3325,7 +3327,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get onlineMeetings from communications
-      operationId: communication_GetOnlineMeetings
+      operationId: communication_GetOnlineMeeting
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3369,6 +3371,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - attendanceReports
               type: string
         - name: $expand
@@ -3398,7 +3401,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property onlineMeetings in communications
-      operationId: communication_UpdateOnlineMeetings
+      operationId: communication_UpdateOnlineMeeting
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3429,7 +3432,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property onlineMeetings for communications
-      operationId: communication_DeleteOnlineMeetings
+      operationId: communication_DeleteOnlineMeeting
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3460,7 +3463,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
-      operationId: communication.onlineMeeting_ListAttendanceReports
+      operationId: communication.onlineMeeting_ListAttendanceReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3536,7 +3539,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceReports for communications
-      operationId: communication.onlineMeeting_CreateAttendanceReports
+      operationId: communication.onlineMeeting_CreateAttendanceReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3569,7 +3572,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
       description: The attendance reports of an online meeting. Read-only.
-      operationId: communication.onlineMeeting_GetAttendanceReports
+      operationId: communication.onlineMeeting_GetAttendanceReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3630,7 +3633,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceReports in communications
-      operationId: communication.onlineMeeting_UpdateAttendanceReports
+      operationId: communication.onlineMeeting_UpdateAttendanceReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3669,7 +3672,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceReports for communications
-      operationId: communication.onlineMeeting_DeleteAttendanceReports
+      operationId: communication.onlineMeeting_DeleteAttendanceReport
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3708,7 +3711,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
-      operationId: communication.onlineMeeting.attendanceReport_ListAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_ListAttendanceRecord
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3796,7 +3799,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceRecords for communications
-      operationId: communication.onlineMeeting.attendanceReport_CreateAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_CreateAttendanceRecord
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3837,7 +3840,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
       description: List of attendance records of an attendance report. Read-only.
-      operationId: communication.onlineMeeting.attendanceReport_GetAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_GetAttendanceRecord
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3906,7 +3909,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceRecords in communications
-      operationId: communication.onlineMeeting.attendanceReport_UpdateAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_UpdateAttendanceRecord
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -3953,7 +3956,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceRecords for communications
-      operationId: communication.onlineMeeting.attendanceReport_DeleteAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_DeleteAttendanceRecord
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4170,7 +4173,7 @@ paths:
       tags:
         - communications.presence
       summary: Get presences from communications
-      operationId: communication_ListPresences
+      operationId: communication_ListPresence
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4233,7 +4236,7 @@ paths:
       tags:
         - communications.presence
       summary: Create new navigation property to presences for communications
-      operationId: communication_CreatePresences
+      operationId: communication_CreatePresence
       requestBody:
         description: New navigation property
         content:
@@ -4256,7 +4259,7 @@ paths:
       tags:
         - communications.presence
       summary: Get presences from communications
-      operationId: communication_GetPresences
+      operationId: communication_GetPresence
       parameters:
         - name: presence-id
           in: path
@@ -4306,7 +4309,7 @@ paths:
       tags:
         - communications.presence
       summary: Update the navigation property presences in communications
-      operationId: communication_UpdatePresences
+      operationId: communication_UpdatePresence
       parameters:
         - name: presence-id
           in: path
@@ -4337,7 +4340,7 @@ paths:
       tags:
         - communications.presence
       summary: Delete navigation property presences for communications
-      operationId: communication_DeletePresences
+      operationId: communication_DeletePresence
       parameters:
         - name: presence-id
           in: path
@@ -4536,7 +4539,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
-      operationId: user_ListOnlineMeetings
+      operationId: user_ListOnlineMeeting
       parameters:
         - name: user-id
           in: path
@@ -4609,6 +4612,8 @@ paths:
                 - subject desc
                 - videoTeleconferenceId
                 - videoTeleconferenceId desc
+                - watermarkProtection
+                - watermarkProtection desc
               type: string
         - name: $select
           in: query
@@ -4644,6 +4649,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - attendanceReports
               type: string
         - name: $expand
@@ -4676,7 +4682,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0
-      operationId: user_CreateOnlineMeetings
+      operationId: user_CreateOnlineMeeting
       parameters:
         - name: user-id
           in: path
@@ -4708,7 +4714,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get onlineMeetings from users
-      operationId: user_GetOnlineMeetings
+      operationId: user_GetOnlineMeeting
       parameters:
         - name: user-id
           in: path
@@ -4760,6 +4766,7 @@ paths:
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
+                - watermarkProtection
                 - attendanceReports
               type: string
         - name: $expand
@@ -4789,7 +4796,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property onlineMeetings in users
-      operationId: user_UpdateOnlineMeetings
+      operationId: user_UpdateOnlineMeeting
       parameters:
         - name: user-id
           in: path
@@ -4828,7 +4835,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property onlineMeetings for users
-      operationId: user_DeleteOnlineMeetings
+      operationId: user_DeleteOnlineMeeting
       parameters:
         - name: user-id
           in: path
@@ -4867,7 +4874,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
-      operationId: user.onlineMeeting_ListAttendanceReports
+      operationId: user.onlineMeeting_ListAttendanceReport
       parameters:
         - name: user-id
           in: path
@@ -4951,7 +4958,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceReports for users
-      operationId: user.onlineMeeting_CreateAttendanceReports
+      operationId: user.onlineMeeting_CreateAttendanceReport
       parameters:
         - name: user-id
           in: path
@@ -4992,7 +4999,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceReports from users
       description: The attendance reports of an online meeting. Read-only.
-      operationId: user.onlineMeeting_GetAttendanceReports
+      operationId: user.onlineMeeting_GetAttendanceReport
       parameters:
         - name: user-id
           in: path
@@ -5061,7 +5068,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceReports in users
-      operationId: user.onlineMeeting_UpdateAttendanceReports
+      operationId: user.onlineMeeting_UpdateAttendanceReport
       parameters:
         - name: user-id
           in: path
@@ -5108,7 +5115,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceReports for users
-      operationId: user.onlineMeeting_DeleteAttendanceReports
+      operationId: user.onlineMeeting_DeleteAttendanceReport
       parameters:
         - name: user-id
           in: path
@@ -5155,7 +5162,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
-      operationId: user.onlineMeeting.attendanceReport_ListAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_ListAttendanceRecord
       parameters:
         - name: user-id
           in: path
@@ -5251,7 +5258,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceRecords for users
-      operationId: user.onlineMeeting.attendanceReport_CreateAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_CreateAttendanceRecord
       parameters:
         - name: user-id
           in: path
@@ -5300,7 +5307,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
       description: List of attendance records of an attendance report. Read-only.
-      operationId: user.onlineMeeting.attendanceReport_GetAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_GetAttendanceRecord
       parameters:
         - name: user-id
           in: path
@@ -5377,7 +5384,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceRecords in users
-      operationId: user.onlineMeeting.attendanceReport_UpdateAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_UpdateAttendanceRecord
       parameters:
         - name: user-id
           in: path
@@ -5432,7 +5439,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceRecords for users
-      operationId: user.onlineMeeting.attendanceReport_DeleteAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_DeleteAttendanceRecord
       parameters:
         - name: user-id
           in: path
@@ -5758,33 +5765,31 @@ paths:
 components:
   schemas:
     microsoft.graph.cloudCommunications:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: cloudCommunications
-          type: object
-          properties:
-            calls:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.call'
-              x-ms-navigationProperty: true
-            callRecords:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
-              x-ms-navigationProperty: true
-            onlineMeetings:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-              x-ms-navigationProperty: true
-            presences:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.presence'
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
+      title: cloudCommunications
+      type: object
+      properties:
+        callRecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+          x-ms-navigationProperty: true
+        calls:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.call'
+          x-ms-navigationProperty: true
+        onlineMeetings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+          x-ms-navigationProperty: true
+        presences:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.presence'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
     microsoft.graph.callRecords.callRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6395,6 +6400,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             attendanceReports:
               type: array
               items:
@@ -6995,6 +7002,20 @@ components:
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.attendanceInterval:

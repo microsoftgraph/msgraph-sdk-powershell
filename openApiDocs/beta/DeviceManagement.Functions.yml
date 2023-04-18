@@ -34,7 +34,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSupportedProperties
-      operationId: deviceManagement.assignmentFilter_getSupportedProperties
+      operationId: deviceManagement.assignmentFilter_getSupportedProperty
       parameters:
         - name: deviceAndAppManagementAssignmentFilter-id
           in: path
@@ -77,7 +77,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getPlatformSupportedProperties
-      operationId: deviceManagement.assignmentFilter_getPlatformSupportedProperties
+      operationId: deviceManagement.assignmentFilter_getPlatformSupportedProperty
       parameters:
         - name: platform
           in: path
@@ -135,7 +135,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.auditEvent_getAuditActivityTypes
+      operationId: deviceManagement.auditEvent_getAuditActivityType
       parameters:
         - name: category
           in: path
@@ -179,7 +179,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditCategories
-      operationId: deviceManagement.auditEvent_getAuditCategories
+      operationId: deviceManagement.auditEvent_getAuditCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -215,7 +215,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcRemoteActionResults
-      operationId: deviceManagement.comanagedDevice_getCloudPcRemoteActionResults
+      operationId: deviceManagement.comanagedDevice_getCloudPcRemoteActionResult
       parameters:
         - name: managedDevice-id
           in: path
@@ -314,7 +314,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.comanagedDevice_getNonCompliantSettings
+      operationId: deviceManagement.comanagedDevice_getNonCompliantSetting
       parameters:
         - name: managedDevice-id
           in: path
@@ -415,7 +415,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function appDiagnostics
-      operationId: deviceManagement.comanagedDevice_appDiagnostics
+      operationId: deviceManagement.comanagedDevice_appDiagnostic
       parameters:
         - name: upn
           in: path
@@ -662,7 +662,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getIosAvailableUpdateVersions
-      operationId: deviceManagement.deviceConfiguration_getIosAvailableUpdateVersions
+      operationId: deviceManagement.deviceConfiguration_getIosAvailableUpdateVersion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -806,7 +806,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCustomizedSettings
-      operationId: deviceManagement.intent_getCustomizedSettings
+      operationId: deviceManagement.intent_getCustomizedSetting
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -849,7 +849,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcRemoteActionResults
-      operationId: deviceManagement.managedDevice_getCloudPcRemoteActionResults
+      operationId: deviceManagement.managedDevice_getCloudPcRemoteActionResult
       parameters:
         - name: managedDevice-id
           in: path
@@ -948,7 +948,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.managedDevice_getNonCompliantSettings
+      operationId: deviceManagement.managedDevice_getNonCompliantSetting
       parameters:
         - name: managedDevice-id
           in: path
@@ -1049,7 +1049,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function appDiagnostics
-      operationId: deviceManagement.managedDevice_appDiagnostics
+      operationId: deviceManagement.managedDevice_appDiagnostic
       parameters:
         - name: upn
           in: path
@@ -1093,7 +1093,7 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getAssignedRoleDetails
       description: Retrieves the assigned role definitions and role assignments of the currently authenticated user.
-      operationId: deviceManagement_getAssignedRoleDetails
+      operationId: deviceManagement_getAssignedRoleDetail
       responses:
         2XX:
           description: Success
@@ -1141,7 +1141,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement_getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1177,7 +1177,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement_getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermission
       parameters:
         - name: scope
           in: path
@@ -1220,7 +1220,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRoleScopeTagsByIds
-      operationId: deviceManagement_getRoleScopeTagsGraphBPreIds
+      operationId: deviceManagement_getRoleScopeTagsGraphBPreId
       parameters:
         - name: ids
           in: path
@@ -1435,7 +1435,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function userExperienceAnalyticsSummarizedDeviceScopes
-      operationId: deviceManagement_userExperienceAnalyticsSummarizedDeviceScopes
+      operationId: deviceManagement_userExperienceAnalyticsSummarizedDeviceScope
       responses:
         2XX:
           description: Success
@@ -1451,7 +1451,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
-      operationId: deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+      operationId: deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevice
       responses:
         2XX:
           description: Success
@@ -1498,7 +1498,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getPortalNotifications
-      operationId: deviceManagement.monitoring.alertRecord_getPortalNotifications
+      operationId: deviceManagement.monitoring.alertRecord_getPortalNotification
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1733,7 +1733,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function summarizeDevicePerformanceDevices
-      operationId: deviceManagement.userExperienceAnalyticsDevicePerformance_summarizeDevicePerformanceDevices
+      operationId: deviceManagement.userExperienceAnalyticsDevicePerformance_summarizeDevicePerformanceDevice
       parameters:
         - name: summarizeBy
           in: path
@@ -2075,7 +2075,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityTypes
+      operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2204,7 +2204,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSupportedCloudPcRemoteActions
-      operationId: deviceManagement.virtualEndpoint.cloudPC_getSupportedCloudPcRemoteActions
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getSupportedCloudPcRemoteAction
       parameters:
         - name: cloudPC-id
           in: path
@@ -2247,7 +2247,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getProvisionedCloudPCs
-      operationId: deviceManagement.virtualEndpoint.cloudPC_getProvisionedCloudPCs
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getProvisionedCloudPC
       parameters:
         - name: groupId
           in: path
@@ -2399,7 +2399,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSourceImages
-      operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImages
+      operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2434,7 +2434,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement.virtualEndpoint_getEffectivePermissions
+      operationId: deviceManagement.virtualEndpoint_getEffectivePermission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2534,7 +2534,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getStorageAccounts
-      operationId: deviceManagement.virtualEndpoint.snapshot_getStorageAccounts
+      operationId: deviceManagement.virtualEndpoint.snapshot_getStorageAccount
       parameters:
         - name: subscriptionId
           in: path
@@ -2577,7 +2577,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSubscriptions
-      operationId: deviceManagement.virtualEndpoint.snapshot_getSubscriptions
+      operationId: deviceManagement.virtualEndpoint.snapshot_getSubscription
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

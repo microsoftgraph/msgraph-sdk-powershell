@@ -420,7 +420,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.exceptionOccurrence.instance_delta
+      operationId: user.calendar.calendarView.exceptionOccurrence.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -651,7 +651,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.exceptionOccurrence_delta
+      operationId: user.calendar.calendarView.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -874,7 +874,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.instance.exceptionOccurrence_delta
+      operationId: user.calendar.calendarView.instance.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -1105,7 +1105,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.instance_delta
+      operationId: user.calendar.calendarView.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -1328,7 +1328,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView_delta
+      operationId: user.calendar.calendarView_deltum
       parameters:
         - name: user-id
           in: path
@@ -1543,7 +1543,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.exceptionOccurrence.instance_delta
+      operationId: user.calendar.event.exceptionOccurrence.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -1774,7 +1774,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.exceptionOccurrence_delta
+      operationId: user.calendar.event.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -1997,7 +1997,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.instance.exceptionOccurrence_delta
+      operationId: user.calendar.event.instance.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -2228,7 +2228,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.instance_delta
+      operationId: user.calendar.event.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -2451,7 +2451,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event_delta
+      operationId: user.calendar.event_deltum
       parameters:
         - name: user-id
           in: path
@@ -2662,7 +2662,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: user.calendar_allowedCalendarSharingRoles
+      operationId: user.calendar_allowedCalendarSharingRole
       parameters:
         - name: user-id
           in: path
@@ -2722,7 +2722,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence.instance_delta
+      operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -2969,7 +2969,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence_delta
+      operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -3208,7 +3208,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.calendarView.instance.exceptionOccurrence_delta
+      operationId: user.calendarGroup.calendar.calendarView.instance.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -3455,7 +3455,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.calendarView.instance_delta
+      operationId: user.calendarGroup.calendar.calendarView.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -3694,7 +3694,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.calendarView_delta
+      operationId: user.calendarGroup.calendar.calendarView_deltum
       parameters:
         - name: user-id
           in: path
@@ -3925,7 +3925,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.event.exceptionOccurrence.instance_delta
+      operationId: user.calendarGroup.calendar.event.exceptionOccurrence.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -4172,7 +4172,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.event.exceptionOccurrence_delta
+      operationId: user.calendarGroup.calendar.event.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -4411,7 +4411,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.event.instance.exceptionOccurrence_delta
+      operationId: user.calendarGroup.calendar.event.instance.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -4658,7 +4658,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.event.instance_delta
+      operationId: user.calendarGroup.calendar.event.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -4897,7 +4897,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.event_delta
+      operationId: user.calendarGroup.calendar.event_deltum
       parameters:
         - name: user-id
           in: path
@@ -5124,7 +5124,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: user.calendarGroup.calendar_allowedCalendarSharingRoles
+      operationId: user.calendarGroup.calendar_allowedCalendarSharingRole
       parameters:
         - name: user-id
           in: path
@@ -5200,7 +5200,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.exceptionOccurrence.instance_delta
+      operationId: user.calendar.calendarView.exceptionOccurrence.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -5439,7 +5439,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.exceptionOccurrence_delta
+      operationId: user.calendar.calendarView.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -5670,7 +5670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.instance.exceptionOccurrence_delta
+      operationId: user.calendar.calendarView.instance.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -5909,7 +5909,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.instance_delta
+      operationId: user.calendar.calendarView.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -6140,7 +6140,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView_delta
+      operationId: user.calendar.calendarView_deltum
       parameters:
         - name: user-id
           in: path
@@ -6363,7 +6363,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.exceptionOccurrence.instance_delta
+      operationId: user.calendar.event.exceptionOccurrence.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -6602,7 +6602,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.exceptionOccurrence_delta
+      operationId: user.calendar.event.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -6833,7 +6833,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.instance.exceptionOccurrence_delta
+      operationId: user.calendar.event.instance.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -7072,7 +7072,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.instance_delta
+      operationId: user.calendar.event.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -7303,7 +7303,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event_delta
+      operationId: user.calendar.event_deltum
       parameters:
         - name: user-id
           in: path
@@ -7522,7 +7522,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: user.calendar_allowedCalendarSharingRoles
+      operationId: user.calendar_allowedCalendarSharingRole
       parameters:
         - name: user-id
           in: path
@@ -7590,7 +7590,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarView.exceptionOccurrence.instance_delta
+      operationId: user.calendarView.exceptionOccurrence.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -7821,7 +7821,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarView.exceptionOccurrence_delta
+      operationId: user.calendarView.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -8044,7 +8044,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarView.instance.exceptionOccurrence_delta
+      operationId: user.calendarView.instance.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -8275,7 +8275,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarView.instance_delta
+      operationId: user.calendarView.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -8498,7 +8498,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarView_delta
+      operationId: user.calendarView_deltum
       parameters:
         - name: user-id
           in: path
@@ -8709,7 +8709,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.chat.message.reply_delta
+      operationId: user.chat.message.reply_deltum
       parameters:
         - name: user-id
           in: path
@@ -8874,7 +8874,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.chat.message_delta
+      operationId: user.chat.message_deltum
       parameters:
         - name: user-id
           in: path
@@ -9031,7 +9031,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.chat.permissionGrant_delta
+      operationId: user.chat.permissionGrant_deltum
       parameters:
         - name: user-id
           in: path
@@ -9120,7 +9120,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allMessages
-      operationId: user.chat_allMessages
+      operationId: user.chat_allMessage
       parameters:
         - name: user-id
           in: path
@@ -9266,7 +9266,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
-      operationId: user.chat_getAllMessages
+      operationId: user.chat_getAllMessage
       parameters:
         - name: user-id
           in: path
@@ -9547,7 +9547,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getSupportedCloudPcRemoteActions
-      operationId: user.cloudPC_getSupportedCloudPcRemoteActions
+      operationId: user.cloudPC_getSupportedCloudPcRemoteAction
       parameters:
         - name: user-id
           in: path
@@ -9604,7 +9604,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getProvisionedCloudPCs
-      operationId: user.cloudPC_getProvisionedCloudPCs
+      operationId: user.cloudPC_getProvisionedCloudPC
       parameters:
         - name: user-id
           in: path
@@ -9774,7 +9774,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: user.contactFolder.childFolder.contact_delta
+      operationId: user.contactFolder.childFolder.contact_deltum
       parameters:
         - name: user-id
           in: path
@@ -9987,7 +9987,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
-      operationId: user.contactFolder.childFolder_delta
+      operationId: user.contactFolder.childFolder_deltum
       parameters:
         - name: user-id
           in: path
@@ -10090,7 +10090,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: user.contactFolder.contact_delta
+      operationId: user.contactFolder.contact_deltum
       parameters:
         - name: user-id
           in: path
@@ -10295,7 +10295,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
-      operationId: user.contactFolder_delta
+      operationId: user.contactFolder_deltum
       parameters:
         - name: user-id
           in: path
@@ -10390,7 +10390,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: user.contact_delta
+      operationId: user.contact_deltum
       parameters:
         - name: user-id
           in: path
@@ -10583,7 +10583,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.device_delta
+      operationId: user.device_deltum
       parameters:
         - name: user-id
           in: path
@@ -10922,7 +10922,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.item_delta
+      operationId: user.drive.item_deltum
       parameters:
         - name: user-id
           in: path
@@ -11007,6 +11007,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -11132,7 +11133,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.item_delta
+      operationId: user.drive.item_deltum
       parameters:
         - name: user-id
           in: path
@@ -11225,6 +11226,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -11586,6 +11588,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -11761,7 +11764,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCompatibleHubContentTypes
-      operationId: user.drive.list.contentType_getCompatibleHubContentTypes
+      operationId: user.drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: user-id
           in: path
@@ -12034,7 +12037,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.list.item_delta
+      operationId: user.drive.list.item_deltum
       parameters:
         - name: user-id
           in: path
@@ -12164,7 +12167,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.list.item_delta
+      operationId: user.drive.list.item_deltum
       parameters:
         - name: user-id
           in: path
@@ -12379,6 +12382,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -12571,6 +12575,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -12755,6 +12760,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -12997,7 +13003,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.root_delta
+      operationId: user.drive.root_deltum
       parameters:
         - name: user-id
           in: path
@@ -13074,6 +13080,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -13199,7 +13206,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.root_delta
+      operationId: user.drive.root_deltum
       parameters:
         - name: user-id
           in: path
@@ -13284,6 +13291,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -13629,6 +13637,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -13755,7 +13764,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.event.exceptionOccurrence.instance_delta
+      operationId: user.event.exceptionOccurrence.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -13986,7 +13995,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.event.exceptionOccurrence_delta
+      operationId: user.event.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -14209,7 +14218,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.event.instance.exceptionOccurrence_delta
+      operationId: user.event.instance.exceptionOccurrence_deltum
       parameters:
         - name: user-id
           in: path
@@ -14440,7 +14449,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.event.instance_delta
+      operationId: user.event.instance_deltum
       parameters:
         - name: user-id
           in: path
@@ -14663,7 +14672,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.event_delta
+      operationId: user.event_deltum
       parameters:
         - name: user-id
           in: path
@@ -14874,7 +14883,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.joinedGroup_delta
+      operationId: user.joinedGroup_deltum
       parameters:
         - name: user-id
           in: path
@@ -14936,6 +14945,7 @@ paths:
                 - resourceProvisioningOptions
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - writebackConfiguration
@@ -15064,6 +15074,8 @@ paths:
                 - securityEnabled desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - theme
                 - theme desc
                 - visibility
@@ -15137,7 +15149,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: user.mailFolder.childFolder.message_delta
+      operationId: user.mailFolder.childFolder.message_deltum
       parameters:
         - name: user-id
           in: path
@@ -15339,7 +15351,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
-      operationId: user.mailFolder.childFolder_delta
+      operationId: user.mailFolder.childFolder_deltum
       parameters:
         - name: user-id
           in: path
@@ -15456,7 +15468,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: user.mailFolder.message_delta
+      operationId: user.mailFolder.message_deltum
       parameters:
         - name: user-id
           in: path
@@ -15650,7 +15662,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
-      operationId: user.mailFolder_delta
+      operationId: user.mailFolder_deltum
       parameters:
         - name: user-id
           in: path
@@ -15755,7 +15767,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCloudPcRemoteActionResults
-      operationId: user.managedDevice_getCloudPcRemoteActionResults
+      operationId: user.managedDevice_getCloudPcRemoteActionResult
       parameters:
         - name: user-id
           in: path
@@ -15896,7 +15908,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: user.managedDevice_getNonCompliantSettings
+      operationId: user.managedDevice_getNonCompliantSetting
       parameters:
         - name: user-id
           in: path
@@ -16039,7 +16051,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function appDiagnostics
-      operationId: user.managedDevice_appDiagnostics
+      operationId: user.managedDevice_appDiagnostic
       parameters:
         - name: user-id
           in: path
@@ -16100,7 +16112,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: user.message_delta
+      operationId: user.message_deltum
       parameters:
         - name: user-id
           in: path
@@ -16360,7 +16372,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0
-      operationId: user_findRoomLists
+      operationId: user_findRoomList
       parameters:
         - name: user-id
           in: path
@@ -16395,7 +16407,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function findRooms
-      operationId: user_findRooms
+      operationId: user_findRoom
       parameters:
         - name: user-id
           in: path
@@ -16430,7 +16442,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function findRooms
-      operationId: user_findRooms
+      operationId: user_findRoom
       parameters:
         - name: user-id
           in: path
@@ -16472,7 +16484,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getEffectiveDeviceEnrollmentConfigurations
-      operationId: user_getEffectiveDeviceEnrollmentConfigurations
+      operationId: user_getEffectiveDeviceEnrollmentConfiguration
       parameters:
         - name: user-id
           in: path
@@ -16557,7 +16569,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getLoggedOnManagedDevices
-      operationId: user_getLoggedOnManagedDevices
+      operationId: user_getLoggedOnManagedDevice
       parameters:
         - name: user-id
           in: path
@@ -16872,7 +16884,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppDiagnosticStatuses
       description: Gets diagnostics validation status for a given user.
-      operationId: user_getManagedAppDiagnosticStatuses
+      operationId: user_getManagedAppDiagnosticStatus
       parameters:
         - name: user-id
           in: path
@@ -16908,7 +16920,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppPolicies
       description: Gets app restrictions for a given user.
-      operationId: user_getManagedAppPolicies
+      operationId: user_getManagedAppPolicy
       parameters:
         - name: user-id
           in: path
@@ -16987,7 +16999,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedDevicesWithAppFailures
       description: Retrieves the list of devices with failed apps
-      operationId: user_getManagedDevicesGraphWPreAppFailures
+      operationId: user_getManagedDevicesGraphWPreAppFailure
       parameters:
         - name: user-id
           in: path
@@ -17023,7 +17035,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedDevicesWithFailedOrPendingApps
       description: Retrieves the list of devices with failed or pending apps
-      operationId: user_getManagedDevicesGraphWPreFailedOrPendingApps
+      operationId: user_getManagedDevicesGraphWPreFailedOrPendingApp
       parameters:
         - name: user-id
           in: path
@@ -17254,7 +17266,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getRecentNotebooks
-      operationId: user.onenote.notebook_getRecentNotebooks
+      operationId: user.onenote.notebook_getRecentNotebook
       parameters:
         - name: user-id
           in: path
@@ -17447,6 +17459,51 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getVirtualAppointmentJoinWebUrl
+      operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/outlook/microsoft.graph.supportedLanguages()':
     get:
       tags:
@@ -17456,7 +17513,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
-      operationId: user.outlook_supportedLanguages
+      operationId: user.outlook_supportedLanguage
       parameters:
         - name: user-id
           in: path
@@ -17505,7 +17562,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: user.outlook_supportedTimeZones
+      operationId: user.outlook_supportedTimeZone
       parameters:
         - name: user-id
           in: path
@@ -17554,7 +17611,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: user.outlook_supportedTimeZones
+      operationId: user.outlook_supportedTimeZone
       parameters:
         - name: user-id
           in: path
@@ -18525,7 +18582,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.planner.all_delta
+      operationId: user.planner.all_deltum
       parameters:
         - name: user-id
           in: path
@@ -18603,7 +18660,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.planner.plan.bucket.task_delta
+      operationId: user.planner.plan.bucket.task_deltum
       parameters:
         - name: user-id
           in: path
@@ -18770,7 +18827,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.planner.plan.bucket_delta
+      operationId: user.planner.plan.bucket_deltum
       parameters:
         - name: user-id
           in: path
@@ -18869,7 +18926,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.planner.plan.task_delta
+      operationId: user.planner.plan.task_deltum
       parameters:
         - name: user-id
           in: path
@@ -19028,7 +19085,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.planner.plan_delta
+      operationId: user.planner.plan_deltum
       parameters:
         - name: user-id
           in: path
@@ -19133,7 +19190,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.planner.task_delta
+      operationId: user.planner.task_deltum
       parameters:
         - name: user-id
           in: path
@@ -19284,7 +19341,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.todo.list.task_delta
+      operationId: user.todo.list.task_deltum
       parameters:
         - name: user-id
           in: path
@@ -19420,7 +19477,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.todo.list_delta
+      operationId: user.todo.list_deltum
       parameters:
         - name: user-id
           in: path
@@ -19512,7 +19569,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user_delta
+      operationId: user_deltum
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -19590,6 +19647,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -19808,6 +19866,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -19889,7 +19949,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedAppBlockedUsers
-      operationId: user_getManagedAppBlockedUsers
+      operationId: user_getManagedAppBlockedUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -21036,6 +21096,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -21336,6 +21398,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -22812,6 +22878,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -25056,6 +25126,29 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.subscription:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25495,6 +25588,23 @@ components:
         value:
           type: string
           description: Value of the property causing the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -29885,6 +29995,29 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -31168,11 +31301,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -31190,6 +31325,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -31206,6 +31342,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -32334,12 +32471,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -36319,6 +36458,15 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.termStore.term:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -37563,11 +37711,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -43197,11 +43345,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
           nullable: true
         value:
           type: integer
-          description: Value.
+          description: Total number of synchronized objects.
           format: int64
       additionalProperties:
         type: object
@@ -43209,9 +43357,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -43549,15 +43701,15 @@ components:
       properties:
         code:
           type: string
-          description: The error code.
+          description: 'The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.'
           nullable: true
         message:
           type: string
-          description: The error message.
+          description: 'The error message. For example, Policy permitting auto-redemption of invitations not configured.'
           nullable: true
         tenantActionable:
           type: boolean
-          description: The action to take to resolve the error.
+          description: 'The action to take to resolve the error. For example, false.'
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:
@@ -43579,6 +43731,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object

@@ -102,7 +102,7 @@ paths:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
       description: The Audit Events
-      operationId: deviceManagement_ListAuditEvents
+      operationId: deviceManagement_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -192,7 +192,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Create new navigation property to auditEvents for deviceManagement
-      operationId: deviceManagement_CreateAuditEvents
+      operationId: deviceManagement_CreateAuditEvent
       requestBody:
         description: New navigation property
         content:
@@ -216,7 +216,7 @@ paths:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
       description: The Audit Events
-      operationId: deviceManagement_GetAuditEvents
+      operationId: deviceManagement_GetAuditEvent
       parameters:
         - name: auditEvent-id
           in: path
@@ -275,7 +275,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Update the navigation property auditEvents in deviceManagement
-      operationId: deviceManagement_UpdateAuditEvents
+      operationId: deviceManagement_UpdateAuditEvent
       parameters:
         - name: auditEvent-id
           in: path
@@ -306,7 +306,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Delete navigation property auditEvents for deviceManagement
-      operationId: deviceManagement_DeleteAuditEvents
+      operationId: deviceManagement_DeleteAuditEvent
       parameters:
         - name: auditEvent-id
           in: path
@@ -348,7 +348,7 @@ paths:
         - deviceManagement.cartToClassAssociation
       summary: Get cartToClassAssociations from deviceManagement
       description: The Cart To Class Associations.
-      operationId: deviceManagement_ListCartToClassAssociations
+      operationId: deviceManagement_ListCartToClassAssociation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -426,7 +426,7 @@ paths:
       tags:
         - deviceManagement.cartToClassAssociation
       summary: Create new navigation property to cartToClassAssociations for deviceManagement
-      operationId: deviceManagement_CreateCartToClassAssociations
+      operationId: deviceManagement_CreateCartToClassAssociation
       requestBody:
         description: New navigation property
         content:
@@ -450,7 +450,7 @@ paths:
         - deviceManagement.cartToClassAssociation
       summary: Get cartToClassAssociations from deviceManagement
       description: The Cart To Class Associations.
-      operationId: deviceManagement_GetCartToClassAssociations
+      operationId: deviceManagement_GetCartToClassAssociation
       parameters:
         - name: cartToClassAssociation-id
           in: path
@@ -505,7 +505,7 @@ paths:
       tags:
         - deviceManagement.cartToClassAssociation
       summary: Update the navigation property cartToClassAssociations in deviceManagement
-      operationId: deviceManagement_UpdateCartToClassAssociations
+      operationId: deviceManagement_UpdateCartToClassAssociation
       parameters:
         - name: cartToClassAssociation-id
           in: path
@@ -536,7 +536,7 @@ paths:
       tags:
         - deviceManagement.cartToClassAssociation
       summary: Delete navigation property cartToClassAssociations for deviceManagement
-      operationId: deviceManagement_DeleteCartToClassAssociations
+      operationId: deviceManagement_DeleteCartToClassAssociation
       parameters:
         - name: cartToClassAssociation-id
           in: path
@@ -578,7 +578,7 @@ paths:
         - deviceManagement.comanagementEligibleDevice
       summary: Get comanagementEligibleDevices from deviceManagement
       description: The list of co-management eligible devices report
-      operationId: deviceManagement_ListComanagementEligibleDevices
+      operationId: deviceManagement_ListComanagementEligibleDevice
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -692,7 +692,7 @@ paths:
       tags:
         - deviceManagement.comanagementEligibleDevice
       summary: Create new navigation property to comanagementEligibleDevices for deviceManagement
-      operationId: deviceManagement_CreateComanagementEligibleDevices
+      operationId: deviceManagement_CreateComanagementEligibleDevice
       requestBody:
         description: New navigation property
         content:
@@ -716,7 +716,7 @@ paths:
         - deviceManagement.comanagementEligibleDevice
       summary: Get comanagementEligibleDevices from deviceManagement
       description: The list of co-management eligible devices report
-      operationId: deviceManagement_GetComanagementEligibleDevices
+      operationId: deviceManagement_GetComanagementEligibleDevice
       parameters:
         - name: comanagementEligibleDevice-id
           in: path
@@ -783,7 +783,7 @@ paths:
       tags:
         - deviceManagement.comanagementEligibleDevice
       summary: Update the navigation property comanagementEligibleDevices in deviceManagement
-      operationId: deviceManagement_UpdateComanagementEligibleDevices
+      operationId: deviceManagement_UpdateComanagementEligibleDevice
       parameters:
         - name: comanagementEligibleDevice-id
           in: path
@@ -814,7 +814,7 @@ paths:
       tags:
         - deviceManagement.comanagementEligibleDevice
       summary: Delete navigation property comanagementEligibleDevices for deviceManagement
-      operationId: deviceManagement_DeleteComanagementEligibleDevices
+      operationId: deviceManagement_DeleteComanagementEligibleDevice
       parameters:
         - name: comanagementEligibleDevice-id
           in: path
@@ -856,7 +856,7 @@ paths:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
       description: The list of Compliance Management Partners configured by the tenant.
-      operationId: deviceManagement_ListComplianceManagementPartners
+      operationId: deviceManagement_ListComplianceManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -940,7 +940,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Create new navigation property to complianceManagementPartners for deviceManagement
-      operationId: deviceManagement_CreateComplianceManagementPartners
+      operationId: deviceManagement_CreateComplianceManagementPartner
       requestBody:
         description: New navigation property
         content:
@@ -964,7 +964,7 @@ paths:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
       description: The list of Compliance Management Partners configured by the tenant.
-      operationId: deviceManagement_GetComplianceManagementPartners
+      operationId: deviceManagement_GetComplianceManagementPartner
       parameters:
         - name: complianceManagementPartner-id
           in: path
@@ -1021,7 +1021,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Update the navigation property complianceManagementPartners in deviceManagement
-      operationId: deviceManagement_UpdateComplianceManagementPartners
+      operationId: deviceManagement_UpdateComplianceManagementPartner
       parameters:
         - name: complianceManagementPartner-id
           in: path
@@ -1052,7 +1052,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Delete navigation property complianceManagementPartners for deviceManagement
-      operationId: deviceManagement_DeleteComplianceManagementPartners
+      operationId: deviceManagement_DeleteComplianceManagementPartner
       parameters:
         - name: complianceManagementPartner-id
           in: path
@@ -1094,7 +1094,7 @@ paths:
         - deviceManagement.restrictedAppsViolation
       summary: Get deviceConfigurationRestrictedAppsViolations from deviceManagement
       description: Restricted apps violations for this account.
-      operationId: deviceManagement_ListDeviceConfigurationRestrictedAppsViolations
+      operationId: deviceManagement_ListDeviceConfigurationRestrictedAppsViolation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1178,7 +1178,7 @@ paths:
       tags:
         - deviceManagement.restrictedAppsViolation
       summary: Create new navigation property to deviceConfigurationRestrictedAppsViolations for deviceManagement
-      operationId: deviceManagement_CreateDeviceConfigurationRestrictedAppsViolations
+      operationId: deviceManagement_CreateDeviceConfigurationRestrictedAppsViolation
       requestBody:
         description: New navigation property
         content:
@@ -1202,7 +1202,7 @@ paths:
         - deviceManagement.restrictedAppsViolation
       summary: Get deviceConfigurationRestrictedAppsViolations from deviceManagement
       description: Restricted apps violations for this account.
-      operationId: deviceManagement_GetDeviceConfigurationRestrictedAppsViolations
+      operationId: deviceManagement_GetDeviceConfigurationRestrictedAppsViolation
       parameters:
         - name: restrictedAppsViolation-id
           in: path
@@ -1259,7 +1259,7 @@ paths:
       tags:
         - deviceManagement.restrictedAppsViolation
       summary: Update the navigation property deviceConfigurationRestrictedAppsViolations in deviceManagement
-      operationId: deviceManagement_UpdateDeviceConfigurationRestrictedAppsViolations
+      operationId: deviceManagement_UpdateDeviceConfigurationRestrictedAppsViolation
       parameters:
         - name: restrictedAppsViolation-id
           in: path
@@ -1290,7 +1290,7 @@ paths:
       tags:
         - deviceManagement.restrictedAppsViolation
       summary: Delete navigation property deviceConfigurationRestrictedAppsViolations for deviceManagement
-      operationId: deviceManagement_DeleteDeviceConfigurationRestrictedAppsViolations
+      operationId: deviceManagement_DeleteDeviceConfigurationRestrictedAppsViolation
       parameters:
         - name: restrictedAppsViolation-id
           in: path
@@ -1332,7 +1332,7 @@ paths:
         - deviceManagement.managedAllDeviceCertificateState
       summary: Get deviceConfigurationsAllManagedDeviceCertificateStates from deviceManagement
       description: Summary of all certificates for all devices.
-      operationId: deviceManagement_ListDeviceConfigurationsAllManagedDeviceCertificateStates
+      operationId: deviceManagement_ListDeviceConfigurationsAllManagedDeviceCertificateState
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1425,7 +1425,7 @@ paths:
       tags:
         - deviceManagement.managedAllDeviceCertificateState
       summary: Create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
-      operationId: deviceManagement_CreateDeviceConfigurationsAllManagedDeviceCertificateStates
+      operationId: deviceManagement_CreateDeviceConfigurationsAllManagedDeviceCertificateState
       requestBody:
         description: New navigation property
         content:
@@ -1449,7 +1449,7 @@ paths:
         - deviceManagement.managedAllDeviceCertificateState
       summary: Get deviceConfigurationsAllManagedDeviceCertificateStates from deviceManagement
       description: Summary of all certificates for all devices.
-      operationId: deviceManagement_GetDeviceConfigurationsAllManagedDeviceCertificateStates
+      operationId: deviceManagement_GetDeviceConfigurationsAllManagedDeviceCertificateState
       parameters:
         - name: managedAllDeviceCertificateState-id
           in: path
@@ -1509,7 +1509,7 @@ paths:
       tags:
         - deviceManagement.managedAllDeviceCertificateState
       summary: Update the navigation property deviceConfigurationsAllManagedDeviceCertificateStates in deviceManagement
-      operationId: deviceManagement_UpdateDeviceConfigurationsAllManagedDeviceCertificateStates
+      operationId: deviceManagement_UpdateDeviceConfigurationsAllManagedDeviceCertificateState
       parameters:
         - name: managedAllDeviceCertificateState-id
           in: path
@@ -1540,7 +1540,7 @@ paths:
       tags:
         - deviceManagement.managedAllDeviceCertificateState
       summary: Delete navigation property deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
-      operationId: deviceManagement_DeleteDeviceConfigurationsAllManagedDeviceCertificateStates
+      operationId: deviceManagement_DeleteDeviceConfigurationsAllManagedDeviceCertificateState
       parameters:
         - name: managedAllDeviceCertificateState-id
           in: path
@@ -1582,7 +1582,7 @@ paths:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
       description: The list of Device Management Partners configured by the tenant.
-      operationId: deviceManagement_ListDeviceManagementPartners
+      operationId: deviceManagement_ListDeviceManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1666,7 +1666,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Create new navigation property to deviceManagementPartners for deviceManagement
-      operationId: deviceManagement_CreateDeviceManagementPartners
+      operationId: deviceManagement_CreateDeviceManagementPartner
       requestBody:
         description: New navigation property
         content:
@@ -1690,7 +1690,7 @@ paths:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
       description: The list of Device Management Partners configured by the tenant.
-      operationId: deviceManagement_GetDeviceManagementPartners
+      operationId: deviceManagement_GetDeviceManagementPartner
       parameters:
         - name: deviceManagementPartner-id
           in: path
@@ -1747,7 +1747,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Update the navigation property deviceManagementPartners in deviceManagement
-      operationId: deviceManagement_UpdateDeviceManagementPartners
+      operationId: deviceManagement_UpdateDeviceManagementPartner
       parameters:
         - name: deviceManagementPartner-id
           in: path
@@ -1778,7 +1778,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Delete navigation property deviceManagementPartners for deviceManagement
-      operationId: deviceManagement_DeleteDeviceManagementPartners
+      operationId: deviceManagement_DeleteDeviceManagementPartner
       parameters:
         - name: deviceManagementPartner-id
           in: path
@@ -1820,7 +1820,7 @@ paths:
         - deviceManagement.deviceManagementDomainJoinConnector
       summary: Get domainJoinConnectors from deviceManagement
       description: A list of connector objects.
-      operationId: deviceManagement_ListDomainJoinConnectors
+      operationId: deviceManagement_ListDomainJoinConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1889,7 +1889,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementDomainJoinConnector
       summary: Create new navigation property to domainJoinConnectors for deviceManagement
-      operationId: deviceManagement_CreateDomainJoinConnectors
+      operationId: deviceManagement_CreateDomainJoinConnector
       requestBody:
         description: New navigation property
         content:
@@ -1913,7 +1913,7 @@ paths:
         - deviceManagement.deviceManagementDomainJoinConnector
       summary: Get domainJoinConnectors from deviceManagement
       description: A list of connector objects.
-      operationId: deviceManagement_GetDomainJoinConnectors
+      operationId: deviceManagement_GetDomainJoinConnector
       parameters:
         - name: deviceManagementDomainJoinConnector-id
           in: path
@@ -1965,7 +1965,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementDomainJoinConnector
       summary: Update the navigation property domainJoinConnectors in deviceManagement
-      operationId: deviceManagement_UpdateDomainJoinConnectors
+      operationId: deviceManagement_UpdateDomainJoinConnector
       parameters:
         - name: deviceManagementDomainJoinConnector-id
           in: path
@@ -1996,7 +1996,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementDomainJoinConnector
       summary: Delete navigation property domainJoinConnectors for deviceManagement
-      operationId: deviceManagement_DeleteDomainJoinConnectors
+      operationId: deviceManagement_DeleteDomainJoinConnector
       parameters:
         - name: deviceManagementDomainJoinConnector-id
           in: path
@@ -2038,7 +2038,7 @@ paths:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
       description: The list of Exchange Connectors configured by the tenant.
-      operationId: deviceManagement_ListExchangeConnectors
+      operationId: deviceManagement_ListExchangeConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2122,7 +2122,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Create new navigation property to exchangeConnectors for deviceManagement
-      operationId: deviceManagement_CreateExchangeConnectors
+      operationId: deviceManagement_CreateExchangeConnector
       requestBody:
         description: New navigation property
         content:
@@ -2146,7 +2146,7 @@ paths:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
       description: The list of Exchange Connectors configured by the tenant.
-      operationId: deviceManagement_GetExchangeConnectors
+      operationId: deviceManagement_GetExchangeConnector
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -2203,7 +2203,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Update the navigation property exchangeConnectors in deviceManagement
-      operationId: deviceManagement_UpdateExchangeConnectors
+      operationId: deviceManagement_UpdateExchangeConnector
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -2234,7 +2234,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Delete navigation property exchangeConnectors for deviceManagement
-      operationId: deviceManagement_DeleteExchangeConnectors
+      operationId: deviceManagement_DeleteExchangeConnector
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -2276,7 +2276,7 @@ paths:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get exchangeOnPremisesPolicies from deviceManagement
       description: The list of Exchange On Premisis policies configured by the tenant.
-      operationId: deviceManagement_ListExchangeOnPremisesPolicies
+      operationId: deviceManagement_ListExchangeOnPremisesPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2347,7 +2347,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Create new navigation property to exchangeOnPremisesPolicies for deviceManagement
-      operationId: deviceManagement_CreateExchangeOnPremisesPolicies
+      operationId: deviceManagement_CreateExchangeOnPremisesPolicy
       requestBody:
         description: New navigation property
         content:
@@ -2371,7 +2371,7 @@ paths:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get exchangeOnPremisesPolicies from deviceManagement
       description: The list of Exchange On Premisis policies configured by the tenant.
-      operationId: deviceManagement_GetExchangeOnPremisesPolicies
+      operationId: deviceManagement_GetExchangeOnPremisesPolicy
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
@@ -2425,7 +2425,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Update the navigation property exchangeOnPremisesPolicies in deviceManagement
-      operationId: deviceManagement_UpdateExchangeOnPremisesPolicies
+      operationId: deviceManagement_UpdateExchangeOnPremisesPolicy
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
@@ -2456,7 +2456,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Delete navigation property exchangeOnPremisesPolicies for deviceManagement
-      operationId: deviceManagement_DeleteExchangeOnPremisesPolicies
+      operationId: deviceManagement_DeleteExchangeOnPremisesPolicy
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
@@ -2484,7 +2484,7 @@ paths:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get conditionalAccessSettings from deviceManagement
       description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-      operationId: deviceManagement.exchangeOnPremisesPolicy_GetConditionalAccessSettings
+      operationId: deviceManagement.exchangeOnPremisesPolicy_GetConditionalAccessSetting
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
@@ -2536,7 +2536,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Update the navigation property conditionalAccessSettings in deviceManagement
-      operationId: deviceManagement.exchangeOnPremisesPolicy_UpdateConditionalAccessSettings
+      operationId: deviceManagement.exchangeOnPremisesPolicy_UpdateConditionalAccessSetting
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
@@ -2567,7 +2567,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Delete navigation property conditionalAccessSettings for deviceManagement
-      operationId: deviceManagement.exchangeOnPremisesPolicy_DeleteConditionalAccessSettings
+      operationId: deviceManagement.exchangeOnPremisesPolicy_DeleteConditionalAccessSetting
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
@@ -2697,7 +2697,7 @@ paths:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get conditionalAccessSettings from deviceManagement
       description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-      operationId: deviceManagement.exchangeOnPremisesPolicy_GetConditionalAccessSettings
+      operationId: deviceManagement.exchangeOnPremisesPolicy_GetConditionalAccessSetting
       parameters:
         - name: $select
           in: query
@@ -2741,7 +2741,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Update the navigation property conditionalAccessSettings in deviceManagement
-      operationId: deviceManagement.exchangeOnPremisesPolicy_UpdateConditionalAccessSettings
+      operationId: deviceManagement.exchangeOnPremisesPolicy_UpdateConditionalAccessSetting
       requestBody:
         description: New navigation property values
         content:
@@ -2763,7 +2763,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Delete navigation property conditionalAccessSettings for deviceManagement
-      operationId: deviceManagement.exchangeOnPremisesPolicy_DeleteConditionalAccessSettings
+      operationId: deviceManagement.exchangeOnPremisesPolicy_DeleteConditionalAccessSetting
       parameters:
         - name: If-Match
           in: header
@@ -2783,7 +2783,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get groupPolicyCategories from deviceManagement
       description: The available group policy categories for this account.
-      operationId: deviceManagement_ListGroupPolicyCategories
+      operationId: deviceManagement_ListGroupPolicyCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2860,7 +2860,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Create new navigation property to groupPolicyCategories for deviceManagement
-      operationId: deviceManagement_CreateGroupPolicyCategories
+      operationId: deviceManagement_CreateGroupPolicyCategory
       requestBody:
         description: New navigation property
         content:
@@ -2884,7 +2884,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get groupPolicyCategories from deviceManagement
       description: The available group policy categories for this account.
-      operationId: deviceManagement_GetGroupPolicyCategories
+      operationId: deviceManagement_GetGroupPolicyCategory
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -2944,7 +2944,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Update the navigation property groupPolicyCategories in deviceManagement
-      operationId: deviceManagement_UpdateGroupPolicyCategories
+      operationId: deviceManagement_UpdateGroupPolicyCategory
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -2975,7 +2975,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Delete navigation property groupPolicyCategories for deviceManagement
-      operationId: deviceManagement_DeleteGroupPolicyCategories
+      operationId: deviceManagement_DeleteGroupPolicyCategory
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3003,7 +3003,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get children from deviceManagement
       description: The children categories
-      operationId: deviceManagement.groupPolicyCategory_ListChildren
+      operationId: deviceManagement.groupPolicyCategory_ListChild
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3090,7 +3090,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get children from deviceManagement
       description: The children categories
-      operationId: deviceManagement.groupPolicyCategory_GetChildren
+      operationId: deviceManagement.groupPolicyCategory_GetChild
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3243,7 +3243,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get definitions from deviceManagement
       description: The immediate GroupPolicyDefinition children of the category
-      operationId: deviceManagement.groupPolicyCategory_ListDefinitions
+      operationId: deviceManagement.groupPolicyCategory_ListDefinition
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3356,7 +3356,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get definitions from deviceManagement
       description: The immediate GroupPolicyDefinition children of the category
-      operationId: deviceManagement.groupPolicyCategory_GetDefinitions
+      operationId: deviceManagement.groupPolicyCategory_GetDefinition
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3534,7 +3534,7 @@ paths:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get groupPolicyDefinitionFiles from deviceManagement
       description: The available group policy definition files for this account.
-      operationId: deviceManagement_ListGroupPolicyDefinitionFiles
+      operationId: deviceManagement_ListGroupPolicyDefinitionFile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3620,7 +3620,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Create new navigation property to groupPolicyDefinitionFiles for deviceManagement
-      operationId: deviceManagement_CreateGroupPolicyDefinitionFiles
+      operationId: deviceManagement_CreateGroupPolicyDefinitionFile
       requestBody:
         description: New navigation property
         content:
@@ -3644,7 +3644,7 @@ paths:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get groupPolicyDefinitionFiles from deviceManagement
       description: The available group policy definition files for this account.
-      operationId: deviceManagement_GetGroupPolicyDefinitionFiles
+      operationId: deviceManagement_GetGroupPolicyDefinitionFile
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
@@ -3703,7 +3703,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Update the navigation property groupPolicyDefinitionFiles in deviceManagement
-      operationId: deviceManagement_UpdateGroupPolicyDefinitionFiles
+      operationId: deviceManagement_UpdateGroupPolicyDefinitionFile
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
@@ -3734,7 +3734,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Delete navigation property groupPolicyDefinitionFiles for deviceManagement
-      operationId: deviceManagement_DeleteGroupPolicyDefinitionFiles
+      operationId: deviceManagement_DeleteGroupPolicyDefinitionFile
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
@@ -3762,7 +3762,7 @@ paths:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get definitions from deviceManagement
       description: The group policy definitions associated with the file.
-      operationId: deviceManagement.groupPolicyDefinitionFile_ListDefinitions
+      operationId: deviceManagement.groupPolicyDefinitionFile_ListDefinition
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
@@ -3875,7 +3875,7 @@ paths:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get definitions from deviceManagement
       description: The group policy definitions associated with the file.
-      operationId: deviceManagement.groupPolicyDefinitionFile_GetDefinitions
+      operationId: deviceManagement.groupPolicyDefinitionFile_GetDefinition
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
@@ -3991,7 +3991,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get groupPolicyDefinitions from deviceManagement
       description: The available group policy definitions for this account.
-      operationId: deviceManagement_ListGroupPolicyDefinitions
+      operationId: deviceManagement_ListGroupPolicyDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4094,7 +4094,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Create new navigation property to groupPolicyDefinitions for deviceManagement
-      operationId: deviceManagement_CreateGroupPolicyDefinitions
+      operationId: deviceManagement_CreateGroupPolicyDefinition
       requestBody:
         description: New navigation property
         content:
@@ -4118,7 +4118,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get groupPolicyDefinitions from deviceManagement
       description: The available group policy definitions for this account.
-      operationId: deviceManagement_GetGroupPolicyDefinitions
+      operationId: deviceManagement_GetGroupPolicyDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4188,7 +4188,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Update the navigation property groupPolicyDefinitions in deviceManagement
-      operationId: deviceManagement_UpdateGroupPolicyDefinitions
+      operationId: deviceManagement_UpdateGroupPolicyDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4219,7 +4219,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Delete navigation property groupPolicyDefinitions for deviceManagement
-      operationId: deviceManagement_DeleteGroupPolicyDefinitions
+      operationId: deviceManagement_DeleteGroupPolicyDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4622,7 +4622,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_ListPresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_ListPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4695,7 +4695,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Create new navigation property to presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_CreatePresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_CreatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4728,7 +4728,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_GetPresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_GetPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4788,7 +4788,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Update the navigation property presentations in deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_UpdatePresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_UpdatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4827,7 +4827,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Delete navigation property presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_DeletePresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition_DeletePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5217,7 +5217,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_ListPresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_ListPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5290,7 +5290,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Create new navigation property to presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_CreatePresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_CreatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5323,7 +5323,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_GetPresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_GetPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5383,7 +5383,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Update the navigation property presentations in deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_UpdatePresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_UpdatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5422,7 +5422,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Delete navigation property presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_DeletePresentations
+      operationId: deviceManagement.groupPolicyDefinition.nextVersionDefinition.previousVersionDefinition_DeletePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5560,7 +5560,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition_ListPresentations
+      operationId: deviceManagement.groupPolicyDefinition_ListPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5633,7 +5633,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Create new navigation property to presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition_CreatePresentations
+      operationId: deviceManagement.groupPolicyDefinition_CreatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5666,7 +5666,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition_GetPresentations
+      operationId: deviceManagement.groupPolicyDefinition_GetPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5726,7 +5726,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Update the navigation property presentations in deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition_UpdatePresentations
+      operationId: deviceManagement.groupPolicyDefinition_UpdatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5765,7 +5765,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Delete navigation property presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition_DeletePresentations
+      operationId: deviceManagement.groupPolicyDefinition_DeletePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6407,7 +6407,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_ListPresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_ListPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6480,7 +6480,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Create new navigation property to presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_CreatePresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_CreatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6513,7 +6513,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_GetPresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_GetPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6573,7 +6573,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Update the navigation property presentations in deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_UpdatePresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_UpdatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6612,7 +6612,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Delete navigation property presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_DeletePresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition.nextVersionDefinition_DeletePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6750,7 +6750,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_ListPresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_ListPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6823,7 +6823,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Create new navigation property to presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_CreatePresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_CreatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6856,7 +6856,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
       description: The group policy presentations associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_GetPresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_GetPresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6916,7 +6916,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Update the navigation property presentations in deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_UpdatePresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_UpdatePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -6955,7 +6955,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Delete navigation property presentations for deviceManagement
-      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_DeletePresentations
+      operationId: deviceManagement.groupPolicyDefinition.previousVersionDefinition_DeletePresentation
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -7107,7 +7107,7 @@ paths:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicyMigrationReports from deviceManagement
       description: A list of Group Policy migration reports.
-      operationId: deviceManagement_ListGroupPolicyMigrationReports
+      operationId: deviceManagement_ListGroupPolicyMigrationReport
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7207,7 +7207,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Create new navigation property to groupPolicyMigrationReports for deviceManagement
-      operationId: deviceManagement_CreateGroupPolicyMigrationReports
+      operationId: deviceManagement_CreateGroupPolicyMigrationReport
       requestBody:
         description: New navigation property
         content:
@@ -7231,7 +7231,7 @@ paths:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicyMigrationReports from deviceManagement
       description: A list of Group Policy migration reports.
-      operationId: deviceManagement_GetGroupPolicyMigrationReports
+      operationId: deviceManagement_GetGroupPolicyMigrationReport
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7296,7 +7296,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Update the navigation property groupPolicyMigrationReports in deviceManagement
-      operationId: deviceManagement_UpdateGroupPolicyMigrationReports
+      operationId: deviceManagement_UpdateGroupPolicyMigrationReport
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7327,7 +7327,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Delete navigation property groupPolicyMigrationReports for deviceManagement
-      operationId: deviceManagement_DeleteGroupPolicyMigrationReports
+      operationId: deviceManagement_DeleteGroupPolicyMigrationReport
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7355,7 +7355,7 @@ paths:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicySettingMappings from deviceManagement
       description: A list of group policy settings to MDM/Intune mappings.
-      operationId: deviceManagement.groupPolicyMigrationReport_ListGroupPolicySettingMappings
+      operationId: deviceManagement.groupPolicyMigrationReport_ListGroupPolicySettingMapping
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7480,7 +7480,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Create new navigation property to groupPolicySettingMappings for deviceManagement
-      operationId: deviceManagement.groupPolicyMigrationReport_CreateGroupPolicySettingMappings
+      operationId: deviceManagement.groupPolicyMigrationReport_CreateGroupPolicySettingMapping
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7513,7 +7513,7 @@ paths:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicySettingMappings from deviceManagement
       description: A list of group policy settings to MDM/Intune mappings.
-      operationId: deviceManagement.groupPolicyMigrationReport_GetGroupPolicySettingMappings
+      operationId: deviceManagement.groupPolicyMigrationReport_GetGroupPolicySettingMapping
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7589,7 +7589,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Update the navigation property groupPolicySettingMappings in deviceManagement
-      operationId: deviceManagement.groupPolicyMigrationReport_UpdateGroupPolicySettingMappings
+      operationId: deviceManagement.groupPolicyMigrationReport_UpdateGroupPolicySettingMapping
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7628,7 +7628,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Delete navigation property groupPolicySettingMappings for deviceManagement
-      operationId: deviceManagement.groupPolicyMigrationReport_DeleteGroupPolicySettingMappings
+      operationId: deviceManagement.groupPolicyMigrationReport_DeleteGroupPolicySettingMapping
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7686,7 +7686,7 @@ paths:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get unsupportedGroupPolicyExtensions from deviceManagement
       description: A list of unsupported group policy extensions inside the Group Policy Object.
-      operationId: deviceManagement.groupPolicyMigrationReport_ListUnsupportedGroupPolicyExtensions
+      operationId: deviceManagement.groupPolicyMigrationReport_ListUnsupportedGroupPolicyExtension
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7763,7 +7763,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
-      operationId: deviceManagement.groupPolicyMigrationReport_CreateUnsupportedGroupPolicyExtensions
+      operationId: deviceManagement.groupPolicyMigrationReport_CreateUnsupportedGroupPolicyExtension
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7796,7 +7796,7 @@ paths:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get unsupportedGroupPolicyExtensions from deviceManagement
       description: A list of unsupported group policy extensions inside the Group Policy Object.
-      operationId: deviceManagement.groupPolicyMigrationReport_GetUnsupportedGroupPolicyExtensions
+      operationId: deviceManagement.groupPolicyMigrationReport_GetUnsupportedGroupPolicyExtension
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7856,7 +7856,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Update the navigation property unsupportedGroupPolicyExtensions in deviceManagement
-      operationId: deviceManagement.groupPolicyMigrationReport_UpdateUnsupportedGroupPolicyExtensions
+      operationId: deviceManagement.groupPolicyMigrationReport_UpdateUnsupportedGroupPolicyExtension
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7895,7 +7895,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Delete navigation property unsupportedGroupPolicyExtensions for deviceManagement
-      operationId: deviceManagement.groupPolicyMigrationReport_DeleteUnsupportedGroupPolicyExtensions
+      operationId: deviceManagement.groupPolicyMigrationReport_DeleteUnsupportedGroupPolicyExtension
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -7967,7 +7967,7 @@ paths:
         - deviceManagement.groupPolicyObjectFile
       summary: Get groupPolicyObjectFiles from deviceManagement
       description: A list of Group Policy Object files uploaded.
-      operationId: deviceManagement_ListGroupPolicyObjectFiles
+      operationId: deviceManagement_ListGroupPolicyObjectFile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8042,7 +8042,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyObjectFile
       summary: Create new navigation property to groupPolicyObjectFiles for deviceManagement
-      operationId: deviceManagement_CreateGroupPolicyObjectFiles
+      operationId: deviceManagement_CreateGroupPolicyObjectFile
       requestBody:
         description: New navigation property
         content:
@@ -8066,7 +8066,7 @@ paths:
         - deviceManagement.groupPolicyObjectFile
       summary: Get groupPolicyObjectFiles from deviceManagement
       description: A list of Group Policy Object files uploaded.
-      operationId: deviceManagement_GetGroupPolicyObjectFiles
+      operationId: deviceManagement_GetGroupPolicyObjectFile
       parameters:
         - name: groupPolicyObjectFile-id
           in: path
@@ -8120,7 +8120,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyObjectFile
       summary: Update the navigation property groupPolicyObjectFiles in deviceManagement
-      operationId: deviceManagement_UpdateGroupPolicyObjectFiles
+      operationId: deviceManagement_UpdateGroupPolicyObjectFile
       parameters:
         - name: groupPolicyObjectFile-id
           in: path
@@ -8151,7 +8151,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyObjectFile
       summary: Delete navigation property groupPolicyObjectFiles for deviceManagement
-      operationId: deviceManagement_DeleteGroupPolicyObjectFiles
+      operationId: deviceManagement_DeleteGroupPolicyObjectFile
       parameters:
         - name: groupPolicyObjectFile-id
           in: path
@@ -8193,7 +8193,7 @@ paths:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyUploadedDefinitionFiles from deviceManagement
       description: The available group policy uploaded definition files for this account.
-      operationId: deviceManagement_ListGroupPolicyUploadedDefinitionFiles
+      operationId: deviceManagement_ListGroupPolicyUploadedDefinitionFile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8296,7 +8296,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Create new navigation property to groupPolicyUploadedDefinitionFiles for deviceManagement
-      operationId: deviceManagement_CreateGroupPolicyUploadedDefinitionFiles
+      operationId: deviceManagement_CreateGroupPolicyUploadedDefinitionFile
       requestBody:
         description: New navigation property
         content:
@@ -8320,7 +8320,7 @@ paths:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyUploadedDefinitionFiles from deviceManagement
       description: The available group policy uploaded definition files for this account.
-      operationId: deviceManagement_GetGroupPolicyUploadedDefinitionFiles
+      operationId: deviceManagement_GetGroupPolicyUploadedDefinitionFile
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -8386,7 +8386,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
-      operationId: deviceManagement_UpdateGroupPolicyUploadedDefinitionFiles
+      operationId: deviceManagement_UpdateGroupPolicyUploadedDefinitionFile
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -8417,7 +8417,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
-      operationId: deviceManagement_DeleteGroupPolicyUploadedDefinitionFiles
+      operationId: deviceManagement_DeleteGroupPolicyUploadedDefinitionFile
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -8445,7 +8445,7 @@ paths:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyOperations from deviceManagement
       description: The list of operations on the uploaded ADMX file.
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_ListGroupPolicyOperations
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_ListGroupPolicyOperation
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -8522,7 +8522,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Create new navigation property to groupPolicyOperations for deviceManagement
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_CreateGroupPolicyOperations
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_CreateGroupPolicyOperation
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -8555,7 +8555,7 @@ paths:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyOperations from deviceManagement
       description: The list of operations on the uploaded ADMX file.
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_GetGroupPolicyOperations
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_GetGroupPolicyOperation
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -8615,7 +8615,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Update the navigation property groupPolicyOperations in deviceManagement
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_UpdateGroupPolicyOperations
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_UpdateGroupPolicyOperation
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -8654,7 +8654,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Delete navigation property groupPolicyOperations for deviceManagement
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_DeleteGroupPolicyOperations
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_DeleteGroupPolicyOperation
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -8726,7 +8726,7 @@ paths:
         - deviceManagement.intuneBrandingProfile
       summary: Get intuneBrandingProfiles from deviceManagement
       description: Intune branding profiles targeted to AAD groups
-      operationId: deviceManagement_ListIntuneBrandingProfiles
+      operationId: deviceManagement_ListIntuneBrandingProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8884,7 +8884,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Create new navigation property to intuneBrandingProfiles for deviceManagement
-      operationId: deviceManagement_CreateIntuneBrandingProfiles
+      operationId: deviceManagement_CreateIntuneBrandingProfile
       requestBody:
         description: New navigation property
         content:
@@ -8908,7 +8908,7 @@ paths:
         - deviceManagement.intuneBrandingProfile
       summary: Get intuneBrandingProfiles from deviceManagement
       description: Intune branding profiles targeted to AAD groups
-      operationId: deviceManagement_GetIntuneBrandingProfiles
+      operationId: deviceManagement_GetIntuneBrandingProfile
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -8991,7 +8991,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Update the navigation property intuneBrandingProfiles in deviceManagement
-      operationId: deviceManagement_UpdateIntuneBrandingProfiles
+      operationId: deviceManagement_UpdateIntuneBrandingProfile
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -9022,7 +9022,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Delete navigation property intuneBrandingProfiles for deviceManagement
-      operationId: deviceManagement_DeleteIntuneBrandingProfiles
+      operationId: deviceManagement_DeleteIntuneBrandingProfile
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -9050,7 +9050,7 @@ paths:
         - deviceManagement.intuneBrandingProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the branding profile
-      operationId: deviceManagement.intuneBrandingProfile_ListAssignments
+      operationId: deviceManagement.intuneBrandingProfile_ListAssignment
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -9118,7 +9118,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.intuneBrandingProfile_CreateAssignments
+      operationId: deviceManagement.intuneBrandingProfile_CreateAssignment
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -9151,7 +9151,7 @@ paths:
         - deviceManagement.intuneBrandingProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the branding profile
-      operationId: deviceManagement.intuneBrandingProfile_GetAssignments
+      operationId: deviceManagement.intuneBrandingProfile_GetAssignment
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -9208,7 +9208,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.intuneBrandingProfile_UpdateAssignments
+      operationId: deviceManagement.intuneBrandingProfile_UpdateAssignment
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -9247,7 +9247,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.intuneBrandingProfile_DeleteAssignments
+      operationId: deviceManagement.intuneBrandingProfile_DeleteAssignment
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -9319,7 +9319,7 @@ paths:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
       description: The IOS software update installation statuses for this account.
-      operationId: deviceManagement_ListIosUpdateStatuses
+      operationId: deviceManagement_ListIosUpdateStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9412,7 +9412,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Create new navigation property to iosUpdateStatuses for deviceManagement
-      operationId: deviceManagement_CreateIosUpdateStatuses
+      operationId: deviceManagement_CreateIosUpdateStatus
       requestBody:
         description: New navigation property
         content:
@@ -9436,7 +9436,7 @@ paths:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
       description: The IOS software update installation statuses for this account.
-      operationId: deviceManagement_GetIosUpdateStatuses
+      operationId: deviceManagement_GetIosUpdateStatus
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
@@ -9496,7 +9496,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Update the navigation property iosUpdateStatuses in deviceManagement
-      operationId: deviceManagement_UpdateIosUpdateStatuses
+      operationId: deviceManagement_UpdateIosUpdateStatus
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
@@ -9527,7 +9527,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Delete navigation property iosUpdateStatuses for deviceManagement
-      operationId: deviceManagement_DeleteIosUpdateStatuses
+      operationId: deviceManagement_DeleteIosUpdateStatus
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
@@ -9569,7 +9569,7 @@ paths:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
       description: The list of Mobile threat Defense connectors configured by the tenant.
-      operationId: deviceManagement_ListMobileThreatDefenseConnectors
+      operationId: deviceManagement_ListMobileThreatDefenseConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9680,7 +9680,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
-      operationId: deviceManagement_CreateMobileThreatDefenseConnectors
+      operationId: deviceManagement_CreateMobileThreatDefenseConnector
       requestBody:
         description: New navigation property
         content:
@@ -9704,7 +9704,7 @@ paths:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
       description: The list of Mobile threat Defense connectors configured by the tenant.
-      operationId: deviceManagement_GetMobileThreatDefenseConnectors
+      operationId: deviceManagement_GetMobileThreatDefenseConnector
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
@@ -9770,7 +9770,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Update the navigation property mobileThreatDefenseConnectors in deviceManagement
-      operationId: deviceManagement_UpdateMobileThreatDefenseConnectors
+      operationId: deviceManagement_UpdateMobileThreatDefenseConnector
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
@@ -9801,7 +9801,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Delete navigation property mobileThreatDefenseConnectors for deviceManagement
-      operationId: deviceManagement_DeleteMobileThreatDefenseConnectors
+      operationId: deviceManagement_DeleteMobileThreatDefenseConnector
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
@@ -9843,7 +9843,7 @@ paths:
         - deviceManagement.ndesConnector
       summary: Get ndesConnectors from deviceManagement
       description: The collection of Ndes connectors for this account.
-      operationId: deviceManagement_ListNdesConnectors
+      operationId: deviceManagement_ListNdesConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9921,7 +9921,7 @@ paths:
       tags:
         - deviceManagement.ndesConnector
       summary: Create new navigation property to ndesConnectors for deviceManagement
-      operationId: deviceManagement_CreateNdesConnectors
+      operationId: deviceManagement_CreateNdesConnector
       requestBody:
         description: New navigation property
         content:
@@ -9945,7 +9945,7 @@ paths:
         - deviceManagement.ndesConnector
       summary: Get ndesConnectors from deviceManagement
       description: The collection of Ndes connectors for this account.
-      operationId: deviceManagement_GetNdesConnectors
+      operationId: deviceManagement_GetNdesConnector
       parameters:
         - name: ndesConnector-id
           in: path
@@ -10000,7 +10000,7 @@ paths:
       tags:
         - deviceManagement.ndesConnector
       summary: Update the navigation property ndesConnectors in deviceManagement
-      operationId: deviceManagement_UpdateNdesConnectors
+      operationId: deviceManagement_UpdateNdesConnector
       parameters:
         - name: ndesConnector-id
           in: path
@@ -10031,7 +10031,7 @@ paths:
       tags:
         - deviceManagement.ndesConnector
       summary: Delete navigation property ndesConnectors for deviceManagement
-      operationId: deviceManagement_DeleteNdesConnectors
+      operationId: deviceManagement_DeleteNdesConnector
       parameters:
         - name: ndesConnector-id
           in: path
@@ -10073,7 +10073,7 @@ paths:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
       description: The remote assist partners.
-      operationId: deviceManagement_ListRemoteAssistancePartners
+      operationId: deviceManagement_ListRemoteAssistancePartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10145,7 +10145,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Create new navigation property to remoteAssistancePartners for deviceManagement
-      operationId: deviceManagement_CreateRemoteAssistancePartners
+      operationId: deviceManagement_CreateRemoteAssistancePartner
       requestBody:
         description: New navigation property
         content:
@@ -10169,7 +10169,7 @@ paths:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
       description: The remote assist partners.
-      operationId: deviceManagement_GetRemoteAssistancePartners
+      operationId: deviceManagement_GetRemoteAssistancePartner
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -10222,7 +10222,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Update the navigation property remoteAssistancePartners in deviceManagement
-      operationId: deviceManagement_UpdateRemoteAssistancePartners
+      operationId: deviceManagement_UpdateRemoteAssistancePartner
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -10253,7 +10253,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Delete navigation property remoteAssistancePartners for deviceManagement
-      operationId: deviceManagement_DeleteRemoteAssistancePartners
+      operationId: deviceManagement_DeleteRemoteAssistancePartner
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -10295,7 +10295,7 @@ paths:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
       description: The Resource Operations.
-      operationId: deviceManagement_ListResourceOperations
+      operationId: deviceManagement_ListResourceOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10367,7 +10367,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Create new navigation property to resourceOperations for deviceManagement
-      operationId: deviceManagement_CreateResourceOperations
+      operationId: deviceManagement_CreateResourceOperation
       requestBody:
         description: New navigation property
         content:
@@ -10391,7 +10391,7 @@ paths:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
       description: The Resource Operations.
-      operationId: deviceManagement_GetResourceOperations
+      operationId: deviceManagement_GetResourceOperation
       parameters:
         - name: resourceOperation-id
           in: path
@@ -10444,7 +10444,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Update the navigation property resourceOperations in deviceManagement
-      operationId: deviceManagement_UpdateResourceOperations
+      operationId: deviceManagement_UpdateResourceOperation
       parameters:
         - name: resourceOperation-id
           in: path
@@ -10475,7 +10475,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Delete navigation property resourceOperations for deviceManagement
-      operationId: deviceManagement_DeleteResourceOperations
+      operationId: deviceManagement_DeleteResourceOperation
       parameters:
         - name: resourceOperation-id
           in: path
@@ -10517,7 +10517,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
       description: The Role Assignments.
-      operationId: deviceManagement_ListRoleAssignments
+      operationId: deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10596,7 +10596,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Create new navigation property to roleAssignments for deviceManagement
-      operationId: deviceManagement_CreateRoleAssignments
+      operationId: deviceManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -10620,7 +10620,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
       description: The Role Assignments.
-      operationId: deviceManagement_GetRoleAssignments
+      operationId: deviceManagement_GetRoleAssignment
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -10678,7 +10678,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Update the navigation property roleAssignments in deviceManagement
-      operationId: deviceManagement_UpdateRoleAssignments
+      operationId: deviceManagement_UpdateRoleAssignment
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -10709,7 +10709,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Delete navigation property roleAssignments for deviceManagement
-      operationId: deviceManagement_DeleteRoleAssignments
+      operationId: deviceManagement_DeleteRoleAssignment
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -10737,7 +10737,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleScopeTags from deviceManagement
       description: The set of Role Scope Tags defined on the Role Assignment.
-      operationId: deviceManagement.roleAssignment_ListRoleScopeTags
+      operationId: deviceManagement.roleAssignment_ListRoleScopeTag
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -10815,7 +10815,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleScopeTags from deviceManagement
       description: The set of Role Scope Tags defined on the Role Assignment.
-      operationId: deviceManagement.roleAssignment_GetRoleScopeTags
+      operationId: deviceManagement.roleAssignment_GetRoleScopeTag
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -10914,7 +10914,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
       description: The Role Definitions.
-      operationId: deviceManagement_ListRoleDefinitions
+      operationId: deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10994,7 +10994,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Create new navigation property to roleDefinitions for deviceManagement
-      operationId: deviceManagement_CreateRoleDefinitions
+      operationId: deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
         content:
@@ -11018,7 +11018,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
       description: The Role Definitions.
-      operationId: deviceManagement_GetRoleDefinitions
+      operationId: deviceManagement_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -11075,7 +11075,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Update the navigation property roleDefinitions in deviceManagement
-      operationId: deviceManagement_UpdateRoleDefinitions
+      operationId: deviceManagement_UpdateRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -11106,7 +11106,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Delete navigation property roleDefinitions for deviceManagement
-      operationId: deviceManagement_DeleteRoleDefinitions
+      operationId: deviceManagement_DeleteRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -11134,7 +11134,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
       description: List of Role assignments for this role definition.
-      operationId: deviceManagement.roleDefinition_ListRoleAssignments
+      operationId: deviceManagement.roleDefinition_ListRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -11216,7 +11216,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Create new navigation property to roleAssignments for deviceManagement
-      operationId: deviceManagement.roleDefinition_CreateRoleAssignments
+      operationId: deviceManagement.roleDefinition_CreateRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -11249,7 +11249,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
       description: List of Role assignments for this role definition.
-      operationId: deviceManagement.roleDefinition_GetRoleAssignments
+      operationId: deviceManagement.roleDefinition_GetRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -11312,7 +11312,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Update the navigation property roleAssignments in deviceManagement
-      operationId: deviceManagement.roleDefinition_UpdateRoleAssignments
+      operationId: deviceManagement.roleDefinition_UpdateRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -11351,7 +11351,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Delete navigation property roleAssignments for deviceManagement
-      operationId: deviceManagement.roleDefinition_DeleteRoleAssignments
+      operationId: deviceManagement.roleDefinition_DeleteRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -11490,7 +11490,7 @@ paths:
         - deviceManagement.roleScopeTag
       summary: Get roleScopeTags from deviceManagement
       description: The Role Scope Tags.
-      operationId: deviceManagement_ListRoleScopeTags
+      operationId: deviceManagement_ListRoleScopeTag
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11558,7 +11558,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Create new navigation property to roleScopeTags for deviceManagement
-      operationId: deviceManagement_CreateRoleScopeTags
+      operationId: deviceManagement_CreateRoleScopeTag
       requestBody:
         description: New navigation property
         content:
@@ -11582,7 +11582,7 @@ paths:
         - deviceManagement.roleScopeTag
       summary: Get roleScopeTags from deviceManagement
       description: The Role Scope Tags.
-      operationId: deviceManagement_GetRoleScopeTags
+      operationId: deviceManagement_GetRoleScopeTag
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -11635,7 +11635,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Update the navigation property roleScopeTags in deviceManagement
-      operationId: deviceManagement_UpdateRoleScopeTags
+      operationId: deviceManagement_UpdateRoleScopeTag
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -11666,7 +11666,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Delete navigation property roleScopeTags for deviceManagement
-      operationId: deviceManagement_DeleteRoleScopeTags
+      operationId: deviceManagement_DeleteRoleScopeTag
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -11694,7 +11694,7 @@ paths:
         - deviceManagement.roleScopeTag
       summary: Get assignments from deviceManagement
       description: The list of assignments for this Role Scope Tag.
-      operationId: deviceManagement.roleScopeTag_ListAssignments
+      operationId: deviceManagement.roleScopeTag_ListAssignment
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -11762,7 +11762,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.roleScopeTag_CreateAssignments
+      operationId: deviceManagement.roleScopeTag_CreateAssignment
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -11795,7 +11795,7 @@ paths:
         - deviceManagement.roleScopeTag
       summary: Get assignments from deviceManagement
       description: The list of assignments for this Role Scope Tag.
-      operationId: deviceManagement.roleScopeTag_GetAssignments
+      operationId: deviceManagement.roleScopeTag_GetAssignment
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -11852,7 +11852,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.roleScopeTag_UpdateAssignments
+      operationId: deviceManagement.roleScopeTag_UpdateAssignment
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -11891,7 +11891,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.roleScopeTag_DeleteAssignments
+      operationId: deviceManagement.roleScopeTag_DeleteAssignment
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -11963,7 +11963,7 @@ paths:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
       description: The telecom expense management partners.
-      operationId: deviceManagement_ListTelecomExpenseManagementPartners
+      operationId: deviceManagement_ListTelecomExpenseManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12035,7 +12035,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Create new navigation property to telecomExpenseManagementPartners for deviceManagement
-      operationId: deviceManagement_CreateTelecomExpenseManagementPartners
+      operationId: deviceManagement_CreateTelecomExpenseManagementPartner
       requestBody:
         description: New navigation property
         content:
@@ -12059,7 +12059,7 @@ paths:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
       description: The telecom expense management partners.
-      operationId: deviceManagement_GetTelecomExpenseManagementPartners
+      operationId: deviceManagement_GetTelecomExpenseManagementPartner
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
@@ -12112,7 +12112,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Update the navigation property telecomExpenseManagementPartners in deviceManagement
-      operationId: deviceManagement_UpdateTelecomExpenseManagementPartners
+      operationId: deviceManagement_UpdateTelecomExpenseManagementPartner
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
@@ -12143,7 +12143,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Delete navigation property telecomExpenseManagementPartners for deviceManagement
-      operationId: deviceManagement_DeleteTelecomExpenseManagementPartners
+      operationId: deviceManagement_DeleteTelecomExpenseManagementPartner
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
@@ -12185,7 +12185,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: The terms and conditions associated with device management of the company.
-      operationId: deviceManagement_ListTermsAndConditions
+      operationId: deviceManagement_ListTermsAndCondition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12278,7 +12278,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to termsAndConditions for deviceManagement
-      operationId: deviceManagement_CreateTermsAndConditions
+      operationId: deviceManagement_CreateTermsAndCondition
       requestBody:
         description: New navigation property
         content:
@@ -12302,7 +12302,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: The terms and conditions associated with device management of the company.
-      operationId: deviceManagement_GetTermsAndConditions
+      operationId: deviceManagement_GetTermsAndCondition
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12366,7 +12366,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property termsAndConditions in deviceManagement
-      operationId: deviceManagement_UpdateTermsAndConditions
+      operationId: deviceManagement_UpdateTermsAndCondition
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12397,7 +12397,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property termsAndConditions for deviceManagement
-      operationId: deviceManagement_DeleteTermsAndConditions
+      operationId: deviceManagement_DeleteTermsAndCondition
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12425,7 +12425,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
       description: The list of acceptance statuses for this T&C policy.
-      operationId: deviceManagement.termsAndCondition_ListAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_ListAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12504,7 +12504,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to acceptanceStatuses for deviceManagement
-      operationId: deviceManagement.termsAndCondition_CreateAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_CreateAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12537,7 +12537,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
       description: The list of acceptance statuses for this T&C policy.
-      operationId: deviceManagement.termsAndCondition_GetAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_GetAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12599,7 +12599,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property acceptanceStatuses in deviceManagement
-      operationId: deviceManagement.termsAndCondition_UpdateAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_UpdateAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12638,7 +12638,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property acceptanceStatuses for deviceManagement
-      operationId: deviceManagement.termsAndCondition_DeleteAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_DeleteAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12674,7 +12674,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndCondition.acceptanceStatus_GetTermsAndConditions
+      operationId: deviceManagement.termsAndCondition.acceptanceStatus_GetTermsAndCondition
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12770,7 +12770,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
       description: The list of assignments for this T&C policy.
-      operationId: deviceManagement.termsAndCondition_ListAssignments
+      operationId: deviceManagement.termsAndCondition_ListAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12838,7 +12838,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.termsAndCondition_CreateAssignments
+      operationId: deviceManagement.termsAndCondition_CreateAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12871,7 +12871,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
       description: The list of assignments for this T&C policy.
-      operationId: deviceManagement.termsAndCondition_GetAssignments
+      operationId: deviceManagement.termsAndCondition_GetAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12928,7 +12928,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.termsAndCondition_UpdateAssignments
+      operationId: deviceManagement.termsAndCondition_UpdateAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -12967,7 +12967,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.termsAndCondition_DeleteAssignments
+      operationId: deviceManagement.termsAndCondition_DeleteAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -13025,7 +13025,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get groupAssignments from deviceManagement
       description: The list of group assignments for this T&C policy.
-      operationId: deviceManagement.termsAndCondition_ListGroupAssignments
+      operationId: deviceManagement.termsAndCondition_ListGroupAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -13095,7 +13095,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to groupAssignments for deviceManagement
-      operationId: deviceManagement.termsAndCondition_CreateGroupAssignments
+      operationId: deviceManagement.termsAndCondition_CreateGroupAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -13128,7 +13128,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get groupAssignments from deviceManagement
       description: The list of group assignments for this T&C policy.
-      operationId: deviceManagement.termsAndCondition_GetGroupAssignments
+      operationId: deviceManagement.termsAndCondition_GetGroupAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -13187,7 +13187,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property groupAssignments in deviceManagement
-      operationId: deviceManagement.termsAndCondition_UpdateGroupAssignments
+      operationId: deviceManagement.termsAndCondition_UpdateGroupAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -13226,7 +13226,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property groupAssignments for deviceManagement
-      operationId: deviceManagement.termsAndCondition_DeleteGroupAssignments
+      operationId: deviceManagement.termsAndCondition_DeleteGroupAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -13262,7 +13262,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndCondition.groupAssignment_GetTermsAndConditions
+      operationId: deviceManagement.termsAndCondition.groupAssignment_GetTermsAndCondition
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -13372,7 +13372,7 @@ paths:
         - deviceManagement.userPFXCertificate
       summary: Get userPfxCertificates from deviceManagement
       description: Collection of PFX certificates associated with a user.
-      operationId: deviceManagement_ListUserPfxCertificates
+      operationId: deviceManagement_ListUserPfxCertificate
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13465,7 +13465,7 @@ paths:
       tags:
         - deviceManagement.userPFXCertificate
       summary: Create new navigation property to userPfxCertificates for deviceManagement
-      operationId: deviceManagement_CreateUserPfxCertificates
+      operationId: deviceManagement_CreateUserPfxCertificate
       requestBody:
         description: New navigation property
         content:
@@ -13489,7 +13489,7 @@ paths:
         - deviceManagement.userPFXCertificate
       summary: Get userPfxCertificates from deviceManagement
       description: Collection of PFX certificates associated with a user.
-      operationId: deviceManagement_GetUserPfxCertificates
+      operationId: deviceManagement_GetUserPfxCertificate
       parameters:
         - name: userPFXCertificate-id
           in: path
@@ -13549,7 +13549,7 @@ paths:
       tags:
         - deviceManagement.userPFXCertificate
       summary: Update the navigation property userPfxCertificates in deviceManagement
-      operationId: deviceManagement_UpdateUserPfxCertificates
+      operationId: deviceManagement_UpdateUserPfxCertificate
       parameters:
         - name: userPFXCertificate-id
           in: path
@@ -13580,7 +13580,7 @@ paths:
       tags:
         - deviceManagement.userPFXCertificate
       summary: Delete navigation property userPfxCertificates for deviceManagement
-      operationId: deviceManagement_DeleteUserPfxCertificates
+      operationId: deviceManagement_DeleteUserPfxCertificate
       parameters:
         - name: userPFXCertificate-id
           in: path
@@ -13736,7 +13736,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListAuditEvents
+      operationId: deviceManagement.virtualEndpoint_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13826,7 +13826,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to auditEvents for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_CreateAuditEvents
+      operationId: deviceManagement.virtualEndpoint_CreateAuditEvent
       requestBody:
         description: New navigation property
         content:
@@ -13850,7 +13850,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get auditEvents from deviceManagement
       description: Cloud PC audit event.
-      operationId: deviceManagement.virtualEndpoint_GetAuditEvents
+      operationId: deviceManagement.virtualEndpoint_GetAuditEvent
       parameters:
         - name: cloudPcAuditEvent-id
           in: path
@@ -13909,7 +13909,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property auditEvents in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateAuditEvents
+      operationId: deviceManagement.virtualEndpoint_UpdateAuditEvent
       parameters:
         - name: cloudPcAuditEvent-id
           in: path
@@ -13940,7 +13940,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property auditEvents for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteAuditEvents
+      operationId: deviceManagement.virtualEndpoint_DeleteAuditEvent
       parameters:
         - name: cloudPcAuditEvent-id
           in: path
@@ -13985,7 +13985,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListCloudPCs
+      operationId: deviceManagement.virtualEndpoint_ListCloudPC
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14117,7 +14117,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to cloudPCs for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_CreateCloudPCs
+      operationId: deviceManagement.virtualEndpoint_CreateCloudPC
       requestBody:
         description: New navigation property
         content:
@@ -14141,7 +14141,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPCs from deviceManagement
       description: Cloud managed virtual desktops.
-      operationId: deviceManagement.virtualEndpoint_GetCloudPCs
+      operationId: deviceManagement.virtualEndpoint_GetCloudPC
       parameters:
         - name: cloudPC-id
           in: path
@@ -14214,7 +14214,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property cloudPCs in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateCloudPCs
+      operationId: deviceManagement.virtualEndpoint_UpdateCloudPC
       parameters:
         - name: cloudPC-id
           in: path
@@ -14245,7 +14245,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property cloudPCs for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteCloudPCs
+      operationId: deviceManagement.virtualEndpoint_DeleteCloudPC
       parameters:
         - name: cloudPC-id
           in: path
@@ -14376,7 +14376,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListDeviceImages
+      operationId: deviceManagement.virtualEndpoint_ListDeviceImage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14467,7 +14467,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_CreateDeviceImages
+      operationId: deviceManagement.virtualEndpoint_CreateDeviceImage
       requestBody:
         description: New navigation property
         content:
@@ -14491,7 +14491,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get deviceImages from deviceManagement
       description: The image resource on Cloud PC.
-      operationId: deviceManagement.virtualEndpoint_GetDeviceImages
+      operationId: deviceManagement.virtualEndpoint_GetDeviceImage
       parameters:
         - name: cloudPcDeviceImage-id
           in: path
@@ -14549,7 +14549,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property deviceImages in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateDeviceImages
+      operationId: deviceManagement.virtualEndpoint_UpdateDeviceImage
       parameters:
         - name: cloudPcDeviceImage-id
           in: path
@@ -14580,7 +14580,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property deviceImages for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteDeviceImages
+      operationId: deviceManagement.virtualEndpoint_DeleteDeviceImage
       parameters:
         - name: cloudPcDeviceImage-id
           in: path
@@ -14625,7 +14625,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSettings
+      operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSetting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14701,7 +14701,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_CreateExternalPartnerSettings
+      operationId: deviceManagement.virtualEndpoint_CreateExternalPartnerSetting
       requestBody:
         description: New navigation property
         content:
@@ -14725,7 +14725,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get externalPartnerSettings from deviceManagement
       description: The external partner settings on a Cloud PC.
-      operationId: deviceManagement.virtualEndpoint_GetExternalPartnerSettings
+      operationId: deviceManagement.virtualEndpoint_GetExternalPartnerSetting
       parameters:
         - name: cloudPcExternalPartnerSetting-id
           in: path
@@ -14778,7 +14778,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property externalPartnerSettings in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateExternalPartnerSettings
+      operationId: deviceManagement.virtualEndpoint_UpdateExternalPartnerSetting
       parameters:
         - name: cloudPcExternalPartnerSetting-id
           in: path
@@ -14809,7 +14809,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property externalPartnerSettings for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteExternalPartnerSettings
+      operationId: deviceManagement.virtualEndpoint_DeleteExternalPartnerSetting
       parameters:
         - name: cloudPcExternalPartnerSetting-id
           in: path
@@ -14854,7 +14854,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListGalleryImages
+      operationId: deviceManagement.virtualEndpoint_ListGalleryImage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14947,7 +14947,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to galleryImages for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_CreateGalleryImages
+      operationId: deviceManagement.virtualEndpoint_CreateGalleryImage
       requestBody:
         description: New navigation property
         content:
@@ -14971,7 +14971,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get galleryImages from deviceManagement
       description: The gallery image resource on Cloud PC.
-      operationId: deviceManagement.virtualEndpoint_GetGalleryImages
+      operationId: deviceManagement.virtualEndpoint_GetGalleryImage
       parameters:
         - name: cloudPcGalleryImage-id
           in: path
@@ -15031,7 +15031,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property galleryImages in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateGalleryImages
+      operationId: deviceManagement.virtualEndpoint_UpdateGalleryImage
       parameters:
         - name: cloudPcGalleryImage-id
           in: path
@@ -15062,7 +15062,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property galleryImages for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteGalleryImages
+      operationId: deviceManagement.virtualEndpoint_DeleteGalleryImage
       parameters:
         - name: cloudPcGalleryImage-id
           in: path
@@ -15107,7 +15107,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -15219,7 +15219,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_CreateOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_CreateOnPremisesConnection
       requestBody:
         description: New navigation property
         content:
@@ -15243,7 +15243,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get onPremisesConnections from deviceManagement
       description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-      operationId: deviceManagement.virtualEndpoint_GetOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_GetOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
@@ -15308,7 +15308,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property onPremisesConnections in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_UpdateOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
@@ -15339,7 +15339,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property onPremisesConnections for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_DeleteOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
@@ -15384,7 +15384,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_GetOrganizationSettings
+      operationId: deviceManagement.virtualEndpoint_GetOrganizationSetting
       parameters:
         - name: $select
           in: query
@@ -15433,7 +15433,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_UpdateOrganizationSettings
+      operationId: deviceManagement.virtualEndpoint_UpdateOrganizationSetting
       requestBody:
         description: New navigation property values
         content:
@@ -15455,7 +15455,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property organizationSettings for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteOrganizationSettings
+      operationId: deviceManagement.virtualEndpoint_DeleteOrganizationSetting
       parameters:
         - name: If-Match
           in: header
@@ -15478,7 +15478,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -15595,7 +15595,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_CreateProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_CreateProvisioningPolicy
       requestBody:
         description: New navigation property
         content:
@@ -15619,7 +15619,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get provisioningPolicies from deviceManagement
       description: Cloud PC provisioning policy.
-      operationId: deviceManagement.virtualEndpoint_GetProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_GetProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -15687,7 +15687,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property provisioningPolicies in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_UpdateProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -15718,7 +15718,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property provisioningPolicies for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_DeleteProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -15746,7 +15746,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
       description: 'A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.'
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_ListAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_ListAssignment
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -15816,7 +15816,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_CreateAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_CreateAssignment
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -15849,7 +15849,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
       description: 'A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.'
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_GetAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_GetAssignment
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -15908,7 +15908,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_UpdateAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_UpdateAssignment
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -15947,7 +15947,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_DeleteAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_DeleteAssignment
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -15982,7 +15982,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignedUsers from deviceManagement
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment_ListAssignedUsers
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment_ListAssignedUser
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -16137,6 +16137,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -16251,6 +16253,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -16433,7 +16436,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignedUsers from deviceManagement
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment_GetAssignedUsers
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment_GetAssignedUser
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -16530,6 +16533,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -16708,6 +16712,138 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}/assignedUsers/{user-id}/mailboxSettings':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment.assignedUser_GetMailboxSetting
+      parameters:
+        - name: cloudPcProvisioningPolicy-id
+          in: path
+          description: The unique identifier of cloudPcProvisioningPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcProvisioningPolicy
+        - name: cloudPcProvisioningPolicyAssignment-id
+          in: path
+          description: The unique identifier of cloudPcProvisioningPolicyAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcProvisioningPolicyAssignment
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update property mailboxSettings value.
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment.assignedUser_UpdateMailboxSetting
+      parameters:
+        - name: cloudPcProvisioningPolicy-id
+          in: path
+          description: The unique identifier of cloudPcProvisioningPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcProvisioningPolicy
+        - name: cloudPcProvisioningPolicyAssignment-id
+          in: path
+          description: The unique identifier of cloudPcProvisioningPolicyAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcProvisioningPolicyAssignment
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}/assignedUsers/$count':
     get:
       tags:
@@ -16786,7 +16922,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get reports from deviceManagement
       description: Cloud PC related reports.
-      operationId: deviceManagement.virtualEndpoint_GetReports
+      operationId: deviceManagement.virtualEndpoint_GetReport
       parameters:
         - name: $select
           in: query
@@ -16828,7 +16964,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property reports in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateReports
+      operationId: deviceManagement.virtualEndpoint_UpdateReport
       requestBody:
         description: New navigation property values
         content:
@@ -16850,7 +16986,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property reports for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteReports
+      operationId: deviceManagement.virtualEndpoint_DeleteReport
       parameters:
         - name: If-Match
           in: header
@@ -16870,7 +17006,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get exportJobs from deviceManagement
       description: The export jobs created for downloading reports.
-      operationId: deviceManagement.virtualEndpoint.report_ListExportJobs
+      operationId: deviceManagement.virtualEndpoint.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -16955,7 +17091,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.report_CreateExportJobs
+      operationId: deviceManagement.virtualEndpoint.report_CreateExportJob
       requestBody:
         description: New navigation property
         content:
@@ -16979,7 +17115,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get exportJobs from deviceManagement
       description: The export jobs created for downloading reports.
-      operationId: deviceManagement.virtualEndpoint.report_GetExportJobs
+      operationId: deviceManagement.virtualEndpoint.report_GetExportJob
       parameters:
         - name: cloudPcExportJob-id
           in: path
@@ -17035,7 +17171,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property exportJobs in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.report_UpdateExportJobs
+      operationId: deviceManagement.virtualEndpoint.report_UpdateExportJob
       parameters:
         - name: cloudPcExportJob-id
           in: path
@@ -17066,7 +17202,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property exportJobs for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.report_DeleteExportJobs
+      operationId: deviceManagement.virtualEndpoint.report_DeleteExportJob
       parameters:
         - name: cloudPcExportJob-id
           in: path
@@ -17111,7 +17247,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListServicePlans
+      operationId: deviceManagement.virtualEndpoint_ListServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -17192,7 +17328,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to servicePlans for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_CreateServicePlans
+      operationId: deviceManagement.virtualEndpoint_CreateServicePlan
       requestBody:
         description: New navigation property
         content:
@@ -17216,7 +17352,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get servicePlans from deviceManagement
       description: Cloud PC service plans.
-      operationId: deviceManagement.virtualEndpoint_GetServicePlans
+      operationId: deviceManagement.virtualEndpoint_GetServicePlan
       parameters:
         - name: cloudPcServicePlan-id
           in: path
@@ -17272,7 +17408,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property servicePlans in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateServicePlans
+      operationId: deviceManagement.virtualEndpoint_UpdateServicePlan
       parameters:
         - name: cloudPcServicePlan-id
           in: path
@@ -17303,7 +17439,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property servicePlans for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteServicePlans
+      operationId: deviceManagement.virtualEndpoint_DeleteServicePlan
       parameters:
         - name: cloudPcServicePlan-id
           in: path
@@ -17348,7 +17484,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListSharedUseServicePlans
+      operationId: deviceManagement.virtualEndpoint_ListSharedUseServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -17414,7 +17550,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to sharedUseServicePlans for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_CreateSharedUseServicePlans
+      operationId: deviceManagement.virtualEndpoint_CreateSharedUseServicePlan
       requestBody:
         description: New navigation property
         content:
@@ -17438,7 +17574,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get sharedUseServicePlans from deviceManagement
       description: Cloud PC shared-use service plans.
-      operationId: deviceManagement.virtualEndpoint_GetSharedUseServicePlans
+      operationId: deviceManagement.virtualEndpoint_GetSharedUseServicePlan
       parameters:
         - name: cloudPcSharedUseServicePlan-id
           in: path
@@ -17489,7 +17625,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property sharedUseServicePlans in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateSharedUseServicePlans
+      operationId: deviceManagement.virtualEndpoint_UpdateSharedUseServicePlan
       parameters:
         - name: cloudPcSharedUseServicePlan-id
           in: path
@@ -17520,7 +17656,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property sharedUseServicePlans for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteSharedUseServicePlans
+      operationId: deviceManagement.virtualEndpoint_DeleteSharedUseServicePlan
       parameters:
         - name: cloudPcSharedUseServicePlan-id
           in: path
@@ -17565,7 +17701,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListSnapshots
+      operationId: deviceManagement.virtualEndpoint_ListSnapshot
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -17640,7 +17776,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to snapshots for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_CreateSnapshots
+      operationId: deviceManagement.virtualEndpoint_CreateSnapshot
       requestBody:
         description: New navigation property
         content:
@@ -17664,7 +17800,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get snapshots from deviceManagement
       description: Cloud PC snapshots.
-      operationId: deviceManagement.virtualEndpoint_GetSnapshots
+      operationId: deviceManagement.virtualEndpoint_GetSnapshot
       parameters:
         - name: cloudPcSnapshot-id
           in: path
@@ -17718,7 +17854,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property snapshots in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateSnapshots
+      operationId: deviceManagement.virtualEndpoint_UpdateSnapshot
       parameters:
         - name: cloudPcSnapshot-id
           in: path
@@ -17749,7 +17885,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property snapshots for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteSnapshots
+      operationId: deviceManagement.virtualEndpoint_DeleteSnapshot
       parameters:
         - name: cloudPcSnapshot-id
           in: path
@@ -17794,7 +17930,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListSupportedRegions
+      operationId: deviceManagement.virtualEndpoint_ListSupportedRegion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -17863,7 +17999,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to supportedRegions for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_CreateSupportedRegions
+      operationId: deviceManagement.virtualEndpoint_CreateSupportedRegion
       requestBody:
         description: New navigation property
         content:
@@ -17887,7 +18023,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get supportedRegions from deviceManagement
       description: Cloud PC supported regions.
-      operationId: deviceManagement.virtualEndpoint_GetSupportedRegions
+      operationId: deviceManagement.virtualEndpoint_GetSupportedRegion
       parameters:
         - name: cloudPcSupportedRegion-id
           in: path
@@ -17939,7 +18075,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property supportedRegions in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateSupportedRegions
+      operationId: deviceManagement.virtualEndpoint_UpdateSupportedRegion
       parameters:
         - name: cloudPcSupportedRegion-id
           in: path
@@ -17970,7 +18106,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property supportedRegions for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteSupportedRegions
+      operationId: deviceManagement.virtualEndpoint_DeleteSupportedRegion
       parameters:
         - name: cloudPcSupportedRegion-id
           in: path
@@ -18015,7 +18151,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_ListUserSettings
+      operationId: deviceManagement.virtualEndpoint_ListUserSetting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -18096,7 +18232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint_CreateUserSettings
+      operationId: deviceManagement.virtualEndpoint_CreateUserSetting
       requestBody:
         description: New navigation property
         content:
@@ -18120,7 +18256,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get userSettings from deviceManagement
       description: Cloud PC user settings.
-      operationId: deviceManagement.virtualEndpoint_GetUserSettings
+      operationId: deviceManagement.virtualEndpoint_GetUserSetting
       parameters:
         - name: cloudPcUserSetting-id
           in: path
@@ -18176,7 +18312,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property userSettings in deviceManagement
-      operationId: deviceManagement.virtualEndpoint_UpdateUserSettings
+      operationId: deviceManagement.virtualEndpoint_UpdateUserSetting
       parameters:
         - name: cloudPcUserSetting-id
           in: path
@@ -18207,7 +18343,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property userSettings for deviceManagement
-      operationId: deviceManagement.virtualEndpoint_DeleteUserSettings
+      operationId: deviceManagement.virtualEndpoint_DeleteUserSetting
       parameters:
         - name: cloudPcUserSetting-id
           in: path
@@ -18235,7 +18371,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
       description: 'Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
-      operationId: deviceManagement.virtualEndpoint.userSetting_ListAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_ListAssignment
       parameters:
         - name: cloudPcUserSetting-id
           in: path
@@ -18306,7 +18442,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.userSetting_CreateAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_CreateAssignment
       parameters:
         - name: cloudPcUserSetting-id
           in: path
@@ -18339,7 +18475,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
       description: 'Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
-      operationId: deviceManagement.virtualEndpoint.userSetting_GetAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_GetAssignment
       parameters:
         - name: cloudPcUserSetting-id
           in: path
@@ -18397,7 +18533,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.userSetting_UpdateAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_UpdateAssignment
       parameters:
         - name: cloudPcUserSetting-id
           in: path
@@ -18436,7 +18572,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.userSetting_DeleteAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_DeleteAssignment
       parameters:
         - name: cloudPcUserSetting-id
           in: path
@@ -21011,6 +21147,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -21407,6 +21547,40 @@ components:
               $ref: '#/components/schemas/microsoft.graph.todo'
           additionalProperties:
             type: object
+    microsoft.graph.mailboxSettings:
+      title: mailboxSettings
+      type: object
+      properties:
+        archiveFolder:
+          type: string
+          description: Folder ID of an archive folder for the user. Read-only.
+          nullable: true
+        automaticRepliesSetting:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
+        dateFormat:
+          type: string
+          description: The date format for the user's mailbox.
+          nullable: true
+        delegateMeetingMessageDeliveryOptions:
+          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
+        language:
+          $ref: '#/components/schemas/microsoft.graph.localeInfo'
+        timeFormat:
+          type: string
+          description: The time format for the user's mailbox.
+          nullable: true
+        timeZone:
+          type: string
+          description: The default time zone for the user's mailbox.
+          nullable: true
+        userPurpose:
+          $ref: '#/components/schemas/microsoft.graph.userPurpose'
+        userPurposeV2:
+          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
+        workingHours:
+          $ref: '#/components/schemas/microsoft.graph.workingHours'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcReports:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23745,38 +23919,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.mailboxSettings:
-      title: mailboxSettings
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
       type: object
       properties:
-        archiveFolder:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Folder ID of an archive folder for the user. Read-only.
+          format: date-time
           nullable: true
-        automaticRepliesSetting:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
-        dateFormat:
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
           type: string
-          description: The date format for the user's mailbox.
           nullable: true
-        delegateMeetingMessageDeliveryOptions:
-          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
-        language:
-          $ref: '#/components/schemas/microsoft.graph.localeInfo'
-        timeFormat:
-          type: string
-          description: The time format for the user's mailbox.
-          nullable: true
-        timeZone:
-          type: string
-          description: The default time zone for the user's mailbox.
-          nullable: true
-        userPurpose:
-          $ref: '#/components/schemas/microsoft.graph.userPurpose'
-        userPurposeV2:
-          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
-        workingHours:
-          $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
     microsoft.graph.userPrint:
@@ -24888,6 +25045,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -27462,6 +27623,97 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.automaticRepliesSetting:
+      title: automaticRepliesSetting
+      type: object
+      properties:
+        externalAudience:
+          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
+        externalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        internalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        scheduledEndDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        scheduledStartDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.delegateMeetingMessageDeliveryOptions:
+      title: delegateMeetingMessageDeliveryOptions
+      enum:
+        - sendToDelegateAndInformationToPrincipal
+        - sendToDelegateAndPrincipal
+        - sendToDelegateOnly
+      type: string
+    microsoft.graph.localeInfo:
+      title: localeInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
+          nullable: true
+        locale:
+          type: string
+          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userPurpose:
+      title: userPurpose
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+        - unknownFutureValue
+      type: string
+    microsoft.graph.mailboxRecipientType:
+      title: mailboxRecipientType
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+      type: string
+    microsoft.graph.workingHours:
+      title: workingHours
+      type: object
+      properties:
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: The days of the week on which the user works.
+        endTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user stops working.
+          format: time
+          nullable: true
+        startTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user starts working.
+          format: time
+          nullable: true
+        timeZone:
+          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcExportJobStatus:
       title: cloudPcExportJobStatus
       enum:
@@ -28586,97 +28838,6 @@ components:
         - starterManaged
         - unknownFutureValue
       type: string
-    microsoft.graph.automaticRepliesSetting:
-      title: automaticRepliesSetting
-      type: object
-      properties:
-        externalAudience:
-          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
-        externalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        internalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        scheduledEndDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        scheduledStartDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        status:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
-      additionalProperties:
-        type: object
-    microsoft.graph.delegateMeetingMessageDeliveryOptions:
-      title: delegateMeetingMessageDeliveryOptions
-      enum:
-        - sendToDelegateAndInformationToPrincipal
-        - sendToDelegateAndPrincipal
-        - sendToDelegateOnly
-      type: string
-    microsoft.graph.localeInfo:
-      title: localeInfo
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
-          nullable: true
-        locale:
-          type: string
-          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.userPurpose:
-      title: userPurpose
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-        - unknownFutureValue
-      type: string
-    microsoft.graph.mailboxRecipientType:
-      title: mailboxRecipientType
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-      type: string
-    microsoft.graph.workingHours:
-      title: workingHours
-      type: object
-      properties:
-        daysOfWeek:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: The days of the week on which the user works.
-        endTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user stops working.
-          format: time
-          nullable: true
-        startTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user starts working.
-          format: time
-          nullable: true
-        timeZone:
-          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
-      additionalProperties:
-        type: object
     microsoft.graph.printerShare:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.printerBase'
@@ -29156,12 +29317,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -30497,6 +30660,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -35269,11 +35434,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -35291,6 +35458,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -35307,6 +35475,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -35365,6 +35534,41 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.externalAudienceScope:
+      title: externalAudienceScope
+      enum:
+        - none
+        - contactsOnly
+        - all
+      type: string
+    microsoft.graph.automaticRepliesStatus:
+      title: automaticRepliesStatus
+      enum:
+        - disabled
+        - alwaysEnabled
+        - scheduled
+      type: string
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.timeZoneBase:
+      title: timeZoneBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -35456,44 +35660,10 @@ components:
         - internalServerErrorAllocateResourceFailed
         - internalServerErrorVMDeploymentTimeout
         - internalServerErrorUnableToRunDscScript
+        - ssoCheckKerberosConfigurationError
         - internalServerUnknownError
         - unknownFutureValue
       type: string
-    microsoft.graph.externalAudienceScope:
-      title: externalAudienceScope
-      enum:
-        - none
-        - contactsOnly
-        - all
-      type: string
-    microsoft.graph.automaticRepliesStatus:
-      title: automaticRepliesStatus
-      enum:
-        - disabled
-        - alwaysEnabled
-        - scheduled
-      type: string
-    microsoft.graph.dayOfWeek:
-      title: dayOfWeek
-      enum:
-        - sunday
-        - monday
-        - tuesday
-        - wednesday
-        - thursday
-        - friday
-        - saturday
-      type: string
-    microsoft.graph.timeZoneBase:
-      title: timeZoneBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.printerBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -35789,11 +35959,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -37128,6 +37298,29 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.workbookWorksheet'
               description: Represents a collection of worksheets associated with the workbook. Read-only.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
           additionalProperties:
             type: object
     microsoft.graph.subscription:
@@ -42155,6 +42348,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -45236,11 +45452,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
           nullable: true
         value:
           type: integer
-          description: Value.
+          description: Total number of synchronized objects.
           format: int64
       additionalProperties:
         type: object
@@ -45248,9 +45464,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -45512,6 +45732,15 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessAction:
       title: accessAction
       type: object
@@ -45910,15 +46139,15 @@ components:
       properties:
         code:
           type: string
-          description: The error code.
+          description: 'The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.'
           nullable: true
         message:
           type: string
-          description: The error message.
+          description: 'The error message. For example, Policy permitting auto-redemption of invitations not configured.'
           nullable: true
         tenantActionable:
           type: boolean
-          description: The action to take to resolve the error.
+          description: 'The action to take to resolve the error. For example, false.'
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:
@@ -45940,6 +46169,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object

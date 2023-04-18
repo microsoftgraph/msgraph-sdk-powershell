@@ -97,7 +97,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0
-      operationId: user.inferenceClassification_ListOverrides
+      operationId: user.inferenceClassification_ListOverride
       parameters:
         - name: user-id
           in: path
@@ -165,7 +165,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0
-      operationId: user.inferenceClassification_CreateOverrides
+      operationId: user.inferenceClassification_CreateOverride
       parameters:
         - name: user-id
           in: path
@@ -204,7 +204,7 @@ paths:
         - users.inferenceClassification
       summary: Get overrides from users
       description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
-      operationId: user.inferenceClassification_GetOverrides
+      operationId: user.inferenceClassification_GetOverride
       parameters:
         - name: user-id
           in: path
@@ -256,7 +256,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Update the navigation property overrides in users
-      operationId: user.inferenceClassification_UpdateOverrides
+      operationId: user.inferenceClassification_UpdateOverride
       parameters:
         - name: user-id
           in: path
@@ -301,7 +301,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Delete navigation property overrides for users
-      operationId: user.inferenceClassification_DeleteOverrides
+      operationId: user.inferenceClassification_DeleteOverride
       parameters:
         - name: user-id
           in: path
@@ -368,12 +368,12 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List mailFolders
-      description: 'Get all the mail folders in the specified user''s mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.'
+      summary: Get mailFolders from users
+      description: The user's mail folders. Read-only. Nullable.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0
-      operationId: user_ListMailFolders
+      operationId: user_ListMailFolder
       parameters:
         - name: user-id
           in: path
@@ -383,6 +383,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: includeHiddenFolders
+          in: query
+          description: Include Hidden Folders
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -480,7 +487,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0
-      operationId: user_CreateMailFolders
+      operationId: user_CreateMailFolder
       parameters:
         - name: user-id
           in: path
@@ -519,7 +526,7 @@ paths:
         - users.mailFolder
       summary: Get mailFolders from users
       description: The user's mail folders. Read-only. Nullable.
-      operationId: user_GetMailFolders
+      operationId: user_GetMailFolder
       parameters:
         - name: user-id
           in: path
@@ -537,6 +544,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
+        - name: includeHiddenFolders
+          in: query
+          description: Include Hidden Folders
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -600,7 +614,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property mailFolders in users
-      operationId: user_UpdateMailFolders
+      operationId: user_UpdateMailFolder
       parameters:
         - name: user-id
           in: path
@@ -645,7 +659,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property mailFolders for users
-      operationId: user_DeleteMailFolders
+      operationId: user_DeleteMailFolder
       parameters:
         - name: user-id
           in: path
@@ -690,7 +704,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0
-      operationId: user.mailFolder_ListChildFolders
+      operationId: user.mailFolder_ListChildFolder
       parameters:
         - name: user-id
           in: path
@@ -805,7 +819,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
-      operationId: user.mailFolder_CreateChildFolders
+      operationId: user.mailFolder_CreateChildFolder
       parameters:
         - name: user-id
           in: path
@@ -852,7 +866,7 @@ paths:
         - users.mailFolder
       summary: Get childFolders from users
       description: The collection of child folders in the mailFolder.
-      operationId: user.mailFolder_GetChildFolders
+      operationId: user.mailFolder_GetChildFolder
       parameters:
         - name: user-id
           in: path
@@ -941,7 +955,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property childFolders in users
-      operationId: user.mailFolder_UpdateChildFolders
+      operationId: user.mailFolder_UpdateChildFolder
       parameters:
         - name: user-id
           in: path
@@ -994,7 +1008,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property childFolders for users
-      operationId: user.mailFolder_DeleteChildFolders
+      operationId: user.mailFolder_DeleteChildFolder
       parameters:
         - name: user-id
           in: path
@@ -1042,9 +1056,12 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messageRules from users
-      description: The collection of rules that apply to the user's Inbox folder.
-      operationId: user.mailFolder.childFolder_ListMessageRules
+      summary: List rules
+      description: Get all the messageRule objects defined for the user's inbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+      operationId: user.mailFolder.childFolder_ListMessageRule
       parameters:
         - name: user-id
           in: path
@@ -1141,8 +1158,12 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messageRules for users
-      operationId: user.mailFolder.childFolder_CreateMessageRules
+      summary: Create rule
+      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+      operationId: user.mailFolder.childFolder_CreateMessageRule
       parameters:
         - name: user-id
           in: path
@@ -1197,7 +1218,7 @@ paths:
         - users.mailFolder
       summary: Get messageRules from users
       description: The collection of rules that apply to the user's Inbox folder.
-      operationId: user.mailFolder.childFolder_GetMessageRules
+      operationId: user.mailFolder.childFolder_GetMessageRule
       parameters:
         - name: user-id
           in: path
@@ -1271,7 +1292,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property messageRules in users
-      operationId: user.mailFolder.childFolder_UpdateMessageRules
+      operationId: user.mailFolder.childFolder_UpdateMessageRule
       parameters:
         - name: user-id
           in: path
@@ -1332,7 +1353,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property messageRules for users
-      operationId: user.mailFolder.childFolder_DeleteMessageRules
+      operationId: user.mailFolder.childFolder_DeleteMessageRule
       parameters:
         - name: user-id
           in: path
@@ -1436,7 +1457,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
-      operationId: user.mailFolder.childFolder_ListMessages
+      operationId: user.mailFolder.childFolder_ListMessage
       parameters:
         - name: user-id
           in: path
@@ -1636,7 +1657,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
-      operationId: user.mailFolder.childFolder_CreateMessages
+      operationId: user.mailFolder.childFolder_CreateMessage
       parameters:
         - name: user-id
           in: path
@@ -1691,7 +1712,7 @@ paths:
         - users.mailFolder
       summary: Get messages from users
       description: The collection of messages in the mailFolder.
-      operationId: user.mailFolder.childFolder_GetMessages
+      operationId: user.mailFolder.childFolder_GetMessage
       parameters:
         - name: user-id
           in: path
@@ -1812,7 +1833,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property messages in users
-      operationId: user.mailFolder.childFolder_UpdateMessages
+      operationId: user.mailFolder.childFolder_UpdateMessage
       parameters:
         - name: user-id
           in: path
@@ -1873,7 +1894,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property messages for users
-      operationId: user.mailFolder.childFolder_DeleteMessages
+      operationId: user.mailFolder.childFolder_DeleteMessage
       parameters:
         - name: user-id
           in: path
@@ -2047,11 +2068,11 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
+      description: Retrieve a list of attachment objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
-      operationId: user.mailFolder.childFolder.message_ListAttachments
+        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+      operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - name: user-id
           in: path
@@ -2164,7 +2185,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
-      operationId: user.mailFolder.childFolder.message_CreateAttachments
+      operationId: user.mailFolder.childFolder.message_CreateAttachment
       parameters:
         - name: user-id
           in: path
@@ -2227,7 +2248,7 @@ paths:
         - users.mailFolder
       summary: Get attachments from users
       description: The fileAttachment and itemAttachment attachments for the message.
-      operationId: user.mailFolder.childFolder.message_GetAttachments
+      operationId: user.mailFolder.childFolder.message_GetAttachment
       parameters:
         - name: user-id
           in: path
@@ -2318,7 +2339,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property attachments for users
-      operationId: user.mailFolder.childFolder.message_DeleteAttachments
+      operationId: user.mailFolder.childFolder.message_DeleteAttachment
       parameters:
         - name: user-id
           in: path
@@ -2435,7 +2456,7 @@ paths:
         - users.mailFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: user.mailFolder.childFolder.message_ListExtensions
+      operationId: user.mailFolder.childFolder.message_ListExtension
       parameters:
         - name: user-id
           in: path
@@ -2533,7 +2554,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: user.mailFolder.childFolder.message_CreateExtensions
+      operationId: user.mailFolder.childFolder.message_CreateExtension
       parameters:
         - name: user-id
           in: path
@@ -2596,7 +2617,7 @@ paths:
         - users.mailFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: user.mailFolder.childFolder.message_GetExtensions
+      operationId: user.mailFolder.childFolder.message_GetExtension
       parameters:
         - name: user-id
           in: path
@@ -2682,7 +2703,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property extensions in users
-      operationId: user.mailFolder.childFolder.message_UpdateExtensions
+      operationId: user.mailFolder.childFolder.message_UpdateExtension
       parameters:
         - name: user-id
           in: path
@@ -2751,7 +2772,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property extensions for users
-      operationId: user.mailFolder.childFolder.message_DeleteExtensions
+      operationId: user.mailFolder.childFolder.message_DeleteExtension
       parameters:
         - name: user-id
           in: path
@@ -2868,7 +2889,7 @@ paths:
         - users.mailFolder
       summary: Get mentions from users
       description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
-      operationId: user.mailFolder.childFolder.message_ListMentions
+      operationId: user.mailFolder.childFolder.message_ListMention
       parameters:
         - name: user-id
           in: path
@@ -2986,7 +3007,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to mentions for users
-      operationId: user.mailFolder.childFolder.message_CreateMentions
+      operationId: user.mailFolder.childFolder.message_CreateMention
       parameters:
         - name: user-id
           in: path
@@ -3049,7 +3070,7 @@ paths:
         - users.mailFolder
       summary: Get mentions from users
       description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
-      operationId: user.mailFolder.childFolder.message_GetMentions
+      operationId: user.mailFolder.childFolder.message_GetMention
       parameters:
         - name: user-id
           in: path
@@ -3143,7 +3164,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property mentions for users
-      operationId: user.mailFolder.childFolder.message_DeleteMentions
+      operationId: user.mailFolder.childFolder.message_DeleteMention
       parameters:
         - name: user-id
           in: path
@@ -3260,7 +3281,7 @@ paths:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the message. Nullable.
-      operationId: user.mailFolder.childFolder.message_ListMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3358,7 +3379,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.mailFolder.childFolder.message_CreateMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3421,7 +3442,7 @@ paths:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the message. Nullable.
-      operationId: user.mailFolder.childFolder.message_GetMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3508,7 +3529,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.mailFolder.childFolder.message_UpdateMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3577,7 +3598,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.mailFolder.childFolder.message_DeleteMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3695,7 +3716,7 @@ paths:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the message. Nullable.
-      operationId: user.mailFolder.childFolder.message_ListSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3793,7 +3814,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.mailFolder.childFolder.message_CreateSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3856,7 +3877,7 @@ paths:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the message. Nullable.
-      operationId: user.mailFolder.childFolder.message_GetSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -3943,7 +3964,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.mailFolder.childFolder.message_UpdateSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4012,7 +4033,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.mailFolder.childFolder.message_DeleteSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder.message_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4174,7 +4195,7 @@ paths:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-      operationId: user.mailFolder.childFolder_ListMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4264,7 +4285,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.mailFolder.childFolder_CreateMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4319,7 +4340,7 @@ paths:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-      operationId: user.mailFolder.childFolder_GetMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4398,7 +4419,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.mailFolder.childFolder_UpdateMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4459,7 +4480,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.mailFolder.childFolder_DeleteMultiValueExtendedProperties
+      operationId: user.mailFolder.childFolder_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4561,7 +4582,7 @@ paths:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-      operationId: user.mailFolder.childFolder_ListSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4651,7 +4672,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.mailFolder.childFolder_CreateSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4706,7 +4727,7 @@ paths:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-      operationId: user.mailFolder.childFolder_GetSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4785,7 +4806,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.mailFolder.childFolder_UpdateSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4846,7 +4867,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.mailFolder.childFolder_DeleteSingleValueExtendedProperties
+      operationId: user.mailFolder.childFolder_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -4947,7 +4968,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get userConfigurations from users
-      operationId: user.mailFolder.childFolder_ListUserConfigurations
+      operationId: user.mailFolder.childFolder_ListUserConfiguration
       parameters:
         - name: user-id
           in: path
@@ -5025,7 +5046,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get userConfigurations from users
-      operationId: user.mailFolder.childFolder_GetUserConfigurations
+      operationId: user.mailFolder.childFolder_GetUserConfiguration
       parameters:
         - name: user-id
           in: path
@@ -5170,9 +5191,12 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messageRules from users
-      description: The collection of rules that apply to the user's Inbox folder.
-      operationId: user.mailFolder_ListMessageRules
+      summary: List rules
+      description: Get all the messageRule objects defined for the user's inbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+      operationId: user.mailFolder_ListMessageRule
       parameters:
         - name: user-id
           in: path
@@ -5261,8 +5285,12 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messageRules for users
-      operationId: user.mailFolder_CreateMessageRules
+      summary: Create rule
+      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+      operationId: user.mailFolder_CreateMessageRule
       parameters:
         - name: user-id
           in: path
@@ -5309,7 +5337,7 @@ paths:
         - users.mailFolder
       summary: Get messageRules from users
       description: The collection of rules that apply to the user's Inbox folder.
-      operationId: user.mailFolder_GetMessageRules
+      operationId: user.mailFolder_GetMessageRule
       parameters:
         - name: user-id
           in: path
@@ -5375,7 +5403,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property messageRules in users
-      operationId: user.mailFolder_UpdateMessageRules
+      operationId: user.mailFolder_UpdateMessageRule
       parameters:
         - name: user-id
           in: path
@@ -5428,7 +5456,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property messageRules for users
-      operationId: user.mailFolder_DeleteMessageRules
+      operationId: user.mailFolder_DeleteMessageRule
       parameters:
         - name: user-id
           in: path
@@ -5516,7 +5544,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
-      operationId: user.mailFolder_ListMessages
+      operationId: user.mailFolder_ListMessage
       parameters:
         - name: user-id
           in: path
@@ -5708,7 +5736,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
-      operationId: user.mailFolder_CreateMessages
+      operationId: user.mailFolder_CreateMessage
       parameters:
         - name: user-id
           in: path
@@ -5755,7 +5783,7 @@ paths:
         - users.mailFolder
       summary: Get messages from users
       description: The collection of messages in the mailFolder.
-      operationId: user.mailFolder_GetMessages
+      operationId: user.mailFolder_GetMessage
       parameters:
         - name: user-id
           in: path
@@ -5868,7 +5896,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property messages in users
-      operationId: user.mailFolder_UpdateMessages
+      operationId: user.mailFolder_UpdateMessage
       parameters:
         - name: user-id
           in: path
@@ -5921,7 +5949,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property messages for users
-      operationId: user.mailFolder_DeleteMessages
+      operationId: user.mailFolder_DeleteMessage
       parameters:
         - name: user-id
           in: path
@@ -6071,11 +6099,11 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
+      description: Retrieve a list of attachment objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
-      operationId: user.mailFolder.message_ListAttachments
+        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+      operationId: user.mailFolder.message_ListAttachment
       parameters:
         - name: user-id
           in: path
@@ -6180,7 +6208,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
-      operationId: user.mailFolder.message_CreateAttachments
+      operationId: user.mailFolder.message_CreateAttachment
       parameters:
         - name: user-id
           in: path
@@ -6235,7 +6263,7 @@ paths:
         - users.mailFolder
       summary: Get attachments from users
       description: The fileAttachment and itemAttachment attachments for the message.
-      operationId: user.mailFolder.message_GetAttachments
+      operationId: user.mailFolder.message_GetAttachment
       parameters:
         - name: user-id
           in: path
@@ -6318,7 +6346,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property attachments for users
-      operationId: user.mailFolder.message_DeleteAttachments
+      operationId: user.mailFolder.message_DeleteAttachment
       parameters:
         - name: user-id
           in: path
@@ -6419,7 +6447,7 @@ paths:
         - users.mailFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: user.mailFolder.message_ListExtensions
+      operationId: user.mailFolder.message_ListExtension
       parameters:
         - name: user-id
           in: path
@@ -6509,7 +6537,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: user.mailFolder.message_CreateExtensions
+      operationId: user.mailFolder.message_CreateExtension
       parameters:
         - name: user-id
           in: path
@@ -6564,7 +6592,7 @@ paths:
         - users.mailFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: user.mailFolder.message_GetExtensions
+      operationId: user.mailFolder.message_GetExtension
       parameters:
         - name: user-id
           in: path
@@ -6642,7 +6670,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property extensions in users
-      operationId: user.mailFolder.message_UpdateExtensions
+      operationId: user.mailFolder.message_UpdateExtension
       parameters:
         - name: user-id
           in: path
@@ -6703,7 +6731,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property extensions for users
-      operationId: user.mailFolder.message_DeleteExtensions
+      operationId: user.mailFolder.message_DeleteExtension
       parameters:
         - name: user-id
           in: path
@@ -6804,7 +6832,7 @@ paths:
         - users.mailFolder
       summary: Get mentions from users
       description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
-      operationId: user.mailFolder.message_ListMentions
+      operationId: user.mailFolder.message_ListMention
       parameters:
         - name: user-id
           in: path
@@ -6914,7 +6942,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to mentions for users
-      operationId: user.mailFolder.message_CreateMentions
+      operationId: user.mailFolder.message_CreateMention
       parameters:
         - name: user-id
           in: path
@@ -6969,7 +6997,7 @@ paths:
         - users.mailFolder
       summary: Get mentions from users
       description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
-      operationId: user.mailFolder.message_GetMentions
+      operationId: user.mailFolder.message_GetMention
       parameters:
         - name: user-id
           in: path
@@ -7055,7 +7083,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property mentions for users
-      operationId: user.mailFolder.message_DeleteMentions
+      operationId: user.mailFolder.message_DeleteMention
       parameters:
         - name: user-id
           in: path
@@ -7156,7 +7184,7 @@ paths:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the message. Nullable.
-      operationId: user.mailFolder.message_ListMultiValueExtendedProperties
+      operationId: user.mailFolder.message_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7246,7 +7274,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.mailFolder.message_CreateMultiValueExtendedProperties
+      operationId: user.mailFolder.message_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7301,7 +7329,7 @@ paths:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the message. Nullable.
-      operationId: user.mailFolder.message_GetMultiValueExtendedProperties
+      operationId: user.mailFolder.message_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7380,7 +7408,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.mailFolder.message_UpdateMultiValueExtendedProperties
+      operationId: user.mailFolder.message_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7441,7 +7469,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.mailFolder.message_DeleteMultiValueExtendedProperties
+      operationId: user.mailFolder.message_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7543,7 +7571,7 @@ paths:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the message. Nullable.
-      operationId: user.mailFolder.message_ListSingleValueExtendedProperties
+      operationId: user.mailFolder.message_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7633,7 +7661,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.mailFolder.message_CreateSingleValueExtendedProperties
+      operationId: user.mailFolder.message_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7688,7 +7716,7 @@ paths:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the message. Nullable.
-      operationId: user.mailFolder.message_GetSingleValueExtendedProperties
+      operationId: user.mailFolder.message_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7767,7 +7795,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.mailFolder.message_UpdateSingleValueExtendedProperties
+      operationId: user.mailFolder.message_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7828,7 +7856,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.mailFolder.message_DeleteSingleValueExtendedProperties
+      operationId: user.mailFolder.message_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -7966,7 +7994,7 @@ paths:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-      operationId: user.mailFolder_ListMultiValueExtendedProperties
+      operationId: user.mailFolder_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8048,7 +8076,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.mailFolder_CreateMultiValueExtendedProperties
+      operationId: user.mailFolder_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8095,7 +8123,7 @@ paths:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-      operationId: user.mailFolder_GetMultiValueExtendedProperties
+      operationId: user.mailFolder_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8166,7 +8194,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.mailFolder_UpdateMultiValueExtendedProperties
+      operationId: user.mailFolder_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8219,7 +8247,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.mailFolder_DeleteMultiValueExtendedProperties
+      operationId: user.mailFolder_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8305,7 +8333,7 @@ paths:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-      operationId: user.mailFolder_ListSingleValueExtendedProperties
+      operationId: user.mailFolder_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8387,7 +8415,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.mailFolder_CreateSingleValueExtendedProperties
+      operationId: user.mailFolder_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8434,7 +8462,7 @@ paths:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-      operationId: user.mailFolder_GetSingleValueExtendedProperties
+      operationId: user.mailFolder_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8505,7 +8533,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.mailFolder_UpdateSingleValueExtendedProperties
+      operationId: user.mailFolder_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8558,7 +8586,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.mailFolder_DeleteSingleValueExtendedProperties
+      operationId: user.mailFolder_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -8643,7 +8671,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get userConfigurations from users
-      operationId: user.mailFolder_ListUserConfigurations
+      operationId: user.mailFolder_ListUserConfiguration
       parameters:
         - name: user-id
           in: path
@@ -8713,7 +8741,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get userConfigurations from users
-      operationId: user.mailFolder_GetUserConfigurations
+      operationId: user.mailFolder_GetUserConfiguration
       parameters:
         - name: user-id
           in: path
@@ -8834,12 +8862,12 @@ paths:
     get:
       tags:
         - users.message
-      summary: Get openTypeExtension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      summary: Get messages from users
+      description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
-      operationId: user_ListMessages
+        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+      operationId: user_ListMessage
       parameters:
         - name: user-id
           in: path
@@ -8849,6 +8877,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: includeHiddenMessages
+          in: query
+          description: Include Hidden Messages
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -9018,12 +9053,12 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create openTypeExtension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      summary: Create Message
+      description: "Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:\n- Include an attachment.\n- Use a mention to call out another user in the new message.\n- Update the draft later to add content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single action, or create a draft to forward, to reply or to reply-all to an existing message."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: user_CreateMessages
+        url: https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0
+      operationId: user_CreateMessage
       parameters:
         - name: user-id
           in: path
@@ -9062,7 +9097,7 @@ paths:
         - users.message
       summary: Get messages from users
       description: The messages in a mailbox or folder. Read-only. Nullable.
-      operationId: user_GetMessages
+      operationId: user_GetMessage
       parameters:
         - name: user-id
           in: path
@@ -9080,6 +9115,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
+        - name: includeHiddenMessages
+          in: query
+          description: Include Hidden Messages
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -9167,7 +9209,7 @@ paths:
       tags:
         - users.message
       summary: Update the navigation property messages in users
-      operationId: user_UpdateMessages
+      operationId: user_UpdateMessage
       parameters:
         - name: user-id
           in: path
@@ -9212,7 +9254,7 @@ paths:
       tags:
         - users.message
       summary: Delete navigation property messages for users
-      operationId: user_DeleteMessages
+      operationId: user_DeleteMessage
       parameters:
         - name: user-id
           in: path
@@ -9255,7 +9297,7 @@ paths:
       summary: Get media content for the navigation property messages from users
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id
@@ -9338,11 +9380,11 @@ paths:
       tags:
         - users.message
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
+      description: Retrieve a list of attachment objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
-      operationId: user.message_ListAttachments
+        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+      operationId: user.message_ListAttachment
       parameters:
         - name: user-id
           in: path
@@ -9439,7 +9481,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
-      operationId: user.message_CreateAttachments
+      operationId: user.message_CreateAttachment
       parameters:
         - name: user-id
           in: path
@@ -9486,7 +9528,7 @@ paths:
         - users.message
       summary: Get attachments from users
       description: The fileAttachment and itemAttachment attachments for the message.
-      operationId: user.message_GetAttachments
+      operationId: user.message_GetAttachment
       parameters:
         - name: user-id
           in: path
@@ -9561,7 +9603,7 @@ paths:
       tags:
         - users.message
       summary: Delete navigation property attachments for users
-      operationId: user.message_DeleteAttachments
+      operationId: user.message_DeleteAttachment
       parameters:
         - name: user-id
           in: path
@@ -9646,7 +9688,7 @@ paths:
         - users.message
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: user.message_ListExtensions
+      operationId: user.message_ListExtension
       parameters:
         - name: user-id
           in: path
@@ -9728,7 +9770,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: user.message_CreateExtensions
+      operationId: user.message_CreateExtension
       parameters:
         - name: user-id
           in: path
@@ -9775,7 +9817,7 @@ paths:
         - users.message
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: user.message_GetExtensions
+      operationId: user.message_GetExtension
       parameters:
         - name: user-id
           in: path
@@ -9845,7 +9887,7 @@ paths:
       tags:
         - users.message
       summary: Update the navigation property extensions in users
-      operationId: user.message_UpdateExtensions
+      operationId: user.message_UpdateExtension
       parameters:
         - name: user-id
           in: path
@@ -9898,7 +9940,7 @@ paths:
       tags:
         - users.message
       summary: Delete navigation property extensions for users
-      operationId: user.message_DeleteExtensions
+      operationId: user.message_DeleteExtension
       parameters:
         - name: user-id
           in: path
@@ -9983,7 +10025,7 @@ paths:
         - users.message
       summary: Get mentions from users
       description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
-      operationId: user.message_ListMentions
+      operationId: user.message_ListMention
       parameters:
         - name: user-id
           in: path
@@ -10085,7 +10127,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to mentions for users
-      operationId: user.message_CreateMentions
+      operationId: user.message_CreateMention
       parameters:
         - name: user-id
           in: path
@@ -10132,7 +10174,7 @@ paths:
         - users.message
       summary: Get mentions from users
       description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
-      operationId: user.message_GetMentions
+      operationId: user.message_GetMention
       parameters:
         - name: user-id
           in: path
@@ -10210,7 +10252,7 @@ paths:
       tags:
         - users.message
       summary: Delete navigation property mentions for users
-      operationId: user.message_DeleteMentions
+      operationId: user.message_DeleteMention
       parameters:
         - name: user-id
           in: path
@@ -10295,7 +10337,7 @@ paths:
         - users.message
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the message. Nullable.
-      operationId: user.message_ListMultiValueExtendedProperties
+      operationId: user.message_ListMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -10377,7 +10419,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.message_CreateMultiValueExtendedProperties
+      operationId: user.message_CreateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -10424,7 +10466,7 @@ paths:
         - users.message
       summary: Get multiValueExtendedProperties from users
       description: The collection of multi-value extended properties defined for the message. Nullable.
-      operationId: user.message_GetMultiValueExtendedProperties
+      operationId: user.message_GetMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -10495,7 +10537,7 @@ paths:
       tags:
         - users.message
       summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.message_UpdateMultiValueExtendedProperties
+      operationId: user.message_UpdateMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -10548,7 +10590,7 @@ paths:
       tags:
         - users.message
       summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.message_DeleteMultiValueExtendedProperties
+      operationId: user.message_DeleteMultiValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -10634,7 +10676,7 @@ paths:
         - users.message
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the message. Nullable.
-      operationId: user.message_ListSingleValueExtendedProperties
+      operationId: user.message_ListSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -10716,7 +10758,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.message_CreateSingleValueExtendedProperties
+      operationId: user.message_CreateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -10763,7 +10805,7 @@ paths:
         - users.message
       summary: Get singleValueExtendedProperties from users
       description: The collection of single-value extended properties defined for the message. Nullable.
-      operationId: user.message_GetSingleValueExtendedProperties
+      operationId: user.message_GetSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -10834,7 +10876,7 @@ paths:
       tags:
         - users.message
       summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.message_UpdateSingleValueExtendedProperties
+      operationId: user.message_UpdateSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path
@@ -10887,7 +10929,7 @@ paths:
       tags:
         - users.message
       summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.message_DeleteSingleValueExtendedProperties
+      operationId: user.message_DeleteSingleValueExtendedProperty
       parameters:
         - name: user-id
           in: path

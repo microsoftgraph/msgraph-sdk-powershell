@@ -94,7 +94,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/print-list-connectors?view=graph-rest-1.0
-      operationId: print_ListConnectors
+      operationId: print_ListConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -175,7 +175,7 @@ paths:
       tags:
         - print.printConnector
       summary: Create new navigation property to connectors for print
-      operationId: print_CreateConnectors
+      operationId: print_CreateConnector
       requestBody:
         description: New navigation property
         content:
@@ -199,7 +199,7 @@ paths:
         - print.printConnector
       summary: Get connectors from print
       description: The list of available print connectors.
-      operationId: print_GetConnectors
+      operationId: print_GetConnector
       parameters:
         - name: printConnector-id
           in: path
@@ -255,7 +255,7 @@ paths:
       tags:
         - print.printConnector
       summary: Update the navigation property connectors in print
-      operationId: print_UpdateConnectors
+      operationId: print_UpdateConnector
       parameters:
         - name: printConnector-id
           in: path
@@ -286,7 +286,7 @@ paths:
       tags:
         - print.printConnector
       summary: Delete navigation property connectors for print
-      operationId: print_DeleteConnectors
+      operationId: print_DeleteConnector
       parameters:
         - name: printConnector-id
           in: path
@@ -327,7 +327,7 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
-      operationId: print_ListOperations
+      operationId: print_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -390,7 +390,7 @@ paths:
       tags:
         - print.printOperation
       summary: Create new navigation property to operations for print
-      operationId: print_CreateOperations
+      operationId: print_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -413,7 +413,7 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
-      operationId: print_GetOperations
+      operationId: print_GetOperation
       parameters:
         - name: printOperation-id
           in: path
@@ -463,7 +463,7 @@ paths:
       tags:
         - print.printOperation
       summary: Update the navigation property operations in print
-      operationId: print_UpdateOperations
+      operationId: print_UpdateOperation
       parameters:
         - name: printOperation-id
           in: path
@@ -494,7 +494,7 @@ paths:
       tags:
         - print.printOperation
       summary: Delete navigation property operations for print
-      operationId: print_DeleteOperations
+      operationId: print_DeleteOperation
       parameters:
         - name: printOperation-id
           in: path
@@ -539,7 +539,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/print-list-printers?view=graph-rest-1.0
-      operationId: print_ListPrinters
+      operationId: print_ListPrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -648,7 +648,7 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property to printers for print
-      operationId: print_CreatePrinters
+      operationId: print_CreatePrinter
       requestBody:
         description: New navigation property
         content:
@@ -672,7 +672,7 @@ paths:
         - print.printer
       summary: Get printers from print
       description: The list of printers registered in the tenant.
-      operationId: print_GetPrinters
+      operationId: print_GetPrinter
       parameters:
         - name: printer-id
           in: path
@@ -744,7 +744,7 @@ paths:
       tags:
         - print.printer
       summary: Update the navigation property printers in print
-      operationId: print_UpdatePrinters
+      operationId: print_UpdatePrinter
       parameters:
         - name: printer-id
           in: path
@@ -775,7 +775,7 @@ paths:
       tags:
         - print.printer
       summary: Delete navigation property printers for print
-      operationId: print_DeletePrinters
+      operationId: print_DeletePrinter
       parameters:
         - name: printer-id
           in: path
@@ -806,7 +806,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0
-      operationId: print.printer_ListConnectors
+      operationId: print.printer_ListConnector
       parameters:
         - name: printer-id
           in: path
@@ -897,7 +897,7 @@ paths:
         - print.printer
       summary: Get connectors from print
       description: The connectors that are associated with the printer.
-      operationId: print.printer_GetConnectors
+      operationId: print.printer_GetConnector
       parameters:
         - name: printer-id
           in: path
@@ -984,7 +984,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getCapabilities
-      operationId: print.printer_getCapabilities
+      operationId: print.printer_getCapability
       parameters:
         - name: printer-id
           in: path
@@ -1009,7 +1009,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action resetDefaults
-      operationId: print.printer_resetDefaults
+      operationId: print.printer_resetDefault
       parameters:
         - name: printer-id
           in: path
@@ -1034,7 +1034,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-1.0
-      operationId: print.printer_restoreFactoryDefaults
+      operationId: print.printer_restoreFactoryDefault
       parameters:
         - name: printer-id
           in: path
@@ -1125,7 +1125,7 @@ paths:
         - print.printer
       summary: Get shares from print
       description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
-      operationId: print.printer_ListShares
+      operationId: print.printer_ListShare
       parameters:
         - name: printer-id
           in: path
@@ -1236,7 +1236,7 @@ paths:
         - print.printer
       summary: Get shares from print
       description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
-      operationId: print.printer_GetShares
+      operationId: print.printer_GetShare
       parameters:
         - name: printer-id
           in: path
@@ -1339,7 +1339,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-list-tasktriggers?view=graph-rest-1.0
-      operationId: print.printer_ListTaskTriggers
+      operationId: print.printer_ListTaskTrigger
       parameters:
         - name: printer-id
           in: path
@@ -1413,7 +1413,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printer-post-tasktriggers?view=graph-rest-1.0
-      operationId: print.printer_CreateTaskTriggers
+      operationId: print.printer_CreateTaskTrigger
       parameters:
         - name: printer-id
           in: path
@@ -1446,7 +1446,7 @@ paths:
         - print.printer
       summary: Get taskTriggers from print
       description: A list of task triggers that are associated with the printer.
-      operationId: print.printer_GetTaskTriggers
+      operationId: print.printer_GetTaskTrigger
       parameters:
         - name: printer-id
           in: path
@@ -1505,7 +1505,7 @@ paths:
       tags:
         - print.printer
       summary: Update the navigation property taskTriggers in print
-      operationId: print.printer_UpdateTaskTriggers
+      operationId: print.printer_UpdateTaskTrigger
       parameters:
         - name: printer-id
           in: path
@@ -1544,7 +1544,7 @@ paths:
       tags:
         - print.printer
       summary: Delete navigation property taskTriggers for print
-      operationId: print.printer_DeleteTaskTriggers
+      operationId: print.printer_DeleteTaskTrigger
       parameters:
         - name: printer-id
           in: path
@@ -1721,7 +1721,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get printerShares from print
-      operationId: print_ListPrinterShares
+      operationId: print_ListPrinterShare
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1822,7 +1822,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property to printerShares for print
-      operationId: print_CreatePrinterShares
+      operationId: print_CreatePrinterShare
       requestBody:
         description: New navigation property
         content:
@@ -1845,7 +1845,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get printerShares from print
-      operationId: print_GetPrinterShares
+      operationId: print_GetPrinterShare
       parameters:
         - name: printerShare-id
           in: path
@@ -1913,7 +1913,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the navigation property printerShares in print
-      operationId: print_UpdatePrinterShares
+      operationId: print_UpdatePrinterShare
       parameters:
         - name: printerShare-id
           in: path
@@ -1944,7 +1944,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete navigation property printerShares for print
-      operationId: print_DeletePrinterShares
+      operationId: print_DeletePrinterShare
       parameters:
         - name: printerShare-id
           in: path
@@ -1975,7 +1975,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
-      operationId: print.printerShare_ListAllowedGroups
+      operationId: print.printerShare_ListAllowedGroup
       parameters:
         - name: printerShare-id
           in: path
@@ -2074,6 +2074,8 @@ paths:
                 - securityEnabled desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - theme
                 - theme desc
                 - visibility
@@ -2152,6 +2154,7 @@ paths:
                 - resourceProvisioningOptions
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - writebackConfiguration
@@ -2250,7 +2253,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedGroups for print
-      operationId: print.printerShare_DeleteAllowedGroupsGraphBPreRef
+      operationId: print.printerShare_DeleteAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2318,7 +2321,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
-      operationId: print.printerShare_ListAllowedGroupsGraphBPreRef
+      operationId: print.printerShare_ListAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2417,6 +2420,8 @@ paths:
                 - securityEnabled desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - theme
                 - theme desc
                 - visibility
@@ -2461,7 +2466,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
-      operationId: print.printerShare_CreateAllowedGroupsGraphBPreRef
+      operationId: print.printerShare_CreateAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2488,7 +2493,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
-      operationId: print.printerShare_ListAllowedUsers
+      operationId: print.printerShare_ListAllowedUser
       parameters:
         - name: printerShare-id
           in: path
@@ -2635,6 +2640,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -2749,6 +2756,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -2931,7 +2939,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedUsers for print
-      operationId: print.printerShare_DeleteAllowedUsersGraphBPreRef
+      operationId: print.printerShare_DeleteAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2974,6 +2982,122 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/print/printerShares/{printerShare-id}/allowedUsers/{user-id}/mailboxSettings':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: print.printerShare.allowedUser_GetMailboxSetting
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+    patch:
+      tags:
+        - print.printerShare
+      summary: Update property mailboxSettings value.
+      operationId: print.printerShare.allowedUser_UpdateMailboxSetting
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/print/printerShares/{printerShare-id}/allowedUsers/$count':
     get:
       tags:
@@ -3011,7 +3135,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
-      operationId: print.printerShare_ListAllowedUsersGraphBPreRef
+      operationId: print.printerShare_ListAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3158,6 +3282,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -3220,7 +3346,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
-      operationId: print.printerShare_CreateAllowedUsersGraphBPreRef
+      operationId: print.printerShare_CreateAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3337,7 +3463,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get reports from print
-      operationId: print_GetReports
+      operationId: print_GetReport
       parameters:
         - name: $select
           in: query
@@ -3405,7 +3531,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property reports in print
-      operationId: print_UpdateReports
+      operationId: print_UpdateReport
       requestBody:
         description: New navigation property values
         content:
@@ -3427,7 +3553,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property reports for print
-      operationId: print_DeleteReports
+      operationId: print_DeleteReport
       parameters:
         - name: If-Match
           in: header
@@ -3672,7 +3798,7 @@ paths:
         - print.reportRoot
       summary: Get authenticationMethods from print
       description: Container for navigation properties for Azure AD authentication methods resources.
-      operationId: print.report_GetAuthenticationMethods
+      operationId: print.report_GetAuthenticationMethod
       parameters:
         - name: $select
           in: query
@@ -3714,7 +3840,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property authenticationMethods in print
-      operationId: print.report_UpdateAuthenticationMethods
+      operationId: print.report_UpdateAuthenticationMethod
       requestBody:
         description: New navigation property values
         content:
@@ -3736,7 +3862,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property authenticationMethods for print
-      operationId: print.report_DeleteAuthenticationMethods
+      operationId: print.report_DeleteAuthenticationMethod
       parameters:
         - name: If-Match
           in: header
@@ -3853,7 +3979,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-1.0
-      operationId: print.report.authenticationMethod_ListUserRegistrationDetails
+      operationId: print.report.authenticationMethod_ListUserRegistrationDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3946,7 +4072,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to userRegistrationDetails for print
-      operationId: print.report.authenticationMethod_CreateUserRegistrationDetails
+      operationId: print.report.authenticationMethod_CreateUserRegistrationDetail
       requestBody:
         description: New navigation property
         content:
@@ -3970,7 +4096,7 @@ paths:
         - print.reportRoot
       summary: Get userRegistrationDetails from print
       description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
-      operationId: print.report.authenticationMethod_GetUserRegistrationDetails
+      operationId: print.report.authenticationMethod_GetUserRegistrationDetail
       parameters:
         - name: userRegistrationDetails-id
           in: path
@@ -4030,7 +4156,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property userRegistrationDetails in print
-      operationId: print.report.authenticationMethod_UpdateUserRegistrationDetails
+      operationId: print.report.authenticationMethod_UpdateUserRegistrationDetail
       parameters:
         - name: userRegistrationDetails-id
           in: path
@@ -4061,7 +4187,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property userRegistrationDetails for print
-      operationId: print.report.authenticationMethod_DeleteUserRegistrationDetails
+      operationId: print.report.authenticationMethod_DeleteUserRegistrationDetail
       parameters:
         - name: userRegistrationDetails-id
           in: path
@@ -4106,7 +4232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-1.0
-      operationId: print.report_ListCredentialUserRegistrationDetails
+      operationId: print.report_ListCredentialUserRegistrationDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4184,7 +4310,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to credentialUserRegistrationDetails for print
-      operationId: print.report_CreateCredentialUserRegistrationDetails
+      operationId: print.report_CreateCredentialUserRegistrationDetail
       requestBody:
         description: New navigation property
         content:
@@ -4208,7 +4334,7 @@ paths:
         - print.reportRoot
       summary: Get credentialUserRegistrationDetails from print
       description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-      operationId: print.report_GetCredentialUserRegistrationDetails
+      operationId: print.report_GetCredentialUserRegistrationDetail
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
@@ -4263,7 +4389,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property credentialUserRegistrationDetails in print
-      operationId: print.report_UpdateCredentialUserRegistrationDetails
+      operationId: print.report_UpdateCredentialUserRegistrationDetail
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
@@ -4294,7 +4420,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property credentialUserRegistrationDetails for print
-      operationId: print.report_DeleteCredentialUserRegistrationDetails
+      operationId: print.report_DeleteCredentialUserRegistrationDetail
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
@@ -5613,7 +5739,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getAttackSimulationRepeatOffenders
-      operationId: print.report_getAttackSimulationRepeatOffenders
+      operationId: print.report_getAttackSimulationRepeatOffender
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5816,7 +5942,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getBrowserDistributionUserCounts
-      operationId: print.report_getBrowserDistributionUserCounts
+      operationId: print.report_getBrowserDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -5846,7 +5972,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getBrowserUserCounts
-      operationId: print.report_getBrowserUserCounts
+      operationId: print.report_getBrowserUserCount
       parameters:
         - name: period
           in: path
@@ -6057,7 +6183,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getEmailActivityCounts
-      operationId: print.report_getEmailActivityCounts
+      operationId: print.report_getEmailActivityCount
       parameters:
         - name: period
           in: path
@@ -6087,7 +6213,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getEmailActivityUserCounts
-      operationId: print.report_getEmailActivityUserCounts
+      operationId: print.report_getEmailActivityUserCount
       parameters:
         - name: period
           in: path
@@ -6179,7 +6305,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getEmailAppUsageAppsUserCounts
-      operationId: print.report_getEmailAppUsageAppsUserCounts
+      operationId: print.report_getEmailAppUsageAppsUserCount
       parameters:
         - name: period
           in: path
@@ -6209,7 +6335,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getEmailAppUsageUserCounts
-      operationId: print.report_getEmailAppUsageUserCounts
+      operationId: print.report_getEmailAppUsageUserCount
       parameters:
         - name: period
           in: path
@@ -6301,7 +6427,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getEmailAppUsageVersionsUserCounts
-      operationId: print.report_getEmailAppUsageVersionsUserCounts
+      operationId: print.report_getEmailAppUsageVersionsUserCount
       parameters:
         - name: period
           in: path
@@ -6331,7 +6457,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getFormsUserActivityCounts
-      operationId: print.report_getFormsUserActivityCounts
+      operationId: print.report_getFormsUserActivityCount
       parameters:
         - name: period
           in: path
@@ -6361,7 +6487,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getFormsUserActivityUserCounts
-      operationId: print.report_getFormsUserActivityUserCounts
+      operationId: print.report_getFormsUserActivityUserCount
       parameters:
         - name: period
           in: path
@@ -6453,7 +6579,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getGroupArchivedPrintJobs
-      operationId: print.report_getGroupArchivedPrintJobs
+      operationId: print.report_getGroupArchivedPrintJob
       parameters:
         - name: groupId
           in: path
@@ -6516,7 +6642,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getM365AppPlatformUserCounts
-      operationId: print.report_getM365AppPlatformUserCounts
+      operationId: print.report_getM365AppPlatformUserCount
       parameters:
         - name: period
           in: path
@@ -6546,7 +6672,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getM365AppUserCounts
-      operationId: print.report_getM365AppUserCounts
+      operationId: print.report_getM365AppUserCount
       parameters:
         - name: period
           in: path
@@ -6668,7 +6794,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getMailboxUsageMailboxCounts
-      operationId: print.report_getMailboxUsageMailboxCounts
+      operationId: print.report_getMailboxUsageMailboxCount
       parameters:
         - name: period
           in: path
@@ -6698,7 +6824,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getMailboxUsageQuotaStatusMailboxCounts
-      operationId: print.report_getMailboxUsageQuotaStatusMailboxCounts
+      operationId: print.report_getMailboxUsageQuotaStatusMailboxCount
       parameters:
         - name: period
           in: path
@@ -6758,7 +6884,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOffice365ActivationCounts
-      operationId: print.report_getOffice365ActivationCounts
+      operationId: print.report_getOffice365ActivationCount
       responses:
         2XX:
           description: Success
@@ -6780,7 +6906,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOffice365ActivationsUserCounts
-      operationId: print.report_getOffice365ActivationsUserCounts
+      operationId: print.report_getOffice365ActivationsUserCount
       responses:
         2XX:
           description: Success
@@ -6824,7 +6950,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOffice365ActiveUserCounts
-      operationId: print.report_getOffice365ActiveUserCounts
+      operationId: print.report_getOffice365ActiveUserCount
       parameters:
         - name: period
           in: path
@@ -7204,7 +7330,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOffice365GroupsActivityCounts
-      operationId: print.report_getOffice365GroupsActivityCounts
+      operationId: print.report_getOffice365GroupsActivityCount
       parameters:
         - name: period
           in: path
@@ -7563,7 +7689,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOffice365GroupsActivityFileCounts
-      operationId: print.report_getOffice365GroupsActivityFileCounts
+      operationId: print.report_getOffice365GroupsActivityFileCount
       parameters:
         - name: period
           in: path
@@ -7646,7 +7772,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOffice365GroupsActivityGroupCounts
-      operationId: print.report_getOffice365GroupsActivityGroupCounts
+      operationId: print.report_getOffice365GroupsActivityGroupCount
       parameters:
         - name: period
           in: path
@@ -7812,7 +7938,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOffice365ServicesUserCounts
-      operationId: print.report_getOffice365ServicesUserCounts
+      operationId: print.report_getOffice365ServicesUserCount
       parameters:
         - name: period
           in: path
@@ -7928,7 +8054,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOneDriveActivityFileCounts
-      operationId: print.report_getOneDriveActivityFileCounts
+      operationId: print.report_getOneDriveActivityFileCount
       parameters:
         - name: period
           in: path
@@ -7958,7 +8084,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOneDriveActivityUserCounts
-      operationId: print.report_getOneDriveActivityUserCounts
+      operationId: print.report_getOneDriveActivityUserCount
       parameters:
         - name: period
           in: path
@@ -8050,7 +8176,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOneDriveUsageAccountCounts
-      operationId: print.report_getOneDriveUsageAccountCounts
+      operationId: print.report_getOneDriveUsageAccountCount
       parameters:
         - name: period
           in: path
@@ -8142,7 +8268,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getOneDriveUsageFileCounts
-      operationId: print.report_getOneDriveUsageFileCounts
+      operationId: print.report_getOneDriveUsageFileCount
       parameters:
         - name: period
           in: path
@@ -8202,7 +8328,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getPrinterArchivedPrintJobs
-      operationId: print.report_getPrinterArchivedPrintJobs
+      operationId: print.report_getPrinterArchivedPrintJob
       parameters:
         - name: printerId
           in: path
@@ -8366,7 +8492,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSharePointActivityFileCounts
-      operationId: print.report_getSharePointActivityFileCounts
+      operationId: print.report_getSharePointActivityFileCount
       parameters:
         - name: period
           in: path
@@ -8396,7 +8522,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSharePointActivityPages
-      operationId: print.report_getSharePointActivityPages
+      operationId: print.report_getSharePointActivityPage
       parameters:
         - name: period
           in: path
@@ -8426,7 +8552,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSharePointActivityUserCounts
-      operationId: print.report_getSharePointActivityUserCounts
+      operationId: print.report_getSharePointActivityUserCount
       parameters:
         - name: period
           in: path
@@ -8580,7 +8706,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSharePointSiteUsageFileCounts
-      operationId: print.report_getSharePointSiteUsageFileCounts
+      operationId: print.report_getSharePointSiteUsageFileCount
       parameters:
         - name: period
           in: path
@@ -8610,7 +8736,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSharePointSiteUsagePages
-      operationId: print.report_getSharePointSiteUsagePages
+      operationId: print.report_getSharePointSiteUsagePage
       parameters:
         - name: period
           in: path
@@ -8640,7 +8766,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSharePointSiteUsageSiteCounts
-      operationId: print.report_getSharePointSiteUsageSiteCounts
+      operationId: print.report_getSharePointSiteUsageSiteCount
       parameters:
         - name: period
           in: path
@@ -8700,7 +8826,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessActivityCounts
-      operationId: print.report_getSkypeGraphFPreBusinessActivityCounts
+      operationId: print.report_getSkypeGraphFPreBusinessActivityCount
       parameters:
         - name: period
           in: path
@@ -8730,7 +8856,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessActivityUserCounts
-      operationId: print.report_getSkypeGraphFPreBusinessActivityUserCounts
+      operationId: print.report_getSkypeGraphFPreBusinessActivityUserCount
       parameters:
         - name: period
           in: path
@@ -8822,7 +8948,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
-      operationId: print.report_getSkypeGraphFPreBusinessDeviceUsageDistributionUserCounts
+      operationId: print.report_getSkypeGraphFPreBusinessDeviceUsageDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -8852,7 +8978,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserCounts
-      operationId: print.report_getSkypeGraphFPreBusinessDeviceUsageUserCounts
+      operationId: print.report_getSkypeGraphFPreBusinessDeviceUsageUserCount
       parameters:
         - name: period
           in: path
@@ -8944,7 +9070,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityCounts
-      operationId: print.report_getSkypeGraphFPreBusinessOrganizerActivityCounts
+      operationId: print.report_getSkypeGraphFPreBusinessOrganizerActivityCount
       parameters:
         - name: period
           in: path
@@ -8974,7 +9100,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
-      operationId: print.report_getSkypeGraphFPreBusinessOrganizerActivityMinuteCounts
+      operationId: print.report_getSkypeGraphFPreBusinessOrganizerActivityMinuteCount
       parameters:
         - name: period
           in: path
@@ -9004,7 +9130,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityUserCounts
-      operationId: print.report_getSkypeGraphFPreBusinessOrganizerActivityUserCounts
+      operationId: print.report_getSkypeGraphFPreBusinessOrganizerActivityUserCount
       parameters:
         - name: period
           in: path
@@ -9034,7 +9160,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityCounts
-      operationId: print.report_getSkypeGraphFPreBusinessParticipantActivityCounts
+      operationId: print.report_getSkypeGraphFPreBusinessParticipantActivityCount
       parameters:
         - name: period
           in: path
@@ -9064,7 +9190,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityMinuteCounts
-      operationId: print.report_getSkypeGraphFPreBusinessParticipantActivityMinuteCounts
+      operationId: print.report_getSkypeGraphFPreBusinessParticipantActivityMinuteCount
       parameters:
         - name: period
           in: path
@@ -9094,7 +9220,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityUserCounts
-      operationId: print.report_getSkypeGraphFPreBusinessParticipantActivityUserCounts
+      operationId: print.report_getSkypeGraphFPreBusinessParticipantActivityUserCount
       parameters:
         - name: period
           in: path
@@ -9124,7 +9250,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityCounts
-      operationId: print.report_getSkypeGraphFPreBusinessPeerToPeerActivityCounts
+      operationId: print.report_getSkypeGraphFPreBusinessPeerToPeerActivityCount
       parameters:
         - name: period
           in: path
@@ -9154,7 +9280,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
-      operationId: print.report_getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCounts
+      operationId: print.report_getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCount
       parameters:
         - name: period
           in: path
@@ -9184,7 +9310,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
-      operationId: print.report_getSkypeGraphFPreBusinessPeerToPeerActivityUserCounts
+      operationId: print.report_getSkypeGraphFPreBusinessPeerToPeerActivityUserCount
       parameters:
         - name: period
           in: path
@@ -9214,7 +9340,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsDeviceUsageDistributionTotalUserCounts
-      operationId: print.report_getTeamsDeviceUsageDistributionTotalUserCounts
+      operationId: print.report_getTeamsDeviceUsageDistributionTotalUserCount
       parameters:
         - name: period
           in: path
@@ -9244,7 +9370,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsDeviceUsageDistributionUserCounts
-      operationId: print.report_getTeamsDeviceUsageDistributionUserCounts
+      operationId: print.report_getTeamsDeviceUsageDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -9274,7 +9400,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsDeviceUsageTotalUserCounts
-      operationId: print.report_getTeamsDeviceUsageTotalUserCounts
+      operationId: print.report_getTeamsDeviceUsageTotalUserCount
       parameters:
         - name: period
           in: path
@@ -9304,7 +9430,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsDeviceUsageUserCounts
-      operationId: print.report_getTeamsDeviceUsageUserCounts
+      operationId: print.report_getTeamsDeviceUsageUserCount
       parameters:
         - name: period
           in: path
@@ -9396,7 +9522,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsTeamActivityCounts
-      operationId: print.report_getTeamsTeamActivityCounts
+      operationId: print.report_getTeamsTeamActivityCount
       parameters:
         - name: period
           in: path
@@ -9488,7 +9614,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsTeamActivityDistributionCounts
-      operationId: print.report_getTeamsTeamActivityDistributionCounts
+      operationId: print.report_getTeamsTeamActivityDistributionCount
       parameters:
         - name: period
           in: path
@@ -9518,7 +9644,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsTeamCounts
-      operationId: print.report_getTeamsTeamCounts
+      operationId: print.report_getTeamsTeamCount
       parameters:
         - name: period
           in: path
@@ -9548,7 +9674,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsUserActivityCounts
-      operationId: print.report_getTeamsUserActivityCounts
+      operationId: print.report_getTeamsUserActivityCount
       parameters:
         - name: period
           in: path
@@ -9578,7 +9704,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsUserActivityDistributionTotalUserCounts
-      operationId: print.report_getTeamsUserActivityDistributionTotalUserCounts
+      operationId: print.report_getTeamsUserActivityDistributionTotalUserCount
       parameters:
         - name: period
           in: path
@@ -9608,7 +9734,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsUserActivityDistributionUserCounts
-      operationId: print.report_getTeamsUserActivityDistributionUserCounts
+      operationId: print.report_getTeamsUserActivityDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -9638,7 +9764,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsUserActivityTotalCounts
-      operationId: print.report_getTeamsUserActivityTotalCounts
+      operationId: print.report_getTeamsUserActivityTotalCount
       parameters:
         - name: period
           in: path
@@ -9668,7 +9794,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsUserActivityTotalDistributionCounts
-      operationId: print.report_getTeamsUserActivityTotalDistributionCounts
+      operationId: print.report_getTeamsUserActivityTotalDistributionCount
       parameters:
         - name: period
           in: path
@@ -9698,7 +9824,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsUserActivityTotalUserCounts
-      operationId: print.report_getTeamsUserActivityTotalUserCounts
+      operationId: print.report_getTeamsUserActivityTotalUserCount
       parameters:
         - name: period
           in: path
@@ -9728,7 +9854,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getTeamsUserActivityUserCounts
-      operationId: print.report_getTeamsUserActivityUserCounts
+      operationId: print.report_getTeamsUserActivityUserCount
       parameters:
         - name: period
           in: path
@@ -9820,7 +9946,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getUserArchivedPrintJobs
-      operationId: print.report_getUserArchivedPrintJobs
+      operationId: print.report_getUserArchivedPrintJob
       parameters:
         - name: userId
           in: path
@@ -9883,7 +10009,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getYammerActivityCounts
-      operationId: print.report_getYammerActivityCounts
+      operationId: print.report_getYammerActivityCount
       parameters:
         - name: period
           in: path
@@ -9913,7 +10039,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getYammerActivityUserCounts
-      operationId: print.report_getYammerActivityUserCounts
+      operationId: print.report_getYammerActivityUserCount
       parameters:
         - name: period
           in: path
@@ -10005,7 +10131,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getYammerDeviceUsageDistributionUserCounts
-      operationId: print.report_getYammerDeviceUsageDistributionUserCounts
+      operationId: print.report_getYammerDeviceUsageDistributionUserCount
       parameters:
         - name: period
           in: path
@@ -10035,7 +10161,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getYammerDeviceUsageUserCounts
-      operationId: print.report_getYammerDeviceUsageUserCounts
+      operationId: print.report_getYammerDeviceUsageUserCount
       parameters:
         - name: period
           in: path
@@ -10127,7 +10253,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getYammerGroupsActivityCounts
-      operationId: print.report_getYammerGroupsActivityCounts
+      operationId: print.report_getYammerGroupsActivityCount
       parameters:
         - name: period
           in: path
@@ -10219,7 +10345,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getYammerGroupsActivityGroupCounts
-      operationId: print.report_getYammerGroupsActivityGroupCounts
+      operationId: print.report_getYammerGroupsActivityGroupCount
       parameters:
         - name: period
           in: path
@@ -10250,7 +10376,7 @@ paths:
         - print.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentDetails
       description: Metadata for Enrollment abandonment details report
-      operationId: print.report_managedDeviceEnrollmentAbandonmentDetails
+      operationId: print.report_managedDeviceEnrollmentAbandonmentDetail
       parameters:
         - name: skip
           in: path
@@ -10361,7 +10487,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: print.report_managedDeviceEnrollmentFailureDetails
+      operationId: print.report_managedDeviceEnrollmentFailureDetail
       responses:
         2XX:
           description: Success
@@ -10377,7 +10503,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: print.report_managedDeviceEnrollmentFailureDetails
+      operationId: print.report_managedDeviceEnrollmentFailureDetail
       parameters:
         - name: skip
           in: path
@@ -10433,7 +10559,7 @@ paths:
         - print.Functions
       summary: Invoke function managedDeviceEnrollmentFailureTrends
       description: Metadata for the enrollment failure trends report
-      operationId: print.report_managedDeviceEnrollmentFailureTrends
+      operationId: print.report_managedDeviceEnrollmentFailureTrend
       responses:
         2XX:
           description: Success
@@ -10449,7 +10575,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: print.report_managedDeviceEnrollmentTopFailures
+      operationId: print.report_managedDeviceEnrollmentTopFailure
       responses:
         2XX:
           description: Success
@@ -10465,7 +10591,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: print.report_managedDeviceEnrollmentTopFailures
+      operationId: print.report_managedDeviceEnrollmentTopFailure
       parameters:
         - name: period
           in: path
@@ -11572,7 +11698,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getAttackSimulationRepeatOffenders
-      operationId: print.report.security_getAttackSimulationRepeatOffenders
+      operationId: print.report.security_getAttackSimulationRepeatOffender
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11681,7 +11807,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/reportroot-list-usercredentialusagedetails?view=graph-rest-1.0
-      operationId: print.report_ListUserCredentialUsageDetails
+      operationId: print.report_ListUserCredentialUsageDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11759,7 +11885,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Create new navigation property to userCredentialUsageDetails for print
-      operationId: print.report_CreateUserCredentialUsageDetails
+      operationId: print.report_CreateUserCredentialUsageDetail
       requestBody:
         description: New navigation property
         content:
@@ -11783,7 +11909,7 @@ paths:
         - print.reportRoot
       summary: Get userCredentialUsageDetails from print
       description: Represents the self-service password reset (SSPR) usage for a given tenant.
-      operationId: print.report_GetUserCredentialUsageDetails
+      operationId: print.report_GetUserCredentialUsageDetail
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
@@ -11838,7 +11964,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Update the navigation property userCredentialUsageDetails in print
-      operationId: print.report_UpdateUserCredentialUsageDetails
+      operationId: print.report_UpdateUserCredentialUsageDetail
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
@@ -11869,7 +11995,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Delete navigation property userCredentialUsageDetails for print
-      operationId: print.report_DeleteUserCredentialUsageDetails
+      operationId: print.report_DeleteUserCredentialUsageDetail
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
@@ -11914,7 +12040,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0
-      operationId: print_ListServices
+      operationId: print_ListService
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11973,7 +12099,7 @@ paths:
       tags:
         - print.printService
       summary: Create new navigation property to services for print
-      operationId: print_CreateServices
+      operationId: print_CreateService
       requestBody:
         description: New navigation property
         content:
@@ -11997,7 +12123,7 @@ paths:
         - print.printService
       summary: Get services from print
       description: The list of available Universal Print service endpoints.
-      operationId: print_GetServices
+      operationId: print_GetService
       parameters:
         - name: printService-id
           in: path
@@ -12047,7 +12173,7 @@ paths:
       tags:
         - print.printService
       summary: Update the navigation property services in print
-      operationId: print_UpdateServices
+      operationId: print_UpdateService
       parameters:
         - name: printService-id
           in: path
@@ -12078,7 +12204,7 @@ paths:
       tags:
         - print.printService
       summary: Delete navigation property services for print
-      operationId: print_DeleteServices
+      operationId: print_DeleteService
       parameters:
         - name: printService-id
           in: path
@@ -12109,7 +12235,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0
-      operationId: print.service_ListEndpoints
+      operationId: print.service_ListEndpoint
       parameters:
         - name: printService-id
           in: path
@@ -12180,7 +12306,7 @@ paths:
       tags:
         - print.printService
       summary: Create new navigation property to endpoints for print
-      operationId: print.service_CreateEndpoints
+      operationId: print.service_CreateEndpoint
       parameters:
         - name: printService-id
           in: path
@@ -12213,7 +12339,7 @@ paths:
         - print.printService
       summary: Get endpoints from print
       description: Endpoints that can be used to access the service. Read-only. Nullable.
-      operationId: print.service_GetEndpoints
+      operationId: print.service_GetEndpoint
       parameters:
         - name: printService-id
           in: path
@@ -12271,7 +12397,7 @@ paths:
       tags:
         - print.printService
       summary: Update the navigation property endpoints in print
-      operationId: print.service_UpdateEndpoints
+      operationId: print.service_UpdateEndpoint
       parameters:
         - name: printService-id
           in: path
@@ -12310,7 +12436,7 @@ paths:
       tags:
         - print.printService
       summary: Delete navigation property endpoints for print
-      operationId: print.service_DeleteEndpoints
+      operationId: print.service_DeleteEndpoint
       parameters:
         - name: printService-id
           in: path
@@ -12385,7 +12511,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/print-list-shares?view=graph-rest-1.0
-      operationId: print_ListShares
+      operationId: print_ListShare
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12490,7 +12616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/print-post-shares?view=graph-rest-1.0
-      operationId: print_CreateShares
+      operationId: print_CreateShare
       requestBody:
         description: New navigation property
         content:
@@ -12514,7 +12640,7 @@ paths:
         - print.printerShare
       summary: Get shares from print
       description: The list of printer shares registered in the tenant.
-      operationId: print_GetShares
+      operationId: print_GetShare
       parameters:
         - name: printerShare-id
           in: path
@@ -12582,7 +12708,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the navigation property shares in print
-      operationId: print_UpdateShares
+      operationId: print_UpdateShare
       parameters:
         - name: printerShare-id
           in: path
@@ -12613,7 +12739,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete navigation property shares for print
-      operationId: print_DeleteShares
+      operationId: print_DeleteShare
       parameters:
         - name: printerShare-id
           in: path
@@ -12644,7 +12770,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
-      operationId: print.share_ListAllowedGroups
+      operationId: print.share_ListAllowedGroup
       parameters:
         - name: printerShare-id
           in: path
@@ -12743,6 +12869,8 @@ paths:
                 - securityEnabled desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - theme
                 - theme desc
                 - visibility
@@ -12821,6 +12949,7 @@ paths:
                 - resourceProvisioningOptions
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - writebackConfiguration
@@ -12919,7 +13048,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedGroups for print
-      operationId: print.share_DeleteAllowedGroupsGraphBPreRef
+      operationId: print.share_DeleteAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -12987,7 +13116,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
-      operationId: print.share_ListAllowedGroupsGraphBPreRef
+      operationId: print.share_ListAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -13086,6 +13215,8 @@ paths:
                 - securityEnabled desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - theme
                 - theme desc
                 - visibility
@@ -13130,7 +13261,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
-      operationId: print.share_CreateAllowedGroupsGraphBPreRef
+      operationId: print.share_CreateAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -13157,7 +13288,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
-      operationId: print.share_ListAllowedUsers
+      operationId: print.share_ListAllowedUser
       parameters:
         - name: printerShare-id
           in: path
@@ -13304,6 +13435,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -13418,6 +13551,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -13600,7 +13734,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedUsers for print
-      operationId: print.share_DeleteAllowedUsersGraphBPreRef
+      operationId: print.share_DeleteAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -13643,6 +13777,122 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/allowedUsers/{user-id}/mailboxSettings':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: print.share.allowedUser_GetMailboxSetting
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+    patch:
+      tags:
+        - print.printerShare
+      summary: Update property mailboxSettings value.
+      operationId: print.share.allowedUser_UpdateMailboxSetting
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/print/shares/{printerShare-id}/allowedUsers/$count':
     get:
       tags:
@@ -13680,7 +13930,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
-      operationId: print.share_ListAllowedUsersGraphBPreRef
+      operationId: print.share_ListAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -13827,6 +14077,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -13889,7 +14141,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
-      operationId: print.share_CreateAllowedUsersGraphBPreRef
+      operationId: print.share_CreateAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -14010,7 +14262,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0
-      operationId: print_ListTaskDefinitions
+      operationId: print_ListTaskDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14079,7 +14331,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0
-      operationId: print_CreateTaskDefinitions
+      operationId: print_CreateTaskDefinition
       requestBody:
         description: New navigation property
         content:
@@ -14102,7 +14354,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get taskDefinitions from print
-      operationId: print_GetTaskDefinitions
+      operationId: print_GetTaskDefinition
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -14154,7 +14406,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update the navigation property taskDefinitions in print
-      operationId: print_UpdateTaskDefinitions
+      operationId: print_UpdateTaskDefinition
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -14185,7 +14437,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Delete navigation property taskDefinitions for print
-      operationId: print_DeleteTaskDefinitions
+      operationId: print_DeleteTaskDefinition
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -14216,7 +14468,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
-      operationId: print.taskDefinition_ListTasks
+      operationId: print.taskDefinition_ListTask
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -14291,7 +14543,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Create new navigation property to tasks for print
-      operationId: print.taskDefinition_CreateTasks
+      operationId: print.taskDefinition_CreateTask
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -14324,7 +14576,7 @@ paths:
         - print.printTaskDefinition
       summary: Get tasks from print
       description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-      operationId: print.taskDefinition_GetTasks
+      operationId: print.taskDefinition_GetTask
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -14386,7 +14638,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update the navigation property tasks in print
-      operationId: print.taskDefinition_UpdateTasks
+      operationId: print.taskDefinition_UpdateTask
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -14425,7 +14677,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Delete navigation property tasks for print
-      operationId: print.taskDefinition_DeleteTasks
+      operationId: print.taskDefinition_DeleteTask
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -15047,6 +15299,40 @@ components:
         transportKey:
           type: string
           description: The base64-encoded public portion of an asymmetric key that is generated by the client. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.mailboxSettings:
+      title: mailboxSettings
+      type: object
+      properties:
+        archiveFolder:
+          type: string
+          description: Folder ID of an archive folder for the user. Read-only.
+          nullable: true
+        automaticRepliesSetting:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
+        dateFormat:
+          type: string
+          description: The date format for the user's mailbox.
+          nullable: true
+        delegateMeetingMessageDeliveryOptions:
+          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
+        language:
+          $ref: '#/components/schemas/microsoft.graph.localeInfo'
+        timeFormat:
+          type: string
+          description: The time format for the user's mailbox.
+          nullable: true
+        timeZone:
+          type: string
+          description: The default time zone for the user's mailbox.
+          nullable: true
+        userPurpose:
+          $ref: '#/components/schemas/microsoft.graph.userPurpose'
+        userPurposeV2:
+          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
+        workingHours:
+          $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
     microsoft.graph.reportRoot:
@@ -16757,6 +17043,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -17214,6 +17504,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -17636,6 +17930,97 @@ components:
           type: string
           description: Refers to the Service Principal Name is the Application name in the tenant.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.automaticRepliesSetting:
+      title: automaticRepliesSetting
+      type: object
+      properties:
+        externalAudience:
+          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
+        externalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        internalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        scheduledEndDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        scheduledStartDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.delegateMeetingMessageDeliveryOptions:
+      title: delegateMeetingMessageDeliveryOptions
+      enum:
+        - sendToDelegateAndInformationToPrincipal
+        - sendToDelegateAndPrincipal
+        - sendToDelegateOnly
+      type: string
+    microsoft.graph.localeInfo:
+      title: localeInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
+          nullable: true
+        locale:
+          type: string
+          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userPurpose:
+      title: userPurpose
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+        - unknownFutureValue
+      type: string
+    microsoft.graph.mailboxRecipientType:
+      title: mailboxRecipientType
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+      type: string
+    microsoft.graph.workingHours:
+      title: workingHours
+      type: object
+      properties:
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: The days of the week on which the user works.
+        endTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user stops working.
+          format: time
+          nullable: true
+        startTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user starts working.
+          format: time
+          nullable: true
+        timeZone:
+          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
       additionalProperties:
         type: object
     microsoft.graph.signInStatus:
@@ -18383,6 +18768,23 @@ components:
         value:
           type: string
           description: Value of the property causing the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -19519,40 +19921,6 @@ components:
           type: string
           description: 'The name of the service; for example, ''AccessControlS2S'''
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.mailboxSettings:
-      title: mailboxSettings
-      type: object
-      properties:
-        archiveFolder:
-          type: string
-          description: Folder ID of an archive folder for the user. Read-only.
-          nullable: true
-        automaticRepliesSetting:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
-        dateFormat:
-          type: string
-          description: The date format for the user's mailbox.
-          nullable: true
-        delegateMeetingMessageDeliveryOptions:
-          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
-        language:
-          $ref: '#/components/schemas/microsoft.graph.localeInfo'
-        timeFormat:
-          type: string
-          description: The time format for the user's mailbox.
-          nullable: true
-        timeZone:
-          type: string
-          description: The default time zone for the user's mailbox.
-          nullable: true
-        userPurpose:
-          $ref: '#/components/schemas/microsoft.graph.userPurpose'
-        userPurposeV2:
-          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
-        workingHours:
-          $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
     microsoft.graph.userPrint:
@@ -22318,6 +22686,54 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.externalAudienceScope:
+      title: externalAudienceScope
+      enum:
+        - none
+        - contactsOnly
+        - all
+      type: string
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.automaticRepliesStatus:
+      title: automaticRepliesStatus
+      enum:
+        - disabled
+        - alwaysEnabled
+        - scheduled
+      type: string
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.timeZoneBase:
+      title: timeZoneBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.authenticationMethodFeature:
       title: authenticationMethodFeature
       enum:
@@ -23576,19 +23992,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
       additionalProperties:
         type: object
-    microsoft.graph.dateTimeTimeZone:
-      title: dateTimeTimeZone
-      type: object
-      properties:
-        dateTime:
-          type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
-        timeZone:
-          type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.importance:
       title: importance
       enum:
@@ -24052,6 +24455,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -25189,11 +25594,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -25211,6 +25618,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -25227,6 +25635,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -25236,97 +25645,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.automaticRepliesSetting:
-      title: automaticRepliesSetting
-      type: object
-      properties:
-        externalAudience:
-          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
-        externalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        internalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        scheduledEndDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        scheduledStartDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        status:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
-      additionalProperties:
-        type: object
-    microsoft.graph.delegateMeetingMessageDeliveryOptions:
-      title: delegateMeetingMessageDeliveryOptions
-      enum:
-        - sendToDelegateAndInformationToPrincipal
-        - sendToDelegateAndPrincipal
-        - sendToDelegateOnly
-      type: string
-    microsoft.graph.localeInfo:
-      title: localeInfo
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
-          nullable: true
-        locale:
-          type: string
-          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.userPurpose:
-      title: userPurpose
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-        - unknownFutureValue
-      type: string
-    microsoft.graph.mailboxRecipientType:
-      title: mailboxRecipientType
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-      type: string
-    microsoft.graph.workingHours:
-      title: workingHours
-      type: object
-      properties:
-        daysOfWeek:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: The days of the week on which the user works.
-        endTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user stops working.
-          format: time
-          nullable: true
-        startTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user starts working.
-          format: time
-          nullable: true
-        timeZone:
-          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
-      additionalProperties:
-        type: object
     microsoft.graph.settings:
       title: settings
       type: object
@@ -25936,12 +26254,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -31405,6 +31725,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.subscription:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32855,41 +33198,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.externalAudienceScope:
-      title: externalAudienceScope
-      enum:
-        - none
-        - contactsOnly
-        - all
-      type: string
-    microsoft.graph.automaticRepliesStatus:
-      title: automaticRepliesStatus
-      enum:
-        - disabled
-        - alwaysEnabled
-        - scheduled
-      type: string
-    microsoft.graph.dayOfWeek:
-      title: dayOfWeek
-      enum:
-        - sunday
-        - monday
-        - tuesday
-        - wednesday
-        - thursday
-        - friday
-        - saturday
-      type: string
-    microsoft.graph.timeZoneBase:
-      title: timeZoneBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.analyticsActivityType:
       title: analyticsActivityType
       enum:
@@ -33147,11 +33455,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -36369,6 +36677,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -38578,6 +38909,15 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessAction:
       title: accessAction
       type: object
@@ -38913,11 +39253,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
           nullable: true
         value:
           type: integer
-          description: Value.
+          description: Total number of synchronized objects.
           format: int64
       additionalProperties:
         type: object
@@ -38925,9 +39265,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -39271,15 +39615,15 @@ components:
       properties:
         code:
           type: string
-          description: The error code.
+          description: 'The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.'
           nullable: true
         message:
           type: string
-          description: The error message.
+          description: 'The error message. For example, Policy permitting auto-redemption of invitations not configured.'
           nullable: true
         tenantActionable:
           type: boolean
-          description: The action to take to resolve the error.
+          description: 'The action to take to resolve the error. For example, false.'
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:
@@ -39301,6 +39645,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object
