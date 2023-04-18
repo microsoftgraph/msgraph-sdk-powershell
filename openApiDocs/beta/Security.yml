@@ -3799,6 +3799,7 @@ paths:
                 - resourceProvisioningOptions
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - writebackConfiguration
@@ -14221,6 +14222,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -14335,6 +14338,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -14606,6 +14610,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -14784,6 +14789,118 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/security/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}/mailboxSettings':
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: security.subjectRightsRequests.approvers_GetMailboxSettings
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+    patch:
+      tags:
+        - security.subjectRightsRequest
+      summary: Update property mailboxSettings value.
+      operationId: security.subjectRightsRequests.approvers_UpdateMailboxSettings
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators':
     get:
       tags:
@@ -14936,6 +15053,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -15050,6 +15169,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -15321,6 +15441,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -15499,6 +15620,118 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}/mailboxSettings':
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: security.subjectRightsRequests.collaborators_GetMailboxSettings
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+    patch:
+      tags:
+        - security.subjectRightsRequest
+      summary: Update property mailboxSettings value.
+      operationId: security.subjectRightsRequests.collaborators_UpdateMailboxSettings
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/microsoft.graph.getFinalAttachment()':
     get:
       tags:
@@ -23634,6 +23867,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -25497,6 +25734,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -25893,6 +26134,40 @@ components:
               $ref: '#/components/schemas/microsoft.graph.todo'
           additionalProperties:
             type: object
+    microsoft.graph.mailboxSettings:
+      title: mailboxSettings
+      type: object
+      properties:
+        archiveFolder:
+          type: string
+          description: Folder ID of an archive folder for the user. Read-only.
+          nullable: true
+        automaticRepliesSetting:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
+        dateFormat:
+          type: string
+          description: The date format for the user's mailbox.
+          nullable: true
+        delegateMeetingMessageDeliveryOptions:
+          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
+        language:
+          $ref: '#/components/schemas/microsoft.graph.localeInfo'
+        timeFormat:
+          type: string
+          description: The time format for the user's mailbox.
+          nullable: true
+        timeZone:
+          type: string
+          description: The default time zone for the user's mailbox.
+          nullable: true
+        userPurpose:
+          $ref: '#/components/schemas/microsoft.graph.userPurpose'
+        userPurposeV2:
+          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
+        workingHours:
+          $ref: '#/components/schemas/microsoft.graph.workingHours'
+      additionalProperties:
+        type: object
     microsoft.graph.authoredNote:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28828,6 +29103,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.groupWritebackConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.writebackConfiguration'
@@ -30444,40 +30736,6 @@ components:
           type: string
           description: 'The name of the service; for example, ''AccessControlS2S'''
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.mailboxSettings:
-      title: mailboxSettings
-      type: object
-      properties:
-        archiveFolder:
-          type: string
-          description: Folder ID of an archive folder for the user. Read-only.
-          nullable: true
-        automaticRepliesSetting:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
-        dateFormat:
-          type: string
-          description: The date format for the user's mailbox.
-          nullable: true
-        delegateMeetingMessageDeliveryOptions:
-          $ref: '#/components/schemas/microsoft.graph.delegateMeetingMessageDeliveryOptions'
-        language:
-          $ref: '#/components/schemas/microsoft.graph.localeInfo'
-        timeFormat:
-          type: string
-          description: The time format for the user's mailbox.
-          nullable: true
-        timeZone:
-          type: string
-          description: The default time zone for the user's mailbox.
-          nullable: true
-        userPurpose:
-          $ref: '#/components/schemas/microsoft.graph.userPurpose'
-        userPurposeV2:
-          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
-        workingHours:
-          $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
     microsoft.graph.userPrint:
@@ -33214,6 +33472,97 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.automaticRepliesSetting:
+      title: automaticRepliesSetting
+      type: object
+      properties:
+        externalAudience:
+          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
+        externalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        internalReplyMessage:
+          type: string
+          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
+          nullable: true
+        scheduledEndDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        scheduledStartDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.delegateMeetingMessageDeliveryOptions:
+      title: delegateMeetingMessageDeliveryOptions
+      enum:
+        - sendToDelegateAndInformationToPrincipal
+        - sendToDelegateAndPrincipal
+        - sendToDelegateOnly
+      type: string
+    microsoft.graph.localeInfo:
+      title: localeInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
+          nullable: true
+        locale:
+          type: string
+          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userPurpose:
+      title: userPurpose
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+        - unknownFutureValue
+      type: string
+    microsoft.graph.mailboxRecipientType:
+      title: mailboxRecipientType
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+      type: string
+    microsoft.graph.workingHours:
+      title: workingHours
+      type: object
+      properties:
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: The days of the week on which the user works.
+        endTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user stops working.
+          format: time
+          nullable: true
+        startTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The time of the day that the user starts working.
+          format: time
+          nullable: true
+        timeZone:
+          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
+      additionalProperties:
+        type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -33662,11 +34011,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -33684,6 +34035,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -33700,6 +34052,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -35793,6 +36146,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -36935,97 +37290,6 @@ components:
         - failed
         - unknownFutureValue
       type: string
-    microsoft.graph.automaticRepliesSetting:
-      title: automaticRepliesSetting
-      type: object
-      properties:
-        externalAudience:
-          $ref: '#/components/schemas/microsoft.graph.externalAudienceScope'
-        externalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        internalReplyMessage:
-          type: string
-          description: 'The automatic reply to send to the audience internal to the signed-in user''s organization, if Status is AlwaysEnabled or Scheduled.'
-          nullable: true
-        scheduledEndDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        scheduledStartDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        status:
-          $ref: '#/components/schemas/microsoft.graph.automaticRepliesStatus'
-      additionalProperties:
-        type: object
-    microsoft.graph.delegateMeetingMessageDeliveryOptions:
-      title: delegateMeetingMessageDeliveryOptions
-      enum:
-        - sendToDelegateAndInformationToPrincipal
-        - sendToDelegateAndPrincipal
-        - sendToDelegateOnly
-      type: string
-    microsoft.graph.localeInfo:
-      title: localeInfo
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
-          nullable: true
-        locale:
-          type: string
-          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.userPurpose:
-      title: userPurpose
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-        - unknownFutureValue
-      type: string
-    microsoft.graph.mailboxRecipientType:
-      title: mailboxRecipientType
-      enum:
-        - unknown
-        - user
-        - linked
-        - shared
-        - room
-        - equipment
-        - others
-      type: string
-    microsoft.graph.workingHours:
-      title: workingHours
-      type: object
-      properties:
-        daysOfWeek:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: The days of the week on which the user works.
-        endTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user stops working.
-          format: time
-          nullable: true
-        startTime:
-          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
-          type: string
-          description: The time of the day that the user starts working.
-          format: time
-          nullable: true
-        timeZone:
-          $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
-      additionalProperties:
-        type: object
     microsoft.graph.printerShare:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.printerBase'
@@ -37527,12 +37791,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -41991,6 +42257,41 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.externalAudienceScope:
+      title: externalAudienceScope
+      enum:
+        - none
+        - contactsOnly
+        - all
+      type: string
+    microsoft.graph.automaticRepliesStatus:
+      title: automaticRepliesStatus
+      enum:
+        - disabled
+        - alwaysEnabled
+        - scheduled
+      type: string
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.timeZoneBase:
+      title: timeZoneBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -43629,6 +43930,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.thumbnailSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43874,11 +44198,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -44257,41 +44581,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
-    microsoft.graph.externalAudienceScope:
-      title: externalAudienceScope
-      enum:
-        - none
-        - contactsOnly
-        - all
-      type: string
-    microsoft.graph.automaticRepliesStatus:
-      title: automaticRepliesStatus
-      enum:
-        - disabled
-        - alwaysEnabled
-        - scheduled
-      type: string
-    microsoft.graph.dayOfWeek:
-      title: dayOfWeek
-      enum:
-        - sunday
-        - monday
-        - tuesday
-        - wednesday
-        - thursday
-        - friday
-        - saturday
-      type: string
-    microsoft.graph.timeZoneBase:
-      title: timeZoneBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of a time zone. It can be a standard time zone name such as ''Hawaii-Aleutian Standard Time'', or ''Customized Time Zone'' for a custom time zone.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.printerBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -48124,6 +48413,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -51826,9 +52138,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -52361,6 +52677,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object

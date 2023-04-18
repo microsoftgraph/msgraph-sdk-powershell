@@ -20978,7 +20978,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List calendarView
-      description: "Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,\nfrom a user's default calendar `(../me/calendarview)` or some other calendar of the user's."
+      description: "Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,\nfrom a user's default calendar `(../me/calendarView)` or some other calendar of the user's."
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
