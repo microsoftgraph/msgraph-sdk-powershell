@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "@autorest/powershell@latest"
+use: "@autorest/powershell@3.x"
 export-properties-for-dict: false
 metadata:
     authors: Microsoft Corporation
