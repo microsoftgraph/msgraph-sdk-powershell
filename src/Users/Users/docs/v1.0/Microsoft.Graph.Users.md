@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: db29820a-4e43-42c9-b11f-f4867faef4d6
+Module Guid: ce6af724-1d3c-40d1-a8ca-89a9a485c66a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -246,7 +246,7 @@ This operation limits the size of the attachment you can add to under 3 MB.
 If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 
 ### [New-MgUserTodoListTaskChecklistItem](New-MgUserTodoListTaskChecklistItem.md)
-Create new navigation property to checklistItems for users
+Create a new checklistItem object.
 
 ### [New-MgUserTodoListTaskExtension](New-MgUserTodoListTaskExtension.md)
 Create new navigation property to extensions for users

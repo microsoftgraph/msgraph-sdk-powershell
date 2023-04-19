@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: db29820a-4e43-42c9-b11f-f4867faef4d6
+Module Guid: ce6af724-1d3c-40d1-a8ca-89a9a485c66a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -333,15 +333,17 @@ Create new navigation property to notifications for users
 Create an outlookCategory object in the user's master list of categories.
 
 ### [New-MgUserOutlookTask](New-MgUserOutlookTask.md)
-Create an Outlook task in the specified task folder.
+Create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user's mailbox.
 The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
+By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC.
+\nYou can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC.
 
 ### [New-MgUserOutlookTaskAttachment](New-MgUserOutlookTaskAttachment.md)
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 
 ### [New-MgUserOutlookTaskFolder](New-MgUserOutlookTaskFolder.md)
-Create new navigation property to taskFolders for users
+Create a task folder in the default task group (`My Tasks`) of the user's mailbox.
 
 ### [New-MgUserOutlookTaskFolderMultiValueExtendedProperty](New-MgUserOutlookTaskFolderMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
@@ -350,7 +352,8 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserOutlookTaskFolderTask](New-MgUserOutlookTaskFolderTask.md)
-Create new navigation property to tasks for users
+Create an Outlook task in the specified task folder.
+The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
 
 ### [New-MgUserOutlookTaskFolderTaskAttachment](New-MgUserOutlookTaskFolderTaskAttachment.md)
 Use this API to add an attachment to an outlookTask.
@@ -366,7 +369,7 @@ Create new navigation property to singleValueExtendedProperties for users
 Create an Outlook task group in the user's mailbox.
 
 ### [New-MgUserOutlookTaskGroupTaskFolder](New-MgUserOutlookTaskGroupTaskFolder.md)
-Create new navigation property to taskFolders for users
+Create an Outlook task folder under a specified outlookTaskGroup.
 
 ### [New-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](New-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
@@ -375,7 +378,8 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserOutlookTaskGroupTaskFolderTask](New-MgUserOutlookTaskGroupTaskFolderTask.md)
-Create new navigation property to tasks for users
+Create an Outlook task in the specified task folder.
+The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
 
 ### [New-MgUserOutlookTaskGroupTaskFolderTaskAttachment](New-MgUserOutlookTaskGroupTaskFolderTaskAttachment.md)
 Use this API to add an attachment to an outlookTask.
@@ -408,7 +412,7 @@ This operation limits the size of the attachment you can add to under 3 MB.
 If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 
 ### [New-MgUserTodoListTaskChecklistItem](New-MgUserTodoListTaskChecklistItem.md)
-Create new navigation property to checklistItems for users
+Create a new checklistItem object as a subtask in a bigger todoTask.
 
 ### [New-MgUserTodoListTaskExtension](New-MgUserTodoListTaskExtension.md)
 Create new navigation property to extensions for users
@@ -628,7 +632,7 @@ Update the properties of a contactMergeSuggestions object.
 Update the privacy settings for itemInsights and meeting hours insights of a user.
 
 ### [Update-MgUserSettingRegionalAndLanguageSetting](Update-MgUserSettingRegionalAndLanguageSetting.md)
-Update the navigation property regionalAndLanguageSettings in users
+Update some or all of the properties of a regionalAndLanguageSettings object.
 
 ### [Update-MgUserSettingShiftPreference](Update-MgUserSettingShiftPreference.md)
 Update the properties and relationships of a shiftPreferences object.

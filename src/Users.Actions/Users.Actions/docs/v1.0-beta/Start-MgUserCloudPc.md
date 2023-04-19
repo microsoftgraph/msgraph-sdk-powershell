@@ -8,7 +8,8 @@ schema: 2.0.0
 # Start-MgUserCloudPc
 
 ## SYNOPSIS
-Invoke action start
+Start a specific Cloud PC for a user.
+Currently, only Windows 365 Frontline Cloud PCs are supported.
 
 ## SYNTAX
 
@@ -23,7 +24,8 @@ Start-MgUserCloudPc -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] 
 ```
 
 ## DESCRIPTION
-Invoke action start
+Start a specific Cloud PC for a user.
+Currently, only Windows 365 Frontline Cloud PCs are supported.
 
 ## EXAMPLES
 

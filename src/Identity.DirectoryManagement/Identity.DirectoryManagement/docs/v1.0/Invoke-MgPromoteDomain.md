@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgPromoteDomain
 
 ## SYNOPSIS
-Invoke action promote
+Promote a verified subdomain to the root domain.
+A verified domain has its **isVerified** property set to `true`.
 
 ## SYNTAX
 
@@ -24,7 +25,8 @@ Invoke-MgPromoteDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Con
 ```
 
 ## DESCRIPTION
-Invoke action promote
+Promote a verified subdomain to the root domain.
+A verified domain has its **isVerified** property set to `true`.
 
 ## EXAMPLES
 

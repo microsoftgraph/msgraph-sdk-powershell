@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgSiteDefaultDrive
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The default drive (document library) for this site.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgSiteDefaultDrive -InputObject <ISitesIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The default drive (document library) for this site.
 
 ## EXAMPLES
 

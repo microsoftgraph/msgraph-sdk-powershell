@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 588c81cc-99bb-436e-89a8-bec7412bae28
+Module Guid: b88efc63-8a79-4742-ae55-db3eecb7a499
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -236,8 +236,20 @@ Get subjectRightsRequests from security
 ### [Get-MgSecuritySubjectRightsRequestApprover](Get-MgSecuritySubjectRightsRequestApprover.md)
 Get approvers from security
 
+### [Get-MgSecuritySubjectRightsRequestApproverMailboxSetting](Get-MgSecuritySubjectRightsRequestApproverMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
 ### [Get-MgSecuritySubjectRightsRequestCollaborator](Get-MgSecuritySubjectRightsRequestCollaborator.md)
 Get collaborators from security
+
+### [Get-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting](Get-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
 
 ### [Get-MgSecuritySubjectRightsRequestFinalAttachment](Get-MgSecuritySubjectRightsRequestFinalAttachment.md)
 Invoke function getFinalAttachment
@@ -942,6 +954,12 @@ Update the navigation property secureScoreControlProfiles in security
 
 ### [Update-MgSecuritySubjectRightsRequest](Update-MgSecuritySubjectRightsRequest.md)
 Update the navigation property subjectRightsRequests in security
+
+### [Update-MgSecuritySubjectRightsRequestApproverMailboxSetting](Update-MgSecuritySubjectRightsRequestApproverMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting](Update-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting.md)
+Update property mailboxSettings value.
 
 ### [Update-MgSecuritySubjectRightsRequestNote](Update-MgSecuritySubjectRightsRequestNote.md)
 Update the navigation property notes in security

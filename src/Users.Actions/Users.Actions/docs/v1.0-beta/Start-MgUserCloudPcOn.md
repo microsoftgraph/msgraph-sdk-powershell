@@ -8,7 +8,10 @@ schema: 2.0.0
 # Start-MgUserCloudPcOn
 
 ## SYNOPSIS
-Invoke action powerOn
+Power on a Windows 365 Frontline Cloud PC.
+This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
+After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately.
+Only IT admin users can perform this action.
 
 ## SYNTAX
 
@@ -25,7 +28,10 @@ Start-MgUserCloudPcOn -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm
 ```
 
 ## DESCRIPTION
-Invoke action powerOn
+Power on a Windows 365 Frontline Cloud PC.
+This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
+After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately.
+Only IT admin users can perform this action.
 
 ## EXAMPLES
 
