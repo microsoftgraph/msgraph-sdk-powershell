@@ -19,7 +19,7 @@ require:
 directive:
   - where:
       verb: Test
-      subject: (Application|ServicePrincipal)SynchronizationJobCredentials
+      subject: (Application|ServicePrincipal)SynchronizationJobCredential
       variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
     remove: true
   - where:
@@ -30,9 +30,4 @@ directive:
       subject: ^(OnPremisePublishingProfile)(\1)+
     set:
       subject: $1
-# Singularize credentials.
-  - where:
-      subject: (.*)(FederatedIdentityCredential)s(.*)
-    set:
-      subject: $1$2$3
 ```
