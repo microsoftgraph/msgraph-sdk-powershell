@@ -557,11 +557,19 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
+    "/security/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}/mailboxSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
     "/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}/mailboxSettings": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
