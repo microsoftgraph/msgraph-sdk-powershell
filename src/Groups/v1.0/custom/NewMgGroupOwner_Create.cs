@@ -260,7 +260,7 @@
                 try
                 {
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletBeforeAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-                    await this.Client.GroupCreateOwnersGraphBPreRef(GroupId, BodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateOwnerGraphBPreRef(GroupId, BodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Runtime.UndeclaredResponseException urexception)

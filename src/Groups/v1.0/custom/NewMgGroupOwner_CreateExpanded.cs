@@ -263,7 +263,7 @@
                 {
                     await ((Runtime.IEventListener)this).Signal(Microsoft.Graph.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     _bodyParameter.OdataId = $"https://graph.microsoft.com/v1.0/directoryObjects/{DirectoryObjectId}";
-                    await this.Client.GroupCreateOwnersGraphBPreRef(GroupId, _bodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateOwnerGraphBPreRef(GroupId, _bodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Microsoft.Graph.PowerShell.Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Runtime.UndeclaredResponseException urexception)

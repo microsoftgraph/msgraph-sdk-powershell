@@ -262,7 +262,7 @@
                         ThrowTerminatingError(new System.Management.Automation.ErrorRecord(new System.Exception("InputObject has null value for InputObject.GroupId"), string.Empty, System.Management.Automation.ErrorCategory.InvalidArgument, InputObject));
                     }
                     _bodyParameter.OdataId = $"https://graph.microsoft.com/v1.0/directoryObjects/{DirectoryObjectId}";
-                    await this.Client.GroupCreateOwnersGraphBPreRef(InputObject.GroupId ?? null, _bodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateOwnerGraphBPreRef(InputObject.GroupId ?? null, _bodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Runtime.UndeclaredResponseException urexception)
