@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get applications and service principal objects applied to an app management policy
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgPolicyAppManagementPolicyApplyTo -AppManagementPolicyId $appManagementPolicyId
 ```
+This example shows how to use the Get-MgPolicyAppManagementPolicyApplyTo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Get specific properties of applications and service principal objects applied to an app management policy using $select query option
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-{{ Add output here }}
+Get-MgPolicyAppManagementPolicyApplyTo -AppManagementPolicyId $appManagementPolicyId -Property "id,appId,displayName,createdDateTime"
 ```
-
-{{ Add description here }}
+This example shows how to use the Get-MgPolicyAppManagementPolicyApplyTo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
