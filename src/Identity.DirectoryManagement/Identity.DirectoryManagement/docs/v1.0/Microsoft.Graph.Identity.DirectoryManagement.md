@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: f4b4c495-c680-4076-8636-abdd2ffadce2
+Module Guid: fe4092f6-40ba-4e59-b7e6-aa82ad85c9d0
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -590,7 +590,8 @@ The following actions are performed as part of this operation: After the domain 
 To verify deletion of a domain, you can perform a get domain operation.
 
 ### [Invoke-MgPromoteDomain](Invoke-MgPromoteDomain.md)
-Invoke action promote
+Promote a verified subdomain to the root domain.
+A verified domain has its **isVerified** property set to `true`.
 
 ### [Invoke-MgServiceDeviceGetRegisteredOwner](Invoke-MgServiceDeviceGetRegisteredOwner.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal

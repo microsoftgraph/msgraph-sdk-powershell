@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: bff9f443-6a47-4b65-8930-29a919b1239e
+Module Guid: e087b4a8-fe9e-411e-bda0-2fa4b4ad9b77
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -70,8 +70,7 @@ The collection of column definitions for this contentType.
 The collection of columns that are required by this content type.
 
 ### [Get-MgGroupSiteDrive](Get-MgGroupSiteDrive.md)
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The default drive (document library) for this site.
 
 ### [Get-MgGroupSiteExternalColumn](Get-MgGroupSiteExternalColumn.md)
 Get externalColumns from groups
@@ -435,8 +434,7 @@ The collection of columns that are required by this content type.
 Invoke function getCompatibleHubContentTypes
 
 ### [Get-MgSiteDefaultDrive](Get-MgSiteDefaultDrive.md)
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The default drive (document library) for this site.
 
 ### [Get-MgSiteDrive](Get-MgSiteDrive.md)
 The collection of drives (document libraries) under this site.

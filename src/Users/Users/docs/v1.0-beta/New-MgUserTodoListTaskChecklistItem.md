@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserTodoListTaskChecklistItem
 
 ## SYNOPSIS
-Create new navigation property to checklistItems for users
+Create a new checklistItem object as a subtask in a bigger todoTask.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Create new navigation property to checklistItems for users
+Create a new checklistItem object as a subtask in a bigger todoTask.
 
 ## EXAMPLES
 

@@ -884,6 +884,18 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage1[]>: The access pac
                   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
+            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+              - `[Actions <String>]`: chatMessageActions
+              - `[ModifiedDateTime <DateTime?>]`: 
+              - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+                - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+                - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Application <IMicrosoftGraphIdentity>]`: identity
+                  - `[Device <IMicrosoftGraphIdentity>]`: identity
+                  - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[MessageType <String>]`: chatMessageType
             - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -897,13 +909,6 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage1[]>: The access pac
               - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
               - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
             - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-              - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-              - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-              - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Application <IMicrosoftGraphIdentity>]`: identity
-                - `[Device <IMicrosoftGraphIdentity>]`: identity
-                - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
             - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
             - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -2082,7 +2087,7 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage1[]>: The access pac
               - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
               - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
             - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
-            - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: 
+            - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: The open shift requests in the schedule.
               - `[AssignedTo <String>]`: scheduleChangeRequestActor
               - `[ManagerActionMessage <String>]`: 
               - `[SenderMessage <String>]`: 
@@ -2090,7 +2095,7 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage1[]>: The access pac
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[OpenShiftId <String>]`: ID for the open shift.
-            - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: 
+            - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: The set of open shifts in a scheduling group in the schedule.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
@@ -3494,6 +3499,18 @@ ASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>: .
                     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
+              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+                - `[Actions <String>]`: chatMessageActions
+                - `[ModifiedDateTime <DateTime?>]`: 
+                - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+                  - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+                  - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Application <IMicrosoftGraphIdentity>]`: identity
+                    - `[Device <IMicrosoftGraphIdentity>]`: identity
+                    - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[MessageType <String>]`: chatMessageType
               - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3507,13 +3524,6 @@ ASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>: .
                 - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
                 - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
               - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-                - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-                - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Application <IMicrosoftGraphIdentity>]`: identity
-                  - `[Device <IMicrosoftGraphIdentity>]`: identity
-                  - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
               - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
               - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -4692,7 +4702,7 @@ ASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>: .
                 - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
                 - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
               - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
-              - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: 
+              - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: The open shift requests in the schedule.
                 - `[AssignedTo <String>]`: scheduleChangeRequestActor
                 - `[ManagerActionMessage <String>]`: 
                 - `[SenderMessage <String>]`: 
@@ -4700,7 +4710,7 @@ ASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>: .
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[OpenShiftId <String>]`: ID for the open shift.
-              - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: 
+              - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: The set of open shifts in a scheduling group in the schedule.
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
@@ -6230,6 +6240,18 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage1>: accessPackage
                   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
+            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+              - `[Actions <String>]`: chatMessageActions
+              - `[ModifiedDateTime <DateTime?>]`: 
+              - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+                - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+                - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Application <IMicrosoftGraphIdentity>]`: identity
+                  - `[Device <IMicrosoftGraphIdentity>]`: identity
+                  - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[MessageType <String>]`: chatMessageType
             - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -6243,13 +6265,6 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage1>: accessPackage
               - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
               - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
             - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-              - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-              - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-              - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Application <IMicrosoftGraphIdentity>]`: identity
-                - `[Device <IMicrosoftGraphIdentity>]`: identity
-                - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
             - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
             - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -7428,7 +7443,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage1>: accessPackage
               - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
               - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
             - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
-            - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: 
+            - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: The open shift requests in the schedule.
               - `[AssignedTo <String>]`: scheduleChangeRequestActor
               - `[ManagerActionMessage <String>]`: 
               - `[SenderMessage <String>]`: 
@@ -7436,7 +7451,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage1>: accessPackage
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[OpenShiftId <String>]`: ID for the open shift.
-            - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: 
+            - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: The set of open shifts in a scheduling group in the schedule.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
@@ -8895,6 +8910,18 @@ CATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
                     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
+              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+                - `[Actions <String>]`: chatMessageActions
+                - `[ModifiedDateTime <DateTime?>]`: 
+                - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+                  - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+                  - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Application <IMicrosoftGraphIdentity>]`: identity
+                    - `[Device <IMicrosoftGraphIdentity>]`: identity
+                    - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[MessageType <String>]`: chatMessageType
               - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8908,13 +8935,6 @@ CATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
                 - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
                 - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
               - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-                - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-                - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Application <IMicrosoftGraphIdentity>]`: identity
-                  - `[Device <IMicrosoftGraphIdentity>]`: identity
-                  - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
               - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
               - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -10093,7 +10113,7 @@ CATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
                 - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
                 - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
               - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
-              - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: 
+              - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: The open shift requests in the schedule.
                 - `[AssignedTo <String>]`: scheduleChangeRequestActor
                 - `[ManagerActionMessage <String>]`: 
                 - `[SenderMessage <String>]`: 
@@ -10101,7 +10121,7 @@ CATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[OpenShiftId <String>]`: ID for the open shift.
-              - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: 
+              - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: The set of open shifts in a scheduling group in the schedule.
                 - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
@@ -11574,6 +11594,18 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access package
                   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
+            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+              - `[Actions <String>]`: chatMessageActions
+              - `[ModifiedDateTime <DateTime?>]`: 
+              - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+                - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+                - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Application <IMicrosoftGraphIdentity>]`: identity
+                  - `[Device <IMicrosoftGraphIdentity>]`: identity
+                  - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[MessageType <String>]`: chatMessageType
             - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -11587,13 +11619,6 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access package
               - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
               - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
             - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-              - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-              - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-              - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Application <IMicrosoftGraphIdentity>]`: identity
-                - `[Device <IMicrosoftGraphIdentity>]`: identity
-                - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
             - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
             - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -12772,7 +12797,7 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access package
               - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
               - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
             - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
-            - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: 
+            - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: The open shift requests in the schedule.
               - `[AssignedTo <String>]`: scheduleChangeRequestActor
               - `[ManagerActionMessage <String>]`: 
               - `[SenderMessage <String>]`: 
@@ -12780,7 +12805,7 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access package
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[OpenShiftId <String>]`: ID for the open shift.
-            - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: 
+            - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: The set of open shifts in a scheduling group in the schedule.
               - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
@@ -14162,6 +14187,18 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup1[]>: The groups whose members are ineli
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
                 - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+            - `[Actions <String>]`: chatMessageActions
+            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+              - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+              - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Application <IMicrosoftGraphIdentity>]`: identity
+                - `[Device <IMicrosoftGraphIdentity>]`: identity
+                - `[User <IMicrosoftGraphIdentity>]`: identity
           - `[MessageType <String>]`: chatMessageType
           - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14175,13 +14212,6 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup1[]>: The groups whose members are ineli
             - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
             - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
           - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-            - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-            - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Application <IMicrosoftGraphIdentity>]`: identity
-              - `[Device <IMicrosoftGraphIdentity>]`: identity
-              - `[User <IMicrosoftGraphIdentity>]`: identity
           - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
           - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
           - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -15360,7 +15390,7 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup1[]>: The groups whose members are ineli
             - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
             - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
           - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
-          - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: 
+          - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: The open shift requests in the schedule.
             - `[AssignedTo <String>]`: scheduleChangeRequestActor
             - `[ManagerActionMessage <String>]`: 
             - `[SenderMessage <String>]`: 
@@ -15368,7 +15398,7 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup1[]>: The groups whose members are ineli
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[OpenShiftId <String>]`: ID for the open shift.
-          - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: 
+          - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: The set of open shifts in a scheduling group in the schedule.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem

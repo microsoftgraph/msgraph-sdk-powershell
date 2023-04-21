@@ -1144,7 +1144,7 @@ APPMANAGEMENTPOLICIES <IMicrosoftGraphAppManagementPolicy1[]>: The appManagement
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
+  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Collection of applications and service principals to which the policy is applied.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[IsEnabled <Boolean?>]`: 
@@ -1208,7 +1208,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipal1>: servicePrincipal
     - `[DisplayName <String>]`: Display name for this policy. Required.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
+    - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Collection of applications and service principals to which the policy is applied.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[IsEnabled <Boolean?>]`: 

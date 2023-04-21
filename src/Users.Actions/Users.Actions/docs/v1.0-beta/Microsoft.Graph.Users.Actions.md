@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 2bcc5e4d-6d3d-426c-8e88-2c35e49a480f
+Module Guid: 8c5f92c2-f3ff-4e78-8aba-69ed3f3e54f4
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -55,13 +55,28 @@ Read more about presence sessions and their time-out and expiration.
 Clear the preferred availability and activity status for a user.
 
 ### [Complete-MgUserOutlookTask](Complete-MgUserOutlookTask.md)
-Invoke action complete
+Complete an Outlook task which sets the **completedDateTime** property to the current date, and the **status** property to `completed`.
+If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series.
+The **completedDateTime** property represents the date when the task is finished.
+The time portion of **completedDateTime** is set to midnight UTC by default.
+By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC.
+You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
 
 ### [Complete-MgUserOutlookTaskFolderTask](Complete-MgUserOutlookTaskFolderTask.md)
-Invoke action complete
+Complete an Outlook task which sets the **completedDateTime** property to the current date, and the **status** property to `completed`.
+If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series.
+The **completedDateTime** property represents the date when the task is finished.
+The time portion of **completedDateTime** is set to midnight UTC by default.
+By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC.
+You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
 
 ### [Complete-MgUserOutlookTaskGroupTaskFolderTask](Complete-MgUserOutlookTaskGroupTaskFolderTask.md)
-Invoke action complete
+Complete an Outlook task which sets the **completedDateTime** property to the current date, and the **status** property to `completed`.
+If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series.
+The **completedDateTime** property represents the date when the task is finished.
+The time portion of **completedDateTime** is set to midnight UTC by default.
+By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC.
+You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
 
 ### [Confirm-MgUserChatPermissionGrantMemberGroup](Confirm-MgUserChatPermissionGrantMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -437,6 +452,24 @@ Mark a chat as read for a user.
 ### [Invoke-MgMarkUserChatUnreadForUser](Invoke-MgMarkUserChatUnreadForUser.md)
 Mark a chat as unread for a user.
 
+### [Invoke-MgMarkUserMailFolderChildFolderMessageAsJunk](Invoke-MgMarkUserMailFolderChildFolderMessageAsJunk.md)
+Invoke action markAsJunk
+
+### [Invoke-MgMarkUserMailFolderChildFolderMessageAsNotJunk](Invoke-MgMarkUserMailFolderChildFolderMessageAsNotJunk.md)
+Invoke action markAsNotJunk
+
+### [Invoke-MgMarkUserMailFolderMessageAsJunk](Invoke-MgMarkUserMailFolderMessageAsJunk.md)
+Invoke action markAsJunk
+
+### [Invoke-MgMarkUserMailFolderMessageAsNotJunk](Invoke-MgMarkUserMailFolderMessageAsNotJunk.md)
+Invoke action markAsNotJunk
+
+### [Invoke-MgMarkUserMessageAsJunk](Invoke-MgMarkUserMessageAsJunk.md)
+Invoke action markAsJunk
+
+### [Invoke-MgMarkUserMessageAsNotJunk](Invoke-MgMarkUserMessageAsNotJunk.md)
+Invoke action markAsNotJunk
+
 ### [Invoke-MgOverrideUserManagedDeviceComplianceState](Invoke-MgOverrideUserManagedDeviceComplianceState.md)
 Invoke action overrideComplianceState
 
@@ -525,6 +558,9 @@ Retire a device
 ### [Invoke-MgRetryUserCloudPcPartnerAgentInstallation](Invoke-MgRetryUserCloudPcPartnerAgentInstallation.md)
 Retry installation for the partner agents which failed to install on the Cloud PC.
 Service side will check which agent installation failed firstly and retry.
+
+### [Invoke-MgRetryUserServiceProvisioning](Invoke-MgRetryUserServiceProvisioning.md)
+Invoke action retryServiceProvisioning
 
 ### [Invoke-MgRotateUserManagedDeviceBitLockerKey](Invoke-MgRotateUserManagedDeviceBitLockerKey.md)
 Rotate BitLockerKeys
@@ -1033,19 +1069,27 @@ Read more about presence sessions and their time-out and expiration.
 Bypass activation lock
 
 ### [Start-MgUserCloudPc](Start-MgUserCloudPc.md)
-Invoke action start
+Start a specific Cloud PC for a user.
+Currently, only Windows 365 Frontline Cloud PCs are supported.
 
 ### [Start-MgUserCloudPcOff](Start-MgUserCloudPcOff.md)
-Invoke action powerOff
+Power off a Windows 365 Frontline Cloud PC.
+This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
+After a Windows 365 Frontline Cloud PC is powered off, it is de-allocated, and licenses are revoked immediately.
+Only IT admin users can perform this action.
 
 ### [Start-MgUserCloudPcOn](Start-MgUserCloudPcOn.md)
-Invoke action powerOn
+Power on a Windows 365 Frontline Cloud PC.
+This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
+After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately.
+Only IT admin users can perform this action.
 
 ### [Start-MgUserManagedDeviceConfigurationManagerAction](Start-MgUserManagedDeviceConfigurationManagerAction.md)
 Trigger action on ConfigurationManager client
 
 ### [Stop-MgUserCloudPc](Stop-MgUserCloudPc.md)
-Invoke action stop
+Stop a specific Cloud PC for a user.
+Currently, only Windows 365 Frontline Cloud PCs are supported.
 
 ### [Stop-MgUserCloudPcGracePeriod](Stop-MgUserCloudPcGracePeriod.md)
 End the grace period for a specific Cloud PC.

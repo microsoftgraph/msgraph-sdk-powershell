@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CloudPrint
-Module Guid: 03173246-aa95-4d6a-8273-fdf320c64f88
+Module Guid: 6fbadb9c-ea77-4293-826f-abdabacf8d7c
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US
@@ -61,6 +61,11 @@ Retrieve a list of users who have been granted access to submit print jobs to th
 
 ### [Get-MgPrintShareAllowedUserByRef](Get-MgPrintShareAllowedUserByRef.md)
 Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+
+### [Get-MgPrintShareAllowedUserMailboxSetting](Get-MgPrintShareAllowedUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
 
 ### [Get-MgPrintSharePrinter](Get-MgPrintSharePrinter.md)
 The printer that this printer share is related to.
@@ -168,6 +173,9 @@ Update the navigation property endpoints in print
 
 ### [Update-MgPrintShare](Update-MgPrintShare.md)
 Update the navigation property shares in print
+
+### [Update-MgPrintShareAllowedUserMailboxSetting](Update-MgPrintShareAllowedUserMailboxSetting.md)
+Update property mailboxSettings value.
 
 ### [Update-MgPrintTaskDefinition](Update-MgPrintTaskDefinition.md)
 Update the navigation property taskDefinitions in print

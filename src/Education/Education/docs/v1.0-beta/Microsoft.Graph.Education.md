@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: 6c28d75f-c0b8-4f67-a63b-a2c55cb4d3ae
+Module Guid: 678beb74-3877-4339-bc9b-d8d0febd91bd
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -160,6 +160,12 @@ Classes for which the user is a teacher.
 ### [Get-MgEducationMeUser](Get-MgEducationMeUser.md)
 Retrieve the simple directory **user** that corresponds to this **educationUser**.
 
+### [Get-MgEducationMeUserMailboxSetting](Get-MgEducationMeUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
 ### [Get-MgEducationRoot](Get-MgEducationRoot.md)
 Get education
 
@@ -248,6 +254,12 @@ Nullable.
 
 ### [Get-MgEducationUserDelta](Get-MgEducationUserDelta.md)
 Invoke function delta
+
+### [Get-MgEducationUserMailboxSetting](Get-MgEducationUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
 
 ### [Get-MgEducationUserRubric](Get-MgEducationUserRubric.md)
 When set, the grading rubric attached to the assignment.
@@ -781,6 +793,9 @@ Update the navigation property submittedResources in education
 ### [Update-MgEducationMeRubric](Update-MgEducationMeRubric.md)
 Update the navigation property rubrics in education
 
+### [Update-MgEducationMeUserMailboxSetting](Update-MgEducationMeUserMailboxSetting.md)
+Update property mailboxSettings value.
+
 ### [Update-MgEducationRoot](Update-MgEducationRoot.md)
 Update education
 
@@ -822,6 +837,9 @@ Update the navigation property resources in education
 
 ### [Update-MgEducationUserAssignmentSubmissionSubmittedResource](Update-MgEducationUserAssignmentSubmissionSubmittedResource.md)
 Update the navigation property submittedResources in education
+
+### [Update-MgEducationUserMailboxSetting](Update-MgEducationUserMailboxSetting.md)
+Update property mailboxSettings value.
 
 ### [Update-MgEducationUserRubric](Update-MgEducationUserRubric.md)
 Update the navigation property rubrics in education
