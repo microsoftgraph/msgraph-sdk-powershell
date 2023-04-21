@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: List all bundles in a drive
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Files
+
+Get-MgDriveBundle -DriveId $driveId
 ```
+This example shows how to use the New-MgDriveBundle Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: List all photo albums in a drive
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Files
 
-{{ Add output here }}
+Get-MgDriveBundle -DriveId $driveId -Filter "bundle/album ne null"
 ```
-
-{{ Add description here }}
+This example shows how to use the New-MgDriveBundle Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
